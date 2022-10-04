@@ -10,33 +10,31 @@ html {
 
 /* variables */
 :root {
-    --bgd_light_gradient: linear-gradient(90deg, #D1BFF3 5.25%, #FAD3FF 35.3%, #FFDFEC 65.34%, #BEF7FF 95.38%);
+    --bg_light_gradient: linear-gradient(90deg, #D1BFF3 5%, #FAD3FF 35%, #FFDFEC 65%, #BEF7FF 95%);
     --color_header: #8C69CA;
     --color_content: #000000;
-    --bgd_gradient: linear-gradient(90deg, #A084CA 2.5%, #F5A8FF 39.07%, #FFBAD5 66.96%, #77DAE8 95.6%);
+    /* --bgd_gradient: linear-gradient(90deg, #A084CA 2.5%, #F5A8FF 40%, #FFBAD5 60%, #77DAE8 97.5%); Cuong da thao tung dong nay*/
+    --bg_gradient: linear-gradient(90deg, #A084CA 2.5%, #F5A8FF 39.07%, #FFBAD5 66.96%, #77DAE8 95.6%);
     --color_footer: #A084CA;
 }
 
 /* customize scrollbar */
 body::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
+    width: 10px; /*vertical scrollbar width*/
+    height: 10px; /*horizontal scrollbar height*/
 }
 
 body::-webkit-scrollbar-thumb {
-    background: var(--color_header);
+    background: var(--color_header); 
     border-radius: 10px;
 }
 
-body::-webkit-scrollbar-track {
+body::-webkit-scrollbar-track { /*scrollbar bg*/
     background: whitesmoke;
 }
 
+
 /* main body */
-
-
-
-
 
 .content {
     height: 600px;
@@ -51,29 +49,29 @@ body::-webkit-scrollbar-track {
     left: 0;
     right: 0;
     height: 60px;
-    background: var(--bgd_light_gradient);
+    background: var(--bg_light_gradient);
 }
 
-.nav{
+.header-alignment{
     padding: 5px 4%;
 }
 
-.nav-right {
+.nav {
     float: right;
     display: inline-flex;
     align-items: center;
     padding: 5px 0px;
 }
-.nav .nav-right ul {
+.header-alignment .nav ul {
     display: flex;
 }
 
-.nav-right li{
+.nav li{
     list-style: none;
     padding-right: 50px;
 }
 
-.nav-right li a {
+.nav li a {
     font-size: 18px;
     color: var(--color_header);
     text-decoration: none;
@@ -94,35 +92,47 @@ body::-webkit-scrollbar-track {
 
 .btnLogin:hover {
     transform: translateY(-3px);
+    text-shadow: 0 0 5px #fff;
 }
 
-.nav a {
+.header-alignment a {
     display: inline-flex;
     text-decoration: none;
     align-items: center!important;
 }
-.nav img {
+.header-alignment img {
     mix-blend-mode: multiply;
     max-height: 50px;
     vertical-align: middle;
 }
 
-.nav a .title {
+.header-alignment a .title {
     font-weight: 550;
     font-size: 20px;
     line-height: 33px;
     color: var(--color_header);
     padding-left: 10px;
 }
+
+.menuSection {
+    transition: 200ms;
+}
+
+.menuSection:hover {
+    color: white;
+    /* text-shadow: 0 0 10px white; */
+}
+
+
 /* end header  */
 
 /* gird view */
 @media (min-width: 0px) and (max-width: 560px){
-    .nav-right div {
+    .nav div {
         display: none;
     }
 
-    .nav a .title {
+    .header-alignment a .title {
         font-size: 14px;
     }
 
@@ -132,7 +142,7 @@ body::-webkit-scrollbar-track {
         line-height: 30px;
     }
 
-    .nav {
+    .header-alignment {
         padding: 5px 5px;
     }
     /* end grid view for header */
@@ -140,11 +150,11 @@ body::-webkit-scrollbar-track {
 }
 
 @media (min-width: 0px) and (max-width: 888px) {
-    .nav-right div {
+    .nav div {
         display: none;
     }
 
-    .nav a .title {
+    .header-alignment a .title {
         font-size: 15px;
     }
 
@@ -155,7 +165,7 @@ body::-webkit-scrollbar-track {
     }
     /* end grid view for header */
 
-    .slider div .dot {
+    .slider div .slider_dot {
         width: 5px;
         height: 5px;
     }
@@ -163,7 +173,7 @@ body::-webkit-scrollbar-track {
 }
 
 @media (min-width: 740px) and (max-width: 1024px) {
-    .nav a .title {
+    .header-alignment a .title {
         font-size: 15px;
     }
 
@@ -173,11 +183,11 @@ body::-webkit-scrollbar-track {
         line-height: 40px;
     }
 
-    .nav-right li a {
+    .nav li a {
         font-size: 14px;
     }
 
-    .nav-right li {
+    .nav li {
         padding-right: 20px;
     }
     /* end grid view for header */
@@ -186,7 +196,7 @@ body::-webkit-scrollbar-track {
 }
 
 @media (min-width: 1024px) and (max-width: 1239px) {
-    .nav a .title {
+    .header-alignment a .title {
         font-size: 18px;
     }
 
@@ -196,11 +206,11 @@ body::-webkit-scrollbar-track {
         line-height: 35px;
     }
 
-    .nav-right li a {
+    .nav li a {
         font-size: 16px;
     }
 
-    .nav-right li {
+    .nav li {
         padding-right: 25px;
     }
     /* end grid view for header */
@@ -225,12 +235,12 @@ body::-webkit-scrollbar-track {
   border-radius: 20px;
 }
 
-.slider .frame-dot {
+.slider .frame-slider_dot {
     margin-top: 15px;
 }
 
 /* The dots/bullets/indicators */
-.dot {
+.slider_dot {
   height: 12px;
   width: 12px;
   margin: 0 2px;
