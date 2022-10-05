@@ -10,7 +10,7 @@
 
     <div class="header">
         <div class="header-alignment">
-            <a href="index.html">
+            <a href="index.php">
                 <img src="image/CVM-Logo.png" alt="CVM-Logo">
                 <span class="title">CỔNG THÔNG TIN TIÊM CHỦNG COVID-19</span> 
             </a>
@@ -77,19 +77,27 @@
 
     <div class="content">
         <div class="content_alignment_side"></div>
-        <div class="content_box"></div>
+        <div class="content_box">
+            <?php 
+                echo "Hello Chrysan"
+            ?>
+        </div>
         <!-- <div class="content_alignment_center"></div> -->
         <div class="content_box"></div>
         <div class="content_alignment_side"></div>
     </div>
 
+    <div class="content_below">
+
+    </div>
+
     <footer>
-        <div>
-            <p>Thông tin liên hệ: Chrysan</p>
-            <p>Số điện thoại: 20520511</p>
-            <p>Email: dothicuchoa123@gmail.com</p>
-            <img src="image/Logo BỘ.png" alt="Logo Bộ Y Tế ">
-        </div>
+        <div class="footer_alignment_side"></div>
+        <div class="footer_content">Thông tin liên hệ: Chrysan</div>
+        <div class="footer_content">Số điện thoại: 20520511</div>
+        <div class="footer_content">Email: dothicuchoa123@gmail.com</div>
+        <div class="footer_logo"><img src="image/Logo BỘ.png" alt="Logo Bộ Y Tế "></div>
+        <div class="footer_alignment_side"></div>
     </footer>
 
 </body>
