@@ -34,14 +34,6 @@ body::-webkit-scrollbar-track { /*scrollbar bg*/
 }
 
 
-/* main body */
-
-.content {
-    height: 600px;
-}
-
-
-
 /* header */
 .header {
     position: fixed;
@@ -61,6 +53,7 @@ body::-webkit-scrollbar-track { /*scrollbar bg*/
     display: inline-flex;
     align-items: center;
     padding: 5px 0px;
+    justify-content: space-between;
 }
 .header-alignment .nav ul {
     display: flex;
@@ -274,6 +267,29 @@ body::-webkit-scrollbar-track { /*scrollbar bg*/
 
 }
 /* end slider  */
+
+
+/* CONTENT */
+
+.content {
+    height: 600px;
+    margin-top: 20px;
+    background: whitesmoke;
+    display: flex;
+    justify-content: space-between;
+}
+
+.content .content_box{
+    height: 66.66%;
+    width: 30%;
+    background: violet;
+}
+
+.content .content_alignment_side {
+    width: 15%;
+}
+
+/* END CONTENT */
 
 /* Begin footer */
 footer {
