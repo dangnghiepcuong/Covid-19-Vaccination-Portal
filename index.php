@@ -77,7 +77,11 @@
 
     <div class="content">
         <div class="content_alignment_side"></div>
-        <div class="content_box"></div>
+        <div class="content_box">
+            <?php 
+                echo "Hello Chrysan"
+            ?>
+        </div>
         <!-- <div class="content_alignment_center"></div> -->
         <div class="content_box"></div>
         <div class="content_alignment_side"></div>
