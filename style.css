@@ -26,7 +26,7 @@ body::-webkit-scrollbar {
 
 body::-webkit-scrollbar-thumb {
     background: var(--color_header); 
-    border-radius: 10px;
+    border-radius: 6px;
 }
 
 body::-webkit-scrollbar-track { /*scrollbar bg*/
@@ -224,8 +224,12 @@ body::-webkit-scrollbar-track { /*scrollbar bg*/
   margin: auto;
 }
 
-.slider img {
-  border-radius: 20px;
+.slider img{
+    transition: 300ms;
+}
+
+.slider img:hover {
+  box-shadow: 2px 2px 7px -2px black;
 }
 
 .slider .frame-slider_dot {
@@ -272,7 +276,7 @@ body::-webkit-scrollbar-track { /*scrollbar bg*/
 /* CONTENT */
 
 .content {
-    height: 600px;
+    height: 400px;
     margin-top: 20px;
     background: whitesmoke;
     display: flex;
@@ -280,13 +284,24 @@ body::-webkit-scrollbar-track { /*scrollbar bg*/
 }
 
 .content .content_box{
-    height: 66.66%;
+    height: 100%;
     width: 30%;
-    background: violet;
+    background: white;
+    /* border-radius: 5%; */
+    transition: 300ms;
 }
 
-.content .content_alignment_side {
+.content_alignment_side {
     width: 15%;
+}
+
+.content .content_box:hover {
+    box-shadow: 2px 2px 7px -2px black;
+}
+
+.content_below {
+    height: 150px;
+    background: whitesmoke;
 }
 
 /* END CONTENT */
@@ -297,23 +312,25 @@ footer {
     background: var(--color_footer);
     width: 100%;
     bottom: 0px;
-}
-
-footer div {
-    float: left;
-    display: flex;
+    padding: 5px 5px;
+    justify-content: space-between;
     align-items: center;
-    padding: 0px 3% 0 8%;
+    display: flex;
 }
 
-footer p {
+.footer_content {
+    width: 70%;  
     color: white;
-    margin-right: 90px;
     font-size: 20px;
 }
 
+
 footer div img {
     max-height: 70px;
+}
+
+.footer_alignment_side {
+    width: 15%;
 }
 
 @media (min-width:0px) and (max-width:1445px) {
