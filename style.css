@@ -80,7 +80,9 @@ body::-webkit-scrollbar-track { /*scrollbar bg*/
     padding: 0px 20px;
     border-radius: 15px;
     display: inline-block;
+    cursor: pointer;
     transition: 300ms;
+    border: none;
 }
 
 .btnLogin:hover {
@@ -251,19 +253,119 @@ body::-webkit-scrollbar-track { /*scrollbar bg*/
   background-color: #A07AD1;
 }
 
-/* Fading animation */
-.fade {
-  /* animation-name: mymove; */
-  animation-duration: 2s;
+
+
+/* LOGIN FORM */
+
+.form-login{
+    display: block;
+    z-index: 10;
+    position: fixed;
+    width: 400px;
+    height: 500px;
+    left: 37%;
+    top: 15%;
+    border-radius: 40px 40px 40px 40px;
+    background: #FEFEFE;
 }
 
-@keyframes mymove {
-  from {
-    transform: translateX(100px);
-  }
-  to {
-    transform: translateX(-1680px);
-  }
+.form-login-container {
+    display:grid;
+    max-width: 400px;
+    border-radius: 40px 40px 40px 40px;
+    background-color: white;
+    padding: 30px 50px 20px 50px;
+    align-items: center;
+    text-align: left;
+    font-family: 'Roboto';
+    font-style: thin;
+}
+
+.form-login-container .form-title {
+    padding-top: 10px;
+    color: #000000;
+    text-align: center;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 41px;
+}
+
+.form-login-container label {
+    font-weight: 200;
+    font-size: 20px;
+    line-height: 20px;
+    padding-bottom: 5px;
+}
+
+.form-login-container input {
+    border: none;
+    line-height: 40px;
+    font-family: 'Roboto';
+    font-weight: 300;
+    font-size: 24px;
+}
+
+.form-login-container hr {
+    background: linear-gradient(90deg, #A084CA 2.5%, #F5A8FF 39.07%, #FFBAD5 66.96%, #77DAE8 95.6%);
+    height: 1px;
+    border: none;
+}
+
+.btn-linked-page {
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+    font-size: 18px;
+    color: #77DAE8;
+}
+
+.btn-linked-page a {
+    text-decoration: none;
+    font-weight: 300;
+}
+
+.form-login-container .btn-login {
+    width: 100%;
+    height: 40px;
+    justify-self: center;
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(90deg, #A084CA 2.5%, #F5A8FF 39.07%, #FFBAD5 66.96%, #77DAE8 95.6%);
+    text-align: center;
+    padding-top: 5px;
+    color: white;
+    font-weight: 300;
+    font-size: 24px;
+    cursor: pointer;
+    transition: 200ms;
+}
+
+.form-login-container .btn-login:hover {
+    opacity: 0.8;
+    /* transform: translateY(-3); */
+}
+
+.form-login-btn-close {
+    font-weight: 100;
+    font-size: 24px;
+    text-align: right;
+    cursor: pointer;
+}
+
+
+  
+/* END LOGIN FORM */
+
+.gradient-bg-faded {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 200%;
+    left: 0px;
+    top: 0px;
+    background: linear-gradient(90deg, rgba(185, 148, 255, 0.5) 5.25%, rgba(245, 168, 255, 0.5) 34.83%, rgba(255, 186, 213, 0.5) 66.27%, rgba(119, 218, 232, 0.5) 95.38%);
+    z-index: 9;
 }
 
 /* On smaller screens, decrease text size */
