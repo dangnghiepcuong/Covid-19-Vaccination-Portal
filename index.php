@@ -23,23 +23,24 @@
                 <div>
                     <ul>
                         <li>
-                            <a class="MenuSection" href="#">Tin tức</a>
+                            <a class="menuSection" href="#">Tin tức</a>
                         </li>
 
                         <li>
-                            <a class="MenuSection" href="#">Lịch tiêm</a>
+                            <a class="menuSection" href="#">Lịch tiêm</a>
                         </li>
 
                         <li>
-                            <a class="MenuSection" href="#">Tiêm chủng</a>
+                            <a class="menuSection" href="#">Tiêm chủng</a>
                         </li>
 
                         <li>
-                            <a class="MenuSection" href="#">Thống kê</a>
+                            <a class="menuSection" href="#">Thống kê</a>
                         </li>
                     </ul>
                 </div>
                 <button class="btnLogin" id="btn-Login" onclick="openLoginForm()">Đăng nhập</btn>
+                    <script type="text/javascript" src="FE_interaction.js"></script>
             </div>
         </div>
     </div>
@@ -65,14 +66,19 @@
                 <a id="btn-CreateAccount" href="#">Tạo tài khoản</a>
             </div>
             <br><br>
-            <a class="btn-login">Đăng nhập</a>
+            <div class="btn-login">
+                <p>Đăng nhập</p>
+            </div>
             <br>
+
         </form>
+
     </div>
     <!-- END LOGIN FORM -->
 
     <!-- COVER LOGIN FORM -->
     <div class="gradient-bg-faded" id="gradient-bg-faded" onclick="closeLoginForm()"></div>
+
 
     <!-- SLIDER -->
     <div class="slider">
@@ -104,47 +110,33 @@
             <span class="slider_dot"></span>
         </div>
 
-        <script type="text/javascript" src="main.js">
-        </script>
+        <script type="text/javascript" src="main.js"></script>
     </div>
 
     <div class="content">
-        <div class="content_alignment_side"></div>
-        <div class="content_box">
+        <div class="content-alignment-side"></div>
+        <div class="content-box">
             <?php
             echo "Hello Chrysan"
             ?>
         </div>
-        <!-- <div class="content_alignment_center"></div> -->
-        <div class="content_box"></div>
-        <div class="content_alignment_side"></div>
+        <div class="content-box"></div>
+        <div class="content-box"></div>
+        <div class="content-box"></div>
+        <div class="content-alignment-side"></div>
     </div>
 
-    <div class="content_below">
+    <div class="content-below">
 
     </div>
 
     <footer>
-        <div class="footer_alignment_side"></div>
-        <div class="footer_content">Thông tin liên hệ: Chrysan</div>
-        <div class="footer_content">Số điện thoại: 20520511</div>
-        <div class="footer_content">Email: dothicuchoa123@gmail.com</div>
-        <div class="footer_logo"><img src="image/Logo BỘ.png" alt="Logo Bộ Y Tế "></div>
-        <div class="footer_alignment_side"></div>
+        <div class="footer-alignment-side"></div>
+        <div class="footer-content">&copy; Bản quyền thuộc TRUNG TÂM CÔNG NGHỆ PHÒNG, CHỐNG DỊCH COVID-19 QUỐC GIA</div>
+        <div class="footer-content">Phát triển bởi Chrysanthemums</div>
+        <div class="footer-logo"><img src="image/Logo BỘ.png" alt="Logo Bộ Y Tế "></div>
+        <div class="footer-alignment-side"></div>
     </footer>
-
-    <script>
-        function openLoginForm() {
-            document.getElementsById("form-login").style.display = "block";
-            document.getElementsById("gradient-bg-faded").style.display = "block";
-        }
-
-        function closeLoginForm() {
-            document.getElementsById("form-login").style.display = "none";
-            document.getElementsById("gradient-bg-faded").style.display = "none";
-        }
-    </script>
-
 </body>
 
 </html>
