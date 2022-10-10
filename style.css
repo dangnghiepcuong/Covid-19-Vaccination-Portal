@@ -223,7 +223,6 @@ body::-webkit-scrollbar-track { /*scrollbar bg*/
     margin-top: 80px;
 }
 
-/* Slideshow container */
 .slideshow-container {
   max-width: 90%;
   margin: auto;
@@ -231,10 +230,6 @@ body::-webkit-scrollbar-track { /*scrollbar bg*/
 
 .slider img{
     transition: 300ms;
-}
-
-.slider img:hover {
-  box-shadow: 2px 2px 7px -2px black;
 }
 
 .slider .frame-slider_dot {
@@ -257,11 +252,10 @@ body::-webkit-scrollbar-track { /*scrollbar bg*/
 }
 
 
-
 /* LOGIN FORM */
 
 .form-login {
-    display: none;
+    display: block;
     z-index: 10;
     position: fixed;
     width: 400px;
@@ -300,12 +294,16 @@ body::-webkit-scrollbar-track { /*scrollbar bg*/
     padding-bottom: 5px;
 }
 
-.form-login-container input {
+input {
     border: none;
+    outline: none;
+}
+
+.form-login-container input {
     line-height: 40px;
     font-family: 'Roboto';
     font-weight: 300;
-    font-size: 24px;
+    font-size: 24px; 
 }
 
 .form-login-container hr {
@@ -357,11 +355,10 @@ body::-webkit-scrollbar-track { /*scrollbar bg*/
     cursor: pointer;
 }
 
-
 /* END LOGIN FORM */
 
 .gradient-bg-faded {
-    display: none;
+    display: block;
     position: fixed;
     width: 100%;
     height: 100%;
@@ -413,7 +410,7 @@ body::-webkit-scrollbar-track { /*scrollbar bg*/
 
 /* END CONTENT */
 
-/* Begin footer */
+/* FOOTER */
 footer {
     height: 80px;
     background: var(--color_footer);
@@ -454,4 +451,4 @@ footer div img {
         font-size: 16px;
     }
 }
-/* End footer */
+/* END FOOTER */
