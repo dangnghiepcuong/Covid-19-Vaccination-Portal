@@ -34,13 +34,14 @@ body::-webkit-scrollbar-track { /*scrollbar bg*/
 }
 
 
-/* header */
+/* HEADER */
 .header {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    height: 60px;
+    height: 80px;
+    padding-top: 8px;
     background: var(--bg_light_gradient);
 }
 
@@ -55,6 +56,7 @@ body::-webkit-scrollbar-track { /*scrollbar bg*/
     padding: 5px 0px;
     justify-content: space-between;
 }
+
 .header-alignment .nav ul {
     display: flex;
 }
@@ -65,14 +67,14 @@ body::-webkit-scrollbar-track { /*scrollbar bg*/
 }
 
 .nav li a {
-    font-size: 18px;
+    font-size: 20px;
     color: var(--color_header);
     text-decoration: none;
 }
 
 .header .btnLogin {
     font-weight: 500px;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 40px;
     text-decoration: none;
     color: white;
@@ -95,6 +97,7 @@ body::-webkit-scrollbar-track { /*scrollbar bg*/
     text-decoration: none;
     align-items: center!important;
 }
+
 .header-alignment img {
     mix-blend-mode: multiply;
     max-height: 50px;
@@ -103,7 +106,7 @@ body::-webkit-scrollbar-track { /*scrollbar bg*/
 
 .header-alignment a .title {
     font-weight: 550;
-    font-size: 20px;
+    font-size: 24px;
     line-height: 33px;
     color: var(--color_header);
     padding-left: 10px;
@@ -215,9 +218,9 @@ body::-webkit-scrollbar-track { /*scrollbar bg*/
 }
 /* end gird view  */
 
-/* Slider */
+/* SLIDER */
 .slider {
-    margin-top: 70px;
+    margin-top: 80px;
 }
 
 /* Slideshow container */
@@ -257,8 +260,8 @@ body::-webkit-scrollbar-track { /*scrollbar bg*/
 
 /* LOGIN FORM */
 
-.form-login{
-    display: block;
+.form-login {
+    display: none;
     z-index: 10;
     position: fixed;
     width: 400px;
@@ -270,7 +273,7 @@ body::-webkit-scrollbar-track { /*scrollbar bg*/
 }
 
 .form-login-container {
-    display:grid;
+    display: grid;
     max-width: 400px;
     border-radius: 40px 40px 40px 40px;
     background-color: white;
@@ -333,7 +336,6 @@ body::-webkit-scrollbar-track { /*scrollbar bg*/
     border-radius: 20px;
     background: linear-gradient(90deg, #A084CA 2.5%, #F5A8FF 39.07%, #FFBAD5 66.96%, #77DAE8 95.6%);
     text-align: center;
-    padding-top: 5px;
     color: white;
     font-weight: 300;
     font-size: 24px;
@@ -356,15 +358,13 @@ body::-webkit-scrollbar-track { /*scrollbar bg*/
 }
 
 
-  
 /* END LOGIN FORM */
 
 .gradient-bg-faded {
-    display: block;
-    position: fixed ;
+    display: none;
+    position: fixed;
     width: 100%;
     height: 100%;
-    max-height: 100%;
     left: 0px;
     top: 0px;
     bottom: 0px;
@@ -383,31 +383,31 @@ body::-webkit-scrollbar-track { /*scrollbar bg*/
 /* CONTENT */
 
 .content {
-    height: 400px;
+    height: 600px;
     margin-top: 20px;
     background: whitesmoke;
     display: flex;
     justify-content: space-between;
 }
 
-.content .content_box{
+.content .content-box{
     height: 100%;
-    width: 30%;
+    width: 20%;
     background: white;
     /* border-radius: 5%; */
     transition: 300ms;
 }
 
-.content_alignment_side {
-    width: 15%;
+.content-alignment-side {
+    width: 5%;
 }
 
-.content .content_box:hover {
+.content .content-box:hover {
     box-shadow: 2px 2px 7px -2px black;
 }
 
-.content_below {
-    height: 150px;
+.content-below {
+    height: 50px;
     background: whitesmoke;
 }
 
@@ -425,10 +425,9 @@ footer {
     display: flex;
 }
 
-.footer_content {
-    width: 70%;  
+.footer-content {
     color: white;
-    font-size: 20px;
+    font-size: 14px;
 }
 
 
@@ -436,9 +435,9 @@ footer div img {
     max-height: 70px;
 }
 
-.footer_alignment_side {
-    width: 15%;
-}
+/* .footer-alignment-side {
+    width: 50px;
+} */
 
 @media (min-width:0px) and (max-width:1445px) {
     footer p {
