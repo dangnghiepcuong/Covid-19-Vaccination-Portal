@@ -117,7 +117,7 @@
         <div class="content-alignment-side"></div>
         <div class="content-box">
             <?php
-            echo "Hello Chrysanaaa"
+            echo "Hello Chrysan"
             ?>
         </div>
         <div class="content-box"></div>
