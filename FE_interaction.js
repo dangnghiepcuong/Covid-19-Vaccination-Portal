@@ -1,9 +1,9 @@
 function openLoginForm() {
-    document.getElementsById("form-login").style.display = "block";
-    document.getElementsById("gradient-bg-faded").style.display = "block";
+    document.getElementById("form-login").style.display = "block";
+    document.getElementById("gradient-bg-faded").style.display = "block";
 }
   
-  function closeLoginForm() {
-    document.getElementsById("form-login").style.display = "none";
-    document.getElementsById("gradient-bg-faded").style.display = "none";
+function closeLoginForm() {
+    document.getElementById("form-login").style.display = "none";
+    document.getElementById("gradient-bg-faded").style.display = "none";
 }
