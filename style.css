@@ -223,7 +223,6 @@ body::-webkit-scrollbar-track { /*scrollbar bg*/
     margin-top: 80px;
 }
 
-/* Slideshow container */
 .slideshow-container {
   max-width: 90%;
   margin: auto;
@@ -231,10 +230,6 @@ body::-webkit-scrollbar-track { /*scrollbar bg*/
 
 .slider img{
     transition: 300ms;
-}
-
-.slider img:hover {
-  box-shadow: 2px 2px 7px -2px black;
 }
 
 .slider .frame-slider_dot {
@@ -257,7 +252,6 @@ body::-webkit-scrollbar-track { /*scrollbar bg*/
 }
 
 
-
 /* LOGIN FORM */
 
 .form-login {
@@ -270,6 +264,7 @@ body::-webkit-scrollbar-track { /*scrollbar bg*/
     top: 15%;
     border-radius: 40px 40px 40px 40px;
     background: #FEFEFE;
+    transition: 500ms;
 }
 
 .form-login-container {
@@ -300,12 +295,16 @@ body::-webkit-scrollbar-track { /*scrollbar bg*/
     padding-bottom: 5px;
 }
 
-.form-login-container input {
+input {
     border: none;
+    outline: none;
+}
+
+.form-login-container input {
     line-height: 40px;
     font-family: 'Roboto';
     font-weight: 300;
-    font-size: 24px;
+    font-size: 24px; 
 }
 
 .form-login-container hr {
@@ -357,7 +356,6 @@ body::-webkit-scrollbar-track { /*scrollbar bg*/
     cursor: pointer;
 }
 
-
 /* END LOGIN FORM */
 
 .gradient-bg-faded {
@@ -371,6 +369,7 @@ body::-webkit-scrollbar-track { /*scrollbar bg*/
     right: 0px;
     background: linear-gradient(90deg, rgba(185, 148, 255, 0.5) 5.25%, rgba(245, 168, 255, 0.5) 34.83%, rgba(255, 186, 213, 0.5) 66.27%, rgba(119, 218, 232, 0.5) 95.38%);
     z-index: 9;
+    transition: 500ms;
 }
 
 /* On smaller screens, decrease text size */
@@ -413,7 +412,7 @@ body::-webkit-scrollbar-track { /*scrollbar bg*/
 
 /* END CONTENT */
 
-/* Begin footer */
+/* FOOTER  */
 footer {
     height: 80px;
     background: var(--color_footer);
@@ -454,4 +453,4 @@ footer div img {
         font-size: 16px;
     }
 }
-/* End footer */
+/* END FOOTER */

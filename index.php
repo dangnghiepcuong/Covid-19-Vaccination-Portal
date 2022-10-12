@@ -8,6 +8,18 @@
     <title>Cổng thông tin tiêm chủng Covid-19</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+    <!-- <script type="text/javascript">
+        function openLoginForm() {
+            document.getElementById("form-login").style.display = "block";
+            document.getElementById("gradient-bg-faded").style.display = "block";
+        }
+
+        function closeLoginForm() {
+            document.getElementById("form-login").style.display = "none";
+            document.getElementById("gradient-bg-faded").style.display = "none";
+        }
+    </script> -->
 </head>
 
 <body>
@@ -40,7 +52,7 @@
                     </ul>
                 </div>
                 <button class="btnLogin" id="btn-Login" onclick="openLoginForm()">Đăng nhập</btn>
-                    <script type="text/javascript" src="FE_interaction.js"></script>
+
             </div>
         </div>
     </div>
@@ -139,4 +151,6 @@
     </footer>
 </body>
 
+<script type="text/javascript" src="FE_interaction.js">
+</script>
 </html>
