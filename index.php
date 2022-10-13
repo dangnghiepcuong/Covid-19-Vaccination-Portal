@@ -6,20 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cổng thông tin tiêm chủng Covid-19</title>
+    <link rel="stylesheet" href="login_form.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="login_form.css">
+    <link rel="stylesheet" href="registration_account.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 
-    <!-- <script type="text/javascript">
-        function openLoginForm() {
-            document.getElementById("form-login").style.display = "block";
-            document.getElementById("gradient-bg-faded").style.display = "block";
-        }
-
-        function closeLoginForm() {
-            document.getElementById("form-login").style.display = "none";
-            document.getElementById("gradient-bg-faded").style.display = "none";
-        }
-    </script> -->
 </head>
 
 <body>
@@ -74,8 +66,8 @@
             <input type="password" name="password" required>
             <hr>
             <div class="btn-linked-page">
-                <a id="btn-ForgotPassword" href="#">Quên mật khẩu</a>
-                <a id="btn-CreateAccount" href="#">Tạo tài khoản</a>
+                <p id="btn-ForgotPassword" href="#">Quên mật khẩu</p>
+                <p id="btn-CreateAccount" onclick="closeLoginForm(), openRegAccForm()">Tạo tài khoản</p>
             </div>
             <br><br>
             <div class="btn-login">
@@ -88,8 +80,47 @@
     </div>
     <!-- END LOGIN FORM -->
 
+    <!-- REGISTRATION ACCOUNT FORM -->
+    
+    <div class="form-reg-acc" id="form-reg-acc">
+
+        <form action="/action_page.php" class="form-reg-acc-container">
+
+            <p class="form-reg-acc-btn-close" onclick="closeRegAccForm()">X</p>
+
+            <p class="form-title">Đăng ký</p>
+            <br><br>
+            <label for="phone_number"><b>Số điện thoại</b></label>
+            <input type="text" name="phone_number" required>
+            <hr>
+            <br><br>
+            <label for="password"><b>Mật khẩu</b></label>
+            <input type="password" name="password" required>
+            <hr>
+            <br><br>
+            <label for="repeat-password"><b>Nhập lại mật khẩu</b></label>
+            <input type="password" name="repeat-password" required>
+            <hr>
+            <br><br>
+            <div class="btn-reg-acc" >
+                <p>Đăng ký</p>
+            </div>
+            <br>
+
+        </form>
+
+    </div>    
+
+    <!-- END REGISTRATION ACCOUNT FORM -->
+
+    <!-- REGISTRATION PERSONAL INFO FORM -->
+
+
+    
+    <!-- END REGISTRATION PERSONAL INFO FORM -->
+
     <!-- COVER LOGIN FORM -->
-    <div class="gradient-bg-faded" id="gradient-bg-faded" onclick="closeLoginForm()"></div>
+    <div class="gradient-bg-faded" id="gradient-bg-faded" onclick="closeLoginForm(), closeRegAccForm()"></div>
 
 
     <!-- SLIDER -->
