@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cổng thông tin tiêm chủng Covid-19</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 
     <!-- <script type="text/javascript">
@@ -35,19 +35,19 @@
                 <div>
                     <ul>
                         <li>
-                            <a class="menuSection" href="#">Tin tức</a>
+                            <a class="menu-section" href="#">Tin tức</a>
                         </li>
 
                         <li>
-                            <a class="menuSection" href="#">Lịch tiêm</a>
+                            <a class="menu-section" href="#">Lịch tiêm</a>
                         </li>
 
                         <li>
-                            <a class="menuSection" href="#">Tiêm chủng</a>
+                            <a class="menu-section" href="#">Tiêm chủng</a>
                         </li>
 
                         <li>
-                            <a class="menuSection" href="#">Thống kê</a>
+                            <a class="menu-section" href="#">Thống kê</a>
                         </li>
                     </ul>
                 </div>
@@ -153,4 +153,5 @@
 
 <script type="text/javascript" src="FE_interaction.js">
 </script>
+
 </html>

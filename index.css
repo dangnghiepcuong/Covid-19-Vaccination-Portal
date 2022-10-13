@@ -112,11 +112,11 @@ body::-webkit-scrollbar-track { /*scrollbar bg*/
     padding-left: 10px;
 }
 
-.menuSection {
+.menu-section {
     transition: 200ms;
 }
 
-.menuSection:hover {
+.menu-section:hover {
     color: white;
     /* text-shadow: 0 0 10px white; */
 }
