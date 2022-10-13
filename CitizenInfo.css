@@ -1,0 +1,363 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Arial";
+}
+
+/* variables */
+:root {
+    --bg_light_gradient: linear-gradient(90deg, #D1BFF3 5%, #FAD3FF 35%, #FFDFEC 65%, #BEF7FF 95%);
+    --color_header: #8C69CA;
+    --color_content: #000000;
+    /* --bgd_gradient: linear-gradient(90deg, #A084CA 2.5%, #F5A8FF 40%, #FFBAD5 60%, #77DAE8 97.5%); Cuong da thao tung dong nay*/
+    --bg_gradient: linear-gradient(90deg, #A084CA 2.5%, #F5A8FF 39.07%, #FFBAD5 66.96%, #77DAE8 95.6%);
+    --color_footer: #A084CA;
+}
+
+/* customize scrollbar */
+body::-webkit-scrollbar {
+    width: 10px;
+    /*vertical scrollbar width*/
+    height: 10px;
+    /*horizontal scrollbar height*/
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--color_header);
+    border-radius: 6px;
+}
+
+body::-webkit-scrollbar-track {
+    /*scrollbar bg*/
+    background: whitesmoke;
+}
+
+
+/* HEADER */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    padding-top: 8px;
+    background: var(--bg_light_gradient);
+}
+
+.header-alignment {
+    padding: 5px 4%;
+}
+
+.nav {
+    float: right;
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 0px;
+    justify-content: space-between;
+}
+
+.header-alignment .nav ul {
+    display: flex;
+}
+
+.nav li {
+    list-style: none;
+    padding-right: 50px;
+}
+
+.nav li a {
+    font-size: 20px;
+    color: var(--color_header);
+    text-decoration: none;
+}
+
+.header .btnLogin {
+    font-weight: 500px;
+    font-size: 20px;
+    line-height: 40px;
+    text-decoration: none;
+    color: white;
+    background: var(--color_footer);
+    padding: 0px 20px;
+    border-radius: 15px;
+    display: inline-block;
+    cursor: pointer;
+    transition: 300ms;
+    border: none;
+}
+
+.btnLogin:hover {
+    transform: translateY(-3px);
+    text-shadow: 0 0 5px #fff;
+}
+
+.header-alignment a {
+    display: inline-flex;
+    text-decoration: none;
+    align-items: center !important;
+}
+
+.header-alignment img {
+    mix-blend-mode: multiply;
+    max-height: 50px;
+    vertical-align: middle;
+}
+
+.header-alignment a .title {
+    font-weight: 550;
+    font-size: 24px;
+    line-height: 33px;
+    color: var(--color_header);
+    padding-left: 10px;
+}
+
+.menuSection {
+    transition: 200ms;
+}
+
+.menuSection:hover {
+    color: white;
+    /* text-shadow: 0 0 10px white; */
+}
+
+
+/* end header  */
+
+/* CONTENT */
+
+.content {
+    width: 100%;
+    height: 100%;
+    background: blue;
+}
+
+/* END CONTENT */
+
+/* gird view */
+@media (min-width: 0px) and (max-width: 560px) {
+    .nav div {
+        display: none;
+    }
+
+    .header-alignment a .title {
+        font-size: 14px;
+    }
+
+    .header .btnLogin {
+        font-size: 14px;
+        padding: 0px 5px;
+        line-height: 30px;
+    }
+
+    .header-alignment {
+        padding: 5px 5px;
+    }
+
+    /* end grid view for header */
+
+}
+
+@media (min-width: 0px) and (max-width: 888px) {
+    .nav div {
+        display: none;
+    }
+
+    .header-alignment a .title {
+        font-size: 15px;
+    }
+
+    .header .btnLogin {
+        font-size: 14px;
+        padding: 0px 15px;
+        line-height: 40px;
+    }
+
+    /* end grid view for header */
+
+    .slider div .slider_dot {
+        width: 5px;
+        height: 5px;
+    }
+
+}
+
+@media (min-width: 740px) and (max-width: 1024px) {
+    .header-alignment a .title {
+        font-size: 15px;
+    }
+
+    .header .btnLogin {
+        font-size: 14px;
+        padding: 0px 15px;
+        line-height: 40px;
+    }
+
+    .nav li a {
+        font-size: 14px;
+    }
+
+    .nav li {
+        padding-right: 20px;
+    }
+
+    /* end grid view for header */
+
+
+}
+
+@media (min-width: 1024px) and (max-width: 1239px) {
+    .header-alignment a .title {
+        font-size: 18px;
+    }
+
+    .header.btnLogin {
+        font-size: 18px;
+        padding: 0px 15px;
+        line-height: 35px;
+    }
+
+    .nav li a {
+        font-size: 16px;
+    }
+
+    .nav li {
+        padding-right: 25px;
+    }
+
+    /* end grid view for header */
+
+
+
+}
+
+/* end gird view  */
+
+/* NAV-CITIZEN-INFO */
+.nav-citizen-info {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    left: 0px;
+    top: 110px;
+    background: rgba(224, 202, 238, 0.32);
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-citizen-info .label {
+    padding-left: 5%;
+    font-weight: 550;
+    font-size: 20px;
+    line-height: 65px;
+    text-align: center;
+    color: black;
+}
+
+.nav-citizen-info .directory {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 22px;
+}
+
+.nav-citizen-info .directory-selected {
+    padding-right: 5%;
+    color: #167CDB;
+}
+
+.nav-citizen-info .alignment-side {
+    height: 100%;
+    width: 8%;
+}
+
+.nav-citizen-info .alignment-center {
+    height: 100%;
+    width: 50%;
+}
+
+
+/* end NAV-CITIZEN-INFO */
+
+
+/* CONTENT */
+
+.content {
+    height: 600px;
+    margin-top: 20px;
+    background: whitesmoke;
+    display: flex;
+    justify-content: space-between;
+}
+
+.content .content-box {
+    height: 100%;
+    width: 20%;
+    background: white;
+    /* border-radius: 5%; */
+    transition: 300ms;
+}
+
+.content-alignment-side {
+    width: 5%;
+}
+
+.content .content-box:hover {
+    box-shadow: 2px 2px 7px -2px black;
+}
+
+.content-below {
+    height: 50px;
+    background: whitesmoke;
+}
+
+/* END CONTENT */
+
+/* FOOTER  */
+footer {
+    height: 80px;
+    background: var(--color_footer);
+    width: 100%;
+    bottom: 0px;
+    padding: 5px 5px;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+
+.footer-content {
+    color: white;
+    font-size: 14px;
+}
+
+
+footer div img {
+    max-height: 70px;
+}
+
+/* .footer-alignment-side {
+    width: 50px;
+} */
+
+@media (min-width:0px) and (max-width:1445px) {
+    footer p {
+        margin-right: 50px;
+    }
+
+    footer div {
+        padding: 0 3% 0 5%;
+    }
+}
+
+@media (min-width:0px) and (max-width:1247px) {
+    footer p {
+        font-size: 16px;
+    }
+}
+
+/* END FOOTER */
