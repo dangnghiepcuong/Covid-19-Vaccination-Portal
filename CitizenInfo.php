@@ -19,39 +19,36 @@
             </a>
 
             <div class="nav">
-                <div>
                     <ul>
                         <li>
-                            <a class="menuSection" href="#">Tin tức</a>
+                            <a class="menu-section" href="#">Tin tức</a>
                         </li>
 
                         <li>
-                            <a class="menuSection" href="#">Khai báo</a>
+                            <a class="menu-section" href="#">Khai báo</a>
                         </li>
 
                         <li>
-                            <a class="menuSection" href="#">Tiêm chủng</a>
+                            <a class="menu-section" href="#">Tiêm chủng</a>
                         </li>
 
                     </ul>
-                </div>
-                <div class="Avatar-Citizen">
-                    <a href="CitizenInfo.php">
-                        <img src="image/Avatar-Citizen.png" alt="Logo công dân">
-                    </a>
-                </div>
+                <a class="Avatar-Citizen" href="CitizenInfo.php">
+                    <img src="image/Avatar-Citizen.png" alt="Logo công dân">
+                </a>
             </div>
         </div>
     </div>
 
     <div class="nav-citizen-info">
         <div class="label">Thông tin công dân</div>
-        <div class="alignment-center"></div>
-        <div class="directory">Trang chủ</div>
-        <div class="directory">/</div>
-        <div class="directory">Công dân</div>
-        <div class="directory">/</div>
-        <div class="directory directory-selected" >Thông tin công dân</div>
+        <div class="directory">
+            <div class="page">Trang chủ</div>
+            <div class="page">/</div>
+            <div class="page">Công dân</div>
+            <div class="page">/</div>
+            <div class="page page-selected">Thông tin công dân</div>
+        </div>
     </div>
 
     <div>
