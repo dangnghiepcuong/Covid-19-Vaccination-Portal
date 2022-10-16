@@ -278,6 +278,7 @@ body::-webkit-scrollbar-track {
     position: absolute;
     border-style: solid;
     border: 1px #8C69CA;
+
     border-radius: 20px;
     background: lightgrey;
 }
