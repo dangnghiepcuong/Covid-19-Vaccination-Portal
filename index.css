@@ -43,6 +43,7 @@ body::-webkit-scrollbar-track { /*scrollbar bg*/
     height: 80px;
     padding-top: 8px;
     background: var(--bg_light_gradient);
+    align-items: center;
 }
 
 .header-alignment{

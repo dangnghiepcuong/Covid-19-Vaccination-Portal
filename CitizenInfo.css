@@ -46,6 +46,7 @@ body::-webkit-scrollbar-track {
     height: 80px;
     padding-top: 8px;
     background: var(--bg_light_gradient);
+    align-items: center;
 }
 
 .header-alignment {
@@ -115,11 +116,11 @@ body::-webkit-scrollbar-track {
     padding-left: 10px;
 }
 
-.menuSection {
+.menu-section {
     transition: 200ms;
 }
 
-.menuSection:hover {
+.menu-section:hover {
     color: white;
     /* text-shadow: 0 0 10px white; */
 }
@@ -250,7 +251,7 @@ body::-webkit-scrollbar-track {
 }
 
 .nav-citizen-info .label {
-    padding-left: 5%;
+    padding-left: 10%;
     font-weight: 550;
     font-size: 20px;
     line-height: 65px;
@@ -259,6 +260,12 @@ body::-webkit-scrollbar-track {
 }
 
 .nav-citizen-info .directory {
+    display: flex;
+    align-items: center;
+    padding-right: 10%;
+}
+
+.nav-citizen-info .page {
     font-family: 'Lato';
     font-style: normal;
     font-weight: 400;
@@ -266,8 +273,7 @@ body::-webkit-scrollbar-track {
     line-height: 22px;
 }
 
-.nav-citizen-info .directory-selected {
-    padding-right: 5%;
+.nav-citizen-info .page-selected {
     color: #167CDB;
 }
 
