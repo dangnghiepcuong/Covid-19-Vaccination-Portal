@@ -51,15 +51,11 @@
 
     <div class="holder-function-panel">
         <div class="function-panel">
-            <div class="function-title">
-                Tiêm chủng
-            </div>
             <div class="filter-panel">
                 <div class="filter-region">
                     <label for="province-name">Tỉnh/Thành phố</label>
                     <select type="text" name="province-name">
                         <!-- PHP CODE -->
-                        <option value=""></option>
                     </select>
                     
                     
@@ -77,12 +73,12 @@
                     <button class="filter-button">Tìm kiếm</button>
                 </div>
                 <div class="filter-vaccine-time">
-                    <label for="district-name">Vaccine</label>
+                    <label for="district-name"></label>
                     <select type="text" name="district-name">
                         <!-- PHP CODE -->
                     </select>
 
-                    <label for="town-name">Buổi</label>
+                    <label for="town-name"></label>
                     <select type="drop-down" name="town-name">
                         <!-- PHP CODE -->
                     </select>
