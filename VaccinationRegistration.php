@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="FunctionalPages.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <title>Tiêm chủng</title>
 </head>
 
@@ -40,28 +41,29 @@
     </div>
     <!-- END HEADER -->
 
+    <!-- DIRECTORY NAVIGATOR -->
     <div class="nav-func-pages">
-        <div class="nav-func-title">Đăng ký tiêm chủng</div>
+        <div class="nav-func-title"><a href="VaccinationRegistration.php">Đăng ký tiêm chủng</a></div>
         <div class="nav-directory">
-            <div class="directory">Trang chủ</div>
-            <div class="dicrectory">/</div>
-            <div class="directory-selected">Đăng ký tiêm chủng</div>
+            <div class="directory"><a href="index.php">Trang chủ</a></div>
+            <div class="dicrectory">&nbsp;/&nbsp;</div>
+            <div class="directory-selected"><a href="VaccinationRegistration.php">Đăng ký tiêm chủng</a></div>
         </div>
     </div>
 
     <div class="holder-function-panel">
-        <div class="function-panel">
-        <div class="function-title">
+        
+    <div class="function-title">
                 Tiêm chủng
             </div>
+        <div class="function-panel">
+            
             <div class="filter-panel">
-                <div class="filter-region">
+                <div class="filter">
                     <label for="province-name">Tỉnh/Thành phố</label>
                     <select type="text" name="province-name">
                         <!-- PHP CODE -->
                     </select>
-                    
-
 
                     <label for="district-name">Quận/Huyện/Thị xã</label>
                     <select type="text" name="district-name">
@@ -73,9 +75,9 @@
                         <!-- PHP CODE -->
                     </select>
 
-                    <button class="filter-button">Tìm kiếm</button>
+                    <button class="button-filter"><img src="image/button-filter.png">Tìm kiếm</button>
                 </div>
-                <div class="filter-vaccine-time">
+                <div class="filter">
                     <label for="district-name">Vaccine</label>
                     <select type="text" name="district-name">
                         <!-- PHP CODE -->
@@ -86,7 +88,7 @@
                         <!-- PHP CODE -->
                     </select>
 
-                    <button class="filter-button">Tìm kiếm</button>
+                    <button class="button-filter"><img src="image/button-filter.png">Tìm kiếm</button>
                 </div>
             </div>
             <div class="list-schedule-panel"></div>
