@@ -20,16 +20,19 @@ html {
 
 /* customize scrollbar */
 body::-webkit-scrollbar {
-    width: 10px; /*vertical scrollbar width*/
-    height: 10px; /*horizontal scrollbar height*/
+    width: 10px;
+    /*vertical scrollbar width*/
+    height: 10px;
+    /*horizontal scrollbar height*/
 }
 
 body::-webkit-scrollbar-thumb {
-    background: var(--color_header); 
+    background: var(--color_header);
     border-radius: 6px;
 }
 
-body::-webkit-scrollbar-track { /*scrollbar bg*/
+body::-webkit-scrollbar-track {
+    /*scrollbar bg*/
     background: whitesmoke;
 }
 
@@ -43,9 +46,10 @@ body::-webkit-scrollbar-track { /*scrollbar bg*/
     height: 80px;
     padding-top: 8px;
     background: var(--bg_light_gradient);
+    align-items: center;
 }
 
-.header-alignment{
+.header-alignment {
     padding: 5px 4%;
 }
 
@@ -61,7 +65,7 @@ body::-webkit-scrollbar-track { /*scrollbar bg*/
     display: flex;
 }
 
-.nav li{
+.nav li {
     list-style: none;
     padding-right: 50px;
 }
@@ -95,7 +99,7 @@ body::-webkit-scrollbar-track { /*scrollbar bg*/
 .header-alignment a {
     display: inline-flex;
     text-decoration: none;
-    align-items: center!important;
+    align-items: center !important;
 }
 
 .header-alignment img {
@@ -112,11 +116,11 @@ body::-webkit-scrollbar-track { /*scrollbar bg*/
     padding-left: 10px;
 }
 
-.menuSection {
+.menu-section {
     transition: 200ms;
 }
 
-.menuSection:hover {
+.menu-section:hover {
     color: white;
     /* text-shadow: 0 0 10px white; */
 }
@@ -124,8 +128,18 @@ body::-webkit-scrollbar-track { /*scrollbar bg*/
 
 /* end header  */
 
+/* CONTENT */
+
+.content {
+    width: 100%;
+    height: 100%;
+    background: blue;
+}
+
+/* END CONTENT */
+
 /* gird view */
-@media (min-width: 0px) and (max-width: 560px){
+@media (min-width: 0px) and (max-width: 560px) {
     .nav div {
         display: none;
     }
@@ -143,6 +157,7 @@ body::-webkit-scrollbar-track { /*scrollbar bg*/
     .header-alignment {
         padding: 5px 5px;
     }
+
     /* end grid view for header */
 
 }
@@ -161,6 +176,7 @@ body::-webkit-scrollbar-track { /*scrollbar bg*/
         padding: 0px 15px;
         line-height: 40px;
     }
+
     /* end grid view for header */
 
     .slider div .slider_dot {
@@ -188,6 +204,7 @@ body::-webkit-scrollbar-track { /*scrollbar bg*/
     .nav li {
         padding-right: 20px;
     }
+
     /* end grid view for header */
 
 
@@ -211,172 +228,67 @@ body::-webkit-scrollbar-track { /*scrollbar bg*/
     .nav li {
         padding-right: 25px;
     }
+
     /* end grid view for header */
 
 
 
 }
+
 /* end gird view  */
 
-/* SLIDER */
-.slider {
-    margin-top: 80px;
-}
-
-.slideshow-container {
-  max-width: 90%;
-  margin: auto;
-}
-
-.slider img{
-    transition: 300ms;
-}
-
-.slider .frame-slider_dot {
-    margin-top: 15px;
-}
-
-/* The dots/bullets/indicators */
-.slider_dot {
-  height: 12px;
-  width: 12px;
-  margin: 0 2px;
-  background-color: #E4D4FE;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.active {
-  background-color: #A07AD1;
-}
-
-
-/* LOGIN FORM */
-
-.form-login {
-    display: none;
-    z-index: 10;
-    position: fixed;
-    width: 400px;
-    height: 500px;
-    left: 37%;
-    top: 15%;
-    border-radius: 40px 40px 40px 40px;
-    background: #FEFEFE;
-    transition: 500ms;
-}
-
-.form-login-container {
-    display: grid;
-    max-width: 400px;
-    border-radius: 40px 40px 40px 40px;
-    background-color: white;
-    padding: 30px 50px 20px 50px;
-    align-items: center;
-    text-align: left;
-    font-family: 'Roboto';
-    font-style: thin;
-}
-
-.form-login-container .form-title {
-    padding-top: 10px;
-    color: #000000;
-    text-align: center;
-    font-weight: 500;
-    font-size: 32px;
-    line-height: 41px;
-}
-
-.form-login-container label {
-    font-weight: 200;
-    font-size: 20px;
-    line-height: 20px;
-    padding-bottom: 5px;
-}
-
-input {
-    border: none;
-    outline: none;
-}
-
-.form-login-container input {
-    line-height: 40px;
-    font-family: 'Roboto';
-    font-weight: 300;
-    font-size: 24px; 
-}
-
-.form-login-container hr {
-    background: linear-gradient(90deg, #A084CA 2.5%, #F5A8FF 39.07%, #FFBAD5 66.96%, #77DAE8 95.6%);
-    height: 1px;
-    border: none;
-}
-
-.btn-linked-page {
-    padding-top: 20px;
+/* NAV-CITIZEN-INFO */
+.nav-citizen-info {
     display: flex;
-    justify-content: space-between;
-    text-decoration: none;
-    font-size: 18px;
-    color: #77DAE8;
-}
-
-.btn-linked-page a {
-    text-decoration: none;
-    font-weight: 300;
-}
-
-.form-login-container .btn-login {
+    position: absolute;
     width: 100%;
-    height: 40px;
-    justify-self: center;
-    border: none;
-    border-radius: 20px;
-    background: linear-gradient(90deg, #A084CA 2.5%, #F5A8FF 39.07%, #FFBAD5 66.96%, #77DAE8 95.6%);
-    text-align: center;
-    color: white;
-    font-weight: 300;
-    font-size: 24px;
-    cursor: pointer;
-    transition: 200ms;
-}
-
-.form-login-container .btn-login:hover {
-    opacity: 0.8;
-    /* transform: translateY(-3); */
-}
-
-.form-login-btn-close {
-    width: 18px;
-    justify-self: right;
-    font-weight: 100;
-    font-size: 24px;
-    text-align: center;
-    cursor: pointer;
-}
-
-/* END LOGIN FORM */
-
-.gradient-bg-faded {
-    display: none;
-    position: fixed;
-    width: 100%;
-    height: 100%;
+    height: 60px;
     left: 0px;
-    top: 0px;
-    bottom: 0px;
-    right: 0px;
-    background: linear-gradient(90deg, rgba(185, 148, 255, 0.5) 5.25%, rgba(245, 168, 255, 0.5) 34.83%, rgba(255, 186, 213, 0.5) 66.27%, rgba(119, 218, 232, 0.5) 95.38%);
-    z-index: 9;
-    transition: 500ms;
+    top: 110px;
+    background: rgba(224, 202, 238, 0.32);
+    align-items: center;
+    justify-content: space-between;
 }
 
-/* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-
+.nav-citizen-info .label {
+    padding-left: 10%;
+    font-weight: 550;
+    font-size: 20px;
+    line-height: 65px;
+    text-align: center;
+    color: black;
 }
-/* end slider  */
+
+.nav-citizen-info .directory {
+    display: flex;
+    align-items: center;
+    padding-right: 10%;
+}
+
+.nav-citizen-info .page {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 22px;
+}
+
+.nav-citizen-info .page-selected {
+    color: #167CDB;
+}
+
+.nav-citizen-info .alignment-side {
+    height: 100%;
+    width: 8%;
+}
+
+.nav-citizen-info .alignment-center {
+    height: 100%;
+    width: 50%;
+}
+
+
+/* end NAV-CITIZEN-INFO */
 
 
 /* CONTENT */
@@ -389,7 +301,7 @@ input {
     justify-content: space-between;
 }
 
-.content .content-box{
+.content .content-box {
     height: 100%;
     width: 20%;
     background: white;
@@ -453,4 +365,5 @@ footer div img {
         font-size: 16px;
     }
 }
+
 /* END FOOTER */
