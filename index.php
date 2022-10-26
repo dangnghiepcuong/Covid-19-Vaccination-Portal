@@ -49,9 +49,9 @@
     <!-- LOGIN FORM -->
     <div class="form-login" id="form-login">
 
-        <form action="/action_page.php" class="form-login-container">
+        <form action="/action_page.php" class="form-container">
 
-            <p class="form-login-btn-close" onclick="closeLoginForm()">X</p>
+            <p class="form-btn-close" onclick="closeLoginForm()">X</p>
 
             <p class="form-title">Đăng nhập</p>
             <br><br>
@@ -62,15 +62,14 @@
             <label for="password"><b>Mật khẩu</b></label>
             <input type="password" name="password" required>
             <hr>
-            <div class="btn-linked-page">
+            <div class="btn-linked-page page-reg-acc page-forgot-pass">
                 <p id="btn-ForgotPassword" href="#">Quên mật khẩu</p>
                 <p id="btn-CreateAccount" onclick="closeLoginForm(), openRegAccForm()">Tạo tài khoản</p>
             </div>
             <br><br>
-            <div class="btn-login">
+            <div class="long-btn" id="btn-login">
                 <p>Đăng nhập</p>
             </div>
-            <br>
 
         </form>
 
@@ -78,12 +77,12 @@
     <!-- END LOGIN FORM -->
 
     <!-- REGISTRATION ACCOUNT FORM -->
-    
+
     <div class="form-reg-acc" id="form-reg-acc">
 
-        <form action="/action_page.php" class="form-reg-acc-container">
+        <form action="/action_page.php" class="form-container">
 
-            <p class="form-reg-acc-btn-close" onclick="closeRegAccForm()">X</p>
+            <p class="form-btn-close" onclick="closeRegAccForm()">X</p>
 
             <p class="form-title">Đăng ký</p>
             <br><br>
@@ -99,21 +98,24 @@
             <input type="password" name="repeat-password" required>
             <hr>
             <br><br>
-            <div class="btn-reg-acc" >
+            <div class="long-btn" id="btn-reg-acc">
                 <p>Đăng ký</p>
+            </div>
+            <div class="btn-linked-page page-login">
+                <p id="btn-login" onclick="closeRegAccForm(), openLoginForm()">Đăng nhập</p>
             </div>
             <br>
 
         </form>
 
-    </div>    
+    </div>
 
     <!-- END REGISTRATION ACCOUNT FORM -->
 
     <!-- REGISTRATION PERSONAL INFO FORM -->
 
 
-    
+
     <!-- END REGISTRATION PERSONAL INFO FORM -->
 
     <!-- COVER LOGIN FORM -->
@@ -181,4 +183,5 @@
 
 <script type="text/javascript" src="FE_interaction.js">
 </script>
+
 </html>

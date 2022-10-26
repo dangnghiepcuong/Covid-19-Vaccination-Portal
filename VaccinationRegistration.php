@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="FunctionalPages.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <title>Tiêm chủng</title>
 </head>
 
@@ -34,63 +33,98 @@
                         </li>
                     </ul>
                 </div>
-                <button class="btnLogin" id="btn-Login" onclick="openLoginForm()">Đăng nhập</btn>
+                <a href="#"><img src="image/Avatar-Citizen.png" alt=""></a>
 
             </div>
         </div>
     </div>
     <!-- END HEADER -->
 
-    <!-- DIRECTORY NAVIGATOR -->
     <div class="nav-func-pages">
-        <div class="nav-func-title"><a href="VaccinationRegistration.php">Đăng ký tiêm chủng</a></div>
+        <div class="nav-func-title">
+            <a href="VaccinationRegistration.php">Đăng ký tiêm chủng</a>
+        </div>
         <div class="nav-directory">
-            <div class="directory"><a href="index.php">Trang chủ</a></div>
+            <div class="directory">
+                <a href="index.php">Trang chủ</a>
+            </div>
             <div class="dicrectory">&nbsp;/&nbsp;</div>
-            <div class="directory-selected"><a href="VaccinationRegistration.php">Đăng ký tiêm chủng</a></div>
+            <div class="directory-selected">
+                <a href="VaccinationRegistration.php">Đăng ký tiêm chủng</a>
+            </div>
         </div>
     </div>
 
     <div class="holder-function-panel">
-        
-    <div class="function-title">
+        <div class="function-panel">
+            <br>
+            <div class="function-title-bg"></div>
+            <div class="function-title">
                 Tiêm chủng
             </div>
-        <div class="function-panel">
-            
+            <br><br>
             <div class="filter-panel">
-                <div class="filter">
+                <div class="filter-region">
                     <label for="province-name">Tỉnh/Thành phố</label>
                     <select type="text" name="province-name">
                         <!-- PHP CODE -->
+                        <option value=""></option>
+                        <option value="">Bình Dương</option>
+                        <option value="">Đồng Nai</option>
+                        <option value="">Hồ Chí Minh</option>
                     </select>
-
                     <label for="district-name">Quận/Huyện/Thị xã</label>
                     <select type="text" name="district-name">
                         <!-- PHP CODE -->
+                        <option value=""></option>
+                        <option value="">Bình Dương</option>
+                        <option value="">Đồng Nai</option>
+                        <option value="">Hồ Chí Minh</option>
                     </select>
 
                     <label for="town-name">Xã/Phường/Thị trấn</label>
                     <select type="drop-down" name="town-name">
                         <!-- PHP CODE -->
+                        <option value=""></option>
+                        <option value="">Bình Dương</option>
+                        <option value="">Đồng Nai</option>
+                        <option value="">Hồ Chí Minh</option>
                     </select>
-
-                    <button class="button-filter"><img src="image/button-filter.png">Tìm kiếm</button>
+                    <button class="filter-button">
+                        <img src="image/filter-magnifier.png" alt="filter-magnifier">
+                        Tìm kiếm
+                    </button>
                 </div>
-                <div class="filter">
-                    <label for="district-name">Vaccine</label>
-                    <select type="text" name="district-name">
+
+
+                <div class="filter-vaccine-time">
+                    <label for="vaccine">Vaccine</label>
+                    <select type="text" name="vaccine">
                         <!-- PHP CODE -->
+                        <option value=""></option>
+                        <option value="">AstraZeneca</option>
+                        <option value="">Comirnaty</option>
+                        <option value="">Verro Cell</option>
+                    </select>
+                    <div class="center-alignment"></div>
+                    <label for="time">Buổi</label>
+                    <select type="drop-down" name="time">
+                        <!-- PHP CODE -->
+                        <option value=""></option>
+                        <option value="">Sáng</option>
+                        <option value="">Chiều</option>
+                        <option value="">Tối</option>
                     </select>
 
-                    <label for="town-name">Buổi</label>
-                    <select type="drop-down" name="town-name">
-                        <!-- PHP CODE -->
-                    </select>
-
-                    <button class="button-filter"><img src="image/button-filter.png">Tìm kiếm</button>
+                    <button class="filter-button">
+                        <img src="image/filter-magnifier.png" alt="filter-magnifier">
+                        Tìm kiếm
+                    </button>
                 </div>
             </div>
+
+            <br><br>
+
             <div class="list-schedule-panel"></div>
         </div>
     </div>
