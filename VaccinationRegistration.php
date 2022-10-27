@@ -48,7 +48,15 @@
             <div class="directory">
                 <a href="index.php">Trang chủ</a>
             </div>
+
             <div class="dicrectory">&nbsp;/&nbsp;</div>
+
+            <div class="directory">
+                <a href="VaccinationRegistration.php">Tiêm chủng</a>
+            </div>
+
+            <div class="dicrectory">&nbsp;/&nbsp;</div>
+
             <div class="directory-selected">
                 <a href="VaccinationRegistration.php">Đăng ký tiêm chủng</a>
             </div>
@@ -58,11 +66,11 @@
     <div class="holder-function-panel">
         <div class="function-panel">
             <br>
-            <div class="function-title-bg"></div>
-            <div class="function-title">
+            <!--<div class="title-bg"></div>
+            <div class="title">
                 Tiêm chủng
             </div>
-            <br><br>
+            <br><br> -->
             <div class="filter-panel">
                 <div class="filter-region">
                     <label for="province-name">Tỉnh/Thành phố</label>
@@ -106,7 +114,7 @@
                         <option value="">Comirnaty</option>
                         <option value="">Verro Cell</option>
                     </select>
-                    <div class="center-alignment"></div>
+
                     <label for="time">Buổi</label>
                     <select type="drop-down" name="time">
                         <!-- PHP CODE -->
@@ -123,10 +131,174 @@
                 </div>
             </div>
 
-            <br><br>
+            <br>
 
-            <div class="list-schedule-panel"></div>
+            <div class="panel-list-schedule">
+                <div class="list-name">DANH SÁCH LỊCH TIÊM</div>
+                <div class="list-name" id="object-orgname">
+                    <!--PHP CODE-->Bệnh viện Đa khoa huyện Dầu Tiếng
+                </div>
+                <br>
+                <div class="holder">
+                    <div class="list-schedule" id="list-schedule-left">
+                        <!--PHP CODE-->
+                        <div class="schedule">
+                            <p class="obj-org-name">Bệnh viện Đa khoa huyện Dầu Tiếng</p>
+                            <div class="holder-obj-attr">
+                                <div class="obj-attr">
+                                    <p class="attr date">Lịch tiêm ngày: 24/11/2022</p>
+                                    <p class="attr vaccine">Vaccine: AstraZeneca</p>
+                                    <p class="attr serial">Serial: Chrysanthemum</p>
+                                </div>
+                                <div class="obj-attr">
+                                    <p class="attr daytime">Buổi sáng: 0/0</p>
+                                    <p class="attr noontime">Buổi trưa: 0/0</p>
+                                    <p class="attr nighttime">Buổi tối: 0/0</p>
+                                </div>
+                                <div class="interactive-area">
+                                    <select class="drop-down-time" name="" id="">
+                                        <option value="0">Sáng</option>
+                                        <option value="1">Trưa</option>
+                                        <option value="2">Tối</option>
+                                    </select>
+                                    <br>
+                                    <button class="btn-register">Đăng ký</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="schedule">
+                            <p class="obj-org-name">Bệnh viện Đa khoa huyện Dầu Tiếng</p>
+                            <div class="holder-obj-attr">
+                                <div class="obj-attr">
+                                    <p class="attr date">Lịch tiêm ngày: 24/11/2022</p>
+                                    <p class="attr vaccine">Vaccine: AstraZeneca</p>
+                                    <p class="attr serial">Serial: Chrysanthemum</p>
+                                </div>
+                                <div class="obj-attr">
+                                    <p class="attr daytime">Buổi sáng: 0/0</p>
+                                    <p class="attr noontime">Buổi trưa: 0/0</p>
+                                    <p class="attr nighttime">Buổi tối: 0/0</p>
+                                </div>
+                                <div class="interactive-area">
+                                    <select class="drop-down-time" name="" id="">
+                                        <option value="0">Sáng</option>
+                                        <option value="1">Trưa</option>
+                                        <option value="2">Tối</option>
+                                    </select>
+                                    <br>
+                                    <button class="btn-register">Đăng ký</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="schedule">
+                            <p class="obj-org-name">Bệnh viện Đa khoa huyện Dầu Tiếng</p>
+                            <div class="holder-obj-attr">
+                                <div class="obj-attr">
+                                    <p class="attr date">Lịch tiêm ngày: 24/11/2022</p>
+                                    <p class="attr vaccine">Vaccine: AstraZeneca</p>
+                                    <p class="attr serial">Serial: Chrysanthemum</p>
+                                </div>
+                                <div class="obj-attr">
+                                    <p class="attr daytime">Buổi sáng: 0/0</p>
+                                    <p class="attr noontime">Buổi trưa: 0/0</p>
+                                    <p class="attr nighttime">Buổi tối: 0/0</p>
+                                </div>
+                                <div class="interactive-area">
+                                    <select class="drop-down-time" name="" id="">
+                                        <option value="0">Sáng</option>
+                                        <option value="1">Trưa</option>
+                                        <option value="2">Tối</option>
+                                    </select>
+                                    <br>
+                                    <button class="btn-register">Đăng ký</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="list-schedule" id="list-schedule-right">
+                        <!--PHP CODE-->
+                        <div class="schedule">
+                            <p class="obj-org-name">Bệnh viện Đa khoa huyện Dầu Tiếng</p>
+                            <div class="holder-obj-attr">
+                                <div class="obj-attr">
+                                    <p class="attr date">Lịch tiêm ngày: 24/11/2022</p>
+                                    <p class="attr vaccine">Vaccine: AstraZeneca</p>
+                                    <p class="attr serial">Serial: Chrysanthemum</p>
+                                </div>
+                                <div class="obj-attr">
+                                    <p class="attr daytime">Buổi sáng: 0/0</p>
+                                    <p class="attr noontime">Buổi trưa: 0/0</p>
+                                    <p class="attr nighttime">Buổi tối: 0/0</p>
+                                </div>
+                                <div class="interactive-area">
+                                    <select class="drop-down-time" name="" id="">
+                                        <option value="0">Sáng</option>
+                                        <option value="1">Trưa</option>
+                                        <option value="2">Tối</option>
+                                    </select>
+                                    <br>
+                                    <button class="btn-register">Đăng ký</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="schedule">
+                            <p class="obj-org-name">Bệnh viện Đa khoa huyện Dầu Tiếng</p>
+                            <div class="holder-obj-attr">
+                                <div class="obj-attr">
+                                    <p class="attr date">Lịch tiêm ngày: 24/11/2022</p>
+                                    <p class="attr vaccine">Vaccine: AstraZeneca</p>
+                                    <p class="attr serial">Serial: Chrysanthemum</p>
+                                </div>
+                                <div class="obj-attr">
+                                    <p class="attr daytime">Buổi sáng: 0/0</p>
+                                    <p class="attr noontime">Buổi trưa: 0/0</p>
+                                    <p class="attr nighttime">Buổi tối: 0/0</p>
+                                </div>
+                                <div class="interactive-area">
+                                    <select class="drop-down-time" name="" id="">
+                                        <option value="0">Sáng</option>
+                                        <option value="1">Trưa</option>
+                                        <option value="2">Tối</option>
+                                    </select>
+                                    <br>
+                                    <button class="btn-register">Đăng ký</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="schedule">
+                            <p class="obj-org-name">Bệnh viện Đa khoa huyện Dầu Tiếng</p>
+                            <div class="holder-obj-attr">
+                                <div class="obj-attr">
+                                    <p class="attr date">Lịch tiêm ngày: 24/11/2022</p>
+                                    <p class="attr vaccine">Vaccine: AstraZeneca</p>
+                                    <p class="attr serial">Serial: Chrysanthemum</p>
+                                </div>
+                                <div class="obj-attr">
+                                    <p class="attr daytime">Buổi sáng: 0/0</p>
+                                    <p class="attr noontime">Buổi trưa: 0/0</p>
+                                    <p class="attr nighttime">Buổi tối: 0/0</p>
+                                </div>
+                                <div class="interactive-area">
+                                    <select class="drop-down-time" name="" id="">
+                                        <option value="0">Sáng</option>
+                                        <option value="1">Trưa</option>
+                                        <option value="2">Tối</option>
+                                    </select>
+                                    <br>
+                                    <button class="btn-register">Đăng ký</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
     </div>
 </body>
 
