@@ -39,6 +39,7 @@ body::-webkit-scrollbar-track {
 
 /* HEADER */
 .header {
+    z-index: 10;
     position: fixed;
     top: 0;
     left: 0;
@@ -232,7 +233,7 @@ body::-webkit-scrollbar-track {
     height: 50px;
     width: 100%;
     position: absolute;
-    top: 100px;
+    top: 80px;
     left: 0px;
     background: rgba(224, 202, 238, 0.32);
     display: flex;
@@ -264,12 +265,6 @@ body::-webkit-scrollbar-track {
     color: #167CDB;
 }
 
-/* .nav-directory a {
-}
-
-.nav-func-title a {
-    color: black;
-} */
 
 /* END NAVIGATOR FUNCTIONAL PAGES */
 
@@ -278,17 +273,19 @@ body::-webkit-scrollbar-track {
 .holder-function-panel {
     width: 100%;
     position: absolute;
-    top: 170px;
+    top: 150px;
     left: 0px;
     display: flex;
     justify-content: center;
+    background: #167CDB;
 }
 
-.function-title {
+.function-panel .title {
     width: 90%;
     margin: 5px auto;
     align-items: center;
-    background: rgba(255, 255, 255, 0.68);
+    background: rgba(255, 255, 255, 0.75);
+    /* background: white; */
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 600;
@@ -297,7 +294,7 @@ body::-webkit-scrollbar-track {
     text-align: center;
 }
 
-.function-title-bg {
+.function-panel .title-bg {
     z-index: -1;
     width: 100%;
     height: 20px;
@@ -310,7 +307,7 @@ body::-webkit-scrollbar-track {
 
 .function-panel {
     width: 80%;
-    height: 580px;
+    height: 590px;
     position: absolute;
     border-style: solid;
     border: 1px solid #8C69CA;
@@ -319,7 +316,8 @@ body::-webkit-scrollbar-track {
 
 .filter-panel {
     width: 90%;
-    margin: 0 auto; /* align div center*/
+    margin: 0 auto;
+    /* align div center*/
     box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
     font-family: 'Roboto';
     font-style: normal;
@@ -342,7 +340,7 @@ body::-webkit-scrollbar-track {
     font-size: 18px;
 }
 
-.filter-panel button {
+.filter-panel .filter-button {
     width: 120px;
     height: 34px;
     background: #FFFFFF;
@@ -357,26 +355,124 @@ body::-webkit-scrollbar-track {
     color: #A084CA;
     font-size: 16px;
     font-weight: 400px;
+
+    transition: 300ms;
+}
+
+.filter-panel button:hover {
+    box-shadow: 2px 2px 5px -2px black;
 }
 
 .filter-region {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 30px;
+    padding: 10px 0px;
 }
 
 .filter-vaccine-time {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 30px;
+    padding: 10px 0px;
 }
 
-.list-schedule-panel {
+.panel-list-schedule {
     width: 100%;
-    height: 280px;
-    background-color: #BEF7FF;
+    height: 445x;
 }
 
+.panel-list-schedule .list-name {
+    color: #8C69CA;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+}
+
+.panel-list-schedule .list-schedule {
+    width: 95%;
+    height: 300px;
+    margin: 0 auto;
+}
+
+.panel-list-schedule .holder {
+    display: flex;
+    width: 95%;
+    height: 100%;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.panel-list-schedule .holder .list-schedule {
+    width: 45%;
+    height: 370px;
+}
+
+.panel-list-schedule .holder .list-schedule .schedule {
+    width: 100%;
+    height: 120px;
+    margin-bottom: 4px;
+    background-color: white;
+    box-shadow: 2px 2px 5px -2px #8C69CA;
+    transition: 300ms;
+}
+
+.panel-list-schedule .holder .list-schedule .schedule:hover {
+    box-shadow: 2px 2px 5px -1px black;
+}
+
+.panel-list-schedule .holder .list-schedule .schedule 
+.obj-org-name {
+    padding: 5px 0px 0px 15px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #D1BFF3;
+}
+
+.panel-list-schedule .holder .list-schedule .schedule 
+.holder-obj-attr {
+    display: flex;
+    justify-content: space-between;
+}
+
+.panel-list-schedule .holder .list-schedule .schedule 
+.holder-obj-attr .obj-attr, .interactive-area {
+    padding: 5px 10px 5px 15px;
+}
+
+.panel-list-schedule .holder .list-schedule .schedule 
+.holder-obj-attr .obj-attr * {
+    padding: 3px 0px;
+    font-family: 'Roboto';
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 300;
+}
+
+.panel-list-schedule .holder .list-schedule .schedule 
+.holder-obj-attr .interactive-area * {
+    width: 80px;
+    height: 30px;
+    font-family: 'Roboto';
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.panel-list-schedule .holder .list-schedule .schedule 
+.holder-obj-attr .interactive-area .btn-register {
+    width: 120px;
+    height: 34px;
+    margin-top: 10px;
+    border-radius: 17px;
+    border: none;
+    background-color: #8C69CA;
+    color: white;
+    transition: 300ms;
+}
+
+.panel-list-schedule .holder .list-schedule .schedule 
+.holder-obj-attr .interactive-area .btn-register:hover {
+    box-shadow: 2px 2px 5px -2px black;
+}
 /* END FUNCTIONAL PANEL */
