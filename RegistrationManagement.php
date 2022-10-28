@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="SingleFunctionalPages.css">
+    <link rel="stylesheet" href="MultipleFunctionalPages.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="VaccinationRegistration.js"></script>
@@ -45,7 +45,7 @@
 
     <div class="nav-func-pages">
         <div class="nav-func-title">
-            <a href="VaccinationRegistration.php">Đăng ký tiêm chủng</a>
+            <a href="VaccinationRegistration.php">Lịch đăng ký tiêm chủng</a>
         </div>
         <div class="nav-directory">
             <div class="directory">
@@ -55,60 +55,49 @@
             <div class="dicrectory">&nbsp;/&nbsp;</div>
 
             <div class="directory">
-                <a href="VaccinationRegistration.php">Tiêm chủng</a>
+                <a href="VaccinationRegistration.php">Công dân</a>
             </div>
 
             <div class="dicrectory">&nbsp;/&nbsp;</div>
 
             <div class="directory-selected">
-                <a href="VaccinationRegistration.php">Đăng ký tiêm chủng</a>
+                <a href="VaccinationRegistration.php">Lịch đăng ký tiêm chủng</a>
             </div>
         </div>
     </div>
 
     <div class="holder-function-panel">
+        <div class="nav-panel">
+            <br><br>
+            <div class="title">Trang công dân</div>
+            <div class="title-bg"></div>
+            <br>
+            <div class="menu">
+                <ul class="list">
+                    <br>
+                    <li>Thông tin tài khoản</li><br>
+                    <li>Thông tin công dân</li><br>
+                    <li>Lịch đăng ký tiêm chủng</li><br>
+                    <li>Chứng nhận tiêm chủng</li><br>
+                    <li>Thêm người thân</li><br>
+                </ul>
+            </div>
+        </div>
+
         <div class="function-panel">
             <br>
-            <!--<div class="title-bg"></div>
-            <div class="title">
-                Tiêm chủng
-            </div>
-            <br><br> -->
             <div class="filter-panel">
-                <div class="filter-region">
-                    <label for="province-name">Tỉnh/Thành phố</label>
-                    <select type="text" name="province-name">
-                        <!-- PHP CODE -->
-                        <option value=""></option>
-                        <option value="">Bình Dương</option>
-                        <option value="">Đồng Nai</option>
-                        <option value="">Hồ Chí Minh</option>
-                    </select>
-                    <label for="district-name">Quận/Huyện/Thị xã</label>
-                    <select type="text" name="district-name">
-                        <!-- PHP CODE -->
-                        <option value=""></option>
-                        <option value="">Bình Dương</option>
-                        <option value="">Đồng Nai</option>
-                        <option value="">Hồ Chí Minh</option>
-                    </select>
-
-                    <label for="town-name">Xã/Phường/Thị trấn</label>
-                    <select type="drop-down" name="town-name">
-                        <!-- PHP CODE -->
-                        <option value=""></option>
-                        <option value="">Bình Dương</option>
-                        <option value="">Đồng Nai</option>
-                        <option value="">Hồ Chí Minh</option>
-                    </select>
-                    <button class="btn-filter">
-                        <img src="image/filter-magnifier.png" alt="filter-magnifier">
-                        Tìm kiếm
-                    </button>
-                </div>
-
-
                 <div class="filter-vaccine-time">
+                    <label for="status">Trạng thái</label>
+                    <select type="text" name="status">
+                        <!-- PHP CODE -->
+                        <option value=""></option>
+                        <option value="">Đã đăng ký</option>
+                        <option value="">Đã điểm danh</option>
+                        <option value="">Đã tiêm</option>
+                        <option value="">Đã hủy</option>
+                    </select>
+
                     <label for="vaccine">Vaccine</label>
                     <select type="text" name="vaccine">
                         <!-- PHP CODE -->
@@ -137,10 +126,10 @@
             <br>
 
             <div class="panel-list-schedule">
-                <div class="list-name">DANH SÁCH LỊCH TIÊM</div>
-                <div class="list-name" id="object-orgname">
-                    <!--PHP CODE-->Bệnh viện Đa khoa huyện Dầu Tiếng
-                </div>
+                <div class="list-name">DANH CÁC LƯỢT ĐĂNG KÝ TIÊM CHỦNG</div>
+                <!-- <div class="list-name" id="object-orgname">
+                   Bệnh viện Đa khoa huyện Dầu Tiếng
+                </div> -->
                 <br>
                 <div class="holder">
                     <div class="list-schedule" id="list-schedule-left">
