@@ -402,6 +402,7 @@ body::-webkit-scrollbar-track {
     height: 100%;
     margin: 0 auto;
     justify-content: space-between;
+    background-color: #000000;
 }
 
 .panel-list-schedule .holder .list-schedule {
