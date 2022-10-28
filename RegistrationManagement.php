@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="MultipleFunctionalPages.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="VaccinationRegistration.js"></script>
+    <script src="RegistrationManagement.js"></script>
     <title>Tiêm chủng</title>
 </head>
 
@@ -85,6 +85,14 @@
         </div>
 
         <div class="function-panel">
+            <br>    
+            <div class="target-citizen">
+                <p>Đối tượng: </p>
+                <select name="" id="">
+                    <option value="">Đặng Nghiệp Cường</option>
+                    <option value="">Đỗ Thị Cúc Hoa</option>
+                </select>
+            </div>
             <br>
             <div class="filter-panel">
                 <div class="filter-vaccine-time">
@@ -140,53 +148,52 @@
                                 <div class="obj-attr">
                                     <p class="attr-address">Đ/c: Bình Dương, Dầu Tiếng, Dầu Tiếng, Hùng Vương</p>
                                     <p class="attr-date-time-no">Lịch tiêm ngày: 24/11/2022 Buổi Sáng STT: 1</p>
-                                    <p class="attr-serial">Vaccine: AstraZeneca - Chrysanthemum Tình trạng: Đã tiêm</p>
+                                    <p class="attr-vaccine-serial">Vaccine: AstraZeneca - Chrysanthemum Tình trạng: Đã tiêm</p>
                                 </div>
 
                                 <div class="interactive-area">
-                                    <button class="btn-cancel">Hủy lịch</button>
+                                    <button class="btn-cancel-registration">Hủy lịch</button>
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="registration">
                             <p class="obj-org-name">Bệnh viện Đa khoa huyện Dầu Tiếng</p>
                             <div class="holder-obj-attr">
                                 <div class="obj-attr">
                                     <p class="attr-address">Đ/c: Bình Dương, Dầu Tiếng, Dầu Tiếng, Hùng Vương</p>
                                     <p class="attr-date-time-no">Lịch tiêm ngày: 24/11/2022 Buổi Sáng STT: 1</p>
-                                    <p class="attr-serial">Vaccine: AstraZeneca - Chrysanthemum Tình trạng: Đã tiêm</p>
+                                    <p class="attr-vaccine-serial">Vaccine: AstraZeneca - Chrysanthemum Tình trạng: Đã tiêm</p>
                                 </div>
 
                                 <div class="interactive-area">
-                                    <button class="btn-cancel">Hủy lịch</button>
+                                    <button class="btn-cancel-registration">Hủy lịch</button>
                                 </div>
                             </div>
                         </div>
+
+                        <div class="registration">
+                            <p class="obj-org-name">Bệnh viện Đa khoa huyện Dầu Tiếng</p>
+                            <div class="holder-obj-attr">
+                                <div class="obj-attr">
+                                    <p class="attr-address">Đ/c: Bình Dương, Dầu Tiếng, Dầu Tiếng, Hùng Vương</p>
+                                    <p class="attr-date-time-no">Lịch tiêm ngày: 24/11/2022 Buổi Sáng STT: 1</p>
+                                    <p class="attr-vaccine-serial">Vaccine: AstraZeneca - Chrysanthemum Tình trạng: Đã tiêm</p>
+                                </div>
+
+                                <div class="interactive-area">
+                                    <button class="btn-cancel-registration">Hủy lịch</button>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
 
-                    <!-- <div class="list-registration" id="list-registration-right">
-                        <div class="registration">
-                            <p class="obj-org-name">Bệnh viện Đa khoa huyện Dầu Tiếng</p>
-                            <div class="holder-obj-attr">
-                                <div class="obj-attr">
-                                    <p class="attr-address">Đ/c: Bình Dương, Dầu Tiếng, Dầu Tiếng, Hùng Vương</p>
-                                    <p class="attr-date-time-no">Lịch tiêm ngày: 24/11/2022 Buổi Sáng STT: 1</p>
-                                    <p class="attr-serial">Vaccine: AstraZeneca - Chrysanthemum Tình trạng: Đã tiêm</p>
-                                </div>
-
-                                <div class="interactive-area">
-                                    <button class="btn-cancel">Hủy lịch</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
                 </div>
             </div>
 
             <div class="popup-confirm-form">
                 <p class="form-message"></p>
-                <br>
                 <div class="form-btn-submit">
                     <button class="btn-confirm">Xác nhận</button>
                     <button class="btn-cancel">Hủy</button>
