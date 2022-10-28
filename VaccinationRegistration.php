@@ -69,11 +69,6 @@
     <div class="holder-function-panel">
         <div class="function-panel">
             <br>
-            <!--<div class="title-bg"></div>
-            <div class="title">
-                Tiêm chủng
-            </div>
-            <br><br> -->
             <div class="filter-panel">
                 <div class="filter-region">
                     <label for="province-name">Tỉnh/Thành phố</label>
