@@ -82,7 +82,7 @@
         </div>
 
         <div class="function-panel">
-            <br><br>
+            <br>
             <div class="panel-target-citizen">
                 <p>Đối tượng: </p>
                 <select name="" id="">
@@ -93,12 +93,53 @@
             <br>
 
             <div class="panel-form-medical">
-                <div class="holder">
+                <div class="form-medical">
+                    <label for="input_date">Ngày thực hiện khai báo:
+                    </label>
+                    <input type="date" id="input_date">
 
+                    <p>Trong vòng 14 ngày qua, Anh/Chị có thấy xuất hiện ít nhất 1 tong các dấu hiệu:
+                        ho, khó thở, viêm phổi, đau họng, mệt mỏi không?
+                    </p>
+                    <div class="form-btn-input">
+                        <label for="q1_no">Không</label>
+                        <input type="radio" name="q1" id="q1_no">
+                        <label for="q1_yes">Có</label>
+                        <input type="radio" name="q1" id="q1_yes">
+                    </div>
+
+                    <p>Trong vòng 14 ngày qua, Anh/Chị có tiếp xúc với Người bệnh hoặc nghi ngờ, mắc bệnh Covid-19 không?
+                    </p>
+                    <div class="form-btn-input">
+                        <label for="q2_no">Không</label>
+                        <input type="radio" name="q2" id="q2_no">
+                        <label for="q2_yes">Có</label>
+                        <input type="radio" name="q2" id="q2_yes">
+                    </div>
+
+                    <p>Anh/Chị có đang dương tính với Covid-19 không?
+                    </p>
+                    <div class="form-btn-input">
+                        <label for="q3_no">Không</label>
+                        <input type="radio" name="q3" id="q3_no">
+                        <label for="q3_yes">Có</label>
+                        <input type="radio" name="q3" id="q3_yes">
+                    </div>
+
+                    <p>Anh/Chị có đang là đối tượng trì hoẵn tiêm chủng vaccine Covid-19
+                        hoặc đang là đối tượng chống chỉ định tiêm chủng Covid-19 không?
+                    </p>
+                    <div class="form-btn-input">
+                        <label for="q4_no">Không</label>
+                        <input type="radio" name="q4" id="q4_no">
+                        <label for="q4_yes">Có</label>
+                        <input type="radio" name="q4" id="q4_yes">
+                    </div>
+                    <br>
+                    <div class="form-btn-input">
+                        <button class="btn-confirm" id="btn-submit-form-medical">Xác nhận</button>
+                    </div>
                 </div>
-
-
-
             </div>
         </div>
     </div>
