@@ -118,8 +118,8 @@
 
     <!-- END REGISTRATION PERSONAL INFO FORM -->
 
-    <!-- COVER LOGIN FORM -->
-    <div class="gradient-bg-faded" id="gradient-bg-faded" onclick="closeLoginForm(), closeRegAccForm()"></div>
+    <!-- FADED COVER -->
+    <div class="gradient-bg-faded" id="gradient-bg-faded"></div>
 
 
     <!-- SLIDER -->

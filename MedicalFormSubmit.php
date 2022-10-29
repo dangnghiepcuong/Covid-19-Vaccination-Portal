@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="MultipleFunctionalPages.css">
+    <link rel="stylesheet" href="MedicalFormSubmit.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="RegistrationManagement.js"></script>
-    <title>Tiêm chủng</title>
+    <title>Khai báo y tế</title>
 </head>
 
 <body>
@@ -83,7 +83,7 @@
 
         <div class="function-panel">
             <br><br>
-            <div class="target-citizen">
+            <div class="panel-target-citizen">
                 <p>Đối tượng: </p>
                 <select name="" id="">
                     <option value="">Đặng Nghiệp Cường</option>
@@ -92,25 +92,27 @@
             </div>
             <br>
 
-            <div class="panel-list-registration">
-
+            <div class="panel-form-medical">
                 <div class="holder">
+
                 </div>
 
-                <div class="popup-confirm-form">
-                    <p class="form-message"></p>
-                    <div class="form-btn-submit">
-                        <button class="btn-confirm">Xác nhận</button>
-                        <button class="btn-cancel">Hủy</button>
-                    </div>
-                </div>
 
-                <!-- COVER LOGIN FORM -->
-                <div class="gradient-bg-faded" id="gradient-bg-faded" onclick="closeLoginForm(), closeRegAccForm()"></div>
 
             </div>
         </div>
     </div>
+
+    <div class="popup-confirm-form">
+        <p class="form-message"></p>
+        <div class="form-btn-submit">
+            <button class="btn-confirm">Xác nhận</button>
+            <button class="btn-cancel">Hủy</button>
+        </div>
+    </div>
+
+    <!-- FADED COVER -->
+    <div class="gradient-bg-faded" id="gradient-bg-faded"></div>
 </body>
 
 </html>

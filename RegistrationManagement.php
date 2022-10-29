@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="MultipleFunctionalPages.css">
+    <link rel="stylesheet" href="RegistrationManagement.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="RegistrationManagement.js"></script>
-    <title>Tiêm chủng</title>
+    <title>Quản lý lượt đăng ký</title>
 </head>
 
 <body>
@@ -85,8 +85,8 @@
         </div>
 
         <div class="function-panel">
-            <br>    
-            <div class="target-citizen">
+            <br>
+            <div class="panel-target-citizen">
                 <p>Đối tượng: </p>
                 <select name="" id="">
                     <option value="">Đặng Nghiệp Cường</option>
@@ -98,7 +98,6 @@
                 <div class="filter-vaccine-time">
                     <label for="status">Trạng thái</label>
                     <select type="text" name="status">
-                        <!-- PHP CODE -->
                         <option value=""></option>
                         <option value="">Đã đăng ký</option>
                         <option value="">Đã điểm danh</option>
@@ -117,7 +116,6 @@
 
                     <label for="time">Buổi</label>
                     <select type="drop-down" name="time">
-                        <!-- PHP CODE -->
                         <option value=""></option>
                         <option value="">Sáng</option>
                         <option value="">Chiều</option>
@@ -140,7 +138,7 @@
                 </div> -->
                 <br>
                 <div class="holder">
-                    <div class="list-registration" id="list-registration-left">
+                    <div class="list-registration" id="list-registration">
                         <!--PHP CODE-->
                         <div class="registration">
                             <p class="obj-org-name">Bệnh viện Đa khoa huyện Dầu Tiếng</p>
@@ -192,20 +190,22 @@
                 </div>
             </div>
 
-            <div class="popup-confirm-form">
-                <p class="form-message"></p>
-                <div class="form-btn-submit">
-                    <button class="btn-confirm">Xác nhận</button>
-                    <button class="btn-cancel">Hủy</button>
-                </div>
-            </div>
-
-            <!-- COVER LOGIN FORM -->
-            <div class="gradient-bg-faded" id="gradient-bg-faded" onclick="closeLoginForm(), closeRegAccForm()"></div>
 
         </div>
     </div>
     </div>
+
+    <div class="popup-confirm-form">
+        <p class="form-message"></p>
+        <div class="form-btn-submit">
+            <button class="btn-confirm">Xác nhận</button>
+            <button class="btn-cancel">Hủy</button>
+        </div>
+    </div>
+
+    <!-- FADED COVER -->
+    <div class="gradient-bg-faded" id="gradient-bg-faded"></div>
+
 </body>
 
 </html>
