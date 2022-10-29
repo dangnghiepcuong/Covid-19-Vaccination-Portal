@@ -33,6 +33,10 @@ $(document).ready(function () {
     $(".popup-confirm-form").on('mouseleave', '.btn-confirm, .btn-cancel', function () {
         $(this).css('box-shadow', '');
     })
+    
+    $(".filter-panel").on('mouseenter', '.btn-filter', function () {
+        $(this).css('box-shadow', '2px 2px 5px -2px black');
+    })
 
     $(".filter-panel").on('mousedown', '.btn-filter', function () {
         $(this).css('box-shadow', '0px 0px 0px 0px #000000');
