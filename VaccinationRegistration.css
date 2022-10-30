@@ -40,10 +40,6 @@ body::-webkit-scrollbar-track {
 /* HEADER */
 .header {
     z-index: 10;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
     height: 80px;
     padding-top: 8px;
     background: var(--bg_light_gradient);
@@ -207,14 +203,57 @@ body::-webkit-scrollbar-track {
 }
 /* END HEADER */
 
+
+/* FOOTER  */
+footer {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--color_footer);
+    padding: 5px 5px;
+    bottom: 0px;
+}
+
+.footer-content {
+    color: white;
+    font-size: 14px;
+}
+
+
+footer div img {
+    max-height: 70px;
+}
+
+/* .footer-alignment-side {
+    width: 50px;
+} */
+
+@media (min-width:0px) and (max-width:1445px) {
+    footer p {
+        margin-right: 50px;
+    }
+
+    footer div {
+        padding: 0 3% 0 5%;
+    }
+}
+
+@media (min-width:0px) and (max-width:1247px) {
+    footer p {
+        font-size: 16px;
+    }
+}
+
+/* END FOOTER */
+
+
 /* NAVIGATOR FUNCTIONAL PAGES */
 
 .nav-func-pages {
     height: 50px;
     width: 100%;
-    position: absolute;
-    top: 80px;
-    left: 0px;
     background: rgba(224, 202, 238, 0.32);
     display: flex;
     justify-content: space-between;
@@ -252,12 +291,8 @@ body::-webkit-scrollbar-track {
 
 .holder-function-panel {
     width: 100%;
-    position: absolute;
-    top: 150px;
-    left: 0px;
     display: flex;
     justify-content: center;
-    background: #167CDB;
 }
 
 /* .function-panel .title {
@@ -286,8 +321,6 @@ body::-webkit-scrollbar-track {
 
 .function-panel {
     width: 80%;
-    height: 590px;
-    position: absolute;
     border-style: solid;
     border: 1px solid #8C69CA;
     border-radius: 20px;

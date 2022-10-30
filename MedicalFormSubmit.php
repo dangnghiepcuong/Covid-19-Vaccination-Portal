@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="MedicalFormSubmit.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="RegistrationManagement.js"></script>
+    <script src="MedicalFormSubmit.js"></script>
     <title>Khai báo y tế</title>
 </head>
 
@@ -43,6 +43,7 @@
     </div>
     <!-- END HEADER -->
 
+    <!-- NAV FUNCTION PANEL -->
     <div class="nav-func-pages">
         <div class="nav-func-title">
             <a href="VaccinationRegistration.php">Tờ khai y tế</a>
@@ -65,7 +66,10 @@
             </div>
         </div>
     </div>
+    <!-- END NAV FUNCTION PANEL -->
+    <br>
 
+    <!-- FUNCTION PANEL -->
     <div class="holder-function-panel">
         <div class="nav-panel">
             <br><br>
@@ -143,9 +147,13 @@
             </div>
         </div>
     </div>
+    <!-- END FUNCTION PANEL -->
+    <br>
 
-    <div class="popup-confirm-form">
-        <p class="form-message"></p>
+    <div class="form-popup-confirm">
+        <br><br>
+        <p class="form-message">Xác nhận thực hiện khai báo y tế?</p>
+        <br><br>
         <div class="form-btn-submit">
             <button class="btn-confirm">Xác nhận</button>
             <button class="btn-cancel">Hủy</button>

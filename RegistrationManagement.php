@@ -43,9 +43,10 @@
                 </div>
             </div>
         </div>
-
         <!-- END HEADER -->
+        <br>
 
+        <!-- NAV FUNCTION -->
         <div class="nav-func-pages">
             <div class="nav-func-title">
                 <a href="VaccinationRegistration.php">Lịch đăng ký tiêm chủng</a>
@@ -68,6 +69,8 @@
                 </div>
             </div>
         </div>
+        <!-- END NAV FUNCTION -->
+        <br>
 
         <div class="holder-function-panel">
             <div class="nav-panel">
@@ -193,6 +196,8 @@
 
             </div>
         </div>
+        <!-- END FUNCTION PANEL -->
+        <br>
 
         <div class="form-popup-confirm">
             <p class="form-message"></p>
