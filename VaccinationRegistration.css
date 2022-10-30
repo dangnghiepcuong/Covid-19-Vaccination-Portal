@@ -403,12 +403,6 @@ footer div img {
     text-align: center;
 }
 
-.panel-list-schedule .list-schedule {
-    width: 95%;
-    height: 300px;
-    margin: 0 auto;
-}
-
 .panel-list-schedule .holder {
     display: flex;
     width: 95%;
@@ -418,8 +412,8 @@ footer div img {
 }
 
 .panel-list-schedule .holder .list-schedule {
-    width: 45%;
-    height: 370px;
+    width: 48%;
+    margin: 0 auto;
 }
 
 .panel-list-schedule .holder .list-schedule .schedule {
