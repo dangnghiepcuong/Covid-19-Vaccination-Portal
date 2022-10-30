@@ -23,4 +23,10 @@ $(document).ready(function(){
         $("#form-reg-acc").css('display','none');
         $("#form-login").css('display','block');
     })
+
+    $("#gradient-bg-faded").click(function(){
+        $("#form-reg-acc").css('display','none');
+        $("#form-login").css('display','none');
+        $("#gradient-bg-faded").css('display','none');
+    })
 })

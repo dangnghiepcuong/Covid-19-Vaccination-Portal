@@ -25,11 +25,7 @@
                 <div>
                     <ul>
                         <li>
-                            <a class="menu-section" href="#">Tin tức</a>
-                        </li>
-
-                        <li>
-                            <a class="menu-section" href="#">Lịch tiêm</a>
+                            <a class="menu-section" href="#">Khai báo</a>
                         </li>
 
                         <li>

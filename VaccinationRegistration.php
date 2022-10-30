@@ -20,23 +20,24 @@
                 <img src="image/CVM-Logo.png" alt="CVM-Logo">
                 <span class="title">CỔNG THÔNG TIN TIÊM CHỦNG COVID-19</span>
             </a>
+
             <div class="nav">
                 <div>
                     <ul>
                         <li>
-                            <a class="menuSection" href="#">Tin tức</a>
+                            <a class="menu-section" href="#">Khai báo</a>
                         </li>
 
                         <li>
-                            <a class="menuSection" href="#">Khai báo</a>
+                            <a class="menu-section" href="#">Tiêm chủng</a>
                         </li>
 
                         <li>
-                            <a class="menuSection" href="#">Tiêm chủng</a>
+                            <a class="menu-section" href="#">Thống kê</a>
                         </li>
                     </ul>
                 </div>
-                <a href="#"><img src="image/Avatar-Citizen.png" alt=""></a>
+                <button class="btn-login" id="btn-login">Đăng nhập</btn>
 
             </div>
         </div>
