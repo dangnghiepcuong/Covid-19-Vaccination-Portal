@@ -40,6 +40,8 @@
         </div>
     </div>
 
+    <br>
+
     <div class="nav-func-pages">
         <div class="nav-func-title">
             <a href="VaccinationRegistration.php">Lịch đăng ký tiêm chủng</a>
@@ -62,6 +64,8 @@
             </div>
         </div>
     </div>
+
+    <br>
 
     <div class="holder-function-panel">
         <div class="nav-panel">
@@ -187,6 +191,8 @@
 
         </div>
     </div>
+
+    <br>
 
     <footer class="footer">
         <!-- <div class="footer-alignment-side"></div> -->

@@ -44,6 +44,7 @@
     </div>
     <!-- END HEADER -->
 
+    <!-- NAV FUNCTION PANEL -->
     <div class="nav-func-pages">
         <div class="nav-func-title">
             <a href="VaccinationRegistration.php">Đăng ký tiêm chủng</a>
@@ -66,7 +67,10 @@
             </div>
         </div>
     </div>
+    <!-- END NAV FUNCTION PANEL -->
+    <br>
 
+    <!-- FUNCTION PANEL -->
     <div class="holder-function-panel">
         <div class="function-panel">
             <br>
@@ -296,22 +300,31 @@
                     </div>
                 </div>
             </div>
-
-            <div class="form-popup-confirm">
-                <p class="form-message"></p>
-                <br>
-                <div class="form-btn-submit">
-                    <button class="btn-confirm">Xác nhận</button>
-                    <button class="btn-cancel">Hủy</button>
-                </div>
-            </div>
-
-            <!-- COVER LOGIN FORM -->
-            <div class="gradient-bg-faded" id="gradient-bg-faded" onclick="closeLoginForm(), closeRegAccForm()"></div>
-
         </div>
     </div>
+    <!-- END FUNCTION PANEL -->
+    <br>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <!-- <div class="footer-alignment-side"></div> -->
+        <div class="footer-content">&copy; Bản quyền thuộc TRUNG TÂM CÔNG NGHỆ PHÒNG, CHỐNG DỊCH COVID-19 QUỐC GIA</div>
+        <div class="footer-content">Phát triển bởi Chrysanthemums</div>
+        <div class="footer-logo"><img src="image/Logo BỘ.png" alt="Logo Bộ Y Tế "></div>
+        <!-- <div class="footer-alignment-side"></div> -->
+    </footer>
+
+    <div class="form-popup-confirm">
+        <p class="form-message"></p>
+        <br>
+        <div class="form-btn-submit">
+            <button class="btn-confirm">Xác nhận</button>
+            <button class="btn-cancel">Hủy</button>
+        </div>
     </div>
+
+    <!-- COVER LOGIN FORM -->
+    <div class="gradient-bg-faded" id="gradient-bg-faded"></div>
 </body>
 
 </html>
