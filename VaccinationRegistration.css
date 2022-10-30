@@ -327,7 +327,7 @@ footer div img {
 }
 
 .filter-panel {
-    width: 90%;
+    width: 95%;
     margin: 0 auto;
     /* align div center*/
     box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
@@ -413,7 +413,6 @@ footer div img {
 
 .panel-list-schedule .holder .list-schedule {
     width: 48%;
-    margin: 0 auto;
 }
 
 .panel-list-schedule .holder .list-schedule .schedule {
