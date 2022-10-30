@@ -8,7 +8,8 @@
     <title>Cổng thông tin tiêm chủng Covid-19</title>
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="index.js"></script>
 </head>
 
 <body>
@@ -40,7 +41,7 @@
                         </li>
                     </ul>
                 </div>
-                <button class="btnLogin" id="btn-Login" onclick="openLoginForm()">Đăng nhập</btn>
+                <button class="btn-login" id="btn-login">Đăng nhập</btn>
 
             </div>
         </div>
@@ -51,9 +52,9 @@
 
         <form action="/action_page.php" class="form-container">
 
-            <p class="form-btn-close" onclick="closeLoginForm()">X</p>
+            <p class="btn-close" id="btn-close-form-login">X</p>
 
-            <p class="form-title">Đăng nhập</p>
+            <p class="title">Đăng nhập</p>
             <br><br>
             <label for="phone_number"><b>SĐT/Tên tài khoản</b></label>
             <input type="text" name="phone_number" required>
@@ -63,11 +64,11 @@
             <input type="password" name="password" required>
             <hr>
             <div class="btn-linked-page page-reg-acc page-forgot-pass">
-                <p id="btn-ForgotPassword" href="#">Quên mật khẩu</p>
-                <p id="btn-CreateAccount" onclick="closeLoginForm(), openRegAccForm()">Tạo tài khoản</p>
+                <p id="btn-forgot-password" href="#">Quên mật khẩu</p>
+                <p id="btn-create-account">Tạo tài khoản</p>
             </div>
             <br><br>
-            <div class="long-btn" id="btn-login">
+            <div class="long-btn" id="btn-login-in-form-login">
                 <p>Đăng nhập</p>
             </div>
 
@@ -82,9 +83,9 @@
 
         <form action="/action_page.php" class="form-container">
 
-            <p class="form-btn-close" onclick="closeRegAccForm()">X</p>
+            <p class="btn-close" id="btn-close-form-reg-acc">X</p>
 
-            <p class="form-title">Đăng ký</p>
+            <p class="title">Đăng ký</p>
             <br><br>
             <label for="phone_number"><b>Số điện thoại</b></label>
             <input type="text" name="phone_number" required>
@@ -102,7 +103,7 @@
                 <p>Đăng ký</p>
             </div>
             <div class="btn-linked-page page-login">
-                <p id="btn-login" onclick="closeRegAccForm(), openLoginForm()">Đăng nhập</p>
+                <p id="btn-login-in-form-reg-acc">Đăng nhập</p>
             </div>
             <br>
 

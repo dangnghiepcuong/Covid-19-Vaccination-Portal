@@ -77,7 +77,7 @@ body::-webkit-scrollbar-track {
     text-decoration: none;
 }
 
-.header .btnLogin {
+.header .btn-login {
     font-weight: 500px;
     font-size: 20px;
     line-height: 40px;
@@ -92,7 +92,7 @@ body::-webkit-scrollbar-track {
     border: none;
 }
 
-.btnLogin:hover {
+.btn-login:hover {
     transform: translateY(-3px);
     text-shadow: 0 0 5px #fff;
 }
@@ -139,7 +139,7 @@ body::-webkit-scrollbar-track {
         font-size: 14px;
     }
 
-    .header .btnLogin {
+    .header .btn-login {
         font-size: 14px;
         padding: 0px 5px;
         line-height: 30px;
@@ -162,7 +162,7 @@ body::-webkit-scrollbar-track {
         font-size: 15px;
     }
 
-    .header .btnLogin {
+    .header .btn-login {
         font-size: 14px;
         padding: 0px 15px;
         line-height: 40px;
@@ -182,7 +182,7 @@ body::-webkit-scrollbar-track {
         font-size: 15px;
     }
 
-    .header .btnLogin {
+    .header .btn-login {
         font-size: 14px;
         padding: 0px 15px;
         line-height: 40px;
@@ -206,7 +206,7 @@ body::-webkit-scrollbar-track {
         font-size: 18px;
     }
 
-    .header.btnLogin {
+    .header.btn-login {
         font-size: 18px;
         padding: 0px 15px;
         line-height: 35px;
@@ -408,7 +408,7 @@ footer div img {
     font-family: 'Roboto';
 }
 
-.form-btn-close {
+.form-container .btn-close {
     width: 18px;
     justify-self: right;
     font-weight: 100;
@@ -417,7 +417,7 @@ footer div img {
     cursor: pointer;
 }
 
-.form-container .form-title {
+.form-container .title {
     font-weight: 600;
     font-size: 28px;
     line-height: 20px;
