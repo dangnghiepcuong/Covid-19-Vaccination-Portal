@@ -5,9 +5,6 @@
     font-family: "Roboto";
 }
 
-html {
-}
-
 /* variables */
 :root {
     --bg_light_gradient: linear-gradient(90deg, #D1BFF3 5%, #FAD3FF 35%, #FFDFEC 65%, #BEF7FF 95%);
@@ -123,13 +120,8 @@ body::-webkit-scrollbar-track {
 
 .menu-section:hover {
     color: white;
-    /* text-shadow: 0 0 10px white; */
 }
 
-
-/* end header  */
-
-/* gird view */
 @media (min-width: 0px) and (max-width: 560px) {
     .nav div {
         display: none;
@@ -148,9 +140,6 @@ body::-webkit-scrollbar-track {
     .header-alignment {
         padding: 5px 5px;
     }
-
-    /* end grid view for header */
-
 }
 
 @media (min-width: 0px) and (max-width: 888px) {
@@ -168,13 +157,10 @@ body::-webkit-scrollbar-track {
         line-height: 40px;
     }
 
-    /* end grid view for header */
-
     .slider div .slider_dot {
         width: 5px;
         height: 5px;
     }
-
 }
 
 @media (min-width: 740px) and (max-width: 1024px) {
@@ -195,10 +181,6 @@ body::-webkit-scrollbar-track {
     .nav li {
         padding-right: 20px;
     }
-
-    /* end grid view for header */
-
-
 }
 
 @media (min-width: 1024px) and (max-width: 1239px) {
@@ -219,9 +201,8 @@ body::-webkit-scrollbar-track {
     .nav li {
         padding-right: 25px;
     }
-    /* end grid view for header */
 }
-/* end gird view  */
+/* END HEADER */
 
 /* SLIDER */
 .slider {
@@ -317,10 +298,6 @@ footer {
 footer div img {
     max-height: 70px;
 }
-
-/* .footer-alignment-side {
-    width: 50px;
-} */
 
 @media (min-width:0px) and (max-width:1445px) {
     footer p {
