@@ -39,7 +39,7 @@ body::-webkit-scrollbar-track {
 
 /* HEADER */
 .header {
-    z-index: 10;
+    /* z-index: 10; */
     position: fixed;
     top: 0;
     left: 0;
@@ -47,6 +47,7 @@ body::-webkit-scrollbar-track {
     height: 80px;
     padding-top: 8px;
     background: var(--bg_light_gradient);
+    align-items: center;
 }
 
 .header-alignment {
@@ -76,7 +77,7 @@ body::-webkit-scrollbar-track {
     text-decoration: none;
 }
 
-.header .btnLogin {
+.header .btn-login {
     font-weight: 500px;
     font-size: 20px;
     line-height: 40px;
@@ -91,7 +92,7 @@ body::-webkit-scrollbar-track {
     border: none;
 }
 
-.btnLogin:hover {
+.btn-login:hover {
     transform: translateY(-3px);
     text-shadow: 0 0 5px #fff;
 }
@@ -109,26 +110,26 @@ body::-webkit-scrollbar-track {
 }
 
 .header-alignment a .title {
-    font-weight: 550;
+    font-weight: 600;
     font-size: 24px;
     line-height: 33px;
     color: var(--color_header);
     padding-left: 10px;
 }
 
-.menuSection {
+.menu-section {
     transition: 200ms;
 }
 
-.menuSection:hover {
+.menu-section:hover {
     color: white;
     /* text-shadow: 0 0 10px white; */
 }
 
-/* END HEADER  */
 
+/* end header  */
 
-/* GRID VIEW */
+/* gird view */
 @media (min-width: 0px) and (max-width: 560px) {
     .nav div {
         display: none;
@@ -138,7 +139,7 @@ body::-webkit-scrollbar-track {
         font-size: 14px;
     }
 
-    .header .btnLogin {
+    .header .btn-login {
         font-size: 14px;
         padding: 0px 5px;
         line-height: 30px;
@@ -161,7 +162,7 @@ body::-webkit-scrollbar-track {
         font-size: 15px;
     }
 
-    .header .btnLogin {
+    .header .btn-login {
         font-size: 14px;
         padding: 0px 15px;
         line-height: 40px;
@@ -181,7 +182,7 @@ body::-webkit-scrollbar-track {
         font-size: 15px;
     }
 
-    .header .btnLogin {
+    .header .btn-login {
         font-size: 14px;
         padding: 0px 15px;
         line-height: 40px;
@@ -205,7 +206,7 @@ body::-webkit-scrollbar-track {
         font-size: 18px;
     }
 
-    .header.btnLogin {
+    .header.btn-login {
         font-size: 18px;
         padding: 0px 15px;
         line-height: 35px;
@@ -218,14 +219,9 @@ body::-webkit-scrollbar-track {
     .nav li {
         padding-right: 25px;
     }
-
     /* end grid view for header */
-
-
-
 }
-
-/* END GRID VIEW  */
+/* end gird view  */
 
 /* NAVIGATOR FUNCTIONAL PAGES */
 
