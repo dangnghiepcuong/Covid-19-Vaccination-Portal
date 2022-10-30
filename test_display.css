@@ -1,0 +1,69 @@
+/* variables */
+:root {
+    --bg_light_gradient: linear-gradient(90deg, #D1BFF3 5%, #FAD3FF 35%, #FFDFEC 65%, #BEF7FF 95%);
+    --color_header: #8C69CA;
+    --color_content: #000000;
+    /* --bgd_gradient: linear-gradient(90deg, #A084CA 2.5%, #F5A8FF 40%, #FFBAD5 60%, #77DAE8 97.5%); Cuong da thao tung dong nay*/
+    --bg_gradient: linear-gradient(90deg, #A084CA 2.5%, #F5A8FF 39.07%, #FFBAD5 66.96%, #77DAE8 95.6%);
+    --color_footer: #A084CA;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 837px;
+}
+
+.header {
+    z-index: 10;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 80px;
+    width: 100%;
+    padding-top: 8px;
+    background: var(--bg_light_gradient);
+    align-items: center;
+}
+
+.nav {
+    float: right;
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 0px;
+    justify-content: space-between;
+}
+
+.header-alignment .nav ul {
+    display: flex;
+}
+
+.nav li {
+    list-style: none;
+    padding-right: 50px;
+}
+
+.nav li a {
+    font-size: 20px;
+    color: var(--color_header);
+    text-decoration: none;
+}
+
+.header .btn-login {
+    font-weight: 500px;
+    font-size: 20px;
+    line-height: 40px;
+    text-decoration: none;
+    color: white;
+    background: var(--color_footer);
+    padding: 0px 20px;
+    border-radius: 15px;
+    display: inline-block;
+    cursor: pointer;
+    transition: 300ms;
+    border: none;
+}

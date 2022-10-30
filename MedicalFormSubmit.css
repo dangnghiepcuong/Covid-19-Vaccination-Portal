@@ -39,7 +39,7 @@ body::-webkit-scrollbar-track {
 
 /* HEADER */
 .header {
-    z-index: 10;
+    /* z-index: 10; */
     position: fixed;
     top: 0;
     left: 0;
@@ -47,6 +47,7 @@ body::-webkit-scrollbar-track {
     height: 80px;
     padding-top: 8px;
     background: var(--bg_light_gradient);
+    align-items: center;
 }
 
 .header-alignment {
@@ -76,7 +77,7 @@ body::-webkit-scrollbar-track {
     text-decoration: none;
 }
 
-.header .btnLogin {
+.header .btn-login {
     font-weight: 500px;
     font-size: 20px;
     line-height: 40px;
@@ -91,7 +92,7 @@ body::-webkit-scrollbar-track {
     border: none;
 }
 
-.btnLogin:hover {
+.btn-login:hover {
     transform: translateY(-3px);
     text-shadow: 0 0 5px #fff;
 }
@@ -109,26 +110,21 @@ body::-webkit-scrollbar-track {
 }
 
 .header-alignment a .title {
-    font-weight: 550;
+    font-weight: 600;
     font-size: 24px;
     line-height: 33px;
     color: var(--color_header);
     padding-left: 10px;
 }
 
-.menuSection {
+.menu-section {
     transition: 200ms;
 }
 
-.menuSection:hover {
+.menu-section:hover {
     color: white;
-    /* text-shadow: 0 0 10px white; */
 }
 
-/* END HEADER  */
-
-
-/* GRID VIEW */
 @media (min-width: 0px) and (max-width: 560px) {
     .nav div {
         display: none;
@@ -138,7 +134,7 @@ body::-webkit-scrollbar-track {
         font-size: 14px;
     }
 
-    .header .btnLogin {
+    .header .btn-login {
         font-size: 14px;
         padding: 0px 5px;
         line-height: 30px;
@@ -147,9 +143,6 @@ body::-webkit-scrollbar-track {
     .header-alignment {
         padding: 5px 5px;
     }
-
-    /* end grid view for header */
-
 }
 
 @media (min-width: 0px) and (max-width: 888px) {
@@ -161,19 +154,16 @@ body::-webkit-scrollbar-track {
         font-size: 15px;
     }
 
-    .header .btnLogin {
+    .header .btn-login {
         font-size: 14px;
         padding: 0px 15px;
         line-height: 40px;
     }
 
-    /* end grid view for header */
-
     .slider div .slider_dot {
         width: 5px;
         height: 5px;
     }
-
 }
 
 @media (min-width: 740px) and (max-width: 1024px) {
@@ -181,7 +171,7 @@ body::-webkit-scrollbar-track {
         font-size: 15px;
     }
 
-    .header .btnLogin {
+    .header .btn-login {
         font-size: 14px;
         padding: 0px 15px;
         line-height: 40px;
@@ -194,10 +184,6 @@ body::-webkit-scrollbar-track {
     .nav li {
         padding-right: 20px;
     }
-
-    /* end grid view for header */
-
-
 }
 
 @media (min-width: 1024px) and (max-width: 1239px) {
@@ -205,7 +191,7 @@ body::-webkit-scrollbar-track {
         font-size: 18px;
     }
 
-    .header.btnLogin {
+    .header.btn-login {
         font-size: 18px;
         padding: 0px 15px;
         line-height: 35px;
@@ -218,14 +204,8 @@ body::-webkit-scrollbar-track {
     .nav li {
         padding-right: 25px;
     }
-
-    /* end grid view for header */
-
-
-
 }
-
-/* END GRID VIEW  */
+/* END HEADER */
 
 /* NAVIGATOR FUNCTIONAL PAGES */
 
@@ -645,3 +625,47 @@ body::-webkit-scrollbar-track {
     transition: 300ms;
 }
 /* END POPUP CONFIRM FORM */
+
+/* FOOTER  */
+footer {
+    height: 80px;
+    background: var(--color_footer);
+    width: 100%;
+    bottom: 0px;
+    padding: 5px 5px;
+    justify-content: space-between;
+    align-items: center;
+    display: none;
+}
+
+.footer-content {
+    color: white;
+    font-size: 14px;
+}
+
+
+footer div img {
+    max-height: 70px;
+}
+
+/* .footer-alignment-side {
+    width: 50px;
+} */
+
+@media (min-width:0px) and (max-width:1445px) {
+    footer p {
+        margin-right: 50px;
+    }
+
+    footer div {
+        padding: 0 3% 0 5%;
+    }
+}
+
+@media (min-width:0px) and (max-width:1247px) {
+    footer p {
+        font-size: 16px;
+    }
+}
+
+/* END FOOTER */
