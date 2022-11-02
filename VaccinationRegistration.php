@@ -18,64 +18,9 @@
 
 <body>
     <!-- HEADER -->
-    <div class="header">
-            <a class="title" href="HomePageCitizen.php">
-                <img src="image/CVM-Logo.png" alt="CVM-Logo">
-                <span class="title">CỔNG THÔNG TIN TIÊM CHỦNG COVID-19</span>
-            </a>
-
-            <div class="nav">
-                <div>
-                    <ul>
-                        <li>
-                            <a class="menu-section" href="#">Tin tức</a>
-                        </li>
-
-                        <li>
-                            <a class="menu-section" href="#">Khai báo</a>
-                        </li>
-
-                        <li>
-                            <a class="menu-section" href="#">Tiêm chủng</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <a class="avatar" href="#">
-                    <img src="image/Avatar-Citizen.png" alt="Logo công dân">
-                </a>
-            </div>
-
-            <div class="drop-down-menu" id="drop-down-menu-profile">
-                <div class="holder">
-                    <ul>
-                        <li>
-                            <a href="#">Thông tin tài khoản</a>
-                        </li>
-
-                        <li>
-                            <a href="#">Thông tin công dân</a>
-                        </li>
-
-                        <li>
-                            <a href="#">Lịch đăng kí tiêm chủng</a>
-                        </li>
-
-                        <li>
-                            <a href="#">Chứng nhận tiêm chủng</a>
-                        </li>
-
-                        <li>
-                            <a href="#">Thêm người thân</a>
-                        </li>
-
-                        <li>
-                            <a href="#">Đăng xuất</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+    <?php
+    include("headerCitizen.php");
+    ?>
     <!-- END HEADER -->
 
     <!-- NAV FUNCTION PANEL -->
@@ -339,23 +284,6 @@
     <!-- END FUNCTION PANEL -->
     <br>
 
-    <!-- FOOTER -->
-    <!-- <footer class="footer">
-        <div class="footer-alignment-side"></div>
-        <div class="footer-content">&copy; Bản quyền thuộc TRUNG TÂM CÔNG NGHỆ PHÒNG, CHỐNG DỊCH COVID-19 QUỐC GIA</div>
-        <div class="footer-content">Phát triển bởi Chrysanthemums</div>
-        <div class="footer-logo"><img src="image/Logo BỘ.png" alt="Logo Bộ Y Tế "></div>
-        <div class="footer-alignment-side"></div>
-    </footer> -->
-
-    <footer>
-        <div class="footer-alignment-side"></div>
-        <div class="footer-content">&copy; Bản quyền thuộc TRUNG TÂM CÔNG NGHỆ PHÒNG, CHỐNG DỊCH COVID-19 QUỐC GIA</div>
-        <div class="footer-content">Phát triển bởi Chrysanthemums</div>
-        <div class="footer-logo"><img src="image/Logo BỘ.png" alt="Logo Bộ Y Tế "></div>
-        <div class="footer-alignment-side"></div>
-    </footer>
-
     <div class="form-popup-confirm">
         <p class="form-message"></p>
         <br>
@@ -367,6 +295,10 @@
 
     <!-- COVER LOGIN FORM -->
     <div class="gradient-bg-faded" id="gradient-bg-faded"></div>
+
+    <?php
+    include("footer.php")
+    ?>
 </body>
 
 </html>

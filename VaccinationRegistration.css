@@ -36,14 +36,6 @@ body::-webkit-scrollbar-track {
     background: whitesmoke;
 }
 
-/* HEADER */
-.header-fake{
-    height: 80px;
-}
-
-/* END HEADER */
-
-
 /* NAVIGATOR FUNCTIONAL PAGES */
 
 .nav-func-pages {
@@ -363,10 +355,6 @@ body::-webkit-scrollbar-track {
     position: fixed;
     width: 100%;
     height: 100%;
-    left: 0px;
-    top: 0px;
-    bottom: 0px;
-    right: 0px;
     background: var(--bg_gradient);
     opacity: 0.80;
     z-index: 9;

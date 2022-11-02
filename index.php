@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="index.js"></script>
+
+    <script type="text/javascript" src="FE_interaction.js">
+    </script>
 </head>
 
 <body>
@@ -168,22 +171,10 @@
         <div class="content-alignment-side"></div>
     </div>
 
-    <div class="content-below">
+    <?php
+    include("footer.php")
+    ?>
 
-    </div>
-
-
-    <!-- FOOTER -->
-    <footer class="footer">
-        <!-- <div class="footer-alignment-side"></div> -->
-        <div class="footer-content">&copy; Bản quyền thuộc TRUNG TÂM CÔNG NGHỆ PHÒNG, CHỐNG DỊCH COVID-19 QUỐC GIA</div>
-        <div class="footer-content">Phát triển bởi Chrysanthemums</div>
-        <div class="footer-logo"><img src="image/Logo BỘ.png" alt="Logo Bộ Y Tế "></div>
-        <!-- <div class="footer-alignment-side"></div> -->
-    </footer>
 </body>
-
-<script type="text/javascript" src="FE_interaction.js">
-</script>
 
 </html>
