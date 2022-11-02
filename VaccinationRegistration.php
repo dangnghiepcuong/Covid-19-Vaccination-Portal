@@ -10,13 +10,16 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="VaccinationRegistration.js"></script>
     <title>Tiêm chủng</title>
+
+    <link rel="stylesheet" href="HomePageCitizen.css">
+    <script src="HomePageCitizen.js"></script>
+
 </head>
 
 <body>
     <!-- HEADER -->
     <div class="header">
-        <div class="header-alignment">
-            <a href="index.php">
+            <a class="title" href="HomePageCitizen.php">
                 <img src="image/CVM-Logo.png" alt="CVM-Logo">
                 <span class="title">CỔNG THÔNG TIN TIÊM CHỦNG COVID-19</span>
             </a>
@@ -25,23 +28,54 @@
                 <div>
                     <ul>
                         <li>
+                            <a class="menu-section" href="#">Tin tức</a>
+                        </li>
+
+                        <li>
                             <a class="menu-section" href="#">Khai báo</a>
                         </li>
 
                         <li>
                             <a class="menu-section" href="#">Tiêm chủng</a>
                         </li>
+                    </ul>
+                </div>
+
+                <a class="avatar" href="#">
+                    <img src="image/Avatar-Citizen.png" alt="Logo công dân">
+                </a>
+            </div>
+
+            <div class="drop-down-menu" id="drop-down-menu-profile">
+                <div class="holder">
+                    <ul>
+                        <li>
+                            <a href="#">Thông tin tài khoản</a>
+                        </li>
 
                         <li>
-                            <a class="menu-section" href="#">Thống kê</a>
+                            <a href="#">Thông tin công dân</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Lịch đăng kí tiêm chủng</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Chứng nhận tiêm chủng</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Thêm người thân</a>
+                        </li>
+
+                        <li>
+                            <a href="#">Đăng xuất</a>
                         </li>
                     </ul>
                 </div>
-                <button class="btn-login" id="btn-login">Đăng nhập</btn>
-
             </div>
         </div>
-    </div>
     <!-- END HEADER -->
 
     <!-- NAV FUNCTION PANEL -->
@@ -306,12 +340,20 @@
     <br>
 
     <!-- FOOTER -->
-    <footer class="footer">
-        <!-- <div class="footer-alignment-side"></div> -->
+    <!-- <footer class="footer">
+        <div class="footer-alignment-side"></div>
         <div class="footer-content">&copy; Bản quyền thuộc TRUNG TÂM CÔNG NGHỆ PHÒNG, CHỐNG DỊCH COVID-19 QUỐC GIA</div>
         <div class="footer-content">Phát triển bởi Chrysanthemums</div>
         <div class="footer-logo"><img src="image/Logo BỘ.png" alt="Logo Bộ Y Tế "></div>
-        <!-- <div class="footer-alignment-side"></div> -->
+        <div class="footer-alignment-side"></div>
+    </footer> -->
+
+    <footer>
+        <div class="footer-alignment-side"></div>
+        <div class="footer-content">&copy; Bản quyền thuộc TRUNG TÂM CÔNG NGHỆ PHÒNG, CHỐNG DỊCH COVID-19 QUỐC GIA</div>
+        <div class="footer-content">Phát triển bởi Chrysanthemums</div>
+        <div class="footer-logo"><img src="image/Logo BỘ.png" alt="Logo Bộ Y Tế "></div>
+        <div class="footer-alignment-side"></div>
     </footer>
 
     <div class="form-popup-confirm">
