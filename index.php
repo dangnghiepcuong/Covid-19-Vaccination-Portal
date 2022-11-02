@@ -17,37 +17,16 @@
 
 <body>
     <!-- HEADER -->
-    <div class="header">
-        <a class="title" href="index.php">
-            <img src="image/CVM-Logo.png" alt="CVM-Logo">
-            <span class="title">CỔNG THÔNG TIN TIÊM CHỦNG COVID-19</span>
-        </a>
-
-        <div class="nav">
-            <div>
-                <ul>
-                    <li>
-                        <a class="menu-section" href="#">Tin tức</a>
-                    </li>
-
-                    <li>
-                        <a class="menu-section" href="#">Lịch tiêm</a>
-                    </li>
-
-                    <li>
-                        <a class="menu-section" href="#">Tiêm chủng</a>
-                    </li>
-
-                    <li>
-                        <a class="menu-section" href="#">Thống kê</a>
-                    </li>
-
-                </ul>
-            </div>
-            <button class="btn-login" id="btn-login">Đăng nhập</btn>
-        </div>
-    </div>
+    <?php
+    include("header/headerGeneral.php");
+    ?>
     <!-- END HEADER -->
+
+    <!-- SLIDER -->
+    <?php
+    include("Homepage/HomepageSlider.php");
+    ?>
+    <!-- END SLIDER -->
 
     <!-- LOGIN FORM -->
     <div class="form-login" id="form-login">
@@ -112,12 +91,9 @@
         </form>
 
     </div>
-
     <!-- END REGISTRATION ACCOUNT FORM -->
 
     <!-- REGISTRATION PERSONAL INFO FORM -->
-
-
 
     <!-- END REGISTRATION PERSONAL INFO FORM -->
 
@@ -125,38 +101,7 @@
     <div class="gradient-bg-faded" id="gradient-bg-faded"></div>
 
 
-    <!-- SLIDER -->
-    <div class="slider">
 
-        <div class="slideshow-container">
-
-            <div class="mySlides fade">
-                <img src="image/banner_with_flag.png" style="width:100%">
-            </div>
-
-            <div class="mySlides fade">
-                <img src="image/banner_covid19.png" style="width:100%">
-            </div>
-
-            <div class="mySlides fade">
-                <img src="image/banner_vaccine.png" style="width:100%">
-            </div>
-
-            <div class="mySlides fade">
-                <img src="image/banner_codong.png" style="width:100%">
-            </div>
-
-        </div>
-
-        <div class="frame-slider_dot" style="text-align:center">
-            <span class="slider_dot"></span>
-            <span class="slider_dot"></span>
-            <span class="slider_dot"></span>
-            <span class="slider_dot"></span>
-        </div>
-
-        <script type="text/javascript" src="main.js"></script>
-    </div>
 
     <div class="content">
         <div class="content-alignment-side"></div>
@@ -171,10 +116,11 @@
         <div class="content-alignment-side"></div>
     </div>
 
+    <!-- FOOTER -->
     <?php
-    include("footer.php")
+    include("footer/footer.php")
     ?>
-
+    <!-- END FOOTER -->
 </body>
 
 </html>
