@@ -33,33 +33,34 @@ body::-webkit-scrollbar-track {
     background: whitesmoke;
 }
 
-
 /* HEADER */
 .header {
-    /* z-index: 10; */
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+    top: 0px;
+    width: 100%;
     height: 80px;
-    padding-top: 8px;
+    display: flex;
+    justify-content: space-between;
     background: var(--bg_light_gradient);
     align-items: center;
-}
-
-.header-alignment {
     padding: 5px 4%;
 }
 
-.nav {
+.header .title {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.header .nav {
+    height: 80px;
     float: right;
     display: inline-flex;
     align-items: center;
-    padding: 5px 0px;
     justify-content: space-between;
 }
 
-.header-alignment .nav ul {
+.header .nav ul {
     display: flex;
 }
 
@@ -94,19 +95,21 @@ body::-webkit-scrollbar-track {
     text-shadow: 0 0 5px #fff;
 }
 
-.header-alignment a {
+.header .avatar {
     display: inline-flex;
     text-decoration: none;
     align-items: center !important;
+    height: 100%;
+    z-index: 20;
 }
 
-.header-alignment img {
+.header img {
     mix-blend-mode: multiply;
     max-height: 50px;
     vertical-align: middle;
 }
 
-.header-alignment a .title {
+.header a .title {
     font-weight: 600;
     font-size: 24px;
     line-height: 33px;
@@ -122,39 +125,23 @@ body::-webkit-scrollbar-track {
     color: white;
 }
 
-@media (min-width: 0px) and (max-width: 560px) {
+@media (min-width: 0px) and (max-width: 760px) {
     .nav div {
         display: none;
     }
 
-    .header-alignment a .title {
+    .header a .title {
         font-size: 14px;
     }
 
-    .header .btn-login {
-        font-size: 14px;
-        padding: 0px 5px;
-        line-height: 30px;
-    }
-
-    .header-alignment {
+    .header {
         padding: 5px 5px;
     }
 }
 
 @media (min-width: 0px) and (max-width: 888px) {
-    .nav div {
-        display: none;
-    }
-
-    .header-alignment a .title {
+    .header a .title {
         font-size: 15px;
-    }
-
-    .header .btn-login {
-        font-size: 14px;
-        padding: 0px 15px;
-        line-height: 40px;
     }
 
     .slider div .slider_dot {
@@ -164,14 +151,8 @@ body::-webkit-scrollbar-track {
 }
 
 @media (min-width: 740px) and (max-width: 1024px) {
-    .header-alignment a .title {
+    .header a .title {
         font-size: 15px;
-    }
-
-    .header .btn-login {
-        font-size: 14px;
-        padding: 0px 15px;
-        line-height: 40px;
     }
 
     .nav li a {
@@ -184,14 +165,8 @@ body::-webkit-scrollbar-track {
 }
 
 @media (min-width: 1024px) and (max-width: 1239px) {
-    .header-alignment a .title {
+    .header a .title {
         font-size: 18px;
-    }
-
-    .header.btn-login {
-        font-size: 18px;
-        padding: 0px 15px;
-        line-height: 35px;
     }
 
     .nav li a {
@@ -203,6 +178,8 @@ body::-webkit-scrollbar-track {
     }
 }
 /* END HEADER */
+
+
 
 /* SLIDER */
 .slider {
