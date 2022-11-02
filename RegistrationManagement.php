@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="RegistrationManagement.css">
+    <link rel="stylesheet" href="css/RegistrationManagement.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="RegistrationManagement.js"></script>
+    <script src="js/RegistrationManagement.js"></script>
     <title>Quản lý lượt đăng ký</title>
 </head>
 
@@ -185,13 +185,9 @@
         <div class="gradient-bg-faded" id="gradient-bg-faded"></div>
 
         <!-- FOOTER -->
-        <footer class="footer">
-            <div class="footer-alignment-side"></div>
-            <div class="footer-content">&copy; Bản quyền thuộc TRUNG TÂM CÔNG NGHỆ PHÒNG, CHỐNG DỊCH COVID-19 QUỐC GIA</div>
-            <div class="footer-content">Phát triển bởi Chrysanthemums</div>
-            <div class="footer-logo"><img src="image/Logo BỘ.png" alt="Logo Bộ Y Tế "></div>
-            <div class="footer-alignment-side"></div>
-        </footer>
+        <?php
+        include("footer.php");
+        ?>
     </div>
 </body>
 

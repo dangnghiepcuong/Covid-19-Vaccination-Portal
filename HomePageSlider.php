@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="HomePageSlider.css">
+<link rel="stylesheet" href="css/HomepageSlider.css">
 
 <div class="slider">
 
@@ -29,5 +29,5 @@
         <span class="slider_dot"></span>
     </div>
 
-    <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
 </div>
