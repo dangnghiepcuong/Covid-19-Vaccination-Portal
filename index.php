@@ -1,40 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cổng thông tin tiêm chủng Covid-19</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="index.js"></script>
-
-    <script type="text/javascript" src="FE_interaction.js">
+    <script src="js/index.js"></script>
+    <script type="text/javascript" src="js/FE_interaction.js">
     </script>
 </head>
 
 <body>
     <!-- HEADER -->
     <?php
-    include("header/headerGeneral.php");
+    include("headerGeneral.php");
     ?>
     <!-- END HEADER -->
 
     <!-- SLIDER -->
     <?php
-    include("Homepage/HomepageSlider.php");
+    include("HomepageSlider.php");
     ?>
     <!-- END SLIDER -->
 
     <!-- LOGIN FORM -->
     <div class="form-login" id="form-login">
-
         <form action="/action_page.php" class="form-container">
-
             <p class="btn-close" id="btn-close-form-login">X</p>
-
             <p class="title">Đăng nhập</p>
             <br><br>
             <label for="phone_number"><b>SĐT/Tên tài khoản</b></label>
@@ -52,20 +47,14 @@
             <div class="long-btn" id="btn-login-in-form-login">
                 <p>Đăng nhập</p>
             </div>
-
         </form>
-
     </div>
     <!-- END LOGIN FORM -->
 
     <!-- REGISTRATION ACCOUNT FORM -->
-
     <div class="form-reg-acc" id="form-reg-acc">
-
         <form action="/action_page.php" class="form-container">
-
             <p class="btn-close" id="btn-close-form-reg-acc">X</p>
-
             <p class="title">Đăng ký</p>
             <br><br>
             <label for="phone_number"><b>Số điện thoại</b></label>
@@ -87,9 +76,7 @@
                 <p id="btn-login-in-form-reg-acc">Đăng nhập</p>
             </div>
             <br>
-
         </form>
-
     </div>
     <!-- END REGISTRATION ACCOUNT FORM -->
 
@@ -99,9 +86,6 @@
 
     <!-- FADED COVER -->
     <div class="gradient-bg-faded" id="gradient-bg-faded"></div>
-
-
-
 
     <div class="content">
         <div class="content-alignment-side"></div>
@@ -118,9 +102,8 @@
 
     <!-- FOOTER -->
     <?php
-    include("footer/footer.php")
+    include("footer.php")
     ?>
     <!-- END FOOTER -->
 </body>
-
 </html>
