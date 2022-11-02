@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="header.css">
+<link rel="stylesheet" href="css/header.css">
 
 <div class="header">
     <a class="title" href="index.php">
