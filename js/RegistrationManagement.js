@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $(".list-registration").on('click', '.btn-cancel-registration', function () {
+    $(".list-registration").on('click', '.btn-cancel', function () {
         $(this).css('box-shadow', '0px 0px 0px 0px #000000');
         $(this).parent().parent().parent().css('box-shadow', '2px 2px 5px -2px #000000');
         
@@ -12,7 +12,7 @@ $(document).ready(function () {
         $(".form-popup-confirm").css('display','block');
     })
 
-    $(".list-registration").on('mouseleave', '.btn-cancel-registration', function () {
+    $(".list-registration").on('mouseleave', '.btn-cancel', function () {
         $(this).css('box-shadow', '');
         $(this).parent().parent().parent().css('box-shadow', '');
     })

@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/RegistrationManagement.css">
+    <link rel="stylesheet" href="css/btn.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/RegistrationManagement.js"></script>
@@ -102,7 +103,7 @@
                             <option value="">Tối</option>
                         </select>
 
-                        <button class="btn-filter">
+                        <button class="btn-bordered-medium-icon btn-filter">
                             <img src="image/filter-magnifier.png" alt="filter-magnifier">
                             Tìm kiếm
                         </button>
@@ -127,7 +128,7 @@
                                     </div>
 
                                     <div class="interactive-area">
-                                        <button class="btn-cancel-registration">Hủy lịch</button>
+                                        <button class="btn-bordered-medium btn-cancel">Hủy</button>
                                     </div>
                                 </div>
                             </div>
@@ -142,7 +143,7 @@
                                     </div>
 
                                     <div class="interactive-area">
-                                        <button class="btn-cancel-registration">Hủy lịch</button>
+                                        <button class="btn-bordered-medium btn-cancel">Hủy</button>
                                     </div>
                                 </div>
                             </div>
@@ -157,7 +158,7 @@
                                     </div>
 
                                     <div class="interactive-area">
-                                        <button class="btn-cancel-registration">Hủy lịch</button>
+                                        <button class="btn-bordered-medium btn-cancel">Hủy</button>
                                     </div>
                                 </div>
                             </div>
@@ -175,9 +176,9 @@
 
         <div class="form-popup-confirm">
             <p class="form-message"></p>
-            <div class="form-btn-submit">
-                <button class="btn-confirm">Xác nhận</button>
-                <button class="btn-cancel">Hủy</button>
+            <div class="holder-btn">
+                <button class="btn-filled-medium btn-confirm">Xác nhận</button>
+                <button class="btn-bordered-medium btn-cancel">Hủy</button>
             </div>
         </div>
 

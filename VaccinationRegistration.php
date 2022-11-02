@@ -6,14 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/VaccinationRegistration.css">
+    <link rel="stylesheet" href="css/btn.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/VaccinationRegistration.js"></script>
     <title>Tiêm chủng</title>
-
-    <link rel="stylesheet" href="css/HomepageCitizen.css">
-    <script src="js/HomepageCitizen.js"></script>
-
 </head>
 
 <body>
@@ -80,7 +77,7 @@
                         <option value="">Đồng Nai</option>
                         <option value="">Hồ Chí Minh</option>
                     </select>
-                    <button class="btn-filter">
+                    <button class="btn-medium-bordered-icon btn-filter">
                         <img src="image/filter-magnifier.png" alt="filter-magnifier">
                         Tìm kiếm
                     </button>
@@ -106,7 +103,7 @@
                         <option value="">Tối</option>
                     </select>
 
-                    <button class="btn-filter">
+                    <button class="btn-medium-bordered-icon btn-filter">
                         <img src="image/filter-magnifier.png" alt="filter-magnifier">
                         Tìm kiếm
                     </button>
@@ -144,7 +141,7 @@
                                         <option value="2">Tối</option>
                                     </select>
                                     <br>
-                                    <button class="btn-register" id="btn-register" onmousedown="btn_register_clicked()">Đăng ký</button>
+                                    <button class="btn-medium-filled">Đăng ký</button>
                                 </div>
                             </div>
                         </div>
@@ -169,7 +166,7 @@
                                         <option value="2">Tối</option>
                                     </select>
                                     <br>
-                                    <button class="btn-register">Đăng ký</button>
+                                    <button class="btn-medium-filled  btn-register">Đăng ký</button>
                                 </div>
                             </div>
                         </div>
@@ -194,7 +191,7 @@
                                         <option value="2">Tối</option>
                                     </select>
                                     <br>
-                                    <button class="btn-register">Đăng ký</button>
+                                    <button class="btn-medium-filled  btn-register">Đăng ký</button>
                                 </div>
                             </div>
                         </div>
@@ -222,7 +219,7 @@
                                         <option value="2">Tối</option>
                                     </select>
                                     <br>
-                                    <button class="btn-register">Đăng ký</button>
+                                    <button class="btn-medium-filled  btn-register">Đăng ký</button>
                                 </div>
                             </div>
                         </div>
@@ -247,7 +244,7 @@
                                         <option value="2">Tối</option>
                                     </select>
                                     <br>
-                                    <button class="btn-register">Đăng ký</button>
+                                    <button class="btn-medium-filled  btn-register">Đăng ký</button>
                                 </div>
                             </div>
                         </div>
@@ -272,7 +269,7 @@
                                         <option value="2">Tối</option>
                                     </select>
                                     <br>
-                                    <button class="btn-register">Đăng ký</button>
+                                    <button class="btn-medium-filled  btn-register">Đăng ký</button>
                                 </div>
                             </div>
                         </div>
@@ -287,9 +284,9 @@
     <div class="form-popup-confirm">
         <p class="form-message"></p>
         <br>
-        <div class="form-btn-submit">
-            <button class="btn-confirm">Xác nhận</button>
-            <button class="btn-cancel">Hủy</button>
+        <div class="holder-btn">
+            <button class="btn-medium-filled btn-confirm">Xác nhận</button>
+            <button class="btn-medium-bordered btn-cancel">Hủy</button>
         </div>
     </div>
 
