@@ -1,8 +1,8 @@
-<!-- HEADER -->
-<link rel="stylesheet" href="header.css">
+<link rel="stylesheet" href="css/header.css">
 
+<!-- HEADER -->
 <div class="header">
-    <a class="title" href="HomePageCitizen.php">
+    <a class="title" href="HomepageORG.php">
         <img src="image/CVM-Logo.png" alt="CVM-Logo">
         <span class="title">CỔNG THÔNG TIN TIÊM CHỦNG COVID-19</span>
     </a>
@@ -15,17 +15,21 @@
                 </li>
 
                 <li>
-                    <a class="menu-section" href="#">Khai báo</a>
+                    <a class="menu-section" href="#">Lịch tiêm</a>
                 </li>
 
                 <li>
-                    <a class="menu-section" href="#">Tiêm chủng</a>
+                    <a class="menu-section" href="#">Văn bản</a>
                 </li>
+
+                <li>
+                    <a class="menu-section" href="#">Thống kê</a>
+                </li>
+
             </ul>
         </div>
-
         <a class="avatar" href="#">
-            <img src="image/Avatar-Citizen.png" alt="Logo công dân">
+            <img src="image/Avatar-ORG.png" alt="Logo đơn vị tiêm chủng">
         </a>
     </div>
 
@@ -37,19 +41,7 @@
                 </li>
 
                 <li>
-                    <a href="#">Thông tin công dân</a>
-                </li>
-
-                <li>
-                    <a href="#">Lịch đăng kí tiêm chủng</a>
-                </li>
-
-                <li>
-                    <a href="#">Chứng nhận tiêm chủng</a>
-                </li>
-
-                <li>
-                    <a href="#">Thêm người thân</a>
+                    <a href="#">Thông tin tổ chức</a>
                 </li>
 
                 <li>
