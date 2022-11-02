@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/MedicalFormSubmit.css">
+    <link rel="stylesheet" href="css/btn.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/MedicalFormSubmit.js"></script>
@@ -117,7 +118,7 @@
                     </div>
                     <br>
                     <div class="form-btn-input">
-                        <button class="btn-confirm" id="btn-submit-form-medical">Xác nhận</button>
+                        <button class="btn-filled-medium btn-confirm" id="btn-submit-form-medical">Xác nhận</button>
                     </div>
                 </div>
             </div>
@@ -130,9 +131,9 @@
         <br><br>
         <p class="form-message">Xác nhận thực hiện khai báo y tế?</p>
         <br><br>
-        <div class="form-btn-submit">
-            <button class="btn-confirm">Xác nhận</button>
-            <button class="btn-cancel">Hủy</button>
+        <div class="holder-btn">
+            <button class="btn-filled-medium btn-confirm">Xác nhận</button>
+            <button class="btn-bordered-medium btn-cancel">Hủy</button>
         </div>
     </div>
 
