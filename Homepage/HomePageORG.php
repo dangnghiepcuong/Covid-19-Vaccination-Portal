@@ -38,10 +38,6 @@
         <div class="content-alignment-side"></div>
     </div>
 
-    <div class="content-below">
-
-    </div>
-
     <!-- FOOTER -->
     <?php
     include("footer/footer.php");
