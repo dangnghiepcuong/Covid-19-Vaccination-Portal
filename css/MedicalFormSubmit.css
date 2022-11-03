@@ -1,42 +1,3 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: "Roboto";
-}
-
-html {
-    font-family: "Arial";
-}
-
-/* variables */
-:root {
-    --bg_light_gradient: linear-gradient(90deg, #D1BFF3 5%, #FAD3FF 35%, #FFDFEC 65%, #BEF7FF 95%);
-    --color_header: #8C69CA;
-    --color_content: #000000;
-    /* --bgd_gradient: linear-gradient(90deg, #A084CA 2.5%, #F5A8FF 40%, #FFBAD5 60%, #77DAE8 97.5%); Cuong da thao tung dong nay*/
-    --bg_gradient: linear-gradient(90deg, #A084CA 2.5%, #F5A8FF 39.07%, #FFBAD5 66.96%, #77DAE8 95.6%);
-    --color_footer: #A084CA;
-}
-
-/* customize scrollbar */
-body::-webkit-scrollbar {
-    width: 10px;
-    /*vertical scrollbar width*/
-    height: 10px;
-    /*horizontal scrollbar height*/
-}
-
-body::-webkit-scrollbar-thumb {
-    background: var(--color_header);
-    border-radius: 6px;
-}
-
-body::-webkit-scrollbar-track {
-    /*scrollbar bg*/
-    background: whitesmoke;
-}
-
 /* NAVIGATOR FUNCTIONAL PAGES */
 
 .nav-func-pages {
@@ -81,7 +42,6 @@ body::-webkit-scrollbar-track {
     display: flex;
     width: 100%;
     justify-content: center;
-    /* background-color: #000000; */
 }
 
 .panel-target-citizen {

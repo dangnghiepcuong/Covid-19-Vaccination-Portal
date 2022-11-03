@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/ScheduleManagement.css">
     <link rel="stylesheet" href="css/btn.css">
+    <link rel="stylesheet" href="css/filter-panel.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/ScheduleManagement.js"></script>
@@ -52,7 +54,7 @@
         <div class="function-panel">
             <br>
             <div class="filter-panel">
-                <div class="filter-region">
+                <div class="filter-pane" id="filter-schedule>
                     <label for="start-date">Từ ngày</label>
                     <input type="date" name="start-date">
 
@@ -73,7 +75,7 @@
                 </div>
 
 
-                <div class="filter-vaccine-time">
+                <div class="filter-pane" id="filter-vaccine-time">
                     <label for="vaccine">Vaccine</label>
                     <select type="text" name="vaccine">
                         <!-- PHP CODE -->
