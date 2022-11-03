@@ -29,13 +29,13 @@
             </div>
             <div class="nav-directory">
                 <div class="directory">
-                    <a href="index.php">Trang chủ</a>
+                    <a href="HomepageCitizen.php">Trang chủ</a>
                 </div>
 
                 <div class="dicrectory">&nbsp;/&nbsp;</div>
 
                 <div class="directory">
-                    <a href="VaccinationRegistration.php">Công dân</a>
+                    <a href="#">Công dân</a>
                 </div>
 
                 <div class="dicrectory">&nbsp;/&nbsp;</div>

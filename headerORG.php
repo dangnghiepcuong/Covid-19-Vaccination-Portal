@@ -5,28 +5,27 @@
 <div class="header">
     <a class="title" href="HomepageORG.php">
         <img src="image/CVM-Logo.png" alt="CVM-Logo">
-        <span class="title">CỔNG THÔNG TIN TIÊM CHỦNG COVID-19</span>
+        <span>CỔNG THÔNG TIN TIÊM CHỦNG COVID-19</span>
     </a>
 
     <div class="nav">
         <div>
             <ul>
-                <li class="menu-section">
-                    <a  href="#">Tin tức</a>
-                </li>
+                <a href="HomepageORG.php">
+                    <li class="menu-section">Trang chủ</li>
+                </a>
 
-                <li class="menu-section" id="menu-section-schedule">
-                    <a href="#">Lịch tiêm</a>
-                </li>
+                <a href="#">
+                    <li class="menu-section" id="menu-section-schedule">Lịch tiêm</li>
+                </a>
 
-                <li class="menu-section">
-                    <a href="#">Văn bản</a>
-                </li>
+                <a href="#">
+                    <li class="menu-section">Văn bản</li>
+                </a>
 
-                <li class="menu-section">
-                    <a href="#">Thống kê</a>
-                </li>
-
+                <a href="#">
+                    <li class="menu-section">Thống kê</li>
+                </a>
             </ul>
         </div>
         <a class="avatar" href="#">
@@ -38,17 +37,17 @@
     <div class="drop-down-menu" id="drop-down-menu-profile">
         <div class="holder">
             <ul>
-                <li>
-                    <a href="#">Thông tin tài khoản</a>
-                </li>
+                <a href="#">
+                    <li>Thông tin tài khoản</li>
+                </a>
 
-                <li>
-                    <a href="#">Thông tin tổ chức</a>
-                </li>
+                <a href="#">
+                    <li>Thông tin tổ chức</li>
+                </a>
 
-                <li>
-                    <a href="#">Đăng xuất</a>
-                </li>
+                <a href="index.php">
+                    <li>Đăng xuất</li>
+                </a>
             </ul>
         </div>
     </div>
@@ -58,13 +57,13 @@
     <div class="drop-down-menu" id="drop-down-menu-schedule">
         <div class="holder">
             <ul>
-                <li>
-                    <a href="#">Tạo lịch tiêm chủng</a>
-                </li>
+                <a href="#">
+                    <li>Tạo lịch tiêm chủng</li>
+                </a>
 
-                <li>
-                    <a href="#">Danh sách lịch tiêm</a>
-                </li>
+                <a href="ScheduleManagement.php">
+                    <li>Danh sách lịch tiêm</li>
+                </a>
             </ul>
         </div>
     </div>

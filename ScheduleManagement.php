@@ -17,7 +17,7 @@
 <body>
     <!-- HEADER -->
     <?php
-    include("headerCitizen.php");
+    include("headerORG.php");
     ?>
     <!-- END HEADER -->
 
@@ -28,7 +28,7 @@
         </div>
         <div class="nav-directory">
             <div class="directory">
-                <a href="index.php">Trang chủ</a>
+                <a href="HomepageORG.php">Trang chủ</a>
             </div>
 
             <div class="dicrectory">&nbsp;/&nbsp;</div>
@@ -53,32 +53,20 @@
             <br>
             <div class="filter-panel">
                 <div class="filter-region">
-                    <label for="province-name">Tỉnh/Thành phố</label>
-                    <select type="text" name="province-name">
-                        <!-- PHP CODE -->
-                        <option value=""></option>
-                        <option value="">Bình Dương</option>
-                        <option value="">Đồng Nai</option>
-                        <option value="">Hồ Chí Minh</option>
-                    </select>
-                    <label for="district-name">Quận/Huyện/Thị xã</label>
-                    <select type="text" name="district-name">
-                        <!-- PHP CODE -->
-                        <option value=""></option>
-                        <option value="">Bình Dương</option>
-                        <option value="">Đồng Nai</option>
-                        <option value="">Hồ Chí Minh</option>
-                    </select>
+                    <label for="start-date">Từ ngày</label>
+                    <input type="date" name="start-date">
 
-                    <label for="town-name">Xã/Phường/Thị trấn</label>
-                    <select type="drop-down" name="town-name">
+                    <label for="end-date">Đến ngày</label>
+                    <input type="date" name="end-date">
+
+                    <label for="status">Trạng thái</label>
+                    <select type="drop-down" name="status">
                         <!-- PHP CODE -->
-                        <option value=""></option>
-                        <option value="">Bình Dương</option>
-                        <option value="">Đồng Nai</option>
-                        <option value="">Hồ Chí Minh</option>
+                        <option value="">Tất cả</option>
+                        <option value="">Đã lên lịch</option>
+                        <option value="">Đã diễn ra</option>
                     </select>
-                    <button class="btn-bordered-medium-icon">
+                    <button class="btn-medium-bordered-icon">
                         <img src="image/filter-magnifier.png" alt="filter-magnifier">
                         Tìm kiếm
                     </button>
@@ -95,16 +83,15 @@
                         <option value="">Verro Cell</option>
                     </select>
 
-                    <label for="time">Buổi</label>
+                    <!-- <label for="time">Buổi</label>
                     <select type="drop-down" name="time">
-                        <!-- PHP CODE -->
                         <option value=""></option>
                         <option value="">Sáng</option>
                         <option value="">Chiều</option>
                         <option value="">Tối</option>
-                    </select>
+                    </select> -->
 
-                    <button class="btn-bordered-medium-icon">
+                    <button class="btn-medium-bordered-icon">
                         <img src="image/filter-magnifier.png" alt="filter-magnifier">
                         Tìm kiếm
                     </button>
@@ -130,13 +117,57 @@
                                     <p class="attr-time">Buổi sáng: 0/0 - Buổi trưa: 0/0 - Buổi tối: 0/0</p>
                                 </div>
                                 <div class="interactive-area">
-                                    <button class="btn-filled-medium btn-register" id="btn-register">Lượt đăng ký</button>
-                                    <button class="btn-bordered-medium btn-update" id="btn-register">Cập nhật</button>
-                                    <button class="btn-bordered-short btn-cancel" id="btn-register">Hủy</button>
+                                    <button class="btn-medium-filled btn-register" id="btn-register">Lượt đăng ký</button>
+                                    <button class="btn-medium-bordered btn-update" id="btn-register">Cập nhật</button>
+                                    <button class="btn-short-bordered btn-cancel" id="btn-register">Hủy</button>
                                 </div>
                             </div>
                         </div>
 
+                        <div class="schedule">
+                            <p class="obj-org-name">Bệnh viện Đa khoa huyện Dầu Tiếng</p>
+                            <div class="holder-obj-attr">
+                                <div class="obj-attr">
+                                    <p class="attr-date-vaccine-serial">Lịch tiêm ngày: 24/11/2022 - Vaccine: AstraZeneca - A11</p>
+                                    <p class="attr-time">Buổi sáng: 0/0 - Buổi trưa: 0/0 - Buổi tối: 0/0</p>
+                                </div>
+                                <div class="interactive-area">
+                                    <button class="btn-medium-filled btn-register" id="btn-register">Lượt đăng ký</button>
+                                    <button class="btn-medium-bordered btn-update" id="btn-register">Cập nhật</button>
+                                    <button class="btn-short-bordered btn-cancel" id="btn-register">Hủy</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="schedule">
+                            <p class="obj-org-name">Bệnh viện Đa khoa huyện Dầu Tiếng</p>
+                            <div class="holder-obj-attr">
+                                <div class="obj-attr">
+                                    <p class="attr-date-vaccine-serial">Lịch tiêm ngày: 24/11/2022 - Vaccine: AstraZeneca - A11</p>
+                                    <p class="attr-time">Buổi sáng: 0/0 - Buổi trưa: 0/0 - Buổi tối: 0/0</p>
+                                </div>
+                                <div class="interactive-area">
+                                    <button class="btn-medium-filled btn-register" id="btn-register">Lượt đăng ký</button>
+                                    <button class="btn-medium-bordered btn-update" id="btn-register">Cập nhật</button>
+                                    <button class="btn-short-bordered btn-cancel" id="btn-register">Hủy</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="schedule">
+                            <p class="obj-org-name">Bệnh viện Đa khoa huyện Dầu Tiếng</p>
+                            <div class="holder-obj-attr">
+                                <div class="obj-attr">
+                                    <p class="attr-date-vaccine-serial">Lịch tiêm ngày: 24/11/2022 - Vaccine: AstraZeneca - A11</p>
+                                    <p class="attr-time">Buổi sáng: 0/0 - Buổi trưa: 0/0 - Buổi tối: 0/0</p>
+                                </div>
+                                <div class="interactive-area">
+                                    <button class="btn-medium-filled btn-register" id="btn-register">Lượt đăng ký</button>
+                                    <button class="btn-medium-bordered btn-update" id="btn-register">Cập nhật</button>
+                                    <button class="btn-short-bordered btn-cancel" id="btn-register">Hủy</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <!-- <div class="list-schedule" id="list-schedule-right">
                     </div> -->
@@ -151,8 +182,8 @@
         <p class="form-message"></p>
         <br>
         <div class="holder-btn">
-            <button class="btn-confirm">Xác nhận</button>
-            <button class="btn-cancel">Hủy</button>
+            <button class="btn-medium-filled btn-confirm">Xác nhận</button>
+            <button class="btn-medium-bordered btn-cancel">Hủy</button>
         </div>
     </div>
 
