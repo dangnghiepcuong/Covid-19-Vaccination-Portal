@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="css/header.css">
+<script src="js/header.js"></script>
 
 <!-- HEADER -->
 <div class="header">
@@ -10,20 +11,20 @@
     <div class="nav">
         <div>
             <ul>
-                <li>
-                    <a class="menu-section" href="#">Tin tức</a>
+                <li class="menu-section">
+                    <a  href="#">Tin tức</a>
                 </li>
 
-                <li>
-                    <a class="menu-section" href="#">Lịch tiêm</a>
+                <li class="menu-section" id="menu-section-schedule">
+                    <a href="#">Lịch tiêm</a>
                 </li>
 
-                <li>
-                    <a class="menu-section" href="#">Văn bản</a>
+                <li class="menu-section">
+                    <a href="#">Văn bản</a>
                 </li>
 
-                <li>
-                    <a class="menu-section" href="#">Thống kê</a>
+                <li class="menu-section">
+                    <a href="#">Thống kê</a>
                 </li>
 
             </ul>
@@ -33,6 +34,7 @@
         </a>
     </div>
 
+    <!-- DROP DOWN MENU PROFILE -->
     <div class="drop-down-menu" id="drop-down-menu-profile">
         <div class="holder">
             <ul>
@@ -50,6 +52,23 @@
             </ul>
         </div>
     </div>
+    <!-- END DROP DOWN MENU PROFILE -->
+
+    <!-- DROP DOWN MENU SCHEDULE -->
+    <div class="drop-down-menu" id="drop-down-menu-schedule">
+        <div class="holder">
+            <ul>
+                <li>
+                    <a href="#">Tạo lịch tiêm chủng</a>
+                </li>
+
+                <li>
+                    <a href="#">Danh sách lịch tiêm</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- END DROP DOWN MENU SCHEDULE -->
 </div>
 
 <div class="header-virtual"></div>

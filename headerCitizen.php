@@ -1,5 +1,5 @@
-<!-- HEADER -->
 <link rel="stylesheet" href="css/header.css">
+<script src="js/header.js"></script>
 
 <div class="header">
     <a class="title" href="HomepageCitizen.php">
@@ -10,16 +10,16 @@
     <div class="nav">
         <div>
             <ul>
-                <li>
-                    <a class="menu-section" href="#">Tin tức</a>
+                <li class="menu-section">
+                    <a href="#">Tin tức</a>
                 </li>
 
-                <li>
-                    <a class="menu-section" href="#">Khai báo</a>
-                </li>
+                <li class="menu-section">
+                    <a href="#">Khai báo</a>
+                </li class="menu-section">
 
-                <li>
-                    <a class="menu-section" href="#">Tiêm chủng</a>
+                <li class="menu-section">
+                    <a href="#">Tiêm chủng</a>
                 </li>
             </ul>
         </div>
@@ -29,6 +29,7 @@
         </a>
     </div>
 
+    <!-- DROP DOWN MENU PROFILE -->
     <div class="drop-down-menu" id="drop-down-menu-profile">
         <div class="holder">
             <ul>
@@ -41,11 +42,11 @@
                 </li>
 
                 <li>
-                    <a href="#">Lịch đăng kí tiêm chủng</a>
+                    <a href="#">Lịch đăng kí</a>
                 </li>
 
                 <li>
-                    <a href="#">Chứng nhận tiêm chủng</a>
+                    <a href="#">Chứng nhận</a>
                 </li>
 
                 <li>
@@ -58,6 +59,7 @@
             </ul>
         </div>
     </div>
+    <!-- END DROP DOWN MENU PROFILE -->
 </div>
 
 <div class="header-virtual"></div>

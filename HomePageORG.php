@@ -14,13 +14,13 @@
 <body>
     <!-- HEADER -->
     <?php
-    include("header/headerCitizen.php");
+    include("headerORG.php");
     ?>
     <!-- END HEADER -->
 
     <!-- SLIDER -->
     <?php
-    include("homepage/HomepageSlider.php");
+    include("HomepageSlider.php");
     ?>
     <!-- END SLIDER -->
 
@@ -40,7 +40,7 @@
 
     <!-- FOOTER -->
     <?php
-    include("../footer/footer.php");
+    include("footer.php");
     ?>
     <!-- END FOOTER -->
 </body>
