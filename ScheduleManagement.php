@@ -54,12 +54,12 @@
         <div class="function-panel">
             <br>
             <div class="filter-panel">
-                <div class="filter-pane" id="filter-schedule>
+                <div class="filter-pane" id="filter-schedule">
                     <label for="start-date">Từ ngày</label>
-                    <input type="date" name="start-date">
+                    <input type="date" name="start-date" id="start-date">
 
                     <label for="end-date">Đến ngày</label>
-                    <input type="date" name="end-date">
+                    <input type="date" name="end-date" id="end-date">
 
                     <label for="status">Trạng thái</label>
                     <select type="drop-down" name="status">
@@ -68,7 +68,7 @@
                         <option value="">Đã lên lịch</option>
                         <option value="">Đã diễn ra</option>
                     </select>
-                    <button class="btn-medium-bordered-icon">
+                    <button class="btn-medium-bordered-icon" id="filter-date-status">
                         <img src="image/filter-magnifier.png" alt="filter-magnifier">
                         Tìm kiếm
                     </button>
@@ -79,7 +79,7 @@
                     <label for="vaccine">Vaccine</label>
                     <select type="text" name="vaccine">
                         <!-- PHP CODE -->
-                        <option value=""></option>
+                        <option value="">Tất cả</option>
                         <option value="">AstraZeneca</option>
                         <option value="">Comirnaty</option>
                         <option value="">Verro Cell</option>
@@ -105,7 +105,17 @@
             <div class="panel-list-schedule">
                 <div class="list-name">DANH SÁCH LỊCH TIÊM</div>
                 <div class="list-name" id="object-orgname">
-                    <!--PHP CODE-->Bệnh viện Đa khoa huyện Dầu Tiếng
+                    <!--PHP CODE Bệnh viện Đa khoa huyện Dầu Tiếng -->
+                    <?php
+                    include("DatabaseConnection.php");
+
+                    $sql = "select * from ORGANIZATION where ID = '74001'";
+                    $command = oci_parse($connectionString, $sql);
+                    oci_execute($command);
+                    while (($row = oci_fetch_array($command, OCI_ASSOC)) != false) {
+                        echo $row['name'];
+                    }
+                    ?>
                 </div>
                 <br>
                 <div class="holder">

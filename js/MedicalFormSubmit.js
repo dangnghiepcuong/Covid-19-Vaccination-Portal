@@ -1,6 +1,12 @@
 $(document).ready(function () {
-    // HANDLE ACTION
+    // AUTO FROM LOADING
+    var today = new Date();
+    var day = ("0" + today.getDate()).slice(-2);
+    var month = ("0" + (today.getMonth() + 1)).slice(-2);
+    var today = today.getFullYear() + "-" + (month) + "-" + (day);
+    $("#input-date").val(today);
 
+    // HANDLE ACTION
     $("#btn-submit-form-medical").click(function(){
         $(".gradient-bg-faded").css('display','block');
         $(".form-popup-confirm").css('display','block');
