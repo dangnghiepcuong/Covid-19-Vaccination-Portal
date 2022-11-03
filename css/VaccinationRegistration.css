@@ -1,0 +1,255 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Roboto";
+}
+
+/* variables */
+:root {
+    --bg_light_gradient: linear-gradient(90deg, #D1BFF3 5%, #FAD3FF 35%, #FFDFEC 65%, #BEF7FF 95%);
+    --color_header: #8C69CA;
+    --color_content: #000000;
+    /* --bgd_gradient: linear-gradient(90deg, #A084CA 2.5%, #F5A8FF 40%, #FFBAD5 60%, #77DAE8 97.5%); Cuong da thao tung dong nay*/
+    --bg_gradient: linear-gradient(90deg, #A084CA 2.5%, #F5A8FF 39.07%, #FFBAD5 66.96%, #77DAE8 95.6%);
+    --color_footer: #A084CA;
+}
+
+/* customize scrollbar */
+body::-webkit-scrollbar {
+    width: 10px;
+    /*vertical scrollbar width*/
+    height: 10px;
+    /*horizontal scrollbar height*/
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--color_header);
+    border-radius: 6px;
+}
+
+body::-webkit-scrollbar-track {
+    /*scrollbar bg*/
+    background: whitesmoke;
+}
+
+/* NAVIGATOR FUNCTIONAL PAGES */
+
+.nav-func-pages {
+    height: 50px;
+    width: 100%;
+    background: rgba(224, 202, 238, 0.32);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 29px;
+}
+
+.nav-func-pages a {
+    text-decoration: none;
+    color: black;
+}
+
+.nav-func-title {
+    padding-left: 10%;
+    font-weight: 600;
+}
+
+.nav-directory {
+    display: flex;
+    padding-right: 10%;
+}
+
+.directory-selected a {
+    color: #167CDB;
+}
+
+
+/* END NAVIGATOR FUNCTIONAL PAGES */
+
+/* FUNCTIONAL PANEL */
+
+.holder-function-panel {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.function-panel {
+    width: 80%;
+    border-style: solid;
+    border: 1px solid #8C69CA;
+    border-radius: 20px;
+}
+
+.filter-panel {
+    width: 95%;
+    margin: 0 auto;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.filter-panel label {
+    margin-left: 5px;
+    margin-right: 5px;
+    line-height: 30px;
+    font-size: 18px;
+}
+
+.filter-panel select {
+    margin-left: 5px;
+    margin-right: 30px;
+    width: 140px;
+    height: 30px;
+    font-size: 18px;
+}
+
+.filter-region {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0px;
+}
+
+.filter-vaccine-time {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0px;
+}
+
+.panel-list-schedule {
+    width: 100%;
+    height: 445x;
+}
+
+.panel-list-schedule .list-name {
+    color: #8C69CA;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+}
+
+.panel-list-schedule .holder {
+    display: flex;
+    width: 95%;
+    height: 100%;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.panel-list-schedule .holder .list-schedule {
+    width: 48%;
+}
+
+.panel-list-schedule .holder .list-schedule .schedule {
+    width: 100%;
+    height: 120px;
+    margin-bottom: 4px;
+    background-color: white;
+    box-shadow: 2px 2px 5px -2px #8C69CA;
+    transition: 300ms;
+}
+
+.panel-list-schedule .holder .list-schedule .schedule:hover {
+    box-shadow: 2px 2px 5px -1px #F5A8FF;
+}
+
+.panel-list-schedule .holder .list-schedule .schedule 
+.obj-org-name {
+    padding: 5px 0px 0px 15px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #D1BFF3;
+}
+
+.panel-list-schedule .holder .list-schedule .schedule 
+.holder-obj-attr {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.panel-list-schedule .holder .list-schedule .schedule 
+.holder-obj-attr .obj-attr * {
+    padding: 3px 0px;
+    font-family: 'Roboto';
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 300;
+}
+
+.panel-list-schedule .holder .list-schedule .schedule 
+.holder-obj-attr .obj-attr, .interactive-area {
+    padding: 5px 10px 5px 15px;
+    align-items: center;
+}
+
+.panel-list-schedule .holder .list-schedule .schedule 
+.holder-obj-attr .interactive-area .drop-down-time {
+    width: 80px;
+    height: 30px;
+    margin-bottom: 10px;
+    font-family: 'Roboto';
+    font-size: 18px;
+    font-weight: 300;
+}
+
+/* END FUNCTIONAL PANEL */
+
+/* POPUP CONFIRM FORM */
+
+.form-popup-confirm {
+    display: none;
+    z-index: 10;
+    width: 600px;
+    height: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-300px, -150px);
+    border-radius: 20px;
+    background-color: white;
+}
+
+.form-popup-confirm .form-message {
+    margin-top: 40px;
+    font-family: 'Roboto';
+    font-size: 20px;
+    font-weight: 200;
+    font-style: italic;
+    justify-self: center;
+    text-align: center;
+}
+
+.form-popup-confirm  .holder-btn {
+    display: flex;
+    justify-content: space-between;
+    width: 260px;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+
+/* FADED LINEAR BACKGROUND */
+.gradient-bg-faded {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: var(--bg_gradient);
+    opacity: 0.80;
+    z-index: 9;
+    transition: 300ms;
+}
+/* END POPUP CONFIRM FORM */

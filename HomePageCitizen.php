@@ -4,23 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đơn vị tiêm chủng</title>
-    <link rel="stylesheet" href="css/HomepageORG.css">
+    <title>Trang công dân</title>
+    <link rel="stylesheet" href="css/HomepageCitizen.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="js/HomepageORG.js"></script>
+    <script src="js/HomepageCitizen.js"></script>
 </head>
 
 <body>
     <!-- HEADER -->
     <?php
-    include("header/headerCitizen.php");
+    include("headerCitizen.php");
     ?>
     <!-- END HEADER -->
 
     <!-- SLIDER -->
     <?php
-    include("homepage/HomepageSlider.php");
+    include("HomePageSlider.php");
     ?>
     <!-- END SLIDER -->
 
@@ -37,10 +37,11 @@
         <div class="content-box"></div>
         <div class="content-alignment-side"></div>
     </div>
+    <!-- END CONTENT -->
 
     <!-- FOOTER -->
     <?php
-    include("../footer/footer.php");
+    include("footer.php");
     ?>
     <!-- END FOOTER -->
 </body>
