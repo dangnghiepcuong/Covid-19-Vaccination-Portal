@@ -1,20 +1,20 @@
 $(document).ready(function(){
     // NAV MENU ANIMATION
     $(".header .nav .menu-section").mouseover(function(){
-        $(this).find("a").css('color', 'white');
+        $(this).css('color', 'white');
     })
 
     $(".header .nav .menu-section").mouseout(function(){
-        $(this).find("a").css('color', '#8C69CA');
+        $(this).css('color', '#8C69CA');
     })
 
     // DROP DOWN MENU TEXT ANIMATION
-    $(".drop-down-menu li").mouseover(function(){
-        $(this).find("a").css('color','white');
+    $(".drop-down-menu a").mouseover(function(){
+        $(this).find("li").css('color','white');
     })
 
-    $(".drop-down-menu li").mouseout(function(){
-        $(this).find("a").css('color','black');
+    $(".drop-down-menu a").mouseout(function(){
+        $(this).find("li").css('color','black');
     })
 
     // DROP DOWN MENU PROFILE

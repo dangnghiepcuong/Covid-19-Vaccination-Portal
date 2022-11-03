@@ -4,23 +4,23 @@
 <div class="header">
     <a class="title" href="HomepageCitizen.php">
         <img src="image/CVM-Logo.png" alt="CVM-Logo">
-        <span class="title">CỔNG THÔNG TIN TIÊM CHỦNG COVID-19</span>
+        <span>CỔNG THÔNG TIN TIÊM CHỦNG COVID-19</span>
     </a>
 
     <div class="nav">
         <div>
             <ul>
-                <li class="menu-section">
-                    <a href="#">Tin tức</a>
-                </li>
+                <a href="HomepageCitizen.php">
+                    <li class="menu-section">Trang chủ</li>
+                </a>
 
-                <li class="menu-section">
-                    <a href="#">Khai báo</a>
-                </li class="menu-section">
+                <a href="#">
+                    <li class="menu-section">Khai báo</li>
+                </a>
 
-                <li class="menu-section">
-                    <a href="#">Tiêm chủng</a>
-                </li>
+                <a href="VaccinationRegistration.php">
+                    <li class="menu-section">Tiêm chủng</li>
+                </a>
             </ul>
         </div>
 
@@ -33,29 +33,29 @@
     <div class="drop-down-menu" id="drop-down-menu-profile">
         <div class="holder">
             <ul>
-                <li>
-                    <a href="#">Thông tin tài khoản</a>
-                </li>
+                <a href="#">
+                    <li>Thông tin tài khoản</li>
+                </a>
 
-                <li>
-                    <a href="#">Thông tin công dân</a>
-                </li>
+                <a href="#">
+                    <li>Thông tin công dân</li>
+                </a>
 
-                <li>
-                    <a href="#">Lịch đăng kí</a>
-                </li>
+                <a href="RegistrationManagement.php">
+                    <li>Lịch đăng kí</li>
+                </a>
 
-                <li>
-                    <a href="#">Chứng nhận</a>
-                </li>
+                <a href="#">
+                    <li>Chứng nhận</li>
+                </a>
 
-                <li>
-                    <a href="#">Thêm người thân</a>
-                </li>
+                <a href="#">
+                    <li>Thêm người thân</li>
+                </a>
 
-                <li>
-                    <a href="#">Đăng xuất</a>
-                </li>
+                <a href="index.php">
+                    <li>Đăng xuất</li>
+                </a>
             </ul>
         </div>
     </div>
