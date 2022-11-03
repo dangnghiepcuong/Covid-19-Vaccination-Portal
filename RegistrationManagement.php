@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/RegistrationManagement.js"></script>
+    <script src="js/animation-btn.js"></script>
     <title>Quản lý lượt đăng ký</title>
 </head>
 
@@ -103,7 +104,7 @@
                             <option value="">Tối</option>
                         </select>
 
-                        <button class="btn-bordered-medium-icon btn-filter">
+                        <button class="btn-medium-bordered-icon btn-filter">
                             <img src="image/filter-magnifier.png" alt="filter-magnifier">
                             Tìm kiếm
                         </button>
@@ -128,7 +129,7 @@
                                     </div>
 
                                     <div class="interactive-area">
-                                        <button class="btn-bordered-medium btn-cancel">Hủy</button>
+                                        <button class="btn-medium-bordered btn-cancel">Hủy</button>
                                     </div>
                                 </div>
                             </div>
@@ -143,7 +144,7 @@
                                     </div>
 
                                     <div class="interactive-area">
-                                        <button class="btn-bordered-medium btn-cancel">Hủy</button>
+                                        <button class="btn-medium-bordered btn-cancel">Hủy</button>
                                     </div>
                                 </div>
                             </div>
@@ -158,7 +159,7 @@
                                     </div>
 
                                     <div class="interactive-area">
-                                        <button class="btn-bordered-medium btn-cancel">Hủy</button>
+                                        <button class="btn-medium-bordered btn-cancel">Hủy</button>
                                     </div>
                                 </div>
                             </div>
@@ -177,8 +178,8 @@
         <div class="form-popup-confirm">
             <p class="form-message"></p>
             <div class="holder-btn">
-                <button class="btn-filled-medium btn-confirm">Xác nhận</button>
-                <button class="btn-bordered-medium btn-cancel">Hủy</button>
+                <button class="btn-medium-filled btn-confirm">Xác nhận</button>
+                <button class="btn-medium-bordered btn-cancel">Hủy</button>
             </div>
         </div>
 

@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="css/header.css">
+<script src="js/header.js"></script>
 
 <div class="header">
     <a class="title" href="index.php">
@@ -9,20 +10,20 @@
     <div class="nav">
         <div>
             <ul>
-                <li>
-                    <a class="menu-section" href="#">Tin tức</a>
+                <li class="menu-section">
+                    <a href="#">Tin tức</a>
                 </li>
 
-                <li>
-                    <a class="menu-section" href="#">Lịch tiêm</a>
+                <li class="menu-section">
+                    <a href="#">Lịch tiêm</a>
                 </li>
 
-                <li>
-                    <a class="menu-section" href="#">Tiêm chủng</a>
+                <li class="menu-section">
+                    <a href="#">Tiêm chủng</a>
                 </li>
 
-                <li>
-                    <a class="menu-section" href="#">Thống kê</a>
+                <li class="menu-section">
+                    <a href="#">Thống kê</a>
                 </li>
 
             </ul>
