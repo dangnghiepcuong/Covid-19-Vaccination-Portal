@@ -1,9 +1,8 @@
 <?php
-    $connectionString = "'covid19_vaccination_infogate', 'covid19_vaccination_infogate', 'localhost/orcl'";
+    $connection = oci_connect('covid19_vaccination_infogate', 'covid19_vaccination_infogate', 'localhost/orcl');
 
-    if($connectionString)
+    if($connection)
     {
-        
     }
     else
     {
