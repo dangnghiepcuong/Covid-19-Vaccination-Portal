@@ -109,12 +109,12 @@
                     <?php
                     include("DatabaseConnection.php");
 
-                    $sql = "select * from ORGANIZATION where ID = '74001'";
-                    $command = oci_parse($connectionString, $sql);
-                    oci_execute($command);
-                    while (($row = oci_fetch_array($command, OCI_ASSOC)) != false) {
-                        echo $row['name'];
-                    }
+                    // $sql = "select * from ORGANIZATION where ID = '74001'";
+                    // $command = oci_parse($connection, $sql);
+                    // oci_execute($command);
+                    // while (($row = oci_fetch_array($command, OCI_ASSOC)) != false) {
+                    //     echo $row['name'];
+                    // }
                     ?>
                 </div>
                 <br>
