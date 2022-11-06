@@ -190,7 +190,6 @@
     </div>
 
 
-
     <!-- FADED COVER -->
     <div class="gradient-bg-faded" id="gradient-bg-faded"></div>
 
