@@ -88,56 +88,77 @@
     transition: 300ms;
 }
 
-@media (min-width: 0px) and (max-width: 760px) {
-    .nav div {
-        display: none;
-    }
-
-    .header a .title {
-        font-size: 14px;
-    }
-
+@media (min-width: 0px) and (max-width: 640px) {
     .header {
         padding: 5px 5px;
     }
-}
 
-@media (min-width: 0px) and (max-width: 888px) {
-    .header a .title {
-        font-size: 15px;
+    .header .title span {
+        font-size: 18px;
     }
 
     .slider div .slider_dot {
         width: 5px;
         height: 5px;
     }
-}
 
-@media (min-width: 740px) and (max-width: 1024px) {
-    .header a .title {
-        font-size: 15px;
+    .header .nav div {
+        display: none;
     }
 
-    .nav a li {
-        font-size: 14px;
-    }
-
-    .nav a {
-        padding-right: 20px;
+    .header .btn-login {
+        font-size: 16px;
+        padding: 0px 15px;
+        line-height: 34px;
     }
 }
 
-@media (min-width: 1024px) and (max-width: 1239px) {
-    .header a .title {
+@media (min-width: 640px) and (max-width: 1015px) {
+    .header .title span {
+        font-size: 20px;
+    }
+
+    .slider div .slider_dot {
+        width: 5px;
+        height: 5px;
+    }
+
+    .header .nav div {
+        display: none;
+    }
+
+    .header .btn-login {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 1015px) and (max-width: 1110px) {
+    .header .title span {
         font-size: 18px;
     }
 
-    .nav a li {
+    .header .nav a li {
         font-size: 16px;
+        padding: 0px 15px;
     }
 
-    .nav a {
-        padding-right: 25px;
+    .header .btn-login {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 1110px) and (max-width: 1330px) {
+    .header .title span {
+        font-size: 20px;
+    }
+
+    .header .nav a li {
+        font-size: 18px;
+        padding: 0px 15px;
+    }
+
+    .header .btn-login {
+        font-size: 18px;
     }
 }
 
