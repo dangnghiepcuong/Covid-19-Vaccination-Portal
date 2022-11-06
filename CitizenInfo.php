@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Citizen.css">
+    <link rel="stylesheet" href="cc.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>Thông tin công dân</title>
@@ -96,57 +96,57 @@
             <br>
             <div class="filter-panel">
                 <div class="line-1">
-                    <label for="last-name">Họ và tên đệm</label>
-                    <!-- <label for="note">(*)</label> -->
+                    <label for="last-name" class="cow-1">Họ và tên đệm <span class="note">(*)</label>
+                    <label for="first-name" class="cow-2">Tên <span class="note">(*)</label>
+                    <label for="gender" class="cow-3">Giới tính <span class="note">(*)</label>
 
-                    <label for="first-name">Tên</label>
-                    <!-- <label for="note">(*)</label> -->
-
-                    <label for="gender">Giới tính</label>
-                    <!-- <label for="note">(*)</label> -->
-                </div>
-
-                <div class="input-1">
+                    <br>
                     <input type="text" value="Lê Hoàng">
                     <input type="text" value="Duyên">
                     <select name="" id="">
                         <option value="">Nam</option>
                         <option value="">Nữ</option>
                     </select>
-                </div>
 
+                    <hr class="left-1">
+                    <hr class="mid-1">
+                    <hr class="right-1">
+                </div>
+                <br>
                 <div class="line-2">
-                    <label for="id">Mã định danh</label>
+                    <label for="id" class="cow-1">Mã định danh <span class="note">(*)</label>
                     <!-- <label for="note">(*)</label> -->
 
-                    <label for="birthday">Ngày tháng năm sinh</label>
+                    <label for="birthday" class="cow-2">Ngày tháng năm sinh <span class="note">(*)</label>
                     <!-- <label for="note">(*)</label> -->
 
-                    <label for="hometown">Quê quán</label>
+                    <label for="hometown" class="cow-3">Quê quán <span class="note">(*)</label>
                     <!-- <label for="note">(*)</label> -->
-                </div>
 
-                <div class="input-2">
+                    <br>
                     <input type="text" value="20521252">
                     <input type="date">
                     <select name="" id="">
                         <option value="">Quảng Trị</option>
                         <option value="">Đồng Nai</option>
                     </select>
-                </div>
 
+                    <hr class="left-2">
+                    <hr class="mid-2">
+                    <hr class="right-2">
+                </div>
+                <br>
                 <div class="input-3">
-                    <p>Địa chỉ thường trú:</p>
+                    <p class="cow-1">Địa chỉ thường trú:</p>
                 </div>
 
                 <div class="line-4">
-                    <label for="province">Tỉnh/Thành phố</label>
-                    <label for="district">Quận/Huyện</label>
-                    <label for="town">Xã/Phường/Thị trấn</label>
-                </div>
+                    <label for="province" class="cow-1">Tỉnh/Thành phố <span class="note">(*)</label>
+                    <label for="district" class="cow-2">Quận/Huyện <span class="note">(*)</label>
+                    <label for="town" class="cow-3">Xã/Phường/Thị trấn <span class="note">(*)</label>
 
-                <div class="input-4">
-                    <select name="" id="">
+                    <br>
+                    <select name="" id="" >
                         <option value="">Đồng Nai</option>
                         <option value="">Hồ Chí Minh</option>
                     </select>
@@ -160,22 +160,28 @@
                         <option value="">Sông Ray</option>
                         <option value="">Linh Trung</option>
                     </select>
-                </div>
 
+                    <hr class="left-4">
+                    <hr class="mid-4">
+                    <hr class="right-4">
+                </div>
+                <br>
                 <div class="line-5">
-                    <label for="street">Số nhà, tên đường, khu phố/ấp</label>
-                </div>
+                    <label for="street" class="cow-1">Số nhà, tên đường, khu phố/ấp <span class="note">(*)</label>
 
-                <div class="input-5">
+                    <br>
                     <input type="text" value="123, tổ x, ấp y">
-                </div>
 
+                    <hr class="mid-5">
+                </div>
+                <br>
                 <div class="line-6">
-                    <label for="email">Email</label>
-                </div>
+                    <label for="email" class="cow-1">Email</label>
 
-                <div>
-                    <input type="text" name="123@gmail.com" id="">
+                    <br>
+                    <input type="text" value="123@gmail.com" id="">
+
+                    <hr class="mid-6">
                 </div>
 
             </div>

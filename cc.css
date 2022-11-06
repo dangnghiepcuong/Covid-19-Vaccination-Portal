@@ -273,14 +273,21 @@ body::-webkit-scrollbar-track {
 .panel-target-citizen {
     display: flex;
     justify-content: center;
+    margin-left: 50px;
+    margin-right: 50px;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
 }
 
-.panel-target-citizen * {
+.panel-target-citizen *{
     font-family: 'Roboto';
     font-size: 20px;
     font-weight: 400;
     margin: 0px 5px;
-    line-height: 32px;
+    line-height: 50px;
+}
+
+.panel-target-citizen select {
+    border: none;
 }
 
 .holder-function-panel {
@@ -444,17 +451,21 @@ body::-webkit-scrollbar-track {
     border: none;
     position: absolute;
 }
+
+.note {
+    color: red;
+}
  
 .cow-1 {
     margin-left: 80px;
 }
 
 .cow-2 {
-    margin-left: 175px;
+    margin-left: 150px;
 }
 
 .cow-3 {
-    margin-left: 265px;
+    margin-left: 240px;
 }
 
 /*LAST NAME, FIRST NAME, GENDER*/
@@ -477,21 +488,21 @@ body::-webkit-scrollbar-track {
 }
 
 .left-1 {
-    margin-left: 80px;
-    margin-top: -3px;
+    margin-left: -690px;
+    margin-top: 25px;
     width: 220px;
 }
 
 .mid-1 {
-    margin-left: 375px;
+    margin-left: -395px;
     width: 220px;
-    margin-top: -3px;
+    margin-top: 25px;
 }
 
 .right-1 {
-    margin-left: 675px;
+    margin-left: -95px;
     width: 100px;
-    margin-top: -3px;
+    margin-top: 25px;
 }
 /*END LAST NAME, FIRST NAME, GENDER*/
 
@@ -520,11 +531,11 @@ body::-webkit-scrollbar-track {
 }
 
 .line-2 .cow-2 {
-    margin-left: 180px;
+    margin-left: 155px;
 }
 
 .line-2 .cow-3 {
-    margin-left: 125px;
+    margin-left: 100px;
 }
 
 .left-2 {
@@ -567,29 +578,29 @@ body::-webkit-scrollbar-track {
 }
 
 .line-4 .cow-2 {
-    margin-left: 165px;
+    margin-left: 140px;
 }
 
 .line-4 .cow-3 {
-    margin-left: 190px;
+    margin-left: 168px;
 }
 
 .left-4 {
     margin-left: -805px;
-    margin-top: 22px;
+    margin-top: 23px;
     width: 220px;
 }
 
 .mid-4 {
     margin-left: -505px;
     width: 220px;
-    margin-top: 22px;
+    margin-top: 23px;
 }
 
 .right-4 {
     margin-left: -210px;
-    margin-top: 22px;
-    width: 100px;
+    margin-top: 23px;
+    width: 220px;
 }
 /*END DIRECTION*/
 
@@ -610,8 +621,8 @@ body::-webkit-scrollbar-track {
 
 .mid-5 {
     margin-left: -500px;
-    margin-top: 20px;
-    width: 510px;
+    margin-top: 23px;
+    width: 520px;
 }
 /*END ADDRESS*/
 
@@ -631,7 +642,7 @@ body::-webkit-scrollbar-track {
 
 .mid-6 {
     margin-left: -210px;
-    margin-top: 21px;
+    margin-top: 22px;
     width: 220px;
 }
 /*END EMAIL*/
