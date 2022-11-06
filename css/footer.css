@@ -21,20 +21,9 @@ footer div img {
     max-height: 70px;
 }
 
-@media (min-width:0px) and (max-width:1445px) {
-    footer p {
-        margin-right: 50px;
-    }
-
+@media (min-width:0px) and (max-width:950px) {
     footer div {
-        padding: 0 3% 0 5%;
+        padding: 0px 10px;
     }
 }
-
-@media (min-width:0px) and (max-width:1247px) {
-    footer p {
-        font-size: 16px;
-    }
-}
-
 /* END FOOTER */
