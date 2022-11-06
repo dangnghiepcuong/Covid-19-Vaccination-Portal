@@ -5,7 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="cc.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/btn.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/cc.css">
+    <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>Thông tin công dân</title>
@@ -13,33 +17,9 @@
 
 <body>
     <!-- HEADER -->
-    <div class="header">
-        <div class="header-alignment">
-            <a href="index.php">
-                <img src="image/CVM-Logo.png" alt="CVM-Logo">
-                <span class="title">CỔNG THÔNG TIN TIÊM CHỦNG COVID-19</span>
-            </a>
-            <div class="nav">
-                <div>
-                    <ul>
-                        <li>
-                            <a class="menuSection" href="#">Tin tức</a>
-                        </li>
-
-                        <li>
-                            <a class="menuSection" href="#">Khai báo</a>
-                        </li>
-
-                        <li>
-                            <a class="menuSection" href="#">Tiêm chủng</a>
-                        </li>
-                    </ul>
-                </div>
-                <a href="#"><img src="image/Avatar-Citizen.png" alt=""></a>
-
-            </div>
-        </div>
-    </div>
+    <?php
+        include("headerCitizen.php");
+    ?>
     <!-- END HEADER -->
 
     <div class="nav-citizen-pages">
@@ -64,6 +44,7 @@
             </div>
         </div>
     </div>
+    <br>
 
     <div class="holder-function-panel">
         <div class="nav-panel">
@@ -187,19 +168,22 @@
             </div>
         </div>
     </div>
+    <br>
 
     <div class="form-popup-confirm">
         <div class="form-btn-submit">
-            <button class="btn-confirm">Cập nhật</button>
-            <button class="btn-cancel">Hủy bỏ</button>
+            <button class="btn-medium-filled btn-confirm">Cập nhật</button>
+            <button class="btn-medium-bordered btn-cancel">Hủy bỏ</button>
         </div>
     </div>
 
 
+    <?php
+        include("footer.php")
+    ?>
 
     <!-- FADED COVER -->
     <div class="gradient-bg-faded" id="gradient-bg-faded"></div>
-
 </body>
 
 </html>
