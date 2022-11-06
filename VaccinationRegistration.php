@@ -25,9 +25,11 @@
 
     <!-- NAV FUNCTION PANEL -->
     <div class="nav-func-pages">
+        
         <div class="nav-func-title">
             <a href="VaccinationRegistration.php">Đăng ký tiêm chủng</a>
         </div>
+
         <div class="nav-directory">
             <div class="directory">
                 <a href="HomepageCitizen.php">Trang chủ</a>
@@ -296,9 +298,9 @@
     <!-- COVER LOGIN FORM -->
     <div class="gradient-bg-faded" id="gradient-bg-faded"></div>
 
-    <?php
+    <!-- <?php
     include("footer.php")
-    ?>
+    ?> -->
 </body>
 
 </html>
