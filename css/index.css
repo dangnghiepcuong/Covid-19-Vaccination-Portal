@@ -1,0 +1,192 @@
+/* CONTENT */
+
+.content {
+    height: 600px;
+    margin-top: 20px;
+    background: whitesmoke;
+    display: flex;
+    justify-content: space-between;
+}
+
+.content .content-box {
+    height: 100%;
+    width: 20%;
+    background: white;
+    /* border-radius: 5%; */
+    transition: 300ms;
+}
+
+.content-alignment-side {
+    width: 5%;
+}
+
+.content .content-box:hover {
+    box-shadow: 2px 2px 7px -2px black;
+}
+
+.content-below {
+    height: 50px;
+    background: whitesmoke;
+}
+
+/* END CONTENT */
+
+/* LOGIN FORM */
+
+.form-login {
+    display: none;
+    z-index: 10;
+    position: fixed;
+    width: 400px;
+    height: 450px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-200px, -225px);
+    border-radius: 20px;
+    background: #FEFEFE;
+    transition: 500ms;
+}
+
+.form-container .btn-linked-page .page-reg-acc,
+.page-forgot-pass {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+
+/* END LOGIN FORM */
+
+/* REG-ACC FORM */
+
+.form-reg-acc {
+    display: none;
+    z-index: 10;
+    position: fixed;
+    width: 400px;
+    height: 500px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-200px, -250px);
+    border-radius: 20px;
+    background: #FEFEFE;
+    transition: 500ms;
+}
+
+
+.form-container .page-login {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+/* END REG-ACC FORM */
+
+/* LOGIN & REG-ACC FORM */
+
+.form-container {
+    display: grid;
+    max-width: 400px;
+    border-radius: 20px;
+    background-color: white;
+    padding: 30px 50px 20px 50px;
+    align-items: center;
+    text-align: left;
+    font-family: 'Roboto';
+}
+
+.form-container .btn-close {
+    width: 18px;
+    justify-self: right;
+    font-weight: 100;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.form-container .title {
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 20px;
+    padding-bottom: 5px;
+    text-align: center;
+}
+
+.form-container label {
+    font-weight: 200;
+    font-size: 20px;
+    line-height: 20px;
+    padding-bottom: 5px;
+}
+
+.form-container input {
+    border: none;
+    outline: none;
+    line-height: 40px;
+    font-family: 'Roboto';
+    font-size: 24px;
+}
+
+.form-container input {
+    line-height: 40px;
+    font-family: 'Roboto';
+    font-weight: 300;
+    font-size: 24px;
+}
+
+.form-container .btn-linked-page {
+    text-decoration: none;
+    font-size: 18px;
+    color: #77DAE8;
+}
+
+.form-container hr {
+    background: var(--bg_gradient);
+    height: 1px;
+    border: none;
+}
+
+.form-container .btn-linked-page p {
+    text-decoration: none;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+
+.form-container .long-btn {
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    background: var(--bg_gradient);
+    padding: 5px;
+    text-align: center;
+    color: white;
+    font-weight: 300;
+    font-size: 24px;
+    cursor: pointer;
+    transition: 200ms;
+}
+
+.form-container .long-btn:hover {
+    opacity: 0.8;
+}
+
+/* END LOGIN & REG-ACC FORM */
+
+
+
+/* FADED LINEAR BACKGROUND */
+.gradient-bg-faded {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    background: var(--bg_gradient);
+    opacity: 0.80;
+    z-index: 9;
+    transition: 500ms;
+}

@@ -5,43 +5,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="VaccinationRegistration.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/VaccinationRegistration.css">
+    <link rel="stylesheet" href="css/btn.css">
+    <link rel="stylesheet" href="css/filter-panel.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="VaccinationRegistration.js"></script>
+    <script src="js/VaccinationRegistration.js"></script>
+    <script src="js/animation-btn.js"></script>
     <title>Tiêm chủng</title>
 </head>
 
 <body>
     <!-- HEADER -->
-    <div class="header">
-        <div class="header-alignment">
-            <a href="index.php">
-                <img src="image/CVM-Logo.png" alt="CVM-Logo">
-                <span class="title">CỔNG THÔNG TIN TIÊM CHỦNG COVID-19</span>
-            </a>
-
-            <div class="nav">
-                <div>
-                    <ul>
-                        <li>
-                            <a class="menu-section" href="#">Khai báo</a>
-                        </li>
-
-                        <li>
-                            <a class="menu-section" href="#">Tiêm chủng</a>
-                        </li>
-
-                        <li>
-                            <a class="menu-section" href="#">Thống kê</a>
-                        </li>
-                    </ul>
-                </div>
-                <button class="btn-login" id="btn-login">Đăng nhập</btn>
-
-            </div>
-        </div>
-    </div>
+    <?php
+    include("headerCitizen.php");
+    ?>
     <!-- END HEADER -->
 
     <!-- NAV FUNCTION PANEL -->
@@ -51,7 +30,7 @@
         </div>
         <div class="nav-directory">
             <div class="directory">
-                <a href="index.php">Trang chủ</a>
+                <a href="HomepageCitizen.php">Trang chủ</a>
             </div>
 
             <div class="dicrectory">&nbsp;/&nbsp;</div>
@@ -75,7 +54,7 @@
         <div class="function-panel">
             <br>
             <div class="filter-panel">
-                <div class="filter-region">
+                <div class="filter-pane" id="filter-region">
                     <label for="province-name">Tỉnh/Thành phố</label>
                     <select type="text" name="province-name">
                         <!-- PHP CODE -->
@@ -101,14 +80,14 @@
                         <option value="">Đồng Nai</option>
                         <option value="">Hồ Chí Minh</option>
                     </select>
-                    <button class="btn-filter">
+                    <button class="btn-medium-bordered-icon btn-filter">
                         <img src="image/filter-magnifier.png" alt="filter-magnifier">
                         Tìm kiếm
                     </button>
                 </div>
 
 
-                <div class="filter-vaccine-time">
+                <div class="filter-pane" id="filter-vaccine-time">
                     <label for="vaccine">Vaccine</label>
                     <select type="text" name="vaccine">
                         <!-- PHP CODE -->
@@ -127,7 +106,7 @@
                         <option value="">Tối</option>
                     </select>
 
-                    <button class="btn-filter">
+                    <button class="btn-medium-bordered-icon btn-filter">
                         <img src="image/filter-magnifier.png" alt="filter-magnifier">
                         Tìm kiếm
                     </button>
@@ -165,7 +144,7 @@
                                         <option value="2">Tối</option>
                                     </select>
                                     <br>
-                                    <button class="btn-register" id="btn-register" onmousedown="btn_register_clicked()">Đăng ký</button>
+                                    <button class="btn-medium-filled">Đăng ký</button>
                                 </div>
                             </div>
                         </div>
@@ -190,7 +169,7 @@
                                         <option value="2">Tối</option>
                                     </select>
                                     <br>
-                                    <button class="btn-register">Đăng ký</button>
+                                    <button class="btn-medium-filled  btn-register">Đăng ký</button>
                                 </div>
                             </div>
                         </div>
@@ -215,7 +194,7 @@
                                         <option value="2">Tối</option>
                                     </select>
                                     <br>
-                                    <button class="btn-register">Đăng ký</button>
+                                    <button class="btn-medium-filled  btn-register">Đăng ký</button>
                                 </div>
                             </div>
                         </div>
@@ -243,7 +222,7 @@
                                         <option value="2">Tối</option>
                                     </select>
                                     <br>
-                                    <button class="btn-register">Đăng ký</button>
+                                    <button class="btn-medium-filled  btn-register">Đăng ký</button>
                                 </div>
                             </div>
                         </div>
@@ -268,7 +247,7 @@
                                         <option value="2">Tối</option>
                                     </select>
                                     <br>
-                                    <button class="btn-register">Đăng ký</button>
+                                    <button class="btn-medium-filled  btn-register">Đăng ký</button>
                                 </div>
                             </div>
                         </div>
@@ -293,7 +272,7 @@
                                         <option value="2">Tối</option>
                                     </select>
                                     <br>
-                                    <button class="btn-register">Đăng ký</button>
+                                    <button class="btn-medium-filled  btn-register">Đăng ký</button>
                                 </div>
                             </div>
                         </div>
@@ -305,26 +284,21 @@
     <!-- END FUNCTION PANEL -->
     <br>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <!-- <div class="footer-alignment-side"></div> -->
-        <div class="footer-content">&copy; Bản quyền thuộc TRUNG TÂM CÔNG NGHỆ PHÒNG, CHỐNG DỊCH COVID-19 QUỐC GIA</div>
-        <div class="footer-content">Phát triển bởi Chrysanthemums</div>
-        <div class="footer-logo"><img src="image/Logo BỘ.png" alt="Logo Bộ Y Tế "></div>
-        <!-- <div class="footer-alignment-side"></div> -->
-    </footer>
-
     <div class="form-popup-confirm">
         <p class="form-message"></p>
         <br>
-        <div class="form-btn-submit">
-            <button class="btn-confirm">Xác nhận</button>
-            <button class="btn-cancel">Hủy</button>
+        <div class="holder-btn">
+            <button class="btn-medium-filled btn-confirm">Xác nhận</button>
+            <button class="btn-medium-bordered btn-cancel">Hủy</button>
         </div>
     </div>
 
     <!-- COVER LOGIN FORM -->
     <div class="gradient-bg-faded" id="gradient-bg-faded"></div>
+
+    <?php
+    include("footer.php")
+    ?>
 </body>
 
 </html>

@@ -5,46 +5,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="RegistrationManagement.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/RegistrationManagement.css">
+    <link rel="stylesheet" href="css/btn.css">
+    <link rel="stylesheet" href="css/filter-panel.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="RegistrationManagement.js"></script>
+    <script src="js/RegistrationManagement.js"></script>
+    <script src="js/animation-btn.js"></script>
     <title>Quản lý lượt đăng ký</title>
 </head>
 
 <body>
     <div>
         <!-- HEADER -->
-        <div class="header">
-            <div class="header-alignment">
-                <a href="index.php">
-                    <img src="image/CVM-Logo.png" alt="CVM-Logo">
-                    <span class="title">CỔNG THÔNG TIN TIÊM CHỦNG COVID-19</span>
-                </a>
-
-                <div class="nav">
-                    <div>
-                        <ul>
-                            <li>
-                                <a class="menu-section" href="#">Khai báo</a>
-                            </li>
-
-                            <li>
-                                <a class="menu-section" href="#">Tiêm chủng</a>
-                            </li>
-
-                            <li>
-                                <a class="menu-section" href="#">Thống kê</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <a href="#"><img src="image/Avatar-Citizen.png" alt=""></a>
-
-                </div>
-            </div>
-        </div>
+        <?php
+        include("headerCitizen.php");
+        ?>
         <!-- END HEADER -->
-        <br>
 
         <!-- NAV FUNCTION -->
         <div class="nav-func-pages">
@@ -53,13 +31,13 @@
             </div>
             <div class="nav-directory">
                 <div class="directory">
-                    <a href="index.php">Trang chủ</a>
+                    <a href="HomepageCitizen.php">Trang chủ</a>
                 </div>
 
                 <div class="dicrectory">&nbsp;/&nbsp;</div>
 
                 <div class="directory">
-                    <a href="VaccinationRegistration.php">Công dân</a>
+                    <a href="#">Công dân</a>
                 </div>
 
                 <div class="dicrectory">&nbsp;/&nbsp;</div>
@@ -101,7 +79,7 @@
                 </div>
                 <br>
                 <div class="filter-panel">
-                    <div class="filter-vaccine-time">
+                    <div class="filter-pane" id="filter-vaccine-time">
                         <label for="status">Trạng thái</label>
                         <select type="text" name="status">
                             <option value=""></option>
@@ -128,7 +106,7 @@
                             <option value="">Tối</option>
                         </select>
 
-                        <button class="btn-filter">
+                        <button class="btn-medium-bordered-icon btn-filter">
                             <img src="image/filter-magnifier.png" alt="filter-magnifier">
                             Tìm kiếm
                         </button>
@@ -153,7 +131,7 @@
                                     </div>
 
                                     <div class="interactive-area">
-                                        <button class="btn-cancel-registration">Hủy lịch</button>
+                                        <button class="btn-medium-bordered btn-cancel">Hủy</button>
                                     </div>
                                 </div>
                             </div>
@@ -168,7 +146,7 @@
                                     </div>
 
                                     <div class="interactive-area">
-                                        <button class="btn-cancel-registration">Hủy lịch</button>
+                                        <button class="btn-medium-bordered btn-cancel">Hủy</button>
                                     </div>
                                 </div>
                             </div>
@@ -183,7 +161,7 @@
                                     </div>
 
                                     <div class="interactive-area">
-                                        <button class="btn-cancel-registration">Hủy lịch</button>
+                                        <button class="btn-medium-bordered btn-cancel">Hủy</button>
                                     </div>
                                 </div>
                             </div>
@@ -201,9 +179,9 @@
 
         <div class="form-popup-confirm">
             <p class="form-message"></p>
-            <div class="form-btn-submit">
-                <button class="btn-confirm">Xác nhận</button>
-                <button class="btn-cancel">Hủy</button>
+            <div class="holder-btn">
+                <button class="btn-medium-filled btn-confirm">Xác nhận</button>
+                <button class="btn-medium-bordered btn-cancel">Hủy</button>
             </div>
         </div>
 
@@ -211,13 +189,9 @@
         <div class="gradient-bg-faded" id="gradient-bg-faded"></div>
 
         <!-- FOOTER -->
-        <footer class="footer">
-            <!-- <div class="footer-alignment-side"></div> -->
-            <div class="footer-content">&copy; Bản quyền thuộc TRUNG TÂM CÔNG NGHỆ PHÒNG, CHỐNG DỊCH COVID-19 QUỐC GIA</div>
-            <div class="footer-content">Phát triển bởi Chrysanthemums</div>
-            <div class="footer-logo"><img src="image/Logo BỘ.png" alt="Logo Bộ Y Tế "></div>
-            <!-- <div class="footer-alignment-side"></div> -->
-        </footer>
+        <?php
+        include("footer.php");
+        ?>
     </div>
 </body>
 

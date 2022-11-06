@@ -5,42 +5,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="MedicalFormSubmit.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/MedicalFormSubmit.css">
+    <link rel="stylesheet" href="css/btn.css">
+    <link rel="stylesheet" href="css/filter-panel.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="MedicalFormSubmit.js"></script>
+    <script src="js/MedicalFormSubmit.js"></script>
+    <script src="js/animation-btn.js"></script>
     <title>Khai báo y tế</title>
 </head>
 
 <body>
     <!-- HEADER -->
-    <div class="header">
-        <div class="header-alignment">
-            <a href="index.php">
-                <img src="image/CVM-Logo.png" alt="CVM-Logo">
-                <span class="title">CỔNG THÔNG TIN TIÊM CHỦNG COVID-19</span>
-            </a>
-            <div class="nav">
-                <div>
-                    <ul>
-                        <li>
-                            <a class="menuSection" href="#">Tin tức</a>
-                        </li>
-
-                        <li>
-                            <a class="menuSection" href="#">Khai báo</a>
-                        </li>
-
-                        <li>
-                            <a class="menuSection" href="#">Tiêm chủng</a>
-                        </li>
-                    </ul>
-                </div>
-                <a href="#"><img src="image/Avatar-Citizen.png" alt=""></a>
-
-            </div>
-        </div>
-    </div>
+    <?php
+    include("headerCitizen.php");
+    ?>
     <!-- END HEADER -->
 
     <!-- NAV FUNCTION PANEL -->
@@ -50,7 +30,7 @@
         </div>
         <div class="nav-directory">
             <div class="directory">
-                <a href="index.php">Trang chủ</a>
+                <a href="HomepageCitizen.php">Trang chủ</a>
             </div>
 
             <div class="dicrectory">&nbsp;/&nbsp;</div>
@@ -100,7 +80,7 @@
                 <div class="form-medical">
                     <label for="input_date">Ngày thực hiện khai báo:
                     </label>
-                    <input type="date" id="input_date">
+                    <input type="date" id="input-date">
 
                     <p>Trong vòng 14 ngày qua, Anh/Chị có thấy xuất hiện ít nhất 1 tong các dấu hiệu:
                         ho, khó thở, viêm phổi, đau họng, mệt mỏi không?
@@ -141,7 +121,7 @@
                     </div>
                     <br>
                     <div class="form-btn-input">
-                        <button class="btn-confirm" id="btn-submit-form-medical">Xác nhận</button>
+                        <button class="btn-filled-medium btn-confirm" id="btn-submit-form-medical">Xác nhận</button>
                     </div>
                 </div>
             </div>
@@ -154,23 +134,19 @@
         <br><br>
         <p class="form-message">Xác nhận thực hiện khai báo y tế?</p>
         <br><br>
-        <div class="form-btn-submit">
-            <button class="btn-confirm">Xác nhận</button>
-            <button class="btn-cancel">Hủy</button>
+        <div class="holder-btn">
+            <button class="btn-filled-medium btn-confirm">Xác nhận</button>
+            <button class="btn-bordered-medium btn-cancel">Hủy</button>
         </div>
     </div>
 
     <!-- FADED COVER -->
     <div class="gradient-bg-faded" id="gradient-bg-faded"></div>
 
-    <!-- FOOTER -->
-    <footer>
-        <div class="footer-alignment-side"></div>
-        <div class="footer-content">&copy; Bản quyền thuộc TRUNG TÂM CÔNG NGHỆ PHÒNG, CHỐNG DỊCH COVID-19 QUỐC GIA</div>
-        <div class="footer-content">Phát triển bởi Chrysanthemums</div>
-        <div class="footer-logo"><img src="image/Logo BỘ.png" alt="Logo Bộ Y Tế "></div>
-        <div class="footer-alignment-side"></div>
-    </footer>
+
+    <?php
+    include("footer.php")
+    ?>
 </body>
 
 </html>
