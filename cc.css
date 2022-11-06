@@ -358,10 +358,10 @@ body::-webkit-scrollbar-track {
     border-radius: 0px 20px 20px 0px;
 }
 
-.filter-panel {
+/* .filter-panel {
     width: 90%;
     margin: 0 auto;
-    /* align div center*/
+    align div center
     box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
     font-family: 'Roboto';
     font-style: normal;
@@ -370,6 +370,7 @@ body::-webkit-scrollbar-track {
     align-items: center;
     justify-content: center;
     padding: 50px 0px;
+    
 }
 
 .filter-panel label {
@@ -392,7 +393,7 @@ body::-webkit-scrollbar-track {
     width: 140px;
     height: 30px;
     font-size: 18px;
-}
+} */
 
 .filter-region {
     display: flex;
@@ -400,6 +401,240 @@ body::-webkit-scrollbar-track {
     justify-content: center;
     padding: 10px 0px;
 }
+
+.filter-panel {
+    width: 100%;
+    margin: 0 auto;
+    /* align div center*/
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    /* background-color: #db165e; */
+}
+
+.filter-panel label {
+    line-height: 30px;
+    font-size: 18px;
+}
+
+.filter-panel input {
+    line-height: 20px;
+    /* background-color: #eee; */
+    width: 220px;
+    border: none;
+    outline: none;
+    font-family: 'Roboto';
+    font-weight: 300px;
+    /* border-style: solid;
+    border: 2px solid #8C69CA; */
+    font-size: 18px; 
+}
+
+.filter-panel select {
+    height: 25px;
+    font-size: 18px;
+    border: none;
+}
+
+.filter-panel hr {  
+    background: var(--bg_gradient);
+    height: 2px;
+    display: inline-block;
+    border: none;
+    position: absolute;
+}
+ 
+.cow-1 {
+    margin-left: 80px;
+}
+
+.cow-2 {
+    margin-left: 175px;
+}
+
+.cow-3 {
+    margin-left: 265px;
+}
+
+/*LAST NAME, FIRST NAME, GENDER*/
+.line-1 input {
+    margin-left: 80px;
+    margin-right: -10px;
+    width: 220px;
+    /* box-shadow: inset 0 0 10px 2px rgba(0, 0, 0, .2); */
+    /* border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: groove; */
+    /* border-style: solid;
+    border: 2px solid #8C69CA; */
+}
+
+.line-1 select {
+    margin-left: 80px;
+    width: 100px;
+}
+
+.left-1 {
+    margin-left: 80px;
+    margin-top: -3px;
+    width: 220px;
+}
+
+.mid-1 {
+    margin-left: 375px;
+    width: 220px;
+    margin-top: -3px;
+}
+
+.right-1 {
+    margin-left: 675px;
+    width: 100px;
+    margin-top: -3px;
+}
+/*END LAST NAME, FIRST NAME, GENDER*/
+
+/*ID, BIRTHDAY, HOMETOWN*/
+.line-2 label {
+    margin-top: 1000px;
+}
+
+.line-2 input {
+    margin-left: 80px;
+    margin-right: -10px;
+    margin-top: 5px;
+    width: 220px;
+    /* box-shadow: inset 0 0 10px 2px rgba(0, 0, 0, .2); */
+    /* border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: groove; */
+    /* border-style: solid;
+    border: 2px solid #8C69CA; */
+}
+
+.line-2 select {
+    margin-left: 80px;
+    width: 100px;
+}
+
+.line-2 .cow-2 {
+    margin-left: 180px;
+}
+
+.line-2 .cow-3 {
+    margin-left: 125px;
+}
+
+.left-2 {
+    margin-left: -690px;
+    margin-top: 26px;
+    width: 220px;
+}
+
+.mid-2 {
+    margin-left: -395px;
+    width: 220px;
+    margin-top: 26px;
+}
+
+.right-2 {
+    margin-left: -95px;
+    margin-top: 26px;
+    width: 100px;
+}
+/*END ID, BIRTHDAY, HOMETOWN*/
+
+/*DIRECTION*/
+.line-4 input {
+    margin-left: 80px;
+    margin-right: -10px;
+    width: 220px;
+    /* box-shadow: inset 0 0 10px 2px rgba(0, 0, 0, .2); */
+    /* border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: groove; */
+    /* border-style: solid;
+    border: 2px solid #8C69CA; */
+}
+
+.line-4 select {
+    margin-left: 77px;
+    margin-right: -5px;
+    width: 220px;
+}
+
+.line-4 .cow-2 {
+    margin-left: 165px;
+}
+
+.line-4 .cow-3 {
+    margin-left: 190px;
+}
+
+.left-4 {
+    margin-left: -805px;
+    margin-top: 22px;
+    width: 220px;
+}
+
+.mid-4 {
+    margin-left: -505px;
+    width: 220px;
+    margin-top: 22px;
+}
+
+.right-4 {
+    margin-left: -210px;
+    margin-top: 22px;
+    width: 100px;
+}
+/*END DIRECTION*/
+
+
+/*ADDRESS*/
+.line-5 input {
+    margin-left: 80px;
+    margin-right: -10px;
+    width: 510px;
+    /* box-shadow: inset 0 0 10px 2px rgba(0, 0, 0, .2); */
+    /* border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: groove; */
+    /* border-style: solid;
+    border: 2px solid #8C69CA; */
+}
+
+.mid-5 {
+    margin-left: -500px;
+    margin-top: 20px;
+    width: 510px;
+}
+/*END ADDRESS*/
+
+/*EMAIL*/
+.line-6 input {
+    margin-left: 80px;
+    margin-right: -10px;
+    width: 220px;
+    /* box-shadow: inset 0 0 10px 2px rgba(0, 0, 0, .2); */
+    /* border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: groove; */
+    /* border-style: solid;
+    border: 2px solid #8C69CA; */
+}
+
+.mid-6 {
+    margin-left: -210px;
+    margin-top: 21px;
+    width: 220px;
+}
+/*END EMAIL*/
 
 
 /* POPUP CONFIRM FORM */
@@ -414,7 +649,6 @@ body::-webkit-scrollbar-track {
     left: 800px;
     transform: translate(-200px, -100px);
     border-radius: 10px;
-    /* background-color: white; */
 }
 
 .form-popup-confirm .form-message {
