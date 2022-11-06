@@ -22,31 +22,12 @@
     include("headerORG.php");
     ?>
     <!-- END HEADER -->
-
-    <!-- NAV FUNCTION PANEL -->
-    <div class="nav-func-pages">
-        <div class="nav-func-title">
-            <a href="ScheduleManagement.php">Danh sách lịch tiêm</a>
-        </div>
-        <div class="nav-directory">
-            <div class="directory">
-                <a href="HomepageORG.php">Trang chủ</a>
-            </div>
-
-            <div class="dicrectory">&nbsp;/&nbsp;</div>
-
-            <div class="directory">
-                <a href="VaccinationRegistration.php">Lịch tiêm</a>
-            </div>
-
-            <div class="dicrectory">&nbsp;/&nbsp;</div>
-
-            <div class="directory-selected">
-                <a href="ScheduleManagement.php">Danh sách lịch tiêm</a>
-            </div>
-        </div>
-    </div>
-    <!-- END NAV FUNCTION PANEL -->
+    
+    <!-- NAV FUNCTION -->
+    <?php
+    include("function-navigation-bar.php");
+    ?>
+    <!-- END NAV FUNCTION -->
     <br>
 
     <!-- FUNCTION PANEL -->
