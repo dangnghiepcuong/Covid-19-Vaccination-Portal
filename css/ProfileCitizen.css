@@ -1,6 +1,6 @@
 /* NAVIGATOR CITIZEN PAGES */
 
-.nav-citizen-pages {
+.nav-func-pages {
     height: 50px;
     width: 100%;
     background: rgba(224, 202, 238, 0.32);
@@ -14,12 +14,12 @@
     line-height: 29px;
 }
 
-.nav-citizen-pages a {
+.nav-func-pages a {
     text-decoration: none;
     color: black;
 }
 
-.nav-citizen-title {
+.nav-func-title {
     padding-left: 10%;
     font-weight: 600;
 }

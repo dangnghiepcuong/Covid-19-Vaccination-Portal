@@ -23,47 +23,20 @@
     ?>
     <!-- END HEADER -->
 
-    <!-- NAV FUNCTION PANEL -->
-    <div class="nav-func-pages">
-        <div class="nav-func-title">
-            <a href="VaccinationRegistration.php">Tờ khai y tế</a>
-        </div>
-        <div class="nav-directory">
-            <div class="directory">
-                <a href="HomepageCitizen.php">Trang chủ</a>
-            </div>
-
-            <div class="dicrectory">&nbsp;/&nbsp;</div>
-
-            <div class="directory">
-                <a href="MedicalFormSubmit.php">Khai báo</a>
-            </div>
-
-            <div class="dicrectory">&nbsp;/&nbsp;</div>
-
-            <div class="directory-selected">
-                <a href="VaccinationRegistration.php">Tờ khai y tế</a>
-            </div>
-        </div>
-    </div>
-    <!-- END NAV FUNCTION PANEL -->
+    <!-- NAV FUNCTION -->
+    <?php
+    include("function-navigation-bar.php");
+    ?>
+    <!-- END NAV FUNCTION -->
     <br>
 
     <!-- FUNCTION PANEL -->
     <div class="holder-function-panel">
-        <div class="nav-panel">
-            <br><br>
-            <div class="title">Trang khai báo y tế</div>
-            <div class="title-bg"></div>
-            <br>
-            <div class="menu">
-                <ul class="list">
-                    <br>
-                    <li>Tờ khai y tế</li><br>
-                    <li>Danh sách tờ khai</li><br>
-                </ul>
-            </div>
-        </div>
+        <!-- MENU -->
+        <?php
+        include("function-menu.php");
+        ?>
+        <!-- END MENU -->
 
         <div class="function-panel">
             <br>
@@ -121,7 +94,7 @@
                     </div>
                     <br>
                     <div class="form-btn-input">
-                        <button class="btn-filled-medium btn-confirm" id="btn-submit-form-medical">Xác nhận</button>
+                        <button class="btn-medium-filled btn-confirm" id="btn-submit-form-medical">Xác nhận</button>
                     </div>
                 </div>
             </div>
@@ -135,8 +108,8 @@
         <p class="form-message">Xác nhận thực hiện khai báo y tế?</p>
         <br><br>
         <div class="holder-btn">
-            <button class="btn-filled-medium btn-confirm">Xác nhận</button>
-            <button class="btn-bordered-medium btn-cancel">Hủy</button>
+            <button class="btn-medium-filled btn-confirm">Xác nhận</button>
+            <button class="btn-medium-bordered btn-cancel">Hủy</button>
         </div>
     </div>
 

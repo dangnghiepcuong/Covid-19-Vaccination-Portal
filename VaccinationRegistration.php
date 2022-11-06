@@ -23,32 +23,11 @@
     ?>
     <!-- END HEADER -->
 
-    <!-- NAV FUNCTION PANEL -->
-    <div class="nav-func-pages">
-        
-        <div class="nav-func-title">
-            <a href="VaccinationRegistration.php">Đăng ký tiêm chủng</a>
-        </div>
-
-        <div class="nav-directory">
-            <div class="directory">
-                <a href="HomepageCitizen.php">Trang chủ</a>
-            </div>
-
-            <div class="dicrectory">&nbsp;/&nbsp;</div>
-
-            <div class="directory">
-                <a href="VaccinationRegistration.php">Tiêm chủng</a>
-            </div>
-
-            <div class="dicrectory">&nbsp;/&nbsp;</div>
-
-            <div class="directory-selected">
-                <a href="VaccinationRegistration.php">Đăng ký tiêm chủng</a>
-            </div>
-        </div>
-    </div>
-    <!-- END NAV FUNCTION PANEL -->
+    <!-- NAV FUNCTION -->
+    <?php
+    include("function-navigation-bar.php");
+    ?>
+    <!-- END NAV FUNCTION -->
     <br>
 
     <!-- FUNCTION PANEL -->
@@ -299,8 +278,8 @@
     <div class="gradient-bg-faded" id="gradient-bg-faded"></div>
 
     <!-- <?php
-    include("footer.php")
-    ?> -->
+            include("footer.php")
+            ?> -->
 </body>
 
 </html>

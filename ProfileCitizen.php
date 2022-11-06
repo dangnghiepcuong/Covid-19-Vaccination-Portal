@@ -20,8 +20,8 @@
     ?>
     <!-- END HEADER -->
 
-    <div class="nav-citizen-pages">
-        <div class="nav-citizen-title">
+    <div class="nav-func-pages">
+        <div class="nav-func-title">
             <a href="CitizenInfo.php">Thông tin công dân</a>
         </div>
         <div class="nav-directory">
