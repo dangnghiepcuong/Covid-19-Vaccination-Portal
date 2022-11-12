@@ -28,3 +28,5 @@
         <button class="btn-login" id="btn-login">Đăng nhập</btn>
     </div>
 </div>
+
+<div class="header-virtual"></div>
