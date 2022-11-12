@@ -21,6 +21,7 @@
 
 .function-panel {
     width: 63%;
+    height: 590px;
     border-style: solid;
     border: 1px solid #8C69CA;
     border-radius: 0px 20px 20px 0px;

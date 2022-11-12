@@ -22,7 +22,7 @@
     include("headerORG.php");
     ?>
     <!-- END HEADER -->
-    
+
     <!-- NAV FUNCTION -->
     <?php
     include("function-navigation-bar.php");
@@ -89,81 +89,47 @@
                     <!--PHP CODE Bệnh viện Đa khoa huyện Dầu Tiếng -->
                     <?php
                     include("DatabaseConnection.php");
-
-                    // $sql = "select * from ORGANIZATION where ID = '74001'";
-                    // $command = oci_parse($connection, $sql);
-                    // oci_execute($command);
-                    // while (($row = oci_fetch_array($command, OCI_ASSOC)) != false) {
-                    //     echo $row['name'];
-                    // }
+                    $OrgName = "";
+                    $sql = "select * from ORGANIZATION where ID = '74001'";
+                    $command = oci_parse($connection, $sql);
+                    oci_execute($command);
+                    while (($row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS)) != false) {
+                        $OrgName = $row['NAME'];
+                        echo $OrgName;
+                    }
                     ?>
                 </div>
                 <br>
                 <div class="holder">
                     <div class="list-schedule" id="list-schedule-left">
                         <!--PHP CODE-->
-                        <div class="schedule">
-                            <p class="obj-org-name">Bệnh viện Đa khoa huyện Dầu Tiếng</p>
-                            <div class="holder-obj-attr">
-                                <div class="obj-attr">
-                                    <p class="attr-date-vaccine-serial">Lịch tiêm ngày: 24/11/2022 - Vaccine: AstraZeneca - A11</p>
-                                    <p class="attr-time">Buổi sáng: 0/0 - Buổi trưa: 0/0 - Buổi tối: 0/0</p>
-                                </div>
-                                <div class="interactive-area">
-                                    <button class="btn-medium-filled btn-register" id="btn-register">Lượt đăng ký</button>
-                                    <button class="btn-medium-bordered btn-update" id="btn-register">Cập nhật</button>
-                                    <button class="btn-short-bordered btn-cancel" id="btn-register">Hủy</button>
-                                </div>
-                            </div>
-                        </div>
+                        <?php
+                        $sql = "select * from SCHEDULE where OrgID = '74001'";
 
-                        <div class="schedule">
-                            <p class="obj-org-name">Bệnh viện Đa khoa huyện Dầu Tiếng</p>
+                        $command = oci_parse($connection, $sql);
+                        oci_execute($command);
+                        while (($row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS)) != false) {
+                            echo '<div class="schedule">
+                            <p class="obj-org-name">' . $OrgName . '</p>
                             <div class="holder-obj-attr">
                                 <div class="obj-attr">
-                                    <p class="attr-date-vaccine-serial">Lịch tiêm ngày: 24/11/2022 - Vaccine: AstraZeneca - A11</p>
-                                    <p class="attr-time">Buổi sáng: 0/0 - Buổi trưa: 0/0 - Buổi tối: 0/0</p>
+                                    <p class="attr-date-vaccine-serial">Lịch tiêm ngày: ' . $row['ONDATE'] . ' - Vaccine:
+                                    ' . $row['VACCINEID'] . ' - ' . $row['SERIAL'] . '</p>
+                                    <p class="attr-time">Buổi sáng: ' . $row['DAYREGISTERED'] . '/' . $row['LIMITDAY'] . ' - Buổi trưa: ' . $row['NOONREGISTERED'] . '/' . $row['LIMITNOON'] . ' - Buổi tối: ' . $row['NIGHTREGISTERED'] . '/' . $row['LIMITNIGHT'] . '</p>
                                 </div>
                                 <div class="interactive-area">
-                                    <button class="btn-medium-filled btn-register" id="btn-register">Lượt đăng ký</button>
+                                    <button class="btn-medium-filled btn-register" id="btn-register">Lượt đăng
+                                        ký</button>
                                     <button class="btn-medium-bordered btn-update" id="btn-register">Cập nhật</button>
                                     <button class="btn-short-bordered btn-cancel" id="btn-register">Hủy</button>
                                 </div>
                             </div>
-                        </div>
+                        </div>';
+                        }
+                        ?>
 
-                        <div class="schedule">
-                            <p class="obj-org-name">Bệnh viện Đa khoa huyện Dầu Tiếng</p>
-                            <div class="holder-obj-attr">
-                                <div class="obj-attr">
-                                    <p class="attr-date-vaccine-serial">Lịch tiêm ngày: 24/11/2022 - Vaccine: AstraZeneca - A11</p>
-                                    <p class="attr-time">Buổi sáng: 0/0 - Buổi trưa: 0/0 - Buổi tối: 0/0</p>
-                                </div>
-                                <div class="interactive-area">
-                                    <button class="btn-medium-filled btn-register" id="btn-register">Lượt đăng ký</button>
-                                    <button class="btn-medium-bordered btn-update" id="btn-register">Cập nhật</button>
-                                    <button class="btn-short-bordered btn-cancel" id="btn-register">Hủy</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="schedule">
-                            <p class="obj-org-name">Bệnh viện Đa khoa huyện Dầu Tiếng</p>
-                            <div class="holder-obj-attr">
-                                <div class="obj-attr">
-                                    <p class="attr-date-vaccine-serial">Lịch tiêm ngày: 24/11/2022 - Vaccine: AstraZeneca - A11</p>
-                                    <p class="attr-time">Buổi sáng: 0/0 - Buổi trưa: 0/0 - Buổi tối: 0/0</p>
-                                </div>
-                                <div class="interactive-area">
-                                    <button class="btn-medium-filled btn-register" id="btn-register">Lượt đăng ký</button>
-                                    <button class="btn-medium-bordered btn-update" id="btn-register">Cập nhật</button>
-                                    <button class="btn-short-bordered btn-cancel" id="btn-register">Hủy</button>
-                                </div>
-                            </div>
-                        </div>
                     </div>
-                    <!-- <div class="list-schedule" id="list-schedule-right">
-                    </div> -->
+
                 </div>
             </div>
         </div>
@@ -184,7 +150,7 @@
     <div class="gradient-bg-faded" id="gradient-bg-faded"></div>
 
     <?php
-    include("footer.php")
+    include("footer.php");
     ?>
 </body>
 

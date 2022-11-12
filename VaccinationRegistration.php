@@ -277,9 +277,9 @@
     <!-- COVER LOGIN FORM -->
     <div class="gradient-bg-faded" id="gradient-bg-faded"></div>
 
-    <!-- <?php
-            include("footer.php")
-            ?> -->
+    <?php
+    include("footer.php")
+    ?>
 </body>
 
 </html>
