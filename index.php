@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/index.js"></script>
-    <script type="text/javascript" src="js/FE_interaction.js">
     </script>
 </head>
 
@@ -28,13 +27,13 @@
     <!-- END SLIDER -->
 
     <!-- LOGIN FORM -->
-    <div class="form-login" id="form-login">
-        <form action="/action_page.php" class="form-container">
+    <div  class="form-container" id="form-container-login">
+        <form class="form form-login" id="form-login" method="POST" action="HandleLogin.php">
             <p class="btn-close" id="btn-close-form-login">X</p>
             <p class="title">Đăng nhập</p>
             <br><br>
-            <label for="phone_number"><b>SĐT/Tên tài khoản</b></label>
-            <input type="text" name="phone_number" required>
+            <label for="username"><b>SĐT/Tên tài khoản</b></label>
+            <input type="text"  name="username" required>
             <hr>
             <br><br>
             <label for="password"><b>Mật khẩu</b></label>
@@ -46,15 +45,15 @@
             </div>
             <br><br>
             <div class="long-btn" id="btn-login-in-form-login">
-                <p>Đăng nhập</p>
+            <p>Đăng nhập</p>
             </div>
         </form>
     </div>
     <!-- END LOGIN FORM -->
 
     <!-- REGISTRATION ACCOUNT FORM -->
-    <div class="form-reg-acc" id="form-reg-acc">
-        <form action="/action_page.php" class="form-container">
+    <div class="form-container" id="form-container-reg-acc">
+        <form class="form form-reg-acc" id="form-reg-acc" action="/action_page.php" >
             <p class="btn-close" id="btn-close-form-reg-acc">X</p>
             <p class="title">Đăng ký</p>
             <br><br>
@@ -106,5 +105,11 @@
     include("footer.php")
     ?>
     <!-- END FOOTER -->
+
+    <?php
+    $getAlertMessage = $_POST["message"];
+    // if ($getAlertMessage != null)
+    echo '<script>alert('. $getAlertMessage . ');</script>';
+    ?>
 </body>
 </html>
