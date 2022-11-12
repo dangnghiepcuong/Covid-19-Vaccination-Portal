@@ -33,7 +33,7 @@
 
 /* LOGIN FORM */
 
-.form-login {
+#form-container-login {
     display: none;
     z-index: 10;
     position: fixed;
@@ -47,7 +47,7 @@
     transition: 500ms;
 }
 
-.form-container .btn-linked-page .page-reg-acc,
+.form-login .btn-linked-page .page-reg-acc,
 .page-forgot-pass {
     display: flex;
     justify-content: space-between;
@@ -58,7 +58,7 @@
 
 /* REG-ACC FORM */
 
-.form-reg-acc {
+#form-container-reg-acc {
     display: none;
     z-index: 10;
     position: fixed;
@@ -73,7 +73,7 @@
 }
 
 
-.form-container .page-login {
+.form-reg-acc .page-login {
     display: flex;
     justify-content: center;
     padding-top: 10px;
@@ -83,7 +83,7 @@
 
 /* LOGIN & REG-ACC FORM */
 
-.form-container {
+.form {
     display: grid;
     max-width: 400px;
     border-radius: 20px;
@@ -94,7 +94,7 @@
     font-family: 'Roboto';
 }
 
-.form-container .btn-close {
+.form .btn-close {
     width: 18px;
     justify-self: right;
     font-weight: 100;
@@ -103,7 +103,7 @@
     cursor: pointer;
 }
 
-.form-container .title {
+.form .title {
     font-weight: 600;
     font-size: 28px;
     line-height: 20px;
@@ -111,14 +111,14 @@
     text-align: center;
 }
 
-.form-container label {
+.form label {
     font-weight: 200;
     font-size: 20px;
     line-height: 20px;
     padding-bottom: 5px;
 }
 
-.form-container input {
+.form input {
     border: none;
     outline: none;
     line-height: 40px;
@@ -126,33 +126,33 @@
     font-size: 24px;
 }
 
-.form-container input {
+.form input {
     line-height: 40px;
     font-family: 'Roboto';
     font-weight: 300;
     font-size: 24px;
 }
 
-.form-container .btn-linked-page {
+.form .btn-linked-page {
     text-decoration: none;
     font-size: 18px;
     color: #77DAE8;
 }
 
-.form-container hr {
+.form hr {
     background: var(--bg_gradient);
     height: 1px;
     border: none;
 }
 
-.form-container .btn-linked-page p {
+.form .btn-linked-page p {
     text-decoration: none;
     font-weight: 300;
     cursor: pointer;
 }
 
 
-.form-container .long-btn {
+.form .long-btn {
     width: 100%;
     height: 40px;
     border: none;
@@ -167,8 +167,12 @@
     transition: 200ms;
 }
 
-.form-container .long-btn:hover {
+.form .long-btn:hover {
     opacity: 0.8;
+}
+
+.form p {
+    text-align: center;
 }
 
 /* END LOGIN & REG-ACC FORM */
