@@ -37,12 +37,12 @@
                     <li>Thông tin tài khoản</li>
                 </a>
 
-                <a href="#">
+                <a href="CitizenProfile.php">
                     <li>Thông tin công dân</li>
                 </a>
 
                 <a href="RegistrationManagement.php">
-                    <li>Lịch đăng kí</li>
+                    <li>Lịch đăng ký</li>
                 </a>
 
                 <a href="#">

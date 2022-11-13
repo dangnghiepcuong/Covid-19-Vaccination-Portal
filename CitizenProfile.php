@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/CitizenProfile.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/CitizenProfile.js"></script>
     <title>Thông tin công dân</title>
 </head>
 
@@ -20,47 +21,19 @@
     ?>
     <!-- END HEADER -->
 
-    <div class="nav-func-pages">
-        <div class="nav-func-title">
-            <a href="CitizenInfo.php">Thông tin công dân</a>
-        </div>
-        <div class="nav-directory">
-            <div class="directory">
-                <a href="index.php">Trang chủ</a>
-            </div>
-
-            <div class="dicrectory">&nbsp;/&nbsp;</div>
-
-            <div class="directory">
-                <a href="CitizenInfo.php">Công dân</a>
-            </div>
-
-            <div class="dicrectory">&nbsp;/&nbsp;</div>
-
-            <div class="directory-selected">
-                <a href="CitizenInfo.php">Thông tin công dân</a>
-            </div>
-        </div>
-    </div>
+    <!-- NAV FUNCTION -->
+    <?php
+    include("function-navigation-bar.php");
+    ?>
+    <!-- END NAV FUNCTION -->
     <br>
 
     <div class="holder-function-panel">
-        <div class="nav-panel">
-            <br><br>
-            <div class="title">Trang công dân</div>
-            <div class="title-bg"></div>
-            <br>
-            <div class="menu">
-                <ul class="list">
-                    <br>
-                    <li>Thông tin tài khoản</li><br>
-                    <li>Thông tin công dân</li><br>
-                    <li>Lịch đăng ký tiêm chủng</li><br>
-                    <li>Chứng nhận tiêm chủng</li><br>
-                    <li>Thêm người thân</li><br>
-                </ul>
-            </div>
-        </div>
+        <!-- MENU -->
+        <?php
+        include("function-menu.php");
+        ?>
+        <!-- END MENU -->
 
         <div class="function-panel">
             <br>
@@ -167,13 +140,6 @@
         </div>
     </div>
     <br>
-
-    <div class="form-popup-confirm">
-        <div class="form-btn-submit">
-            <button class="btn-medium-filled btn-confirm">Cập nhật</button>
-            <button class="btn-medium-bordered btn-cancel">Hủy bỏ</button>
-        </div>
-    </div>
 
 
     <?php

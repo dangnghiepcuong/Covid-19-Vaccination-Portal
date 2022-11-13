@@ -1,5 +1,23 @@
-<html lang="en">
+<?php
+    if(isset($_COOKIE['username']))
+    {
+        $username = $_COOKIE['username'];
+        include("DatabaseConnection.php");
+        $sql = "select * from CITIZEN where Phone='".$username."'";
+        $command = oci_parse($connection,$sql);
+        oci_execute($command);
 
+        while (($row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS)) != false)
+        {
+            
+        }
+    }
+    else
+    {
+        header('Location: index.php');
+    }
+?>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

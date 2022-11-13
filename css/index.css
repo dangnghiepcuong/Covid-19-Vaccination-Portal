@@ -177,20 +177,3 @@
 
 /* END LOGIN & REG-ACC FORM */
 
-
-
-/* FADED LINEAR BACKGROUND */
-.gradient-bg-faded {
-    display: none;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    left: 0px;
-    top: 0px;
-    bottom: 0px;
-    right: 0px;
-    background: var(--bg_gradient);
-    opacity: 0.80;
-    z-index: 9;
-    transition: 500ms;
-}

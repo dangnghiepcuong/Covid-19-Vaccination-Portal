@@ -1,5 +1,9 @@
 <!DOCTYPE html>
+<?php
+session_start();
+?>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,9 +11,11 @@
     <title>Cổng thông tin tiêm chủng Covid-19</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/btn.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/animation-btn.js"></script>
     </script>
 </head>
 
@@ -27,13 +33,13 @@
     <!-- END SLIDER -->
 
     <!-- LOGIN FORM -->
-    <div  class="form-container" id="form-container-login">
+    <div class="form-container" id="form-container-login">
         <form class="form form-login" id="form-login" method="POST" action="HandleLogin.php">
             <p class="btn-close" id="btn-close-form-login">X</p>
             <p class="title">Đăng nhập</p>
             <br><br>
             <label for="username"><b>SĐT/Tên tài khoản</b></label>
-            <input type="text"  name="username" required>
+            <input type="text" name="username" required>
             <hr>
             <br><br>
             <label for="password"><b>Mật khẩu</b></label>
@@ -45,7 +51,7 @@
             </div>
             <br><br>
             <div class="long-btn" id="btn-login-in-form-login">
-            <p>Đăng nhập</p>
+                <p>Đăng nhập</p>
             </div>
         </form>
     </div>
@@ -53,7 +59,7 @@
 
     <!-- REGISTRATION ACCOUNT FORM -->
     <div class="form-container" id="form-container-reg-acc">
-        <form class="form form-reg-acc" id="form-reg-acc" action="/action_page.php" >
+        <form class="form form-reg-acc" id="form-reg-acc" action="/action_page.php">
             <p class="btn-close" id="btn-close-form-reg-acc">X</p>
             <p class="title">Đăng ký</p>
             <br><br>
@@ -106,10 +112,27 @@
     ?>
     <!-- END FOOTER -->
 
+    <div class="form-popup-confirm">
+        <p class="form-message"></p>
+        <div class="holder-btn">
+            <button class="btn-medium-filled btn-confirm">OK</button>
+        </div>
+    </div>
+    
+    <!-- FADED COVER -->
+    <div class="gradient-bg-faded" id="gradient-bg-faded"></div>
+
     <?php
-    $getAlertMessage = $_POST["message"];
-    // if ($getAlertMessage != null)
-    echo '<script>alert('. $getAlertMessage . ');</script>';
+    $check = isset($_SESSION['message']);
+    if ($check == true) {
+        // echo '<script>alert("' . $_SESSION['message'] . '");</script>';
+        echo '<script>
+        $(".form-message").text("'.$_SESSION['message'].'");
+        $("#gradient-bg-faded").css("display", "block");
+        $(".form-popup-confirm").css("display", "block");
+        </script>';
+        unset($_SESSION['message']);
+    } 
     ?>
 </body>
 </html>
