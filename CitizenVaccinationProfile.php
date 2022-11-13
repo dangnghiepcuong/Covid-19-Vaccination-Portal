@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/btn.css">
-    <link rel="stylesheet" href="css/filter-panel.css">
-    <link rel="stylesheet" href="css/CitizenProfile.css">
+    <!-- <link rel="stylesheet" href="css/btn.css"> -->
+    <!-- <link rel="stylesheet" href="css/filter-panel.css"> -->
+    <link rel="stylesheet" href="css/CitizenVaccinationProfile.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/CitizenVaccinationProfile.js"></script>
@@ -40,6 +40,26 @@
 
         <div class="function-panel">
             <br>
+
+            <div class="panel-target-citizen">
+                <p>Thông tin tiêm chủng</p>
+            </div>
+
+            <br>
+            <div class="panel-target-citizen">
+                <div class="filter-panel">
+                    <label class ="text" name="CMND/CCCD" id="CMND/CCCD">CMND/CCCD:</label>
+                    <input type="text">
+
+                    <label>Tỉnh/Thành phố:</label>
+                    <input type="text" name="Province" id="province">
+                </div>
+
+                <button class="btn-medium-bordered-icon">
+                        <img src="image/filter-magnifier.png" alt="filter-magnifier">
+                        Tìm kiếm
+                </button>
+            </div>
         </div>
     </div>
     <br>
