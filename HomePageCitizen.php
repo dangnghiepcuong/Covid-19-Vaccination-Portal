@@ -1,4 +1,6 @@
 <?php
+    include("object_Citizen.php");
+    $citizen = new Citizen();
     if(isset($_COOKIE['username']))
     {
         $username = $_COOKIE['username'];
@@ -9,7 +11,20 @@
 
         while (($row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS)) != false)
         {
-            
+            $citizen->set_lastname($row['LASTNAME']);
+            $citizen->set_firstname($row['FIRSTNAME']);
+            $citizen->set_ID($row['ID']);
+            $citizen->set_birthday($row['BIRTHDAY']);
+            $citizen->set_gender($row['GENDER']);
+            $citizen->set_hometown($row['HOMETOWN']);
+            $citizen->set_provincename($row['PROVINCENAME']);
+            $citizen->set_distictname($row['DISTRICTNAME']);
+            $citizen->set_townname($row['TOWNNAME']);
+            $citizen->set_street($row['STREET']);
+            $citizen->set_phone($row['PHONE']);
+            $citizen->set_email($row['EMAIL']);
+            $citizen->set_guardian($row['GUARDIAN']);
+            $citizen->set_avatar($row['AVATAR']);
         }
     }
     else
