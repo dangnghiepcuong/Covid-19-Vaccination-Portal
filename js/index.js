@@ -30,6 +30,7 @@ $(document).ready(function(){
         $("#form-container-login").css('display','none');
         $(".form-popup-confirm").css('display','none');
         $("#gradient-bg-faded").css('display','none');
+        $(".container-profile").css('display','none');
     })
 
     // SUBMIT FORM
@@ -49,5 +50,14 @@ $(document).ready(function(){
         $("#form-login").submit();
     })
 
+    //OPEN & CLOSE REGISTRATION PERSONAL PROFILE FORM
+    $('#btn-reg-acc').click(function(){
+        $("#gradient-bg-faded").css('display','block');
+        $(".container-profile").css('display','block');
+    })
+
+    $("#close_reg_person_profile").click(function(){
+        $(".container-profile").css('display','none');
+    })
 
 })

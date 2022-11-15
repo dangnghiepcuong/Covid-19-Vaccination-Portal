@@ -1,8 +1,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <?php
 session_start();
-$username = $_POST["username"];
-$password = $_POST["password"];
+$username = $_POST['username'];
+$password = $_POST['password'];
 include("DatabaseConnection.php");
 
 $sql = "select * from ACCOUNT where username='" . $username . "'";
@@ -12,7 +12,6 @@ oci_execute($command);
 $row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS);
 if ($row == false) {
     $_SESSION['message'] = 'Thông tin tài khoản sai!';
-    // echo '<script>alert("' . $_SESSION['message'] . '");</script>';
     header('Location: index.php');
 } else {
     if ($password == $row['PASSWORD'])
