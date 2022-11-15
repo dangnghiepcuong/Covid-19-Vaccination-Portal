@@ -88,3 +88,37 @@
 .btn-medium-bordered-icon:hover {
     cursor: pointer;
 }
+
+.btn-long {
+    width: 100%;
+    height: 36px;
+    border: none;
+    border-radius: 20px;
+    background: var(--bg_gradient);
+    text-align: center;
+    color: white;
+    font-weight: 300;
+    font-size: 22px;
+    cursor: pointer;
+    transition: 200ms;
+    font-family: 'Roboto';
+    padding: 5px;
+}
+
+.btn-long:hover, .btn-long-bordered:hover {
+    opacity: 0.85;
+}
+
+.btn-long-bordered {
+    width: 100%;
+    height: 36px;
+    border: 5px solid #A084CA;
+    border-radius: 20px;
+    background-color: white;
+    color: #A084CA;
+    font-size: 22px;
+    font-weight: 300;
+    transition: 200ms;
+    font-family: 'Roboto';
+    cursor: pointer;
+}
