@@ -54,9 +54,7 @@ session_start();
                 <p id="btn-create-account">Tạo tài khoản</p>
             </div>
             <br><br>
-            <div class="btn-long" id="btn-login-in-form-login">
-                <p>Đăng nhập</p>
-            </div>
+            <div class="btn-long" id="btn-login-in-form-login">Đăng nhập</div>
         </form>
     </div>
     <!-- END LOGIN FORM -->
@@ -82,9 +80,7 @@ session_start();
             <hr>
             <div class="message">Thông báo</div>
             <br><br>
-            <div class="btn-long" id="btn-reg-acc">
-                <p>Đăng ký</p>
-            </div>
+            <div class="btn-long" id="btn-reg-acc">Đăng ký</div>
             <div class="btn-linked-page page-login">
                 <p id="btn-login-in-form-reg-acc">Đăng nhập</p>
             </div>
