@@ -47,8 +47,17 @@ $(document).ready(function(){
             alert("Nhập mật khẩu!");
             return;
         }
-        $("#form-login").submit();
+        // $("#form-login").submit();
+
+        $.ajax( 
+            'test_function.php', // location of your php script
+            { username: username, password: password }, // any data you want to send to the script
+            function( data ){  // a function to deal with the returned information
+                // $( 'body ').append( data );
+            });
     })
+
+    
 
     //OPEN & CLOSE REGISTRATION PERSONAL PROFILE FORM
     $('#btn-reg-acc').click(function(){
