@@ -164,7 +164,7 @@
     z-index: 10;
     position: fixed;
     width: 1200px;
-    height: 700px;
+    height: 640px;
     left: 50%;
     top: 10%;
     transform: translate(-600px, 0px);    
@@ -181,28 +181,30 @@
 
 .container-profile .title {
     font-weight: 600;
-    font-size: 26px;
+    font-size: 24px;
     line-height: 20px;
     margin: 60px 0px 40px 0px;
     text-align: center;
 }
 
-.container-profile input {
+.container-profile select, input {
     font-weight: 200;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 20px;
     padding: 2px 5px;
     border: none;
     outline: none;
-    width: 300px;
-    margin-top: 5px;
+    width: 100%;
 }
 
-.container-profile label {
+.container-profile label, p {
     font-weight: 200;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 20px;
-    padding-bottom: 5px;
+}
+
+.container-profile div div {
+    width: 25%;
 }
 
 .container-profile .row4 input, .row5 input {
@@ -212,13 +214,13 @@
 .container-profile .row1, .row2, .row3, .row6 {
     display: flex;
     justify-content: space-between;
-    font-size: 20px;
+    font-size: 18px;
     margin: 10px 100px;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
 }
 
 .container-profile p {
-    font-size: 20px;
+    font-size: 18px;
     margin: 5px 100px;
 }
 
@@ -229,11 +231,10 @@
 .container-profile .row4, .row5{
     width: 50%;
     margin: 10px 100px;
-    padding-bottom: 10px;
 }
 
 .container-profile .row6 .note {
-    font-size: 18px;
+    font-size: 16px;
     color: red;
     width: 60%;
 }
@@ -250,5 +251,10 @@
 .container-profile .row6 button {
     margin-top: 20px;
 }
-
 /* END REGISTRATION PERSONAL PROFILE FORM */
+
+/* MESSAGE FOR LOGIN AND REG */
+.form .message {
+    color: red;
+    font-size: 12px;
+}

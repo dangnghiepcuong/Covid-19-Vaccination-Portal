@@ -42,242 +42,77 @@
 }
 
 .filter-panel {
-    width: 100%;
-    margin: 0 auto;
-    /* align div center*/
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    /* background-color: #db165e; */
+    display: block;
 }
 
-.filter-panel label {
-    line-height: 30px;
-    font-size: 18px;
+.filter-panel hr{
+    background: var(--bg_gradient);
+    height: 1px;
+    border: none;
 }
 
-.filter-panel input {
+.filter-panel select, input {
+    font-weight: 200;
+    font-size: 18px;
     line-height: 20px;
-    /* background-color: #eee; */
-    width: 100px;
+    padding: 2px 5px;
     border: none;
     outline: none;
-    font-family: 'Roboto';
-    font-weight: 300px;
-    /* border-style: solid;
-    border: 2px solid #8C69CA; */
-    font-size: 18px; 
+    margin-top: 5px;
+    width: 100%;
 }
 
-.filter-panel select {
-    height: 25px;
+.filter-panel label, p {
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.filter-panel p {
+    font-size: 16px;
+    margin: 0px 7%;
+}
+
+.filter-panel div div {
+    width: 25%;
+}
+
+.filter-panel select, .row4 input, .row5 input {
+    width: 100%;
+} 
+
+.filter-panel .row1, .row2, .row3, .row6 {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    margin: 10px 7%;
+    padding-bottom: 10px;
+}
+
+.filter-panel .group_button{
+    width: 300px;
+}
+
+.filter-panel .row4, .row5{
+    width: 50%;
+    margin: 10px 7%;
+    padding-bottom: 10px;
+}
+
+.filter-panel .row6 .note {
     font-size: 18px;
-    border: none;
+    color: red;
+    width: 60%;
 }
 
-.filter-panel hr {  
-    background: var(--bg_gradient);
-    height: 2px;
-    display: inline-block;
-    border: none;
-    position: absolute;
-}
-
-.note {
+.filter-panel span {
     color: red;
 }
- 
-.cow-1 {
-    margin-left: 80px;
-}
 
-.cow-2 {
-    margin-left: 150px;
+.filter-panel .row6 button {
+    /* margin-top: 20px; */
 }
-
-.cow-3 {
-    margin-left: 240px;
-}
-
-/*LAST NAME, FIRST NAME, GENDER*/
-.line-1 input {
-    margin-left: 80px;
-    margin-right: -10px;
-    width: 220px;
-    /* box-shadow: inset 0 0 10px 2px rgba(0, 0, 0, .2); */
-    /* border-top-style: hidden;
-    border-right-style: hidden;
-    border-left-style: hidden;
-    border-bottom-style: groove; */
-    /* border-style: solid;
-    border: 2px solid #8C69CA; */
-}
-
-.line-1 select {
-    margin-left: 80px;
-    width: 100px;
-}
-
-.left-1 {
-    margin-left: -690px;
-    margin-top: 25px;
-    width: 220px;
-}
-
-.mid-1 {
-    margin-left: -395px;
-    width: 220px;
-    margin-top: 25px;
-}
-
-.right-1 {
-    margin-left: -95px;
-    width: 100px;
-    margin-top: 25px;
-}
-/*END LAST NAME, FIRST NAME, GENDER*/
-
-/*ID, BIRTHDAY, HOMETOWN*/
-.line-2 label {
-    margin-top: 1000px;
-}
-
-.line-2 input {
-    margin-left: 80px;
-    margin-right: -10px;
-    margin-top: 5px;
-    width: 220px;
-    /* box-shadow: inset 0 0 10px 2px rgba(0, 0, 0, .2); */
-    /* border-top-style: hidden;
-    border-right-style: hidden;
-    border-left-style: hidden;
-    border-bottom-style: groove; */
-    /* border-style: solid;
-    border: 2px solid #8C69CA; */
-}
-
-.line-2 select {
-    margin-left: 80px;
-    width: 100px;
-}
-
-.line-2 .cow-2 {
-    margin-left: 155px;
-}
-
-.line-2 .cow-3 {
-    margin-left: 100px;
-}
-
-.left-2 {
-    margin-left: -690px;
-    margin-top: 26px;
-    width: 220px;
-}
-
-.mid-2 {
-    margin-left: -395px;
-    width: 220px;
-    margin-top: 26px;
-}
-
-.right-2 {
-    margin-left: -95px;
-    margin-top: 26px;
-    width: 100px;
-}
-/*END ID, BIRTHDAY, HOMETOWN*/
-
-/*DIRECTION*/
-.line-4 input {
-    margin-left: 80px;
-    margin-right: -10px;
-    width: 220px;
-    /* box-shadow: inset 0 0 10px 2px rgba(0, 0, 0, .2); */
-    /* border-top-style: hidden;
-    border-right-style: hidden;
-    border-left-style: hidden;
-    border-bottom-style: groove; */
-    /* border-style: solid;
-    border: 2px solid #8C69CA; */
-}
-
-.line-4 select {
-    margin-left: 77px;
-    margin-right: -5px;
-    width: 220px;
-}
-
-.line-4 .cow-2 {
-    margin-left: 140px;
-}
-
-.line-4 .cow-3 {
-    margin-left: 168px;
-}
-
-.left-4 {
-    margin-left: -805px;
-    margin-top: 23px;
-    width: 220px;
-}
-
-.mid-4 {
-    margin-left: -505px;
-    width: 220px;
-    margin-top: 23px;
-}
-
-.right-4 {
-    margin-left: -210px;
-    margin-top: 23px;
-    width: 220px;
-}
-/*END DIRECTION*/
-
-
-/*ADDRESS*/
-.line-5 input {
-    margin-left: 80px;
-    margin-right: -10px;
-    width: 510px;
-    /* box-shadow: inset 0 0 10px 2px rgba(0, 0, 0, .2); */
-    /* border-top-style: hidden;
-    border-right-style: hidden;
-    border-left-style: hidden;
-    border-bottom-style: groove; */
-    /* border-style: solid;
-    border: 2px solid #8C69CA; */
-}
-
-.mid-5 {
-    margin-left: -500px;
-    margin-top: 23px;
-    width: 520px;
-}
-/*END ADDRESS*/
-
-/*EMAIL*/
-.line-6 input {
-    margin-left: 80px;
-    margin-right: -10px;
-    width: 220px;
-    /* box-shadow: inset 0 0 10px 2px rgba(0, 0, 0, .2); */
-    /* border-top-style: hidden;
-    border-right-style: hidden;
-    border-left-style: hidden;
-    border-bottom-style: groove; */
-    /* border-style: solid;
-    border: 2px solid #8C69CA; */
-}
-
-.mid-6 {
-    margin-left: -210px;
-    margin-top: 22px;
-    width: 220px;
-}
-/*END EMAIL*/
+/* END FUNCTIONAL PANEL */
 
 
 /* POPUP CONFIRM FORM */

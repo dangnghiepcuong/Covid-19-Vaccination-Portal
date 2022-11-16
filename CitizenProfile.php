@@ -17,7 +17,7 @@
 <body>
     <!-- HEADER -->
     <?php
-        include("headerCitizen.php");
+    include("headerCitizen.php");
     ?>
     <!-- END HEADER -->
 
@@ -35,6 +35,7 @@
         ?>
         <!-- END MENU -->
 
+        <!-- FUNCTIONAL PANEL -->
         <div class="function-panel">
             <br>
             <div class="panel-target-citizen">
@@ -46,104 +47,108 @@
                 </select>
             </div>
             <br>
+
             <div class="filter-panel">
-                <div class="line-1">
-                    <label for="last-name" class="cow-1">Họ và tên đệm <span class="note">(*)</label>
-                    <label for="first-name" class="cow-2">Tên <span class="note">(*)</label>
-                    <label for="gender" class="cow-3">Giới tính <span class="note">(*)</label>
+                <div class="row1">
+                    <div>
+                        <label for="fisrt_mid_name">Họ và tên đệm <span>(*)</span></label><br>
+                        <input type="text" name="fisrt_mid_name" required><br>
+                        <hr>
+                    </div>
 
-                    <br>
-                    <input type="text" value="Lê Hoàng">
-                    <input type="text" value="Duyên">
-                    <select name="" id="">
-                        <option value="">Nam</option>
-                        <option value="">Nữ</option>
-                    </select>
+                    <div>
+                        <label for="fisrt_mid_name">Tên <span>(*)</span></label><br>
+                        <input type="text" name="fisrt_mid_name" required><br>
+                        <hr>
+                    </div>
 
-                    <hr class="left-1">
-                    <hr class="mid-1">
-                    <hr class="right-1">
-                </div>
-                <br>
-                <div class="line-2">
-                    <label for="id" class="cow-1">Mã định danh <span class="note">(*)</label>
-                    <!-- <label for="note">(*)</label> -->
-
-                    <label for="birthday" class="cow-2">Ngày tháng năm sinh <span class="note">(*)</label>
-                    <!-- <label for="note">(*)</label> -->
-
-                    <label for="hometown" class="cow-3">Quê quán <span class="note">(*)</label>
-                    <!-- <label for="note">(*)</label> -->
-
-                    <br>
-                    <input type="text" value="20521252">
-                    <input type="date">
-                    <select name="" id="">
-                        <option value="">Quảng Trị</option>
-                        <option value="">Đồng Nai</option>
-                    </select>
-
-                    <hr class="left-2">
-                    <hr class="mid-2">
-                    <hr class="right-2">
-                </div>
-                <br>
-                <div class="input-3">
-                    <p class="cow-1">Địa chỉ thường trú:</p>
+                    <div>
+                        <label for="sex">Giới tính <span>(*)</span></label><br>
+                        <select name="sex" id="">
+                            <option value="male">Nam</option>
+                            <option value="female">Nữ</option>
+                        </select>
+                        <hr>
+                    </div>
                 </div>
 
-                <div class="line-4">
-                    <label for="province" class="cow-1">Tỉnh/Thành phố <span class="note">(*)</label>
-                    <label for="district" class="cow-2">Quận/Huyện <span class="note">(*)</label>
-                    <label for="town" class="cow-3">Xã/Phường/Thị trấn <span class="note">(*)</label>
+                <div class="row2">
+                    <div>
+                        <label for="id">Mã định danh <span>(*)</span></label><br>
+                        <input type="text" name="id" required><br>
+                        <hr>
+                    </div>
 
-                    <br>
-                    <select name="" id="" >
-                        <option value="">Đồng Nai</option>
-                        <option value="">Hồ Chí Minh</option>
-                    </select>
+                    <div>
+                        <label for="birthday">Ngày tháng năm sinh <span>(*)</span></label><br>
+                        <input type="date" name="birthday" required><br>
+                        <hr>
+                    </div>
 
-                    <select name="" id="">
-                        <option value="">Cẩm Mỹ</option>
-                        <option value="">Thủ Đức</option>
-                    </select>
-
-                    <select name="" id="">
-                        <option value="">Sông Ray</option>
-                        <option value="">Linh Trung</option>
-                    </select>
-
-                    <hr class="left-4">
-                    <hr class="mid-4">
-                    <hr class="right-4">
-                </div>
-                <br>
-                <div class="line-5">
-                    <label for="street" class="cow-1">Số nhà, tên đường, khu phố/ấp <span class="note">(*)</label>
-
-                    <br>
-                    <input type="text" value="123, tổ x, ấp y">
-
-                    <hr class="mid-5">
-                </div>
-                <br>
-                <div class="line-6">
-                    <label for="email" class="cow-1">Email</label>
-
-                    <br>
-                    <input type="text" value="123@gmail.com" id="">
-
-                    <hr class="mid-6">
+                    <div>
+                        <label for="hometown">Quê quán <span>(*)</span></label><br>
+                        <select name="hometown" id="">
+                            <option value="">TP. Hồ Chí Minh</option>
+                            <option value="">Đồng Nai</option>
+                        </select>
+                        <hr>
+                    </div>
                 </div>
 
+                <p>Địa chỉ thường trú:</p>
+
+                <div class="row3">
+                    <div>
+                        <label for="city">Tỉnh/Thành phố <span>(*)</span></label><br>
+                        <select name="city" id="">
+                            <option value="">TP.Hồ Chí Minh</option>
+                            <option value="">Đồng Nai</option>
+                        </select>
+                        <hr>
+                    </div>
+
+                    <div>
+                        <label for="district">Quận/Huyện <span>(*)</span></label><br>
+                        <select name="district" id="">
+                            <option value=""></option>
+                        </select>
+                        <hr>
+                    </div>
+
+                    <div>
+                        <label for="town">Xã/Phường/Thị trấn <span>(*)</span></label><br>
+                        <select name="town" id="">
+                            <option value=""></option>
+                        </select>
+                        <hr>
+                    </div>
+                </div>
+
+                <div class="row4">
+                    <label for="street">Số nhà, tên đường, khu phố/ấp <span>(*)</span></label><br>
+                    <input type="text" name="street" required><br>
+                    <hr>
+                </div>
+
+                <div class="row5">
+                    <label for="email">Email <span>(*)</span></label><br>
+                    <input type="text" name="email" required><br>
+                    <hr>
+                </div>
+
+                <div class="row6">
+                    <div class="group_button">
+                        <button class="btn-long">Cập nhật</button>
+                        <button class="btn-long-bordered" id="close_reg_person_profile">Hủy bỏ</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
     <br>
-
-
     <?php
-        include("footer.php")
+    include("footer.php")
     ?>
 
     <!-- FADED COVER -->
