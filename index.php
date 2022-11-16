@@ -41,10 +41,14 @@ session_start();
             <label for="username"><b>SĐT/Tên tài khoản</b></label>
             <input type="text" name="username" required>
             <hr>
+            <div class="message">Thông báo</div>
             <br><br>
+
             <label for="password"><b>Mật khẩu</b></label>
             <input type="password" name="password" required>
             <hr>
+            <div class="message">Thông báo</div>
+            
             <div class="btn-linked-page page-reg-acc page-forgot-pass">
                 <p id="btn-forgot-password" href="#">Quên mật khẩu</p>
                 <p id="btn-create-account">Tạo tài khoản</p>
@@ -66,14 +70,17 @@ session_start();
             <label for="phone_number"><b>Số điện thoại</b></label>
             <input type="text" name="phone_number" required>
             <hr>
+            <div class="message">Thông báo</div>
             <br><br>
             <label for="password"><b>Mật khẩu</b></label>
             <input type="password" name="password" required>
             <hr>
+            <div class="message">Thông báo</div>
             <br><br>
             <label for="repeat-password"><b>Nhập lại mật khẩu</b></label>
             <input type="password" name="repeat-password" required>
             <hr>
+            <div class="message">Thông báo</div>
             <br><br>
             <div class="btn-long" id="btn-reg-acc">
                 <p>Đăng ký</p>
@@ -89,7 +96,7 @@ session_start();
     <!-- REGISTRATION PERSONAL PROFILE FORM -->
     <div class="container-profile">
         <p class="title">Đăng ký thông tin cá nhân</p>
-        
+
         <div class="row1">
             <div>
                 <label for="fisrt_mid_name">Họ và tên đệm <span>(*)</span></label><br>
@@ -105,7 +112,10 @@ session_start();
 
             <div>
                 <label for="sex">Giới tính <span>(*)</span></label><br>
-                <input type="text" name="sex" required><br>
+                <select name="sex" id="">
+                    <option value="male">Nam</option>
+                    <option value="female">Nữ</option>
+                </select>
                 <hr>
             </div>
         </div>
@@ -119,13 +129,16 @@ session_start();
 
             <div>
                 <label for="birthday">Ngày tháng năm sinh <span>(*)</span></label><br>
-                <input type="text" name="birthday" required><br>
+                <input type="date" name="birthday" required><br>
                 <hr>
             </div>
 
             <div>
                 <label for="hometown">Quê quán <span>(*)</span></label><br>
-                <input type="text" name="hometown" required><br>
+                <select name="hometown" id="">
+                    <option value="">TP.Hồ Chí Minh</option>
+                    <option value="">Đồng Nai</option>
+                </select>
                 <hr>
             </div>
         </div>
@@ -135,19 +148,26 @@ session_start();
         <div class="row3">
             <div>
                 <label for="city">Tỉnh/Thành phố <span>(*)</span></label><br>
-                <input type="text" name="city" required><br>
+                <select name="city" id="">
+                    <option value="">TP.Hồ Chí Minh</option>
+                    <option value="">Đồng Nai</option>
+                </select>
                 <hr>
             </div>
 
             <div>
                 <label for="district">Quận/Huyện <span>(*)</span></label><br>
-                <input type="text" name="district" required><br>
+                <select name="district" id="">
+                    <option value=""></option>
+                </select>
                 <hr>
             </div>
 
             <div>
                 <label for="town">Xã/Phường/Thị trấn <span>(*)</span></label><br>
-                <input type="text" name="town" required><br>
+                <select name="town" id="">
+                    <option value=""></option>
+                </select>
                 <hr>
             </div>
         </div>
