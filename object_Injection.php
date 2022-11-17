@@ -5,7 +5,7 @@ class Injection{
     private $SchedID;
     private $DoseType;
 
-    public function Injection(){
+    public function __construct(){
         $this->CitizenID = "";
         $this->InjNO = -1;
         $this->SchedID = "";

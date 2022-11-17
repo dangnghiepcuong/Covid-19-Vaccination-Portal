@@ -1,7 +1,10 @@
 <?php
+include("object_Organization.php");
+
 class Schedule {
     private $ID;
-    private $OrgID;
+    private $Org  = null;
+    private $OrgName;
     private $OnDate;
     private $VaccineID;
     private $Serial;
@@ -12,9 +15,9 @@ class Schedule {
     private $NoonRegistered;
     private $NightRegistered;
 
-    public function Schedule(){
+    public function __construct(){
         $this->ID = "";
-        $this->OrgID = "";
+        $this->Org = new Organization();
         $this->OnDate = "";
         $this->VaccineID = "";
         $this->Serial = "";
@@ -26,13 +29,21 @@ class Schedule {
         $this->NightRegistered = 0;
     }
 
+    public function newOrg() {
+        $this->Org = new Organization();
+    }
+
     public function set_id($id){
         $this->ID = $id;
     }
 
-    public function set_orgid($ordid){
-        $this->OrgID = $ordid;
+    public function set_org($org){
+        $this->Org = $org;
     }
+
+    // public function set_orgname($orgname){
+    //     $this->OrgName = $orgname;
+    // }
 
     public function set_ondate($ondate){
         $this->OnDate = $ondate;
@@ -74,8 +85,8 @@ class Schedule {
         return $this->ID;
     }
 
-    public function get_orgid(){
-        return $this->OrgID;
+    public function get_org(){
+        return $this->Org;
     }
 
     public function get_ondate(){

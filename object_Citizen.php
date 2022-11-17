@@ -16,7 +16,7 @@ class Citizen
     private $Guardian;
     private $Avatar;
 
-    public function Citizen()
+    public function __construct()
     {
         $this->ID = "";
         $this->LastName = "";

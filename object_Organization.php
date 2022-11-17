@@ -7,7 +7,7 @@ class Organization {
     private $TownName;
     private $Street;
 
-    public function Organization(){
+    public function __construct(){
         $this->ID = "";
         $this->Name = "";
         $this->ProvinceName = "";
