@@ -4,7 +4,7 @@ include("object_Citizen.php");
 session_start();
 if (isset($_SESSION['username']) == false)
     header('Location: index.php');
-$citizen = $_SESSION['profile'];
+$citizen = $_SESSION['CitizenProfile'];
 ?>
 <html lang="en">
 <head>
@@ -54,7 +54,7 @@ $citizen = $_SESSION['profile'];
             </div>
             <br>
 
-            <div class="filter-panel">
+            <div class="info-panel">
                 <div class="row1">
                     <div>
                         <label for="fisrt_mid_name">Họ và tên đệm<span>(*)</span></label><br>
@@ -219,7 +219,7 @@ $citizen = $_SESSION['profile'];
     <div class="gradient-bg-faded" id="gradient-bg-faded"></div>
 
     <?php
-    echo '<script>alert("' . $citizen->get_birthday() . '")</script>'; 
+    // echo '<script>alert("' . $citizen->get_birthday() . '")</script>'; 
     ?>
 </body>
 
