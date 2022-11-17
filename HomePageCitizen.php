@@ -1,38 +1,35 @@
 <?php
-    include("object_Citizen.php");
-    $citizen = new Citizen();
-    if(isset($_COOKIE['username']))
-    {
-        $username = $_COOKIE['username'];
-        include("DatabaseConnection.php");
-        $sql = "select * from CITIZEN where Phone='".$username."'";
-        $command = oci_parse($connection,$sql);
-        oci_execute($command);
+include("object_Citizen.php");
+$citizen = new Citizen();
+if (isset($_COOKIE['username'])) {
+    $username = $_COOKIE['username'];
+    include("DatabaseConnection.php");
+    $sql = "select * from CITIZEN where Phone='" . $username . "'";
+    $command = oci_parse($connection, $sql);
+    oci_execute($command);
 
-        while (($row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS)) != false)
-        {
-            $citizen->set_lastname($row['LASTNAME']);
-            $citizen->set_firstname($row['FIRSTNAME']);
-            $citizen->set_ID($row['ID']);
-            $citizen->set_birthday($row['BIRTHDAY']);
-            $citizen->set_gender($row['GENDER']);
-            $citizen->set_hometown($row['HOMETOWN']);
-            $citizen->set_provincename($row['PROVINCENAME']);
-            $citizen->set_distictname($row['DISTRICTNAME']);
-            $citizen->set_townname($row['TOWNNAME']);
-            $citizen->set_street($row['STREET']);
-            $citizen->set_phone($row['PHONE']);
-            $citizen->set_email($row['EMAIL']);
-            $citizen->set_guardian($row['GUARDIAN']);
-            $citizen->set_avatar($row['AVATAR']);
-        }
+    while (($row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS)) != false) {
+        $citizen->set_lastname($row['LASTNAME']);
+        $citizen->set_firstname($row['FIRSTNAME']);
+        $citizen->set_ID($row['ID']);
+        $citizen->set_birthday($row['BIRTHDAY']);
+        $citizen->set_gender($row['GENDER']);
+        $citizen->set_hometown($row['HOMETOWN']);
+        $citizen->set_provincename($row['PROVINCENAME']);
+        $citizen->set_distictname($row['DISTRICTNAME']);
+        $citizen->set_townname($row['TOWNNAME']);
+        $citizen->set_street($row['STREET']);
+        $citizen->set_phone($row['PHONE']);
+        $citizen->set_email($row['EMAIL']);
+        $citizen->set_guardian($row['GUARDIAN']);
+        $citizen->set_avatar($row['AVATAR']);
     }
-    else
-    {
-        header('Location: index.php');
-    }
+} else {
+    header('Location: index.php');
+}
 ?>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
