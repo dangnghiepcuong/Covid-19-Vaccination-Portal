@@ -24,6 +24,7 @@ if (isset($_COOKIE['username'])) {
         $citizen->set_guardian($row['GUARDIAN']);
         $citizen->set_avatar($row['AVATAR']);
     }
+
 } else {
     header('Location: index.php');
 }
@@ -75,6 +76,9 @@ if (isset($_COOKIE['username'])) {
     include("footer.php");
     ?>
     <!-- END FOOTER -->
+
+    
+    <?php echo '<script>alert("'.$citizen->get_firstname().'")</script>'; ?>
 </body>
 
 </html>

@@ -232,19 +232,6 @@
 
     <!-- FADED COVER -->
     <div class="gradient-bg-faded" id="gradient-bg-faded"></div>
-
-    <?php
-    // $check = isset($_SESSION['message']);
-    // if ($check == true) {
-    //     // echo '<script>alert("' . $_SESSION['message'] . '");</script>';
-    //     echo '<script>
-    //     $(".form-message").text("' . $_SESSION['message'] . '");
-    //     $("#gradient-bg-faded").css("display", "block");
-    //     $(".form-popup-confirm").css("display", "block");
-    //     </script>';
-    //     unset($_SESSION['message']);
-    // }
-    ?>
 </body>
 
 </html>
