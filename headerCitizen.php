@@ -10,7 +10,7 @@
     <div class="nav">
         <div>
             <ul>
-                <a href="HomepageCitizen.php">
+                <a href="index.php">
                     <li class="menu-section">Trang chủ</li>
                 </a>
 
@@ -41,7 +41,7 @@
                     <li>Thông tin công dân</li>
                 </a>
 
-                <a href="RegistrationManagement.php">
+                <a href="CitizenRegistration.php">
                     <li>Lịch đăng ký</li>
                 </a>
 
