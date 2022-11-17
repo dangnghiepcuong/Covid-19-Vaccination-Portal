@@ -1,5 +1,5 @@
 <?php
 session_start();
-unset($_SESSION['username']);
-unset($_SESSION['citizen']);
+// unset($_SESSION['username'], $_SESSION['profile']);
+session_destroy();
 ?>

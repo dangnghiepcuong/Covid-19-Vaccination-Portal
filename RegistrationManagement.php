@@ -1,6 +1,12 @@
 <!DOCTYPE html>
+<?php
+include("object_Citizen.php");
+session_start();
+if (isset($_SESSION['username']) == false)
+    header('Location: index.php');
+$citizen = $_SESSION['profile'];
+?>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -42,8 +48,7 @@
             <div class="panel-target-citizen">
                 <p>Đối tượng: </p>
                 <select name="" id="">
-                    <option value="">Đặng Nghiệp Cường</option>
-                    <option value="">Đỗ Thị Cúc Hoa</option>
+                    <option value=""><?php echo $citizen->get_lastname() . ' ' . $citizen->get_firstname() ?></option>
                 </select>
             </div>
             <br>

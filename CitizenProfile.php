@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
 <?php
 include("object_Citizen.php");
 session_start();
-$citizen = $_SESSION['citizen'];
+if (isset($_SESSION['username']) == false)
+    header('Location: index.php');
+$citizen = $_SESSION['profile'];
 ?>
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -57,13 +58,13 @@ $citizen = $_SESSION['citizen'];
                 <div class="row1">
                     <div>
                         <label for="fisrt_mid_name">Họ và tên đệm<span>(*)</span></label><br>
-                        <?php echo '<input type="text" name="fisrt_mid_name" required value="'. $citizen->get_lastname().'">' ?><br>
+                        <?php echo '<input type="text" name="fisrt_mid_name" required value="' . $citizen->get_lastname() . '">' ?><br>
                         <hr>
                     </div>
 
                     <div>
                         <label for="fisrt_mid_name">Tên <span>(*)</span></label><br>
-                        <?php echo '<input type="text" name="fisrt_mid_name" required value="'.$citizen->get_firstname().'">'?><br>
+                        <?php echo '<input type="text" name="fisrt_mid_name" required value="' . $citizen->get_firstname() . '">' ?><br>
                         <hr>
                     </div>
 
@@ -78,7 +79,7 @@ $citizen = $_SESSION['citizen'];
                                     <option value="1">Nam</option>
                                     <option value="2">Khác</option>';
                                     break;
-                                    
+
                                 case 1:
                                     echo '
                                     <option value="1">Nam</option>
@@ -102,21 +103,28 @@ $citizen = $_SESSION['citizen'];
                 <div class="row2">
                     <div>
                         <label for="id">Mã định danh <span>(*)</span></label><br>
-                        <?php echo'<input type="text" name="id" required value="'.$citizen->get_ID().'">' ?><br>
+                        <?php echo '<input type="text" name="id" required value="' . $citizen->get_ID() . '">' ?><br>
                         <hr>
                     </div>
 
                     <div>
                         <label for="birthday">Ngày tháng năm sinh <span>(*)</span></label><br>
-                        <?php echo'<input type="date" name="birthday" required value="'.$citizen->get_birthday().'">' ?><br>
+                        <?php echo '<input type="date" name="birthday" required value="' . $citizen->get_birthday() . '">' ?><br>
                         <hr>
                     </div>
 
                     <div>
                         <label for="hometown">Quê quán <span>(*)</span></label><br>
                         <select name="hometown" id="">
-                            <option value="">TP. Hồ Chí Minh</option>
-                            <option value="">Đồng Nai</option>
+                            <?php
+                            echo '<option value="">' . $citizen->get_provincename() . '</option>';
+                            $str = file_get_contents('local.json');
+                            $local = json_decode($str, true); // decode the JSON into an associative array
+                            for ($i = 0; $i < 63; $i++) {
+                                if ($local[$i]['name'] != $citizen->get_provincename())
+                                    echo '<option value="">' . $local[$i]['name'] . '</option>';
+                            }
+                            ?>
                         </select>
                         <hr>
                     </div>
@@ -128,8 +136,18 @@ $citizen = $_SESSION['citizen'];
                     <div>
                         <label for="city">Tỉnh/Thành phố <span>(*)</span></label><br>
                         <select name="city" id="">
-                            <option value="">TP.Hồ Chí Minh</option>
-                            <option value="">Đồng Nai</option>
+                            <?php
+                            echo '<option value="">' . $citizen->get_provincename() . '</option>';
+                            $str = file_get_contents('local.json');
+                            $local = json_decode($str, true); // decode the JSON into an associative array
+                            $provincecode = -1;
+                            for ($i = 0; $i < 63; $i++) {
+                                if ($local[$i]['name'] != $citizen->get_provincename())
+                                    echo '<option value="">' . $local[$i]['name'] . '</option>';
+                                else
+                                    $provincecode = $i;
+                            }
+                            ?>
                         </select>
                         <hr>
                     </div>
@@ -137,7 +155,18 @@ $citizen = $_SESSION['citizen'];
                     <div>
                         <label for="district">Quận/Huyện <span>(*)</span></label><br>
                         <select name="district" id="">
-                            <option value=""></option>
+                            <?php
+                            echo '<option value="">' . $citizen->get_districtname() . '</option>';
+                            $districtcode = -1;
+                            $i = 0;
+                            while ($local[$provincecode]['districts'][$i] != null) {
+                                if ($local[$provincecode]['districts'][$i]['name'] != $citizen->get_districtname())
+                                    echo '<option value="">' . $local[$provincecode]['districts'][$i]['name'] . '</option>';
+                                else
+                                    $districtcode = $i;
+                                $i++;
+                            }
+                            ?>
                         </select>
                         <hr>
                     </div>
@@ -145,7 +174,15 @@ $citizen = $_SESSION['citizen'];
                     <div>
                         <label for="town">Xã/Phường/Thị trấn <span>(*)</span></label><br>
                         <select name="town" id="">
-                            <option value=""></option>
+                            <?php
+                            echo '<option value="">' . $citizen->get_townname() . '</option>';
+                            $i = 0;
+                            while ($local[$provincecode]['districts'][$districtcode]['wards'][$i] != null) {
+                                if ($local[$provincecode]['districts'][$districtcode]['wards'][$i]['name'] != $citizen->get_townname())
+                                    echo '<option value="">' . $local[$provincecode]['districts'][$districtcode]['wards'][$i]['name'] . '</option>';
+                                $i++;
+                            }
+                            ?>
                         </select>
                         <hr>
                     </div>
@@ -153,13 +190,13 @@ $citizen = $_SESSION['citizen'];
 
                 <div class="row4">
                     <label for="street">Số nhà, tên đường, khu phố/ấp <span>(*)</span></label><br>
-                    <input type="text" name="street" required><br>
+                    <?php echo '<input type="text" name="street" required value="'. $citizen->get_street() .'">' ?><br>
                     <hr>
                 </div>
 
                 <div class="row5">
                     <label for="email">Email <span>(*)</span></label><br>
-                    <input type="text" name="email" required><br>
+                    <?php echo ' <input type="text" name="email" required value="'. $citizen->get_email() .'">' ?><br>
                     <hr>
                 </div>
 
@@ -181,7 +218,9 @@ $citizen = $_SESSION['citizen'];
     <!-- FADED COVER -->
     <div class="gradient-bg-faded" id="gradient-bg-faded"></div>
 
-    <?php //echo '<script>alert("' . $citizen->get_ID() . '")</script>'; ?>
+    <?php
+    echo '<script>alert("' . $citizen->get_birthday() . '")</script>'; 
+    ?>
 </body>
 
 </html>
