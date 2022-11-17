@@ -55,11 +55,22 @@ $(document).ready(function () {
             type: "POST",
             data: {username: username, password: password},
             success: function (result) {
-                // $("#return-header").html(result);
-                $("#form-login").submit();
+                switch (parseInt(result))
+                {
+                    case 0: alert("MOH"); break;
+                    case 1: alert("ORG"); 
+                    window.location.href = "HomepageORG.php"
+                    break;
+                    case 2:
+                    window.location.href = "HomepageCitizen.php"
+                    break;
+                    default:
+                    alert(result);
+                }
+                // $("#form-login").submit();
             },
             error: function(error){
-                // alert(error);
+                alert(error);
             }
         });
     })
