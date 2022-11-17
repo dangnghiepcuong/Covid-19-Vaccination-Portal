@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/CitizenProfile.js"></script>
+    <script src="js/animation-btn.js"></script>
     <title>Thông tin công dân</title>
 </head>
 
@@ -137,10 +138,8 @@
                 </div>
 
                 <div class="row6">
-                    <div class="group_button">
-                        <button class="btn-long">Cập nhật</button>
-                        <button class="btn-long-bordered" id="close_reg_person_profile">Hủy bỏ</button>
-                    </div>
+                    <button class="btn-medium-filled">Cập nhật</button>
+                    <button class="btn-medium-bordered" id="close_reg_person_profile">Hủy bỏ</button>
                 </div>
             </div>
         </div>
