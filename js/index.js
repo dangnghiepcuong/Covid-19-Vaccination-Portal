@@ -45,37 +45,34 @@ $(document).ready(function () {
             alert("Nhập mật khẩu!");
             return;
         }
-        // $("#form-login").submit();
-
-        var par = "username=" + username + "&password=" + password;
 
         $.ajax({
             cache: false,
-            url: "test_function.php",
+            url: "HandleLogin.php",
             type: "POST",
-            data: {username: username, password: password},
+            data: { account: username, password: password },
             success: function (result) {
-                switch (parseInt(result))
-                {
-                    case 0: alert("MOH"); break;
-                    case 1: alert("ORG"); 
-                    window.location.href = "HomepageORG.php"
-                    break;
-                    case 2:
-                    window.location.href = "HomepageCitizen.php"
-                    break;
-                    default:
-                    alert(result);
-                }
-                // $("#form-login").submit();
+                location.reload(true);
             },
-            error: function(error){
-                alert(error);
+            error: function (error) {
+                // alert(error);
+                $("body").html(error);
             }
         });
     })
 
-
+    $("#btn-logout").click(function () {
+        $.ajax({
+            cache: false,
+            url: "HandleLogout.php",
+            success: function (result) {
+                location.reload();
+            },
+            error: function (result) {
+                alert(error);
+            }
+        })
+    })
 
     //OPEN & CLOSE REGISTRATION PERSONAL PROFILE FORM
     $('#btn-reg-acc').click(function () {

@@ -53,7 +53,7 @@
                     <li>Thêm người thân</li>
                 </a>
 
-                <a href="index.php">
+                <a href="" id="btn-logout">
                     <li>Đăng xuất</li>
                 </a>
             </ul>

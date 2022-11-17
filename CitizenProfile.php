@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+include("object_Citizen.php");
+session_start();
+$citizen = $_SESSION['citizen'];
+?>
 
 <head>
     <meta charset="UTF-8">
@@ -41,9 +46,9 @@
             <div class="panel-target-citizen">
                 <p>Đối tượng: </p>
                 <select name="" id="">
-                    <option value="">Lê Hoàng Duyên</option>
-                    <option value="">Lê Hoàng</option>
-                    <option value="">Lê Duyên</option>
+                    <option value=""><?php echo $citizen->get_lastname() . ' ' . $citizen->get_firstname() ?></option>
+                    <!-- <option value="">Lê Hoàng</option> -->
+                    <!-- <option value="">Lê Duyên</option> -->
                 </select>
             </div>
             <br>
@@ -51,22 +56,44 @@
             <div class="filter-panel">
                 <div class="row1">
                     <div>
-                        <label for="fisrt_mid_name">Họ và tên đệm <span>(*)</span></label><br>
-                        <input type="text" name="fisrt_mid_name" required><br>
+                        <label for="fisrt_mid_name">Họ và tên đệm<span>(*)</span></label><br>
+                        <?php echo '<input type="text" name="fisrt_mid_name" required value="'. $citizen->get_lastname().'">' ?><br>
                         <hr>
                     </div>
 
                     <div>
                         <label for="fisrt_mid_name">Tên <span>(*)</span></label><br>
-                        <input type="text" name="fisrt_mid_name" required><br>
+                        <?php echo '<input type="text" name="fisrt_mid_name" required value="'.$citizen->get_firstname().'">'?><br>
                         <hr>
                     </div>
 
                     <div>
                         <label for="sex">Giới tính <span>(*)</span></label><br>
                         <select name="sex" id="">
-                            <option value="male">Nam</option>
-                            <option value="female">Nữ</option>
+                            <?php
+                            switch ($citizen->get_gender()) {
+                                case 0:
+                                    echo '
+                                    <option value="0">Nữ</option>
+                                    <option value="1">Nam</option>
+                                    <option value="2">Khác</option>';
+                                    break;
+                                    
+                                case 1:
+                                    echo '
+                                    <option value="1">Nam</option>
+                                    <option value="0">Nữ</option>
+                                    <option value="2">Khác</option>';
+                                    break;
+
+                                case 2:
+                                    echo '
+                                    <option value="2">Khác</option>
+                                    <option value="0">Nữ</option>
+                                    <option value="1">Nam</option>';
+                                    break;
+                            }
+                            ?>
                         </select>
                         <hr>
                     </div>
@@ -75,13 +102,13 @@
                 <div class="row2">
                     <div>
                         <label for="id">Mã định danh <span>(*)</span></label><br>
-                        <input type="text" name="id" required><br>
+                        <?php echo'<input type="text" name="id" required value="'.$citizen->get_ID().'">' ?><br>
                         <hr>
                     </div>
 
                     <div>
                         <label for="birthday">Ngày tháng năm sinh <span>(*)</span></label><br>
-                        <input type="date" name="birthday" required><br>
+                        <?php echo'<input type="date" name="birthday" required value="'.$citizen->get_birthday().'">' ?><br>
                         <hr>
                     </div>
 
@@ -153,6 +180,8 @@
 
     <!-- FADED COVER -->
     <div class="gradient-bg-faded" id="gradient-bg-faded"></div>
+
+    <?php //echo '<script>alert("' . $citizen->get_ID() . '")</script>'; ?>
 </body>
 
 </html>

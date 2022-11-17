@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-// session_start();
+session_start();
 ?>
 <html lang="en">
 
@@ -23,7 +23,10 @@
     <!-- HEADER -->
     <div id="return-header">
         <?php
-        include("headerGeneral.php");
+        if (isset($_SESSION['username']))
+            include("headerCitizen.php");
+        else
+            include("headerGeneral.php");
         ?>
     </div>
     <!-- END HEADER -->
