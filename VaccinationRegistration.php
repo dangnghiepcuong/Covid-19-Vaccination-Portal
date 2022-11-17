@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php
+include("object_Citizen.php");
+session_start();
+if (isset($_SESSION['username']) == false)
+    header('Location: index.php');
+$citizen = $_SESSION['profile'];
+?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

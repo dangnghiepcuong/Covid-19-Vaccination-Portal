@@ -1,7 +1,9 @@
 <?php
+include("object_Schedule.php");
+
 class Register {
     private $CitizenID;
-    private $SchedID;
+    private $Sched = null;
     private $Time;
     private $NO;
     private $Status;
@@ -9,9 +11,9 @@ class Register {
     private $DoseType;
     private $ID;
 
-    public function Register(){
+    public function __construct(){
         $this->CitizenID = "";
-        $this->SchedID = "";
+        $this->Sched = new Schedule();
         $this->Time = -1;
         $this->NO = -1;
         $this->Status = -1;
@@ -24,8 +26,8 @@ class Register {
         $this->CitizenID = $citizenid;
     }
 
-    public function set_schedid($schedid){
-        $this->SchedID = $schedid;
+    public function set_sched($sched){
+        $this->Sched = $sched;
     }
 
     public function set_time($time){
@@ -56,8 +58,8 @@ class Register {
         return $this->CitizenID;
     }
 
-    public function get_schedid(){
-        return $this->SchedID;
+    public function get_sched(){
+        return $this->Sched;
     }
 
     public function get_time(){

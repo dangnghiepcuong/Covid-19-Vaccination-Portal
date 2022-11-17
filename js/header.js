@@ -50,4 +50,18 @@ $(document).ready(function(){
     $(".header").on('mouseover', '#drop-down-menu-schedule', function () {
         $("#drop-down-menu-schedule").css('display', 'block');
     });
+
+    // HANDLE LOGOUT
+    $("#btn-logout").click(function () {
+        $.ajax({
+            cache: false,
+            url: "HandleLogout.php",
+            success: function (result) {
+                window.location.href = "index.php";
+            },
+            error: function (result) {
+                alert(error);
+            }
+        })
+    })
 })

@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <?php
 session_start();
+include("object_Citizen.php");
+$citizen = new Citizen();
 ?>
 <html lang="en">
 
@@ -23,9 +25,50 @@ session_start();
     <!-- HEADER -->
     <div id="return-header">
         <?php
-        if (isset($_SESSION['username']))
-            include("headerCitizen.php");
-        else
+        if (isset($_SESSION['username'])) {
+            $username = $_SESSION['username'];
+            switch ((int)$_SESSION['UserRole']) {
+                case 0:
+                    break;
+                case 1:
+                    include("headerORG.php");
+                    break;
+                case 2:
+                    if (isset($_SESSION['CitizenProfile']) == false) {
+                        include("DatabaseConnection.php");
+                        $sql = "select ID, LastName, FirstName, TO_CHAR( Birthday, 'YYYY-MM-DD' ) Birthday, Gender,"
+                            . "Hometown, ProvinceName, DistrictName, TownName, Street,"
+                            . "Phone, Email, Guardian, Avatar "
+                            . "from CITIZEN where Phone='" . $username . "'";
+                        $command = oci_parse($connection, $sql);
+                        oci_execute($command);
+
+                        while (($row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS)) != false) {
+                            $citizen->set_lastname($row['LASTNAME']);
+                            $citizen->set_firstname($row['FIRSTNAME']);
+                            $citizen->set_ID($row['ID']);
+                            $citizen->set_birthday($row['BIRTHDAY']);
+                            $citizen->set_gender($row['GENDER']);
+                            $citizen->set_hometown($row['HOMETOWN']);
+                            $citizen->set_provincename($row['PROVINCENAME']);
+                            $citizen->set_distictname($row['DISTRICTNAME']);
+                            $citizen->set_townname($row['TOWNNAME']);
+                            $citizen->set_street($row['STREET']);
+                            $citizen->set_phone($row['PHONE']);
+                            $citizen->set_email($row['EMAIL']);
+                            $citizen->set_guardian($row['GUARDIAN']);
+                            $citizen->set_avatar($row['AVATAR']);
+                        }
+                        $_SESSION['CitizenProfile'] = new Citizen();
+                        $_SESSION['CitizenProfile'] = $citizen;
+                    }
+                    include("headerCitizen.php");
+                    break;
+                default:
+                    include("headerGeneral.php");
+                    break;
+            }
+        } else
             include("headerGeneral.php");
         ?>
     </div>
@@ -235,6 +278,10 @@ session_start();
 
     <!-- FADED COVER -->
     <div class="gradient-bg-faded" id="gradient-bg-faded"></div>
+
+    <?php
+    // echo '<script>alert("' . $citizen->get_ID() . '")</script>';
+    ?>
 </body>
 
 </html>

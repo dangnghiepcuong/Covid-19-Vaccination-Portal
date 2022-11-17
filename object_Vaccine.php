@@ -5,7 +5,7 @@ class Vaccine {
     private $Technology;
     private $Country;
 
-    public function Vaccine(){
+    public function __construct(){
         $this->ID = "";
         $this->Name = "";
         $this->Technology = "";

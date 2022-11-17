@@ -6,7 +6,7 @@ class Account {
     private $Default;
     private $Status;
 
-    public function Account(){
+    public function __construct(){
         $this->Username = "";
         $this->Password = "";
         $this->Role = -1;

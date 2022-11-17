@@ -42,17 +42,17 @@
     padding: 10px 0px;
 }
 
-.filter-panel {
+.info-panel {
     display: block;
 }
 
-.filter-panel hr{
+.info-panel hr{
     background: var(--bg_gradient);
     height: 1px;
     border: none;
 }
 
-.filter-panel select, input {
+.info-panel select, input {
     font-weight: 200;
     font-size: 18px;
     line-height: 20px;
@@ -63,26 +63,26 @@
     width: 100%;
 }
 
-.filter-panel label, p {
+.info-panel label, p {
     font-weight: 200;
     font-size: 16px;
     line-height: 20px;
 }
 
-.filter-panel p {
+.info-panel p {
     font-size: 16px;
     margin: 0px 7%;
 }
 
-.filter-panel div div {
+.info-panel div div {
     width: 25%;
 }
 
-.filter-panel select, .row4 input, .row5 input {
+.info-panel select, .row4 input, .row5 input {
     width: 100%;
 } 
 
-.filter-panel .row1, .row2, .row3, .row6 {
+.info-panel .row1, .row2, .row3, .row6 {
     display: flex;
     justify-content: space-between;
     font-size: 20px;
@@ -90,24 +90,29 @@
     padding-bottom: 10px;
 }
 
-.filter-panel .row4, .row5{
+
+.info-panel .group_button{
+    width: 300px;
+}
+
+.info-panel .row4, .row5{
     width: 50%;
     margin: 10px 7%;
     padding-bottom: 10px;
 }
 
-.filter-panel span {
+
+.info-panel .row6 .note {
+    font-size: 18px;
     color: red;
 }
 
-.filter-panel .row6 {
-    display: flex;
-    justify-content: center;
+
+.info-panel span {
+    color: red;
 }
 
-.filter-panel .row6 button {
-    margin: 0px 10px;
-}
+
 /* END FUNCTIONAL PANEL */
 
 

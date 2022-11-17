@@ -61,18 +61,7 @@ $(document).ready(function () {
         });
     })
 
-    $("#btn-logout").click(function () {
-        $.ajax({
-            cache: false,
-            url: "HandleLogout.php",
-            success: function (result) {
-                location.reload();
-            },
-            error: function (result) {
-                alert(error);
-            }
-        })
-    })
+    
 
     //OPEN & CLOSE REGISTRATION PERSONAL PROFILE FORM
     $('#btn-reg-acc').click(function () {

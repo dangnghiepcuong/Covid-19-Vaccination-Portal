@@ -5,7 +5,7 @@ class Form {
     private $Choice;
     private $ID;
 
-    public function Form(){
+    public function __construct(){
         $this->CitizenID = "";
         $this->FilledDate = "";
         $this->Choice = "";

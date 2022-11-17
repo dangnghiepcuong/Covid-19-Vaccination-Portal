@@ -63,8 +63,10 @@
 
 .header .avatar {
     display: inline-flex;
+    justify-content: center;
     text-decoration: none;
     align-items: center !important;
+    width: 80px;
     height: 100%;
     z-index: 20;
 }

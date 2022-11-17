@@ -4,7 +4,7 @@ class Certificate{
     private $Dose;
     private $CertType;
 
-    public function Certificate(){
+    public function __construct(){
         $this->CitizenID = "";
         $this->Dose = -1;
         $this->CertType = -1;

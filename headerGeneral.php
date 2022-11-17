@@ -15,10 +15,7 @@
                     <li class="menu-section">Trang chủ</li>
                 </a>
                 <a href="#">
-                    <li class="menu-section">Lịch tiêm</li>
-                </a>
-                <a href="#">
-                    <li class="menu-section">Tiêm chủng</li>
+                    <li class="menu-section">Khai báo</li>
                 </a>
                 <a href="#">
                     <li class="menu-section">Thống kê</li>

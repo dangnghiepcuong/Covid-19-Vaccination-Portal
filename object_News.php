@@ -7,7 +7,7 @@ class News {
     private $Image;
     private $Content;
 
-    public function News(){
+    public function __construct(){
         $this->ID = "";
         $this->OrgID = "";
         $this->Title = "";
