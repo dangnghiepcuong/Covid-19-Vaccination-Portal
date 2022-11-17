@@ -34,7 +34,7 @@ $citizen = new Citizen();
                     include("headerORG.php");
                     break;
                 case 2:
-                    if (isset($_SESSION['profile']) == false) {
+                    if (isset($_SESSION['CitizenProfile']) == false) {
                         include("DatabaseConnection.php");
                         $sql = "select ID, LastName, FirstName, TO_CHAR( Birthday, 'YYYY-MM-DD' ) Birthday, Gender,"
                             . "Hometown, ProvinceName, DistrictName, TownName, Street,"
@@ -59,8 +59,8 @@ $citizen = new Citizen();
                             $citizen->set_guardian($row['GUARDIAN']);
                             $citizen->set_avatar($row['AVATAR']);
                         }
-                        $_SESSION['profile'] = new Citizen();
-                        $_SESSION['profile'] = $citizen;
+                        $_SESSION['CitizenProfile'] = new Citizen();
+                        $_SESSION['CitizenProfile'] = $citizen;
                     }
                     include("headerCitizen.php");
                     break;
