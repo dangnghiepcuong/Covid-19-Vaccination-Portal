@@ -21,9 +21,11 @@ session_start();
 
 <body>
     <!-- HEADER -->
-    <?php
-    include("headerGeneral.php");
-    ?>
+    <div id="return-header">
+        <?php
+        include("headerGeneral.php");
+        ?>
+    </div>
     <!-- END HEADER -->
 
     <!-- SLIDER -->
@@ -48,7 +50,7 @@ session_start();
             <input type="password" name="password" required>
             <hr>
             <div class="message">Thông báo</div>
-            
+
             <div class="btn-linked-page page-reg-acc page-forgot-pass">
                 <p id="btn-forgot-password" href="#">Quên mật khẩu</p>
                 <p id="btn-create-account">Tạo tài khoản</p>
