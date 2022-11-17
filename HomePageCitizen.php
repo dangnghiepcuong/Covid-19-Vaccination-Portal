@@ -1,10 +1,14 @@
 <?php
 include("object_Citizen.php");
+
 $citizen = new Citizen();
-if (isset($_COOKIE['username'])) {
-    $username = $_COOKIE['username'];
+if (isset($_SESSION['username'])) {
+    $username = $_SESSION['username'];
     include("DatabaseConnection.php");
-    $sql = "select * from CITIZEN where Phone='" . $username . "'";
+    $sql = "select ID, LastName, FirstName, Birthday, Gender,"
+    . "Hometown, ProvinceName, DistrictName, TownName, Street," 
+    . "Phone, Email, Guardian, Avatar "
+    . "from CITIZEN where Phone='" . $username . "'";
     $command = oci_parse($connection, $sql);
     oci_execute($command);
 
@@ -24,6 +28,9 @@ if (isset($_COOKIE['username'])) {
         $citizen->set_guardian($row['GUARDIAN']);
         $citizen->set_avatar($row['AVATAR']);
     }
+
+    session_start();
+    $_SESSION['citizen'] = $citizen;
 
 } else {
     header('Location: index.php');
@@ -77,8 +84,6 @@ if (isset($_COOKIE['username'])) {
     ?>
     <!-- END FOOTER -->
 
-    
-    <?php echo '<script>alert("'.$citizen->get_firstname().'")</script>'; ?>
 </body>
 
 </html>
