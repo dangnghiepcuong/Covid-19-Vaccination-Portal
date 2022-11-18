@@ -3,7 +3,7 @@ include("object_Schedule.php");
 
 class Register {
     private $CitizenID;
-    private $Sched = null;
+    private $Sched;
     private $Time;
     private $NO;
     private $Status;

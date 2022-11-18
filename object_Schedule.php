@@ -3,8 +3,7 @@ include("object_Organization.php");
 
 class Schedule {
     private $ID;
-    private $Org  = null;
-    private $OrgName;
+    private $Org;
     private $OnDate;
     private $VaccineID;
     private $Serial;

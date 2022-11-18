@@ -45,7 +45,6 @@ $(document).ready(function () {
             alert("Nhập mật khẩu!");
             return;
         }
-
         $.ajax({
             cache: false,
             url: "HandleLogin.php",
