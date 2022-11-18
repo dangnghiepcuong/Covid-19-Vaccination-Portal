@@ -123,7 +123,7 @@ $citizen = $_SESSION['CitizenProfile'];
                             $local = json_decode($str, true); // decode the JSON into an associative array
                             for ($i = 0; $i < 63; $i++) {
                                 if ($local[$i]['name'] != $citizen->get_provincename())
-                                    echo '<option value="">' . $local[$i]['name'] . '</option>';
+                                    echo '<option value="'.$i.'">' . $local[$i]['name'] . '</option>';
                             }
                             ?>
                         </select>
@@ -136,7 +136,7 @@ $citizen = $_SESSION['CitizenProfile'];
                 <div class="row3">
                     <div>
                         <label for="city">Tỉnh/Thành phố <span>(*)</span></label><br>
-                        <select name="city" id="">
+                        <select name="city" id="select-province">
                             <?php
                             echo '<option value="">' . $citizen->get_provincename() . '</option>';
                             $str = file_get_contents('local.json');
@@ -144,10 +144,11 @@ $citizen = $_SESSION['CitizenProfile'];
                             $provincecode = -1;
                             for ($i = 0; $i < 63; $i++) {
                                 if ($local[$i]['name'] != $citizen->get_provincename())
-                                    echo '<option value="">' . $local[$i]['name'] . '</option>';
+                                    echo '<option value="'.$i.'">' . $local[$i]['name'] . '</option>';
                                 else
                                     $provincecode = $i;
                             }
+                            echo '<script>$("#select-province option:first-child").val('.$provincecode.')</script>';
                             ?>
                         </select>
                         <hr>
@@ -155,18 +156,19 @@ $citizen = $_SESSION['CitizenProfile'];
 
                     <div>
                         <label for="district">Quận/Huyện <span>(*)</span></label><br>
-                        <select name="district" id="">
+                        <select name="district" id="select-district">
                             <?php
                             echo '<option value="">' . $citizen->get_districtname() . '</option>';
                             $districtcode = -1;
                             $i = 0;
-                            while ($local[$provincecode]['districts'][$i] != null) {
+                            while (isset($local[$provincecode]['districts'][$i])) {
                                 if ($local[$provincecode]['districts'][$i]['name'] != $citizen->get_districtname())
-                                    echo '<option value="">' . $local[$provincecode]['districts'][$i]['name'] . '</option>';
+                                    echo '<option value="'.$i.'">' . $local[$provincecode]['districts'][$i]['name'] . '</option>';
                                 else
                                     $districtcode = $i;
                                 $i++;
                             }
+                            echo '<script>$("#select-district option:first-child").val('.$districtcode.')</script>';
                             ?>
                         </select>
                         <hr>
@@ -174,15 +176,19 @@ $citizen = $_SESSION['CitizenProfile'];
 
                     <div>
                         <label for="town">Xã/Phường/Thị trấn <span>(*)</span></label><br>
-                        <select name="town" id="">
+                        <select name="town" id="select-town">
                             <?php
                             echo '<option value="">' . $citizen->get_townname() . '</option>';
+                            $towncode = -1;
                             $i = 0;
-                            while ($local[$provincecode]['districts'][$districtcode]['wards'][$i] != null) {
+                            while (isset($local[$provincecode]['districts'][$districtcode]['wards'][$i])) {
                                 if ($local[$provincecode]['districts'][$districtcode]['wards'][$i]['name'] != $citizen->get_townname())
-                                    echo '<option value="">' . $local[$provincecode]['districts'][$districtcode]['wards'][$i]['name'] . '</option>';
+                                    echo '<option value="'.$i.'">' . $local[$provincecode]['districts'][$districtcode]['wards'][$i]['name'] . '</option>';
+                                else
+                                    $towncode = $i;
                                 $i++;
                             }
+                            echo '<script>$("#select-town option:first-child").val('.$towncode.')</script>';
                             ?>
                         </select>
                         <hr>
