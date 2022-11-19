@@ -167,11 +167,11 @@
     display: none;
     z-index: 10;
     position: fixed;
-    width: 1200px;
+    width: 1000px;
     height: 640px;
     left: 50%;
     top: 10%;
-    transform: translate(-600px, 0px);    
+    transform: translate(-500px, 0px);    
     border-radius: 20px;
     background: #FEFEFE;
     transition: 500ms;
@@ -193,7 +193,7 @@
 
 .container-reg-profile select, input {
     font-weight: 200;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 20px;
     padding: 2px 5px;
     border: none;
@@ -203,12 +203,12 @@
 
 .container-reg-profile label, p {
     font-weight: 200;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 20px;
 }
 
 .container-reg-profile div div {
-    width: 25%;
+    width: 30%;
 }
 
 .container-reg-profile .row4 input, .row5 input {
@@ -228,17 +228,14 @@
     margin: 5px 100px;
 }
 
-.container-reg-profile .group_button{
-    width: 300px;
-}
-
 .container-reg-profile .row4, .row5{
     width: 50%;
-    margin: 10px 100px;
+    margin: 0px 100px;
+    padding-top: 10px;
 }
 
 .container-reg-profile .row6 .note {
-    font-size: 16px;
+    font-size: 15px;
     color: red;
     width: 60%;
 }
@@ -261,4 +258,5 @@
 .form .message {
     color: red;
     font-size: 12px;
+    padding-top: 5px;
 }

@@ -44,6 +44,7 @@
 
 .info-panel {
     display: block;
+    margin-top: 50px;
 }
 
 .info-panel hr{
@@ -75,14 +76,18 @@
 }
 
 .info-panel div div {
-    width: 25%;
+    width: 30%;
 }
 
-.info-panel select, .row4 input, .row5 input {
+.info-panel .row1 .item_name {
+    width: 65%;
+}
+
+.info-panel select, .row3 input, .row1 input {
     width: 100%;
 } 
 
-.info-panel .row1, .row2, .row3, .row6 {
+.info-panel .row2, .row1 {
     display: flex;
     justify-content: space-between;
     font-size: 20px;
@@ -96,22 +101,15 @@
     display: flex;
     justify-content: space-between;
     font-size: 20px;
-    margin: 10px 7%;
+    margin: 50px 30%;
     padding-bottom: 10px;
 }
 
-.info-panel .row4, .row5{
-    width: 50%;
+.info-panel .row3{
+    width: 56%;
     margin: 10px 7%;
     padding-bottom: 10px;
 }
-
-
-.info-panel .row6 .note {
-    font-size: 18px;
-    color: red;
-}
-
 
 .info-panel span {
     color: red;
