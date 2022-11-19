@@ -163,7 +163,6 @@ $(document).ready(function () {
             return;
         }
 
-        $("#form-container-reg-acc").css('display', 'none');
         $("#gradient-bg-faded").css('display', 'block');
         $(".container-reg-profile").css('display', 'block');
     })

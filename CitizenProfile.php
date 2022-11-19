@@ -207,7 +207,7 @@ $citizen = $_SESSION['CitizenProfile'];
                     <hr>
                 </div>
 
-                <div class="row6">
+                <div class="group_btn">
                     <button class="btn-medium-filled">Cập nhật</button>
                     <button class="btn-medium-bordered" id="close_reg_person_profile">Hủy bỏ</button>
                 </div>

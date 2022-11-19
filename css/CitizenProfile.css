@@ -91,8 +91,13 @@
 }
 
 
-.info-panel .group_button{
-    width: 300px;
+.info-panel .group_btn{
+    /* width: 300px; */
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    margin: 20px 30%;
+    padding-bottom: 10px;
 }
 
 .info-panel .row4, .row5{

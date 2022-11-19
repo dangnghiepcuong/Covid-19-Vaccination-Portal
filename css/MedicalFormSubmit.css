@@ -137,4 +137,10 @@
     font-weight: 300;
 }
 
+.function-panel select, input {
+    border: none;
+    outline: none;
+    width: 250px;
+}
+
 /* END FUNCTIONAL PANEL */

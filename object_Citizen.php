@@ -1,6 +1,4 @@
 <?php
-include ("object_Citizen.php");
-
 class Citizen
 {
     private $ID;
@@ -32,7 +30,7 @@ class Citizen
         $this->Street = "";
         $this->Phone = "";
         $this->Email = "";
-        $this->Guardian = new Citizen();
+        $this->Guardian = "";
         $this->Avatar = "";
     }
 
@@ -128,6 +126,7 @@ class Citizen
 
     public function get_gender()
     {
+        return $this->Gender;
         switch ($this->Gender) {
             case 0:
                 return "Nam";
