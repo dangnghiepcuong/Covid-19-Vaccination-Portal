@@ -25,7 +25,7 @@ $citizen = new Citizen();
     <!-- HEADER -->
     <div id="return-header">
         <?php
-        if (isset($_SESSION['username'])) {
+        if (isset($_SESSION['UserRole'])) {
             $username = $_SESSION['username'];
             switch ((int)$_SESSION['UserRole']) {
                 case 0:
@@ -89,13 +89,13 @@ $citizen = new Citizen();
             <label for="username"><b>SĐT/Tên tài khoản</b></label>
             <input type="text" name="username" required>
             <hr>
-            <div class="message">Thông báo</div>
+            <div class="message msg1"></div>
             <br><br>
 
             <label for="password"><b>Mật khẩu</b></label>
             <input type="password" name="password" required>
             <hr>
-            <div class="message">Thông báo</div>
+            <div class="message msg2"></div>
 
             <div class="btn-linked-page page-reg-acc page-forgot-pass">
                 <p id="btn-forgot-password" href="#">Quên mật khẩu</p>
@@ -116,17 +116,17 @@ $citizen = new Citizen();
             <label for="phone_number"><b>Số điện thoại</b></label>
             <input type="text" name="phone_number" required>
             <hr>
-            <div class="message">Thông báo</div>
+            <div class="message msg1" value=""></div>
             <br><br>
             <label for="password"><b>Mật khẩu</b></label>
             <input type="password" name="password" required>
             <hr>
-            <div class="message">Thông báo</div>
+            <div class="message msg2"></div>
             <br><br>
             <label for="repeat-password"><b>Nhập lại mật khẩu</b></label>
             <input type="password" name="repeat-password" required>
             <hr>
-            <div class="message">Thông báo</div>
+            <div class="message msg3"></div>
             <br><br>
             <div class="btn-long" id="btn-reg-acc">Đăng ký</div>
             <div class="btn-linked-page page-login">
@@ -138,7 +138,7 @@ $citizen = new Citizen();
     <!-- END REGISTRATION ACCOUNT FORM -->
 
     <!-- REGISTRATION PERSONAL PROFILE FORM -->
-    <div class="container-profile">
+    <div class="container-reg-profile">
         <p class="title">Đăng ký thông tin cá nhân</p>
 
         <div class="row1">
@@ -179,9 +179,8 @@ $citizen = new Citizen();
 
             <div>
                 <label for="hometown">Quê quán <span>(*)</span></label><br>
-                <select name="hometown" id="">
-                    <option value="">TP.Hồ Chí Minh</option>
-                    <option value="">Đồng Nai</option>
+                <select name="hometown" id="select-hometown">
+                    <option value=""></option>
                 </select>
                 <hr>
             </div>
@@ -192,16 +191,15 @@ $citizen = new Citizen();
         <div class="row3">
             <div>
                 <label for="city">Tỉnh/Thành phố <span>(*)</span></label><br>
-                <select name="city" id="">
-                    <option value="">TP.Hồ Chí Minh</option>
-                    <option value="">Đồng Nai</option>
+                <select name="city" id="select-province">
+                    <option value=""></option>
                 </select>
                 <hr>
             </div>
 
             <div>
                 <label for="district">Quận/Huyện <span>(*)</span></label><br>
-                <select name="district" id="">
+                <select name="district" id="select-district">
                     <option value=""></option>
                 </select>
                 <hr>
@@ -209,7 +207,7 @@ $citizen = new Citizen();
 
             <div>
                 <label for="town">Xã/Phường/Thị trấn <span>(*)</span></label><br>
-                <select name="town" id="">
+                <select name="town" id="select-town">
                     <option value=""></option>
                 </select>
                 <hr>

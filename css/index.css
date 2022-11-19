@@ -162,7 +162,7 @@
 /* END LOGIN & REG-ACC FORM */
 
 /* REGISTRATION PERSONAL PROFILE FORM */
-.container-profile {
+.container-reg-profile {
     /* display: block; */
     display: none;
     z-index: 10;
@@ -177,13 +177,13 @@
     transition: 500ms;
 }
 
-.container-profile hr{
+.container-reg-profile hr{
     background: var(--bg_gradient);
     height: 1px;
     border: none;
 }
 
-.container-profile .title {
+.container-reg-profile .title {
     font-weight: 600;
     font-size: 24px;
     line-height: 20px;
@@ -191,7 +191,7 @@
     text-align: center;
 }
 
-.container-profile select, input {
+.container-reg-profile select, input {
     font-weight: 200;
     font-size: 16px;
     line-height: 20px;
@@ -201,21 +201,21 @@
     width: 100%;
 }
 
-.container-profile label, p {
+.container-reg-profile label, p {
     font-weight: 200;
     font-size: 18px;
     line-height: 20px;
 }
 
-.container-profile div div {
+.container-reg-profile div div {
     width: 25%;
 }
 
-.container-profile .row4 input, .row5 input {
+.container-reg-profile .row4 input, .row5 input {
     width: 100%;
 } 
 
-.container-profile .row1, .row2, .row3, .row6 {
+.container-reg-profile .row1, .row2, .row3, .row6 {
     display: flex;
     justify-content: space-between;
     font-size: 18px;
@@ -223,36 +223,36 @@
     padding-bottom: 5px;
 }
 
-.container-profile p {
+.container-reg-profile p {
     font-size: 18px;
     margin: 5px 100px;
 }
 
-.container-profile .group_button{
+.container-reg-profile .group_button{
     width: 300px;
 }
 
-.container-profile .row4, .row5{
+.container-reg-profile .row4, .row5{
     width: 50%;
     margin: 10px 100px;
 }
 
-.container-profile .row6 .note {
+.container-reg-profile .row6 .note {
     font-size: 16px;
     color: red;
     width: 60%;
 }
 
-.container-profile .row6 ul {
+.container-reg-profile .row6 ul {
     padding-left: 20px;
     text-align: justify;
 }
 
-.container-profile span {
+.container-reg-profile span {
     color: red;
 }
 
-.container-profile .row6 button {
+.container-reg-profile .row6 button {
     margin-top: 20px;
 }
 /* END REGISTRATION PERSONAL PROFILE FORM */

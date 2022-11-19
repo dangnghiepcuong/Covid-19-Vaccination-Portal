@@ -2,7 +2,7 @@
 <?php
 include("object_Citizen.php");
 session_start();
-if (isset($_SESSION['username']) == false)
+if (isset($_SESSION['UserRole']) == false)
     header('Location: index.php');
 $citizen = $_SESSION['CitizenProfile'];
 ?>

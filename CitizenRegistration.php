@@ -9,11 +9,8 @@ $citizen = $_SESSION['CitizenProfile'];
 $Cregistration = new Register();
 // echo '<script>alert("' . $Cregistration->get_sched()->newOrg() . '")</script>'; 
 
-
-if (isset($_SESSION['username']) == false)
+if (isset($_SESSION['UserRole']) == false)
     header('Location: index.php');
-
-
 
 ?>
 <html lang="en">
