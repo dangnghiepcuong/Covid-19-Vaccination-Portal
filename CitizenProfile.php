@@ -74,21 +74,21 @@ $citizen = $_SESSION['CitizenProfile'];
                         <select name="sex" id="">
                             <?php
                             switch ($citizen->get_gender()) {
-                                case 0:
+                                case "Nữ":
                                     echo '
                                     <option value="0">Nữ</option>
                                     <option value="1">Nam</option>
                                     <option value="2">Khác</option>';
                                     break;
 
-                                case 1:
+                                case "Nam":
                                     echo '
                                     <option value="1">Nam</option>
                                     <option value="0">Nữ</option>
                                     <option value="2">Khác</option>';
                                     break;
 
-                                case 2:
+                                case "Khác":
                                     echo '
                                     <option value="2">Khác</option>
                                     <option value="0">Nữ</option>

@@ -126,12 +126,11 @@ class Citizen
 
     public function get_gender()
     {
-        return $this->Gender;
         switch ($this->Gender) {
             case 0:
-                return "Nam";
-            case 1:
                 return "Nữ";
+            case 1:
+                return "Nam";
             case 2:
                 return "Khác";
             default:

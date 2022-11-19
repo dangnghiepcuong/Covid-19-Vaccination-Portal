@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <?php
-include("object_Citizen.php");
 include("object_Register.php");
 
 session_start();

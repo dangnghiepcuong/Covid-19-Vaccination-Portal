@@ -29,51 +29,47 @@ $(document).ready(function () {
     })
 
     // LOAD LOCAL LIST DATA ON SELECT
-    $("#container-reg-profile").find("#select-hometown");
-    $.getJSON('local.json', function(data){
+    $.getJSON('local.json', function (data) {
         i = 0;
         province = data[i];
-        while (typeof(province) != "undefined" && province !== null)
-        {
-            $("#select-hometown").append('<option value="'+ i +'">'+ province.name +'</option>');
-            $("#select-province").append('<option value="'+ i +'">'+ province.name +'</option>');
+        while (typeof (province) != "undefined" && province !== null) {
+            $("#select-hometown").append('<option value="' + i + '">' + province.name + '</option>');
+            $("#select-province").append('<option value="' + i + '">' + province.name + '</option>');
             i++;
             province = data[i];
         }
     })
 
-    $("#select-province").on('change',function(){
+    $("#select-province").on('change', function () {
         $('option:selected', this);
         SelectedProvince = this.value;
 
         $("#select-district").html('<option></option>');
         $("#select-town").html('<option></option>');
 
-        $.getJSON('local.json', function(data){
+        $.getJSON('local.json', function (data) {
             i = 0;
             district = data[SelectedProvince].districts[i];
-            while (typeof(district) != "undefined" && district !== null)
-            {
-                $("#select-district").append('<option value="'+ i +'">'+ district.name +'</option>');
+            while (typeof (district) != "undefined" && district !== null) {
+                $("#select-district").append('<option value="' + i + '">' + district.name + '</option>');
                 i++;
                 district = data[SelectedProvince].districts[i];
             }
         })
     })
 
-    $("#select-district").on('change',function(){
+    $("#select-district").on('change', function () {
         $('option:selected', this);
         SelectedDistrict = this.value;
         SelectedProvince = $("#select-province option:selected").val();
 
         $("#select-town").html('<option></option>');
 
-        $.getJSON('local.json', function(data){
+        $.getJSON('local.json', function (data) {
             i = 0;
             town = data[SelectedProvince].districts[SelectedDistrict].wards[i];
-            while (typeof(town) != "undefined" && town !== null)
-            {
-                $("#select-town").append('<option value="'+ i +'">'+ town.name +'</option>');
+            while (typeof (town) != "undefined" && town !== null) {
+                $("#select-town").append('<option value="' + i + '">' + town.name + '</option>');
                 i++;
                 town = data[SelectedProvince].districts[SelectedDistrict].wards[i];
             }
@@ -81,16 +77,20 @@ $(document).ready(function () {
     })
     // END LOAD LOCAL LIST DATA SELECT
 
+    $("#close_reg_person_profile").click(function () {
+        $(".container-reg-profile").css('display', 'none');
+    })
+
     // HANDLE GRADIENT BG CLICK
     $("#gradient-bg-faded, .btn-confirm").click(function () {
         $("#form-container-reg-acc").css('display', 'none');
         $("#form-container-login").css('display', 'none');
         $(".form-popup-confirm").css('display', 'none');
         $("#gradient-bg-faded").css('display', 'none');
-        $(".container-profile").css('display', 'none');
+        $("#container-reg-profile").css('display', 'none');
     })
 
-    // SUBMIT FORM
+    // HANDLE LOGIN
     $("#btn-login-in-form-login").click(function () {
         username = $("#form-login").find("input[name='username'").val();
         if (username == "") {
@@ -116,9 +116,7 @@ $(document).ready(function () {
         });
     })
 
-
-
-    //OPEN & CLOSE REGISTRATION PERSONAL PROFILE FORM
+    //HANDLE REGISTER ACCOUNT
     $('#btn-reg-acc').click(function () {
         $("#form-reg-acc").find(".msg1").text("");
         $("#form-reg-acc").find(".msg2").text("");
@@ -128,7 +126,7 @@ $(document).ready(function () {
             $("#form-reg-acc").find(".msg1").text("Nhập số điện thoại!");
             return;
         }
-        
+
         $.ajax({
             cache: false,
             url: "HandleRegAcc.php",
@@ -145,9 +143,7 @@ $(document).ready(function () {
             }
         })
 
-        // alert($("#form-reg-acc").find(".msg1").val());
-        if ($("#form-reg-acc").find(".msg1").val() == 1)
-        {
+        if ($("#form-reg-acc").find(".msg1").val() == 1) {
             $("#form-reg-acc").find(".msg1").val(0);
             return;
         }
@@ -167,8 +163,35 @@ $(document).ready(function () {
         $(".container-reg-profile").css('display', 'block');
     })
 
-    $("#close_reg_person_profile").click(function () {
-        $(".container-reg-profile").css('display', 'none');
-    })
+    // HANDLE REGISTER USER PROFILE
+    $("#btn-reg-profile").click(function () {
+        last_name = $("#container-reg-profile").find("input[name='last_name'").val();
+        first_name = $("#container-reg-profile").find("input[name='first_name'").val();
+        gender = $("#container-reg-profile").find("input[name='gender'").val();
+        id = $("#container-reg-profile").find("input[name='id'").val();
+        birthday = $("#container-reg-profile").find("input[name='birthday'").val();
+        hometown = $("#select-hometown").find("option:selected").text();
+        province = $("#select-province").find("option:selected").text();
+        district = $("#select-district").find("option:selected").text();
+        town = $("#select-town").find("option:selected").text();
+        street = $("#container-reg-profile").find("input[name='street'").val();
+        email = $("#container-reg-profile").find("input[name='email'").val();
 
+        $.ajax({
+            cache: false,
+            url: "HandleRegAcc",
+            type: "POST",
+            data: {
+                method: "RegisterAccount", last_name: last_name, first_name: first_name,
+                gender: gender, id: id, birthday: birthday, hometown: hometown, province: province,
+                district: district, town: town, street: street, email: email
+            },
+            success: function(result) {
+                
+            },
+            error: function(error) {
+
+            }
+        })
+    })
 })
