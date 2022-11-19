@@ -1,7 +1,9 @@
 <?php
+include ("object_Organization.php");
+
 class News {
     private $ID;
-    private $OrgID;
+    private $Org;
     private $Title;
     private $PublishDate;
     private $Image;
@@ -9,7 +11,7 @@ class News {
 
     public function __construct(){
         $this->ID = "";
-        $this->OrgID = "";
+        $this->OrgID = new Organization();
         $this->Title = "";
         $this->PublishDate = "";
         $this->Image = "";
@@ -20,8 +22,8 @@ class News {
         $this->ID = $id;
     }
 
-    public function set_orgid($orgid){
-        $this->OrgID = $orgid;
+    public function set_org($org){
+        $this->Org = $org;
     }
 
     public function set_title($title){
@@ -44,8 +46,8 @@ class News {
         return $this->ID;
     }
 
-    public function get_orgid(){
-        return $this->OrgID;
+    public function get_org(){
+        return $this->Org;
     }
 
     public function get_title(){
