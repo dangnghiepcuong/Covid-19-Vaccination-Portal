@@ -127,7 +127,7 @@ if (isset($_SESSION['UserRole']) == false)
                             $Cregistration->get_sched()->set_ondate($row['ONDATE']);
                             $Cregistration->set_time($row['TIME']);
                             $Cregistration->set_NO($row['NO']);
-                            $Cregistration->get_sched()->set_vaccineid($row['VACCINEID']);
+                            $Cregistration->get_sched()->set_vaccine($row['VACCINEID']);
                             $Cregistration->get_sched()->set_serial($row['SERIAL']);
                             $Cregistration->set_status($row['STATUS']);
                             $Cregistration->set_dosetype($row['DOSETYPE']);
@@ -147,7 +147,7 @@ if (isset($_SESSION['UserRole']) == false)
                                     . '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Buổi ' . $Cregistration->get_time()
                                     . '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp STT: ' . $Cregistration->get_no() . '</p>
                                             <p class="attr-vaccine-serial">Vaccine: '
-                                    . $Cregistration->get_sched()->get_vaccineid() . ' - ' . $Cregistration->get_sched()->get_serial()
+                                    . $Cregistration->get_sched()->get_vaccine() . ' - ' . $Cregistration->get_sched()->get_serial()
                                     . '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Tình trạng: ' . $Cregistration->get_status() . '</p>
                                         </div>
 
