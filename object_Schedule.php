@@ -1,11 +1,12 @@
 <?php
 include("object_Organization.php");
+include("object_Vaccine.php");
 
 class Schedule {
     private $ID;
     private $Org;
     private $OnDate;
-    private $VaccineID;
+    private $Vaccine;
     private $Serial;
     private $LimitDay;
     private $LimitNoon;
@@ -18,7 +19,7 @@ class Schedule {
         $this->ID = "";
         $this->Org = new Organization();
         $this->OnDate = "";
-        $this->VaccineID = "";
+        $this->Vaccine = new Vaccine();
         $this->Serial = "";
         $this->LimitDay = 0;
         $this->LimitNight = 0;
@@ -48,8 +49,8 @@ class Schedule {
         $this->OnDate = $ondate;
     }
 
-    public function set_vaccineid($vaccineid){
-        $this->VaccineID = $vaccineid;
+    public function set_vaccine($vaccine){
+        $this->Vaccine = $vaccine;
     }
 
     public function set_serial($serial){
@@ -92,8 +93,8 @@ class Schedule {
         return $this->OnDate;
     }
 
-    public function get_vaccineid(){
-        return $this->VaccineID;
+    public function get_vaccine(){
+        return $this->Vaccine;
     }
 
     public function get_serial(){

@@ -1,8 +1,9 @@
 <?php
 include("object_Schedule.php");
+include ("object_Citizen.php");
 
 class Register {
-    private $CitizenID;
+    private $Citizen;
     private $Sched;
     private $Time;
     private $NO;
@@ -12,7 +13,7 @@ class Register {
     private $ID;
 
     public function __construct(){
-        $this->CitizenID = "";
+        $this->CitizenID = new Citizen();
         $this->Sched = new Schedule();
         $this->Time = -1;
         $this->NO = -1;
@@ -22,8 +23,8 @@ class Register {
         $this->ID = -1;
     }
 
-    public function set_citizenid($citizenid){
-        $this->CitizenID = $citizenid;
+    public function set_citizen($citizen){
+        $this->Citizen = $citizen;
     }
 
     public function set_sched($sched){
@@ -54,8 +55,8 @@ class Register {
         $this->ID = $id;
     }
 
-    public function get_citizenid(){
-        return $this->CitizenID;
+    public function get_citizen(){
+        return $this->Citizen;
     }
 
     public function get_sched(){
@@ -63,7 +64,16 @@ class Register {
     }
 
     public function get_time(){
-        return $this->Time;
+        switch ($this->Time) {
+            case 0:
+                return "Sáng";
+            case 1:
+                return "Trưa";
+            case 2:
+                return "Tối";
+            default:
+                return "";
+        }
     }
 
     public function get_no(){
@@ -79,11 +89,21 @@ class Register {
     }
 
     public function get_dosetype(){
-        return $this->DoseType;
+        switch ($this->DoseType) {
+            case 0:
+                return "Cơ bản";
+            case 1:
+                return "Tăng cường";
+            case 2: 
+                return "Nhắc lại";
+            default:
+                return "";
+        }
     }
 
     public function get_id(){
         return $this->ID;
     }
+
 }
 ?>

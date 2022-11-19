@@ -1,19 +1,21 @@
 <?php
+include ("object_Citizen.php");
+
 class Form {
-    private $CitizenID;
+    private $Citizen;
     private $FilledDate;
     private $Choice;
     private $ID;
 
     public function __construct(){
-        $this->CitizenID = "";
+        $this->Citizen = new Citizen();
         $this->FilledDate = "";
         $this->Choice = "";
         $this->ID = -1;
     }
 
-    public function set_citizenid($citizenid){
-        $this->CitizenID = $citizenid;
+    public function set_citizen($citizen){
+        $this->Citizen = $citizen;
     }
 
     public function set_filleddate($filleddate){
@@ -28,8 +30,8 @@ class Form {
         $this->ID = $id;
     }
 
-    public function get_citizenid(){
-        return $this->CitizenID;
+    public function get_citizen(){
+        return $this->Citizen;
     }
 
     public function get_filleddate(){
