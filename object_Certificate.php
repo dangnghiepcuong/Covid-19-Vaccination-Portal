@@ -1,17 +1,19 @@
 <?php
+include ("object_Citizen.php");
+
 class Certificate{
-    private $CitizenID;
+    private $Citizen;
     private $Dose;
     private $CertType;
 
     public function __construct(){
-        $this->CitizenID = "";
+        $this->Citizen = new Citizen();
         $this->Dose = -1;
         $this->CertType = -1;
     }
 
-    public function set_citizenid($citizenid){
-        $this->CitizenID = $citizenid;
+    public function set_citizen($citizen){
+        $this->Citizen = $citizen;
     }
 
     public function set_dose($dose){
@@ -22,8 +24,8 @@ class Certificate{
         $this->CertType = $certtype;
     }
 
-    public function get_citizenid(){
-        return $this->CitizenID;
+    public function get_citizen(){
+        return $this->Citizen;
     }
 
     public function get_dose(){
