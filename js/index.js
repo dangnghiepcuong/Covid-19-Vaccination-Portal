@@ -128,6 +128,7 @@ $(document).ready(function () {
             $("#form-reg-acc").find(".msg1").text("Nhập số điện thoại!");
             return;
         }
+        
         $.ajax({
             cache: false,
             url: "HandleRegAcc.php",
