@@ -138,27 +138,28 @@ $citizen = new Citizen();
     <!-- END REGISTRATION ACCOUNT FORM -->
 
     <!-- REGISTRATION PERSONAL PROFILE FORM -->
-    <div class="container-reg-profile">
+    <div class="container-reg-profile" id="container-reg-profile">
         <p class="title">Đăng ký thông tin cá nhân</p>
 
         <div class="row1">
             <div>
-                <label for="fisrt_mid_name">Họ và tên đệm <span>(*)</span></label><br>
-                <input type="text" name="fisrt_mid_name" required><br>
+                <label for="last_name">Họ và tên đệm <span>(*)</span></label><br>
+                <input type="text" name="last_name" required><br>
                 <hr>
             </div>
 
             <div>
-                <label for="fisrt_mid_name">Tên <span>(*)</span></label><br>
-                <input type="text" name="fisrt_mid_name" required><br>
+                <label for="fisrt_name">Tên <span>(*)</span></label><br>
+                <input type="text" name="fisrt_name" required><br>
                 <hr>
             </div>
 
             <div>
-                <label for="sex">Giới tính <span>(*)</span></label><br>
-                <select name="sex" id="">
-                    <option value="male">Nam</option>
-                    <option value="female">Nữ</option>
+                <label for="gender">Giới tính <span>(*)</span></label><br>
+                <select name="gender" id="">
+                    <option value="1">Nam</option>
+                    <option value="0">Nữ</option>
+                    <option value="2">Khác</option>
                 </select>
                 <hr>
             </div>
@@ -237,7 +238,7 @@ $citizen = new Citizen();
             </div>
 
             <div class="group_button">
-                <button class="btn-long">Đăng ký</button>
+                <button class="btn-long" id="btn-reg-profile">Đăng ký</button>
                 <button class="btn-long-bordered" id="close_reg_person_profile">Hủy bỏ</button>
             </div>
         </div>

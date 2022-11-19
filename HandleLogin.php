@@ -1,21 +1,17 @@
 <?php
-$username = $_POST['username'];
-$password = $_POST['password'];
-
 session_start();
 
 include("DatabaseConnection.php");
 
-$sql = "select * from ACCOUNT where username='" . $username . "'";
-$command = oci_parse($connection, $sql);
-oci_execute($command);
+$stmt = $dbh->prepare("select * from ACCOUNT where Username = ?");
+$row = $stmt->execute([$_POST['username']]);
 
 $row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS);
 if ($row == false) {
     echo -1;
 } else {
-    if ($password == $row['PASSWORD']) {
-        $_SESSION['username'] = $username;
+    if ($_POST['password'] == $row['PASSWORD']) {
+        $_SESSION['username'] = $_POST['username'];;
         switch ($row['ROLE']) {
             case 0:
                 $_SESSION['UserRole'] = 0;
