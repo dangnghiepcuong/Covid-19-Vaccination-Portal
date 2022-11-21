@@ -108,8 +108,8 @@ $(document).ready(function () {
             type: "POST",
             data: { username: username, password: password },
             success: function (result) {
-                $("body").html(result);
-                // location.reload(true);
+                // $("body").html(result);
+                location.reload(true);
             },
             error: function (error) {
                 $("body").html(error);
