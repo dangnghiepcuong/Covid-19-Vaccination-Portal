@@ -3,8 +3,10 @@ session_start();
 
 include("DatabaseConnection.php");
 
-$stmt = $dbh->prepare("select * from ACCOUNT where Username = ?");
-$row = $stmt->execute([$_POST['username']]);
+$sql = "select * from ACCOUNT where Username = :username";
+$command = oci_parse($connection, $sql);
+oci_bind_by_name($command, ':username', $_POST['username']);
+oci_execute($command);
 
 $row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS);
 if ($row == false) {

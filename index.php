@@ -39,8 +39,9 @@ $citizen = new Citizen();
                         $sql = "select ID, LastName, FirstName, TO_CHAR( Birthday, 'YYYY-MM-DD' ) Birthday, Gender,"
                             . "Hometown, ProvinceName, DistrictName, TownName, Street,"
                             . "Phone, Email, Guardian, Avatar "
-                            . "from CITIZEN where Phone='" . $username . "'";
+                            . "from CITIZEN where Phone= :username";
                         $command = oci_parse($connection, $sql);
+                        oci_bind_by_name($command, ':username', $username);
                         oci_execute($command);
 
                         while (($row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS)) != false) {
@@ -114,7 +115,7 @@ $citizen = new Citizen();
             <p class="title">Đăng ký</p>
             <br><br>
             <label for="phone_number"><b>Số điện thoại</b></label>
-            <input type="text" name="phone_number" required>
+            <input type="tel" name="phone_number" pattern="[0-9]{4}-[0-9]{3}-[0-9]{4}" required>
             <hr>
             <div class="message msg1" value=""></div>
             <br><br>

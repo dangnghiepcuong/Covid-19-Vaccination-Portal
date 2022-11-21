@@ -104,7 +104,7 @@ if (isset($_SESSION['UserRole']) == false)
                         include("DatabaseConnection.php");
                         $sql = "select Name, ProvinceName, DistrictName, TownName, Street, TO_CHAR(OnDate, 'YYYY-MM-DD') OnDate, Time, NO, VaccineID, Serial, Status, DoseType, Image from (
                                     (select SchedID, Time, NO, Status, REG.DoseType, OrgID, OnDate, VaccineID, Serial, Image from (
-                                        (select ID, SchedID, NO, Time, Status, DoseType, Image from REGISTER where CitizenID = '" . $citizen->get_id() . "') REG
+                                        (select ID, SchedID, NO, Time, Status, DoseType, Image from REGISTER where CitizenID = :citizenid) REG
                                         inner join
                                         (select ID, OrgID, OnDate, VaccineID, Serial from SCHEDULE) SCHED
                                         on
@@ -115,6 +115,7 @@ if (isset($_SESSION['UserRole']) == false)
                                     on REG_SCHED.OrgID = ORG.ID
                                 )";
                         $command = oci_parse($connection, $sql);
+                        oci_bind_by_name($command, ':citizenid', $citizen->get_id());
                         oci_execute($command);
 
                         while (($row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS)) != false) {
