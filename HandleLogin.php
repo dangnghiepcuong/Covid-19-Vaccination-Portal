@@ -3,17 +3,27 @@ session_start();
 
 include("DatabaseConnection.php");
 
-$sql = "select * from ACCOUNT where Username = :username";
+$sql = "select * from ACCOUNT where Username = :username"; //check account
 $command = oci_parse($connection, $sql);
 oci_bind_by_name($command, ':username', $_POST['username']);
 oci_execute($command);
 
-
 $row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS);
 if ($row == false) {
-    echo -1;
+    echo 'NoAccount';    // no account existed
 } else {
-    if ($_POST['password'] == $row['PASSWORD']) {
+    if ($_POST['password'] == $row['PASSWORD']) {   // account existed, check password
+
+        $sql = "select * from CITIZEN where Phone = :phone";    //check exist profile
+        $command = oci_parse($connection, $sql);
+        oci_bind_by_name($command, ':phone', $_POST['username']);
+
+        $row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS);
+        if ($row == false) {
+            echo 'NoProfile';   //no profile existed
+            return;
+        }
+
         $_SESSION['username'] = $_POST['username'];;
         switch ($row['ROLE']) {
             case 0:
@@ -29,7 +39,7 @@ if ($row == false) {
                 $_SESSION['UserRole'] = -1;
                 break;
         }
-    } else {
-        $_SESSION['UserRole'] = -1;
+    } else {    //wrong password;
+        echo 'incorrect password';
     }
 }
