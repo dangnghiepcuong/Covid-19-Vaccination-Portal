@@ -108,6 +108,16 @@ $(document).ready(function () {
             type: "POST",
             data: { username: username, password: password },
             success: function (result) {
+                if (result == 'NoProfile') {
+                    $("#gradient-bg-faded").css('display', 'block');
+                    $(".container-reg-profile").css('display', 'block');
+                    return;
+                }
+
+                if (result == 'incorrect password') {
+                    $("#form-container-login").find(".msg2").text("Sai mật khẩu!");
+                    return;
+                }
                 $("body").html(result);
                 // location.reload(true);
             },
@@ -135,7 +145,7 @@ $(document).ready(function () {
             type: "POST",
             data: { method: "CheckExist", username: username },
             success: function (result) {
-                if (parseInt(result) == 1) {
+                if (parseInt(result) != 'NoAcount') {
                     $("#form-reg-acc").find(".msg1").text("Số điện thoại đã được sử dụng!");
                     $("#form-reg-acc").find(".msg1").val(1);
                 }
@@ -163,12 +173,15 @@ $(document).ready(function () {
 
         $.ajax({
             cache: false,
-            data: { method: 'DatabaseConnection' },
+            type: "POST",
+            data: { method: 'RegisterAccount', username: username, password: password },
             url: "HandleRegAcc.php",
-            success: function(result) {
-                
+            success: function (result) {
+                // alert(result);
+                $("body").html(result);
+
             },
-            error: function(error) {
+            error: function (error) {
                 $("body").html(error);
             }
         })
@@ -179,8 +192,8 @@ $(document).ready(function () {
 
     // HANDLE REGISTER USER PROFILE
     $("#btn-reg-profile").click(function () {
-        last_name = $("#container-reg-profile").find("input[name='last_name'").val();
-        first_name = $("#container-reg-profile").find("input[name='first_name'").val();
+        lastname = $("#container-reg-profile").find("input[name='last_name'").val();
+        firstname = $("#container-reg-profile").find("input[name='first_name'").val();
         gender = $("#container-reg-profile").find("input[name='gender'").val();
         id = $("#container-reg-profile").find("input[name='id'").val();
         birthday = $("#container-reg-profile").find("input[name='birthday'").val();
@@ -196,15 +209,15 @@ $(document).ready(function () {
             url: "HandleRegAcc.php",
             type: "POST",
             data: {
-                method: "RegisterAccount", last_name: last_name, first_name: first_name,
+                method: "RegisterAccount", lastname: lastname, firstname: firstname,
                 gender: gender, id: id, birthday: birthday, hometown: hometown, province: province,
                 district: district, town: town, street: street, email: email
             },
-            success: function(result) {
-                
-            },
-            error: function(error) {
+            success: function (result) {
 
+            },
+            error: function (error) {
+                $("body").html(error);
             }
         })
     })

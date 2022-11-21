@@ -155,7 +155,6 @@
 
 .filter-panel input {
     line-height: 20px;
-    /* background-color: #eee; */
     width: 200px;
     height: 35px;
     border: none;
@@ -163,8 +162,19 @@
     font-family: 'Roboto';
     font-weight: 300px;
     border-style: solid;
-    border: 1px solid #000000;
+    border: 0px solid #000000;
     font-size: 18px; 
+    box-shadow: 0px 1px;
+
+    /* font-weight: 200;
+    font-size: 18px;
+    line-height: 20px;
+    padding: 2px 5px;
+    border: none;
+    outline: none;
+    width: 100%; */
+
+    
 }
 
 .filter-panel select {
@@ -179,6 +189,19 @@
     display: inline-block;
     border: none;
     position: absolute;
+}
+
+hr {
+    width: 310px;
+height: 0px;
+
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+/* Inside auto layout */
+
+flex: none;
+order: 2;
+flex-grow: 0;
 }
 
 
