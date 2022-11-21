@@ -108,12 +108,14 @@ $(document).ready(function () {
             type: "POST",
             data: { username: username, password: password },
             success: function (result) {
-                location.reload(true);
+                $("body").html(result);
+                // location.reload(true);
             },
             error: function (error) {
                 $("body").html(error);
             }
         });
+
     })
 
     //HANDLE REGISTER ACCOUNT
@@ -159,6 +161,18 @@ $(document).ready(function () {
             return;
         }
 
+        $.ajax({
+            cache: false,
+            data: { method: 'DatabaseConnection' },
+            url: "HandleRegAcc.php",
+            success: function(result) {
+                
+            },
+            error: function(error) {
+                $("body").html(error);
+            }
+        })
+
         $("#gradient-bg-faded").css('display', 'block');
         $(".container-reg-profile").css('display', 'block');
     })
@@ -179,7 +193,7 @@ $(document).ready(function () {
 
         $.ajax({
             cache: false,
-            url: "HandleRegAcc",
+            url: "HandleRegAcc.php",
             type: "POST",
             data: {
                 method: "RegisterAccount", last_name: last_name, first_name: first_name,

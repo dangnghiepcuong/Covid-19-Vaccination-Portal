@@ -8,6 +8,7 @@ $command = oci_parse($connection, $sql);
 oci_bind_by_name($command, ':username', $_POST['username']);
 oci_execute($command);
 
+
 $row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS);
 if ($row == false) {
     echo -1;
