@@ -14,8 +14,8 @@ function CheckExist()
     oci_bind_by_name($command, ':username', $_POST['username']);
 
     $row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS);
-    if ($row == false)
-        echo 'NoAccount';
+    if ($row == true)
+        echo 'AccountExisted';
 }
 
 function RegisterAccount()
@@ -33,7 +33,14 @@ function RegisterAccount()
 function RegisterProfile()
 {
     include("DatabaseConnection.php");
-    $sql = "begin CITIZEN_INSERT_RECORD(:id, :lastname, :firstname, :birthday, :gender, :hometown, :province, :district, :town, :street, :phone, :email)";
+    
+    $sql = "alter session set NLS_DATE_FORMAT='YYYY-MM-DD'";
+    $command = oci_parse($connection, $sql);
+    oci_execute($command, OCI_NO_AUTO_COMMIT);
+    
+    $sql = "begin CITIZEN_INSERT_RECORD(:id, :lastname, :firstname, :birthday, :gender, " 
+    . ":hometown, :province, :district, :town, :street, :phone, :email); end;";
+    
     $command = oci_parse($connection, $sql);
     oci_bind_by_name($command, ':id', $_POST['id']);
     oci_bind_by_name($command, ':lastname', $_POST['lastname']);
@@ -45,8 +52,11 @@ function RegisterProfile()
     oci_bind_by_name($command, ':district', $_POST['district']);
     oci_bind_by_name($command, ':town', $_POST['town']);
     oci_bind_by_name($command, ':street', $_POST['street']);
-    oci_bind_by_name($command, ':phone', $_POST['phone']);
+    oci_bind_by_name($command, ':phone', $_POST['username']);
     oci_bind_by_name($command, ':email', $_POST['email']);
 
     oci_execute($command);
+    oci_commit($connection);
+
+    echo 'Profile Created!';
 }

@@ -45,7 +45,7 @@
                     <li>Thông tin tổ chức</li>
                 </a>
 
-                <a href="index.php">
+                <a href="" id="btn-logout">
                     <li>Đăng xuất</li>
                 </a>
             </ul>

@@ -29,6 +29,7 @@ $citizen = new Citizen();
             $username = $_SESSION['username'];
             switch ((int)$_SESSION['UserRole']) {
                 case 0:
+                    include("headerORG.php");
                     break;
                 case 1:
                     include("headerORG.php");
@@ -114,7 +115,7 @@ $citizen = new Citizen();
             <p class="btn-close" id="btn-close-form-reg-acc">X</p>
             <p class="title">Đăng ký</p>
             <br><br>
-            <label for="phone_number"><b>Số điện thoại</b></label>
+            <label for="phone_number"><b>Số điện thoại</b></label>  
             <input type="tel" name="phone_number" pattern="[0-9]{4}-[0-9]{3}-[0-9]{4}" required>
             <hr>
             <div class="message msg1" value=""></div>
@@ -144,14 +145,14 @@ $citizen = new Citizen();
 
         <div class="row1">
             <div>
-                <label for="last_name">Họ và tên đệm <span>(*)</span></label><br>
-                <input type="text" name="last_name" required><br>
+                <label for="lastname">Họ và tên đệm <span>(*)</span></label><br>
+                <input type="text" name="lastname" required><br>
                 <hr>
             </div>
 
             <div>
-                <label for="fisrt_name">Tên <span>(*)</span></label><br>
-                <input type="text" name="fisrt_name" required><br>
+                <label for="fisrtname">Tên <span>(*)</span></label><br>
+                <input type="text" name="fisrtname" required><br>
                 <hr>
             </div>
 

@@ -17,14 +17,15 @@ if ($row == false) {
         $sql = "select * from CITIZEN where Phone = :phone";    //check exist profile
         $command = oci_parse($connection, $sql);
         oci_bind_by_name($command, ':phone', $_POST['username']);
+        oci_execute($command);
 
-        $row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS);
-        if ($row == false) {
+        $row2 = oci_fetch_array($command, OCI_BOTH | OCI_RETURN_NULLS);
+        if ($row2 == false) {
             echo 'NoProfile';   //no profile existed
             return;
         }
 
-        $_SESSION['username'] = $_POST['username'];;
+        $_SESSION['username'] = $_POST['username'];
         switch ($row['ROLE']) {
             case 0:
                 $_SESSION['UserRole'] = 0;
