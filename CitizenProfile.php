@@ -58,14 +58,14 @@ $citizen = $_SESSION['CitizenProfile'];
             <div class="info-panel">
                 <div class="row1">
                     <div>
-                        <label for="fisrt_mid_name">Họ và tên đệm<span>(*)</span></label><br>
-                        <?php echo '<input type="text" name="fisrt_mid_name" required value="' . $citizen->get_lastname() . '">' ?><br>
+                        <label for="last_name">Họ và tên đệm<span>(*)</span></label><br>
+                        <?php echo '<input type="text" name="last_name" required value="' . $citizen->get_lastname() . '">' ?><br>
                         <hr>
                     </div>
 
                     <div>
                         <label for="fisrt_mid_name">Tên <span>(*)</span></label><br>
-                        <?php echo '<input type="text" name="fisrt_mid_name" required value="' . $citizen->get_firstname() . '">' ?><br>
+                        <?php echo '<input type="text" name="fisrt_name" required value="' . $citizen->get_firstname() . '">' ?><br>
                         <hr>
                     </div>
 

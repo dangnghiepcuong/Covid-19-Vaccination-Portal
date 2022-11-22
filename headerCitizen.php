@@ -45,7 +45,7 @@
                     <li>Lịch đăng ký</li>
                 </a>
 
-                <a href="#">
+                <a href="CitizenCertificate.php">
                     <li>Chứng nhận</li>
                 </a>
 
