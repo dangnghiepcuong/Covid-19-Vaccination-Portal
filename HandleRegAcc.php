@@ -56,7 +56,7 @@ function RegisterProfile()
     oci_bind_by_name($command, ':email', $_POST['email']);
 
     oci_execute($command);
-    oci_commit($connection);
+    // oci_commit($connection);
 
     echo 'Profile Created!';
 }
