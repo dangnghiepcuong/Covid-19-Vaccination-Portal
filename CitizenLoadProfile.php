@@ -8,6 +8,10 @@ $sql = "select ID, LastName, FirstName, TO_CHAR( Birthday, 'YYYY-MM-DD' ) Birthd
 $command = oci_parse($connection, $sql);
 oci_bind_by_name($command, ':username', $_SESSION['username']);
 oci_execute($command);
+if ($exception = oci_error($command)) {
+    echo $exception['message'];
+    return;
+}
 
 while (($row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS)) != false) {
     $citizen->set_lastname($row['LASTNAME']);
