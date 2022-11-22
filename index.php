@@ -151,8 +151,8 @@ $citizen = new Citizen();
             </div>
 
             <div>
-                <label for="fisrtname">Tên <span>(*)</span></label><br>
-                <input type="text" name="fisrtname" required><br>
+                <label for="firstname">Tên <span>(*)</span></label><br>
+                <input type="text" name="firstname" required><br>
                 <hr>
             </div>
 
