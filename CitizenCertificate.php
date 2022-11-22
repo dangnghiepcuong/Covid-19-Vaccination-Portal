@@ -1,4 +1,12 @@
 <!DOCTYPE html>
+<?php
+include("object_Injection.php");
+session_start();
+if (isset($_SESSION['UserRole']) == false)
+    header('Location: index.php');
+$citizen = $_SESSION['CitizenProfile'];
+?>
+
 <html lang="en">
 
 <head>
@@ -7,10 +15,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/btn.css">
-    <link rel="stylesheet" href="css/CitizenVaccinationCertificate.css">
+    <link rel="stylesheet" href="css/CitizenCertificate.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="js/CitizenVaccinationCertificate.js"></script>
+    <script src="js/CitizenCertificate.js"></script>
     <script src="js/animation-btn.js"></script>
     <title>Chứng nhận tiêm chủng</title>
 </head>
@@ -42,7 +50,7 @@
             <div class="panel-target-citizen">
                 <p>Đối tượng: </p>
                 <select name="" id="">
-                    <option value="">Đặng Nghiệp Cường</option>
+                    <option value=""><?php echo $citizen->get_lastname() . ' ' . $citizen->get_firstname() ?></option>
                 </select>
             </div>
             <br>
@@ -50,14 +58,14 @@
             <div class="panel-certificate">
                 <div class="info">
                     <img src="image/Avata-Ceritificate.png" alt="">
-                    <p id="name">Đặng Nghiệp Cường</p>
-                    <p id="sex_birthday">Nam - 2002</p>
+                    <p id="name"><?php echo $citizen->get_lastname() . ' ' . $citizen->get_firstname() ?></p>
+                    <p id="sex_birthday"><?php echo $citizen->get_gender()?></p>
+                    <p id="birthday"><?php echo $citizen->get_birthday() ?></p>
                 </div>
 
                 <div class="container-list">
-                    <!-- <div class="icon"></div> -->
-
                     <div class="list">
+                        
                         <p class="status">Chưa tiêm đủ liều cơ bản vaccine Covid-19</p>
 
                         <div class="injection0">

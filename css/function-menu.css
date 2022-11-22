@@ -53,5 +53,10 @@
 .function-menu-panel ul li:hover {
     cursor: pointer;
     background-color: #D1BFF3;
-    color: white;
+    color: white;    
+}
+
+.function-menu-panel a {
+    text-decoration: none;
+    color: black;
 }
