@@ -14,7 +14,7 @@
                 <a href="index.php">
                     <li class="menu-section">Trang chủ</li>
                 </a>
-                <a href="#">
+                <a href="MedicalFormSubmit.php">
                     <li class="menu-section">Khai báo</li>
                 </a>
                 <a href="#">

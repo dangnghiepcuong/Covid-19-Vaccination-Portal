@@ -119,6 +119,11 @@ class Citizen
         return $this->FirstName;
     }
 
+    public function get_fullname()
+    {
+        return $this->LastName .' '. $this->FirstName;
+    }
+
     public function get_birthday()
     {
         return $this->Birthday;
