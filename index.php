@@ -26,7 +26,6 @@ $citizen = new Citizen();
     <div id="return-header">
         <?php
         if (isset($_SESSION['UserRole'])) {
-            $username = $_SESSION['username'];
             switch ((int)$_SESSION['UserRole']) {
                 case 0:
                     include("headerORG.php");
