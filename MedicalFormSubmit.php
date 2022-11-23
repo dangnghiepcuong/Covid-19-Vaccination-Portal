@@ -1,7 +1,7 @@
 <?php
 session_start();
 $checkUser = true;
-if (isset($_SESSION['UserRole']) == false)
+if (isset($_SESSION['AccountInfo']) == false)
     $checkUser = false;
 else {
     include("object_Form.php");

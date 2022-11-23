@@ -2,7 +2,7 @@
 <script src="js/header.js"></script>
 
 <div class="header">
-    <a class="title" href="HomepageCitizen.php">
+    <a class="title" href="index.php">
         <img src="image/CVM-Logo.png" alt="CVM-Logo">
         <span>CỔNG THÔNG TIN TIÊM CHỦNG COVID-19</span>
     </a>

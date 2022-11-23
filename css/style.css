@@ -81,6 +81,13 @@ body::-webkit-scrollbar-track {
     transition: 500ms;
 }
 
+/* MESSAGE FOR LOGIN AND REG */
+.message {
+    color: red;
+    font-size: 12px;
+    padding-top: 5px;
+}
+
 /* BUTTON */
 
 .btn-short-bordered {

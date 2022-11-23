@@ -7,6 +7,7 @@ $(document).ready(function () {
     $('#btn-close-form-login').click(function () {
         $('#gradient-bg-faded').css('display', 'none');
         $('#form-container-login').css('display', 'none');
+        $(this).parent().find('.message').text("");
     })
 
     $('#btn-create-account').click(function () {
@@ -15,12 +16,9 @@ $(document).ready(function () {
     })
 
     $('#btn-close-form-reg-acc').click(function () {
-        $('#form-reg-acc').find('.msg1').text('');
-        $('#form-reg-acc').find('.msg2').text('');
-        $('#form-reg-acc').find('.msg3').text('');
-
         $('#gradient-bg-faded').css('display', 'none');
         $('#form-container-reg-acc').css('display', 'none');
+        $(this).parent().find('.message').text("");
     })
 
     $('#btn-login-in-form-reg-acc').click(function () {

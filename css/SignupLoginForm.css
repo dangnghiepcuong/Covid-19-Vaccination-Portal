@@ -221,9 +221,3 @@
 }
 /* END REGISTRATION PERSONAL PROFILE FORM */
 
-/* MESSAGE FOR LOGIN AND REG */
-.form .message {
-    color: red;
-    font-size: 12px;
-    padding-top: 5px;
-}
