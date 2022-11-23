@@ -36,6 +36,12 @@ $(document).ready(function () {
         $(".form-popup-confirm").css('display','none');
         $(".gradient-bg-faded").css('display','none');
     })
+
+    $(".form-popup-confirm").on('click','.btn-confirm', function(){
+        alert ("Khai báo thành công!");
+        $(".form-popup-confirm").css('display','none');
+        $(".gradient-bg-faded").css('display','none');
+    })
     // END HANDLE ACTION
 
     // DROP DOWN MENU
