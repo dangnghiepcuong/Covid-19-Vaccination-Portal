@@ -1,4 +1,6 @@
 <?php
+error_reporting(0);
+
 session_start();
 
 $method = $_POST['method'];
@@ -36,8 +38,9 @@ function RegisterAccount()
         $exception = oci_error($command);
         echo 'ERROR: ' . $exception['code'] . ' - ' . $exception['message'];
         return;
-    } else
-        echo 'Account Created!';
+    }
+    setcookie('username', $_POST['username']);
+    echo 'Account Created!';
 }
 
 function RegisterProfile()
@@ -67,7 +70,7 @@ function RegisterProfile()
     oci_bind_by_name($command, ':district', $_POST['district']);
     oci_bind_by_name($command, ':town', $_POST['town']);
     oci_bind_by_name($command, ':street', $_POST['street']);
-    oci_bind_by_name($command, ':phone', $_POST['username']);
+    oci_bind_by_name($command, ':phone', $_COOKIE['username']);
     oci_bind_by_name($command, ':email', $_POST['email']);
 
     $r = oci_execute($command);
@@ -75,7 +78,8 @@ function RegisterProfile()
         $exception = oci_error($command);
         echo 'ERROR: ' . $exception['code'] . ' - ' . $exception['message'];
         return;
-    } else {
-        echo 'Profile Created!';
     }
+
+    setcookie('username', '');
+    echo 'Profile Created!';
 }
