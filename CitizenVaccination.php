@@ -17,7 +17,7 @@ $citizen = $_SESSION['profile'];
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/CitizenVaccination.js"></script>
-    <script src="js/WebElemnts.js.js"></script>
+    <script src="js/WebElements.js"></script>
     <title>Tiêm chủng</title>
 </head>
 

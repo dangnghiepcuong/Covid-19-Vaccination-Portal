@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/CitizenVaccinationProfile.js"></script>
-    <script src="js/WebElemnts.js.js"></script>
+    <script src="js/WebElements.js"></script>
     <script src="js/CitizenVaccinationProfile.js"></script>
     <title>Tra cứu thông tin tiêm chủng công dân</title>
 
