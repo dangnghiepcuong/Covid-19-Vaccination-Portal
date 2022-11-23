@@ -32,6 +32,7 @@ if ($row == false) {
         $row2 = oci_fetch_array($command, OCI_BOTH | OCI_RETURN_NULLS);
         if ($row2 == false) {
             echo 'NoProfile';   //no profile existed
+            setcookie('username', $_POST['username']);
             return;
         }
 

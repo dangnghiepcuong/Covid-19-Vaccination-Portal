@@ -184,9 +184,9 @@ $(document).ready(function () {
                         type: 'POST',
                         data: { method: 'RegisterAccount', username: username, password: password },
                         url: 'HandleRegAcc.php',
-                        success: function (result) {
-                            if (result.substring(1, 5) == 'ERROR') {
-                                alert(result);
+                        success: function (data) {
+                            if (data.substring(1, 5) == 'ERROR') {
+                                alert(data);
                                 return;
                             }
                         },
@@ -226,18 +226,19 @@ $(document).ready(function () {
                 gender: gender, id: id, birthday: birthday, hometown: hometown, province: province,
                 district: district, town: town, street: street, email: email
             },
-            success: function (result) {
-                if (result.substring(1, 5) == 'ERROR') {
-                    alert(result);
+            success: function (data) {
+                alert(data);
+                if (data.substring(0, 4) == 'ERROR') {
+                    alert(data);
                     return;
                 }
-                if (result == 'Profile Created!') {
+                if (data == 'Profile Created!') {
                     $('#container-reg-profile').css('display', 'none');
                     $('.form-message').text('Đăng ký thông tin tài khoản thành công!');
                     $('.form-popup-confirm').css('display', 'block');
                 }
                 else
-                    $('body').html(result);
+                    $('body').html(data);
             },
             error: function (error) {
                 $('body').html(error);
