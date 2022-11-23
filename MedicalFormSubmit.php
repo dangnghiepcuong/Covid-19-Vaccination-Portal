@@ -25,7 +25,7 @@ else {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/MedicalFormSubmit.js"></script>
     <script src="js/index.js"></script>
-    <script src="js/WebElemnts.js.js"></script>
+    <script src="js/WebElements.js"></script>
     <title>Khai báo y tế</title>
 </head>
 

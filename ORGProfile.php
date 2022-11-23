@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/ORGProfile.js"></script>
-    <script src="js/WebElemnts.js.js"></script>
+    <script src="js/WebElements.js"></script>
     <title>Thông tin đơn vị tiêm chủng</title>
 </head>
 

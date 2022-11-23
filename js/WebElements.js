@@ -22,6 +22,5 @@ $(document).ready(function () {
         $('#form-popup-confirm').css('display', 'none');
         $('#gradient-bg-faded').css('display', 'none');
         $('#container-reg-profile').css('display', 'none');
-        $('.gradient-bg-faded').css('display', 'none');
     })
 })

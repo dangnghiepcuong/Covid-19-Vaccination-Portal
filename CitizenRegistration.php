@@ -24,7 +24,7 @@ if (isset($_SESSION['UserRole']) == false)
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/CitizenRegistration.js"></script>
-    <script src="js/WebElemnts.js.js"></script>
+    <script src="js/WebElements.js"></script>
     <title>Quản lý lượt đăng ký</title>
 </head>
 
