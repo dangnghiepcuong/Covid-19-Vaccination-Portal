@@ -5,7 +5,6 @@ session_start();
 if (isset($_SESSION['UserRole']) == false)
     header('Location: index.php');
 $citizen = $_SESSION['CitizenProfile'];
-$Cinjection = new Injection();
 ?>
 
 <html lang="en">
@@ -60,25 +59,13 @@ $Cinjection = new Injection();
                 <div class="info">
                     <img src="image/Avata-Ceritificate.png" alt="">
                     <p id="name"><?php echo $citizen->get_lastname() . ' ' . $citizen->get_firstname() ?></p>
-                    <p id="sex_birthday"><?php echo $citizen->get_gender() ?></p>
+                    <p id="sex_birthday"><?php echo $citizen->get_gender()?></p>
                     <p id="birthday"><?php echo $citizen->get_birthday() ?></p>
                 </div>
 
                 <div class="container-list">
                     <div class="list">
-                        <?php
-                        include("DatabaseConnection.php");
-                        $sql = "select * from INJECTION where citizenid= :username";
-                        $command = oci_parse($connection, $sql);
-                        oci_execute($command);
                         
-                        $Cinjection->set_injno($row['INJNO']);
-                        echo $Cinjection->get_injno();
-
-                        ?>
-
-
-
                         <p class="status">Chưa tiêm đủ liều cơ bản vaccine Covid-19</p>
 
                         <div class="injection0">

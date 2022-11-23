@@ -6,7 +6,12 @@ include("DatabaseConnection.php");
 $sql = "select * from ACCOUNT where Username = :username"; //check account
 $command = oci_parse($connection, $sql);
 oci_bind_by_name($command, ':username', $_POST['username']);
-oci_execute($command);
+$r = oci_execute($command);
+if (!$r) {
+    $exception = oci_error($command);
+    echo 'ERROR: ' . $exception['code'] . ' - ' . $exception['message'];
+    return;
+}
 
 $row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS);
 if ($row == false) {
@@ -17,7 +22,12 @@ if ($row == false) {
         $sql = "select * from CITIZEN where Phone = :phone";    //check exist profile
         $command = oci_parse($connection, $sql);
         oci_bind_by_name($command, ':phone', $_POST['username']);
-        oci_execute($command);
+        $r = oci_execute($command);
+        if (!$r) {
+            $exception = oci_error($command);
+            echo 'ERROR: ' . $exception['code'] . ' - ' . $exception['message'];
+            return;
+        }
 
         $row2 = oci_fetch_array($command, OCI_BOTH | OCI_RETURN_NULLS);
         if ($row2 == false) {
