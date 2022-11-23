@@ -19,7 +19,7 @@ $(document).ready(function () {
     $('#gradient-bg-faded, .btn-confirm').click(function () {
         $('#form-container-reg-acc').css('display', 'none');
         $('#form-container-login').css('display', 'none');
-        $('.form-popup-confirm').css('display', 'none');
+        $('#form-popup-confirm').css('display', 'none');
         $('#gradient-bg-faded').css('display', 'none');
         $('#container-reg-profile').css('display', 'none');
         $('.gradient-bg-faded').css('display', 'none');

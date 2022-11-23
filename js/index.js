@@ -225,7 +225,7 @@ $(document).ready(function () {
                 if (data == 'Profile Created!') {
                     $('#container-reg-profile').css('display', 'none');
                     $('.form-message').text('Đăng ký thông tin tài khoản thành công!');
-                    $('.form-popup-confirm').css('display', 'block');
+                    $('#form-popup-confirm').css('display', 'block');
                 }
                 else
                     $('body').html(data);

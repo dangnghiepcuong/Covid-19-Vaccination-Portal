@@ -23,4 +23,6 @@ $(document).ready(function () {
     
     $("#function-menu-list").find("ul").html(menu);
     // END LOAD FRONT END DATA
+
+    
 })
