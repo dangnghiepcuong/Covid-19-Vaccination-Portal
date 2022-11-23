@@ -14,13 +14,13 @@ $(document).ready(function () {
 
     $("#function-menu-title").text("Trang công dân");
 
-    menu = "<br><li>Thông tin tài khoản</li>";
-    menu += "<br><li>Thông tin công dân</li>";
-    menu += "<br><li>Lịch đăng ký tiêm chủng</li>";
-    menu += "<br><li>Chứng nhận tiêm chủng</li>";
-    menu += "<br><li>Tra cứu thông tin</li>";
-    menu += "<br><li>Thêm người thân</li>";
-
+    menu = "<br><a href='CitizenAccountInfo.php'><li>Thông tin tài khoản</li></a>";
+    menu += "<br><a href='CitizenProfile.php'><li>Thông tin công dân</li></a>";
+    menu += "<br><a href='CitizenRegistration.php'><li>Lịch đăng ký tiêm chủng</li></a>";
+    menu += "<br><a href='CitizenCertificate.php'><li>Chứng nhận tiêm chủng</li></a>";
+    menu += "<br><a href='#'><li>Tra cứu thông tin</li></a>";
+    menu += "<br><a href='#'><li>Thêm người thân</li></a>";
+    
     $("#function-menu-list").find("ul").html(menu);
     // END LOAD FRONT END DATA
 })

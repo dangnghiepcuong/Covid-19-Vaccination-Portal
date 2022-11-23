@@ -10,12 +10,17 @@ function CheckExist()
     include("DatabaseConnection.php");
 
     $sql = "select * from ACCOUNT where Username = :username";
-    $command = oci_connect($connection, $sql);
+    $command = oci_parse($connection, $sql);
     oci_bind_by_name($command, ':username', $_POST['username']);
+    $r = oci_execute($command);
+    if (!$r) {
+        echo 'ERROR: ' . $exception['code'] . ' - ' . $exception['message'];
+        return;
+    }
 
     $row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS);
     if ($row == true)
-        echo 'AccountExisted';
+        echo 'Account Existed!';
 }
 
 function RegisterAccount()
@@ -26,21 +31,31 @@ function RegisterAccount()
     oci_bind_by_name($command, ':username', $_POST['username']);
     oci_bind_by_name($command, ':password', $_POST['password']);
 
-    oci_execute($command);
-    echo 'Account Created!';
+    $r = oci_execute($command);
+    if (!$r) {
+        $exception = oci_error($command);
+        echo 'ERROR: ' . $exception['code'] . ' - ' . $exception['message'];
+        return;
+    } else
+        echo 'Account Created!';
 }
 
 function RegisterProfile()
 {
     include("DatabaseConnection.php");
-    
+
     $sql = "alter session set NLS_DATE_FORMAT='YYYY-MM-DD'";
     $command = oci_parse($connection, $sql);
-    oci_execute($command, OCI_NO_AUTO_COMMIT);
-    
-    $sql = "begin CITIZEN_INSERT_RECORD(:id, :lastname, :firstname, :birthday, :gender, " 
-    . ":hometown, :province, :district, :town, :street, :phone, :email); end;";
-    
+    $r = oci_execute($command, OCI_NO_AUTO_COMMIT);
+    if (!$r) {
+        $exception = oci_error($command);
+        echo 'ERROR: ' . $exception['code'] . ' - ' . $exception['message'];
+        return;
+    }
+
+    $sql = "begin CITIZEN_INSERT_RECORD(:id, :lastname, :firstname, :birthday, :gender, "
+        . ":hometown, :province, :district, :town, :street, :phone, :email); end;";
+
     $command = oci_parse($connection, $sql);
     oci_bind_by_name($command, ':id', $_POST['id']);
     oci_bind_by_name($command, ':lastname', $_POST['lastname']);
@@ -55,8 +70,12 @@ function RegisterProfile()
     oci_bind_by_name($command, ':phone', $_POST['username']);
     oci_bind_by_name($command, ':email', $_POST['email']);
 
-    oci_execute($command);
-    // oci_commit($connection);
-
-    echo 'Profile Created!';
+    $r = oci_execute($command);
+    if (!$r) {
+        $exception = oci_error($command);
+        echo 'ERROR: ' . $exception['code'] . ' - ' . $exception['message'];
+        return;
+    } else {
+        echo 'Profile Created!';
+    }
 }

@@ -34,7 +34,7 @@ $(document).ready(function () {
         province = data[i];
         while (typeof (province) != 'undefined' && province !== null) {
             $('#select-hometown').append('<option value="' + i + '">' + province.name + '</option>');
-            $('#select-province').append('<option value="' + i + '"' + province.name + '</option>');
+            $('#select-province').append('<option value="' + i + '">' + province.name + '</option>');
             i++;
             province = data[i];
         }
@@ -111,18 +111,21 @@ $(document).ready(function () {
             url: 'HandleLogin.php',
             type: 'POST',
             data: { username: username, password: password },
-            success: function (result) {
-                if (result == 'NoAccount') {
+            success: function (result) {    //button click to login
+                if (result.substring(1, 5) == 'ERROR') {    //EXCEPTION
+                    alert(result);
+                    return;
+                }
+                if (result == 'NoAccount') {    //No Account Existed
                     $('#form-container-login').find('.msg1').text('Tài khoản không tồn tại!');
                     return;
                 }
-                if (result == 'NoProfile') {
+                if (result == 'NoProfile') {    //No Profile Existed
                     $('#gradient-bg-faded').css('display', 'block');
                     $('.container-reg-profile').css('display', 'block');
                     return;
                 }
-
-                if (result == 'incorrect password') {
+                if (result == 'incorrect password') {   //Incorrect Password
                     $('#form-container-login').find('.msg2').text('Sai mật khẩu!');
                     return;
                 }
@@ -137,8 +140,8 @@ $(document).ready(function () {
     })
 
     //HANDLE REGISTER ACCOUNT
-    $('#btn-reg-acc').click(function () {
-        $('#form-container-login').css('display','none');
+    $('#btn-reg-acc').click(function () {   //button click register account
+        $('#form-container-login').css('display', 'none');
 
         $('#form-reg-acc').find('.msg1').text('');
         $('#form-reg-acc').find('.msg2').text('');
@@ -154,58 +157,57 @@ $(document).ready(function () {
             url: 'HandleRegAcc.php',
             type: 'POST',
             data: { method: 'CheckExist', username: username },
-            success: function (result) {
-                if (result == 'AcountExisted') {
+            success: function (result) {    //check if account existed
+                if (result.substring(1, 5) == 'ERROR') {
+                    alert(result);
+                    return;
+                }
+                // $('body').html(result);
+
+                if (result == 'Account Existed!') {     //account existed
                     $('#form-reg-acc').find('.msg1').text('Số điện thoại đã được sử dụng!');
-                    $('#form-reg-acc').find('.msg1').val(1);
+                }
+                else {                                  //register account
+                    password = $('#form-reg-acc input[name="password"]').val();
+                    if (password == '') {
+                        $('#form-reg-acc').find('.msg2').text('Nhập mật khẩu!');
+                        return;
+                    }
+                    repeat_password = $('#form-reg-acc input[name="repeat-password"]').val();
+                    if (repeat_password == '') {
+                        $('#form-reg-acc').find('.msg3').text('Nhập lại mật khẩu!');
+                        return;
+                    }
+
+                    $.ajax({
+                        cache: false,
+                        type: 'POST',
+                        data: { method: 'RegisterAccount', username: username, password: password },
+                        url: 'HandleRegAcc.php',
+                        success: function (result) {
+                            if (result.substring(1, 5) == 'ERROR') {
+                                alert(result);
+                                return;
+                            }
+                        },
+                        error: function (error) {
+                            $('body').html(error);
+                        }
+                    })
+                    $('.container-reg-profile').css('display', 'block');
                 }
             },
             error: function (error) {
                 $('body').html(error);
             }
         })
-
-        if ($('#form-reg-acc').find('.msg1').val() == 1) {
-            $('#form-reg-acc').find('.msg1').val(0);
-            return;
-        }
-
-        password = $('#form-reg-acc input[name="password"]').val();
-        if (password == '') {
-            $('#form-reg-acc').find('.msg2').text('Nhập mật khẩu!');
-            return;
-        }
-        repeat_password = $('#form-reg-acc input[name="repeat-password"]').val();
-        if (repeat_password == '') {
-            $('#form-reg-acc').find('.msg3').text('Nhập lại mật khẩu!');
-            return;
-        }
-
-        $.ajax({
-            cache: false,
-            type: 'POST',
-            data: { method: 'RegisterAccount', username: username, password: password },
-            url: 'HandleRegAcc.php',
-            success: function (result) {
-                // alert(result);
-                // $('body').html(result);
-
-            },
-            error: function (error) {
-                $('body').html(error);
-            }
-        })
-
-        $('.container-reg-profile').css('display', 'block');
     })
 
     // HANDLE REGISTER USER PROFILE
-    $('#btn-reg-profile').click(function () {
+    $('#btn-reg-profile').click(function () {       //button click register profile
         lastname = $('#container-reg-profile').find('input[name="lastname"]').val();
         firstname = $('#container-reg-profile').find('input[name="firstname"]').val();
-        alert(firstname);
         gender = $('#container-reg-profile').find('input[name="gender"] option:selected').val();
-        alert(gender);
         id = $('#container-reg-profile').find('input[name="id"]').val();
         birthday = $('#container-reg-profile').find('input[name="birthday"]').val();
         hometown = $('#select-hometown').find('option:selected').text();
@@ -225,14 +227,17 @@ $(document).ready(function () {
                 district: district, town: town, street: street, email: email
             },
             success: function (result) {
-                // $('body').html(result);
-                // $('body').append(data);
-                // $('body').html(error);
+                if (result.substring(1, 5) == 'ERROR') {
+                    alert(result);
+                    return;
+                }
                 if (result == 'Profile Created!') {
                     $('#container-reg-profile').css('display', 'none');
                     $('.form-message').text('Đăng ký thông tin tài khoản thành công!');
                     $('.form-popup-confirm').css('display', 'block');
                 }
+                else
+                    $('body').html(result);
             },
             error: function (error) {
                 $('body').html(error);
