@@ -81,16 +81,6 @@ $(document).ready(function () {
         $('.container-reg-profile').css('display', 'none');
     })
 
-    // HANDLE GRADIENT BG CLICK
-    $('#gradient-bg-faded, .btn-confirm').click(function () {
-        $('#form-container-reg-acc').css('display', 'none');
-        $('#form-container-login').css('display', 'none');
-        $('.form-popup-confirm').css('display', 'none');
-        $('#gradient-bg-faded').css('display', 'none');
-        $('#container-reg-profile').css('display', 'none');
-        $('.gradient-bg-faded').css('display', 'none');
-    })
-
     // HANDLE LOGIN
     $('#btn-login-in-form-login').click(function () {
         $('#form-container-login').find('.msg1').text('');
@@ -207,7 +197,7 @@ $(document).ready(function () {
     $('#btn-reg-profile').click(function () {       //button click register profile
         lastname = $('#container-reg-profile').find('input[name="lastname"]').val();
         firstname = $('#container-reg-profile').find('input[name="firstname"]').val();
-        gender = $('#container-reg-profile').find('input[name="gender"] option:selected').val();
+        gender = $('#container-reg-profile').find('select[name="gender"] option:selected').val();
         id = $('#container-reg-profile').find('input[name="id"]').val();
         birthday = $('#container-reg-profile').find('input[name="birthday"]').val();
         hometown = $('#select-hometown').find('option:selected').text();

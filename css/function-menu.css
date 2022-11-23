@@ -11,7 +11,7 @@
 }
 
 .function-menu-panel .title {
-    z-index: 5;
+    /* z-index: 1; */
     width: 90%;
     margin: 0 auto;
     position: relative;

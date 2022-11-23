@@ -6,11 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/btn.css">
     <link rel="stylesheet" href="css/CitizenAccountInfo.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="js/animation-btn.js"></script>
+    <script src="js/WebElemnts.js.js"></script>
     <script src="js/CitizenAccountInfo.js"></script>
     <title>Thông tin tài khoản</title>
 </head>
