@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/ScheduleManagement.css">
+    <link rel="stylesheet" href="css/ORGSchedule.css">
     <link rel="stylesheet" href="css/filter-panel.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="js/ScheduleManagement.js"></script>
+    <script src="js/ORGSchedule.js"></script>
     <script src="js/WebElemnts.js.js"></script>
     <title>Lịch Tiêm</title>
 </head>

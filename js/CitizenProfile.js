@@ -88,7 +88,7 @@ $(document).ready(function () {
             },
             success: function (result) {
                 $('.form-message').text('Cập nhật thông tin thành công!');
-                $('.form-popup-confirm').css('display', 'block');
+                $('#form-popup-confirm').css('display', 'block');
                 $('.gradient-bg-faded').css('display', 'block');
             },
             error: function () {

@@ -1,3 +1,10 @@
+<?php
+include("object_Citizen.php");
+session_start();
+if (isset($_SESSION['UserRole']) == false)
+    header('Location: index.php');
+$citizen = $_SESSION['CitizenProfile'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,7 +51,7 @@
                         <p>Tài khoản</p>
                         <br>
                         <label for="phone_number">Số điện thoại</label><br>
-                        <input type="text" name="phone_number" required value=""><br>
+                        <?php echo'<input type="text" name="phone_number" required value="'.$citizen->get_phone().'">' ?><br>
                         <hr>
                         <br>
                         <label for="enter_pass">Nhập mật khẩu hiện tại</label><br>
@@ -70,15 +77,16 @@
             </div>
 
             <div class="group_btn">
-                <button class="btn-medium-filled">Cập nhật</button>
-                <button class="btn-medium-bordered" id="close_reg_person_profile">Hủy bỏ</button>
+                <button class="btn-medium-filled" id="update-account-info">Cập nhật</button>
+                <button class="btn-medium-bordered" id="cancel-update-account-info">Hủy bỏ</button>
             </div>
         </div>
     </div>
 
     <br>
     <?php
-    include("footer.php")
+    include("footer.php");
+    include("WebElements.html");
     ?>
 
 </body>

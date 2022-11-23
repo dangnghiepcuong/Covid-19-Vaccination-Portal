@@ -33,7 +33,7 @@
     <div class="drop-down-menu" id="drop-down-menu-profile">
         <div class="holder">
             <ul>
-                <a href="#">
+                <a href="CitizenAccountInfo.php">
                     <li>Thông tin tài khoản</li>
                 </a>
 
