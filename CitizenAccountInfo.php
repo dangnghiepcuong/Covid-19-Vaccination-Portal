@@ -1,7 +1,7 @@
 <?php
 include("object_Citizen.php");
 session_start();
-if (isset($_SESSION['UserRole']) == false)
+if (isset($_SESSION['AccountInfo']) == false)
     header('Location: index.php');
 $citizen = $_SESSION['CitizenProfile'];
 ?>
@@ -50,13 +50,15 @@ $citizen = $_SESSION['CitizenProfile'];
                         <br>
                         <p>Tài khoản</p>
                         <br>
-                        <label for="phone_number">Số điện thoại</label><br>
-                        <?php echo'<input type="text" name="phone_number" required value="'.$citizen->get_phone().'">' ?><br>
+                        <label for="phone">Số điện thoại</label><br>
+                        <?php echo'<input type="text" name="phone" required value="'.$citizen->get_phone().'">' ?><br>
                         <hr>
+                        <div class="message msg1"></div>
                         <br>
-                        <label for="enter_pass">Nhập mật khẩu hiện tại</label><br>
-                        <input type="text" name="enter_pass" required value=""><br>
+                        <label for="password">Nhập mật khẩu hiện tại</label><br>
+                        <input type="password" name="password" required value=""><br>
                         <hr>
+                        <div class="message msg2"></div>
                     </div>
                 </div>
 
@@ -65,13 +67,15 @@ $citizen = $_SESSION['CitizenProfile'];
                         <br>
                         <p>Đổi mật khẩu</p>
                         <br>
-                        <label for="new_pass">Mật khẩu mới</label><br>
-                        <input type="text" name="new_pass" required value=""><br>
+                        <label for="new-password">Mật khẩu mới</label><br>
+                        <input type="password" name="new-password" required value=""><br>
                         <hr>
+                        <div class="message msg1"></div>
                         <br>
-                        <label for="enter_new_pass">Nhập mật khẩu mới</label><br>
-                        <input type="text" name="enter_new_pass" required value=""><br>
+                        <label for="repeat-new-password">Nhập mật khẩu mới</label><br>
+                        <input type="password" name="repeat-new-password" required value=""><br>
                         <hr>
+                        <div class="message msg2"></div>
                     </div>
                 </div>
             </div>

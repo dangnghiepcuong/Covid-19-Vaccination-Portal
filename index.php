@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <?php
-session_start();
 include("object_Citizen.php");
+include("object_Account.php");
+session_start();
 $citizen = new Citizen();
+$account = new Account();
 ?>
 <html lang="en">
 
@@ -17,7 +19,7 @@ $citizen = new Citizen();
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/index.js"></script>
-    <script src="js/WebElemnts.js.js"></script>
+    <script src="js/WebElements.js"></script>
     </script>
 </head>
 
@@ -25,8 +27,9 @@ $citizen = new Citizen();
     <!-- HEADER -->
     <div id="return-header">
         <?php
-        if (isset($_SESSION['UserRole'])) {
-            switch ((int)$_SESSION['UserRole']) {
+        if (isset($_SESSION['AccountInfo'])) {
+            $account = $_SESSION['AccountInfo'];
+            switch ((int)$account->get_role()) {
                 case 0:
                     include("headerORG.php");
                     break;
@@ -78,7 +81,7 @@ $citizen = new Citizen();
     ?>
     <!-- END FOOTER -->
 
-    
+
     <?php
     // echo '<script>alert("' . $citizen->get_ID() . '")</script>';
     ?>

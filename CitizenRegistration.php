@@ -8,7 +8,7 @@ $citizen = $_SESSION['CitizenProfile'];
 $Cregistration = new Register();
 // echo '<script>alert("' . $Cregistration->get_sched()->newOrg() . '")</script>'; 
 
-if (isset($_SESSION['UserRole']) == false)
+if (isset($_SESSION['AccountInfo']) == false)
     header('Location: index.php');
 
 ?>
