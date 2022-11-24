@@ -18,7 +18,7 @@
                     <li class="menu-section">Khai báo</li>
                 </a>
 
-                <a href="VaccinationRegistration.php">
+                <a href="CitizenVaccination.php">
                     <li class="menu-section">Tiêm chủng</li>
                 </a>
             </ul>
