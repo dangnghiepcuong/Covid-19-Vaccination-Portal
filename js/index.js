@@ -172,12 +172,6 @@ $(document).ready(function () {
                         url: 'HandleRegAcc.php',
                         type: 'POST',
                         data: { method: 'RegisterAccount', username: username, password: password },
-
-                        success: function (result) {
-                            if (result.substring(1, 5) == 'ERROR') {
-                                alert(result);
-
-                        url: 'HandleRegAcc.php',
                         success: function (data) {
                             if (data.substring(1, 5) == 'ERROR') {
                                 alert(data);
