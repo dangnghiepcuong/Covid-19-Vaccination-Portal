@@ -1,3 +1,13 @@
+<?php
+// error_reporting(0);
+include("object_Account.php");
+include("object_Schedule.php");
+session_start();
+
+if (!(isset($_SESSION['AccountInfo']) && $_SESSION['AccountInfo']->get_status() == 1) && isset($_SESSION['OrgProfile']))
+    header('Location: index.php');
+$org = $_SESSION['OrgProfile'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -41,94 +51,35 @@
                     <label for="end-date">Đến ngày</label>
                     <input type="date" name="end-date" id="end-date">
 
-                    <label for="status">Trạng thái</label>
-                    <select type="drop-down" name="status">
-                        <!-- PHP CODE -->
-                        <option value="">Tất cả</option>
-                        <option value="">Đã lên lịch</option>
-                        <option value="">Đã diễn ra</option>
-                    </select>
-                    <button class="btn-medium-bordered-icon" id="filter-date-status">
-                        <img src="image/filter-magnifier.png" alt="filter-magnifier">
-                        Tìm kiếm
-                    </button>
-                </div>
-
-
-                <div class="filter-pane" id="filter-vaccine-time">
                     <label for="vaccine">Vaccine</label>
-                    <select type="text" name="vaccine">
-                        <!-- PHP CODE -->
+                    <select type="text" name="vaccine" id="vaccine">
                         <option value="">Tất cả</option>
-                        <option value="">AstraZeneca</option>
-                        <option value="">Comirnaty</option>
-                        <option value="">Verro Cell</option>
+                        <option value="Astra">AstraZeneca</option>
+                        <option value="Corminaty">Corminaty (Pfizer)</option>
+                        <option value="Sputnik">Sputnik V</option>
+                        <option value="Vero">Verro Cell</option>
+                        <option value="Moderna">Moderna</option>
                     </select>
 
-                    <!-- <label for="time">Buổi</label>
-                    <select type="drop-down" name="time">
-                        <option value=""></option>
-                        <option value="">Sáng</option>
-                        <option value="">Chiều</option>
-                        <option value="">Tối</option>
-                    </select> -->
-
-                    <button class="btn-medium-bordered-icon">
+                    <button class="btn-medium-bordered-icon" id="btn-filter-schedule">
                         <img src="image/filter-magnifier.png" alt="filter-magnifier">
                         Tìm kiếm
                     </button>
                 </div>
             </div>
-
             <br>
 
             <div class="panel-list-schedule">
                 <div class="list-name">DANH SÁCH LỊCH TIÊM</div>
                 <div class="list-name" id="object-orgname">
-                    <!--PHP CODE Bệnh viện Đa khoa huyện Dầu Tiếng -->
                     <?php
-                    include("DatabaseConnection.php");
-                    $OrgName = "";
-                    $sql = "select * from ORGANIZATION where ID = '74001'";
-                    $command = oci_parse($connection, $sql);
-                    oci_execute($command);
-                    while (($row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS)) != false) {
-                        $OrgName = $row['NAME'];
-                        echo $OrgName;
-                    }
+                    echo $org->get_name();
                     ?>
                 </div>
                 <br>
                 <div class="holder">
-                    <div class="list-schedule" id="list-schedule-left">
-                        <!--PHP CODE-->
-                        <?php
-                        $sql = "select * from SCHEDULE where OrgID = '74001'";
-
-                        $command = oci_parse($connection, $sql);
-                        oci_execute($command);
-                        while (($row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS)) != false) {
-                            echo '<div class="schedule">
-                            <p class="obj-org-name">' . $OrgName . '</p>
-                            <div class="holder-obj-attr">
-                                <div class="obj-attr">
-                                    <p class="attr-date-vaccine-serial">Lịch tiêm ngày: ' . $row['ONDATE'] . ' - Vaccine:
-                                    ' . $row['VACCINEID'] . ' - ' . $row['SERIAL'] . '</p>
-                                    <p class="attr-time">Buổi sáng: ' . $row['DAYREGISTERED'] . '/' . $row['LIMITDAY'] . ' - Buổi trưa: ' . $row['NOONREGISTERED'] . '/' . $row['LIMITNOON'] . ' - Buổi tối: ' . $row['NIGHTREGISTERED'] . '/' . $row['LIMITNIGHT'] . '</p>
-                                </div>
-                                <div class="interactive-area">
-                                    <button class="btn-medium-filled btn-register" id="btn-register">Lượt đăng
-                                        ký</button>
-                                    <button class="btn-medium-bordered btn-update" id="btn-register">Cập nhật</button>
-                                    <button class="btn-short-bordered btn-cancel" id="btn-register">Hủy</button>
-                                </div>
-                            </div>
-                        </div>';
-                        }
-                        ?>
-
+                    <div class="list-schedule" id="list-schedule">
                     </div>
-
                 </div>
             </div>
         </div>
