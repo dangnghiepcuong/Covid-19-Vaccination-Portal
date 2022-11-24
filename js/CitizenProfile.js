@@ -24,42 +24,6 @@ $(document).ready(function () {
     $("#function-menu-list").find("ul").html(menu);
     // END LOAD FRONT END DATA
 
-    $("#select-province").on('change', function () {
-        $('option:selected', this);
-        SelectedProvince = this.value;
-
-        $("#select-district").html('<option></option>');
-        $("#select-town").html('<option></option>');
-
-        $.getJSON('local.json', function (data) {
-            i = 0;
-            district = data[SelectedProvince].districts[i];
-            while (typeof (district) != "undefined" && district !== null) {
-                $("#select-district").append('<option value="' + i + '">' + district.name + '</option>');
-                i++;
-                district = data[SelectedProvince].districts[i];
-            }
-        })
-    })
-
-    $("#select-district").on('change', function () {
-        $('option:selected', this);
-        SelectedDistrict = this.value;
-        SelectedProvince = $("#select-province option:selected").val();
-
-        $("#select-town").html('<option></option>');
-
-        $.getJSON('local.json', function (data) {
-            i = 0;
-            town = data[SelectedProvince].districts[SelectedDistrict].wards[i];
-            while (typeof (town) != "undefined" && town !== null) {
-                $("#select-town").append('<option value="' + i + '">' + town.name + '</option>');
-                i++;
-                town = data[SelectedProvince].districts[SelectedDistrict].wards[i];
-            }
-        })
-    })
-
     $("#cancel-update-profile").click(function () {
         location.reload();
     })
@@ -117,6 +81,10 @@ $(document).ready(function () {
                 district: district, town: town, street: street, email: email
             },
             success: function (result) {
+                if (result.substring(0, 5) == 'ERROR') {    //EXCEPTION
+                    alert(result);
+                    return;
+                }
                 $('.form-message').text('Cập nhật thông tin thành công!');
                 $('#form-popup-confirm').css('display', 'block');
                 $('.gradient-bg-faded').css('display', 'block');

@@ -1,3 +1,12 @@
+<?php
+include("object_Account.php");
+include("object_Organization.php");
+session_start();
+
+if (!(isset($_SESSION['AccountInfo']) && $_SESSION['AccountInfo']->get_status() == 1) && isset($_SESSION['OrgProfile']))
+    header('Location: index.php');
+$org = $_SESSION['OrgProfile'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,21 +49,21 @@
             <br>
             <div class="panel-target-citizen">
                 <!-- <p>Đối tượng: </p> -->
-                <p class="">Đơn vị A</p>
+                <?php echo '<p class="">Đơn vị: ' . $org->get_name() . '</p>' ?>
             </div>
             <br>
 
-            <div class="info-panel">
+            <div class="info-panel" id="info-panel">
                 <div class="row1">
                     <div>
-                        <label for="id_org">Mã đơn vị tiêm chủng <span>(*)</span></label><br>
-                        <input type="text" name="id_org" required value=""><br>
+                        <label for="id">Mã đơn vị tiêm chủng <span>(*)</span></label><br>
+                        <?php echo '<input type="text" name="id" required value="' . $org->get_id() . '" disabled>' ?><br>
                         <hr>
                     </div>
 
                     <div class="item_name">
-                        <label for="org_name">Tên đơn vị tiêm chủng <span>(*)</span></label><br>
-                        <input type="text" name="org_name" required value=""><br>
+                        <label for="name">Tên đơn vị tiêm chủng <span>(*)</span></label><br>
+                        <?php echo '<input type="text" name="name" required value="' . $org->get_name() . '">' ?><br>
                         <hr>
                     </div>
                 </div>
@@ -62,32 +71,73 @@
                 <div class="row2">
                     <div>
                         <label for="city">Tỉnh/Thành phố <span>(*)</span></label><br>
-                        <select name="city" id="select-province"></select>
+                        <select name="city" id="select-province" disabled>
+                            <?php echo '<option value="">' . $org->get_provincename() . '</option>';
+                            $str = file_get_contents('local.json');
+                            $local = json_decode($str, true); // decode the JSON into an associative array
+                            $provincecode = -1;
+                            for ($i = 0; $i < 63; $i++) {
+                                if ($local[$i]['name'] != $org->get_provincename())
+                                    echo '<option value="' . $i . '">' . $local[$i]['name'] . '</option>';
+                                else
+                                    $provincecode = $i;
+                            }
+                            echo '<script>$("#select-province option:first-child").val(' . $provincecode . ')</script>';
+                            ?>
+                        </select>
                         <hr>
                     </div>
 
                     <div>
                         <label for="district">Quận/Huyện <span>(*)</span></label><br>
-                        <select name="district" id="select-district"></select>
+                        <select name="district" id="select-district">
+                            <?php
+                            echo '<option value="">' . $org->get_districtname() . '</option>';
+                            $districtcode = -1;
+                            $i = 0;
+                            while (isset($local[$provincecode]['districts'][$i])) {
+                                if ($local[$provincecode]['districts'][$i]['name'] != $org->get_districtname())
+                                    echo '<option value="' . $i . '">' . $local[$provincecode]['districts'][$i]['name'] . '</option>';
+                                else
+                                    $districtcode = $i;
+                                $i++;
+                            }
+                            echo '<script>$("#select-district option:first-child").val(' . $districtcode . ')</script>';
+                            ?>
+                        </select>
                         <hr>
                     </div>
 
                     <div>
                         <label for="town">Xã/Phường/Thị trấn <span>(*)</span></label><br>
-                        <select name="district" id="select-district"></select>
+                        <select name="town" id="select-town">
+                        <?php
+                            echo '<option value="">' . $org->get_townname() . '</option>';
+                            $towncode = -1;
+                            $i = 0;
+                            while (isset($local[$provincecode]['districts'][$districtcode]['wards'][$i])) {
+                                if ($local[$provincecode]['districts'][$districtcode]['wards'][$i]['name'] != $org->get_townname())
+                                    echo '<option value="' . $i . '">' . $local[$provincecode]['districts'][$districtcode]['wards'][$i]['name'] . '</option>';
+                                else
+                                    $towncode = $i;
+                                $i++;
+                            }
+                            echo '<script>$("#select-town option:first-child").val(' . $towncode . ')</script>';
+                            ?>
+                        </select>
                         <hr>
                     </div>
                 </div>
 
                 <div class="row3">
                     <label for="street">Số nhà, tên đường, khu phố/ấp <span>(*)</span></label><br>
-                    <input type="text" name="street" required value=""><br>
+                    <?php echo '<input type="text" name="street" required value="' . $org->get_street() . '">' ?><br>
                     <hr>
                 </div>
 
                 <div class="group_btn">
-                    <button class="btn-medium-filled">Cập nhật</button>
-                    <button class="btn-medium-bordered" id="close_reg_person_profile">Hủy bỏ</button>
+                    <button class="btn-medium-filled" id="update-profile">Cập nhật</button>
+                    <button class="btn-medium-bordered" id="cancel-update-profile">Hủy bỏ</button>
                 </div>
             </div>
 
@@ -97,7 +147,8 @@
 
     <br>
     <?php
-    include("footer.php")
+    include("footer.php");
+    include("WebElements.html");
     ?>
 </body>
 

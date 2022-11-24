@@ -10,7 +10,12 @@ if ($_POST['password'] != $_SESSION['AccountInfo']->get_password())
     return;
 }
 
-echo $_SESSION['AccountInfo']->get_username();
+if (isset($_POST['method']))
+{
+    $method = $_POST['method'];
+    $method();
+    return;
+}
 
 ChangePassword();
 

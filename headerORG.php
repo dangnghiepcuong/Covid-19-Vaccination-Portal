@@ -3,7 +3,7 @@
 
 <!-- HEADER -->
 <div class="header">
-    <a class="title" href="HomepageORG.php">
+    <a class="title" href="index.php">
         <img src="image/CVM-Logo.png" alt="CVM-Logo">
         <span>CỔNG THÔNG TIN TIÊM CHỦNG COVID-19</span>
     </a>
@@ -11,11 +11,11 @@
     <div class="nav">
         <div>
             <ul>
-                <a href="HomepageORG.php">
+                <a href="index.php">
                     <li class="menu-section">Trang chủ</li>
                 </a>
 
-                <a href="#">
+                <a href="ORGSchedule.php">
                     <li class="menu-section" id="menu-section-schedule">Lịch tiêm</li>
                 </a>
 
@@ -37,11 +37,11 @@
     <div class="drop-down-menu" id="drop-down-menu-profile">
         <div class="holder">
             <ul>
-                <a href="#">
+                <a href="ORGAccountInfo.php">
                     <li>Thông tin tài khoản</li>
                 </a>
 
-                <a href="#">
+                <a href="ORGProfile.php">
                     <li>Thông tin tổ chức</li>
                 </a>
 
@@ -61,7 +61,7 @@
                     <li>Tạo lịch tiêm chủng</li>
                 </a>
 
-                <a href="ScheduleManagement.php">
+                <a href="ORGSchedule.php">
                     <li>Danh sách lịch tiêm</li>
                 </a>
             </ul>

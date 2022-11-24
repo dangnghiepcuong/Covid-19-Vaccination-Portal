@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <?php
-include("object_Citizen.php");
 include("object_Account.php");
+include("object_Citizen.php");
+include("object_Organization.php");
 session_start();
 $citizen = new Citizen();
 $account = new Account();
@@ -37,6 +38,9 @@ $account = new Account();
                     include("headerORG.php");
                     break;
                 case 1:
+                    if (isset($_SESSION['OrgProfile']) == false) {
+                        include("OrgLoadProfile.php");
+                    }
                     include("headerORG.php");
                     break;
                 case 2:

@@ -9,7 +9,7 @@ $citizen = $_SESSION['CitizenProfile'];
 $Cregistration = new Register();
 // echo '<script>alert("' . $Cregistration->get_sched()->newOrg() . '")</script>'; 
 
-if (!(isset($_SESSION['AccountInfo']) && $_SESSION['AccountInfo']->get_status() == 1))
+if (!(isset($_SESSION['AccountInfo']) && $_SESSION['AccountInfo']->get_status() == 1) && isset($_SESSION['CitizenProfile']))
     header('Location: index.php');
 
 ?>
