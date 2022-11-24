@@ -2,7 +2,7 @@
 include("object_Account.php");
 include("object_Citizen.php");
 session_start();
-if (!(isset($_SESSION['AccountInfo']) && $_SESSION['AccountInfo']->get_status() == 1))
+if (!(isset($_SESSION['AccountInfo']) && $_SESSION['AccountInfo']->get_status() == 1) && isset($_SESSION['CitizenProfile']))
     header('Location: index.php');
 $citizen = $_SESSION['CitizenProfile'];
 ?>
