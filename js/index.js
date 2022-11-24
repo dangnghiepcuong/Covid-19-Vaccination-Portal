@@ -113,7 +113,7 @@ $(document).ready(function () {
             data: { username: username, password: password },
             success: function (result) {    //button click to login
                 if (result.substring(1, 5) == 'ERROR') {    //EXCEPTION
-                    alert(result);
+                    $('body').html(result);
                     return;
                 }
                 if (result == 'NoAccount') {    //No Account Existed
@@ -181,9 +181,9 @@ $(document).ready(function () {
 
                     $.ajax({
                         cache: false,
+                        url: 'HandleRegAcc.php',
                         type: 'POST',
                         data: { method: 'RegisterAccount', username: username, password: password },
-                        url: 'HandleRegAcc.php',
                         success: function (result) {
                             if (result.substring(1, 5) == 'ERROR') {
                                 alert(result);

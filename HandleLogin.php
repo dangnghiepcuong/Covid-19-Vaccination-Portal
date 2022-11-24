@@ -1,14 +1,14 @@
 <?php
 session_start();
 
-include("DatabaseConnection.php");
+include("DatabaseConnection.php");                           //Connection String
 
-$sql = "select * from ACCOUNT where Username = :username"; //check account
-$command = oci_parse($connection, $sql);
-oci_bind_by_name($command, ':username', $_POST['username']);
-$r = oci_execute($command);
-if (!$r) {
-    $exception = oci_error($command);
+$sql = "select * from ACCOUNT where Username = :username"; //SQL string
+$command = oci_parse($connection, $sql);                    //Prepare statement before execute
+oci_bind_by_name($command, ':username', $_POST['username']);    //bind parameters
+$r = oci_execute($command);                                     //execute
+if (!$r) {                                                      //if false (error)
+    $exception = oci_error($command);                           //catch exception
     echo 'ERROR: ' . $exception['code'] . ' - ' . $exception['message'];
     return;
 }
