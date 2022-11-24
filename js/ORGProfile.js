@@ -3,7 +3,7 @@ $(document).ready(function () {
     menu_title = "<a href='ORGProfile.php'>Thông tin đơn vị</a>";
     $("#function-navigation-bar-title").html(menu_title);
 
-    homepage = "<a href='HomepageORG.php'>Trang chủ</a>";
+    homepage = "<a href='index.php'>Trang chủ</a>";
     $("#homepage-path").html(homepage);
 
     subpage = "<a href='ORGProfile.php'>Đơn vị</a>"
@@ -19,5 +19,6 @@ $(document).ready(function () {
 
     $("#function-menu-list").find("ul").html(menu);
     // END LOAD FRONT END DATA
+
 })
 

@@ -11,21 +11,21 @@
         <div>
             <ul>
                 <a href="index.php">
-                    <li class="menu-section">Trang chủ</li>
+                    <li class="menu-section">Tổng quan</li>
                 </a>
 
                 <a href="MedicalFormSubmit.php">
-                    <li class="menu-section">Khai báo</li>
+                    <li class="menu-section">Dữ liệu</li>
                 </a>
 
                 <a href="VaccinationRegistration.php">
-                    <li class="menu-section">Tiêm chủng</li>
+                    <li class="menu-section">Đơn vị</li>
                 </a>
             </ul>
         </div>
 
         <a class="avatar" href="#">
-            <img src="image/Avatar-Citizen.png" alt="Avata công dân">
+            <img src="image/Avatar-MOH.png" alt="Avata Bộ Y Tế">
         </a>
     </div>
 
@@ -33,24 +33,20 @@
     <div class="drop-down-menu" id="drop-down-menu-profile">
         <div class="holder">
             <ul>
-                <a href="CitizenAccountInfo.php">
+                <a href="MOHAccountInfo.php">
                     <li>Thông tin tài khoản</li>
                 </a>
 
-                <a href="CitizenProfile.php">
-                    <li>Thông tin công dân</li>
-                </a>
-
-                <a href="CitizenRegistration.php">
-                    <li>Lịch đăng ký</li>
-                </a>
-
-                <a href="CitizenCertificate.php">
-                    <li>Chứng nhận</li>
+                <a href="MOHProfile.php">
+                    <li>Thông tin Bộ Y tế</li>
                 </a>
 
                 <a href="#">
-                    <li>Thêm người thân</li>
+                    <li>Quản lý đơn vị</li>
+                </a>
+
+                <a href="MOHCertificate.php">
+                    <li>Chứng nhận</li>
                 </a>
 
                 <a href="" id="btn-logout">
