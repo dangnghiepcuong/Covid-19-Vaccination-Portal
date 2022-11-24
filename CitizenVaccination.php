@@ -3,7 +3,7 @@
 <?php
 include("object_Citizen.php");
 session_start();
-if (isset($_SESSION['username']) == false)
+if (isset($_SESSION['AccountInfo']) == false)
     header('Location: index.php');
 $citizen = $_SESSION['profile'];
 ?>
@@ -12,13 +12,12 @@ $citizen = $_SESSION['profile'];
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/VaccinationRegistration.css">
-    <link rel="stylesheet" href="css/btn.css">
+    <link rel="stylesheet" href="css/CitizenVaccination.css">
     <link rel="stylesheet" href="css/filter-panel.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="js/VaccinationRegistration.js"></script>
-    <script src="js/animation-btn.js"></script>
+    <script src="js/CitizenVaccination.js"></script>
+    <script src="js/WebElements.js"></script>
     <title>Tiêm chủng</title>
 </head>
 

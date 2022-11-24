@@ -7,6 +7,7 @@ $(document).ready(function () {
     $('#btn-close-form-login').click(function () {
         $('#gradient-bg-faded').css('display', 'none');
         $('#form-container-login').css('display', 'none');
+        $(this).parent().find('.message').text("");
     })
 
     $('#btn-create-account').click(function () {
@@ -15,12 +16,9 @@ $(document).ready(function () {
     })
 
     $('#btn-close-form-reg-acc').click(function () {
-        $('#form-reg-acc').find('.msg1').text('');
-        $('#form-reg-acc').find('.msg2').text('');
-        $('#form-reg-acc').find('.msg3').text('');
-
         $('#gradient-bg-faded').css('display', 'none');
         $('#form-container-reg-acc').css('display', 'none');
+        $(this).parent().find('.message').text("");
     })
 
     $('#btn-login-in-form-reg-acc').click(function () {
@@ -79,16 +77,6 @@ $(document).ready(function () {
 
     $('#close_reg_person_profile').click(function () {
         $('.container-reg-profile').css('display', 'none');
-    })
-
-    // HANDLE GRADIENT BG CLICK
-    $('#gradient-bg-faded, .btn-confirm').click(function () {
-        $('#form-container-reg-acc').css('display', 'none');
-        $('#form-container-login').css('display', 'none');
-        $('.form-popup-confirm').css('display', 'none');
-        $('#gradient-bg-faded').css('display', 'none');
-        $('#container-reg-profile').css('display', 'none');
-        $('.gradient-bg-faded').css('display', 'none');
     })
 
     // HANDLE LOGIN
@@ -184,9 +172,16 @@ $(document).ready(function () {
                         url: 'HandleRegAcc.php',
                         type: 'POST',
                         data: { method: 'RegisterAccount', username: username, password: password },
+
                         success: function (result) {
                             if (result.substring(1, 5) == 'ERROR') {
                                 alert(result);
+
+                        url: 'HandleRegAcc.php',
+                        success: function (data) {
+                            if (data.substring(1, 5) == 'ERROR') {
+                                alert(data);
+
                                 return;
                             }
                         },
@@ -207,7 +202,7 @@ $(document).ready(function () {
     $('#btn-reg-profile').click(function () {       //button click register profile
         lastname = $('#container-reg-profile').find('input[name="lastname"]').val();
         firstname = $('#container-reg-profile').find('input[name="firstname"]').val();
-        gender = $('#container-reg-profile').find('input[name="gender"] option:selected').val();
+        gender = $('#container-reg-profile').find('select[name="gender"] option:selected').val();
         id = $('#container-reg-profile').find('input[name="id"]').val();
         birthday = $('#container-reg-profile').find('input[name="birthday"]').val();
         hometown = $('#select-hometown').find('option:selected').text();
@@ -226,18 +221,19 @@ $(document).ready(function () {
                 gender: gender, id: id, birthday: birthday, hometown: hometown, province: province,
                 district: district, town: town, street: street, email: email
             },
-            success: function (result) {
-                if (result.substring(1, 5) == 'ERROR') {
-                    alert(result);
+            success: function (data) {
+                alert(data);
+                if (data.substring(0, 4) == 'ERROR') {
+                    alert(data);
                     return;
                 }
-                if (result == 'Profile Created!') {
+                if (data == 'Profile Created!') {
                     $('#container-reg-profile').css('display', 'none');
                     $('.form-message').text('Đăng ký thông tin tài khoản thành công!');
-                    $('.form-popup-confirm').css('display', 'block');
+                    $('#form-popup-confirm').css('display', 'block');
                 }
                 else
-                    $('body').html(result);
+                    $('body').html(data);
             },
             error: function (error) {
                 $('body').html(error);

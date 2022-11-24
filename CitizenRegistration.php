@@ -8,7 +8,7 @@ $citizen = $_SESSION['CitizenProfile'];
 $Cregistration = new Register();
 // echo '<script>alert("' . $Cregistration->get_sched()->newOrg() . '")</script>'; 
 
-if (isset($_SESSION['UserRole']) == false)
+if (isset($_SESSION['AccountInfo']) == false)
     header('Location: index.php');
 
 ?>
@@ -20,12 +20,11 @@ if (isset($_SESSION['UserRole']) == false)
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/CitizenRegistration.css">
-    <link rel="stylesheet" href="css/btn.css">
     <link rel="stylesheet" href="css/filter-panel.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/CitizenRegistration.js"></script>
-    <script src="js/animation-btn.js"></script>
+    <script src="js/WebElements.js"></script>
     <title>Quản lý lượt đăng ký</title>
 </head>
 
@@ -171,20 +170,10 @@ if (isset($_SESSION['UserRole']) == false)
     <!-- END FUNCTION PANEL -->
     <br>
 
-    <div class="form-popup-confirm">
-        <p class="form-message"></p>
-        <div class="holder-btn">
-            <button class="btn-medium-filled btn-confirm">Xác nhận</button>
-            <button class="btn-medium-bordered btn-cancel">Hủy</button>
-        </div>
-    </div>
-
-    <!-- FADED COVER -->
-    <div class="gradient-bg-faded" id="gradient-bg-faded"></div>
-
     <!-- FOOTER -->
     <?php
     include("footer.php");
+    include("WebElements.html");
     ?>
 
     <?php

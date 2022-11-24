@@ -3,14 +3,12 @@ class Account {
     private $Username;
     private $Password;
     private $Role;
-    private $Default;
     private $Status;
 
     public function __construct(){
         $this->Username = "";
         $this->Password = "";
         $this->Role = -1;
-        $this->Default = "";
         $this->Status = -1;
     }
 
@@ -24,10 +22,6 @@ class Account {
 
     public function set_role($role){
         $this->Role = $role;
-    }
-
-    public function set_default($default){
-        $this->Default = $default;
     }
 
     public function set_status($status){
@@ -46,13 +40,7 @@ class Account {
         return $this->Role;
     }
 
-    public function get_default(){
-        return $this->Default;
-    }
-
     public function get_status(){
         return $this->Status;
     }
 }
-
-?>

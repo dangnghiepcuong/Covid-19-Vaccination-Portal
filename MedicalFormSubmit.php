@@ -1,7 +1,7 @@
 <?php
 session_start();
 $checkUser = true;
-if (isset($_SESSION['UserRole']) == false)
+if (isset($_SESSION['AccountInfo']) == false)
     $checkUser = false;
 else {
     include("object_Form.php");
@@ -19,14 +19,13 @@ else {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/MedicalFormSubmit.css">
-    <link rel="stylesheet" href="css/btn.css">
     <link rel="stylesheet" href="css/filter-panel.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/MedicalFormSubmit.js"></script>
     <script src="js/index.js"></script>
-    <script src="js/animation-btn.js"></script>
+    <script src="js/WebElements.js"></script>
     <title>Khai báo y tế</title>
 </head>
 
