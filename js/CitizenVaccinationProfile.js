@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="css/function-menu.css"></link>
 $(document).ready(function(){
     // LOAD FRONT END DATA
     menu_title = "<a href='CitizenVaccinationProfile.php'>Tra cứu thông tin</a>";

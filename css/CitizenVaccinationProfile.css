@@ -58,6 +58,27 @@
     border: none;
 }
 
+.panel-search-citizen {
+    display: flex;
+    justify-content: center;
+    margin-left: 50px;
+    margin-right: 50px;
+    /* box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25); */
+    border: none;
+}
+
+.panel-search-citizen *{
+    font-family: 'Roboto';
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0px 5px;
+    line-height: 50px;
+}
+
+.panel-search-citizen select {
+    border: none;
+}
+
 .holder-function-panel {
     display: flex;
     width: 100%;
@@ -155,7 +176,6 @@
 
 .filter-panel input {
     line-height: 20px;
-    /* background-color: #eee; */
     width: 200px;
     height: 35px;
     border: none;
@@ -163,8 +183,19 @@
     font-family: 'Roboto';
     font-weight: 300px;
     border-style: solid;
-    border: 1px solid #000000;
+    border: 0px solid #000000;
     font-size: 18px; 
+    box-shadow: 0px 1px;
+
+    /* font-weight: 200;
+    font-size: 18px;
+    line-height: 20px;
+    padding: 2px 5px;
+    border: none;
+    outline: none;
+    width: 100%; */
+
+    
 }
 
 .filter-panel select {
@@ -179,6 +210,19 @@
     display: inline-block;
     border: none;
     position: absolute;
+}
+
+hr {
+    width: 310px;
+height: 0px;
+
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+/* Inside auto layout */
+
+flex: none;
+order: 2;
+flex-grow: 0;
 }
 
 
@@ -276,4 +320,31 @@
     cursor: pointer;
 }
 /* END BUTTON */
+.panel-vaccinationprofile{
+    display: flex;
+    justify-content: left;
+    margin-left: 50px;
+    margin-right: 50px;
+    border: 1px solid #A084CA;
+    border-radius: 20px;
+    background: #FFFFFF;
+    opacity: 0.56;
+}
+.panel-vaccinationprofile * {
+    font-family: 'Roboto';
+    font-size: 20px;
+    font-weight: 20;
+    margin: 0px 5px;
+    line-height: 10px; 
+}
+
+.panel-vaccinationprofile label{
+    /* line-height: 20px; */
+    width: 200px;
+    height: 135px;
+    line-height: 30px;
+    font-size: 18px;
+    margin-right: 200px;
+    margin-left: 20px;
+}
 
