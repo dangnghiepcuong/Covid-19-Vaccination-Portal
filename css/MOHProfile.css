@@ -19,7 +19,6 @@
 .panel-target-citizen select {
     border: none;
     outline: none;
-    /* width: 30%; */
 }
 
 .holder-function-panel {
@@ -45,6 +44,7 @@
 
 .info-panel {
     display: block;
+    margin-top: 50px;
 }
 
 .info-panel hr{
@@ -56,13 +56,12 @@
 .info-panel select, input {
     font-weight: 200;
     font-size: 18px;
-    line-height: 28px;
-    padding: 0px 5px;
+    line-height: 20px;
+    padding: 2px 5px;
     border: none;
     outline: none;
     margin-top: 5px;
     width: 100%;
-    /* height: 30px; */
 }
 
 .info-panel label, p {
@@ -77,14 +76,18 @@
 }
 
 .info-panel div div {
-    width: 25%;
+    width: 30%;
 }
 
-.info-panel select, .row4 input, .row5 input {
+.info-panel .row1 .item_name {
+    width: 65%;
+}
+
+.info-panel select, .row3 input, .row1 input {
     width: 100%;
 } 
 
-.info-panel .row1, .row2, .row3, .row6 {
+.info-panel .row2, .row1 {
     display: flex;
     justify-content: space-between;
     font-size: 20px;
@@ -98,19 +101,14 @@
     display: flex;
     justify-content: space-between;
     font-size: 20px;
-    margin: 20px 30%;
+    margin: 50px 30%;
     padding-bottom: 10px;
 }
 
-.info-panel .row4, .row5{
-    width: 50%;
+.info-panel .row3{
+    width: 56%;
     margin: 10px 7%;
     padding-bottom: 10px;
-}
-
-.info-panel .row6 .note {
-    font-size: 18px;
-    color: red;
 }
 
 .info-panel span {
@@ -118,61 +116,4 @@
 }
 
 
-
-
 /* END FUNCTIONAL PANEL */
-
-
-/* POPUP CONFIRM FORM */
-
-.form-popup-confirm {
-    display: flex;
-    z-index: 10;
-    width: 600px;
-    height: 120px;
-    position: absolute;
-    top: 770px;
-    left: 800px;
-    transform: translate(-200px, -100px);
-    border-radius: 10px;
-}
-
-.form-popup-confirm .form-message {
-    margin-top: 40px;
-    font-family: 'Roboto';
-    font-size: 20px;
-    font-weight: 200;
-    font-style: italic;
-    justify-self: center;
-    text-align: center;
-}
-
-.form-popup-confirm  .form-btn-submit {
-    display: flex;
-    justify-content: space-between;
-    width: 260px;
-    margin: 0 auto;
-    padding-top: 10px;
-}
-
-.form-popup-confirm .form-btn-close {
-    width: 18px;
-    margin-top: 20px;
-    margin-right: 30px;
-    justify-self: right;
-    font-weight: 100;
-    font-size: 24px;
-    text-align: center;
-    cursor: pointer;
-}
-
-.form-popup-confirm .form-btn-submit * {
-    font-family: 'Roboto';
-    font-size: 20px;
-    font-weight: 300;
-    justify-self: center;
-    transition: 300ms;
-}
-.form-popup-confirm .form-btn-submit *:hover {
-    cursor: pointer;
-}

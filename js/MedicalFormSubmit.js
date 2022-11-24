@@ -29,11 +29,17 @@ $(document).ready(function () {
     // HANDLE ACTION
     $("#btn-submit-form-medical").click(function(){
         $(".gradient-bg-faded").css('display','block');
-        $(".form-popup-confirm").css('display','block');
+        $("#form-popup-confirm").css('display','block');
     })
 
-    $(".form-popup-confirm").on('click','.btn-cancel', function(){
-        $(".form-popup-confirm").css('display','none');
+    $("#form-popup-confirm").on('click','.btn-cancel', function(){
+        $("#form-popup-confirm").css('display','none');
+        $(".gradient-bg-faded").css('display','none');
+    })
+
+    $("#form-popup-confirm").on('click','.btn-confirm', function(){
+        alert ("Khai báo thành công!");
+        $("#form-popup-confirm").css('display','none');
         $(".gradient-bg-faded").css('display','none');
     })
     // END HANDLE ACTION

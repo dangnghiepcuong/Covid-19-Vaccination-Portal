@@ -29,7 +29,7 @@
             </ul>
         </div>
         <a class="avatar" href="#">
-            <img src="image/Avatar-ORG.png" alt="Logo đơn vị tiêm chủng">
+            <img src="image/Avatar-ORG.png" alt="Avata đơn vị tiêm chủng">
         </a>
     </div>
 
@@ -45,7 +45,7 @@
                     <li>Thông tin tổ chức</li>
                 </a>
 
-                <a href="index.php">
+                <a href="" id="btn-logout">
                     <li>Đăng xuất</li>
                 </a>
             </ul>

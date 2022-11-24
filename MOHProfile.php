@@ -6,18 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/ORGProfile.css">
+    <link rel="stylesheet" href="css/btn.css">
+    <link rel="stylesheet" href="css/MOHProfile.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="js/ORGProfile.js"></script>
-    <script src="js/WebElements.js"></script>
+    <script src="js/MOHProfile.js"></script>
+    <script src="js/animation-btn.js"></script>
     <title>Thông tin đơn vị tiêm chủng</title>
 </head>
 
 <body>
     <!-- HEADER -->
     <?php
-    include("headerORG.php");
+    include("headerMOH.php");
     ?>
     <!-- END HEADER -->
 
@@ -40,7 +41,7 @@
             <br>
             <div class="panel-target-citizen">
                 <!-- <p>Đối tượng: </p> -->
-                <p class="">Đơn vị A</p>
+                <p class="">Bộ Y tế</p>
             </div>
             <br>
 

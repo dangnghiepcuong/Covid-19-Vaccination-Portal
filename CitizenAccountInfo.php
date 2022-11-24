@@ -1,3 +1,10 @@
+<?php
+include("object_Citizen.php");
+session_start();
+if (isset($_SESSION['AccountInfo']) == false)
+    header('Location: index.php');
+$citizen = $_SESSION['CitizenProfile'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,11 +13,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/btn.css">
     <link rel="stylesheet" href="css/CitizenAccountInfo.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="js/animation-btn.js"></script>
+    <script src="js/WebElements.js"></script>
     <script src="js/CitizenAccountInfo.js"></script>
     <title>Thông tin tài khoản</title>
 </head>
@@ -44,13 +50,15 @@
                         <br>
                         <p>Tài khoản</p>
                         <br>
-                        <label for="phone_number">Số điện thoại</label><br>
-                        <input type="text" name="phone_number" required value=""><br>
+                        <label for="phone">Số điện thoại</label><br>
+                        <?php echo'<input type="text" name="phone" required value="'.$citizen->get_phone().'">' ?><br>
                         <hr>
+                        <div class="message msg1"></div>
                         <br>
-                        <label for="enter_pass">Nhập mật khẩu hiện tại</label><br>
-                        <input type="text" name="enter_pass" required value=""><br>
+                        <label for="password">Nhập mật khẩu hiện tại</label><br>
+                        <input type="password" name="password" required value=""><br>
                         <hr>
+                        <div class="message msg2"></div>
                     </div>
                 </div>
 
@@ -59,20 +67,22 @@
                         <br>
                         <p>Đổi mật khẩu</p>
                         <br>
-                        <label for="new_pass">Mật khẩu mới</label><br>
-                        <input type="text" name="new_pass" required value=""><br>
+                        <label for="new-password">Mật khẩu mới</label><br>
+                        <input type="password" name="new-password" required value=""><br>
                         <hr>
+                        <div class="message msg1"></div>
                         <br>
-                        <label for="enter_new_pass">Nhập mật khẩu mới</label><br>
-                        <input type="text" name="enter_new_pass" required value=""><br>
+                        <label for="repeat-new-password">Nhập mật khẩu mới</label><br>
+                        <input type="password" name="repeat-new-password" required value=""><br>
                         <hr>
+                        <div class="message msg2"></div>
                     </div>
                 </div>
             </div>
 
             <div class="group_btn">
-                <button class="btn-medium-filled">Cập nhật</button>
-                <button class="btn-medium-bordered" id="close_reg_person_profile">Hủy bỏ</button>
+                <button class="btn-medium-filled" id="update-account-info">Cập nhật</button>
+                <button class="btn-medium-bordered" id="cancel-update-account-info">Hủy bỏ</button>
             </div>
         </div>
     </div>
@@ -81,7 +91,8 @@
 
     <br>
     <?php
-    include("footer.php")
+    include("footer.php");
+    include("WebElements.html");
     ?>
 
 </body>
