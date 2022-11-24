@@ -26,9 +26,20 @@ if ($row == false) {
         $_SESSION['AccountInfo']->set_role($row['ROLE']);
         $_SESSION['AccountInfo']->set_status($row['STATUS']);
 
-        $sql = "select * from CITIZEN where Phone = :phone";    //check exist profile
-        $command = oci_parse($connection, $sql);
-        oci_bind_by_name($command, ':phone', $_POST['username']);
+        switch ($_SESSION['AccountInfo']->get_role()) {
+            case 0:
+            case 1:
+                $sql = "select * from ORGANIZATION where ID = :id";    //check exist profile
+                $command = oci_parse($connection, $sql);
+                oci_bind_by_name($command, ':id', $_POST['username']);
+                break;
+            case 2:
+                $sql = "select * from CITIZEN where Phone = :phone";    //check exist profile
+                $command = oci_parse($connection, $sql);
+                oci_bind_by_name($command, ':phone', $_POST['username']);
+                break;
+        }
+
         $r = oci_execute($command);
         if (!$r) {
             $exception = oci_error($command);
@@ -44,7 +55,6 @@ if ($row == false) {
         }
 
         $_SESSION['username'] = $_POST['username'];
-        
     } else {    //wrong password;
         echo 'incorrect password';
     }
