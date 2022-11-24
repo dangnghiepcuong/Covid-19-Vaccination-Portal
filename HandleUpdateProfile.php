@@ -1,6 +1,7 @@
 <?php
 error_reporting(0);
 include("object_Citizen.php");
+include("object_Organization.php");
 
 session_start();
 
@@ -50,4 +51,29 @@ function UpdateCitizenProfile()
     echo 'Profile Updated!';
 
     include("CitizenLoadProfile.php");
+}
+
+function UpdateOrgProfile()
+{
+    include("DatabaseConnection.php");
+
+    $sql = "begin ORG_UPDATE_RECORD(:id, :name, :district, :town, :street); end;";
+
+    $command = oci_parse($connection, $sql);
+    oci_bind_by_name($command, ':id', $_SESSION['OrgProfile']->get_id());
+    oci_bind_by_name($command, ':name', $_POST['name']);
+    oci_bind_by_name($command, ':district', $_POST['district']);
+    oci_bind_by_name($command, ':town', $_POST['town']);
+    oci_bind_by_name($command, ':street', $_POST['street']);
+
+    $r = oci_execute($command);
+    if (!$r) {
+        $exception = oci_error($command);
+        echo 'ERROR: ' . $exception['code'] . ' - ' . $exception['message'];
+        return;
+    }
+
+    echo 'Profile Updated!';
+
+    include("OrgLoadProfile.php");
 }
