@@ -87,6 +87,8 @@ $citizen = $_SESSION['CitizenProfile'];
         </div>
     </div>
 
+    
+
     <br>
     <?php
     include("footer.php");
