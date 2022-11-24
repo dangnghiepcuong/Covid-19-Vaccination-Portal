@@ -35,7 +35,7 @@
     <div class="holder-function-panel">
         <!-- MENU -->
         <?php
-        include("function-menu.php");
+            include("function-menu.php");
         ?>
         <!-- END MENU -->
 
@@ -47,7 +47,7 @@
             </div>
 
             <br>
-            <div class="panel-target-citizen">
+            <div class="panel-search-citizen">
                 <div class="filter-panel">
                     <label class ="text" name="CMND/CCCD" id="CMND/CCCD">CMND/CCCD:</label>
                     <input type="text">
@@ -64,6 +64,17 @@
 
             <br>
             
+            <div class="panel-vaccinationprofile">
+                <div class="panel-infovaccination">
+                    <label>Mũi:</label>
+                    <label>Vaccine: </label>
+                    <br>
+                    <label>Đơn vị tiêm chủng:</label>
+                    <br>
+                    <label>Lịch tiêm:</label>
+                </div>
+
+            </div>
             
 
         </div>
