@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <?php
+include("object_Account.php");
 include("object_Register.php");
 
 session_start();
@@ -8,7 +9,7 @@ $citizen = $_SESSION['CitizenProfile'];
 $Cregistration = new Register();
 // echo '<script>alert("' . $Cregistration->get_sched()->newOrg() . '")</script>'; 
 
-if (isset($_SESSION['AccountInfo']) == false)
+if (!(isset($_SESSION['AccountInfo']) && $_SESSION['AccountInfo']->get_status() == 1))
     header('Location: index.php');
 
 ?>
@@ -138,16 +139,16 @@ if (isset($_SESSION['AccountInfo']) == false)
                                 <div class="holder-obj-attr">
                                         <div class="obj-attr">
                                             <p class="attr-address">Đ/c: '
-                                    . $Cregistration->get_sched()->get_org()->get_provincename() . ', '
-                                    . $Cregistration->get_sched()->get_org()->get_districtname() . ', '
-                                    . $Cregistration->get_sched()->get_org()->get_townname()
-                                    . '</p>
+                                . $Cregistration->get_sched()->get_org()->get_provincename() . ', '
+                                . $Cregistration->get_sched()->get_org()->get_districtname() . ', '
+                                . $Cregistration->get_sched()->get_org()->get_townname()
+                                . '</p>
                                             <p class="attr-date-time-no">Lịch tiêm ngày: ' . $Cregistration->get_sched()->get_ondate()
-                                    . '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Buổi ' . $Cregistration->get_time()
-                                    . '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp STT: ' . $Cregistration->get_no() . '</p>
+                                . '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Buổi ' . $Cregistration->get_time()
+                                . '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp STT: ' . $Cregistration->get_no() . '</p>
                                             <p class="attr-vaccine-serial">Vaccine: '
-                                    . $Cregistration->get_sched()->get_vaccine() . ' - ' . $Cregistration->get_sched()->get_serial()
-                                    . '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Tình trạng: ' . $Cregistration->get_status() . '</p>
+                                . $Cregistration->get_sched()->get_vaccine() . ' - ' . $Cregistration->get_sched()->get_serial()
+                                . '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Tình trạng: ' . $Cregistration->get_status() . '</p>
                                         </div>
 
                                         <div class="interactive-area">

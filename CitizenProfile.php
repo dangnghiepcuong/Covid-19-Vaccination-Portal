@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <?php
+include("object_Account.php");
 include("object_Citizen.php");
 session_start();
-if (isset($_SESSION['AccountInfo']) == false)
+if (!(isset($_SESSION['AccountInfo']) && $_SESSION['AccountInfo']->get_status() == 1))
     header('Location: index.php');
 $citizen = $_SESSION['CitizenProfile'];
 ?>
@@ -58,15 +59,17 @@ $citizen = $_SESSION['CitizenProfile'];
             <div class="info-panel" id="info-panel">
                 <div class="row1">
                     <div>
-                        <label for="lastname">Họ và tên đệm<span>(*)</span></label><br>
+                        <label for="lastname">Họ và tên đệm</label><br>
                         <?php echo '<input type="text" name="lastname" required value="' . $citizen->get_lastname() . '">' ?><br>
                         <hr>
+                        <div class="message msg1"></div>
                     </div>
 
                     <div>
                         <label for="firstname">Tên <span>(*)</span></label><br>
                         <?php echo '<input type="text" name="firstname" required value="' . $citizen->get_firstname() . '">' ?><br>
                         <hr>
+                        <div class="message msg2"></div>
                     </div>
 
                     <div>
@@ -98,6 +101,7 @@ $citizen = $_SESSION['CitizenProfile'];
                             ?>
                         </select>
                         <hr>
+                        <div class="message msg3"></div>
                     </div>
                 </div>
 
@@ -106,12 +110,14 @@ $citizen = $_SESSION['CitizenProfile'];
                         <label for="id">Mã định danh <span>(*)</span></label><br>
                         <?php echo '<input type="text" name="id" required value="' . $citizen->get_ID() . '">' ?><br>
                         <hr>
+                        <div class="message msg4"></div>
                     </div>
 
                     <div>
                         <label for="birthday">Ngày tháng năm sinh <span>(*)</span></label><br>
                         <?php echo '<input type="date" name="birthday" required value="' . $citizen->get_birthday() . '">' ?><br>
                         <hr>
+                        <div class="message msg5"></div>
                     </div>
 
                     <div>
@@ -128,6 +134,7 @@ $citizen = $_SESSION['CitizenProfile'];
                             ?>
                         </select>
                         <hr>
+                        <div class="message msg6"></div>
                     </div>
                 </div>
 
@@ -152,6 +159,7 @@ $citizen = $_SESSION['CitizenProfile'];
                             ?>
                         </select>
                         <hr>
+                        <div class="message msg7"></div>
                     </div>
 
                     <div>
@@ -172,6 +180,7 @@ $citizen = $_SESSION['CitizenProfile'];
                             ?>
                         </select>
                         <hr>
+                        <div class="message msg8"></div>
                     </div>
 
                     <div>
@@ -192,19 +201,22 @@ $citizen = $_SESSION['CitizenProfile'];
                             ?>
                         </select>
                         <hr>
+                        <div class="message msg9"></div>
                     </div>
                 </div>
 
                 <div class="row4">
-                    <label for="street">Số nhà, tên đường, khu phố/ấp <span>(*)</span></label><br>
+                    <label for="street">Số nhà, tên đường, khu phố/ấp</label><br>
                     <?php echo '<input type="text" name="street" required value="' . $citizen->get_street() . '">' ?><br>
                     <hr>
+                    <div class="message msg10"></div>
                 </div>
 
                 <div class="row5">
                     <label for="email">Email</label><br>
                     <?php echo ' <input type="text" name="email" required value="' . $citizen->get_email() . '">' ?><br>
                     <hr>
+                    <div class="message msg11"></div>
                 </div>
 
                 <div class="group_btn">

@@ -28,7 +28,7 @@ function CheckExist()
 function RegisterAccount()
 {
     include("DatabaseConnection.php");
-    $sql = "begin ACC_INSERT_RECORD(:username, :password, 2, 1); end;";
+    $sql = "begin ACC_INSERT_RECORD(:username, :password, 2, 0); end;";
     $command = oci_parse($connection, $sql);
     oci_bind_by_name($command, ':username', $_POST['username']);
     oci_bind_by_name($command, ':password', $_POST['password']);
@@ -73,6 +73,16 @@ function RegisterProfile()
     oci_bind_by_name($command, ':phone', $_COOKIE['username']);
     oci_bind_by_name($command, ':email', $_POST['email']);
 
+    $r = oci_execute($command, OCI_NO_AUTO_COMMIT);
+    if (!$r) {
+        $exception = oci_error($command);
+        echo 'ERROR: ' . $exception['code'] . ' - ' . $exception['message'];
+        return;
+    }
+
+    $sql = "update ACCOUNT set Status = 1 where username = :username";
+    $command = oci_parse($connection, $sql);
+    oci_bind_by_name($command, ':username', $_COOKIE['username']);
     $r = oci_execute($command);
     if (!$r) {
         $exception = oci_error($command);

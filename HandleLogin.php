@@ -24,6 +24,7 @@ if ($row == false) {
         $_SESSION['AccountInfo']->set_username($row['USERNAME']);
         $_SESSION['AccountInfo']->set_password($row['PASSWORD']);
         $_SESSION['AccountInfo']->set_role($row['ROLE']);
+        $_SESSION['AccountInfo']->set_status($row['STATUS']);
 
         $sql = "select * from CITIZEN where Phone = :phone";    //check exist profile
         $command = oci_parse($connection, $sql);
@@ -44,21 +45,6 @@ if ($row == false) {
 
         $_SESSION['username'] = $_POST['username'];
         
-
-        // switch ($row['ROLE']) {
-        //     case 0:
-        //         $_SESSION['UserRole'] = 0;
-        //         break;
-        //     case 1:
-        //         $_SESSION['UserRole'] = 1;
-        //         break;
-        //     case 2:
-        //         $_SESSION['UserRole'] = 2;
-        //         break;
-        //     default:
-        //         $_SESSION['UserRole'] = -1;
-        //         break;
-        // }
     } else {    //wrong password;
         echo 'incorrect password';
     }
