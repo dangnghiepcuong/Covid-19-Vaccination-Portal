@@ -155,7 +155,9 @@ $citizen = $_SESSION['CitizenProfile'];
                                 else
                                     $provincecode = $i;
                             }
-                            echo '<script>$("#select-province option:first-child").val(' . $provincecode . ')</script>';
+                            echo '<script>
+                            $("#select-province option:first-child").val(' . $provincecode . ')
+                            </script>';
                             ?>
                         </select>
                         <hr>
