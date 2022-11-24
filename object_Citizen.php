@@ -129,8 +129,10 @@ class Citizen
         return $this->Birthday;
     }
 
-    public function get_gender()
+    public function get_gender($v = 0)
     {
+        if ($v == 1)
+            return $this->Gender;
         switch ($this->Gender) {
             case 0:
                 return "Nữ";

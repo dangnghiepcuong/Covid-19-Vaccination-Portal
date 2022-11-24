@@ -65,15 +65,45 @@ $(document).ready(function () {
     })
 
     $("#update-profile").click(function () {
+        $('.message').html("");
+
         lastname = $('#info-panel').find('input[name="lastname"]').val();
         firstname = $('#info-panel').find('input[name="firstname"]').val();
+        if (firstname == "") {
+            $('.msg2').html('Nhập tên người dùng!');
+            return;
+        }
         gender = $('#info-panel').find('select[name="gender"] option:selected').val();
         id = $('#info-panel').find('input[name="id"]').val();
+        if (id == "") {
+            $('.msg4').html('Nhập mã định danh!');
+            return;
+        }
         birthday = $('#info-panel').find('input[name="birthday"]').val();
+        if (birthday == "") {
+            $('.msg5').html('Nhập ngày sinh!');
+            return;
+        }
         hometown = $('#select-hometown').find('option:selected').text();
+        if (hometown == "") {
+            $('.msg6').html('Nhập quê quán!');
+            return;
+        }
         province = $('#select-province').find('option:selected').text();
+        if (province == "") {
+            $('.msg7').html('Nhập tỉnh/thành phố thường trú!');
+            return;
+        }
         district = $('#select-district').find('option:selected').text();
+        if (district == "") {
+            $('.msg8').html('Nhập quận/huyện thường trú');
+            return;
+        }
         town = $('#select-town').find('option:selected').text();
+        if (town == "") {
+            $('.msg9').html('Nhập xã/phường thường/thị trấn trú!');
+            return;
+        }
         street = $('#info-panel').find('input[name="street"]').val();
         email = $('#info-panel').find('input[name="email"]').val();
 
@@ -90,6 +120,7 @@ $(document).ready(function () {
                 $('.form-message').text('Cập nhật thông tin thành công!');
                 $('#form-popup-confirm').css('display', 'block');
                 $('.gradient-bg-faded').css('display', 'block');
+                location.reload();
             },
             error: function () {
 

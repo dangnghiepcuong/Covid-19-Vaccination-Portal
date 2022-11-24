@@ -27,7 +27,10 @@ $account = new Account();
     <!-- HEADER -->
     <div id="return-header">
         <?php
-        if (isset($_SESSION['AccountInfo'])) {
+            // echo '<script>alert("' . $_SESSION['AccountInfo']->get_status() . '")</script>';
+
+        if (isset($_SESSION['AccountInfo']) && $_SESSION['AccountInfo']->get_status() == 1) {
+
             $account = $_SESSION['AccountInfo'];
             switch ((int)$account->get_role()) {
                 case 0:
