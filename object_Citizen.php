@@ -69,7 +69,7 @@ class Citizen
         $this->ProvinceName = $provincename;
     }
 
-    public function set_distictname($districtname)
+    public function set_districtname($districtname)
     {
         $this->DistrictName = $districtname;
     }
