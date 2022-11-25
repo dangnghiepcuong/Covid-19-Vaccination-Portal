@@ -29,14 +29,13 @@
     text-align: center;
 }
 
-.panel-list .list-name .org {
-    width: 36%;
+.panel-list .list-name .organization {
+    width: 40%;
 }
 
 .panel-list .list-name .schedule {
-    width: 58%;
+    width: 50%;
 }
-
 
 .panel-list .holder {
     display: flex;
@@ -49,12 +48,12 @@
 /* LIST SCHEDULE */
 
 .panel-list .holder .list-schedule {
-    width: 58%;
+    width: 50%;
 }
 
 .panel-list .holder .list-schedule .schedule {
     width: 100%;
-    height: 120px;
+    height: 100px;
     margin-bottom: 4px;
     background-color: white;
     box-shadow: 2px 2px 5px -2px #8C69CA;
@@ -90,8 +89,14 @@
 }
 
 .panel-list .holder .list-schedule .schedule 
-.holder-obj-attr .obj-attr, .interactive-area {
-    padding: 5px 10px 5px 15px;
+.holder-obj-attr .obj-attr {
+    padding: 8px 10px 8px 15px;
+    align-items: center;
+}
+
+.panel-list .holder .list-schedule .schedule 
+.holder-obj-attr .interactive-area {
+    padding: 8px 10px 8px 15px;
     align-items: center;
 }
 
@@ -108,23 +113,24 @@
 /* LIST ORG */
 
 .panel-list .holder .list-org {
-    width: 36%;
+    width: 40%;
 }
 
-.panel-list .holder .list-org .org {
+.panel-list .holder .list-org .organization {
     width: 100%;
-    height: 120px;
+    height: 100px;
     margin-bottom: 4px;
     background-color: white;
     box-shadow: 2px 2px 5px -2px #8C69CA;
     transition: 300ms;
+    cursor: pointer;
 }
 
-.panel-list .holder .list-org .org:hover {
+.panel-list .holder .list-org .organization:hover {
     box-shadow: 2px 2px 5px -1px #F5A8FF;
 }
 
-.panel-list .holder .list-org .org 
+.panel-list .holder .list-org .organization 
 .obj-org-name {
     padding: 5px 0px 0px 15px;
     font-size: 20px;
@@ -132,14 +138,14 @@
     color: #D1BFF3;
 }
 
-.panel-list .holder .list-org .org 
+.panel-list .holder .list-org .organization 
 .holder-obj-attr {
     display: flex;
     justify-content: space-between;
 }
 
 
-.panel-list .holder .list-org .org 
+.panel-list .holder .list-org .organization 
 .holder-obj-attr .obj-attr * {
     padding: 3px 0px;
     font-family: 'Roboto';
@@ -148,13 +154,13 @@
     font-weight: 300;
 }
 
-.panel-list .holder .list-org .org 
+.panel-list .holder .list-org .organization 
 .holder-obj-attr .obj-attr, .interactive-area {
     padding: 5px 10px 5px 15px;
     align-items: center;
 }
 
-.panel-list .holder .list-org .org 
+.panel-list .holder .list-org .organization 
 .holder-obj-attr .interactive-area .drop-down-time {
     width: 80px;
     height: 30px;
