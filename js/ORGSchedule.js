@@ -35,7 +35,7 @@ $(document).ready(function () {
 
         $.ajax({
             cache: false,
-            url: 'HandleLoadSchedule.php',
+            url: 'HandleLoadOrgSchedule.php',
             type: 'POST',
             data: { method: 'LoadSchedule', startdate: startdate, enddate: enddate, vaccine: vaccine },
             success: function (result) {
