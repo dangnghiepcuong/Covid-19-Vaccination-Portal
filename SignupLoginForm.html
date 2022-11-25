@@ -33,7 +33,7 @@
         <p class="btn-close" id="btn-close-form-reg-acc">X</p>
         <p class="title">Đăng ký</p>
         <br><br>
-        <label for="phone_number"><b>Số điện thoại</b></label>  
+        <label for="phone_number"><b>Số điện thoại</b></label>
         <input type="tel" name="phone_number" pattern="[0-9]{4}-[0-9]{3}-[0-9]{4}" required>
         <hr>
         <div class="message msg1" value=""></div>
@@ -63,15 +63,17 @@
 
     <div class="row1">
         <div>
-            <label for="lastname">Họ và tên đệm <span>(*)</span></label><br>
+            <label for="lastname">Họ và tên đệm</label><br>
             <input type="text" name="lastname" required><br>
             <hr>
+            <div class="message msg1"></div>
         </div>
 
         <div>
             <label for="firstname">Tên <span>(*)</span></label><br>
             <input type="text" name="firstname" required><br>
             <hr>
+            <div class="message msg2"></div>
         </div>
 
         <div>
@@ -82,6 +84,7 @@
                 <option value="2">Khác</option>
             </select>
             <hr>
+            <div class="message msg3"></div>
         </div>
     </div>
 
@@ -90,12 +93,14 @@
             <label for="id">Mã định danh <span>(*)</span></label><br>
             <input type="text" name="id" required><br>
             <hr>
+            <div class="message msg4"></div>
         </div>
 
         <div>
             <label for="birthday">Ngày tháng năm sinh <span>(*)</span></label><br>
             <input type="date" name="birthday" required><br>
             <hr>
+            <div class="message msg5"></div>
         </div>
 
         <div>
@@ -104,6 +109,7 @@
                 <option value=""></option>
             </select>
             <hr>
+            <div class="message msg6"></div>
         </div>
     </div>
 
@@ -116,6 +122,7 @@
                 <option value=""></option>
             </select>
             <hr>
+            <div class="message msg7"></div>
         </div>
 
         <div>
@@ -124,6 +131,7 @@
                 <option value=""></option>
             </select>
             <hr>
+            <div class="message msg8"></div>
         </div>
 
         <div>
@@ -132,19 +140,22 @@
                 <option value=""></option>
             </select>
             <hr>
+            <div class="message msg9"></div>
         </div>
     </div>
 
     <div class="row4">
-        <label for="street">Số nhà, tên đường, khu phố/ấp <span>(*)</span></label><br>
+        <label for="street">Số nhà, tên đường, khu phố/ấp</label><br>
         <input type="text" name="street" required><br>
         <hr>
+        <div class="message msg10"></div>
     </div>
 
     <div class="row5">
-        <label for="email">Email <span>(*)</span></label><br>
+        <label for="email">Email</label><br>
         <input type="text" name="email" required><br>
         <hr>
+        <div class="message msg11"></div>
     </div>
 
     <div class="row6">
@@ -152,14 +163,16 @@
             <span>Lưu ý:</span>
             <ul>
                 <li>Việc đăng ký thông tin hoàn toàn bảo mật và phục vụ cho chiến dịch tiêm chủng Vắc xin COVID-19.</li>
-                <li>Xin vui lòng kiểm tra kỹ các thông tin bắt buộc(VD: Họ và tên, Ngày tháng năm sinh, Số điện thoại, CCCD/Mã định danh công dân/HC ...)</li>
-                <li>Bằng việc nhấn nút "Đăng kí", bạn hoàn toàn hiểu và đồng ý chịu trách nhiệm với các thông tin đã cung cấp.</li>
+                <li>Xin vui lòng kiểm tra kỹ các thông tin bắt buộc(VD: Họ và tên, Ngày tháng năm sinh, Số điện thoại,
+                    CCCD/Mã định danh công dân/HC ...)</li>
+                <li>Bằng việc nhấn nút "Đăng kí", bạn hoàn toàn hiểu và đồng ý chịu trách nhiệm với các thông tin đã
+                    cung cấp.</li>
             </ul>
         </div>
 
         <div class="group_button">
             <button class="btn-long" id="btn-reg-profile">Đăng ký</button>
-            <button class="btn-long-bordered" id="close_reg_person_profile">Hủy bỏ</button>
+            <button class="btn-long-bordered" id="btn-close-form-reg-profile">Hủy bỏ</button>
         </div>
     </div>
 </div>

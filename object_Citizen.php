@@ -69,7 +69,7 @@ class Citizen
         $this->ProvinceName = $provincename;
     }
 
-    public function set_distictname($districtname)
+    public function set_districtname($districtname)
     {
         $this->DistrictName = $districtname;
     }
@@ -129,8 +129,10 @@ class Citizen
         return $this->Birthday;
     }
 
-    public function get_gender()
+    public function get_gender($v = 0)
     {
+        if ($v == 1)
+            return $this->Gender;
         switch ($this->Gender) {
             case 0:
                 return "Nữ";

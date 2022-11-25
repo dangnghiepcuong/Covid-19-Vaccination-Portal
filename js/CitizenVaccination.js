@@ -13,39 +13,70 @@ $(document).ready(function () {
     selected_function = "<a href='VaccinationRegistration.php'>Đăng ký tiêm chủng</a>";
     $("#selected-function-path").html(selected_function);
 
+    var today = new Date();
+    var day = ("0" + today.getDate()).slice(-2);
+    var month = ("0" + (today.getMonth() + 1)).slice(-2);
+    var today = today.getFullYear() + "-" + (month) + "-" + (day);
+    $('#start-date').val(today);
     // END LOAD FRONT END DATA
 
+    LoadOrg();
 
-    $(".list-schedule").on('click', '.btn-register', function () {
-        date = $(this).parent().parent().find(".obj-attr").find(".attr-date").text();
-        time = "Buổi " + $(this).parent().find(".drop-down-time").find(':selected').text();
-        vaccine = $(this).parent().parent().find(".obj-attr").find(".attr-vaccine").text();
-        message = "Xác nhận đăng ký tiêm chủng?<br><br>" + date + ", " + time + ", " + vaccine;
-        $(".popup-confirm-form .form-message").html(message);
+    $('#btn-filter-org').click(function () {
+        LoadOrg();
+    })
+
+    function LoadOrg() {
+        province = $('#select-province').find('option:selected').text();
+        district = $('#select-district').find('option:selected').text();
+        town = $('#select-town').find('option:selected').text();
+
+        $.ajax({
+            cache: false,
+            url: 'HandleLoadOrgSchedule.php',
+            type: 'POST',
+            data: { method: 'LoadOrg', province: province, district: district, town: town },
+            success: function (result) {
+                $('#list-org').html(result);
+            },
+            error: function (error) {
+            }
+        })
+    }
+    
+
+    $('#list-org').on('click', '.organization', function () {
+        orgid = $(this).attr('id');
+        $('.list-name').append();
+        LoadSchedule(orgid);
+    })
+
+    $('#filter-schedule').on('change', '.organization', function () {
         
-        $(".gradient-bg-faded").css('display','block');
-        $(".popup-confirm-form").css('display','block');
+        LoadSchedule(orgid);
     })
 
-    $(".popup-confirm-form").on('click','.btn-cancel', function(){
-        $(".popup-confirm-form").css('display','none');
-        $(".gradient-bg-faded").css('display','none');
-    })
+    function LoadSchedule(orgid) {
+        startdate = $('#start-date').val();
+        enddate = $('#end-date').val();
+        vaccine = $('#vaccine').find('option:selected').val();
 
-    // DROP DOWN MENU
-    // $(".header").on('mouseover', '.avatar', function () {
-    //     $("#drop-down-menu-profile").css('display', 'block');
-    // })
+        $.ajax({
+            cache: false,
+            url: 'HandleLoadOrgSchedule.php',
+            type: 'POST',
+            data: { method: 'LoadSchedule', orgid: orgid, startdate: startdate, enddate: enddate, vaccine: vaccine },
+            success: function (result) {
+                if (result.substring(0, 5) == 'ERROR') {    //EXCEPTION
+                    alert(result);
+                    return;
+                }
+                $('#list-schedule').html(result);
+                // $('body').html(result);
+            },
+            error: function (error) {
 
-    // $(".header").on('mouseleave', '.avatar', function () {
-    //     $("#drop-down-menu-profile").css('display', 'none');
-    // })
-
-    // $(".header").on('mouseleave', '#drop-down-menu-profile', function () {
-    //     $("#drop-down-menu-profile").css('display', 'none');
-    // });
-
-    // $(".header").on('mouseover', '#drop-down-menu-profile', function () {
-    //     $("#drop-down-menu-profile").css('display', 'block');
-    // });
+            }
+        })
+    }
 })

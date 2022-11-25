@@ -9,7 +9,7 @@ $method = $_POST['method'];
 
 if ($method == 'LoadSchedule')
     $method($_POST['orgid']);
-else 
+else
     $method();
 
 function LoadOrg($province = "", $district = "", $town = "")
@@ -56,8 +56,8 @@ function LoadOrg($province = "", $district = "", $town = "")
     $result = "";
     while (($row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS)) != false) {
         $result .= '
-        <div class="organization" id="'.$row['ID'].'">
-            <p class="obj-org-name">' . $row['NAME'] . ': '.$row['C'].' lịch</p>
+<div class="organization" id="' . $row['ID'] . '">
+            <p class="obj-org-name">' . $row['NAME'] . ': ' . $row['C'] . ' lịch</p>
             <div class="holder-obj-attr">
                 <div class="obj-attr">
                     <p class="attr-location">K/v: ' . $row['PROVINCENAME'] . ' - ' . $row['DISTRICTNAME'] . ' - ' . $row['TOWNNAME'] . '</p>
@@ -103,12 +103,11 @@ function LoadSchedule($orgid = "")
 
     $command = oci_parse($connection, $sql);
 
-    if ($orgid == "")
-    {
+
+    if ($orgid == "") {
         global $org;
         oci_bind_by_name($command, ':id', $org->get_id());
-    }
-    else{
+    } else {
         oci_bind_by_name($command, ':id', $orgid);
     }
 
@@ -127,9 +126,28 @@ function LoadSchedule($orgid = "")
     }
 
     $result = "";
-    while (($row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS)) != false) {
-        $result .=
-            '<div class="schedule">
+    if (isset($_SESSION['OrgProfile']))
+        while (($row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS)) != false) {
+            $result .=
+                '<div class="schedule">
+                    <div class="holder-obj-attr">
+                        <div class="obj-attr">
+                            <p class="attr-date-vaccine-serial">Lịch tiêm ngày: ' . $row['ONDATE'] . ' - Vaccine:
+                            ' . $row['VACCINEID'] . ' - ' . $row['SERIAL'] . '</p>
+                            <p class="attr-time">Buổi sáng: ' . $row['DAYREGISTERED'] . '/' . $row['LIMITDAY'] . ' - Buổi trưa: ' . $row['NOONREGISTERED'] . '/' . $row['LIMITNOON'] . ' - Buổi tối: ' . $row['NIGHTREGISTERED'] . '/' . $row['LIMITNIGHT'] . '</p>
+                        </div>
+                        <div class="interactive-area">
+                            <button class="btn-medium-filled" id="btn-register">Lượt đăng ký</button>
+                            <button class="btn-medium-bordered" id="btn-update">Cập nhật</button>
+                            <button class="btn-short-bordered" id="btn-cancel">Hủy</button>
+                        </div>
+                    </div>
+                </div>';
+        }
+    else
+        while (($row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS)) != false) {
+            $result .=
+                '<div class="schedule">
             <div class="holder-obj-attr">
                 <div class="obj-attr">
                     <p class="attr-date">Lịch tiêm ngày: ' . $row['ONDATE'] . '</p>
@@ -152,7 +170,7 @@ function LoadSchedule($orgid = "")
                 </div>
             </div>
         </div>';
-    }
+        }
 
     echo $result;
 }

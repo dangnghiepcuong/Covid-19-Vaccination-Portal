@@ -30,7 +30,7 @@ $(document).ready(function () {
 
     $('#update-account-info').click(function () {
         $('.message').text("");
-        
+
         phone = $('.account input[name="phone"]').val();
         if (phone == "") {
             $('.account').find('.msg1').text("Nhập số điện thoại!");
@@ -44,14 +44,9 @@ $(document).ready(function () {
         }
 
         new_password = $('.change-pass input[name="new-password"]').val();
-        if (phone == "") {
-            $('.account').find('.msg1').text("Nhập số điện thoại!");
-            return;
-        }
-
         repeat_new_password = $('.change-pass input[name="repeat-new-password"]').val();
-        if (phone == "") {
-            $('.account').find('.msg1').text("Nhập số điện thoại!");
+        if (new_password != repeat_new_password) {
+            $('.change-pass').find('.msg2').html("Nhập lại mật khẩu phải giống với<br> mật khẩu!");
             return;
         }
 
@@ -59,13 +54,25 @@ $(document).ready(function () {
             cache: false,
             url: "HandleUpdateAccount.php",
             type: "POST",
-            data: { method: "UpdateAccount", phone: phone, password: password, new_password: new_password },
+            data: { phone: phone, password: password, new_password: new_password },
             success: function (result) {
-
+                if (result.substring(0, 5) == 'ERROR') {    //EXCEPTION
+                    alert(result);
+                    return;
+                }
+                if (result == 'Password is incorrect!'){
+                    $('.account').find('.msg2').html('Sai mật khẩu!');
+                    return;
+                }
+                if (result == 'Account Updated!') {
+                    $('.form-message').text('Cập nhật tài khoản thành công!');
+                    $('#form-popup-confirm').css('display', 'block');
+                    $('.gradient-bg-faded').css('display', 'block');
+                    location.reload();
+                }
             },
             error: function (error) {
-
             }
-        })
+        }) 
     })
 })

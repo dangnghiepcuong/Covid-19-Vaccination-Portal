@@ -17,7 +17,7 @@ while (($row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS)) != false
     $citizen->set_gender($row['GENDER']);
     $citizen->set_hometown($row['HOMETOWN']);
     $citizen->set_provincename($row['PROVINCENAME']);
-    $citizen->set_distictname($row['DISTRICTNAME']);
+    $citizen->set_districtname($row['DISTRICTNAME']);
     $citizen->set_townname($row['TOWNNAME']);
     $citizen->set_street($row['STREET']);
     $citizen->set_phone($row['PHONE']);

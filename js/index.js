@@ -16,14 +16,20 @@ $(document).ready(function () {
     })
 
     $('#btn-close-form-reg-acc').click(function () {
-        $('#gradient-bg-faded').css('display', 'none');
         $('#form-container-reg-acc').css('display', 'none');
+        $('#gradient-bg-faded').css('display', 'none');
         $(this).parent().find('.message').text("");
     })
 
     $('#btn-login-in-form-reg-acc').click(function () {
         $('#form-container-reg-acc').css('display', 'none');
         $('#form-container-login').css('display', 'block');
+    })
+
+    $('#btn-close-form-reg-profile').click(function () {
+        $('#container-reg-profile').css('display', 'none');
+        $('#gradient-bg-faded').css('display', 'none');
+        $(this).parent().find('.message').text("");
     })
 
     // LOAD LOCAL LIST DATA ON SELECT
@@ -36,42 +42,6 @@ $(document).ready(function () {
             i++;
             province = data[i];
         }
-    })
-
-    $('#select-province').on('change', function () {
-        $('option:selected', this);
-        SelectedProvince = this.value;
-
-        $('#select-district').html('<option></option>');
-        $('#select-town').html('<option></option>');
-
-        $.getJSON('local.json', function (data) {
-            i = 0;
-            district = data[SelectedProvince].districts[i];
-            while (typeof (district) != 'undefined' && district !== null) {
-                $('#select-district').append('<option value="' + i + '">' + district.name + '</option>');
-                i++;
-                district = data[SelectedProvince].districts[i];
-            }
-        })
-    })
-
-    $('#select-district').on('change', function () {
-        $('option:selected', this);
-        SelectedDistrict = this.value;
-        SelectedProvince = $('#select-province option:selected').val();
-
-        $('#select-town').html('<option></option>');
-
-        $.getJSON('local.json', function (data) {
-            i = 0;
-            town = data[SelectedProvince].districts[SelectedDistrict].wards[i];
-            while (typeof (town) != 'undefined' && town !== null) {
-                $('#select-town').append('<option value="' + i + '">' + town.name + '</option>');
-                i++;
-                town = data[SelectedProvince].districts[SelectedDistrict].wards[i];
-            }
-        })
     })
     // END LOAD LOCAL LIST DATA SELECT
 
@@ -100,8 +70,8 @@ $(document).ready(function () {
             type: 'POST',
             data: { username: username, password: password },
             success: function (result) {    //button click to login
-                if (result.substring(1, 5) == 'ERROR') {    //EXCEPTION
-                    $('body').html(result);
+                if (result.substring(0, 5) == 'ERROR') {    //EXCEPTION
+                    alert(result);
                     return;
                 }
                 if (result == 'NoAccount') {    //No Account Existed
@@ -109,6 +79,7 @@ $(document).ready(function () {
                     return;
                 }
                 if (result == 'NoProfile') {    //No Profile Existed
+                    $('#form-container-login').css('display', 'none');
                     $('#gradient-bg-faded').css('display', 'block');
                     $('.container-reg-profile').css('display', 'block');
                     return;
@@ -117,7 +88,6 @@ $(document).ready(function () {
                     $('#form-container-login').find('.msg2').text('Sai mật khẩu!');
                     return;
                 }
-                // $('body').html(result);
                 location.reload(true);
             },
             error: function (error) {
@@ -146,11 +116,10 @@ $(document).ready(function () {
             type: 'POST',
             data: { method: 'CheckExist', username: username },
             success: function (result) {    //check if account existed
-                if (result.substring(1, 5) == 'ERROR') {
+                if (result.substring(0, 5) == 'ERROR') {    //EXCEPTION
                     alert(result);
                     return;
                 }
-                // $('body').html(result);
 
                 if (result == 'Account Existed!') {     //account existed
                     $('#form-reg-acc').find('.msg1').text('Số điện thoại đã được sử dụng!');
@@ -169,13 +138,12 @@ $(document).ready(function () {
 
                     $.ajax({
                         cache: false,
-                        url: 'HandleRegAcc.php',
                         type: 'POST',
                         data: { method: 'RegisterAccount', username: username, password: password },
-                        success: function (data) {
-                            if (data.substring(1, 5) == 'ERROR') {
-                                alert(data);
-
+url: 'HandleRegAcc.php',
+                        success: function (result) {
+                            if (result.substring(0, 5) == 'ERROR') {
+                                alert(result);
                                 return;
                             }
                         },
@@ -194,15 +162,45 @@ $(document).ready(function () {
 
     // HANDLE REGISTER USER PROFILE
     $('#btn-reg-profile').click(function () {       //button click register profile
+        $('.message').html("");
+
         lastname = $('#container-reg-profile').find('input[name="lastname"]').val();
         firstname = $('#container-reg-profile').find('input[name="firstname"]').val();
+        if (firstname == "") {
+            $('.msg2').html('Nhập tên người dùng!');
+            return;
+        }
         gender = $('#container-reg-profile').find('select[name="gender"] option:selected').val();
         id = $('#container-reg-profile').find('input[name="id"]').val();
+        if (id == "") {
+            $('.msg4').html('Nhập mã định danh!');
+            return;
+        }
         birthday = $('#container-reg-profile').find('input[name="birthday"]').val();
+        if (birthday == "") {
+            $('.msg5').html('Nhập ngày sinh!');
+            return;
+        }
         hometown = $('#select-hometown').find('option:selected').text();
+        if (hometown == "") {
+            $('.msg6').html('Nhập quê quán!');
+            return;
+        }
         province = $('#select-province').find('option:selected').text();
+        if (province == "") {
+            $('.msg7').html('Nhập tỉnh/thành phố thường trú!');
+            return;
+        }
         district = $('#select-district').find('option:selected').text();
+        if (district == "") {
+            $('.msg8').html('Nhập quận/huyện thường trú');
+            return;
+        }
         town = $('#select-town').find('option:selected').text();
+        if (town == "") {
+            $('.msg9').html('Nhập xã/phường thường/thị trấn trú!');
+            return;
+        }
         street = $('#container-reg-profile').find('input[name="street"]').val();
         email = $('#container-reg-profile').find('input[name="email"]').val();
 
@@ -215,19 +213,16 @@ $(document).ready(function () {
                 gender: gender, id: id, birthday: birthday, hometown: hometown, province: province,
                 district: district, town: town, street: street, email: email
             },
-            success: function (data) {
-                alert(data);
-                if (data.substring(0, 4) == 'ERROR') {
-                    alert(data);
+            success: function (result) {
+                if (result.substring(0, 5) == 'ERROR') {    //EXCEPTION
+                    alert(result);
                     return;
                 }
-                if (data == 'Profile Created!') {
+                if (result == 'Profile Created!') {
                     $('#container-reg-profile').css('display', 'none');
                     $('.form-message').text('Đăng ký thông tin tài khoản thành công!');
                     $('#form-popup-confirm').css('display', 'block');
                 }
-                else
-                    $('body').html(data);
             },
             error: function (error) {
                 $('body').html(error);
