@@ -43,16 +43,20 @@ $(document).ready(function () {
             }
         })
     }
-
-    LoadSchedule();
     
 
-    $('#list-org, #filter-schedule').on('click change', '.organization', function () {
+    $('#list-org').on('click', '.organization', function () {
         orgid = $(this).attr('id');
+        $('.list-name').append();
         LoadSchedule(orgid);
     })
 
-    function LoadSchedule(orgid = -1) {
+    $('#filter-schedule').on('change', '.organization', function () {
+        
+        LoadSchedule(orgid);
+    })
+
+    function LoadSchedule(orgid) {
         startdate = $('#start-date').val();
         enddate = $('#end-date').val();
         vaccine = $('#vaccine').find('option:selected').val();
