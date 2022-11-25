@@ -54,7 +54,7 @@ $(document).ready(function () {
             cache: false,
             url: 'HandleMediForm.php',
             type: 'POST',
-            data: {  },
+            data: { choice:choice },
             
         });
 
