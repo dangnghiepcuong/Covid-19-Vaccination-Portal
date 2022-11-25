@@ -56,7 +56,7 @@ function LoadOrg($province = "", $district = "", $town = "")
     $result = "";
     while (($row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS)) != false) {
         $result .= '
-        <div class="organization" id="' . $row['ID'] . '">
+<div class="organization" id="' . $row['ID'] . '">
             <p class="obj-org-name">' . $row['NAME'] . ': ' . $row['C'] . ' lịch</p>
             <div class="holder-obj-attr">
                 <div class="obj-attr">
@@ -103,6 +103,7 @@ function LoadSchedule($orgid = "")
 
     $command = oci_parse($connection, $sql);
 
+
     if ($orgid == "") {
         global $org;
         oci_bind_by_name($command, ':id', $org->get_id());
@@ -125,7 +126,6 @@ function LoadSchedule($orgid = "")
     }
 
     $result = "";
-
     if (isset($_SESSION['OrgProfile']))
         while (($row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS)) != false) {
             $result .=
