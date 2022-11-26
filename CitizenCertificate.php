@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <?php
-include("object_Injection.php");
+include("object_Account.php");
+include("object_Citizen.php");
 session_start();
 if (!(isset($_SESSION['AccountInfo']) && $_SESSION['AccountInfo']->get_status() == 1) && isset($_SESSION['CitizenProfile']))
     header('Location: index.php');
 $citizen = $_SESSION['CitizenProfile'];
-$Cinjection = new Injection();
-$Cvaccine = new Vaccine();
-$Corg = new Organization();
-$CSched = new Schedule();
 ?>
 
 <html lang="en">
@@ -66,21 +63,8 @@ $CSched = new Schedule();
                     <p id="birthday"><?php echo $citizen->get_birthday() ?></p>
                 </div>
 
-                <div class="container-list">
-                    <div class="list">
-
-                    <div>
-                        <p>Mũi 2 (Tăng cường)</p>
-                        <p>Vaccine: </p>
-                        <p>Đơn vị tiêm chủng: </p>
-                        <p>Lịch tiêm ngày: </p>
-                    </div>
-
-                    <div>
-                        <p>Mũi 3 (Nhắc lại)</p>
-                        <p>Vaccine: </p>
-                        <p>Đơn vị tiêm chủng: </p>
-                        <p>Lịch tiêm ngày: </p>
+                <div class="certificate">
+                    <div class="list-injection" id="list-injection">
                     </div>
                 </div>
             </div>

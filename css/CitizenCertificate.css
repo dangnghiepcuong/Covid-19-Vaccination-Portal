@@ -57,15 +57,14 @@
     padding-top: 5px;
 }
 
-.panel-certificate .container-list {
-    background: #D2001A;
+.panel-certificate .certificate {
     border: 1px solid rgba(255, 255, 255, 0.4);
     border-radius: 20px;
     width: 72%;
     display: flex;
 }
 
-.container-list .icon {
+.certificate .icon {
     width: 30px;
     height: 100%;
     background: white;
@@ -75,7 +74,7 @@
     border-radius: 20px 1000px 1000px 20px;
 }
 
-.container-list .list {
+.certificate .list-injection {
     background: rgba(255, 255, 255, 0.73);
     margin-left: 10px;
     width: 100%;
@@ -83,7 +82,7 @@
     box-shadow: 0px -1px 20px rgba(0, 0, 0, 0.5);
 }
 
-.container-list .list div {
+.certificate .list-injection div {
     /* padding-left: 20px; */
     background: #FFFFFF;
     border: 1.5px solid #423C5D;
@@ -93,23 +92,23 @@
     font-size: 16px;
 }
 
-.container-list .list .status {
+.certificate .list-injection .status {
     text-align: center;
     font-weight: 600;
     font-size: 22px;
     margin: 20px 0px 15px 0px ;
 }
 
-.container-list .list div p {
+.certificate .list-injection div p {
     margin: 2px;
 }
 
-.container-list .list div p:first-child {
+.certificate .list-injection div p:first-child {
     font-weight: 600;
     margin-left: 20px;
 }
 
-.container-list .list div p:not(:first-child){
+.certificate .list-injection div p:not(:first-child){
     margin-left: 30px;
 }
 /* END FUNCTIONAL PANEL */
