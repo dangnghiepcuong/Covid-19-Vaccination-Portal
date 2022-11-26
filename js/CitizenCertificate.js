@@ -23,4 +23,45 @@ $(document).ready(function () {
 
     $("#function-menu-list").find("ul").html(menu);
     // END LOAD FRONT END DATA
+
+    LoadInjection();
+    function LoadInjection() {
+        $.ajax({
+            cache: false,
+            url: 'HandleLoadCertificate.php',
+            type: 'POST',
+            data: { method: 'LoadInjection' },
+            success: function (result) {
+                $('#list-injection').html(result);
+            },
+            error: function (error) {
+            }
+        })
+    }
+
+    LoadCertificate();
+    function LoadCertificate() {
+        $.ajax({
+            cache: false,
+            url: 'HandleLoadCertificate.php',
+            type: 'POST',
+            data: { method: 'LoadCertificate' },
+            success: function (result) {
+                switch (parseInt(result)) {
+                    case 0:
+                        $('.certificate').css('background', '#D2001A');
+                        break;
+                    case 1:
+                        $('.certificate').css('background-color', '#F7EC09');
+                        break;
+                    default:
+                        $('.certificate').css('background', '#3EC70B');
+                        break;
+                }
+            },
+            error: function (error) {
+            }
+        })
+    }
+
 })
