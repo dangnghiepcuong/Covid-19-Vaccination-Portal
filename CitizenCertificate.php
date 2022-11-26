@@ -6,6 +6,9 @@ if (!(isset($_SESSION['AccountInfo']) && $_SESSION['AccountInfo']->get_status() 
     header('Location: index.php');
 $citizen = $_SESSION['CitizenProfile'];
 $Cinjection = new Injection();
+$Cvaccine = new Vaccine();
+$Corg = new Organization();
+$CSched = new Schedule();
 ?>
 
 <html lang="en">
@@ -65,62 +68,15 @@ $Cinjection = new Injection();
 
                 <div class="container-list">
                     <div class="list">
-                        <?php
-                        include("DatabaseConnection.php");
-                        $sql = "select * from INJECTION where citizenid = :citizenid";
-                        $command = oci_parse($connection, $sql);
-                        oci_bind_by_name($command, ':citizenid', $citizen->get_id());
-                        $r = oci_execute($command);
-                        if (!$r) {
-                            $exception = oci_error($command);
-                            echo 'ERROR: ' . $exception['code'] . ' - ' . $exception['message'];
-                            return;
-                        }
 
-                        $row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS);
-                        $Cinjection->set_injno($row['INJNO']);
-                        $Cinjection->set_dosetype($row['DOSETYPE']);
-                        echo $Cinjection->get_injno();
-
-                        switch ($Cinjection->get_injno()) {
-                            case 0:
-                                echo
-                                '<p class="status">Chưa tiêm đủ liều cơ bản vaccine Covid-19</p>';
-                                break;
-                            case 1:
-                                echo
-                                '<p class="status">Chưa tiêm đủ liều cơ bản vaccine Covid-19</p>
-                                <div class="injection0">
-                                <p>Mũi 1 (Cơ bản)</p>
-                                <p>Vaccine: </p>
-                                <p>Đơn vị tiêm chủng: </p>
-                                <p>Lịch tiêm ngày: </p>
-                                </div>
-                                ';
-                                break;
-                            case 2:
-                                break;
-                            case 3:
-                                break;
-                        }
-
-                        ?>
-
-
-
-
-
-                        
-                    
-
-                    <div class="injection1">
+                    <div>
                         <p>Mũi 2 (Tăng cường)</p>
                         <p>Vaccine: </p>
                         <p>Đơn vị tiêm chủng: </p>
                         <p>Lịch tiêm ngày: </p>
                     </div>
 
-                    <div class="injection2">
+                    <div>
                         <p>Mũi 3 (Nhắc lại)</p>
                         <p>Vaccine: </p>
                         <p>Đơn vị tiêm chủng: </p>

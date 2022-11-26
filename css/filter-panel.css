@@ -1,8 +1,6 @@
 .filter-panel {
     width: 95%;
     margin: 0 auto;
-    /* align div center*/
-    box-shadow: 0px 1px 4px rgba(187, 2, 48, 0.25);
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400px;
