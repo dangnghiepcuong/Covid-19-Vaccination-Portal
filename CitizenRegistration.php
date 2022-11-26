@@ -60,31 +60,33 @@ if (!(isset($_SESSION['AccountInfo']) && $_SESSION['AccountInfo']->get_status() 
             <div class="filter-panel">
                 <div class="filter-pane" id="filter-vaccine-time">
                     <label for="status">Trạng thái</label>
-                    <select type="text" name="status">
-                        <option value="">Tất cả</option>
-                        <option value="">Đã đăng ký</option>
-                        <option value="">Đã điểm danh</option>
-                        <option value="">Đã tiêm</option>
-                        <option value="">Đã hủy</option>
+                    <select type="text" name="status" id="status">
+                        <option value="-1">Tất cả</option>
+                        <option value="0">Đã đăng ký</option>
+                        <option value="1">Đã điểm danh</option>
+                        <option value="2">Đã tiêm</option>
+                        <option value="3">Đã hủy</option>
                     </select>
 
                     <label for="vaccine">Vaccine</label>
-                    <select type="text" name="vaccine">
-                        <option value="">Tất cả</option>
-                        <option value="">AstraZeneca</option>
-                        <option value="">Comirnaty</option>
-                        <option value="">Verro Cell</option>
+                    <select type="text" name="vaccine" id="vaccine">
+                        <option value="-1">Tất cả</option>
+                        <option value="Astra">AstraZeneca</option>
+                        <option value="Comirnaty">Comirnaty (Pfizer)</option>
+                        <option value="Mordena">Mordena</option>
+                        <option value="Vero">Vero Cell</option>
+                        <option value="Sputnik">Sputnik V</option>
                     </select>
 
                     <label for="time">Buổi</label>
-                    <select type="drop-down" name="time">
-                        <option value="">Tất cả</option>
-                        <option value="">Sáng</option>
-                        <option value="">Chiều</option>
-                        <option value="">Tối</option>
+                    <select type="drop-down" name="time" id="time">
+                        <option value="-1">Tất cả</option>
+                        <option value="0">Sáng</option>
+                        <option value="1">Chiều</option>
+                        <option value="2">Tối</option>
                     </select>
 
-                    <button class="btn-medium-bordered-icon btn-filter">
+                    <button class="btn-medium-bordered-icon btn-filter" id="btn-filter-registration">
                         <img src="image/filter-magnifier.png" alt="filter-magnifier">
                         Tìm kiếm
                     </button>

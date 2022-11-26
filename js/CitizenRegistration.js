@@ -24,8 +24,17 @@ $(document).ready(function () {
 
     // END LOAD FRONT END DATA
 
-    LoadRegistration()
+    LoadRegistration();
+
+    $('#btn-filter-registration').click(function(){
+        LoadRegistration();
+    })
+
     function LoadRegistration(){
+        status = $('#status').val();
+        vaccine = $('#vaccine').val();
+        time = $('#time').val();
+
         $.ajax({
             cache: false,
             url: 'HandleLoadRegistration.php',

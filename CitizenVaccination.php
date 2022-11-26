@@ -149,21 +149,9 @@ $citizen = $_SESSION['CitizenProfile'];
     <!-- END FUNCTION PANEL -->
     <br>
 
-    <div class="form-popup-confirm">
-        <p class="form-message"></p>
-        <br>
-        <div class="holder-btn">
-            <button class="btn-medium-filled btn-confirm">Xác nhận</button>
-            <button class="btn-medium-bordered btn-cancel">Hủy</button>
-        </div>
-    </div>
-
-    <!-- COVER LOGIN FORM -->
-    <div class="gradient-bg-faded" id="gradient-bg-faded"></div>
-
     <?php
-    include("footer.php")
+    include("footer.php");
+    include("WebElements.html");
     ?>
 </body>
-
 </html>

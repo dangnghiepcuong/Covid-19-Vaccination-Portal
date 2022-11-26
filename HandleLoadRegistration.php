@@ -14,16 +14,30 @@ $sql = "select Name, ProvinceName, DistrictName, TownName, Street, TO_CHAR(OnDat
             inner join
             (select ID, Name, ProvinceName, DistrictName, TownName, Street from ORGANIZATION) ORG
             on REG_SCHED.OrgID = ORG.ID
-        )";
+        )
+        where 1=1";
+if ($_POST['status'] != -1)
+    $sql .= " and Status = :status";
+if ($_POST['vaccine'] != -1)
+    $sql .= " and VaccineID = :vaccine";
+if ($_POST['time'] != -1)
+    $sql .= " and Time = :time";
+
 $command = oci_parse($connection, $sql);
 oci_bind_by_name($command, ':citizenid', $_SESSION['CitizenProfile']->get_id());
+if ($_POST['status'] != -1)
+    oci_bind_by_name($command, ':status', $_POST['status']);
+if ($_POST['vaccine'] != -1)
+    oci_bind_by_name($command, ':vaccine', $_POST['vaccine']);
+if ($_POST['time'] != -1)
+    oci_bind_by_name($command, ':time', $_POST['time']);
+
 $r = oci_execute($command);
 if (!$r) {
     $exception = oci_error($command);
     echo 'ERROR: ' . $exception['code'] . ' - ' . $exception['message'];
     return;
 }
-
 $Cregistration = new Register();
 
 $result = "";
@@ -42,6 +56,12 @@ while (($row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS)) != false
     $Cregistration->set_dosetype($row['DOSETYPE']);
     $Cregistration->set_image($row['IMAGE']);
 
+    if ((int)$Cregistration->get_status() < 2)
+        $CancelButton = '<div class="interactive-area">
+        <button class="btn-medium-bordered btn-cancel">Hủy</button>
+        </div>';
+    else
+        $CancelButton = '';
     $result .= '
     <div class="registration">
         <p class="obj-org-name">' . $Cregistration->get_sched()->get_org()->get_name() . '</p>
@@ -58,11 +78,7 @@ while (($row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS)) != false
                     <p class="attr-vaccine-serial">Vaccine: '
         . $Cregistration->get_sched()->get_vaccine() . ' - ' . $Cregistration->get_sched()->get_serial()
         . '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Tình trạng: ' . $Cregistration->get_status() . '</p>
-                </div>
-
-                <div class="interactive-area">
-                    <button class="btn-medium-bordered btn-cancel">Hủy</button>
-                </div>
+                </div>                
             </div>
     </div>
     ';

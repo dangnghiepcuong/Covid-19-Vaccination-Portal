@@ -1,8 +1,9 @@
 <?php
 include("object_Schedule.php");
-include ("object_Citizen.php");
+include("object_Citizen.php");
 
-class Register {
+class Register
+{
     private $Citizen;
     private $Sched;
     private $Time;
@@ -12,7 +13,8 @@ class Register {
     private $DoseType;
     private $ID;
 
-    public function __construct(){
+    public function __construct()
+    {
         $this->CitizenID = new Citizen();
         $this->Sched = new Schedule();
         $this->Time = -1;
@@ -23,47 +25,58 @@ class Register {
         $this->ID = -1;
     }
 
-    public function set_citizen($citizen){
+    public function set_citizen($citizen)
+    {
         $this->Citizen = $citizen;
     }
 
-    public function set_sched($sched){
+    public function set_sched($sched)
+    {
         $this->Sched = $sched;
     }
 
-    public function set_time($time){
+    public function set_time($time)
+    {
         $this->Time = $time;
     }
 
-    public function set_no($no){
+    public function set_no($no)
+    {
         $this->NO = $no;
     }
 
-    public function set_status($status){
+    public function set_status($status)
+    {
         $this->Status = $status;
     }
 
-    public function set_image($image){
+    public function set_image($image)
+    {
         $this->Image = $image;
     }
 
-    public function set_dosetype($dosetype){
+    public function set_dosetype($dosetype)
+    {
         $this->DoseType = $dosetype;
     }
 
-    public function set_id($id){
+    public function set_id($id)
+    {
         $this->ID = $id;
     }
 
-    public function get_citizen(){
+    public function get_citizen()
+    {
         return $this->Citizen;
     }
 
-    public function get_sched(){
+    public function get_sched()
+    {
         return $this->Sched;
     }
 
-    public function get_time(){
+    public function get_time()
+    {
         switch ($this->Time) {
             case 0:
                 return "Sáng";
@@ -76,34 +89,48 @@ class Register {
         }
     }
 
-    public function get_no(){
+    public function get_no()
+    {
         return $this->NO;
     }
 
-    public function get_status(){
-        return $this->Status;
+    public function get_status()
+    {
+        switch ($this->Status) {
+            case 0:
+                return 'Đã đăng ký';
+            case 1:
+                return 'Đã điểm danh';
+            case 2:
+                return 'Đã tiêm';
+            case 3:
+                return 'Đã hủy';
+            default:
+                return $this->Status;
+        }
     }
 
-    public function get_image(){
+    public function get_image()
+    {
         return $this->Image;
     }
 
-    public function get_dosetype(){
+    public function get_dosetype()
+    {
         switch ($this->DoseType) {
             case 0:
                 return "Cơ bản";
             case 1:
                 return "Tăng cường";
-            case 2: 
+            case 2:
                 return "Nhắc lại";
             default:
                 return "";
         }
     }
 
-    public function get_id(){
+    public function get_id()
+    {
         return $this->ID;
     }
-
 }
-?>
