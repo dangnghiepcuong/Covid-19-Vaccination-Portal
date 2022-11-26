@@ -71,11 +71,10 @@ $org = $_SESSION['OrgProfile'];
 
             <div class="panel-list-schedule">
                 <div class="list-name">DANH SÁCH LỊCH TIÊM</div>
-                <div class="list-name" id="object-orgname">
-                    <?php
-                    echo $org->get_name();
-                    ?>
-                </div>
+                <?php
+                echo '
+                    <div class="list-name orgid" id="' . $org->get_id() . '">' . $org->get_name() . '</div>'
+                ?>
                 <br>
                 <div class="holder">
                     <div class="list-schedule" id="list-schedule">
