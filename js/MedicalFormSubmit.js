@@ -24,23 +24,46 @@ $(document).ready(function () {
     var month = ("0" + (today.getMonth() + 1)).slice(-2);
     var today = today.getFullYear() + "-" + (month) + "-" + (day);
     $("#input-date").val(today);
-    // END LOAD FRONT END DATA
+    // END LOAD FRONT END DATA   
 
     // HANDLE ACTION
-    $("#btn-submit-form-medical").click(function(){
-        $(".gradient-bg-faded").css('display','block');
-        $("#form-popup-confirm").css('display','block');
+    $("#btn-submit-form-medical").click(function(){       
+        $("#gradient-bg-faded").css('display', 'block');
+        $(".form-popup-confirm").css('display','block');
+    });
+
+    $(".form-popup-confirm").on('click','.btn-cancel', function(){
+        $(".form-popup-confirm").css('display','none');
+        $('#gradient-bg-faded').css('display', 'none');
     })
 
-    $("#form-popup-confirm").on('click','.btn-cancel', function(){
-        $("#form-popup-confirm").css('display','none');
-        $(".gradient-bg-faded").css('display','none');
-    })
+    $(".form-popup-confirm").on('click','.btn-confirm', function(){
+        $(".form-popup-confirm").css('display','none');
 
-    $("#form-popup-confirm").on('click','.btn-confirm', function(){
-        alert ("Khai báo thành công!");
-        $("#form-popup-confirm").css('display','none');
-        $(".gradient-bg-faded").css('display','none');
+        q1 = $("input[type='radio'][name='q1']:checked").val();
+        q2 = $("input[type='radio'][name='q2']:checked").val();
+        q3 = $("input[type='radio'][name='q3']:checked").val();
+        q4 = $("input[type='radio'][name='q4']:checked").val();
+        if (!$("input[name='q1']:checked").val() || !$("input[name='q2']:checked").val() || !$("input[name='q3']:checked").val() || !$("input[name='q4']:checked").val()) {
+            alert("Bạn chưa chọn câu trả lời!");
+            return;        
+        }
+        choice = q1 + q2 + q3 + q4;
+        filleddate = $('#input-date').val();
+
+        $.ajax({
+            cache: false,
+            url: 'HandleMediForm.php',
+            type: 'POST',
+            data: { filleddate:filleddate, choice:choice },
+            success: function (result) {    //button click to submit
+                alert ("Khai báo thành công!");
+                location.reload(true);
+            },
+            error: function (error) {
+                $('body').html(error);
+            }
+        });
     })
     // END HANDLE ACTION
 
