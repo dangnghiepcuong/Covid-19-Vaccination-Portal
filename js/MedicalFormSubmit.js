@@ -49,16 +49,21 @@ $(document).ready(function () {
             return;        
         }
         choice = q1 + q2 + q3 + q4;
+        filleddate = $('#input-date').val();
 
         $.ajax({
             cache: false,
             url: 'HandleMediForm.php',
             type: 'POST',
-            data: { choice:choice },
-            
+            data: { filleddate:filleddate, choice:choice },
+            success: function (result) {    //button click to submit
+                alert ("Khai báo thành công!");
+                location.reload(true);
+            },
+            error: function (error) {
+                $('body').html(error);
+            }
         });
-
-        //alert ("Khai báo thành công!");
     })
     // END HANDLE ACTION
 

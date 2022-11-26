@@ -8,7 +8,7 @@ else {
     include("CitizenLoadProfile.php");
     $citizen = $_SESSION['CitizenProfile'];
 }
-include ("object_Form.php");
+//include ("object_Form.php");
 ?>
 
 <!DOCTYPE html>
