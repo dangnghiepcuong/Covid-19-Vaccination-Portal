@@ -111,6 +111,7 @@ $citizen = $_SESSION['CitizenProfile'];
     </div>
     <!-- END FUNCTION PANEL -->
     <br>
+    <br>
 
     <!-- FOOTER -->
     <?php

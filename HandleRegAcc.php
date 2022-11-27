@@ -2,9 +2,11 @@
 error_reporting(E_ERROR | E_PARSE);
 session_start();
 
-$method = $_POST['method'];
-
-$method();
+if (isset($_POST['method'])) {
+    $method = $_POST['method'];
+    $method();
+} else
+    header('Location: index.php');
 
 function CheckExist()
 {
