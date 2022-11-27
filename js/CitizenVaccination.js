@@ -43,7 +43,7 @@ $(document).ready(function () {
             }
         })
     }
-    
+
 
     $('#list-org').on('click', '.organization', function () {
         orgid = $(this).attr('id');
@@ -52,7 +52,7 @@ $(document).ready(function () {
     })
 
     $('#filter-schedule').on('change', '.organization', function () {
-        
+
         LoadSchedule(orgid);
     })
 
@@ -79,4 +79,10 @@ $(document).ready(function () {
             }
         })
     }
+
+    // HANDLE REGISTER SCHEDULE
+    $('#list-schedule').on('click', '.schedule .btn-register-schedule', function () {
+        SchedID = $(this).parent().parent().attr('id');
+        alert(SchedID);
+    })
 })
