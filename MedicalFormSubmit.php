@@ -82,27 +82,27 @@ else {
                     </p>
                     <div class="form-btn-input">
                         <label for="q1_no">Không</label>
-                        <input type="radio" name="q1" id="q1_no">
+                        <input type="radio" name="q1" id="q1_no" value="0">
                         <label for="q1_yes">Có</label>
-                        <input type="radio" name="q1" id="q1_yes">
+                        <input type="radio" name="q1" id="q1_yes" value="1">
                     </div>
 
                     <p>Trong vòng 14 ngày qua, Anh/Chị có tiếp xúc với Người bệnh hoặc nghi ngờ, mắc bệnh Covid-19 không?
                     </p>
                     <div class="form-btn-input">
                         <label for="q2_no">Không</label>
-                        <input type="radio" name="q2" id="q2_no">
+                        <input type="radio" name="q2" id="q2_no" value="0">
                         <label for="q2_yes">Có</label>
-                        <input type="radio" name="q2" id="q2_yes">
+                        <input type="radio" name="q2" id="q2_yes" value="1">
                     </div>
 
                     <p>Anh/Chị có đang dương tính với Covid-19 không?
                     </p>
                     <div class="form-btn-input">
                         <label for="q3_no">Không</label>
-                        <input type="radio" name="q3" id="q3_no">
+                        <input type="radio" name="q3" id="q3_no" value="0">
                         <label for="q3_yes">Có</label>
-                        <input type="radio" name="q3" id="q3_yes">
+                        <input type="radio" name="q3" id="q3_yes" value="1">
                     </div>
 
                     <p>Anh/Chị có đang là đối tượng trì hoẵn tiêm chủng vaccine Covid-19
@@ -110,9 +110,9 @@ else {
                     </p>
                     <div class="form-btn-input">
                         <label for="q4_no">Không</label>
-                        <input type="radio" name="q4" id="q4_no">
+                        <input type="radio" name="q4" id="q4_no" value="0">
                         <label for="q4_yes">Có</label>
-                        <input type="radio" name="q4" id="q4_yes">
+                        <input type="radio" name="q4" id="q4_yes" value="1">
                     </div>
                     <br>
                     <div class="form-btn-input">
