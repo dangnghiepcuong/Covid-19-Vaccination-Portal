@@ -4,8 +4,13 @@ include("object_Account.php");
 include("object_Schedule.php");
 session_start();
 
-if (!(isset($_SESSION['AccountInfo']) && $_SESSION['AccountInfo']->get_status() == 1) && isset($_SESSION['OrgProfile']))
+// if logged in account has not register a profile then head to index.php
+if (!(isset($_SESSION['AccountInfo']) && $_SESSION['AccountInfo']->get_status() == 1))
     header('Location: index.php');
+// if there is not any profile was queried then head to index
+if (isset($_SESSION['OrgProfile']) == false)
+    header('Location: index.php');
+    
 $org = $_SESSION['OrgProfile'];
 ?>
 <!DOCTYPE html>
