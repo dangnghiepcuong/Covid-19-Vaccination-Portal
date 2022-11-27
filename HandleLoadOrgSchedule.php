@@ -5,12 +5,14 @@ session_start();
 if (isset($_SESSION['OrgProfile']))
     $org = $_SESSION['OrgProfile'];
 
-$method = $_POST['method'];
-
-if ($method == 'LoadSchedule')
-    $method($_POST['orgid']);
-else
-    $method();
+if (isset($_POST['method'])) {
+    $method = $_POST['method'];
+    if ($method == 'LoadSchedule')
+        $method($_POST['orgid']);
+    else
+        $method();
+} else
+    header('Location: index.php');
 
 function LoadOrg($province = "", $district = "", $town = "")
 {
@@ -129,7 +131,7 @@ function LoadSchedule($orgid = "")
     if (isset($_SESSION['OrgProfile']))
         while (($row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS)) != false) {
             $result .=
-                '<div class="schedule" id="'.$row['ID'].'">
+                '<div class="schedule" id="' . $row['ID'] . '">
     
                         <div class="obj-attr">
                             <p class="attr-date-vaccine-serial">Lịch tiêm ngày: ' . $row['ONDATE'] . ' - Vaccine:
@@ -147,7 +149,7 @@ function LoadSchedule($orgid = "")
     else
         while (($row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS)) != false) {
             $result .=
-                '<div class="schedule" id="'.$row['ID'].'">
+                '<div class="schedule" id="' . $row['ID'] . '">
                     <div class="obj-attr">
                         <p class="attr-date">Lịch tiêm ngày: ' . $row['ONDATE'] . '</p>
                         <p class="attr-vaccine">Vaccine: ' . $row['VACCINEID'] . '</p>
