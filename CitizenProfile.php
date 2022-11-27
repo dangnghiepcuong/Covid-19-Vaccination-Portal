@@ -8,7 +8,7 @@ session_start();
 if (!(isset($_SESSION['AccountInfo']) && $_SESSION['AccountInfo']->get_status() == 1))
     header('Location: index.php');
 // if there is not any profile was queried then head to index
-if (isset($_SESSION['CitizenProfile']))
+if (isset($_SESSION['CitizenProfile']) == false)
     header('Location: index.php');
     
 $citizen = $_SESSION['CitizenProfile'];
