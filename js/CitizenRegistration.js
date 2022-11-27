@@ -24,35 +24,28 @@ $(document).ready(function () {
 
     // END LOAD FRONT END DATA
 
-    $(".list-registration").on('click', '.btn-cancel', function () {
-        date_time_no = $(this).parent().parent().find(".obj-attr").find(".attr-date-time-no").text();
-        vaccine = $(this).parent().parent().find(".obj-attr").find(".attr-vaccine-serial").text();
-        message = "Xác nhận hủy đăng ký tiêm chủng?<br><br>" + date_time_no + ", " + vaccine;
-        $("#form-popup-confirm .form-message").html(message);
+    LoadRegistration();
 
-        $(".gradient-bg-faded").css('display', 'block');
-        $("#form-popup-confirm").css('display', 'block');
-    })
-    $("#form-popup-confirm").on('click', '.btn-cancel', function () {
-        $("#form-popup-confirm").css('display', 'none');
-        $(".gradient-bg-faded").css('display', 'none');
+    $('#btn-filter-registration').click(function(){
+        LoadRegistration();
     })
 
-    // DROP DOWN MENU
-    $(".header").on('mouseover', '.avatar', function () {
-        $("#drop-down-menu-profile").css('display', 'block');
-    })
+    function LoadRegistration(){
+        status = $('#status').val();
+        vaccine = $('#vaccine').val();
+        time = $('#time').val();
 
-    $(".header").on('mouseleave', '.avatar', function () {
-        $("#drop-down-menu-profile").css('display', 'none');
-    })
+        $.ajax({
+            cache: false,
+            url: 'HandleLoadRegistration.php',
+            type: 'POST',
+            data: { method: 'LoadRegistration', status: status, vaccine: vaccine, time: time },
+            success: function(result) {
+                $('#list-registration').html(result);
+            },
+            error: function(error) {
 
-    $(".header").on('mouseleave', '#drop-down-menu-profile', function () {
-        $("#drop-down-menu-profile").css('display', 'none');
-    });
-
-    $(".header").on('mouseover', '#drop-down-menu-profile', function () {
-        $("#drop-down-menu-profile").css('display', 'block');
-    });
-
+            }
+        })
+    }
 })
