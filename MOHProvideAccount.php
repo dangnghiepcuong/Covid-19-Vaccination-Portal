@@ -44,7 +44,7 @@
                 <div class="filter-pane">
                     <label for="city">Bộ lọc tỉnh/TP</label>
                     <select name="city" id="">
-                        <option value="">Hồ Chí Minh</option>
+                        <option value="">HCM</option>
                     </select>
 
                     <button class="btn-medium-bordered-icon btn-filter">
@@ -59,21 +59,24 @@
             <div class="provide-panel">
                 <div class="frame">
                     <div class="provide-account">
+                        <p>Tạo tài khoản đơn vị</p>
                         <label for="city">Tỉnh/Thành phố </label><br>
-                        <select name="city" id="select-province"></select>
+                        <select name="city" id="select-province">
+                            <option value="">HCM</option>
+                        </select>
                         <hr>
+                        <br>
                         <label for="num">Số lượng tài khoản cần tạo</label><br>
                         <input type="text" name="num" required value=""><br>
                         <hr>
                     </div>
                 </div>
-
-                <div class="group_btn">
-                    <button class="btn-medium-filled">Xác nhận</button>
-                    <button class="btn-medium-bordered" id="close_reg_person_profile">Hủy bỏ</button>
-                </div>
             </div>
 
+            <div class="group_btn">
+                <button class="btn-medium-filled">Xác nhận</button>
+                <button class="btn-medium-bordered" id="close_reg_person_profile">Hủy bỏ</button>
+            </div>
 
         </div>
     </div>

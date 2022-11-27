@@ -21,11 +21,26 @@
 }
 
 .provide-panel {
-    display: block;
+    display: grid;
     margin-top: 50px;
+    justify-items: center;
 }
 
-.provide-panel hr{
+.provide-panel .frame {
+    border: 1.5px solid rgba(140, 105, 202, 0.37);
+    box-shadow: 0px 1px 10px rgba(177, 154, 214, 0.72);
+    border-radius: 40px;
+    width: 40%;
+    height: 260px;
+    display: grid;
+    justify-items: center;
+}
+
+.provide-panel .frame .provide-account {
+    width: 76%;
+}
+
+.provide-panel hr {
     background: var(--bg_gradient);
     height: 1px;
     border: none;
@@ -34,42 +49,32 @@
 .provide-panel select, input {
     font-weight: 200;
     font-size: 18px;
-    line-height: 20px;
+    line-height: 29px;
     padding: 2px 5px;
     border: none;
     outline: none;
-    margin-top: 5px;
     width: 100%;
+    /* margin-top: 5px; */
 }
 
-.provide-panel label, p {
-    font-weight: 200;
-    font-size: 16px;
-    line-height: 20px;
+.provide-panel label{
+    font-size: 18px;
+    /* line-height: 25px; */
+    /* padding-bottom: 10px; */
 }
 
-.provide-panel p {
-    font-size: 16px;
-    margin: 0px 7%;
+.provide-panel .frame p {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 30px 0px;
+    text-align: center;
 }
 
-.provide-panel .group_btn{
-    /* width: 300px; */
+.function-panel .group_btn {
     display: flex;
     justify-content: space-between;
     font-size: 20px;
-    margin: 50px 30%;
-    padding-bottom: 10px;
-}
-
-.provide-panel .row3{
-    width: 56%;
-    margin: 10px 7%;
-    padding-bottom: 10px;
-}
-
-.provide-panel span {
-    color: red;
+    margin: 50px 35%;
 }
 
 
