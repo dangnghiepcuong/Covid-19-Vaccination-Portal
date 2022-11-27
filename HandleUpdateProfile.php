@@ -5,9 +5,11 @@ include("object_Organization.php");
 
 session_start();
 
-$method = $_POST['method'];
-
-$method();
+if (isset($_POST['method'])) {
+    $method = $_POST['method'];
+    $method();
+} else
+    header('Location: index.php');
 
 function UpdateCitizenProfile()
 {

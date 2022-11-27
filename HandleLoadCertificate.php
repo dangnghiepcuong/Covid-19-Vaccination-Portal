@@ -1,22 +1,24 @@
 <?php
-error_reporting(0);     
+error_reporting(0);
 include("object_Injection.php");
 session_start();
 
-if (isset($_POST['method']))
-{
+if (isset($_POST['method'])) {
     $method = $_POST['method'];
     $method();
-}
+} else
+    header('Location: index.php');
 
-function LoadCertificate() {
+function LoadCertificate()
+{
     if (isset($_SESSION['Certificate']))
         echo $_SESSION['Certificate'];
     else
         echo '';
 }
 
-function LoadInjection() {
+function LoadInjection()
+{
     include("DatabaseConnection.php");
     $sql = "select InjNO, DoseType, OnDate, VaccineID, Name from
     (select * from INJECTION where CitizenID = :citizenid) INJ
@@ -29,7 +31,7 @@ function LoadInjection() {
         on SCHED.OrgID = ORG.ID
     ) SCHED_ORG
     on INJ.SchedID = SCHED_ORG.ID";
-    
+
     $citizen = $_SESSION['CitizenProfile'];
     $command = oci_parse($connection, $sql);
     oci_bind_by_name($command, ':citizenid', $citizen->get_id());
@@ -39,7 +41,7 @@ function LoadInjection() {
         echo 'ERROR: ' . $exception['code'] . ' - ' . $exception['message'];
         return;
     }
-    
+
     $result = "";
     $count = 0;
     while (($row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS)) != false) {
@@ -52,7 +54,7 @@ function LoadInjection() {
         <p>Lịch tiêm ngày: ' . $row['ONDATE'] . '</p>
         </div>';
     }
-    
+
     switch ($count) {
         case 0:
             echo '<p class="status">Chưa tiêm đủ liều cơ bản vaccine Covid-19</p>';
@@ -60,7 +62,7 @@ function LoadInjection() {
         case 1:
             echo '<p class="status">Chưa tiêm đủ liều cơ bản vaccine Covid-19</p>';
             break;
-    
+
         case 2:
             echo '<p class="status">Chưa tiêm đủ liều cơ bản vaccine Covid-19</p>';
             break;
@@ -70,7 +72,7 @@ function LoadInjection() {
         default:
             break;
     }
-    
+
     $_SESSION['Certificate'] = $count;
     echo $result;
 }

@@ -24,6 +24,8 @@ $(document).ready(function () {
 
     // END LOAD FRONT END DATA
 
+
+    // LOAD REGISTRATION
     LoadRegistration();
 
     $('#btn-filter-registration').click(function(){
@@ -41,6 +43,10 @@ $(document).ready(function () {
             type: 'POST',
             data: { method: 'LoadRegistration', status: status, vaccine: vaccine, time: time },
             success: function(result) {
+                if (result.substring(0, 5) == 'ERROR') {    //EXCEPTION
+                    alert(result);
+                    return;
+                }
                 $('#list-registration').html(result);
             },
             error: function(error) {
@@ -48,4 +54,26 @@ $(document).ready(function () {
             }
         })
     }
+    // END LOAD REGISTRATION
+
+    // CANCEL REGISTRATION
+    $('#list-registration').on('click', '.btn-cancel-registration', function(){
+        SchedID = $(this).parent().parent().parent().attr('id');
+        $.ajax({
+            cache: false,
+            url: 'HandleLoadRegistration.php',
+            type: 'POST',
+            data: { method: 'CancelRegistration', SchedID: SchedID },
+            success: function(result) {
+                if (result.substring(0, 5) == 'ERROR') {    //EXCEPTION
+                    alert(result);
+                    return;
+                }
+                alert(result)
+            },
+            error: function(error) {
+            }
+        })
+    })
+    // END CANCEL REGISTRATION
 })
