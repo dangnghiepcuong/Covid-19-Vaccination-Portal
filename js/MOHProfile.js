@@ -15,7 +15,7 @@ $(document).ready(function () {
     
         $("#function-menu-title").text("Trang Bộ Y tế");
     
-        menu = "<br><a href='MOHAccountInfo.php'><li>Thông tin tài khoản</li></a>";
+        menu = "<br><a href='ORGAccountInfo.php'><li>Thông tin tài khoản</li></a>";
         menu += "<br><a href='MOHProfile'><li>Thông tin Bộ Y tế</li></a>";
         menu += "<br><a href='#'><li>Quản lý đơn vị</li></a>";
         menu += "<br><a href='#'><li>Thông tin tổ chức</li></a>";
