@@ -94,8 +94,11 @@ class Register
         return $this->NO;
     }
 
-    public function get_status()
+    public function get_status($value = 0)
     {
+        if ($value == 1)
+            return $this->Status;
+            
         switch ($this->Status) {
             case 0:
                 return 'Đã đăng ký';

@@ -62,5 +62,6 @@ $(document).ready(function () {
         $('#gradient-bg-faded').css('display', 'none');
         $('#container-reg-profile').css('display', 'none');
         $('.message').text('');
+        $('.form-popup').css('display', 'none');
     })
 })
