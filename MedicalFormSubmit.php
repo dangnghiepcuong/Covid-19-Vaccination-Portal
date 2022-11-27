@@ -8,7 +8,6 @@ else {
     include("CitizenLoadProfile.php");
     $citizen = $_SESSION['CitizenProfile'];
 }
-//include ("object_Form.php");
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +24,7 @@ else {
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/MedicalFormSubmit.js"></script>
-    <!-- <script src="js/index.js"></script> -->
+    <script src="js/index.js"></script>
     <script src="js/WebElements.js"></script>
     <title>Khai báo y tế</title>
 </head>
@@ -83,27 +82,27 @@ else {
                     </p>
                     <div class="form-btn-input">
                         <label for="q1_no">Không</label>
-                        <input type="radio" name="q1" id="q1_no" value="0">
+                        <input type="radio" name="q1" id="q1_no">
                         <label for="q1_yes">Có</label>
-                        <input type="radio" name="q1" id="q1_yes" value="1">
+                        <input type="radio" name="q1" id="q1_yes">
                     </div>
 
                     <p>Trong vòng 14 ngày qua, Anh/Chị có tiếp xúc với Người bệnh hoặc nghi ngờ, mắc bệnh Covid-19 không?
                     </p>
                     <div class="form-btn-input">
                         <label for="q2_no">Không</label>
-                        <input type="radio" name="q2" id="q2_no" value="0">
+                        <input type="radio" name="q2" id="q2_no">
                         <label for="q2_yes">Có</label>
-                        <input type="radio" name="q2" id="q2_yes" value="1">
+                        <input type="radio" name="q2" id="q2_yes">
                     </div>
 
                     <p>Anh/Chị có đang dương tính với Covid-19 không?
                     </p>
                     <div class="form-btn-input">
                         <label for="q3_no">Không</label>
-                        <input type="radio" name="q3" id="q3_no" value="0">
+                        <input type="radio" name="q3" id="q3_no">
                         <label for="q3_yes">Có</label>
-                        <input type="radio" name="q3" id="q3_yes" value="1">
+                        <input type="radio" name="q3" id="q3_yes">
                     </div>
 
                     <p>Anh/Chị có đang là đối tượng trì hoẵn tiêm chủng vaccine Covid-19
@@ -111,9 +110,9 @@ else {
                     </p>
                     <div class="form-btn-input">
                         <label for="q4_no">Không</label>
-                        <input type="radio" name="q4" id="q4_no" value="0">
+                        <input type="radio" name="q4" id="q4_no">
                         <label for="q4_yes">Có</label>
-                        <input type="radio" name="q4" id="q4_yes" value="1">
+                        <input type="radio" name="q4" id="q4_yes">
                     </div>
                     <br>
                     <div class="form-btn-input">
