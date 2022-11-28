@@ -58,6 +58,10 @@ $(document).ready(function () {
 
     // CANCEL REGISTRATION
     $('#list-registration').on('click', '.btn-cancel-registration', function(){
+        $('#form-popup-confirm').find('.form-message').html('Xác nhận hủy đăng ký tiêm chủng?');
+        $('#form-popup-confirm').css('display', 'grid');
+        $('#gradient-bg-faded').css('display', 'block');
+
         SchedID = $(this).parent().parent().parent().attr('id');
         $.ajax({
             cache: false,

@@ -70,6 +70,7 @@ $account = new Account();
 
     <?php
     include("SignupLoginForm.html");
+    include("WebElements.html");
     ?>
 
     <div class="content">

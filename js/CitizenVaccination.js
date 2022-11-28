@@ -86,6 +86,9 @@ $(document).ready(function () {
 
     // HANDLE REGISTER SCHEDULE
     $('#list-schedule').on('click', '.schedule .btn-register-schedule', function () {
+        $('#form-popup-confirm').css('display', 'block');
+        $('#gradient-bg-faded').css('display', 'block');
+
         SchedID = $(this).parent().parent().attr('id');
         time = $(this).parent().find('select option:selected').val();
         $.ajax({
