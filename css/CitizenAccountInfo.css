@@ -20,6 +20,11 @@
     font-size: 18px;
 }
 
+.accinfo-panel label {
+    font-size: 18px;
+    line-height: 29px;
+}
+
 .accinfo-panel .frame {
     border: 1.5px solid rgba(140, 105, 202, 0.37);
     box-shadow: 0px 1px 10px rgba(177, 154, 214, 0.72);

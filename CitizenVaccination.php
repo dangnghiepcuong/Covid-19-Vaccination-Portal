@@ -2,8 +2,14 @@
 include("object_Account.php");
 include("object_Citizen.php");
 session_start();
-if (!(isset($_SESSION['AccountInfo']) && $_SESSION['AccountInfo']->get_status() == 1) && isset($_SESSION['CitizenProfile']))
+
+// if logged in account has not register a profile then head to index.php
+if (!(isset($_SESSION['AccountInfo']) && $_SESSION['AccountInfo']->get_status() == 1))
     header('Location: index.php');
+// if there is not any profile was queried then head to index
+if (isset($_SESSION['CitizenProfile']) == false)
+    header('Location: index.php');
+
 $citizen = $_SESSION['CitizenProfile'];
 ?>
 <!DOCTYPE html>
@@ -149,20 +155,9 @@ $citizen = $_SESSION['CitizenProfile'];
     <!-- END FUNCTION PANEL -->
     <br>
 
-    <div class="form-popup-confirm">
-        <p class="form-message"></p>
-        <br>
-        <div class="holder-btn">
-            <button class="btn-medium-filled btn-confirm">Xác nhận</button>
-            <button class="btn-medium-bordered btn-cancel">Hủy</button>
-        </div>
-    </div>
-
-    <!-- COVER LOGIN FORM -->
-    <div class="gradient-bg-faded" id="gradient-bg-faded"></div>
-
     <?php
-    include("footer.php")
+    include("footer.php");
+    include("WebElements.html");
     ?>
 </body>
 

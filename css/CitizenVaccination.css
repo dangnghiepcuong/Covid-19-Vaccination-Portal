@@ -72,15 +72,13 @@
     color: #D1BFF3;
 }
 
-.panel-list .holder .list-schedule .schedule 
-.holder-obj-attr {
+.panel-list .holder .list-schedule .schedule {
     display: flex;
     justify-content: space-between;
 }
 
 
-.panel-list .holder .list-schedule .schedule 
-.holder-obj-attr .obj-attr * {
+.panel-list .holder .list-schedule .schedule .obj-attr * {
     padding: 3px 0px;
     font-family: 'Roboto';
     font-size: 18px;
@@ -88,20 +86,17 @@
     font-weight: 300;
 }
 
-.panel-list .holder .list-schedule .schedule 
-.holder-obj-attr .obj-attr {
+.panel-list .holder .list-schedule .schedule .obj-attr {
     padding: 8px 10px 8px 15px;
     align-items: center;
 }
 
-.panel-list .holder .list-schedule .schedule 
-.holder-obj-attr .interactive-area {
+.panel-list .holder .list-schedule .schedule .interactive-area {
     padding: 8px 10px 8px 15px;
     align-items: center;
 }
 
-.panel-list .holder .list-schedule .schedule 
-.holder-obj-attr .interactive-area .drop-down-time {
+.panel-list .holder .list-schedule .schedule .interactive-area .drop-down-time {
     width: 80px;
     height: 30px;
     margin-bottom: 10px;

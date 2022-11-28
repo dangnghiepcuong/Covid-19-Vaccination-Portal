@@ -37,6 +37,10 @@ $(document).ready(function () {
             type: 'POST',
             data: { method: 'LoadOrg', province: province, district: district, town: town },
             success: function (result) {
+                if (result.substring(0, 5) == 'ERROR') {    //EXCEPTION
+                    alert(result);
+                    return;
+                }
                 $('#list-org').html(result);
             },
             error: function (error) {
@@ -44,15 +48,19 @@ $(document).ready(function () {
         })
     }
 
-    LoadSchedule();
-    
 
-    $('#list-org, #filter-schedule').on('click change', '.organization', function () {
+    $('#list-org').on('click', '.organization', function () {
         orgid = $(this).attr('id');
+        $('.list-name').append();
         LoadSchedule(orgid);
     })
 
-    function LoadSchedule(orgid = -1) {
+    $('#filter-schedule').on('change', '.organization', function () {
+
+        LoadSchedule(orgid);
+    })
+
+    function LoadSchedule(orgid) {
         startdate = $('#start-date').val();
         enddate = $('#end-date').val();
         vaccine = $('#vaccine').find('option:selected').val();
@@ -72,6 +80,65 @@ $(document).ready(function () {
             },
             error: function (error) {
 
+            }
+        })
+    }
+
+    // HANDLE REGISTER SCHEDULE
+    $('#list-schedule').on('click', '.schedule .btn-register-schedule', function () {
+        SchedID = $(this).parent().parent().attr('id');
+        time = $(this).parent().find('select option:selected').val();
+        $.ajax({
+            cache: false,
+            url: 'HandleRegisterVaccination.php',
+            type: 'POST',
+            data: { method: 'CheckRegistration' },
+            success: function (result) {
+                if (result.substring(0, 5) == 'ERROR') {    //EXCEPTION
+                    alert(result);
+                    return;
+                }
+                if (result == 1) {
+                    $('#form-popup-option').find('.form-message').html('Bạn cần đăng ký tiêm mũi tăng cường hay nhắc lại?');
+                    $('#form-popup-option').find('.holder-btn').html('<br><button class="btn-medium-filled" value="booster">Tăng cường</button>'
+                        + '<button class="btn-medium-bordered" value="repeat">Nhắc lại</button>'
+                        + '<button class="btn-medium-bordered" value="cancel">Hủy</button>');
+                    $('#form-popup-option').css('display', 'grid');
+                    $('#gradient-bg-faded').css('display', 'block');
+
+                    $('#form-popup-option').on('click', 'button', function () {
+                        dosetype = $(this).val();
+                        if (dosetype == 'cancel') {
+                            $('#form-popup-option').css('display', 'none');
+                            $('#gradient-bg-faded').css('display', 'none');
+                            return;
+                        }
+                        RegisterVaccination(SchedID, dosetype, time);
+                    })
+                }
+                else {
+                    dosetype = '';
+                    RegisterVaccination(SchedID, dosetype, time);
+                }
+            },
+            error: function (error) {
+            }
+        })
+    })
+
+    function RegisterVaccination(SchedID, dosetype, time) {
+        $.ajax({
+            cache: false,
+            url: 'HandleRegisterVaccination.php',
+            type: 'POST',
+            data: { method: 'RegisterVaccination', SchedID: SchedID, time, dosetype: dosetype },
+            success: function (result) {
+                if (result.substring(0, 5) == 'ERROR') {    //EXCEPTION
+                    alert(result);
+                    return;
+                }
+            },
+            error: function (error) {
             }
         })
     }

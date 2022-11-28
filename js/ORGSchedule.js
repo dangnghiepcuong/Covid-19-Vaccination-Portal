@@ -22,13 +22,13 @@ $(document).ready(function () {
     // $('#end-date').val(today);
 
     // LOAD SCHEDULE DATA
-    LoadSchedule();
+LoadSchedule($('.orgid').attr('id'));
 
     $('#btn-filter-schedule').click(function () {
-        LoadSchedule();
+        LoadSchedule($('.orgid').attr('id'));
     })
 
-    function LoadSchedule() {
+    function LoadSchedule(orgid) {
         startdate = $('#start-date').val();
         enddate = $('#end-date').val();
         vaccine = $('#vaccine').find('option:selected').val();
@@ -37,7 +37,7 @@ $(document).ready(function () {
             cache: false,
             url: 'HandleLoadOrgSchedule.php',
             type: 'POST',
-            data: { method: 'LoadSchedule', startdate: startdate, enddate: enddate, vaccine: vaccine },
+            data: { method: 'LoadSchedule', orgid: orgid, startdate: startdate, enddate: enddate, vaccine: vaccine },
             success: function (result) {
                 if (result.substring(0, 5) == 'ERROR') {    //EXCEPTION
                     alert(result);

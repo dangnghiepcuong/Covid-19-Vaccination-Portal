@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <?php
 include("object_Account.php");
-include("object_Register.php");
-
+include("object_Citizen.php");
 session_start();
-$citizen = new Citizen();
-$citizen = $_SESSION['CitizenProfile'];
-$Cregistration = new Register();
-// echo '<script>alert("' . $Cregistration->get_sched()->newOrg() . '")</script>'; 
 
-if (!(isset($_SESSION['AccountInfo']) && $_SESSION['AccountInfo']->get_status() == 1) && isset($_SESSION['CitizenProfile']))
+// if logged in account has not register a profile then head to index.php
+if (!(isset($_SESSION['AccountInfo']) && $_SESSION['AccountInfo']->get_status() == 1))
+    header('Location: index.php');
+// if there is not any profile was queried then head to index
+if (isset($_SESSION['CitizenProfile']) == false)
     header('Location: index.php');
 
+$citizen = $_SESSION['CitizenProfile'];
 ?>
 <html lang="en">
 
@@ -62,31 +62,33 @@ if (!(isset($_SESSION['AccountInfo']) && $_SESSION['AccountInfo']->get_status() 
             <div class="filter-panel">
                 <div class="filter-pane" id="filter-vaccine-time">
                     <label for="status">Trạng thái</label>
-                    <select type="text" name="status">
-                        <option value="">Tất cả</option>
-                        <option value="">Đã đăng ký</option>
-                        <option value="">Đã điểm danh</option>
-                        <option value="">Đã tiêm</option>
-                        <option value="">Đã hủy</option>
+                    <select type="text" name="status" id="status">
+                        <option value="-1">Tất cả</option>
+                        <option value="0">Đã đăng ký</option>
+                        <option value="1">Đã điểm danh</option>
+                        <option value="2">Đã tiêm</option>
+                        <option value="3">Đã hủy</option>
                     </select>
 
                     <label for="vaccine">Vaccine</label>
-                    <select type="text" name="vaccine">
-                        <option value="">Tất cả</option>
-                        <option value="">AstraZeneca</option>
-                        <option value="">Comirnaty</option>
-                        <option value="">Verro Cell</option>
+                    <select type="text" name="vaccine" id="vaccine">
+                        <option value="-1">Tất cả</option>
+                        <option value="Astra">AstraZeneca</option>
+                        <option value="Comirnaty">Comirnaty (Pfizer)</option>
+                        <option value="Mordena">Mordena</option>
+                        <option value="Vero">Vero Cell</option>
+                        <option value="Sputnik">Sputnik V</option>
                     </select>
 
                     <label for="time">Buổi</label>
-                    <select type="drop-down" name="time">
-                        <option value="">Tất cả</option>
-                        <option value="">Sáng</option>
-                        <option value="">Chiều</option>
-                        <option value="">Tối</option>
+                    <select type="drop-down" name="time" id="time">
+                        <option value="-1">Tất cả</option>
+                        <option value="0">Sáng</option>
+                        <option value="1">Chiều</option>
+                        <option value="2">Tối</option>
                     </select>
 
-                    <button class="btn-medium-bordered-icon btn-filter">
+                    <button class="btn-medium-bordered-icon btn-filter" id="btn-filter-registration">
                         <img src="image/filter-magnifier.png" alt="filter-magnifier">
                         Tìm kiếm
                     </button>
@@ -99,67 +101,6 @@ if (!(isset($_SESSION['AccountInfo']) && $_SESSION['AccountInfo']->get_status() 
                 <br>
                 <div class="holder">
                     <div class="list-registration" id="list-registration">
-                        <?php
-
-                        include("DatabaseConnection.php");
-                        $sql = "select Name, ProvinceName, DistrictName, TownName, Street, TO_CHAR(OnDate, 'YYYY-MM-DD') OnDate, Time, NO, VaccineID, Serial, Status, DoseType, Image from (
-                                    (select SchedID, Time, NO, Status, REG.DoseType, OrgID, OnDate, VaccineID, Serial, Image from (
-                                        (select ID, SchedID, NO, Time, Status, DoseType, Image from REGISTER where CitizenID = :citizenid) REG
-                                        inner join
-                                        (select ID, OrgID, OnDate, VaccineID, Serial from SCHEDULE) SCHED
-                                        on
-                                        REG.SchedID = SCHED.ID)
-                                    ) REG_SCHED
-                                    inner join
-                                    (select ID, Name, ProvinceName, DistrictName, TownName, Street from ORGANIZATION) ORG
-                                    on REG_SCHED.OrgID = ORG.ID
-                                )";
-                        $command = oci_parse($connection, $sql);
-                        oci_bind_by_name($command, ':citizenid', $citizen->get_id());
-                        oci_execute($command);
-
-                        while (($row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS)) != false) {
-                            $Cregistration->get_sched()->get_org()->set_name($row['NAME']);
-                            $Cregistration->get_sched()->get_org()->set_provincename($row['PROVINCENAME']);
-                            $Cregistration->get_sched()->get_org()->set_districtname($row['DISTRICTNAME']);
-                            $Cregistration->get_sched()->get_org()->set_townname($row['TOWNNAME']);
-                            $Cregistration->get_sched()->get_org()->set_street($row['STREET']);
-                            $Cregistration->get_sched()->set_ondate($row['ONDATE']);
-                            $Cregistration->set_time($row['TIME']);
-                            $Cregistration->set_NO($row['NO']);
-                            $Cregistration->get_sched()->set_vaccine($row['VACCINEID']);
-                            $Cregistration->get_sched()->set_serial($row['SERIAL']);
-                            $Cregistration->set_status($row['STATUS']);
-                            $Cregistration->set_dosetype($row['DOSETYPE']);
-                            $Cregistration->set_image($row['IMAGE']);
-
-                            echo '
-                            <div class="registration">
-                                <p class="obj-org-name">' . $Cregistration->get_sched()->get_org()->get_name() . '</p>
-                                <div class="holder-obj-attr">
-                                        <div class="obj-attr">
-                                            <p class="attr-address">Đ/c: '
-                                . $Cregistration->get_sched()->get_org()->get_provincename() . ', '
-                                . $Cregistration->get_sched()->get_org()->get_districtname() . ', '
-                                . $Cregistration->get_sched()->get_org()->get_townname()
-                                . '</p>
-                                            <p class="attr-date-time-no">Lịch tiêm ngày: ' . $Cregistration->get_sched()->get_ondate()
-                                . '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Buổi ' . $Cregistration->get_time()
-                                . '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp STT: ' . $Cregistration->get_no() . '</p>
-                                            <p class="attr-vaccine-serial">Vaccine: '
-                                . $Cregistration->get_sched()->get_vaccine() . ' - ' . $Cregistration->get_sched()->get_serial()
-                                . '&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Tình trạng: ' . $Cregistration->get_status() . '</p>
-                                        </div>
-
-                                        <div class="interactive-area">
-                                            <button class="btn-medium-bordered btn-cancel">Hủy</button>
-                                        </div>
-                                    </div>
-                            </div>
-                            ';
-                        }
-                        ?>
-
                     </div>
 
                 </div>
@@ -169,6 +110,7 @@ if (!(isset($_SESSION['AccountInfo']) && $_SESSION['AccountInfo']->get_status() 
         </div>
     </div>
     <!-- END FUNCTION PANEL -->
+    <br>
     <br>
 
     <!-- FOOTER -->

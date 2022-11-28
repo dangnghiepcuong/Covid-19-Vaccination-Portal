@@ -140,7 +140,7 @@ $(document).ready(function () {
                         cache: false,
                         type: 'POST',
                         data: { method: 'RegisterAccount', username: username, password: password },
-                        url: 'HandleRegAcc.php',
+url: 'HandleRegAcc.php',
                         success: function (result) {
                             if (result.substring(0, 5) == 'ERROR') {
                                 alert(result);

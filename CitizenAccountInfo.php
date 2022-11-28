@@ -2,13 +2,18 @@
 include("object_Account.php");
 include("object_Citizen.php");
 session_start();
-if (!(isset($_SESSION['AccountInfo']) && $_SESSION['AccountInfo']->get_status() == 1) && isset($_SESSION['CitizenProfile']))
+
+// if logged in account has not register a profile then head to index.php
+if (!(isset($_SESSION['AccountInfo']) && $_SESSION['AccountInfo']->get_status() == 1))
     header('Location: index.php');
+// if there is not any profile was queried then head to index
+if (isset($_SESSION['CitizenProfile']) == false)
+    header('Location: index.php');
+    
 $citizen = $_SESSION['CitizenProfile'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

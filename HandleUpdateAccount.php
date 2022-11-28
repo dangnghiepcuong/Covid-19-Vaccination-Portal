@@ -1,17 +1,21 @@
 <?php
-error_reporting(0);
+error_reporting(E_ERROR | E_PARSE);
 include("object_Account.php");
 include("object_Citizen.php");
 session_start();
 
-if ($_POST['password'] != $_SESSION['AccountInfo']->get_password())
-{
+if (isset($_POST['method'])) {
+    $method = $_POST['method'];
+    $method();
+} else
+    header('Location: index.php');
+
+if ($_POST['password'] != $_SESSION['AccountInfo']->get_password()) {
     echo 'Password is incorrect!';
     return;
 }
 
-if (isset($_POST['method']))
-{
+if (isset($_POST['method'])) {
     $method = $_POST['method'];
     $method();
     return;

@@ -5,12 +5,14 @@ session_start();
 if (isset($_SESSION['OrgProfile']))
     $org = $_SESSION['OrgProfile'];
 
-$method = $_POST['method'];
-
-if ($method == 'LoadSchedule')
-    $method($_POST['orgid']);
-else 
-    $method();
+if (isset($_POST['method'])) {
+    $method = $_POST['method'];
+    if ($method == 'LoadSchedule')
+        $method($_POST['orgid']);
+    else
+        $method();
+} else
+    header('Location: index.php');
 
 function LoadOrg($province = "", $district = "", $town = "")
 {
@@ -56,8 +58,8 @@ function LoadOrg($province = "", $district = "", $town = "")
     $result = "";
     while (($row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS)) != false) {
         $result .= '
-        <div class="organization" id="'.$row['ID'].'">
-            <p class="obj-org-name">' . $row['NAME'] . ': '.$row['C'].' lịch</p>
+<div class="organization" id="' . $row['ID'] . '">
+            <p class="obj-org-name">' . $row['NAME'] . ': ' . $row['C'] . ' lịch</p>
             <div class="holder-obj-attr">
                 <div class="obj-attr">
                     <p class="attr-location">K/v: ' . $row['PROVINCENAME'] . ' - ' . $row['DISTRICTNAME'] . ' - ' . $row['TOWNNAME'] . '</p>
@@ -103,12 +105,11 @@ function LoadSchedule($orgid = "")
 
     $command = oci_parse($connection, $sql);
 
-    if ($orgid == "")
-    {
+
+    if ($orgid == "") {
         global $org;
         oci_bind_by_name($command, ':id', $org->get_id());
-    }
-    else{
+    } else {
         oci_bind_by_name($command, ':id', $orgid);
     }
 
@@ -127,32 +128,49 @@ function LoadSchedule($orgid = "")
     }
 
     $result = "";
-    while (($row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS)) != false) {
-        $result .=
-            '<div class="schedule">
-            <div class="holder-obj-attr">
-                <div class="obj-attr">
-                    <p class="attr-date">Lịch tiêm ngày: ' . $row['ONDATE'] . '</p>
-                    <p class="attr-vaccine">Vaccine: ' . $row['VACCINEID'] . '</p>
-                    <p class="attr-serial">Serial: ' . $row['SERIAL'] . '</p>
-                </div>
-                <div class="obj-attr">
-                    <p class="attr-daytime">Buổi sáng: ' . $row['DAYREGISTERED'] . '/' . $row['LIMITDAY'] . '</p>
-                    <p class="attr-noontime">Buổi trưa: ' . $row['NOONREGISTERED'] . '/' . $row['LIMITNOON'] . '</p>
-                    <p class="attr-nighttime">Buổi tối: ' . $row['NIGHTREGISTERED'] . '/' . $row['LIMITNIGHT'] . '</p>
-                </div>
-                <div class="interactive-area">
-                    <select class="drop-down-time" name="" id="">
-                        <option value="0">Sáng</option>
-                        <option value="1">Trưa</option>
-                        <option value="2">Tối</option>
-                    </select>
-                    <br>
-                    <button class="btn-medium-filled  btn-register" id="btn-filter-schedule">Đăng ký</button>
-                </div>
-            </div>
-        </div>';
-    }
+    if (isset($_SESSION['OrgProfile']))
+        while (($row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS)) != false) {
+            $result .=
+                '<div class="schedule" id="' . $row['ID'] . '">
+    
+                        <div class="obj-attr">
+                            <p class="attr-date-vaccine-serial">Lịch tiêm ngày: ' . $row['ONDATE'] . ' - Vaccine:
+                            ' . $row['VACCINEID'] . ' - ' . $row['SERIAL'] . '</p>
+                            <p class="attr-time">Buổi sáng: ' . $row['DAYREGISTERED'] . '/' . $row['LIMITDAY'] . ' - Buổi trưa: ' . $row['NOONREGISTERED'] . '/' . $row['LIMITNOON'] . ' - Buổi tối: ' . $row['NIGHTREGISTERED'] . '/' . $row['LIMITNIGHT'] . '</p>
+                        </div>
+                        <div class="interactive-area">
+                            <button class="btn-medium-filled btn-register">Lượt đăng ký</button>
+                            <button class="btn-medium-bordered btn-update">Cập nhật</button>
+                            <button class="btn-short-bordered btn-cancel">Hủy</button>
+                        </div>
+ 
+                </div>';
+        }
+    else
+        while (($row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS)) != false) {
+            $result .=
+                '<div class="schedule" id="' . $row['ID'] . '">
+                    <div class="obj-attr">
+                        <p class="attr-date">Lịch tiêm ngày: ' . $row['ONDATE'] . '</p>
+                        <p class="attr-vaccine">Vaccine: ' . $row['VACCINEID'] . '</p>
+                        <p class="attr-serial">Serial: ' . $row['SERIAL'] . '</p>
+                    </div>
+                    <div class="obj-attr">
+                        <p class="attr-daytime">Buổi sáng: ' . $row['DAYREGISTERED'] . '/' . $row['LIMITDAY'] . '</p>
+                        <p class="attr-noontime">Buổi trưa: ' . $row['NOONREGISTERED'] . '/' . $row['LIMITNOON'] . '</p>
+                        <p class="attr-nighttime">Buổi tối: ' . $row['NIGHTREGISTERED'] . '/' . $row['LIMITNIGHT'] . '</p>
+                    </div>
+                    <div class="interactive-area">
+                        <select class="drop-down-time" name="" id="">
+                            <option value="0">Sáng</option>
+                            <option value="1">Trưa</option>
+                            <option value="2">Tối</option>
+                        </select>
+                        <br>
+                        <button class="btn-medium-filled btn-register-schedule">Đăng ký</button>
+                    </div>
+                </div>';
+        }
 
     echo $result;
 }
