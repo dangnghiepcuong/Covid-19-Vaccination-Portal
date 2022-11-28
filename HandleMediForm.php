@@ -1,6 +1,6 @@
 <?php
+error_reporting(E_ERROR | E_PARSE);
 include("object_Citizen.php");
-error_reporting(0);
 session_start();
 
 include("DatabaseConnection.php");                           //Connection String

@@ -20,7 +20,6 @@ else {
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/MedicalFormSubmit.css">
     <link rel="stylesheet" href="css/filter-panel.css">
-    <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/MedicalFormSubmit.js"></script>
@@ -65,7 +64,7 @@ else {
             <div class="panel-target-citizen">
                 <p>Đối tượng: </p>
                 <select name="" id="">
-                    <option value="'.$citizen->get_ID().'">'. $citizen->get_fullname() .'</option>
+                    <option value="' . $citizen->get_ID() . '">' . $citizen->get_fullname() . '</option>
                 </select>
             </div>'
             ?>
@@ -82,7 +81,7 @@ else {
                     </p>
                     <div class="form-btn-input">
                         <label for="q1_no">Không</label>
-                        <input type="radio" name="q1" id="q1_no" value="0">
+                        <input type="radio" name="q1" id="q1_no" value="0" checked="checked">
                         <label for="q1_yes">Có</label>
                         <input type="radio" name="q1" id="q1_yes" value="1">
                     </div>
@@ -91,7 +90,7 @@ else {
                     </p>
                     <div class="form-btn-input">
                         <label for="q2_no">Không</label>
-                        <input type="radio" name="q2" id="q2_no" value="0">
+                        <input type="radio" name="q2" id="q2_no" value="0" checked="checked">
                         <label for="q2_yes">Có</label>
                         <input type="radio" name="q2" id="q2_yes" value="1">
                     </div>
@@ -100,7 +99,7 @@ else {
                     </p>
                     <div class="form-btn-input">
                         <label for="q3_no">Không</label>
-                        <input type="radio" name="q3" id="q3_no" value="0">
+                        <input type="radio" name="q3" id="q3_no" value="0" checked="checked">
                         <label for="q3_yes">Có</label>
                         <input type="radio" name="q3" id="q3_yes" value="1">
                     </div>
@@ -110,13 +109,13 @@ else {
                     </p>
                     <div class="form-btn-input">
                         <label for="q4_no">Không</label>
-                        <input type="radio" name="q4" id="q4_no" value="0">
+                        <input type="radio" name="q4" id="q4_no" value="0" checked="checked">
                         <label for="q4_yes">Có</label>
                         <input type="radio" name="q4" id="q4_yes" value="1">
                     </div>
                     <br>
                     <div class="form-btn-input">
-                        <button class="btn-medium-filled btn-confirm" id="btn-submit-form-medical">Xác nhận</button>
+                        <button class="btn-medium-filled btn-confirm" id="btn-submit">Xác nhận</button>
                     </div>
                 </div>
             </div>
@@ -125,19 +124,10 @@ else {
     <!-- END FUNCTION PANEL -->
     <br>
 
-    <div class="form-popup-confirm">
-        <br><br>
-        <p class="form-message">Xác nhận thực hiện khai báo y tế?</p>
-        <br><br>
-        <div class="holder-btn">
-            <button class="btn-medium-filled btn-confirm">Xác nhận</button>
-            <button class="btn-medium-bordered btn-cancel">Hủy</button>
-        </div>
-    </div>
-
     <?php
     include("SignupLoginForm.html");
-    include("footer.php")
+    include("footer.php");
+    include("WebElements.html");
     ?>
 </body>
 
