@@ -9,7 +9,6 @@ if (isset($_POST['method'])) {
     header("location:javascript://history.go(-1)");
 
 
-
 function LoadRegistration()
 {
     include("DatabaseConnection.php");
