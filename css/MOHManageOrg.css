@@ -12,6 +12,7 @@
     border-style: solid;
     border: 1px solid #8C69CA;
     border-radius: 0px 20px 20px 0px;
+    overflow-y: auto;                   /*Scroll in div*/
 }
 
 .panel-list {

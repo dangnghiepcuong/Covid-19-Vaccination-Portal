@@ -73,7 +73,6 @@ $moh = $_SESSION['OrgProfile'];
                             }
                             echo '<script>
                         $("#select-province option:first-child").val(' . $provincecode . ');
-                        $("#select-province option:first-child").after("<option value></option>");
                         </script>';
                             ?>
                         </select>
