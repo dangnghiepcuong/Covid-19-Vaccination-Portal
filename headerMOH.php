@@ -18,7 +18,7 @@
                     <li class="menu-section">Dữ liệu</li>
                 </a>
 
-                <a href="VaccinationRegistration.php">
+                <a href="MOHManageOrg.php">
                     <li class="menu-section">Đơn vị</li>
                 </a>
             </ul>

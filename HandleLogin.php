@@ -28,6 +28,10 @@ if ($row == false) {
 
         switch ($_SESSION['AccountInfo']->get_role()) {
             case 0:
+                $sql = "select * from ORGANIZATION where ID = :id";    //check exist profile
+                $command = oci_parse($connection, $sql);
+                oci_bind_by_name($command, ':id', $_POST['username']);
+                break;
             case 1:
                 $sql = "select * from ORGANIZATION where ID = :id";    //check exist profile
                 $command = oci_parse($connection, $sql);

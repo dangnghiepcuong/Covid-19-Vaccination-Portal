@@ -35,7 +35,10 @@ $account = new Account();
             $account = $_SESSION['AccountInfo'];
             switch ((int)$account->get_role()) {
                 case 0:
-                    include("headerORG.php");
+                    if (isset($_SESSION['OrgProfile']) == false) {
+                        include("OrgLoadProfile.php");
+                    }
+                    include("headerMOH.php");
                     break;
                 case 1:
                     if (isset($_SESSION['OrgProfile']) == false) {

@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
     // LOAD FRONT END DATA
-    menu_title = "<a href='MOHProvideAccount.php.php'>Cấp tài khoản đơn vị</a>";
+    menu_title = "<a href='MOHManageOrg.php.php'>Quản lý đơn vị tiêm chủng</a>";
     $("#function-navigation-bar-title").html(menu_title);
 
     homepage = "<a href='index.php'>Trang chủ</a>";
@@ -10,7 +10,7 @@ $(document).ready(function () {
     subpage = "<a href='MOHProfile.php'>Đơn vị</a>"
     $("#subpage-path").html(subpage);
 
-    selected_function = "<a href='MOHProvideAccount.php.php'>Cấp tài khoản đơn vị</a>";
+    selected_function = "<a href='MOHManageOrg.php.php'>Quản lý đơn vị tiêm chủng</a>";
     $("#selected-function-path").html(selected_function);
 
     $("#function-menu-title").text("Đơn vị tiêm chủng");
