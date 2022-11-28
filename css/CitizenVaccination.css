@@ -12,6 +12,7 @@
     border-style: solid;
     border: 1px solid #8C69CA;
     border-radius: 20px;
+    /* overflow-y: auto; */
 }
 
 .panel-list {
@@ -49,12 +50,14 @@
 
 .panel-list .holder .list-schedule {
     width: 50%;
+    height: 390px;
+    overflow-y: auto;
 }
 
 .panel-list .holder .list-schedule .schedule {
-    width: 100%;
+    width: 98%;
     height: 100px;
-    margin-bottom: 4px;
+    margin: 3px 5px;
     background-color: white;
     box-shadow: 2px 2px 5px -2px #8C69CA;
     transition: 300ms;
@@ -108,13 +111,16 @@
 /* LIST ORG */
 
 .panel-list .holder .list-org {
-    width: 40%;
+    width: 45%;
+    height: 390px;
+    overflow-y: auto;
+    scroll-behavior: smooth;
 }
 
 .panel-list .holder .list-org .organization {
-    width: 100%;
+    width: 98%;
     height: 100px;
-    margin-bottom: 4px;
+    margin: 3px 5px;
     background-color: white;
     box-shadow: 2px 2px 5px -2px #8C69CA;
     transition: 300ms;

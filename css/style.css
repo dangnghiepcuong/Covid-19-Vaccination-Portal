@@ -23,14 +23,19 @@ body::-webkit-scrollbar {
     /*horizontal scrollbar height*/
 }
 
-body::-webkit-scrollbar-thumb {
+body::-webkit-scrollbar-thumb, .panel-list .holder .list-org::-webkit-scrollbar-thumb, .panel-list .holder .list-schedule::-webkit-scrollbar-thumb {
     background: var(--color_header);
     border-radius: 6px;
 }
 
-body::-webkit-scrollbar-track {
+body::-webkit-scrollbar-track, .panel-list .holder .list-org::-webkit-scrollbar-track, .panel-list .holder .list-schedule::-webkit-scrollbar-track {
     /*scrollbar bg*/
     background: whitesmoke;
+}
+
+.panel-list .holder .list-org::-webkit-scrollbar, .panel-list .holder .list-schedule::-webkit-scrollbar {
+    width: 5px;
+    height: 10px;
 }
 
 /* POPUP CONFIRM FORM */
