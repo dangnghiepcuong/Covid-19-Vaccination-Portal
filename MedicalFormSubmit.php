@@ -1,10 +1,16 @@
 <?php
+include("object_Account.php");
+include("object_Citizen.php");
 session_start();
 $checkUser = true;
-if (isset($_SESSION['AccountInfo']) == false)
+
+// if logged in account has not register a profile then head to index.php
+if (!(isset($_SESSION['AccountInfo']) && $_SESSION['AccountInfo']->get_status() == 1))
+    $checkUser = false;
+// if there is not any profile was queried then head to index
+if (isset($_SESSION['CitizenProfile']) == false)
     $checkUser = false;
 else {
-    include("object_Form.php");
     include("CitizenLoadProfile.php");
     $citizen = $_SESSION['CitizenProfile'];
 }
@@ -115,7 +121,7 @@ else {
                     </div>
                     <br>
                     <div class="form-btn-input">
-                        <button class="btn-medium-filled btn-confirm" id="btn-submit">Xác nhận</button>
+                        <button class="btn-medium-filled" id="btn-submit">Xác nhận</button>
                     </div>
                 </div>
             </div>
@@ -125,9 +131,9 @@ else {
     <br>
 
     <?php
+    include("WebElements.html");
     include("SignupLoginForm.html");
     include("footer.php");
-    include("WebElements.html");
     ?>
 </body>
 

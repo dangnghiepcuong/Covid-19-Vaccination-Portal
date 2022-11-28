@@ -5,7 +5,7 @@ $(document).ready(function () {
 
     homepage = "<a href='HomepageCitizen.php'>Trang chủ</a>";
     $("#homepage-path").html(homepage);
-    
+
     subpage = "<a href='#'>Công dân</a>"
     $("#subpage-path").html(subpage);
 
@@ -28,11 +28,11 @@ $(document).ready(function () {
     // LOAD REGISTRATION
     LoadRegistration();
 
-    $('#btn-filter-registration').click(function(){
+    $('#btn-filter-registration').click(function () {
         LoadRegistration();
     })
 
-    function LoadRegistration(){
+    function LoadRegistration() {
         status = $('#status').val();
         vaccine = $('#vaccine').val();
         time = $('#time').val();
@@ -42,14 +42,14 @@ $(document).ready(function () {
             url: 'HandleLoadRegistration.php',
             type: 'POST',
             data: { method: 'LoadRegistration', status: status, vaccine: vaccine, time: time },
-            success: function(result) {
+            success: function (result) {
                 if (result.substring(0, 5) == 'ERROR') {    //EXCEPTION
                     alert(result);
                     return;
                 }
                 $('#list-registration').html(result);
             },
-            error: function(error) {
+            error: function (error) {
 
             }
         })
@@ -57,27 +57,35 @@ $(document).ready(function () {
     // END LOAD REGISTRATION
 
     // CANCEL REGISTRATION
-    $('#list-registration').on('click', '.btn-cancel-registration', function(){
+    $('#list-registration').on('click', '.btn-cancel-registration', function () {
         $('#form-popup-confirm').find('.form-message').html('Xác nhận hủy đăng ký tiêm chủng?');
         $('#form-popup-confirm').css('display', 'grid');
         $('#gradient-bg-faded').css('display', 'block');
 
         SchedID = $(this).parent().parent().parent().attr('id');
+        $('#form-popup-confirm').find('.btn-confirm').click(function () {
+            CancelRegistration(SchedID);
+        })
+
+    })
+
+    function CancelRegistration(SchedID) {
         $.ajax({
             cache: false,
             url: 'HandleLoadRegistration.php',
             type: 'POST',
             data: { method: 'CancelRegistration', SchedID: SchedID },
-            success: function(result) {
+            success: function (result) {
                 if (result.substring(0, 5) == 'ERROR') {    //EXCEPTION
                     alert(result);
                     return;
                 }
-                alert(result)
+                if (result == 'Registration Canceled!')
+                    location.reload();
             },
-            error: function(error) {
+            error: function (error) {
             }
         })
-    })
+    }
     // END CANCEL REGISTRATION
 })

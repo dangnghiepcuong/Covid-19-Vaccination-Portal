@@ -52,9 +52,9 @@ $(document).ready(function () {
 
         $.ajax({
             cache: false,
-            url: "HandleUpdateAccount.php",
+            url: 'HandleUpdateAccount.php',
             type: "POST",
-            data: { phone: phone, password: password, new_password: new_password },
+            data: { method: 'HandleUpdateAccount', phone: phone, password: password, new_password: new_password },
             success: function (result) {
                 if (result.substring(0, 5) == 'ERROR') {    //EXCEPTION
                     alert(result);
@@ -66,9 +66,16 @@ $(document).ready(function () {
                 }
                 if (result == 'Account Updated!') {
                     $('.form-message').text('Cập nhật tài khoản thành công!');
-                    $('#form-popup-confirm').css('display', 'block');
-                    $('.gradient-bg-faded').css('display', 'block');
-                    location.reload();
+                    $('#form-popup-confirm').css('display', 'grid');
+                    $('#gradient-bg-faded').css('display', 'block');
+
+                    $('#form-popup-confirm').find('.btn-confirm').click(function(){
+                        location.reload();
+                    })
+
+                    $('#gradient-bg-faded').click(function(){
+                        location.reload();
+                    })
                 }
             },
             error: function (error) {

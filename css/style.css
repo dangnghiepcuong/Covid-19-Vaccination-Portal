@@ -65,7 +65,7 @@ body::-webkit-scrollbar-track, .panel-list .holder .list-org::-webkit-scrollbar-
 
 .form-popup  .holder-btn {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     width: 260px;
     margin: 0 auto;
     padding-top: 10px;
