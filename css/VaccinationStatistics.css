@@ -1,0 +1,177 @@
+/* FUNCTION PANEL */
+.panel-target-citizen {
+    display: flex;
+    justify-content: center;
+    margin-left: 50px;
+    margin-right: 50px;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+}
+
+.panel-target-citizen *{
+    font-family: 'Roboto';
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0px 5px;
+    line-height: 50px;
+}
+
+.panel-target-citizen select {
+    border: none;
+}
+
+.panel-search-citizen {
+    display: flex;
+    justify-content: center;
+    margin-left: 50px;
+    margin-right: 50px;
+    border: none;
+}
+
+.panel-search-citizen *{
+    font-family: 'Roboto';
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0px 5px;
+    line-height: 50px;
+}
+
+.panel-search-citizen select {
+    border: none;
+}
+
+.holder-function-panel {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.nav-panel {
+    width: 17%;
+    height: 590px;
+    border-style: solid;
+    border: 1px solid #8C69CA;
+    border-right: none;
+    border-radius: 20px 20px 20px 20px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+}
+
+.nav-panel .title {
+    z-index: 5;
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+    background: rgba(255, 255, 255, 0.75);
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 40px;
+    text-align: center;
+} 
+
+.nav-panel .title-bg {
+    width: 100%;
+    height: 10px;
+    position: relative;
+    margin: 0 auto;
+    background: linear-gradient(90.97deg, rgba(157, 143, 193, 0.68) 22.76%, #F5A8FF 49.22%, #AAD5EE 79.48%);
+    filter: blur(25px);
+    border-radius: 20px;
+} 
+
+.nav-panel ul {
+    list-style: none;
+}
+
+.nav-panel ul li {
+    margin: 0px 20px;
+    padding: 10px 10px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    font-weight: 400;
+    transition: 300ms;
+    border-radius: 10px;
+}
+
+.nav-panel ul li:hover {
+    cursor: pointer;
+    background-color: #D1BFF3;
+    color: white;
+}
+
+.function-panel {
+    width: 63%;
+    height: 590px;
+    border-style: solid;
+    border: 1px solid #8C69CA;
+    border-radius: 20px 20px 20px 20px;
+}
+
+.filter-region {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0px;
+}
+
+.filter-panel {
+    width: 100%;
+    margin: 0 auto;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.filter-panel label {
+    line-height: 30px;
+    font-size: 18px;
+}
+
+.filter-panel input {
+    line-height: 20px;
+    width: 200px;
+    height: 35px;
+    border: none;
+    outline: none;
+    font-family: 'Roboto';
+    font-weight: 300px;
+    border-style: solid;
+    border: 0px solid #000000;
+    font-size: 18px; 
+    box-shadow: 0px 1px;
+    
+}
+
+.filter-panel select {
+    height: 25px;
+    font-size: 18px;
+    border: none;
+}
+
+.filter-panel hr {  
+    background: var(--bg_gradient);
+    height: 2px;
+    display: inline-block;
+    border: none;
+    position: absolute;
+}
+
+hr {
+    width: 310px;
+height: 0px;
+
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+/* Inside auto layout */
+
+flex: none;
+order: 2;
+flex-grow: 0;
+}
+/* END FUNCTIN PANEL */
+
