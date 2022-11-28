@@ -39,23 +39,6 @@
 
         <!-- FUNCTIONAL PANEL -->
         <div class="function-panel">
-            <br>
-            <div class="filter-panel">
-                <div class="filter-pane">
-                    <label for="city">Bộ lọc tỉnh/TP</label>
-                    <select name="city" id="">
-                        <option value="">HCM</option>
-                    </select>
-
-                    <button class="btn-medium-bordered-icon btn-filter">
-                        <img src="image/filter-magnifier.png" alt="filter-magnifier">
-                        Tìm kiếm
-                    </button>
-                </div>
-
-            </div>
-            <br>
-
             <div class="provide-panel">
                 <div class="frame">
                     <div class="provide-account">
