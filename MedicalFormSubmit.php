@@ -115,7 +115,7 @@ else {
                     </div>
                     <br>
                     <div class="form-btn-input">
-                        <button class="btn-medium-filled btn-confirm" id="btn-submit">Xác nhận</button>
+                        <button class="btn-medium-filled" id="btn-submit">Xác nhận</button>
                     </div>
                 </div>
             </div>
@@ -125,9 +125,9 @@ else {
     <br>
 
     <?php
+    include("WebElements.html");
     include("SignupLoginForm.html");
     include("footer.php");
-    include("WebElements.html");
     ?>
 </body>
 
