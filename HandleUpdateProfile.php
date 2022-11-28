@@ -9,7 +9,7 @@ if (isset($_POST['method'])) {
     $method = $_POST['method'];
     $method();
 } else
-    header('Location: index.php');
+    header('Location: ' . $_SERVER['HTTP_REFERER']);
 
 function UpdateCitizenProfile()
 {

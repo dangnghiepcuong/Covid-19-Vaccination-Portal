@@ -12,7 +12,7 @@ if (isset($_POST['method'])) {
     else
         $method();
 } else
-    header('Location: index.php');
+    header("location:javascript://history.go(-1)");
 
 function LoadOrg($province = "", $district = "", $town = "")
 {

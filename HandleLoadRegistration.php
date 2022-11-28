@@ -6,7 +6,9 @@ if (isset($_POST['method'])) {
     $method = $_POST['method'];
     $method();
 } else
-    header('Location: index.php');
+    header("location:javascript://history.go(-1)");
+
+
 
 function LoadRegistration()
 {
