@@ -20,5 +20,33 @@ $(document).ready(function () {
 
     $("#function-menu-list").find("ul").html(menu);
     // END LOAD FRONT END DATA
+
+    LoadOrg();
+
+    $('#btn-filter-org').click(function () {
+        LoadOrg();
+    })
+
+    function LoadOrg() {
+        province = $('#select-province').find('option:selected').text();
+        district = $('#select-district').find('option:selected').text();
+        town = $('#select-town').find('option:selected').text();
+
+        $.ajax({
+            cache: false,
+            url: 'HandleLoadOrg.php',
+            type: 'POST',
+            data: { method: 'LoadOrg', province: province, district: district, town: town },
+            success: function (result) {
+                if (result.substring(0, 5) == 'ERROR') {    //EXCEPTION
+                    alert(result);
+                    return;
+                }
+                $('#list-org').html(result);
+            },
+            error: function (error) {
+            }
+        })
+    }
 })
 

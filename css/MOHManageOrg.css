@@ -12,7 +12,6 @@
     border-style: solid;
     border: 1px solid #8C69CA;
     border-radius: 0px 20px 20px 0px;
-    overflow-y: auto;                   /*Scroll in div*/
 }
 
 .panel-list {
@@ -43,83 +42,27 @@
     width: 95%;
     height: 100%;
     margin: 0 auto;
-    justify-content: space-between;
-}
-
-/* LIST SCHEDULE */
-
-.panel-list .holder .list-schedule {
-    width: 50%;
-}
-
-.panel-list .holder .list-schedule .schedule {
-    width: 100%;
-    height: 100px;
-    margin-bottom: 4px;
-    background-color: white;
-    box-shadow: 2px 2px 5px -2px #8C69CA;
-    transition: 300ms;
-}
-
-.panel-list .holder .list-schedule .schedule:hover {
-    box-shadow: 2px 2px 5px -1px #F5A8FF;
-}
-
-.panel-list .holder .list-schedule .schedule 
-.obj-org-name {
-    padding: 5px 0px 0px 15px;
-    font-size: 20px;
-    font-weight: 600;
-    color: #D1BFF3;
-}
-
-.panel-list .holder .list-schedule .schedule {
-    display: flex;
-    justify-content: space-between;
-}
-
-
-.panel-list .holder .list-schedule .schedule .obj-attr * {
-    padding: 3px 0px;
-    font-family: 'Roboto';
-    font-size: 18px;
-    font-style: italic;
-    font-weight: 300;
-}
-
-.panel-list .holder .list-schedule .schedule .obj-attr {
-    padding: 8px 10px 8px 15px;
-    align-items: center;
-}
-
-.panel-list .holder .list-schedule .schedule .interactive-area {
-    padding: 8px 10px 8px 15px;
-    align-items: center;
-}
-
-.panel-list .holder .list-schedule .schedule .interactive-area .drop-down-time {
-    width: 80px;
-    height: 30px;
-    margin-bottom: 10px;
-    font-family: 'Roboto';
-    font-size: 18px;
-    font-weight: 300;
+    justify-content: center;
 }
 
 /* LIST ORG */
 
 .panel-list .holder .list-org {
-    width: 40%;
+    width: 60%;
+    height: 400px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 .panel-list .holder .list-org .organization {
-    width: 100%;
-    height: 100px;
-    margin-bottom: 4px;
+    width: 98%;
+    height: 120px;
+    margin: 3px 5px;
     background-color: white;
     box-shadow: 2px 2px 5px -2px #8C69CA;
     transition: 300ms;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 .panel-list .holder .list-org .organization:hover {
