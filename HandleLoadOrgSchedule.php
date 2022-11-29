@@ -58,13 +58,11 @@ function LoadOrg($province = "", $district = "", $town = "")
     $result = "";
     while (($row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS)) != false) {
         $result .= '
-<div class="organization" id="' . $row['ID'] . '">
+        <div class="organization object" id="' . $row['ID'] . '">
             <p class="obj-org-name">' . $row['NAME'] . ': ' . $row['C'] . ' lịch</p>
-            <div class="holder-obj-attr">
-                <div class="obj-attr">
-                    <p class="attr-location">K/v: ' . $row['PROVINCENAME'] . ' - ' . $row['DISTRICTNAME'] . ' - ' . $row['TOWNNAME'] . '</p>
-                    <p class="attr-address">Đ/c: ' . $row['STREET'] . '</p>
-                </div>
+            <div class="obj-attr">
+                <p class="attr-location">K/v: ' . $row['PROVINCENAME'] . ' - ' . $row['DISTRICTNAME'] . ' - ' . $row['TOWNNAME'] . '</p>
+                <p class="attr-address">Đ/c: ' . $row['STREET'] . '</p>
             </div>
         </div>';
     }
@@ -131,7 +129,7 @@ function LoadSchedule($orgid = "")
     if (isset($_SESSION['OrgProfile']))
         while (($row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS)) != false) {
             $result .=
-                '<div class="schedule" id="' . $row['ID'] . '">
+                '<div class="schedule object" id="' . $row['ID'] . '">
     
                         <div class="obj-attr">
                             <p class="attr-date-vaccine-serial">Lịch tiêm ngày: ' . $row['ONDATE'] . ' - Vaccine:
@@ -149,7 +147,7 @@ function LoadSchedule($orgid = "")
     else
         while (($row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS)) != false) {
             $result .=
-                '<div class="schedule" id="' . $row['ID'] . '">
+                '<div class="schedule object" id="' . $row['ID'] . '">
                     <div class="obj-attr">
                         <p class="attr-date">Lịch tiêm ngày: ' . $row['ONDATE'] . '</p>
                         <p class="attr-vaccine">Vaccine: ' . $row['VACCINEID'] . '</p>
