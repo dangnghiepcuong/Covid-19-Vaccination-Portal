@@ -138,9 +138,6 @@ $moh = $_SESSION['OrgProfile'];
                 <div class="holder">
                     <div class="list-org" id="list-org">
                     </div>
-
-                    <div class="list-schedule" id="list-schedule">
-                    </div>
                 </div>
             </div>
 
