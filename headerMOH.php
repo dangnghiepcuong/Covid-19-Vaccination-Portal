@@ -14,12 +14,12 @@
                     <li class="menu-section">Tổng quan</li>
                 </a>
 
-                <a href="MedicalFormSubmit.php">
+                <a href="#">
                     <li class="menu-section">Dữ liệu</li>
                 </a>
 
                 <a href="MOHManageOrg.php">
-                    <li class="menu-section">Đơn vị</li>
+                    <li class="menu-section">Các đơn vị</li>
                 </a>
             </ul>
         </div>
