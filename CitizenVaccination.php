@@ -137,16 +137,16 @@ $citizen = $_SESSION['CitizenProfile'];
 
             <div class="panel-list">
                 <div class="list-name">
-                    <div class="org" id="list-name-org">Danh sách bệnh viện</div>
+                    <div class="organization" id="list-name-org">Danh sách bệnh viện</div>
                     <div class="schedule" id="list-name-schedule">Danh sách lịch tiêm</div>
                 </div>
                 <br>
 
                 <div class="holder">
-                    <div class="list-org" id="list-org">
+                    <div class="list-object list-org" id="list-org">
                     </div>
 
-                    <div class="list-schedule" id="list-schedule">
+                    <div class="list-object list-schedule" id="list-schedule">
                     </div>
                 </div>
             </div>
