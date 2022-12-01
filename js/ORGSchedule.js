@@ -22,7 +22,7 @@ $(document).ready(function () {
     // $('#end-date').val(today);
 
     // LOAD SCHEDULE DATA
-LoadSchedule($('.orgid').attr('id'));
+    LoadSchedule($('.orgid').attr('id'));
 
     $('#btn-filter-schedule').click(function () {
         LoadSchedule($('.orgid').attr('id'));

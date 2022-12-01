@@ -194,7 +194,6 @@ var PopupConfirm = function (message) {
         $('#form-popup-confirm').css('display', 'none');
         $('#gradient-bg-faded').css('display', 'none');
     })
-
 }
 
 var PopupOption = function(message, buttons) {
