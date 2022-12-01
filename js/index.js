@@ -32,6 +32,12 @@ $(document).ready(function () {
         $(this).parent().find('.message').text("");
     })
 
+    $('#btn-forgot-password').click(function () {
+        $('#form-container-login').css('display', 'none');
+        $('#container-forgot-password').css('display', 'grid');
+        $(this).parent().find('.message').text("");
+    })
+
     // LOAD LOCAL LIST DATA ON SELECT
     $.getJSON('local.json', function (data) {
         i = 0;
@@ -140,7 +146,7 @@ $(document).ready(function () {
                         cache: false,
                         type: 'POST',
                         data: { method: 'RegisterAccount', username: username, password: password },
-url: 'HandleRegAcc.php',
+                        url: 'HandleRegAcc.php',
                         success: function (result) {
                             if (result.substring(0, 5) == 'ERROR') {
                                 alert(result);

@@ -187,29 +187,31 @@ if (!defined('browsable')) {
 <!-- END REGISTRATION PERSONAL PROFILE FORM -->
 
 <!-- FORGOT PASSWORD FORM -->
-<div class="form container-forgot-password">
+<div class="form container-forgot-password" id="container-forgot-password">
     <p class="title">Quên mật khẩu</p>
-    <br>
-
-    <label for="username"><b>SĐT/Tên tài khoản</b></label>
-    <input type="text" name="username" required>
-    <hr>
-    <br>
-
-    <div class="verifind_account">
-        <div class="message"></div>
-        <label for="capcha"><b>Nhập mã xác nhận</b></label>
-        <input type="text" name="capcha" required>
+    <div>
+        <label for="username">SĐT/Tên tài khoản</label>
+        <input type="text" name="username" required>
         <hr>
     </div>
+
+    <div class="verifind_account">
+        <label for="capcha">Nhập mã xác nhận</label>
+        <input type="text" name="capcha" required>
+        <hr>
+        <div class="message">Mã xác nhận được gửi đến Email đã đăng kí </div>
+    </div>
     <div class="new_password">
-        <label for="password"><b>Mật khẩu mới</b></label>
+        <label for="password">Mật khẩu mới</label>
         <input type="password" name="password" required>
         <hr>
         <br>
-        <label for="repeat-password"><b>Nhập lại mật khẩu mới</b></label>
+        <label for="repeat-password">Nhập lại mật khẩu mới</label>
         <input type="password" name="repeat-password" required>
         <hr>
     </div>
+
+    <div class="btn-long" id="btn-reset-password">Xác nhận</div>
+
 </div>
 <!-- END FORGOT PASSWORD FORM -->
