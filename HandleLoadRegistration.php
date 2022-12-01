@@ -44,7 +44,7 @@ function LoadRegistration()
         oci_bind_by_name($command, ':vaccine', $_POST['vaccine']);
     if ($_POST['time'] != -1)
         oci_bind_by_name($command, ':time', $_POST['time']);
-
+    echo $sql;
     $r = oci_execute($command);
     if (!$r) {
         $exception = oci_error($command);

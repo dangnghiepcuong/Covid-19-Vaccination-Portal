@@ -16,7 +16,7 @@ if (isset($_POST['method'])) {
 } else
     header("location:javascript://history.go(-1)");
 
-function LoadOrg($province = "", $district = "", $town = "")
+function LoadOrg()
 {
     include("DatabaseConnection.php");
 

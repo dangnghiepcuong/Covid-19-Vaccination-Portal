@@ -6,6 +6,10 @@ include("object_Account.php");
 include("object_Citizen.php");
 session_start();
 
+/*
+The If statement is used as a checkpoint of the right request.
+Only the requests from jQuery 
+*/
 if (isset($_POST['method'])) {
     if ($_POST['password'] != $_SESSION['AccountInfo']->get_password()) {
         echo 'Password is incorrect!';

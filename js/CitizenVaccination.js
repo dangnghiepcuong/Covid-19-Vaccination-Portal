@@ -169,7 +169,7 @@ $(document).ready(function () {
             cache: false,
             url: 'HandleRegisterVaccination.php',
             type: 'POST',
-            data: { method: 'RegisterVaccination', SchedID: SchedID, time, dosetype: dosetype },
+            data: { method: 'RegisterVaccination', SchedID: SchedID, time: time, dosetype: dosetype },
             success: function (result) {
                 if (result.substring(0, 5) == 'ERROR') {    //EXCEPTION
                     alert('RegisterVaccination' + result);

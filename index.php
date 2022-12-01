@@ -1,7 +1,20 @@
 <?php
-error_reporting(E_ERROR | E_PARSE);
-define('browsable', true);
+error_reporting(E_ERROR | E_PARSE); //Turn off warnings, errors still be alerted.
+/* define('browsable', true);  
+Define a variable named browsable = true on every php pages that can be accessed by users.
+Pages not defined this variable at first are checked the existence of its,
+this trick is used to prevent the direct access to separated elements files (such as: header, footer, etc.).
+Then the pages can be defined (or not) for the same using purpose.
+*/
+define('browsable', true);           
 
+/*
+These included .php files mean the php code inside is stand right the place it is placed
+At the very first lines of the code (before handling almost everything), 
+there is an if statement used to check the existence of the variable named 'browsable'.
+It means that only pages which defined the 'browsable' variable can access the included code.
+Browser can not read these file alone because of the prevention has been set.
+*/
 include("object_Account.php");
 include("object_Citizen.php");
 include("object_Organization.php");
@@ -19,7 +32,6 @@ $account = new Account();
     <title>Cổng thông tin tiêm chủng Covid-19</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/btn.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/index.js"></script>
