@@ -33,20 +33,12 @@
     <div class="drop-down-menu" id="drop-down-menu-profile">
         <div class="holder">
             <ul>
-                <a href="MOHAccountInfo.php">
+                <a href="ORGAccountInfo.php">
                     <li>Thông tin tài khoản</li>
                 </a>
 
-                <a href="MOHProfile.php">
-                    <li>Thông tin Bộ Y tế</li>
-                </a>
-
-                <a href="#">
-                    <li>Quản lý đơn vị</li>
-                </a>
-
-                <a href="MOHCertificate.php">
-                    <li>Chứng nhận</li>
+                <a href="ORGProfile.php">
+                    <li>Thông tin đơn vị</li>
                 </a>
 
                 <a href="" id="btn-logout">

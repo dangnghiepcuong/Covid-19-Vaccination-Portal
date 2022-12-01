@@ -15,7 +15,7 @@ $(document).ready(function () {
     $('#function-menu-title').text('Trang đơn vị');
 
     menu = '<br><a href="ORGAccountInfo.php"><li>Thông tin tài khoản</li></a>';
-    menu += '<br><a href="ORGProfile.php"><li>Thông tin tổ chức</li></a>';
+    menu += '<br><a href="ORGProfile.php"><li>Thông tin đơn vị</li></a>';
 
     $('#function-menu-list').find('ul').html(menu);
     // END LOAD FRONT END DATA
