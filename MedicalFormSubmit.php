@@ -81,10 +81,11 @@ else {
 
             <div class="panel-form-medical">
                 <div class="form-medical">
-                    <label for="input_date">Ngày thực hiện khai báo:
-                    </label>
-                    <input type="date" id="input-date">
-
+                    <div class="input_date">
+                        <label for="input_date">Ngày thực hiện khai báo:
+                        </label>
+                        <input type="date" id="input-date">
+                    </div>
                     <p>Trong vòng 14 ngày qua, Anh/Chị có thấy xuất hiện ít nhất 1 tong các dấu hiệu:
                         ho, khó thở, viêm phổi, đau họng, mệt mỏi không?
                     </p>

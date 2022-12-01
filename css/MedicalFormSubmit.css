@@ -48,6 +48,19 @@
     line-height: 28px;
 }
 
+.panel-form-medical .form-medical .input_date {
+    display: flex;
+    padding-top: 10px;
+    justify-content: center;
+}
+
+.panel-form-medical .form-medical .input_date input {
+    width: 25%;
+    border-radius: 10px;
+    text-align: right;
+    height: 32px;
+}
+
 .panel-form-medical .form-medical p {
     padding-top: 20px;
     font-style: italic;
