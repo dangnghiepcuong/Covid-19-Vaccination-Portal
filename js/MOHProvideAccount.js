@@ -22,11 +22,12 @@ $(document).ready(function () {
     // END LOAD FRONT END DATA
 
     // HANDLE ACTION
-    $('#btn-medium-filled').click(function () {
+    $('#btn-confirm').click(function () {
+
         $('#form-popup-option').find('.form-message').html('Xác nhận tạo tài khoản cho đơn vị tiêm chủng?');
         $('#form-popup-option').css('display', 'grid');
         $('#gradient-bg-faded').css('display', 'block');
-
+        
         $('#form-popup-option').on('click', '.btn-cancel', function () {
             $('#form-popup-option').css('display', 'none');
             $('#gradient-bg-faded').css('display', 'none');
