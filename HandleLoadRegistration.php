@@ -27,14 +27,14 @@ function LoadRegistration()
         (select ID, Name, ProvinceName, DistrictName, TownName, Street from ORGANIZATION) ORG
         on REG_SCHED.OrgID = ORG.ID
     )
-    where 1=1
-    order by Status";
+    where 1=1";
     if ($_POST['status'] != -1)
         $sql .= " and Status = :status";
     if ($_POST['vaccine'] != -1)
         $sql .= " and VaccineID = :vaccine";
     if ($_POST['time'] != -1)
         $sql .= " and Time = :time";
+    $sql .= " order by Status";
 
     $command = oci_parse($connection, $sql);
     oci_bind_by_name($command, ':citizenid', $_SESSION['CitizenProfile']->get_id());
@@ -44,7 +44,6 @@ function LoadRegistration()
         oci_bind_by_name($command, ':vaccine', $_POST['vaccine']);
     if ($_POST['time'] != -1)
         oci_bind_by_name($command, ':time', $_POST['time']);
-    echo $sql;
     $r = oci_execute($command);
     if (!$r) {
         $exception = oci_error($command);
