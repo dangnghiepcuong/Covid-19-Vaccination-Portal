@@ -12,9 +12,11 @@ if (isset($_POST['method'])) {
 
     ChangePassword();
 
-    UpdateAccount();
-
-    echo 'Account Updated!';
+    if ($_SESSION['AccountInfo']->get_role() == 2)
+    {
+        UpdateAccount();
+        echo 'Account Updated!';
+    }   
 } else
     header("location:javascript://history.go(-1)");
 
@@ -38,6 +40,8 @@ function ChangePassword()
     }
 
     $_SESSION['AccountInfo']->set_password($_POST['new_password']);
+
+    echo 'Password Changed!';
 }
 
 function UpdateAccount()

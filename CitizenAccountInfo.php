@@ -24,6 +24,7 @@ $citizen = $_SESSION['CitizenProfile'];
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/WebElements.js"></script>
     <script src="js/CitizenAccountInfo.js"></script>
+    <script src="js/AccountUpdate.js"></script>
     <title>Thông tin tài khoản</title>
 </head>
 

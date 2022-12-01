@@ -48,8 +48,9 @@
 /* LIST OBJECT (ORGANIZATION & SCHEDULE */
 
 .panel-list .holder .list-object {
-    width: 50%;
+    width: 49.5%;
     height: 390px;
+    background-color: #E5E4E2;
     overflow-y: auto;
     scroll-behavior: smooth;
 }
