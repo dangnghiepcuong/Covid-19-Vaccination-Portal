@@ -1,5 +1,7 @@
 <?php
 error_reporting(E_ERROR | E_PARSE);
+define('browsable', true);
+
 session_start();
 
 if (isset($_POST['method'])) {

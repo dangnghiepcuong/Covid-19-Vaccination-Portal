@@ -1,5 +1,6 @@
 <?php
 error_reporting(E_ERROR | E_PARSE);
+define('browsable', true);
 
 include("object_Schedule.php");
 session_start();

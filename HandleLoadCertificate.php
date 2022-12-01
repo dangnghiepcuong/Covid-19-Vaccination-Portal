@@ -1,8 +1,6 @@
 <?php
 error_reporting(E_ERROR | E_PARSE);
-
-include("object_Injection.php");
-session_start();
+define('browsable', true);
 
 if (isset($_POST['method'])) {
     $method = $_POST['method'];
@@ -10,6 +8,8 @@ if (isset($_POST['method'])) {
 } else
     header("location:javascript://history.go(-1)");
 
+include("object_Injection.php");
+session_start();
 
 function LoadCertificate()
 {

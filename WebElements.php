@@ -1,3 +1,10 @@
+<?php
+error_reporting(E_ERROR | E_PARSE);
+if (!defined('browsable')) {
+    header("location:javascript://history.go(-1)");
+}
+?>
+
 <div class="form-popup" id="form-popup-confirm">
     <p class="form-message"></p>
     <div class="holder-btn">
