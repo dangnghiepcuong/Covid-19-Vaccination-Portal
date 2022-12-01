@@ -4,7 +4,6 @@ define('browsable', true);
 
 include("object_Citizen.php");
 session_start();
-echo 'php in';
 // if (isset($_POST['method'])) {
 //     $method = $_POST['method'];
 //     $method();
@@ -30,13 +29,15 @@ echo 'php in';
     oci_bind_by_name($command, ':filleddate', $_POST['filleddate']);
     oci_bind_by_name($command, ':choice', $_POST['choice']);
     $r = oci_execute($command);                                     //execute
-    echo $sql;
 
     if (!$r) {                                                      //if false (error)
         $exception = oci_error($command);                           //catch exception
         echo 'ERROR: ' . $exception['code'] . ' - ' . $exception['message'];
         return;
     } 
- 
-    echo 'Form Submited!';
+    else {
+        echo 'Form Submited!';
+        return;
+    }
+
 // }
