@@ -22,52 +22,60 @@ $(document).ready(function () {
     // END LOAD FRONT END DATA
 
     // HANDLE ACTION
-    $('#btn-confirm').click(function () {
+    $('#btn-confirm-acc-creation').click(function () {
+        // $('#form-popup-option').find('.form-message').html('Xác nhận tạo tài khoản cho đơn vị tiêm chủng?');
+        // $('#form-popup-option').css('display', 'grid');
+        // $('#gradient-bg-faded').css('display', 'block');
 
-        $('#form-popup-option').find('.form-message').html('Xác nhận tạo tài khoản cho đơn vị tiêm chủng?');
-        $('#form-popup-option').css('display', 'grid');
-        $('#gradient-bg-faded').css('display', 'block');
-        
-        $('#form-popup-option').on('click', '.btn-cancel', function () {
-            $('#form-popup-option').css('display', 'none');
-            $('#gradient-bg-faded').css('display', 'none');
-        })
+        // $('#form-popup-option').on('click', '.btn-cancel', function () {
+        //     $('#form-popup-option').css('display', 'none');
+        //     $('#gradient-bg-faded').css('display', 'none');
+        // })
 
-        $('#form-popup-option').on('click', '.btn-confirm', function () {
-            q1 = $('input[type="radio"][name="q1"]:checked').val();
-            q2 = $('input[type="radio"][name="q2"]:checked').val();
-            q3 = $('input[type="radio"][name="q3"]:checked').val();
-            q4 = $('input[type="radio"][name="q4"]:checked').val();
-            if (!$('input[name="q1"]:checked').val() || !$('input[name="q2"]:checked').val() || !$('input[name="q3"]:checked').val() || !$('input[name="q4"]:checked').val()) {
-                alert('Bạn chưa chọn câu trả lời!');
-                return;
-            }
-            choice = q1 + q2 + q3 + q4;
+        if (!confirm('Xác nhận tạo tài khoản cho đơn vị tiêm chủng?'))
+            return;
 
-            $.ajax({
-                cache: false,
-                url: 'HandleProvideAccORG.php',
-                type: 'POST',
-                data: { filleddate: filleddate, choice: choice },
-                success: function (result) {
-                    alert('confirmed')
-                    if (result.substring(0, 5) == 'ERROR') {    //EXCEPTION
-                        alert(result);
-                        // return;
-                    }
-                    if (result == 'Form Submited!') {
-                        $('.form-message').text('Khai báo y tế thành công!');
-                        $('#form-popup-confirm').css('display', 'grid');
-                        $('#gradient-bg-faded').css('display', 'block');
-                    }
+        code = $('#select-province').find('option:selected').val();
+        if (code < 10)
+            code = '0' + code;
+        province = $('#select-province').find('option:selected').text();
+        quantity = $('#account-quantity').val();
+        if (quantity == 0)
+            return;
+        if (quantity > 100) {
+            PopupConfirm('Không thể tạo số lượng lớn hơn 100');
+            return;
+        }
+
+        $.ajax({
+            cache: false,
+            url: 'HandleProvideAccORG.php',
+            type: 'POST',
+            data: { method: 'ProvideAccount', quantity: quantity, code: code, province: province },
+            success: function (result) {
+                if (result.substring(0, 5) == 'ERROR') {    //EXCEPTION
                     alert(result);
-                },
-                error: function (error) {
-                    // $('body').html(error);
-                    alert('error')
+                    return;
                 }
-            });
-        })
+                if (result == 'ProvideAccount') {
+                    PopupConfirm('Tạo các tài khoản đơn vị thành công!');
+                    return;
+                }
+            },
+            error: function (error) {
+                // $('body').html(error);
+                alert('error')
+            }
+        });
     })
 })
 
+var PopupConfirm = function (message) {
+    $('.form-message').html(message);
+    $('#form-popup-confirm').css('display', 'grid');
+    $('#gradient-bg-faded').css('display', 'block');
+    $('#form-popup-confirm').find('.btn-confirm').click(function () {
+        $('#form-popup-confirm').css('display', 'none');
+        $('#gradient-bg-faded').css('display', 'none');
+    })
+}

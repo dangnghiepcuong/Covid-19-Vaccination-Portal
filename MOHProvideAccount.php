@@ -75,14 +75,14 @@ $org = $_SESSION['OrgProfile'];
                         <hr>
                         <br>
                         <label for="num">Số lượng tài khoản cần tạo</label><br>
-                        <input type="text" name="num" required value=""><br>
+                        <input type="text" name="num" id="account-quantity" required value=""><br>
                         <hr>
                     </div>
                 </div>
             </div>
 
             <div class="group_btn">
-                <button class="btn-medium-filled" id="btn-confirm">Xác nhận</button>
+                <button class="btn-medium-filled" id="btn-confirm-acc-creation">Xác nhận</button>
                 <button class="btn-medium-bordered" id="close_reg_person_profile">Hủy bỏ</button>
             </div>
 

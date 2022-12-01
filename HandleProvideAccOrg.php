@@ -2,22 +2,27 @@
 error_reporting(E_ERROR | E_PARSE);
 define('browsable', true);
 
-include("DatabaseConnection.php");
+if (isset($_POST['method'])) {
+    $method = $_POST['method'];
+    $method();
+} else
+    header("location:javascript://history.go(-1)");
 
-$sql = "begin ACC_CREATE_ORG(:num, :city); end;";
-$command = oci_parse($connection, $sql);
-oci_bind_by_name($command, ':num', $_POST['num']);
-oci_bind_by_name($command, ':city', $_POST['city']);
-$r = oci_execute($command);                                     //execute
+function ProvideAccount() {
+    include("DatabaseConnection.php");
 
-if (!$r) {                                                      //if false (error)
-    $exception = oci_error($command);                           //catch exception
-    echo 'ERROR: ' . $exception['code'] . ' - ' . $exception['message'];
-    return;
-} 
-else {
-    echo 'Form Submited!';
-    return;
+    $sql = "begin ACC_CREATE_ORG(:quantity, :code, :province); end;";
+    $command = oci_parse($connection, $sql);
+    oci_bind_by_name($command, ':quantity', $_POST['quantity']);
+    oci_bind_by_name($command, ':code', $_POST['code']);
+    oci_bind_by_name($command, ':province', $_POST['province']);
+    $r = oci_execute($command);                                     //execute
+    
+    if (!$r) {                                                      //if false (error)
+        $exception = oci_error($command);                           //catch exception
+        echo 'ERROR: ' . $exception['code'] . ' - ' . $exception['message'];
+        return;
+    } 
+        
+    echo 'ProvideAccount';
 }
-
-// }
