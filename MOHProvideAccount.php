@@ -29,6 +29,7 @@ $org = $_SESSION['OrgProfile'];
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/MOHProvideAccount.js"></script>
+    <script src="js/index.js"></script>
     <script src="js/WebElements.js"></script>
     <title>Cấp tài khoản đơn vị tiêm chủng</title>
 </head>
@@ -81,7 +82,7 @@ $org = $_SESSION['OrgProfile'];
             </div>
 
             <div class="group_btn">
-                <button class="btn-medium-filled">Xác nhận</button>
+                <button class="btn-medium-filled" id="btn-confirm">Xác nhận</button>
                 <button class="btn-medium-bordered" id="close_reg_person_profile">Hủy bỏ</button>
             </div>
 
@@ -91,7 +92,7 @@ $org = $_SESSION['OrgProfile'];
     <br>
     <?php
     include("footer.php");
-
+    include("WebElements.php");
     ?>
 </body>
 
