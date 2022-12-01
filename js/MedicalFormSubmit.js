@@ -28,7 +28,6 @@ $(document).ready(function () {
 
     // HANDLE ACTION
     $('#btn-submit').click(function () {
-        SubmitMedicalForm();
 
         $('#form-popup-option').find('.form-message').html('Xác nhận khai báo y tế?');
         $('#form-popup-option').css('display', 'grid');
@@ -42,6 +41,7 @@ $(document).ready(function () {
         $('#form-popup-option').on('click', '.btn-confirm', function () {
             SubmitMedicalForm();
         })
+
     })
 
     function SubmitMedicalForm() {
@@ -55,11 +55,20 @@ $(document).ready(function () {
         }
         choice = q1 + q2 + q3 + q4;
 
-        // filleddate = $('#input-date').val();
-        // if (new Date (filleddate).getTime() > new Date().getTime()){
-        //     alert('Ngày khai báo không hợp lệ!');
-        //     return;
-        //
+        filleddate = $('#input-date').val();
+
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        var yyyy = today.getFullYear();
+        today = yyyy + '-' + mm + '-' + dd;
+
+        if (new Date(filleddate).getTime() > new Date(today).getTime()) {
+            $('.form-message').text('Ngày khai báo không hợp lệ!');
+            $('#form-popup-confirm').css('display', 'grid');
+            $('#gradient-bg-faded').css('display', 'block');
+            return;
+        }
 
         $.ajax({
             cache: false,
@@ -67,7 +76,6 @@ $(document).ready(function () {
             type: 'POST',
             data: { filleddate: filleddate, choice: choice },
             success: function (result) {
-                alert('confirmed')
                 if (result.substring(0, 5) == 'ERROR') {    //EXCEPTION
                     alert(result);
                     // return;
@@ -77,7 +85,7 @@ $(document).ready(function () {
                     $('#form-popup-confirm').css('display', 'grid');
                     $('#gradient-bg-faded').css('display', 'block');
                 }
-                alert(result);
+                //alert(result);
             },
             error: function (error) {
                 // $('body').html(error);
