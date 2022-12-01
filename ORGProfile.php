@@ -31,7 +31,10 @@ $org = $_SESSION['OrgProfile'];
 <body>
     <!-- HEADER -->
     <?php
-    include("headerORG.php");
+    if ($_SESSION['AccountInfo']->get_role() == 0)
+        include("headerMOH.php");
+    else
+        include("headerORG.php");
     ?>
     <!-- END HEADER -->
 
@@ -145,8 +148,6 @@ $org = $_SESSION['OrgProfile'];
                     <button class="btn-medium-bordered" id="cancel-update-profile">Hủy bỏ</button>
                 </div>
             </div>
-
-
         </div>
     </div>
 
