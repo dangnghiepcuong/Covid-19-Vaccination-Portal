@@ -1,5 +1,6 @@
-<!DOCTYPE html>
 <?php
+define('browsable', true);
+
 include("object_Account.php");
 include("object_Citizen.php");
 include("object_Organization.php");
@@ -7,6 +8,7 @@ session_start();
 $citizen = new Citizen();
 $account = new Account();
 ?>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -69,8 +71,8 @@ $account = new Account();
     <!-- END SLIDER -->
 
     <?php
-    include("SignupLoginForm.html");
-    include("WebElements.html");
+    include("SignupLoginForm.php");
+    include("WebElements.php");
     ?>
 
     <div class="content">

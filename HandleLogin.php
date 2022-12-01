@@ -1,6 +1,7 @@
 <?php
-include("object_Account.php");
 error_reporting(E_ERROR | E_PARSE);
+
+include("object_Account.php");
 session_start();
 
 include("DatabaseConnection.php");                           //Connection String

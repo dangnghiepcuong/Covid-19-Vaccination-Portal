@@ -1,4 +1,7 @@
 <?php
+define('browsable', true);
+error_reporting(E_ERROR | E_PARSE);
+
 include("object_Account.php");
 include("object_Organization.php");
 session_start();
@@ -154,7 +157,7 @@ $org = $_SESSION['OrgProfile'];
     <br>
     <?php
     include("footer.php");
-    include("WebElements.html");
+    include("WebElements.php");
     ?>
 </body>
 

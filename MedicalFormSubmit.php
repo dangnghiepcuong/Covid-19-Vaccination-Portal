@@ -1,4 +1,6 @@
 <?php
+define('browsable', true);
+
 include("object_Account.php");
 include("object_Citizen.php");
 session_start();
@@ -131,8 +133,8 @@ else {
     <br>
 
     <?php
-    include("WebElements.html");
-    include("SignupLoginForm.html");
+    include("WebElements.php");
+    include("SignupLoginForm.php");
     include("footer.php");
     ?>
 </body>

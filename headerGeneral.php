@@ -1,3 +1,10 @@
+<?php
+if (!defined('browsable')) {
+    header("location:javascript://history.go(-1)");
+}
+error_reporting(E_ERROR | E_PARSE);
+?>
+
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/header.css">
 <script src="js/header.js"></script>

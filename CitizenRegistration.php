@@ -1,5 +1,7 @@
-<!DOCTYPE html>
 <?php
+define('browsable', true);
+error_reporting(E_ERROR | E_PARSE);
+
 include("object_Account.php");
 include("object_Citizen.php");
 session_start();
@@ -13,6 +15,7 @@ if (isset($_SESSION['CitizenProfile']) == false)
 
 $citizen = $_SESSION['CitizenProfile'];
 ?>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -116,7 +119,7 @@ $citizen = $_SESSION['CitizenProfile'];
     <!-- FOOTER -->
     <?php
     include("footer.php");
-    include("WebElements.html");
+    include("WebElements.php");
     ?>
 
     <?php

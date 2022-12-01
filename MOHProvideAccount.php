@@ -1,4 +1,6 @@
 <?php
+define('browsable', true);
+
 include("object_Account.php");
 include("object_Organization.php");
 session_start();

@@ -1,5 +1,6 @@
 <?php
-// error_reporting(0);
+error_reporting(E_ERROR | E_PARSE);
+
 include("object_Schedule.php");
 session_start();
 if (isset($_SESSION['OrgProfile']))

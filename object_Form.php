@@ -1,4 +1,9 @@
 <?php
+if (!defined('browsable')) {
+    header("location:javascript://history.go(-1)");
+}
+error_reporting(E_ERROR | E_PARSE);
+
 include ("object_Citizen.php");
 
 class Form {
