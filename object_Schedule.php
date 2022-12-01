@@ -1,8 +1,9 @@
 <?php
+error_reporting(E_ERROR | E_PARSE);
 if (!defined('browsable')) {
     header("location:javascript://history.go(-1)");
 }
-error_reporting(E_ERROR | E_PARSE);
+define('browsable', true);
 
 include("object_Organization.php");
 include("object_Vaccine.php");
