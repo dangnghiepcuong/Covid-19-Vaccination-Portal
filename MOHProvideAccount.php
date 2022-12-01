@@ -1,3 +1,17 @@
+<?php
+include("object_Account.php");
+include("object_Organization.php");
+session_start();
+
+// if logged in account has not register a profile then head to index.php
+if (!(isset($_SESSION['AccountInfo']) && $_SESSION['AccountInfo']->get_status() == 1))
+    header('Location: index.php');
+// if there is not any profile was queried then head to index
+if (isset($_SESSION['OrgProfile']) == false)
+    header('Location: index.php');
+
+$org = $_SESSION['OrgProfile'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +26,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/MOHProvideAccount.js"></script>
-    <script src="js/animation-btn.js"></script>
+    <script src="js/WebElements.js"></script>
     <title>Cấp tài khoản đơn vị tiêm chủng</title>
 </head>
 
@@ -45,7 +59,14 @@
                         <p>Tạo tài khoản đơn vị</p>
                         <label for="city">Tỉnh/Thành phố </label><br>
                         <select name="city" id="select-province">
-                            <option value="">HCM</option>
+                            <?php
+                            $str = file_get_contents('local.json');
+                            $local = json_decode($str, true); // decode the JSON into an associative array
+                            $provincecode = -1;
+                            for ($i = 0; $i < 63; $i++) {
+                                echo '<option value="' . $i . '">' . $local[$i]['name'] . '</option>';
+                            }
+                            ?>
                         </select>
                         <hr>
                         <br>
@@ -66,7 +87,8 @@
 
     <br>
     <?php
-    include("footer.php")
+    include("footer.php");
+
     ?>
 </body>
 
