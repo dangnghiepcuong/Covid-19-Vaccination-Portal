@@ -226,14 +226,25 @@
     display: none;
     z-index: 10;
     position: fixed;
-    width: 1000px;
-    height: 640px;
+    width: 400px;
+    height: 500px;
     left: 50%;
-    top: 10%;
-    transform: translate(-500px, 0px);    
+    top: 50%;
+    transform: translate(-200px, -225px);
     border-radius: 20px;
-    background: #aca0a0;
+    background: white;
     transition: 500ms;
 }
+
+.container-forgot-password input{
+    line-height: 40px;
+    font-size: 20px;
+}
+
+.container-forgot-password .message {
+    line-height: 22px;
+}
+
+
 
 /* END FORGOT PASSWORD FORM */

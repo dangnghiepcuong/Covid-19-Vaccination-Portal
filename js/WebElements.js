@@ -63,5 +63,6 @@ $(document).ready(function () {
         $('#container-reg-profile').css('display', 'none');
         $('.message').text('');
         $('.form-popup').css('display', 'none');
+        $('#container-forgot-password').css('display', 'none');
     })
 })
