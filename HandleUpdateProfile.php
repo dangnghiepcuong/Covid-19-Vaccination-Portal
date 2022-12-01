@@ -52,7 +52,7 @@ function UpdateCitizenProfile()
         return;
     }
 
-    echo 'Profile Updated!';
+    echo 'UpdateCitizenProfile';
 
     include("CitizenLoadProfile.php");
 }
@@ -77,7 +77,7 @@ function UpdateOrgProfile()
         return;
     }
 
-    echo 'Profile Updated!';
+    echo 'UpdateOrgProfile';
 
     include("OrgLoadProfile.php");
 }

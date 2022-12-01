@@ -58,16 +58,19 @@ $(document).ready(function () {
 
     // CANCEL REGISTRATION
     $('#list-registration').on('click', '.btn-cancel-registration', function () {
-        $('#form-popup-confirm').find('.form-message').html('Xác nhận hủy đăng ký tiêm chủng?');
-        $('#form-popup-confirm').css('display', 'grid');
-        $('#gradient-bg-faded').css('display', 'block');
+        // $('#form-popup-confirm-cancel-registration').find('.form-message').html('Xác nhận hủy đăng ký tiêm chủng?');
+        // $('#form-popup-confirm-cancel-registration').css('display', 'grid');
+        // $('#gradient-bg-faded').css('display', 'block');
 
-        SchedID = $(this).parent().parent().parent().attr('id');
-        $('#form-popup-confirm').find('.btn-confirm').click(function () {
-            CancelRegistration(SchedID);
-        })
-
+        if (confirm('Xác nhận hủy đăng ký tiêm chủng?')) {
+            SchedID = $(this).parent().parent().parent().attr('id');
+            // $('#form-popup-confirm').find('.btn-confirm').click(function () {
+                CancelRegistration(SchedID);
+            // })
+        }
     })
+
+
 
     function CancelRegistration(SchedID) {
         $.ajax({
@@ -80,7 +83,7 @@ $(document).ready(function () {
                     alert(result);
                     return;
                 }
-                if (result == 'Registration Canceled!')
+                if (result == 'CancelRegistration')
                     location.reload();
             },
             error: function (error) {
