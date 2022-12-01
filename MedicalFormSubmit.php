@@ -31,7 +31,7 @@ else {
     <script src="js/MedicalFormSubmit.js"></script>
     <script src="js/index.js"></script>
     <script src="js/WebElements.js"></script>
-    <title>Khai báo y tế</title>
+    <title>Tờ khai y tế</title>
 </head>
 
 <body>
