@@ -74,14 +74,14 @@ $org = $_SESSION['OrgProfile'];
                         <hr>
                         <br>
                         <label for="num">Số lượng tài khoản cần tạo</label><br>
-                        <input type="text" name="num" required value=""><br>
+                        <input type="text" name="num" required value="" id="input-num"><br>
                         <hr>
                     </div>
                 </div>
             </div>
 
             <div class="group_btn">
-                <button class="btn-medium-filled">Xác nhận</button>
+                <button class="btn-medium-filled" id="btn-confirm">Xác nhận</button>
                 <button class="btn-medium-bordered" id="close_reg_person_profile">Hủy bỏ</button>
             </div>
 
@@ -90,8 +90,9 @@ $org = $_SESSION['OrgProfile'];
 
     <br>
     <?php
+    include("WebElements.php"); 
     include("footer.php");
-
+     
     ?>
 </body>
 
