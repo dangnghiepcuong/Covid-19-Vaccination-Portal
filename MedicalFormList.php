@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ERROR | E_PARSE);
+define('browsable', true);
 include("object_Account.php");
 include("object_Citizen.php");
 session_start();
