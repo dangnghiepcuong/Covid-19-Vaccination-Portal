@@ -21,6 +21,8 @@
     width: 140px;
     height: 30px;
     font-size: 18px;
+    border-radius: 10px;
+    outline: none;
 }
 
 .filter-panel .btn-filter:hover {
@@ -34,3 +36,12 @@
     padding: 10px 0px;
 }
 
+.filter-pane div{
+    display: grid;
+}
+
+.filter-pane div select {
+    width: 200px;
+    border-radius: 10px;
+    outline: none;
+}
