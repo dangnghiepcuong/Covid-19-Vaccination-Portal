@@ -185,3 +185,31 @@ if (!defined('browsable')) {
 </div>
 
 <!-- END REGISTRATION PERSONAL PROFILE FORM -->
+
+<!-- FORGOT PASSWORD FORM -->
+<div class="form container-forgot-password">
+    <p class="title">Quên mật khẩu</p>
+    <br>
+
+    <label for="username"><b>SĐT/Tên tài khoản</b></label>
+    <input type="text" name="username" required>
+    <hr>
+    <br>
+
+    <div class="verifind_account">
+        <div class="message"></div>
+        <label for="capcha"><b>Nhập mã xác nhận</b></label>
+        <input type="text" name="capcha" required>
+        <hr>
+    </div>
+    <div class="new_password">
+        <label for="password"><b>Mật khẩu mới</b></label>
+        <input type="password" name="password" required>
+        <hr>
+        <br>
+        <label for="repeat-password"><b>Nhập lại mật khẩu mới</b></label>
+        <input type="password" name="repeat-password" required>
+        <hr>
+    </div>
+</div>
+<!-- END FORGOT PASSWORD FORM -->
