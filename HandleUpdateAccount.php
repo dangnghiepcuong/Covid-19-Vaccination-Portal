@@ -21,7 +21,6 @@ if (isset($_POST['method'])) {
     if ($_SESSION['AccountInfo']->get_role() == 2)
     {
         UpdateAccount();
-        echo 'Account Updated!';
     }   
 } else
     header("location:javascript://history.go(-1)");
@@ -29,8 +28,10 @@ if (isset($_POST['method'])) {
 
 function ChangePassword()
 {
-    if ($_POST['new_password'] == "" || $_POST['new_password'] == $_SESSION['AccountInfo']->get_password())
+    if ($_POST['new_password'] == "" || $_POST['new_password'] == $_SESSION['AccountInfo']->get_password()) {
+        echo '!ChangePassword';        
         return;
+    }
     include("DatabaseConnection.php");
     $sql = "begin ACC_UPDATE_PASSWORD(:username, :password, :newpassword); end;";
     $command = oci_parse($connection, $sql);
@@ -47,13 +48,15 @@ function ChangePassword()
 
     $_SESSION['AccountInfo']->set_password($_POST['new_password']);
 
-    echo 'Password Changed!';
+    echo 'ChangePassword';
 }
 
 function UpdateAccount()
 {
-    if ($_POST['phone'] == $_SESSION['AccountInfo']->get_username())
+    if ($_POST['phone'] == $_SESSION['AccountInfo']->get_username()){
+        echo '!UpdateAccount';        
         return;
+    }
 
     include("DatabaseConnection.php");
 
@@ -94,5 +97,6 @@ function UpdateAccount()
 
     $_SESSION['CitizenProfile']->set_phone($_POST['phone']);
     $_SESSION['AccountInfo']->set_username($_POST['phone']);
-
+  
+    echo 'UpdateAccount';
 }

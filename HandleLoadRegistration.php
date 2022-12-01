@@ -118,5 +118,5 @@ function CancelRegistration()
         echo 'ERROR: ' . $exception['code'] . ' - ' . $exception['message'];
         return;
     }
-    echo 'Registration Canceled!';
+    echo 'CancelRegistration';
 }
