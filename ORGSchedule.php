@@ -1,5 +1,7 @@
 <?php
-// error_reporting(0);
+define('browsable', true);
+error_reporting(0);
+
 include("object_Account.php");
 include("object_Schedule.php");
 session_start();

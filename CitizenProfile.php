@@ -1,5 +1,6 @@
-<!DOCTYPE html>
 <?php
+define('browsable', true);
+
 include("object_Account.php");
 include("object_Citizen.php");
 session_start();
@@ -10,9 +11,10 @@ if (!(isset($_SESSION['AccountInfo']) && $_SESSION['AccountInfo']->get_status() 
 // if there is not any profile was queried then head to index
 if (isset($_SESSION['CitizenProfile']) == false)
     header('Location: index.php');
-    
+
 $citizen = $_SESSION['CitizenProfile'];
 ?>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>

@@ -1,5 +1,6 @@
-<!DOCTYPE html>
 <?php
+define('browsable', true);
+
 include("object_Account.php");
 include("object_Citizen.php");
 include("object_Organization.php");
@@ -7,6 +8,7 @@ session_start();
 $citizen = new Citizen();
 $account = new Account();
 ?>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>

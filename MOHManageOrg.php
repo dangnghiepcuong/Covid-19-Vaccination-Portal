@@ -1,5 +1,6 @@
-<!DOCTYPE html>
 <?php
+define('browsable', true);
+
 include("object_Account.php");
 include("object_Organization.php");
 session_start();
@@ -14,6 +15,7 @@ if (isset($_SESSION['OrgProfile']) == false)
 $moh = $_SESSION['OrgProfile'];
 ?>
 
+<!DOCTYPE html>
 <html lang="en">
 
 <head>

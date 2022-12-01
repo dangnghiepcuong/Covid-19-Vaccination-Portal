@@ -1,5 +1,6 @@
-<!DOCTYPE html>
 <?php
+define('browsable', true);
+
 include("object_Account.php");
 include("object_Citizen.php");
 session_start();
@@ -13,6 +14,7 @@ if (isset($_SESSION['CitizenProfile']) == false)
 
 $citizen = $_SESSION['CitizenProfile'];
 ?>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
