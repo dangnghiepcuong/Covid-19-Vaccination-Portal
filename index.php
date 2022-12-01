@@ -71,8 +71,8 @@ $account = new Account();
     <!-- END SLIDER -->
 
     <?php
-    include("SignupLoginForm.html");
-    include("WebElements.html");
+    include("SignupLoginForm.php");
+    include("WebElements.php");
     ?>
 
     <div class="content">

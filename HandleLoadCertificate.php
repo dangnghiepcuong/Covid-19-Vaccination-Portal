@@ -1,5 +1,6 @@
 <?php
-error_reporting(0);
+error_reporting(E_ERROR | E_PARSE);
+
 include("object_Injection.php");
 session_start();
 

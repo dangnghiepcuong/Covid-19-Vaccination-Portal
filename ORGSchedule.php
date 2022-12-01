@@ -1,6 +1,6 @@
 <?php
 define('browsable', true);
-error_reporting(0);
+error_reporting(E_ERROR | E_PARSE);
 
 include("object_Account.php");
 include("object_Schedule.php");

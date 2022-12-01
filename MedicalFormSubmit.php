@@ -133,8 +133,8 @@ else {
     <br>
 
     <?php
-    include("WebElements.html");
-    include("SignupLoginForm.html");
+    include("WebElements.php");
+    include("SignupLoginForm.php");
     include("footer.php");
     ?>
 </body>

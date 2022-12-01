@@ -1,5 +1,6 @@
 <?php
 define('browsable', true);
+error_reporting(E_ERROR | E_PARSE);
 
 include("object_Account.php");
 include("object_Citizen.php");
@@ -118,7 +119,7 @@ $citizen = $_SESSION['CitizenProfile'];
     <!-- FOOTER -->
     <?php
     include("footer.php");
-    include("WebElements.html");
+    include("WebElements.php");
     ?>
 
     <?php

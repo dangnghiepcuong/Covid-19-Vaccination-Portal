@@ -1,4 +1,9 @@
 <?php
+if (!defined('browsable')) {
+    header("location:javascript://history.go(-1)");
+}
+error_reporting(E_ERROR | E_PARSE);
+
 $org = new Organization();
 include("DatabaseConnection.php");
 $sql = "select * from Organization where ID = :username";
