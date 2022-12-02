@@ -98,7 +98,7 @@
 /* LIST REGISTRATION */
 
 .panel-list-schedule .holder .list-registration {
-    width: 50%;
+    width: 54%;
     height: 390px;
     background: whitesmoke;
     overflow-y: auto;
@@ -152,11 +152,12 @@
 
 .panel-list-schedule .holder .list-registration .registration .hoder-obj-attr .interactive-area .drop-down-status{
     width: 110px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
+    margin-right: 0px;
 }
 
 .panel-list-schedule .holder .list-registration .registration .hoder-obj-attr .obj-attr{
-    width: 65%;
+    width: 70%;
 }
 
 /* END LIST REGISTRATION */
