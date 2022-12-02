@@ -52,13 +52,13 @@ $(document).ready(function () {
 
     $('#list-schedule').on('click', '.btn-registration', function(){
         SchedID = $(this).parent().parent().attr('id');
+        SchedInfo = $(this).parent().parent().find('.obj-attr').find('.attr-date-vaccine-serial').text();
         $.ajax({
             cache: false,
             url: 'HandleScheduleManagement.php',
             type: 'POST',
-            data: { method: 'LoadScheduleRegistration', SchedID: SchedID },
+            data: { method: 'LoadScheduleRegistration', SchedID: SchedID, SchedInfo: SchedInfo },
             success: function (result) {
-                alert(result)
                 if (result.substring(0, 5) == 'ERROR') {    //EXCEPTION
                     alert(result);
                     return;
@@ -68,5 +68,44 @@ $(document).ready(function () {
             error: function (error) {
             }
         })
+    })
+
+    $('#list-registration').on('click', '.btn-update-registration', function(){
+        citizenid = $(this).parent().parent().parent().find('.obj-name').attr('id');
+        SchedID = $(this).parent().parent().parent().attr('id');
+        status = $(this).parent().find('.select-status').find('option:selected').val();
+        $.ajax({
+            cache: false,
+            url: 'HandleScheduleManagement.php',
+            type: 'POST',
+            data: { method: 'UpdateRegistrationStatus', citizenid: citizenid, SchedID: SchedID, status: status },
+            indexValue: { reg: $(this).parent().parent().parent() },
+            success: function (result) {
+                if (result.substring(0, 5) == 'ERROR') {    //EXCEPTION
+                    alert(result);
+                    return;
+                }
+
+                reg = this.indexValue.reg;
+                switch (result) {
+                    case '1':
+                        reg.find('.hoder-obj-attr .interactive-area select').html('<option value="2">Đã tiêm</option><option value="3">Đã hủy</option>');
+                        reg.find('.hoder-obj-attr .obj-attr .attr-detail p:last-child').text('Tình trạng: Đã điểm danh');
+                        break;
+                    case '2':
+                        reg.find('.hoder-obj-attr .interactive-area select').html('ImageIcon stay here!');
+                        break;
+                    case '3':
+                        this.indexValue.reg.remove();
+                        LoadSchedule($('.orgid').attr('id'));
+                        break;
+                    default:
+                        break;
+                }
+            },
+            error: function (error) {
+            }
+        })
+
     })
 })

@@ -146,12 +146,12 @@ function LoadSchedule($orgid = "")
                 $result .=
                     '<div class="schedule object" id="' . $row['ID'] . '">
                             <div class="obj-attr">
-                                <p class="attr-date-vaccine-serial">Lịch tiêm ngày: ' . $row['ONDATE'] . ' - Vaccine:
+                                <p class="attr-date-vaccine-serial">Ngày tiêm: ' . $row['ONDATE'] . ' - Vaccine:
                                 ' . $row['VACCINEID'] . ' - ' . $row['SERIAL'] . '</p>
                                 <div class="attr-time">'
-                                    .'<p>Buổi sáng: ' . $row['DAYREGISTERED'] . '/</p><input class="limit-day" value="' . $row['LIMITDAY'] . '">' 
-                                    . '<p> - Buổi trưa: ' . $row['NOONREGISTERED'] . '/</p><input class="limit-noon" value="' . $row['LIMITNOON'] . '">'
-                                    . '<p> - Buổi tối: ' . $row['NIGHTREGISTERED'] . '/</p><input class="limit-night" value="' . $row['LIMITNIGHT'] . '">
+                                    .'Buổi sáng: ' . $row['DAYREGISTERED'] . '/' . $row['LIMITDAY'] 
+                                    . ' - Buổi trưa: ' . $row['NOONREGISTERED'] . '/' . $row['LIMITNOON'] 
+                                    . ' - Buổi tối: ' . $row['NIGHTREGISTERED'] . '/' . $row['LIMITNIGHT'] . '
                                 </div>
                             </div>
                             <div class="interactive-area">
