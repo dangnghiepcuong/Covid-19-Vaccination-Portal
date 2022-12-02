@@ -12,7 +12,7 @@ if (!(isset($_SESSION['AccountInfo']) && $_SESSION['AccountInfo']->get_status() 
 // if there is not any profile was queried then head to index
 if (isset($_SESSION['OrgProfile']) == false)
     header('Location: index.php');
-    
+
 $org = $_SESSION['OrgProfile'];
 ?>
 <!DOCTYPE html>
@@ -89,9 +89,117 @@ $org = $_SESSION['OrgProfile'];
                     </div>
 
                     <div class="list-registration" id="list-registration">
-                        <div class=".registration" id="">
-                            
+<div class="registration">
+                            <p class="obj-name">Đối tượng: Dang Nghiep Cuong -NAM -2002 (ID:ABCCD)</p>
+                            <div class="hoder-obj-attr">
+                                <div class="obj-attr">
+                                    <p class="attr-sdt">SĐT: 0123456789</p>
+                                    <p class="attr-date">Lịch tiêm ngày</p>
+
+                                    <div class="attr-detail">
+                                        <p>Buổi: Trưa</p>
+                                        <p>STT: 1</p>
+                                        <p>Tình trạng: Đăng ký </p>
+
+                                    </div>
+                                </div>
+
+                                <div class="interactive-area">
+                                    <select class="drop-down-status" name="" id="">
+                                        <option value="0">Đăng ký</option>
+                                        <option value="1">Điểm danh</option>
+                                        <option value="2">Đã tiêm</option>
+                                        <option value="3">Đã hủy</option>
+                                    </select>
+                                    <br>
+                                    <button class="btn-medium-filled btn-update">Cập nhật</button>
+                                </div>
+                            </div>
                         </div>
+
+                        <!-- <div class="registration">
+                            <p class="obj-name">Đối tượng: Dang Nghiep Cuong -NAM -2002 (ID:ABCCD)</p>
+                            <div class="hoder-obj-attr">
+                                <div class="obj-attr">
+                                    <p class="attr-sdt">SĐT: 0123456789</p>
+                                    <p class="attr-date">Lịch tiêm ngày</p>
+
+                                    <div class="attr-detail">
+                                        <p>Buổi: Trưa</p>
+                                        <p>STT: 1</p>
+                                        <p>Tình trạng: Đăng ký </p>
+
+                                    </div>
+                                </div>
+
+                                <div class="interactive-area">
+                                    <select class="drop-down-status" name="" id="">
+                                        <option value="0">Đăng ký</option>
+                                        <option value="1">Điểm danh</option>
+                                        <option value="2">Đã tiêm</option>
+                                        <option value="3">Đã hủy</option>
+                                    </select>
+                                    <br>
+                                    <button class="btn-medium-filled btn-update">Cập nhật</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="registration">
+                            <p class="obj-name">Đối tượng: Dang Nghiep Cuong -NAM -2002 (ID:ABCCD)</p>
+                            <div class="hoder-obj-attr">
+                                <div class="obj-attr">
+                                    <p class="attr-sdt">SĐT: 0123456789</p>
+                                    <p class="attr-date">Lịch tiêm ngày</p>
+
+                                    <div class="attr-detail">
+                                        <p>Buổi: Trưa</p>
+                                        <p>STT: 1</p>
+                                        <p>Tình trạng: Đăng ký </p>
+
+                                    </div>
+                                </div>
+
+                                <div class="interactive-area">
+                                    <select class="drop-down-status" name="" id="">
+                                        <option value="0">Đăng ký</option>
+                                        <option value="1">Điểm danh</option>
+                                        <option value="2">Đã tiêm</option>
+                                        <option value="3">Đã hủy</option>
+                                    </select>
+                                    <br>
+                                    <button class="btn-medium-filled btn-update">Cập nhật</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="registration">
+                            <p class="obj-name">Đối tượng: Dang Nghiep Cuong -NAM -2002 (ID:ABCCD)</p>
+                            <div class="hoder-obj-attr">
+                                <div class="obj-attr">
+                                    <p class="attr-sdt">SĐT: 0123456789</p>
+                                    <p class="attr-date">Lịch tiêm ngày</p>
+
+                                    <div class="attr-detail">
+                                        <p>Buổi: Trưa</p>
+                                        <p>STT: 1</p>
+                                        <p>Tình trạng: Đăng ký </p>
+
+                                    </div>
+                                </div>
+
+                                <div class="interactive-area">
+                                    <select class="drop-down-status" name="" id="">
+                                        <option value="0">Đăng ký</option>
+                                        <option value="1">Điểm danh</option>
+                                        <option value="2">Đã tiêm</option>
+                                        <option value="3">Đã hủy</option>
+                                    </select>
+                                    <br>
+                                    <button class="btn-medium-filled btn-update">Cập nhật</button>
+                                </div>
+                            </div>
+                        </div> -->
                     </div>
                 </div>
 

@@ -53,6 +53,7 @@
     overflow-y: auto;
     overflow-x: hidden;
     scroll-behavior: smooth;
+    /* background: whitesmoke; */
 }
 
 .panel-list .holder .list-org .organization {
