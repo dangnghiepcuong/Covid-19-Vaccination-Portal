@@ -34,6 +34,8 @@ function CheckRegistration()
 
     echo $_SESSION['checkbooster'];
     unset($_SESSION['checkbooster']);
+
+    echo 'CheckRegistration';
 }
 
 function RegisterVaccination()
@@ -54,7 +56,8 @@ function RegisterVaccination()
     $r = oci_execute($command);
     if (!$r) {
         $exception = oci_error($command);
-        echo 'ERROR: ' . $exception['code'] . ' - ' . $exception['message'];
+        // echo 'ERROR: ' . $exception['code'] . ' - ' . $exception['message'];
+        echo 'ERROR: ' . $exception['code'];
         return;
     }
 

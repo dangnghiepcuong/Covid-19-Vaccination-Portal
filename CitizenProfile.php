@@ -59,8 +59,6 @@ $citizen = $_SESSION['CitizenProfile'];
                 <p>Đối tượng: </p>
                 <select name="" id="">
                     <option value=""><?php echo $citizen->get_lastname() . ' ' . $citizen->get_firstname() ?></option>
-                    <!-- <option value="">Lê Hoàng</option> -->
-                    <!-- <option value="">Lê Duyên</option> -->
                 </select>
             </div>
             <br>
@@ -241,7 +239,7 @@ $citizen = $_SESSION['CitizenProfile'];
     <br>
     <?php
     include("footer.php");
-    include("WebElements.html");
+    include("WebElements.php");
     ?>
 
     <?php

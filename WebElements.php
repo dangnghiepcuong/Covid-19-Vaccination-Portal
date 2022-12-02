@@ -20,5 +20,13 @@ if (!defined('browsable')) {
     </div>
 </div>
 
+<div class="form-popup" id="form-popup-option-cancel-registration">
+    <p class="form-message"></p>
+    <div class="holder-btn">
+        <button class="btn-medium-filled btn-confirm">Xác nhận</button>
+        <button class="btn-medium-bordered btn-cancel">Hủy</button>
+    </div>
+</div>
+
 <!-- FADED COVER -->
 <div class="gradient-bg-faded" id="gradient-bg-faded"></div>

@@ -2,17 +2,13 @@
 error_reporting(E_ERROR | E_PARSE);
 define('browsable', true);
 
-session_start();
-if (isset($_SESSION['OrgProfile']))
-    $org = $_SESSION['OrgProfile'];
-
 if (isset($_POST['method'])) {
     $method = $_POST['method'];
     $method();
 } else
     header("location:javascript://history.go(-1)");
 
-function LoadOrg($province = "", $district = "", $town = "")
+function LoadOrg()
 {
     include("DatabaseConnection.php");
 
@@ -48,16 +44,16 @@ function LoadOrg($province = "", $district = "", $town = "")
     $result = "";
     while (($row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS)) != false) {
         $result .= '
-<div class="organization" id="' . $row['ID'] . '">
-            <p class="obj-org-name">'  . $row['NAME'] . '</p>
-            <div class="holder-obj-attr">
-                <div class="obj-attr">
-                    <p class="id-org">ID: ' . $row['ID']. '</p>
-                    <p class="attr-location">K/v: ' . $row['PROVINCENAME'] . ' - ' . $row['DISTRICTNAME'] . ' - ' . $row['TOWNNAME'] . '</p>
-                    <p class="attr-address">Đ/c: ' . $row['STREET'] . '</p>
+            <div class="organization" id="' . $row['ID'] . '">
+                <p class="obj-org-name">'  . $row['NAME'] . '</p>
+                <div class="holder-obj-attr">
+                    <div class="obj-attr">
+                        <p class="id-org">ID: ' . $row['ID']. '</p>
+                        <p class="attr-location">K/v: ' . $row['PROVINCENAME'] . ' - ' . $row['DISTRICTNAME'] . ' - ' . $row['TOWNNAME'] . '</p>
+                        <p class="attr-address">Đ/c: ' . $row['STREET'] . '</p>
+                    </div>
                 </div>
-            </div>
-        </div>';
+            </div>';
     }
 
     echo $result;

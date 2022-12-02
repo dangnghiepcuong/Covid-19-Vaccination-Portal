@@ -62,25 +62,35 @@ $(document).ready(function () {
                 Back-end code obviously can return difference values every calls.
                 Switch cases and handle!
                 */
-                if (result == 'Password is incorrect!') {
-                    $('.account').find('.msg2').html('Sai mật khẩu!');
-                    return;
-                }
-                if (result == 'Account Updated!' || result == 'Password Changed!') {
-                    if (result == 'Account Updated!')
+                switch (result) {
+                    case 'Password is incorrect!':
+                        $('.account').find('.msg2').html('Sai mật khẩu!');
+                        return;
+                    case 'ChangePasswordUpdateAccount':
                         $('.form-message').text('Cập nhật tài khoản thành công!');
-                    else
+                        break;
+                    case 'ChangePassword!UpdateAccount':
                         $('.form-message').text('Cập nhật mật khẩu thành công!');
-                    $('#form-popup-confirm').css('display', 'grid');
-                    $('#gradient-bg-faded').css('display', 'block');
-
-                    $('#form-popup-confirm').find('.btn-confirm').click(function () {
-                        location.reload();
-                    })
-                    $('#gradient-bg-faded').click(function () {
-                        location.reload();
-                    })
+                        break;
+                    case '!ChangePasswordUpdateAccount':
+                        $('.form-message').text('Cập nhật mật khẩu thành công!');
+                        break;
+                    case '!ChangePassword!UpdateAccount':
+                        return;
+                    case '':
+                        $('.form-message').text('Lỗi chưa xác định!');
+                        break;
+                    default:
+                        alert(result);
+                        break;
                 }
+
+                $('#form-popup-confirm').css('display', 'grid');
+                $('#gradient-bg-faded').css('display', 'block');
+
+                $('#form-popup-confirm').find('.btn-confirm').click(function () {
+                    location.reload();
+                })
             },
             error: function (error) {
             }
