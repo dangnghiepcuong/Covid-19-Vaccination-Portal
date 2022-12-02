@@ -74,20 +74,6 @@
     font-weight: 300;
 }
 
-.panel-list-schedule .holder .list-schedule .schedule .obj-attr .attr-time * {
-    float: left;
-}
-
-.panel-list-schedule .holder .list-schedule .schedule .obj-attr input {
-    width: 50px;
-    height: 30px;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    background-color: none;
-    font-size: 18px;
-}
-
 .panel-list-schedule .holder .list-schedule .schedule .obj-attr, .interactive-area {
     padding: 5px 10px 5px 15px;
     align-items: center;
