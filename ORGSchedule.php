@@ -77,6 +77,7 @@ $org = $_SESSION['OrgProfile'];
             <br>
 
             <div class="panel-list-schedule">
+
                 <div class="list-name">DANH SÁCH LỊCH TIÊM</div>
                 <?php
                 echo '
@@ -88,7 +89,7 @@ $org = $_SESSION['OrgProfile'];
                     </div>
 
                     <div class="list-registration" id="list-registration">
-                        <div class="registration">
+<div class="registration">
                             <p class="obj-name">Đối tượng: Dang Nghiep Cuong -NAM -2002 (ID:ABCCD)</p>
                             <div class="hoder-obj-attr">
                                 <div class="obj-attr">
@@ -199,24 +200,14 @@ $org = $_SESSION['OrgProfile'];
                                 </div>
                             </div>
                         </div> -->
-
-                        
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
     <!-- END FUNCTION PANEL -->
     <br>
-
-    <div class="form-popup-confirm">
-        <p class="form-message"></p>
-        <br>
-        <div class="holder-btn">
-            <button class="btn-medium-filled btn-confirm">Xác nhận</button>
-            <button class="btn-medium-bordered btn-cancel">Hủy</button>
-        </div>
-    </div>
 
     <!-- COVER LOGIN FORM -->
     <div class="gradient-bg-faded" id="gradient-bg-faded"></div>
