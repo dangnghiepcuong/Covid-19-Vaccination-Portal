@@ -26,7 +26,9 @@ body::-webkit-scrollbar {
 body::-webkit-scrollbar-thumb,
 .panel-list .holder .list-org::-webkit-scrollbar-thumb,
 .panel-list .holder .list-schedule::-webkit-scrollbar-thumb,
-.panel-list-registration .holder .list-registration::-webkit-scrollbar-thumb {
+.panel-list-registration .holder .list-registration::-webkit-scrollbar-thumb,
+.panel-list-schedule .holder .list-schedule::-webkit-scrollbar-thumb,
+.panel-list-schedule .holder .list-registration::-webkit-scrollbar-thumb {
     background: var(--color_header);
     border-radius: 6px;
 }
@@ -34,14 +36,18 @@ body::-webkit-scrollbar-thumb,
 body::-webkit-scrollbar-track, 
 .panel-list .holder .list-org::-webkit-scrollbar-track, 
 .panel-list .holder .list-schedule::-webkit-scrollbar-track,
-.panel-list-registration .holder .list-registration::-webkit-scrollbar-track {
+.panel-list-registration .holder .list-registration::-webkit-scrollbar-track,
+.panel-list-schedule .holder .list-schedule::-webkit-scrollbar-track,
+.panel-list-schedule .holder .list-registration::-webkit-scrollbar-track {
     /*scrollbar bg*/
     background: whitesmoke;
 }
 
 .panel-list .holder .list-org::-webkit-scrollbar, 
 .panel-list .holder .list-schedule::-webkit-scrollbar,
-.panel-list-registration .holder .list-registration::-webkit-scrollbar {
+.panel-list-registration .holder .list-registration::-webkit-scrollbar,
+.panel-list-schedule .holder .list-schedule::-webkit-scrollbar,
+.panel-list-schedule .holder .list-registration::-webkit-scrollbar {
     width: 5px;
     height: 10px;
 }
