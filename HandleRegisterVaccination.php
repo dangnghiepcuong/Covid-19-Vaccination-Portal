@@ -63,5 +63,5 @@ function RegisterVaccination()
 
     unset($_SESSION['dosetype']);
 
-    echo 'Registration Successful!';
+    echo 'RegisterVaccination';
 }

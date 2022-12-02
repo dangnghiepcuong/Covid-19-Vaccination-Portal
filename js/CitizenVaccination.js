@@ -95,18 +95,18 @@ $(document).ready(function () {
 
         display_time = time;
         switch (time) {
-            case 0:
+            case '0':
                 display_time = 'Buổi sáng';
                 break;
-            case 1:
+            case '1':
                 display_time = 'Buổi chiều';
                 break;
-            case 2:
+            case '2':
                 display_time = 'Buổi tối';
                 break;
         }
 
-        if (confirm('Xác nhận đăng ký tiêm chủng?'))
+        if (confirm('Xác nhận đăng ký tiêm chủng? ' + date + ' - ' + display_time + ' - ' + vaccine))
             CheckRegistration(SchedID, time);
     })
 
@@ -124,7 +124,7 @@ $(document).ready(function () {
             data: { method: 'CheckRegistration' },
             success: function (result) {
                 if (result.substring(0, 5) == 'ERROR') {    //EXCEPTION
-                    alert('CheckRegistration' + result);    //if fired trigger, show error
+                    PopupConfirm(result);    //if fired trigger, show error
                     return;
                 }
                 else {
@@ -138,27 +138,24 @@ $(document).ready(function () {
     }
 
     function CheckBooster(checkbooster, SchedID, time) {   // Check dosetype suitable for vaccination
-        if (checkbooster == 1) {            // Check if booster dose is availabel, ask for choice
-            
-
-            $('#form-popup-option').on('click', 'button', function () {
-                dosetype = $(this).val();
-                if (dosetype == 'cancel') {         // If cancel confirmation of registration, return
-                    $('#form-popup-option').css('display', 'none');
-                    $('#gradient-bg-faded').css('display', 'none');
-                    return;
-                }
-                else {
-                    RegisterVaccination(SchedID, dosetype, time);   // Register with chosen dosetype
-                    return;
-                }
-            })
-        }
-        else {
+        // if (checkbooster == 1) {            // Check if booster dose is availabel, ask for choice
+        //     $('#form-popup-option').on('click', 'button', function () {
+        //         dosetype = $(this).val();
+        //         if (dosetype == 'cancel') {         // If cancel confirmation of registration, return
+        //             $('#form-popup-option').css('display', 'none');
+        //             $('#gradient-bg-faded').css('display', 'none');
+        //             return;
+        //         }
+        //         else {
+        //             RegisterVaccination(SchedID, dosetype, time);   // Register with chosen dosetype
+        //             return;
+        //         }
+        //     })
+        // }
+        // else {
             dosetype = '';
             RegisterVaccination(SchedID, dosetype, time);   // If no booster availabel, register with automatic selected dosetype
-            return;
-        }
+        // }
     }
 
     function RegisterVaccination(SchedID, dosetype, time) { //RegisterVaccination
