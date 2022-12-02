@@ -44,11 +44,29 @@ $(document).ready(function () {
                     return;
                 }
                 $('#list-schedule').html(result);
-                // $('body').html(result);
             },
             error: function (error) {
-
             }
         })
     }
+
+    $('#list-schedule').on('click', '.btn-registration', function(){
+        SchedID = $(this).parent().parent().attr('id');
+        $.ajax({
+            cache: false,
+            url: 'HandleScheduleManagement.php',
+            type: 'POST',
+            data: { method: 'LoadScheduleRegistration', SchedID: SchedID },
+            success: function (result) {
+                alert(result)
+                if (result.substring(0, 5) == 'ERROR') {    //EXCEPTION
+                    alert(result);
+                    return;
+                }
+                $('#list-registration').html(result);
+            },
+            error: function (error) {
+            }
+        })
+    })
 })

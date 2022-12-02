@@ -36,13 +36,12 @@
 }
 
 .panel-list-schedule .holder .list-schedule {
-    width: 70%;
-    margin: 0 auto;
+    width: 45%;
 }
 
 .panel-list-schedule .holder .list-schedule .schedule {
     width: 100%;
-    height: 80px;
+    height: 120px;
     margin-bottom: 4px;
     background-color: white;
     box-shadow: 2px 2px 5px -2px #8C69CA;
@@ -61,10 +60,10 @@
     color: #D1BFF3;
 }
 
-.panel-list-schedule .holder .list-schedule .schedule {
+/* .panel-list-schedule .holder .list-schedule .schedule {
     display: flex;
     justify-content: space-between;
-}
+} */
 
 
 .panel-list-schedule .holder .list-schedule .schedule .obj-attr * {
@@ -73,6 +72,20 @@
     font-size: 18px;
     font-style: italic;
     font-weight: 300;
+}
+
+.panel-list-schedule .holder .list-schedule .schedule .obj-attr .attr-time * {
+    float: left;
+}
+
+.panel-list-schedule .holder .list-schedule .schedule .obj-attr input {
+    width: 50px;
+    height: 30px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background-color: none;
+    font-size: 18px;
 }
 
 .panel-list-schedule .holder .list-schedule .schedule .obj-attr, .interactive-area {

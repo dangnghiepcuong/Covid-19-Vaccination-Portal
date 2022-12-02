@@ -77,6 +77,7 @@ $org = $_SESSION['OrgProfile'];
             <br>
 
             <div class="panel-list-schedule">
+
                 <div class="list-name">DANH SÁCH LỊCH TIÊM</div>
                 <?php
                 echo '
@@ -86,21 +87,19 @@ $org = $_SESSION['OrgProfile'];
                 <div class="holder">
                     <div class="list-schedule" id="list-schedule">
                     </div>
+
+                    <div class="list-registration" id="list-registration">
+                        <div class=".registration" id="">
+                            
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </div>
     </div>
     <!-- END FUNCTION PANEL -->
     <br>
-
-    <div class="form-popup-confirm">
-        <p class="form-message"></p>
-        <br>
-        <div class="holder-btn">
-            <button class="btn-medium-filled btn-confirm">Xác nhận</button>
-            <button class="btn-medium-bordered btn-cancel">Hủy</button>
-        </div>
-    </div>
 
     <!-- COVER LOGIN FORM -->
     <div class="gradient-bg-faded" id="gradient-bg-faded"></div>

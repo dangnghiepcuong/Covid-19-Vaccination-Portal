@@ -1,5 +1,5 @@
 <?php
-// error_reporting(E_ERROR | E_PARSE);
+error_reporting(E_ERROR | E_PARSE);
 define('browsable', true);
 
 include("object_Account.php");
@@ -148,10 +148,14 @@ function LoadSchedule($orgid = "")
                             <div class="obj-attr">
                                 <p class="attr-date-vaccine-serial">Lịch tiêm ngày: ' . $row['ONDATE'] . ' - Vaccine:
                                 ' . $row['VACCINEID'] . ' - ' . $row['SERIAL'] . '</p>
-                                <p class="attr-time">Buổi sáng: ' . $row['DAYREGISTERED'] . '/' . $row['LIMITDAY'] . ' - Buổi trưa: ' . $row['NOONREGISTERED'] . '/' . $row['LIMITNOON'] . ' - Buổi tối: ' . $row['NIGHTREGISTERED'] . '/' . $row['LIMITNIGHT'] . '</p>
+                                <div class="attr-time">'
+                                    .'<p>Buổi sáng: ' . $row['DAYREGISTERED'] . '/</p><input class="limit-day" value="' . $row['LIMITDAY'] . '">' 
+                                    . '<p> - Buổi trưa: ' . $row['NOONREGISTERED'] . '/</p><input class="limit-noon" value="' . $row['LIMITNOON'] . '">'
+                                    . '<p> - Buổi tối: ' . $row['NIGHTREGISTERED'] . '/</p><input class="limit-night" value="' . $row['LIMITNIGHT'] . '">
+                                </div>
                             </div>
                             <div class="interactive-area">
-                                <button class="btn-medium-filled btn-register">Lượt đăng ký</button>
+                                <button class="btn-medium-filled btn-registration">Lượt đăng ký</button>
                                 <button class="btn-medium-bordered btn-update">Cập nhật</button>
                                 <button class="btn-short-bordered btn-cancel">Hủy</button>
                             </div>
