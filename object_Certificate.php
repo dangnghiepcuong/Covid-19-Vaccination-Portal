@@ -1,5 +1,18 @@
 <?php
-include ("object_Citizen.php");
+error_reporting(E_ERROR | E_PARSE);
+if (!defined('browsable')) {
+    header("location:javascript://history.go(-1)");
+}
+/*
+This php file used to stored a defined class and is certainly included in some viewable wsebpages.
+So a checkpoint is set at the very first lines above.
+This file is also includes another .php file, so a check point is continuously happened in the included file.
+But the defination of 'browsable' is no more need before including another/others.
+Because by passing the checkpoint above means that it is available to pass the next checkpoint of 'browsable'.
+
+Summary: Only files not included but includes another/others define('browsable',true);
+*/
+include("object_Citizen.php");
 
 class Certificate{
     private $Citizen;

@@ -221,3 +221,30 @@
 }
 /* END REGISTRATION PERSONAL PROFILE FORM */
 
+/* FORGOT PASSWORD FORM */
+.container-forgot-password {
+    display: none;
+    z-index: 10;
+    position: fixed;
+    width: 400px;
+    height: 500px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-200px, -225px);
+    border-radius: 20px;
+    background: white;
+    transition: 500ms;
+}
+
+.container-forgot-password input{
+    line-height: 40px;
+    font-size: 20px;
+}
+
+.container-forgot-password .message {
+    line-height: 22px;
+}
+
+
+
+/* END FORGOT PASSWORD FORM */

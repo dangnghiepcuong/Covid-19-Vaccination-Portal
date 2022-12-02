@@ -1,4 +1,7 @@
 <?php
+error_reporting(E_ERROR | E_PARSE);
+define('browsable', true);
+
 include("object_Register.php");
 session_start();
 
@@ -6,7 +9,8 @@ if (isset($_POST['method'])) {
     $method = $_POST['method'];
     $method();
 } else
-    header('Location: index.php');
+    header("location:javascript://history.go(-1)");
+
 
 function LoadRegistration()
 {
@@ -23,14 +27,14 @@ function LoadRegistration()
         (select ID, Name, ProvinceName, DistrictName, TownName, Street from ORGANIZATION) ORG
         on REG_SCHED.OrgID = ORG.ID
     )
-    where 1=1
-    order by Status";
+    where 1=1";
     if ($_POST['status'] != -1)
         $sql .= " and Status = :status";
     if ($_POST['vaccine'] != -1)
         $sql .= " and VaccineID = :vaccine";
     if ($_POST['time'] != -1)
         $sql .= " and Time = :time";
+    $sql .= " order by Status";
 
     $command = oci_parse($connection, $sql);
     oci_bind_by_name($command, ':citizenid', $_SESSION['CitizenProfile']->get_id());
@@ -40,7 +44,6 @@ function LoadRegistration()
         oci_bind_by_name($command, ':vaccine', $_POST['vaccine']);
     if ($_POST['time'] != -1)
         oci_bind_by_name($command, ':time', $_POST['time']);
-
     $r = oci_execute($command);
     if (!$r) {
         $exception = oci_error($command);
@@ -115,5 +118,5 @@ function CancelRegistration()
         echo 'ERROR: ' . $exception['code'] . ' - ' . $exception['message'];
         return;
     }
-    echo 'Registration Canceled!';
+    echo 'CancelRegistration';
 }

@@ -1,3 +1,20 @@
+<?php
+error_reporting(E_ERROR | E_PARSE);
+define('browsable', true);
+
+include("object_Account.php");
+include("object_Organization.php");
+session_start();
+
+// if logged in account has not register a profile then head to index.php
+if (!(isset($_SESSION['AccountInfo']) && $_SESSION['AccountInfo']->get_status() == 1))
+    header('Location: index.php');
+// if there is not any profile was queried then head to index
+if (isset($_SESSION['OrgProfile']) == false)
+    header('Location: index.php');
+
+$org = $_SESSION['OrgProfile'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +29,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/MOHProvideAccount.js"></script>
-    <script src="js/animation-btn.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/WebElements.js"></script>
     <title>Cấp tài khoản đơn vị tiêm chủng</title>
 </head>
 
@@ -39,42 +57,32 @@
 
         <!-- FUNCTIONAL PANEL -->
         <div class="function-panel">
-            <br>
-            <div class="filter-panel">
-                <div class="filter-pane">
-                    <label for="city">Bộ lọc tỉnh/TP</label>
-                    <select name="city" id="">
-                        <option value="">HCM</option>
-                    </select>
-
-                    <button class="btn-medium-bordered-icon btn-filter">
-                        <img src="image/filter-magnifier.png" alt="filter-magnifier">
-                        Tìm kiếm
-                    </button>
-                </div>
-
-            </div>
-            <br>
-
             <div class="provide-panel">
                 <div class="frame">
                     <div class="provide-account">
                         <p>Tạo tài khoản đơn vị</p>
                         <label for="city">Tỉnh/Thành phố </label><br>
                         <select name="city" id="select-province">
-                            <option value="">HCM</option>
+                            <?php
+                            $str = file_get_contents('local.json');
+                            $local = json_decode($str, true); // decode the JSON into an associative array
+                            $provincecode = -1;
+                            for ($i = 0; $i < 63; $i++) {
+                                echo '<option value="' . $i . '">' . $local[$i]['name'] . '</option>';
+                            }
+                            ?>
                         </select>
                         <hr>
                         <br>
                         <label for="num">Số lượng tài khoản cần tạo</label><br>
-                        <input type="text" name="num" required value=""><br>
+                        <input type="text" name="num" id="account-quantity" required value=""><br>
                         <hr>
                     </div>
                 </div>
             </div>
 
             <div class="group_btn">
-                <button class="btn-medium-filled">Xác nhận</button>
+                <button class="btn-medium-filled" id="btn-confirm-acc-creation">Xác nhận</button>
                 <button class="btn-medium-bordered" id="close_reg_person_profile">Hủy bỏ</button>
             </div>
 
@@ -83,7 +91,8 @@
 
     <br>
     <?php
-    include("footer.php")
+    include("footer.php");
+    include("WebElements.php");
     ?>
 </body>
 

@@ -1,3 +1,10 @@
+<?php
+error_reporting(E_ERROR | E_PARSE);
+if (!defined('browsable')) {
+    header("location:javascript://history.go(-1)");
+}
+?>
+
 <!-- LOGIN FORM -->
 <link rel="stylesheet" href="css/SignupLoginForm.css">
 
@@ -179,5 +186,32 @@
 
 <!-- END REGISTRATION PERSONAL PROFILE FORM -->
 
-<!-- FADED COVER -->
-<div class="gradient-bg-faded" id="gradient-bg-faded"></div>
+<!-- FORGOT PASSWORD FORM -->
+<div class="form container-forgot-password" id="container-forgot-password">
+    <p class="title">Quên mật khẩu</p>
+    <div>
+        <label for="username">SĐT/Tên tài khoản</label>
+        <input type="text" name="username" required>
+        <hr>
+    </div>
+
+    <div class="verifind_account">
+        <label for="capcha">Nhập mã xác nhận</label>
+        <input type="text" name="capcha" required>
+        <hr>
+        <div class="message">Mã xác nhận được gửi đến Email đã đăng kí </div>
+    </div>
+    <div class="new_password">
+        <label for="password">Mật khẩu mới</label>
+        <input type="password" name="password" required>
+        <hr>
+        <br>
+        <label for="repeat-password">Nhập lại mật khẩu mới</label>
+        <input type="password" name="repeat-password" required>
+        <hr>
+    </div>
+
+    <div class="btn-long" id="btn-reset-password">Xác nhận</div>
+
+</div>
+<!-- END FORGOT PASSWORD FORM -->

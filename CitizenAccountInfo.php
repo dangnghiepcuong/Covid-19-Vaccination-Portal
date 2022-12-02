@@ -1,4 +1,7 @@
 <?php
+error_reporting(E_ERROR | E_PARSE);
+define('browsable', true);
+
 include("object_Account.php");
 include("object_Citizen.php");
 session_start();
@@ -24,6 +27,7 @@ $citizen = $_SESSION['CitizenProfile'];
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/WebElements.js"></script>
     <script src="js/CitizenAccountInfo.js"></script>
+    <script src="js/AccountUpdate.js"></script>
     <title>Thông tin tài khoản</title>
 </head>
 
@@ -98,7 +102,7 @@ $citizen = $_SESSION['CitizenProfile'];
     <br>
     <?php
     include("footer.php");
-    include("WebElements.html");
+    include("WebElements.php");
     ?>
 
 </body>

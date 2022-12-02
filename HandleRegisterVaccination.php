@@ -1,5 +1,7 @@
 <?php
 error_reporting(E_ERROR | E_PARSE);
+define('browsable', true);
+
 include("object_Citizen.php");
 session_start();
 
@@ -8,7 +10,8 @@ if (isset($_POST['method'])) {
     $method = $_POST['method'];
     $method();
 } else
-    header('Location: index.php');
+    header("location:javascript://history.go(-1)");
+
 
 function CheckRegistration()
 {
@@ -31,6 +34,8 @@ function CheckRegistration()
 
     echo $_SESSION['checkbooster'];
     unset($_SESSION['checkbooster']);
+
+    echo 'CheckRegistration';
 }
 
 function RegisterVaccination()
@@ -51,9 +56,12 @@ function RegisterVaccination()
     $r = oci_execute($command);
     if (!$r) {
         $exception = oci_error($command);
-        echo 'ERROR: ' . $exception['code'] . ' - ' . $exception['message'];
+        // echo 'ERROR: ' . $exception['code'] . ' - ' . $exception['message'];
+        echo 'ERROR: ' . $exception['code'];
         return;
     }
 
     unset($_SESSION['dosetype']);
+
+    echo 'Registration Successful!';
 }

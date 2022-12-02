@@ -1,4 +1,9 @@
 <?php
+error_reporting(E_ERROR | E_PARSE);
+if (!defined('browsable')) {
+    header("location:javascript://history.go(-1)");
+}
+
 class Organization {
     private $ID;
     private $Name;

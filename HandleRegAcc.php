@@ -1,12 +1,15 @@
 <?php
 error_reporting(E_ERROR | E_PARSE);
+define('browsable', true);
+
 session_start();
 
 if (isset($_POST['method'])) {
     $method = $_POST['method'];
     $method();
 } else
-    header('Location: index.php');
+header("location:javascript://history.go(-1)");
+
 
 function CheckExist()
 {

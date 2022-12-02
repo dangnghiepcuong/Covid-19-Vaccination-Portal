@@ -1,5 +1,7 @@
 <?php
 error_reporting(E_ERROR | E_PARSE);
+define('browsable', true);
+
 include("object_Citizen.php");
 include("object_Organization.php");
 
@@ -9,7 +11,7 @@ if (isset($_POST['method'])) {
     $method = $_POST['method'];
     $method();
 } else
-    header('Location: index.php');
+    header('Location: ' . $_SERVER['HTTP_REFERER']);
 
 function UpdateCitizenProfile()
 {
@@ -50,7 +52,7 @@ function UpdateCitizenProfile()
         return;
     }
 
-    echo 'Profile Updated!';
+    echo 'UpdateCitizenProfile';
 
     include("CitizenLoadProfile.php");
 }
@@ -75,7 +77,7 @@ function UpdateOrgProfile()
         return;
     }
 
-    echo 'Profile Updated!';
+    echo 'UpdateOrgProfile';
 
     include("OrgLoadProfile.php");
 }

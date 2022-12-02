@@ -1,34 +1,37 @@
 <?php
 error_reporting(E_ERROR | E_PARSE);
+define('browsable', true);
+
 include("object_Account.php");
 include("object_Citizen.php");
 session_start();
 
+/*
+The If statement is used as a checkpoint of the right request.
+Only the requests from jQuery 
+*/
 if (isset($_POST['method'])) {
-    $method = $_POST['method'];
-    $method();
+    if ($_POST['password'] != $_SESSION['AccountInfo']->get_password()) {
+        echo 'Password is incorrect!';
+        return;
+    }
+
+    ChangePassword();
+
+    if ($_SESSION['AccountInfo']->get_role() == 2)
+    {
+        UpdateAccount();
+    }   
 } else
-    header('Location: index.php');
+    header("location:javascript://history.go(-1)");
 
-if ($_POST['password'] != $_SESSION['AccountInfo']->get_password()) {
-    echo 'Password is incorrect!';
-    return;
-}
-
-if (isset($_POST['method'])) {
-    $method = $_POST['method'];
-    $method();
-    return;
-}
-
-ChangePassword();
-
-UpdateAccount();
 
 function ChangePassword()
 {
-    if ($_POST['new_password'] == "")
+    if ($_POST['new_password'] == "" || $_POST['new_password'] == $_SESSION['AccountInfo']->get_password()) {
+        echo '!ChangePassword';        
         return;
+    }
     include("DatabaseConnection.php");
     $sql = "begin ACC_UPDATE_PASSWORD(:username, :password, :newpassword); end;";
     $command = oci_parse($connection, $sql);
@@ -44,13 +47,16 @@ function ChangePassword()
     }
 
     $_SESSION['AccountInfo']->set_password($_POST['new_password']);
-    echo "Password Changed!";
+
+    echo 'ChangePassword';
 }
 
 function UpdateAccount()
 {
-    if ($_POST['phone'] == $_SESSION['AccountInfo']->get_username())
+    if ($_POST['phone'] == $_SESSION['AccountInfo']->get_username()){
+        echo '!UpdateAccount';        
         return;
+    }
 
     include("DatabaseConnection.php");
 
@@ -91,6 +97,6 @@ function UpdateAccount()
 
     $_SESSION['CitizenProfile']->set_phone($_POST['phone']);
     $_SESSION['AccountInfo']->set_username($_POST['phone']);
-
-    echo 'Account Updated!';
+  
+    echo 'UpdateAccount';
 }

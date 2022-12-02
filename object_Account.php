@@ -1,4 +1,14 @@
 <?php
+error_reporting(E_ERROR | E_PARSE);
+/*
+The If statement used to check the existence of the variable 'browsable'.
+If a direct access is made, there is no declaration for 'browsable' in these included files.
+Then the access is backward.
+*/
+if (!defined('browsable')) {
+    header("location:javascript://history.go(-1)");
+}
+
 class Account {
     private $Username;
     private $Password;

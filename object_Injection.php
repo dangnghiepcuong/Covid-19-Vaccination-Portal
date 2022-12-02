@@ -1,6 +1,11 @@
 <?php
-include ("object_Citizen.php");
-include ("object_Schedule.php");
+error_reporting(E_ERROR | E_PARSE);
+if (!defined('browsable')) {
+    header("location:javascript://history.go(-1)");
+}
+
+include("object_Citizen.php");
+include("object_Schedule.php");
 
 class Injection{
     private $Citizen;
@@ -56,4 +61,3 @@ class Injection{
         }
     }
 }
-?>

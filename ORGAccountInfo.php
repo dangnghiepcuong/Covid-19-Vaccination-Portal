@@ -1,4 +1,7 @@
 <?php
+error_reporting(E_ERROR | E_PARSE);
+define('browsable', true);
+
 include("object_Account.php");
 include("object_Organization.php");
 session_start();
@@ -9,7 +12,7 @@ if (!(isset($_SESSION['AccountInfo']) && $_SESSION['AccountInfo']->get_status() 
 // if there is not any profile was queried then head to index
 if (isset($_SESSION['OrgProfile']) == false)
     header('Location: index.php');
-    
+
 $org = $_SESSION['OrgProfile'];
 ?>
 <!DOCTYPE html>
@@ -25,13 +28,17 @@ $org = $_SESSION['OrgProfile'];
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/WebElements.js"></script>
     <script src="js/ORGAccountInfo.js"></script>
+    <script src="js/AccountUpdate.js"></script>
     <title>Thông tin tài khoản</title>
 </head>
 
 <body>
     <!-- HEADER -->
     <?php
-    include("headerORG.php");
+    if ($_SESSION['AccountInfo']->get_role() == 0)
+        include("headerMOH.php");
+    else
+        include("headerORG.php");
     ?>
     <!-- END HEADER -->
 
@@ -58,7 +65,7 @@ $org = $_SESSION['OrgProfile'];
                         <p>Tài khoản</p>
                         <br>
                         <label for="id">Mã đơn vị tiêm chủng</label><br>
-                        <?php echo'<input type="text" name="id" required value="'. $org->get_id() .'" disabled>' ?><br>
+                        <?php echo '<input type="text" name="id" required value="' . $org->get_id() . '" disabled>' ?><br>
                         <hr>
                         <div class="message msg1"></div>
                         <br>
@@ -99,9 +106,8 @@ $org = $_SESSION['OrgProfile'];
     <br>
     <?php
     include("footer.php");
-    include("WebElements.html");
+    include("WebElements.php");
     ?>
-
 </body>
 
 </html>

@@ -1,4 +1,4 @@
-/* FUNCTIONAL PANEL */
+/* LIST SCHEDULE */
 
 .holder-function-panel {
     width: 100%;
@@ -36,17 +36,22 @@
 }
 
 .panel-list-schedule .holder .list-schedule {
-    width: 70%;
-    margin: 0 auto;
+    width: 45%;
+ height: 390px;
+    overflow-y: auto;
+    overflow-x: none;
+    scroll-behavior: smooth;
+    background: whitesmoke;
 }
 
 .panel-list-schedule .holder .list-schedule .schedule {
-    width: 100%;
-    height: 80px;
-    margin-bottom: 4px;
+    width: 98%;
+    height: 115px;
+    margin: 3px 5px;
     background-color: white;
     box-shadow: 2px 2px 5px -2px #8C69CA;
     transition: 300ms;
+    cursor: pointer;
 }
 
 .panel-list-schedule .holder .list-schedule .schedule:hover {
@@ -61,12 +66,6 @@
     color: #D1BFF3;
 }
 
-.panel-list-schedule .holder .list-schedule .schedule {
-    display: flex;
-    justify-content: space-between;
-}
-
-
 .panel-list-schedule .holder .list-schedule .schedule .obj-attr * {
     padding: 3px 0px;
     font-family: 'Roboto';
@@ -75,8 +74,95 @@
     font-weight: 300;
 }
 
+.panel-list-schedule .holder .list-schedule .schedule .obj-attr .attr-time * {
+    float: left;
+}
+
+.panel-list-schedule .holder .list-schedule .schedule .obj-attr input {
+    width: 50px;
+    height: 30px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background-color: none;
+    font-size: 18px;
+}
+
 .panel-list-schedule .holder .list-schedule .schedule .obj-attr, .interactive-area {
     padding: 5px 10px 5px 15px;
     align-items: center;
 }
-/* END FUNCTIONAL PANEL */
+
+/* END LIST SCHEDULE */
+
+/* LIST REGISTRATION */
+
+.panel-list-schedule .holder .list-registration {
+    width: 54%;
+    height: 390px;
+    background: whitesmoke;
+    overflow-y: auto;
+    overflow-x: none;
+    scroll-behavior: smooth;
+}
+
+.panel-list-schedule .holder .list-registration .registration {
+    width: 98%;
+    height: 130px;
+    margin: 3px 5px;
+    background-color: white;
+    box-shadow: 2px 2px 5px -2px #8C69CA;
+    transition: 300ms;
+}
+
+.panel-list-schedule .holder .list-registration .registration:hover {
+    box-shadow: 2px 2px 5px -1px #F5A8FF;
+}
+
+.panel-list-schedule .holder .list-registration .registration 
+.obj-name {
+    padding: 5px 0px 0px 15px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #D1BFF3;
+}
+
+.panel-list-schedule .holder .list-registration .registration .obj-attr 
+.attr-sdt, .attr-date {
+    padding: 3px 0px;
+    font-family: 'Roboto';
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 300;
+}
+
+.panel-list-schedule .holder .list-registration .registration .obj-attr .attr-detail{
+    display: flex;
+    padding: 8px 10px 8px 0px;
+    justify-content: space-between;
+    font-size: 16px;
+}
+
+.panel-list-schedule .holder .list-registration .registration .hoder-obj-attr {
+    padding: 8px 10px 8px 15px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.panel-list-schedule .holder .list-registration .registration .hoder-obj-attr .interactive-area .drop-down-status{
+    width: 110px;
+    margin-bottom: 8px;
+    margin-right: 0px;
+}
+
+.panel-list-schedule .holder .list-registration .registration .hoder-obj-attr .obj-attr{
+    width: 70%;
+}
+
+/* END LIST REGISTRATION */
+
+/* BUTTON */
+.interactive-area button {
+    font-size: 18px;
+}

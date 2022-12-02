@@ -1,3 +1,10 @@
+<?php
+error_reporting(E_ERROR | E_PARSE);
+if (!defined('browsable')) {
+    header("location:javascript://history.go(-1)");
+}
+?>
+
 <link rel="stylesheet" href="css/header.css">
 <script src="js/header.js"></script>
 
@@ -14,12 +21,12 @@
                     <li class="menu-section">Tổng quan</li>
                 </a>
 
-                <a href="MedicalFormSubmit.php">
+                <a href="#">
                     <li class="menu-section">Dữ liệu</li>
                 </a>
 
-                <a href="VaccinationRegistration.php">
-                    <li class="menu-section">Đơn vị</li>
+                <a href="MOHManageOrg.php">
+                    <li class="menu-section">Các đơn vị</li>
                 </a>
             </ul>
         </div>
@@ -33,20 +40,12 @@
     <div class="drop-down-menu" id="drop-down-menu-profile">
         <div class="holder">
             <ul>
-                <a href="MOHAccountInfo.php">
+                <a href="ORGAccountInfo.php">
                     <li>Thông tin tài khoản</li>
                 </a>
 
-                <a href="MOHProfile.php">
-                    <li>Thông tin Bộ Y tế</li>
-                </a>
-
-                <a href="#">
-                    <li>Quản lý đơn vị</li>
-                </a>
-
-                <a href="MOHCertificate.php">
-                    <li>Chứng nhận</li>
+                <a href="ORGProfile.php">
+                    <li>Thông tin đơn vị</li>
                 </a>
 
                 <a href="" id="btn-logout">

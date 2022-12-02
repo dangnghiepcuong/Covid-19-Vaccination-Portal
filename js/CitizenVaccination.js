@@ -1,3 +1,5 @@
+var SelectedOption = false;
+
 $(document).ready(function () {
     // LOAD FRONT END DATA
 
@@ -88,6 +90,33 @@ $(document).ready(function () {
     $('#list-schedule').on('click', '.schedule .btn-register-schedule', function () {
         SchedID = $(this).parent().parent().attr('id');
         time = $(this).parent().find('select option:selected').val();
+        date = $(this).parent().parent().find('.attr-date').text();
+        vaccine = $(this).parent().parent().find('.attr-vaccine').text();
+
+        display_time = time;
+        switch (time) {
+            case 0:
+                display_time = 'Buổi sáng';
+                break;
+            case 1:
+                display_time = 'Buổi chiều';
+                break;
+            case 2:
+                display_time = 'Buổi tối';
+                break;
+        }
+
+        if (confirm('Xác nhận đăng ký tiêm chủng?'))
+            CheckRegistration(SchedID, time);
+    })
+
+
+    function CheckRegistration(SchedID, time) {           // Check conditions before registration
+        // $('#form-popup-confirm').find('.form-message').html('Xác nhận đăng ký tiêm chủng?<br><br>'
+        //     + date + ' - ' + vaccine + ' ' + display_time);
+        // $('#form-popup-confirm').css('display', 'grid');
+        // $('#gradient-bg-faded').css('display', 'block');
+
         $.ajax({
             cache: false,
             url: 'HandleRegisterVaccination.php',
@@ -95,46 +124,11 @@ $(document).ready(function () {
             data: { method: 'CheckRegistration' },
             success: function (result) {
                 if (result.substring(0, 5) == 'ERROR') {    //EXCEPTION
-                    alert(result);
+                    alert('CheckRegistration' + result);    //if fired trigger, show error
                     return;
                 }
-                if (result == 1) {
-                    $('#form-popup-option').find('.form-message').html('Bạn cần đăng ký tiêm mũi tăng cường hay nhắc lại?');
-                    $('#form-popup-option').find('.holder-btn').html('<br><button class="btn-medium-filled" value="booster">Tăng cường</button>'
-                        + '<button class="btn-medium-bordered" value="repeat">Nhắc lại</button>'
-                        + '<button class="btn-medium-bordered" value="cancel">Hủy</button>');
-                    $('#form-popup-option').css('display', 'grid');
-                    $('#gradient-bg-faded').css('display', 'block');
-
-                    $('#form-popup-option').on('click', 'button', function () {
-                        dosetype = $(this).val();
-                        if (dosetype == 'cancel') {
-                            $('#form-popup-option').css('display', 'none');
-                            $('#gradient-bg-faded').css('display', 'none');
-                            return;
-                        }
-                        RegisterVaccination(SchedID, dosetype, time);
-                    })
-                }
                 else {
-                    dosetype = '';
-                    RegisterVaccination(SchedID, dosetype, time);
-                }
-            },
-            error: function (error) {
-            }
-        })
-    })
-
-    function RegisterVaccination(SchedID, dosetype, time) {
-        $.ajax({
-            cache: false,
-            url: 'HandleRegisterVaccination.php',
-            type: 'POST',
-            data: { method: 'RegisterVaccination', SchedID: SchedID, time, dosetype: dosetype },
-            success: function (result) {
-                if (result.substring(0, 5) == 'ERROR') {    //EXCEPTION
-                    alert(result);
+                    CheckBooster(result, SchedID, time);       //Passed check conditions, Check dosetype suitable for vaccination
                     return;
                 }
             },
@@ -142,4 +136,71 @@ $(document).ready(function () {
             }
         })
     }
+
+    function CheckBooster(checkbooster, SchedID, time) {   // Check dosetype suitable for vaccination
+        if (checkbooster == 1) {            // Check if booster dose is availabel, ask for choice
+            
+
+            $('#form-popup-option').on('click', 'button', function () {
+                dosetype = $(this).val();
+                if (dosetype == 'cancel') {         // If cancel confirmation of registration, return
+                    $('#form-popup-option').css('display', 'none');
+                    $('#gradient-bg-faded').css('display', 'none');
+                    return;
+                }
+                else {
+                    RegisterVaccination(SchedID, dosetype, time);   // Register with chosen dosetype
+                    return;
+                }
+            })
+        }
+        else {
+            dosetype = '';
+            RegisterVaccination(SchedID, dosetype, time);   // If no booster availabel, register with automatic selected dosetype
+            return;
+        }
+    }
+
+    function RegisterVaccination(SchedID, dosetype, time) { //RegisterVaccination
+        $.ajax({
+            cache: false,
+            url: 'HandleRegisterVaccination.php',
+            type: 'POST',
+            data: { method: 'RegisterVaccination', SchedID: SchedID, time: time, dosetype: dosetype },
+            success: function (result) {
+                if (result.substring(0, 5) == 'ERROR') {    //EXCEPTION
+                    switch (result.substring(7, 12)) {
+                        case '20001':
+                            PopupConfirm('Bạn phải hoàn thành mũi tiêm đã đăng ký trước đó<br>trước khi đăng ký mũi mới.');
+                            break;
+                    }
+                }
+                if (result == 'RegisterVaccination') {
+                    PopupConfirm('Đăng ký tiêm chủng thành công!');
+                }
+            },
+            error: function (error) {
+            }
+        })
+    }
+
 })
+
+var PopupConfirm = function (message) {
+    $('.form-message').html(message);
+    $('#form-popup-confirm').css('display', 'grid');
+    $('#gradient-bg-faded').css('display', 'block');
+    $('#form-popup-confirm').find('.btn-confirm').click(function () {
+        $('#form-popup-confirm').css('display', 'none');
+        $('#gradient-bg-faded').css('display', 'none');
+    })
+}
+
+var PopupOption = function(message, buttons) {
+    $('#form-popup-option').find('.form-message').html('Bạn cần đăng ký tiêm mũi tăng cường hay nhắc lại?');
+    $('#form-popup-option').find('.holder-btn').html('<br><button class="btn-medium-filled" value="booster">Tăng cường</button>'
+        + '<button class="btn-medium-bordered" value="repeat">Nhắc lại</button>'
+        + '<button class="btn-medium-bordered" value="cancel">Hủy</button>');
+    $('#form-popup-option').css('display', 'grid');
+    $('#gradient-bg-faded').css('display', 'block');
+}

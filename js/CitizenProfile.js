@@ -85,13 +85,27 @@ $(document).ready(function () {
                     alert(result);
                     return;
                 }
-                $('.form-message').text('Cập nhật thông tin thành công!');
-                $('#form-popup-confirm').css('display', 'block');
-                $('.gradient-bg-faded').css('display', 'block');
-                location.reload();
+                switch (result) {
+                    case 'UpdateCitizenProfile':
+                    case 'UpdateOrgProfile':
+                        $('.form-message').text('Cập nhật thông tin thành công!');
+                        break;
+                    case '':
+                        $('.form-message').text('Lỗi chưa xác định!');
+                        break;
+                    default:
+                        alert(result);
+                        break;
+                }
+
+                $('#form-popup-confirm').css('display', 'grid');
+                $('#gradient-bg-faded').css('display', 'block');
+
+                $('#form-popup-confirm').find('.btn-confirm').click(function () {
+                    location.reload();
+                })
             },
             error: function () {
-
             }
         })
     })
