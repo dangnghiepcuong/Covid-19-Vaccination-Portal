@@ -58,7 +58,6 @@ $(document).ready(function () {
     })
 
     $('#filter-schedule').on('change', '.organization', function () {
-
         LoadSchedule(orgid);
     })
 
@@ -153,8 +152,8 @@ $(document).ready(function () {
         //     })
         // }
         // else {
-            dosetype = '';
-            RegisterVaccination(SchedID, dosetype, time);   // If no booster availabel, register with automatic selected dosetype
+        dosetype = '';
+        RegisterVaccination(SchedID, dosetype, time);   // If no booster availabel, register with automatic selected dosetype
         // }
     }
 
@@ -164,15 +163,23 @@ $(document).ready(function () {
             url: 'HandleRegisterVaccination.php',
             type: 'POST',
             data: { method: 'RegisterVaccination', SchedID: SchedID, time: time, dosetype: dosetype },
+            indexValue: { orgid: SchedID.substring(0, 5) },
             success: function (result) {
                 if (result.substring(0, 5) == 'ERROR') {    //EXCEPTION
                     switch (result.substring(7, 12)) {
                         case '20001':
                             PopupConfirm('Bạn phải hoàn thành mũi tiêm đã đăng ký trước đó<br>trước khi đăng ký mũi mới.');
                             break;
+                        case '20004':
+                            PopupConfirm('Loại vaccine này không phù hợp với mũi vaccine trước đã tiêm!.');
+                            break;
+                        default:
+                            alert(result);
+                            break;
                     }
                 }
                 if (result == 'RegisterVaccination') {
+                    LoadSchedule(this.indexValue.orgid);
                     PopupConfirm('Đăng ký tiêm chủng thành công!');
                 }
             },
@@ -193,7 +200,7 @@ var PopupConfirm = function (message) {
     })
 }
 
-var PopupOption = function(message, buttons) {
+var PopupOption = function (message, buttons) {
     $('#form-popup-option').find('.form-message').html('Bạn cần đăng ký tiêm mũi tăng cường hay nhắc lại?');
     $('#form-popup-option').find('.holder-btn').html('<br><button class="btn-medium-filled" value="booster">Tăng cường</button>'
         + '<button class="btn-medium-bordered" value="repeat">Nhắc lại</button>'
