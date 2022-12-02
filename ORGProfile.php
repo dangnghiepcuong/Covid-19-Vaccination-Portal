@@ -7,12 +7,12 @@ include("object_Organization.php");
 session_start();
 
 // if logged in account has not register a profile then head to index.php
-if (!(isset($_SESSION['AccountInfo']) && $_SESSION['AccountInfo']->get_status() == 1))
+if (isset($_SESSION['AccountInfo']) == false)
     header('Location: index.php');
 // if there is not any profile was queried then head to index
 if (isset($_SESSION['OrgProfile']) == false)
     header('Location: index.php');
-    
+
 $org = $_SESSION['OrgProfile'];
 ?>
 <!DOCTYPE html>

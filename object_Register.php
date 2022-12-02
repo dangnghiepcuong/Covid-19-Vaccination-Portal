@@ -20,7 +20,7 @@ class Register
 
     public function __construct()
     {
-        $this->CitizenID = new Citizen();
+        $this->Citizen = new Citizen();
         $this->Sched = new Schedule();
         $this->Time = -1;
         $this->NO = -1;

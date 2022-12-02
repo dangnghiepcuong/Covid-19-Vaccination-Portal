@@ -22,7 +22,7 @@ if ($row == false) {
     echo 'NoAccount';    // no account existed
 } else {
     if ($_POST['password'] == $row['PASSWORD']) {   // account existed, check password
-        $_SESSION['AccountInfo'] = new Account();   //password is correct
+        $_SESSION['AccountInfo'] = new Account();   //password is correct, create session account
         $_SESSION['AccountInfo']->set_username($row['USERNAME']);
         $_SESSION['AccountInfo']->set_password($row['PASSWORD']);
         $_SESSION['AccountInfo']->set_role($row['ROLE']);
@@ -30,21 +30,15 @@ if ($row == false) {
 
         switch ($_SESSION['AccountInfo']->get_role()) {
             case 0:
-                $sql = "select * from ORGANIZATION where ID = :id";    //check exist profile
-                $command = oci_parse($connection, $sql);
-                oci_bind_by_name($command, ':id', $_POST['username']);
-                break;
             case 1:
                 $sql = "select * from ORGANIZATION where ID = :id";    //check exist profile
-                $command = oci_parse($connection, $sql);
-                oci_bind_by_name($command, ':id', $_POST['username']);
                 break;
             case 2:
-                $sql = "select * from CITIZEN where Phone = :phone";    //check exist profile
-                $command = oci_parse($connection, $sql);
-                oci_bind_by_name($command, ':phone', $_POST['username']);
+                $sql = "select * from CITIZEN where Phone = :id";    //check exist profile
                 break;
         }
+        $command = oci_parse($connection, $sql);
+        oci_bind_by_name($command, ':id', $_POST['username']);
 
         $r = oci_execute($command);
         if (!$r) {
