@@ -53,11 +53,23 @@ $(document).ready(function () {
 
     $('#list-org').on('click', '.organization', function () {
         orgid = $(this).attr('id');
-        $('.list-name').append();
+        orgname = $(this).find('.obj-org-name').text();
+        $('.list-name .schedule').html('Lịch tiêm ' + orgname);
+        $('.list-name .schedule').attr('id', orgid);
         LoadSchedule(orgid);
     })
 
     $('#filter-schedule').on('change', '.organization', function () {
+        LoadSchedule(orgid);
+    })
+
+    $('#filter-schedule').change(function(){
+        startdate = $('#start-date').val();
+        enddate = $('#end-date').val();
+        vaccine = $('#vaccine').find('option:selected').val();
+
+        orgid = $('.list-name .schedule').attr('id');
+
         LoadSchedule(orgid);
     })
 
