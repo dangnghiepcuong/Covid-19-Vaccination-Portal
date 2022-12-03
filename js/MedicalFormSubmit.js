@@ -3,7 +3,7 @@ $(document).ready(function () {
     menu_title = '<a href="MedicalFormSubmit.php">Tờ khai y tế</a>';
     $('#function-navigation-bar-title').html(menu_title);
 
-    homepage = '<a href="HomepageCitizen.php">Trang chủ</a>';
+    homepage = '<a href="index.php">Trang chủ</a>';
     $('#homepage-path').html(homepage);
 
     subpage = '<a href="MedicalFormSubmit.php">Khai báo</a>';

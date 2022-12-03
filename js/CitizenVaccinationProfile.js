@@ -4,7 +4,7 @@ $(document).ready(function(){
     menu_title = "<a href='CitizenVaccinationProfile.php'>Tra cứu thông tin</a>";
     $("#function-navigation-bar-title").html(menu_title);
 
-    homepage = "<a href='HomepageCitizen.php'>Trang chủ</a>";
+    homepage = "<a href='index.php'>Trang chủ</a>";
     $("#homepage-path").html(homepage);
     
     subpage = "<a href='#'>Công dân</a>"
