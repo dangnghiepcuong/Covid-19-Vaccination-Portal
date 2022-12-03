@@ -183,11 +183,9 @@ $org = $_SESSION['OrgProfile'];
     <!-- END FUNCTION PANEL -->
     <br>
 
-    <!-- COVER LOGIN FORM -->
-    <div class="gradient-bg-faded" id="gradient-bg-faded"></div>
-
     <?php
     include("footer.php");
+    include("WebElements.php");
     ?>
 </body>
 

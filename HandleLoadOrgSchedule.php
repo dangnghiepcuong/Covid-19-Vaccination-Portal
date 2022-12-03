@@ -145,6 +145,7 @@ function LoadSchedule($orgid = "")
             while (($row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS)) != false) {
                 $result .=
                     '<div class="schedule object" id="' . $row['ID'] . '">
+                        <div class="holder-schedule">
                             <div class="obj-attr">
                                 <p class="attr-date-vaccine-serial">Ngày tiêm: ' . $row['ONDATE'] . ' - Vaccine:
                                 ' . $row['VACCINEID'] . ' - ' . $row['SERIAL'] . '</p>
@@ -159,6 +160,10 @@ function LoadSchedule($orgid = "")
                                 <button class="btn-medium-bordered btn-update">Cập nhật</button>
                                 <button class="btn-short-bordered btn-cancel">Hủy</button>
                             </div>
+                        </div>
+                        <div class="holder-btn-expand-schedule">
+                            <div class="btn-expand-schedule"> > </div> 
+                        </div>
                     </div>';
             }
             break;

@@ -57,7 +57,7 @@ $citizen = $_SESSION['CitizenProfile'];
             <div class="panel-target-citizen">
                 <p>Đối tượng: </p>
                 <select name="" id="">
-                    <option value=""><?php echo $citizen->get_lastname() . ' ' . $citizen->get_firstname() ?></option>
+                    <option value="<?php echo $citizen->get_id() ?>"><?php echo $citizen->get_lastname() . ' ' . $citizen->get_firstname() ?></option>
                 </select>
             </div>
             <br>

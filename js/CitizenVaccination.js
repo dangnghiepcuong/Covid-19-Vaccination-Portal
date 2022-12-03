@@ -3,16 +3,16 @@ var SelectedOption = false;
 $(document).ready(function () {
     // LOAD FRONT END DATA
 
-    menu_title = "<a href='VaccinationRegistration.php'>Đăng ký tiêm chủng</a>";
+    menu_title = "<a href='CitizenVaccination.php'>Đăng ký tiêm chủng</a>";
     $("#function-navigation-bar-title").html(menu_title);
 
-    homepage = "<a href='HomepageCitizen.php'>Trang chủ</a>";
+    homepage = "<a href='index.php'>Trang chủ</a>";
     $("#homepage-path").html(homepage);
 
-    subpage = "<a href='VaccinationRegistration.php'>Tiêm chủng</a>";
+    subpage = "<a href='CitizenVaccination.php'>Tiêm chủng</a>";
     $("#subpage-path").html(subpage);
 
-    selected_function = "<a href='VaccinationRegistration.php'>Đăng ký tiêm chủng</a>";
+    selected_function = "<a href='CitizenVaccination.php'>Đăng ký tiêm chủng</a>";
     $("#selected-function-path").html(selected_function);
 
     var today = new Date();
@@ -53,11 +53,23 @@ $(document).ready(function () {
 
     $('#list-org').on('click', '.organization', function () {
         orgid = $(this).attr('id');
-        $('.list-name').append();
+        orgname = $(this).find('.obj-org-name').text();
+        $('.list-name .schedule').html('Lịch tiêm ' + orgname);
+        $('.list-name .schedule').attr('id', orgid);
         LoadSchedule(orgid);
     })
 
     $('#filter-schedule').on('change', '.organization', function () {
+        LoadSchedule(orgid);
+    })
+
+    $('#filter-schedule').change(function(){
+        startdate = $('#start-date').val();
+        enddate = $('#end-date').val();
+        vaccine = $('#vaccine').find('option:selected').val();
+
+        orgid = $('.list-name .schedule').attr('id');
+
         LoadSchedule(orgid);
     })
 
