@@ -2,14 +2,14 @@
 error_reporting(E_ERROR | E_PARSE);
 define('browsable', true);
 
+include("object_Injection.php");
+session_start();
+
 if (isset($_POST['method'])) {
     $method = $_POST['method'];
     $method();
 } else
     header("location:javascript://history.go(-1)");
-
-include("object_Injection.php");
-session_start();
 
 function LoadCertificate()
 {
@@ -48,9 +48,25 @@ function LoadInjection()
     $count = 0;
     while (($row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS)) != false) {
         $count++;
+        $doestype = "";
+        switch ($row['INJNO']) {
+            case "1":
+                $doestype = "Cơ bản";
+                break;
+            case "2":
+                $doestype = "Tăng cường";
+                break;
+            case "3":
+                $doestype = "Nhắc lại";
+                break;
+            default:
+                $doestype = "";
+                break;
+        }
+
         $result .=
             '<div class="injection">
-        <p>Mũi ' . $row['INJNO'] . ' (' . $row['DOSETYPE'] . ')</p>
+        <p>Mũi ' . $row['INJNO'] . ' (' . $doestype . ')</p>
         <p>Vaccine: ' . $row['VACCINEID'] . '</p>
         <p>Đơn vị tiêm chủng: ' . $row['NAME'] . '</p>
         <p>Lịch tiêm ngày: ' . $row['ONDATE'] . '</p>
@@ -66,10 +82,10 @@ function LoadInjection()
             break;
 
         case 2:
-            echo '<p class="status">Chưa tiêm đủ liều cơ bản vaccine Covid-19</p>';
+            echo '<p class="status">Đã tiêm đủ liều cơ bản vaccine Covid-19</p>';
             break;
         case 3:
-            echo '<p class="status">Chưa tiêm đủ liều cơ bản vaccine Covid-19</p>';
+            echo '<p class="status">Đã 3 mũi vaccine Covid-19</p>';
             break;
         default:
             break;
