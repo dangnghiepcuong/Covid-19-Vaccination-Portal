@@ -78,24 +78,32 @@ else {
             ?>
             <br>
 
-            <div class="filter-panel" id="filter-form_list">
-                <label for="form-date">Tờ khai trong vòng:</label>
-                <select type="text" name="form-date" id="">
+            <div class="filter-panel-medical" id="filter-form_list">
+                <div class="select-date">
+                    <label for="form-date">Tờ khai trong vòng:</label>
+                    <select type="text" name="form-date" id="">
                         <option value=7>7 ngày</option>
                         <option value=15>15 ngày</option>
                         <option value=30>30 ngày</option>
                         <option value=60>60 ngày</option>
-                </select>
+                    </select>
+                </div>
                 <button class="btn-medium-bordered-icon btn-filter" id="btn-filter-org">
-                        Tìm kiếm
+                    Tìm kiếm
                 </button>
             </div>
 
             <div class="panel-list">
-                <div></div>
+                <div class="holder-form-medical">
+                    <div class="form-medical">
+                        <p class="title">Đối tượng: Đặng Nghiệp Cường</p>
+                        <p class="date">Ngày thực hiện khai báo</p>
+                        <p class="detail">Sức khỏe bình thường</p>
+                    </div>
+                </div>
             </div>
 
-            
+
         </div>
     </div>
     <!-- END FUNCTION PANEL -->
