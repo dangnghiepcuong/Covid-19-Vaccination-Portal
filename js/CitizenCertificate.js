@@ -33,21 +33,8 @@ $(document).ready(function () {
             data: { method: 'LoadInjection' },
             success: function (result) {
                 $('#list-injection').html(result);
-            },
-            error: function (error) {
-            }
-        })
-    }
-
-    LoadCertificate();
-    function LoadCertificate() {
-        $.ajax({
-            cache: false,
-            url: 'HandleLoadCertificate.php',
-            type: 'POST',
-            data: { method: 'LoadCertificate' },
-            success: function (result) {
-                switch (parseInt(result)) {
+                cert = $('#list-injection').find('.status').attr('id')
+                switch (parseInt(cert)) {
                     case 0:
                         $('.certificate').css('background', '#D2001A');
                         break;
@@ -63,5 +50,4 @@ $(document).ready(function () {
             }
         })
     }
-
 })

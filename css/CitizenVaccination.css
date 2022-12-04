@@ -56,7 +56,6 @@
 }
 
 .panel-list .holder .list-object .object {
-    width: 98%;
     height: 100px;
     margin: 3px 5px;
     background-color: white;
@@ -85,7 +84,33 @@
 
 /* OBJECT ORG */
 .panel-list .holder .list-org .organization {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    transition: 300ms;
     cursor: pointer;
+}
+
+.panel-list .holder .list-org .organization 
+.holder-btn-expand-org {
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 50%;
+    transition: 300ms;
+}
+
+.panel-list .holder .list-org .organization 
+.holder-btn-expand-org:hover {
+    background-color: rgba(248, 248, 248, 0.6);
+}
+
+.panel-list .holder .list-org .organization 
+.holder-btn-expand-org .btn-expand-org  {
+    font-size: 40px;
+    font-weight: 100;
+    color: lightgray;
 }
 
 .panel-list .holder .list-org .organization 
