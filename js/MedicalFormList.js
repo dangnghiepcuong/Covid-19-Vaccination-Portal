@@ -29,6 +29,10 @@ $(document).ready(function () {
     // HANDLE ACTION
     $('#btn-filter-org').click(function () {
 
+        selectformlist();
+    })
+
+    function selectformlist() {
         formdate = $('#form-date').val();
 
         // filleddate = $('#input-date').val();
@@ -47,10 +51,7 @@ $(document).ready(function () {
                     alert(result);
                 }
                 if (result == 'NoForm') {
-                    alert(2);
-                    $('.form-message').text('Bạn chưa khai báo y tế trong vòng' + formdate + 'ngày!');
-                    $('#form-popup-confirm').css('display', 'grid');
-                    $('#gradient-bg-faded').css('display', 'block');
+                    PopupConfirm('Bạn chưa khai báo y tế trong vòng ' + formdate + ' ngày!');
                 }
             },
             error: function (error) {
@@ -58,5 +59,15 @@ $(document).ready(function () {
                 alert('error')
             }
         });
-    })
+    }
 })
+
+var PopupConfirm = function (message) {
+    $('.form-message').html(message);
+    $('#form-popup-confirm').css('display', 'grid');
+    $('#gradient-bg-faded').css('display', 'block');
+    $('#form-popup-confirm').find('.btn-confirm').click(function () {
+        $('#form-popup-confirm').css('display', 'none');
+        $('#gradient-bg-faded').css('display', 'none');
+    })
+}
