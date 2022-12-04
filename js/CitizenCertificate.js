@@ -52,7 +52,7 @@ $(document).ready(function () {
                         $('.certificate').css('background', '#D2001A');
                         break;
                     case 1:
-                        $('.certificate').css('background-color', '#F7EC09');
+                        $('.certificate').css('background', '#F7EC09');
                         break;
                     default:
                         $('.certificate').css('background', '#3EC70B');
