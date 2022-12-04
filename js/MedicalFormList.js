@@ -27,33 +27,9 @@ $(document).ready(function () {
     // END LOAD FRONT END DATA
 
     // HANDLE ACTION
-    $('#btn-submit').click(function () {
-        SubmitMedicalForm();
+    $('#btn-filter-org').click(function () {
 
-        $('#form-popup-option').find('.form-message').html('Xác nhận khai báo y tế?');
-        $('#form-popup-option').css('display', 'grid');
-        $('#gradient-bg-faded').css('display', 'block');
-
-        $('#form-popup-option').on('click', '.btn-cancel', function () {
-            $('#form-popup-option').css('display', 'none');
-            $('#gradient-bg-faded').css('display', 'none');
-        })
-
-        $('#form-popup-option').on('click', '.btn-confirm', function () {
-            SubmitMedicalForm();
-        })
-    })
-
-    function SubmitMedicalForm() {
-        q1 = $('input[type="radio"][name="q1"]:checked').val();
-        q2 = $('input[type="radio"][name="q2"]:checked').val();
-        q3 = $('input[type="radio"][name="q3"]:checked').val();
-        q4 = $('input[type="radio"][name="q4"]:checked').val();
-        if (!$('input[name="q1"]:checked').val() || !$('input[name="q2"]:checked').val() || !$('input[name="q3"]:checked').val() || !$('input[name="q4"]:checked').val()) {
-            alert('Bạn chưa chọn câu trả lời!');
-            return;
-        }
-        choice = q1 + q2 + q3 + q4;
+        formdate = $('#form-date').val();
 
         // filleddate = $('#input-date').val();
         // if (new Date (filleddate).getTime() > new Date().getTime()){
@@ -63,26 +39,24 @@ $(document).ready(function () {
 
         $.ajax({
             cache: false,
-            url: 'HandleMedicalForm.php',
+            url: 'HandleMedicalList.php',
             type: 'POST',
-            data: { filleddate: filleddate, choice: choice },
+            data: { formdate: formdate },
             success: function (result) {
-                alert('confirmed')
                 if (result.substring(0, 5) == 'ERROR') {    //EXCEPTION
                     alert(result);
-                    // return;
                 }
-                if (result == 'Form Submited!') {
-                    $('.form-message').text('Khai báo y tế thành công!');
+                if (result == 'NoForm') {
+                    alert(2);
+                    $('.form-message').text('Bạn chưa khai báo y tế trong vòng' + formdate + 'ngày!');
                     $('#form-popup-confirm').css('display', 'grid');
                     $('#gradient-bg-faded').css('display', 'block');
                 }
-                alert(result);
             },
             error: function (error) {
                 // $('body').html(error);
                 alert('error')
             }
         });
-    }
+    })
 })
