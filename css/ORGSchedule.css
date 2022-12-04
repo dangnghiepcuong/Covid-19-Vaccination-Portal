@@ -96,8 +96,12 @@
 
 .panel-list-schedule .holder .list-schedule .schedule .obj-attr,
 .interactive-area {
-    padding: 5px 10px 5px 15px;
+    padding: 3px 10px 3px 15px;
     align-items: center;
+}
+
+.panel-list-schedule .holder .list-schedule .schedule .obj-attr .attr-time {
+    display: flex;
 }
 
 .panel-list-schedule .holder .list-schedule .schedule
@@ -219,6 +223,7 @@
     padding-left: 15px;
     border-color:#D1BFF3;
     outline-color: #fff5fe;
+    font-size: 16px;
 }
 
 .panel-update-schedule .container-update-value button {
