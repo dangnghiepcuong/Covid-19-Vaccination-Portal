@@ -199,7 +199,7 @@ if (!defined('browsable')) {
         <label for="capcha">Nhập mã xác nhận</label>
         <input type="text" name="capcha" required>
         <hr>
-        <div class="message">Mã xác nhận được gửi đến Email đã đăng kí </div>
+        <div class="message"></div>
     </div>
     <div class="new_password">
         <label for="password">Mật khẩu mới</label>

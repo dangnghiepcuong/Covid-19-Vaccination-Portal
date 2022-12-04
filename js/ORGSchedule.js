@@ -57,14 +57,14 @@ $(document).ready(function () {
         if (schedule.css('margin-top') == '20px') {
             $('#list-registration').html('')
             schedule.css('margin', '3px 27px 3px 5px')
-            schedule.css('width', '90%')
+            schedule.css('width', '92%')
             schedule.css('height', '70px')
             schedule.find('.btn-expand-schedule').text('>')
             schedule.find('.interactive-area').css('display', 'none')
             return
         }
         $('#list-schedule').find('.schedule').css('margin', '3px 27px 3px 5px')
-        $('#list-schedule').find('.schedule').css('width', '90%')
+        $('#list-schedule').find('.schedule').css('width', '92%')
         $('#list-schedule').find('.schedule').css('height', '70px')
         $('#list-schedule').find('.schedule .btn-expand-schedule').text('>')
         $('#list-schedule').find('.schedule .interactive-area').css('display', 'none')
@@ -172,7 +172,7 @@ $(document).ready(function () {
             + '<input id="limit-noon" type="number" min="0"><br>'
             + '<label for="limit-night" class="">Giới hạn đăng ký buổi tối</label><br>'
             + '<input id="limit-night" type="number" min="0"><br>'
-            + '<button id="btn-confirm-update-schedule">Xác nhận</button>'
+            + '<button class="btn-medium-bordered" id="btn-confirm-update-schedule">Xác nhận</button>'
             + '</div>'
             + '</div>'
         )
