@@ -3,7 +3,7 @@ $(document).ready(function () {
     menu_title = "<a href='CitizenProfile.php'>Chứng nhận tiêm chủng</a>";
     $("#function-navigation-bar-title").html(menu_title);
 
-    homepage = "<a href='HomepageCitizen.php'>Trang chủ</a>";
+    homepage = "<a href='index.php'>Trang chủ</a>";
     $("#homepage-path").html(homepage);
 
     subpage = "<a href='CitizenProfile.php'>Công dân</a>"
@@ -52,7 +52,7 @@ $(document).ready(function () {
                         $('.certificate').css('background', '#D2001A');
                         break;
                     case 1:
-                        $('.certificate').css('background-color', '#F7EC09');
+                        $('.certificate').css('background', '#F7EC09');
                         break;
                     default:
                         $('.certificate').css('background', '#3EC70B');

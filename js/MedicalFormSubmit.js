@@ -3,7 +3,7 @@ $(document).ready(function () {
     menu_title = '<a href="MedicalFormSubmit.php">Tờ khai y tế</a>';
     $('#function-navigation-bar-title').html(menu_title);
 
-    homepage = '<a href="HomepageCitizen.php">Trang chủ</a>';
+    homepage = '<a href="index.php">Trang chủ</a>';
     $('#homepage-path').html(homepage);
 
     subpage = '<a href="MedicalFormSubmit.php">Khai báo</a>';
@@ -28,20 +28,7 @@ $(document).ready(function () {
 
     // HANDLE ACTION
     $('#btn-submit').click(function () {
-
-        $('#form-popup-option').find('.form-message').html('Xác nhận khai báo y tế?');
-        $('#form-popup-option').css('display', 'grid');
-        $('#gradient-bg-faded').css('display', 'block');
-
-        $('#form-popup-option').on('click', '.btn-cancel', function () {
-            $('#form-popup-option').css('display', 'none');
-            $('#gradient-bg-faded').css('display', 'none');
-        })
-
-        $('#form-popup-option').on('click', '.btn-confirm', function () {
-            SubmitMedicalForm();
-        })
-
+        SubmitMedicalForm();
     })
 
     function SubmitMedicalForm() {
@@ -64,9 +51,7 @@ $(document).ready(function () {
         today = yyyy + '-' + mm + '-' + dd;
 
         if (new Date(filleddate).getTime() > new Date(today).getTime()) {
-            $('.form-message').text('Ngày khai báo không hợp lệ!');
-            $('#form-popup-confirm').css('display', 'grid');
-            $('#gradient-bg-faded').css('display', 'block');
+            PopupConfirm('Ngày khai báo không hợp lệ!');
             return;
         }
 
@@ -78,19 +63,24 @@ $(document).ready(function () {
             success: function (result) {
                 if (result.substring(0, 5) == 'ERROR') {    //EXCEPTION
                     alert(result);
-                    // return;
+                    return;
                 }
                 if (result == 'Form Submited!') {
-                    $('.form-message').text('Khai báo y tế thành công!');
-                    $('#form-popup-confirm').css('display', 'grid');
-                    $('#gradient-bg-faded').css('display', 'block');
+                    PopupConfirm('Khai báo y tế thành công!');
                 }
-                //alert(result);
             },
             error: function (error) {
-                // $('body').html(error);
-                alert('error')
             }
         });
     }
 })
+
+var PopupConfirm = function (message) {
+    $('.form-message').html(message);
+    $('#form-popup-confirm').css('display', 'grid');
+    $('#gradient-bg-faded').css('display', 'block');
+    $('#form-popup-confirm').find('.btn-confirm').click(function () {
+        $('#form-popup-confirm').css('display', 'none');
+        $('#gradient-bg-faded').css('display', 'none');
+    })
+}

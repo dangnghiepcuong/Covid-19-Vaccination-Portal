@@ -20,7 +20,6 @@ include("object_Citizen.php");
 include("object_Organization.php");
 session_start();
 $citizen = new Citizen();
-$account = new Account();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -47,14 +46,8 @@ $account = new Account();
 
         if (isset($_SESSION['AccountInfo']) && $_SESSION['AccountInfo']->get_status() == 1) {
 
-            $account = $_SESSION['AccountInfo'];
-            switch ((int)$account->get_role()) {
+            switch ((int)$_SESSION['AccountInfo']->get_role()) {
                 case 0:
-                    if (isset($_SESSION['OrgProfile']) == false) {
-                        include("OrgLoadProfile.php");
-                    }
-                    include("headerMOH.php");
-                    break;
                 case 1:
                     if (isset($_SESSION['OrgProfile']) == false) {
                         include("OrgLoadProfile.php");

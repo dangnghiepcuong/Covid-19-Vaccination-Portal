@@ -1,3 +1,19 @@
+<?php
+error_reporting(E_ERROR | E_PARSE);
+define('browsable', true);
+
+include("object_Account.php");
+include("object_Citizen.php");
+session_start();
+
+// if logged in account has not register a profile then head to index.php
+if (isset($_SESSION['AccountInfo']) == false)
+    header('Location: index.php');
+// if there is not any profile was queried then head to index
+if (isset($_SESSION['CitizenProfile']) == false)
+    header('Location: index.php');
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -75,8 +91,6 @@
                 </div>
 
             </div>
-            
-
         </div>
     </div>
     <br>

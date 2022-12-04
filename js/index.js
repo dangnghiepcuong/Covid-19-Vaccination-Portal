@@ -235,4 +235,36 @@ $(document).ready(function () {
             }
         })
     })
+
+    //HANDLE FORGOT PASSWORD
+    $('#btn-forgot-password').click(function () {
+        $('#container-forgot-password').find('.message').text("");
+
+        username = $('#container-forgot-password').find('input[name="username"').val();
+        if (username == '') {
+            $('#container-forgot-password').find('.message').text('Nhập SĐT/Tên tài khoản!');
+            return;
+        }
+
+        $.ajax({
+            cache: false,
+            url: 'HandleForgotPassword.php',
+            type: 'POST',
+            data: { username: username},
+            success: function (result) {    //button click to login
+                if (result.substring(0, 5) == 'ERROR') {    //EXCEPTION
+                    alert(result);
+                    return;
+                }
+                if (result == 'NoAccount') {    //No Account Existed
+                    $('#container-forgot-password').find('.message').text('Tài khoản không tồn tại!');
+                    return;
+                }
+                alert(1);
+            },
+            error: function (error) {
+                $('body').html(error);
+            }
+        });
+    })
 })

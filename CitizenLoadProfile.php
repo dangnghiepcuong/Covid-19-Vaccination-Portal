@@ -17,7 +17,7 @@ oci_execute($command);
 while (($row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS)) != false) {
     $citizen->set_lastname($row['LASTNAME']);
     $citizen->set_firstname($row['FIRSTNAME']);
-    $citizen->set_ID($row['ID']);
+    $citizen->set_id($row['ID']);
     $citizen->set_birthday($row['BIRTHDAY']);
     $citizen->set_gender($row['GENDER']);
     $citizen->set_hometown($row['HOMETOWN']);
