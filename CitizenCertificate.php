@@ -7,12 +7,12 @@ include("object_Citizen.php");
 session_start();
 
 // if logged in account has not register a profile then head to index.php
-if (!(isset($_SESSION['AccountInfo']) && $_SESSION['AccountInfo']->get_status() == 1))
+if (isset($_SESSION['AccountInfo']) == false)
     header('Location: index.php');
 // if there is not any profile was queried then head to index
 if (isset($_SESSION['CitizenProfile']) == false)
     header('Location: index.php');
-    
+
 $citizen = $_SESSION['CitizenProfile'];
 ?>
 <!DOCTYPE html>
@@ -57,7 +57,7 @@ $citizen = $_SESSION['CitizenProfile'];
             <div class="panel-target-citizen">
                 <p>Đối tượng: </p>
                 <select name="" id="">
-                    <option value=""><?php echo $citizen->get_lastname() . ' ' . $citizen->get_firstname() ?></option>
+                    <option value="<?php echo $citizen->get_id() ?>"><?php echo $citizen->get_lastname() . ' ' . $citizen->get_firstname() ?></option>
                 </select>
             </div>
             <br>

@@ -34,9 +34,8 @@ function LoadInjection()
     ) SCHED_ORG
     on INJ.SchedID = SCHED_ORG.ID";
 
-    $citizen = $_SESSION['CitizenProfile'];
     $command = oci_parse($connection, $sql);
-    oci_bind_by_name($command, ':citizenid', $citizen->get_id());
+    oci_bind_by_name($command, ':citizenid', $_SESSION['CitizenProfile']->get_id());
     $r = oci_execute($command);
     if (!$r) {
         $exception = oci_error($command);

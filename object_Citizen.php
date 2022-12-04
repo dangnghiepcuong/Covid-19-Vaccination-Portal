@@ -39,7 +39,7 @@ class Citizen
         $this->Avatar = "";
     }
 
-    public function set_ID($id)
+    public function set_id($id)
     {
         $this->ID = $id;
     }
