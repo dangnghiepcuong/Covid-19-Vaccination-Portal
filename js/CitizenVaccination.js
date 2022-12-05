@@ -54,7 +54,7 @@ $(document).ready(function () {
         LoadSchedule(orgid)
     })
 
-    $('#filter-schedule').change(function(){
+    $('#filter-schedule').change(function () {
         startdate = $('#start-date').val()
         enddate = $('#end-date').val()
         vaccine = $('#vaccine').find('option:selected').val()
@@ -201,6 +201,9 @@ $(document).ready(function () {
                             break
                         case '20004':
                             PopupConfirm('Loại vaccine này không phù hợp với mũi vaccine trước đã tiêm!.')
+                            break
+                        case '20005':
+                            PopupConfirm('Bạn phải khai báo y tế trong vòng 7 ngày trước khi ngày tiêm diễn ra!')
                             break
                         default:
                             alert(result)
