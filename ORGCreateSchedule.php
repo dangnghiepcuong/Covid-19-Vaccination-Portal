@@ -56,44 +56,43 @@ $org = $_SESSION['OrgProfile'];
                 echo '
                     <div class="list-name orgid" id="' . $org->get_id() . '">' . $org->get_name() . '</div>'
                 ?>
-                <br>
                 <div class="holder">
                     <div class="panel-update-schedule" id="panel-update-schedule">
-                        <div class="panel-update-schedule" id="SchedID" <div class="title">TẠO LỊCH TIÊM CHỦNG</div>
-                        <div class="container-update-value">
-                            <label for="schedule-date" class="">Giới hạn đăng ký buổi sáng</label><br>
-                            <input id="schedule-date" type="date" min="<?php echo date("Y-m-d"); ?>"><br>
+                        <div class="title">TẠO LỊCH TIÊM CHỦNG</div>
+                        <div class="container">
+                            <div class="container-select-date-vaccine">
+                                <label for="schedule-date" class="">Ngày tạo lịch tiêm</label>
+                                <input id="schedule-date" type="date" min="<?php echo date("Y-m-d"); ?>">
 
-                            <label for="vaccine" class="">Loại vaccine</label><br>
-                            <select type="text" name="vaccine" id="vaccine">
-                                <option value="Astra">AstraZeneca</option>
-                                <option value="Corminaty">Corminaty (Pfizer)</option>
-                                <option value="Sputnik">Sputnik V</option>
-                                <option value="Vero">Verro Cell</option>
-                                <option value="Moderna">Moderna</option>
-                            </select>
-                            <br>
+                                <label for="vaccine" class="">Loại vaccine</label>
+                                <select type="text" name="vaccine" id="vaccine">
+                                    <option value="Astra">AstraZeneca</option>
+                                    <option value="Corminaty">Corminaty (Pfizer)</option>
+                                    <option value="Sputnik">Sputnik V</option>
+                                    <option value="Vero">Verro Cell</option>
+                                    <option value="Moderna">Moderna</option>
+                                </select>
+                                <label for="serial" class="">Số lô vaccine</label>
+                                <input id="serial" type="text">
+                            </div>
+                            <div class="container-update-value">
+                                <label for="limit-day" class="">Giới hạn đăng ký buổi sáng</label>
+                                <input id="limit-day" type="number" min="0">
 
-                            <label for="serial" class="">Số lô vaccine</label><br>
-                            <input id="serial" type="text"><br>
+                                <label for="limit-noon" class="">Giới hạn đăng ký buổi chiều</label>
+                                <input id="limit-noon" type="number" min="0">
 
-                            <label for="limit-day" class="">Giới hạn đăng ký buổi sáng</label><br>
-                            <input id="limit-day" type="number" min="0"><br>
-
-                            <label for="limit-noon" class="">Giới hạn đăng ký buổi chiều</label><br>
-                            <input id="limit-noon" type="number" min="0"><br>
-
-                            <label for="limit-night" class="">Giới hạn đăng ký buổi tối</label><br>
-                            <input id="limit-night" type="number" min="0"><br>
-
-                            <button class="btn-medium-bordered" id="btn-confirm-create-schedule">Xác nhận</button>
+                                <label for="limit-night" class="">Giới hạn đăng ký buổi tối</label>
+                                <input id="limit-night" type="number" min="0">
+                            </div>
                         </div>
+                        <button class="btn-medium-bordered" id="btn-confirm-create-schedule">Xác nhận</button>
+
                     </div>
                 </div>
             </div>
-        </div>
 
-    </div>
+        </div>
     </div>
     </div>
     <!-- END FUNCTION PANEL -->
