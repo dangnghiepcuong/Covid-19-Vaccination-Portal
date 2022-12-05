@@ -8,15 +8,20 @@ session_start();
 
 // if logged in account has not register a profile then head to index.php
 if (isset($_SESSION['AccountInfo']) == false)
-    header('Location: index.php');
+    header("location:javascript://history.go(-1)");
+// if not have the right role then return to index
+else if ($_SESSION['AccountInfo']->get_role() != 2)
+    header("location:javascript://history.go(-1)");
+
 // if there is not any profile was queried then head to index
 if (isset($_SESSION['CitizenProfile']) == false)
-    header('Location: index.php');
+    header("location:javascript://history.go(-1)");
 
 $citizen = $_SESSION['CitizenProfile'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

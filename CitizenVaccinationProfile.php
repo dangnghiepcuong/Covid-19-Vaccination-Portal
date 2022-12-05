@@ -8,10 +8,14 @@ session_start();
 
 // if logged in account has not register a profile then head to index.php
 if (isset($_SESSION['AccountInfo']) == false)
-    header('Location: index.php');
+    header("location:javascript://history.go(-1)");
+// if not have the right role then return to index
+else if ($_SESSION['AccountInfo']->get_role() != 2)
+    header("location:javascript://history.go(-1)");
+
 // if there is not any profile was queried then head to index
 if (isset($_SESSION['CitizenProfile']) == false)
-    header('Location: index.php');
+    header("location:javascript://history.go(-1)");
 
 ?>
 <!DOCTYPE html>
@@ -51,7 +55,7 @@ if (isset($_SESSION['CitizenProfile']) == false)
     <div class="holder-function-panel">
         <!-- MENU -->
         <?php
-            include("function-menu.php");
+        include("function-menu.php");
         ?>
         <!-- END MENU -->
 
@@ -65,7 +69,7 @@ if (isset($_SESSION['CitizenProfile']) == false)
             <br>
             <div class="panel-search-citizen">
                 <div class="filter-panel">
-                    <label class ="text" name="CMND/CCCD" id="CMND/CCCD">CMND/CCCD:</label>
+                    <label class="text" name="CMND/CCCD" id="CMND/CCCD">CMND/CCCD:</label>
                     <input type="text">
 
                     <label>Tỉnh/Thành phố:</label>
@@ -73,13 +77,13 @@ if (isset($_SESSION['CitizenProfile']) == false)
                 </div>
 
                 <button class="btn-medium-bordered-icon">
-                        <img src="image/filter-magnifier.png" alt="filter-magnifier">
-                        Tìm kiếm
+                    <img src="image/filter-magnifier.png" alt="filter-magnifier">
+                    Tìm kiếm
                 </button>
             </div>
 
             <br>
-            
+
             <div class="panel-vaccinationprofile">
                 <div class="panel-infovaccination">
                     <label>Mũi:</label>
@@ -95,7 +99,7 @@ if (isset($_SESSION['CitizenProfile']) == false)
     </div>
     <br>
 
-    
+
 
     <!-- FOOTER -->
     <?php

@@ -8,10 +8,14 @@ session_start();
 
 // if logged in account has not register a profile then head to index.php
 if (isset($_SESSION['AccountInfo']) == false)
-    header('Location: index.php');
+    header("location:javascript://history.go(-1)");
+// if not have the right role then return to index
+else if ($_SESSION['AccountInfo']->get_role() != 1)
+    header("location:javascript://history.go(-1)");
+
 // if there is not any profile was queried then head to index
 if (isset($_SESSION['OrgProfile']) == false)
-    header('Location: index.php');
+    header("location:javascript://history.go(-1)");
 
 $org = $_SESSION['OrgProfile'];
 ?>
@@ -122,7 +126,7 @@ $org = $_SESSION['OrgProfile'];
                     <div>
                         <label for="town">Xã/Phường/Thị trấn <span>(*)</span></label><br>
                         <select name="town" id="select-town">
-                        <?php
+                            <?php
                             echo '<option value="">' . $org->get_townname() . '</option>';
                             $towncode = -1;
                             $i = 0;

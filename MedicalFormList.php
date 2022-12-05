@@ -9,6 +9,10 @@ $checkUser = true;
 // if logged in account has not register a profile then head to index.php
 if (isset($_SESSION['AccountInfo']) == false)
     $checkUser = false;
+// if not have the right role then return to index
+else if ($_SESSION['AccountInfo']->get_role() != 2)
+    header("location:javascript://history.go(-1)");
+
 // if there is not any profile was queried then head to index
 if (isset($_SESSION['CitizenProfile']) == false)
     $checkUser = false;
