@@ -53,6 +53,7 @@ $(document).ready(function () {
                 if (result == 'NoForm') {
                     PopupConfirm('Bạn chưa khai báo y tế trong vòng ' + formdate + ' ngày!')
                 }
+                $('#holder-form-medical').html(result);
             },
             error: function (error) {
                 // $('body').html(error)
