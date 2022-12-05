@@ -2,8 +2,11 @@
 error_reporting(E_ERROR | E_PARSE);
 define('browsable', true);
 include("object_Account.php");
+
 include("object_Citizen.php");
+
 session_start();
+
 $checkUser = true;
 
 // if logged in account has not register a profile then head to index.php
@@ -94,12 +97,12 @@ else {
             </div>
 
             <div class="panel-list">
-                <div class="holder-form-medical">
-                    <div class="form-medical">
+                <div class="holder-form-medical" id="holder-form-medical">
+                    <!-- <div class="form-medical">
                         <p class="title">Đối tượng: Đặng Nghiệp Cường</p>
                         <p class="date">Ngày thực hiện khai báo</p>
                         <p class="detail">Sức khỏe bình thường</p>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 

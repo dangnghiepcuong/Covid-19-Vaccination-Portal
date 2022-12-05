@@ -3,6 +3,7 @@ error_reporting(E_ERROR | E_PARSE);
 define('browsable', true);
 
 include("object_Account.php");
+
 session_start();
 
 include("DatabaseConnection.php");                           //Connection String
