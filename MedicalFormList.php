@@ -81,7 +81,7 @@ else {
             <div class="filter-panel-medical" id="filter-form_list">
                 <div class="select-date">
                     <label for="form-date">Tờ khai trong vòng:</label>
-                    <select type="text" name="form-date" id="">
+                    <select type="text" name="form-date" id="form-date">
                         <option value=7>7 ngày</option>
                         <option value=15>15 ngày</option>
                         <option value=30>30 ngày</option>
@@ -110,8 +110,8 @@ else {
     <br>
 
     <?php
-    include("WebElements.html");
-    include("SignupLoginForm.html");
+    include("WebElements.php");
+    include("SignupLoginForm.php");
     include("footer.php");
     ?>
 </body>
