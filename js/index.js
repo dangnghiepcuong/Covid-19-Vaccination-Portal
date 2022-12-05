@@ -60,7 +60,7 @@ $(document).ready(function () {
         $('#form-container-login').find('.msg1').text('');
         $('#form-container-login').find('.msg2').text('');
 
-        username = $('#form-login').find('input[name="username"').val();
+        username = $('#form-login').find('input[name="username"').val().toLowerCase();
         if (username == '') {
             $('#form-login').find('.msg1').text('Nhập SĐT/Tên tài khoản!');
             return;
@@ -110,7 +110,7 @@ $(document).ready(function () {
         $('#form-reg-acc').find('.msg1').text('');
         $('#form-reg-acc').find('.msg2').text('');
         $('#form-reg-acc').find('.msg3').text('');
-        username = $('#form-reg-acc input[name="phone_number"]').val();
+        username = $('#form-reg-acc input[name="phone_number"]').val().toLowerCase();
         if (username == '') {
             $('#form-reg-acc').find('.msg1').text('Nhập số điện thoại!');
             return;
