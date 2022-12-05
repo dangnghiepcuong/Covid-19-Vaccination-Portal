@@ -199,3 +199,36 @@ function CancelSchedule()
 
     echo 'CancelSchedule';
 }
+
+function CreateSchedule(){
+    include("DatabaseConnection.php");
+
+    $sql = "alter session set NLS_DATE_FORMAT='YYYY-MM-DD'";
+    $command = oci_parse($connection, $sql);
+    $r = oci_execute($command, OCI_NO_AUTO_COMMIT);
+    if (!$r) {
+        $exception = oci_error($command);
+        echo 'ERROR: ' . $exception['code'] . ' - ' . $exception['message'];
+        return;
+    }
+
+    $sql = "begin SCHED_INSERT_RECORD(:orgid, :date, :vaccine, :serial, :day, :noon, :night); end;";
+
+    $command = oci_parse($connection, $sql);
+    oci_bind_by_name($command, ':orgid', $_POST['orgid']);
+    oci_bind_by_name($command, ':date', $_POST['date']);
+    oci_bind_by_name($command, ':vaccine', $_POST['vaccine']);
+    oci_bind_by_name($command, ':serial', $_POST['serial']);
+    oci_bind_by_name($command, ':day', $_POST['limitnoon']);
+    oci_bind_by_name($command, ':noon', $_POST['limitnoon']);
+    oci_bind_by_name($command, ':night', $_POST['limitnight']);
+
+    $r = oci_execute($command);
+    if (!$r) {
+        $exception = oci_error($command);
+        echo 'ERROR: ' . $exception['code'] . ' - ' . $exception['message'];
+        return;
+    }
+
+    echo 'CreateSchedule';
+}

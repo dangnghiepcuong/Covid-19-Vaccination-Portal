@@ -64,12 +64,12 @@ if (!defined('browsable')) {
     <div class="drop-down-menu" id="drop-down-menu-schedule">
         <div class="holder">
             <ul>
-                <a href="#">
-                    <li>Tạo lịch tiêm chủng</li>
-                </a>
-
                 <a href="ORGSchedule.php">
                     <li>Danh sách lịch tiêm</li>
+                </a>
+
+                <a href="ORGCreateSchedule.php">
+                    <li>Tạo lịch tiêm chủng</li>
                 </a>
             </ul>
         </div>
