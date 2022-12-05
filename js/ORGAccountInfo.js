@@ -1,23 +1,23 @@
 $(document).ready(function () {
     // LOAD FRONT END DATA
-    menu_title = '<a href="ORGProfile.php">Thông tin tài khoản</a>';
-    $('#function-navigation-bar-title').html(menu_title);
+    menu_title = '<a href="ORGProfile.php">Thông tin tài khoản</a>'
+    $('#function-navigation-bar-title').html(menu_title)
 
-    homepage = '<a href="HomepageORG.php">Trang chủ</a>';
-    $('#homepage-path').html(homepage);
+    homepage = '<a href="index.php">Trang chủ</a>'
+    $('#homepage-path').html(homepage)
 
-    subpage = '<a href="ORGProfile.php">Đơn vị</a>';
-    $('#subpage-path').html(subpage);
+    subpage = '<a href="ORGProfile.php">Đơn vị</a>'
+    $('#subpage-path').html(subpage)
 
-    selected_function = '<a href="ORGProfile.php">Thông tin tài khoản</a>';
-    $('#selected-function-path').html(selected_function);
+    selected_function = '<a href="ORGProfile.php">Thông tin tài khoản</a>'
+    $('#selected-function-path').html(selected_function)
 
-    $('#function-menu-title').text('Trang đơn vị');
+    $('#function-menu-title').text('Trang đơn vị')
 
-    menu = '<br><a href="ORGAccountInfo.php"><li>Thông tin tài khoản</li></a>';
-    menu += '<br><a href="ORGProfile.php"><li>Thông tin đơn vị</li></a>';
+    menu = '<br><a href="ORGAccountInfo.php"><li>Thông tin tài khoản</li></a>'
+    menu += '<br><a href="ORGProfile.php"><li>Thông tin đơn vị</li></a>'
 
-    $('#function-menu-list').find('ul').html(menu);
+    $('#function-menu-list').find('ul').html(menu)
     // END LOAD FRONT END DATA
 })
 

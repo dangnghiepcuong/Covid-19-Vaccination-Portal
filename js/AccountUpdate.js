@@ -1,28 +1,28 @@
 $(document).ready(function () {
     $('#cancel-update-account-info').click(function () {
-        location.reload();
+        location.reload()
     })
 
     $('#update-account-info').click(function () {
-        $('.message').text("");
+        $('.message').text("")
 
-        phone = $('.account input[name="phone"]').val();
+        phone = $('.account input[name="phone"]').val()
         if (phone == "") {
-            $('.account').find('.msg1').text("Nhập số điện thoại!");
-            return;
+            $('.account').find('.msg1').text("Nhập số điện thoại!")
+            return
         }
 
-        password = $('.account input[name="password"]').val();
+        password = $('.account input[name="password"]').val()
         if (password == "") {
-            $('.account').find('.msg2').html("Nhập mật khẩu để xác nhận thay đổi<br>thông tin!");
-            return;
+            $('.account').find('.msg2').html("Nhập mật khẩu để xác nhận thay đổi<br>thông tin!")
+            return
         }
 
-        new_password = $('.change-pass input[name="new-password"]').val();
-        repeat_new_password = $('.change-pass input[name="repeat-new-password"]').val();
+        new_password = $('.change-pass input[name="new-password"]').val()
+        repeat_new_password = $('.change-pass input[name="repeat-new-password"]').val()
         if (new_password != repeat_new_password) {
-            $('.change-pass').find('.msg2').html("Nhập lại mật khẩu phải giống với<br> mật khẩu!");
-            return;
+            $('.change-pass').find('.msg2').html("Nhập lại mật khẩu phải giống với<br> mật khẩu!")
+            return
         }
 
         /*
@@ -34,7 +34,7 @@ $(document).ready(function () {
         + 'type' field specifies the method to send data to the called php file.
         + 'data' field defines the key-value to be sent to the called php file. So that can make it accessible
         + 'sucess' field defines a function to be called if the request succeeds.
-        The parameter result stores the returned data which is returned by return; echo; header; etc. statements.
+        The parameter result stores the returned data which is returned by return echo header etc. statements.
         + 'error' field defines a function to be called if the request fails.
         The parameter error stores errors.
         */
@@ -54,8 +54,8 @@ $(document).ready(function () {
                 so that we can check back in this jQuery function and throw an optional message.
                 */
                 if (result.substring(0, 5) == 'ERROR') {    //EXCEPTION
-                    alert(result);
-                    return;
+                    alert(result)
+                    return
                 }
 
                 /* 
@@ -64,32 +64,32 @@ $(document).ready(function () {
                 */
                 switch (result) {
                     case 'Password is incorrect!':
-                        $('.account').find('.msg2').html('Sai mật khẩu!');
-                        return;
+                        $('.account').find('.msg2').html('Sai mật khẩu!')
+                        return
                     case 'ChangePasswordUpdateAccount':
-                        $('.form-message').text('Cập nhật tài khoản thành công!');
-                        break;
+                        $('.form-message').text('Cập nhật tài khoản thành công!')
+                        break
                     case 'ChangePassword!UpdateAccount':
-                        $('.form-message').text('Cập nhật mật khẩu thành công!');
-                        break;
+                        $('.form-message').text('Cập nhật mật khẩu thành công!')
+                        break
                     case '!ChangePasswordUpdateAccount':
-                        $('.form-message').text('Cập nhật mật khẩu thành công!');
-                        break;
+                        $('.form-message').text('Cập nhật mật khẩu thành công!')
+                        break
                     case '!ChangePassword!UpdateAccount':
-                        return;
+                        return
                     case '':
-                        $('.form-message').text('Lỗi chưa xác định!');
-                        break;
+                        $('.form-message').text('Lỗi chưa xác định!')
+                        break
                     default:
-                        alert(result);
-                        break;
+                        alert(result)
+                        break
                 }
 
-                $('#form-popup-confirm').css('display', 'grid');
-                $('#gradient-bg-faded').css('display', 'block');
+                $('#form-popup-confirm').css('display', 'grid')
+                $('#gradient-bg-faded').css('display', 'block')
 
                 $('#form-popup-confirm').find('.btn-confirm').click(function () {
-                    location.reload();
+                    location.reload()
                 })
             },
             error: function (error) {

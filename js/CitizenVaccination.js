@@ -3,23 +3,23 @@ var SelectedOption = false
 $(document).ready(function () {
     // LOAD FRONT END DATA
 
-    menu_title = "<a href='CitizenVaccination.php'>Đăng ký tiêm chủng</a>"
-    $("#function-navigation-bar-title").html(menu_title)
+    menu_title = '<a href="CitizenVaccination.php">Đăng ký tiêm chủng</a>'
+    $('#function-navigation-bar-title').html(menu_title)
 
-    homepage = "<a href='index.php'>Trang chủ</a>"
-    $("#homepage-path").html(homepage)
+    homepage = '<a href="index.php">Trang chủ</a>'
+    $('#homepage-path').html(homepage)
 
-    subpage = "<a href='CitizenVaccination.php'>Tiêm chủng</a>"
-    $("#subpage-path").html(subpage)
+    subpage = '<a href="CitizenVaccination.php">Tiêm chủng</a>'
+    $('#subpage-path').html(subpage)
 
-    selected_function = "<a href='CitizenVaccination.php'>Đăng ký tiêm chủng</a>"
-    $("#selected-function-path").html(selected_function)
+    selected_function = '<a href="CitizenVaccination.php">Đăng ký tiêm chủng</a>'
+    $('#selected-function-path').html(selected_function)
 
     var today = new Date()
-    var day = ("0" + today.getDate()).slice(-2)
-    var month = ("0" + (today.getMonth() + 1)).slice(-2)
-    var today = today.getFullYear() + "-" + (month) + "-" + (day)
-    $('#start-date').val(today)
+    var day = ('0' + today.getDate()).slice(-2)
+    var month = ('0' + (today.getMonth() + 1)).slice(-2)
+    var today = today.getFullYear() + '-' + (month) + '-' + (day)
+    $("#start-date").val(today)
     // END LOAD FRONT END DATA
 
     LoadOrg()
@@ -54,7 +54,7 @@ $(document).ready(function () {
         LoadSchedule(orgid)
     })
 
-    $('#filter-schedule').change(function(){
+    $('#filter-schedule').change(function () {
         startdate = $('#start-date').val()
         enddate = $('#end-date').val()
         vaccine = $('#vaccine').find('option:selected').val()
@@ -201,6 +201,9 @@ $(document).ready(function () {
                             break
                         case '20004':
                             PopupConfirm('Loại vaccine này không phù hợp với mũi vaccine trước đã tiêm!.')
+                            break
+                        case '20005':
+                            PopupConfirm('Bạn phải khai báo y tế trong vòng 7 ngày trước khi ngày tiêm diễn ra!')
                             break
                         default:
                             alert(result)
