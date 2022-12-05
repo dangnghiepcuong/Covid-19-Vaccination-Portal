@@ -51,7 +51,7 @@
     background-color: white;
     box-shadow: 2px 2px 5px -2px #8C69CA;
     transition: 300ms;
-    cursor: pointer;
+    /* cursor: pointer; */
     display: flex;
     justify-content: space-between;
 }
@@ -63,6 +63,7 @@
     align-items: center;
     opacity: 50%;
     transition: 300ms;
+    cursor: pointer;
 }
 
 .panel-list-schedule .holder .list-schedule .schedule .holder-btn-expand-schedule:hover {
@@ -86,7 +87,7 @@
     color: #D1BFF3;
 }
 
-.panel-list-schedule .holder .list-schedule .schedule .obj-attr * {
+.panel-list-schedule .holder .list-schedule .schedule .obj-attr .attr-date-vaccine-serial {
     padding: 3px 0px;
     font-family: 'Roboto';
     font-size: 18px;
@@ -94,15 +95,25 @@
     font-weight: 300;
 }
 
-.panel-list-schedule .holder .list-schedule .schedule .obj-attr,
-.interactive-area {
-    padding: 5px 10px 5px 15px;
+.panel-list-schedule .holder .list-schedule .schedule .obj-attr {
+    padding: 3px 0px 0px 15px;
     align-items: center;
+
+}
+
+.panel-list-schedule .holder .list-schedule .schedule .obj-attr .attr-time {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px 0px;
+    font-family: 'Roboto';
+    font-size: 17px;
+    font-weight: 300;
 }
 
 .panel-list-schedule .holder .list-schedule .schedule
 .interactive-area {
     display: none;
+    padding: 6px 0px 0px 15px;
 }
 
 /* END LIST SCHEDULE */
@@ -219,6 +230,7 @@
     padding-left: 15px;
     border-color:#D1BFF3;
     outline-color: #fff5fe;
+    font-size: 16px;
 }
 
 .panel-update-schedule .container-update-value button {

@@ -11,14 +11,6 @@ if (isset($_POST['method'])) {
 } else
     header("location:javascript://history.go(-1)");
 
-function LoadCertificate()
-{
-    if (isset($_SESSION['Certificate']))
-        echo $_SESSION['Certificate'];
-    else
-        echo '';
-}
-
 function LoadInjection()
 {
     include("DatabaseConnection.php");
@@ -74,22 +66,15 @@ function LoadInjection()
 
     switch ($count) {
         case 0:
-            echo '<p class="status">Chưa tiêm đủ liều cơ bản vaccine Covid-19</p>';
+            echo '<p class="status" id="0">Chưa thực hiện tiêm chủng vaccine Covid-19</p>';
             break;
         case 1:
-            echo '<p class="status">Chưa tiêm đủ liều cơ bản vaccine Covid-19</p>';
-            break;
-
-        case 2:
-            echo '<p class="status">Đã tiêm đủ liều cơ bản vaccine Covid-19</p>';
-            break;
-        case 3:
-            echo '<p class="status">Đã 3 mũi vaccine Covid-19</p>';
+            echo '<p class="status" id="1">Chưa tiêm đủ liều cơ bản vaccine Covid-19</p>';
             break;
         default:
+            echo '<p class="status" id="'.$count.'">Đã tiêm đủ liều cơ bản vaccine Covid-19</p>';
             break;
     }
 
-    $_SESSION['Certificate'] = $count;
     echo $result;
 }

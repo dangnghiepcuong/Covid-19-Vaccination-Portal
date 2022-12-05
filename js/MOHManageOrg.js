@@ -1,36 +1,36 @@
 $(document).ready(function () {
 
     // LOAD FRONT END DATA
-    menu_title = "<a href='MOHManageOrg.php.php'>Quản lý đơn vị tiêm chủng</a>";
-    $("#function-navigation-bar-title").html(menu_title);
+    menu_title = '<a href="MOHManageOrg.php.php">Quản lý đơn vị tiêm chủng</a>'
+    $('#function-navigation-bar-title').html(menu_title)
 
-    homepage = "<a href='index.php'>Trang chủ</a>";
-    $("#homepage-path").html(homepage);
+    homepage = '<a href="index.php">Trang chủ</a>'
+    $('#homepage-path').html(homepage)
 
-    subpage = "<a href='MOHProfile.php'>Đơn vị</a>"
-    $("#subpage-path").html(subpage);
+    subpage = '<a href="MOHProfile.php">Đơn vị</a>'
+    $('#subpage-path').html(subpage)
 
-    selected_function = "<a href='MOHManageOrg.php.php'>Quản lý đơn vị tiêm chủng</a>";
-    $("#selected-function-path").html(selected_function);
+    selected_function = '<a href="MOHManageOrg.php.php">Quản lý đơn vị tiêm chủng</a>'
+    $('#selected-function-path').html(selected_function)
 
-    $("#function-menu-title").text("Đơn vị tiêm chủng");
+    $('#function-menu-title').text('Đơn vị tiêm chủng')
 
-    menu = "<br><a href='MOHManageOrg.php'><li>Quản lý đơn vị</li></a>";
-    menu += "<br><a href='MOHProvideAccount.php'><li>Cấp tài khoản đơn vị</li></a>";
+    menu = '<br><a href="MOHManageOrg.php"><li>Quản lý đơn vị</li></a>'
+    menu += '<br><a href="MOHProvideAccount.php"><li>Cấp tài khoản đơn vị</li></a>'
 
-    $("#function-menu-list").find("ul").html(menu);
+    $('#function-menu-list').find('ul').html(menu)
     // END LOAD FRONT END DATA
 
-    LoadOrg();
+    LoadOrg()
 
     $('#btn-filter-org').click(function () {
-        LoadOrg();
+        LoadOrg()
     })
 
     function LoadOrg() {
-        province = $('#select-province').find('option:selected').text();
-        district = $('#select-district').find('option:selected').text();
-        town = $('#select-town').find('option:selected').text();
+        province = $('#select-province').find('option:selected').text()
+        district = $('#select-district').find('option:selected').text()
+        town = $('#select-town').find('option:selected').text()
 
         $.ajax({
             cache: false,
@@ -39,10 +39,10 @@ $(document).ready(function () {
             data: { method: 'LoadOrg', province: province, district: district, town: town },
             success: function (result) {
                 if (result.substring(0, 5) == 'ERROR') {    //EXCEPTION
-                    alert(result);
-                    return;
+                    alert(result)
+                    return
                 }
-                $('#list-org').html(result);
+                $('#list-org').html(result)
             },
             error: function (error) {
             }

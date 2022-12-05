@@ -10,6 +10,10 @@ $checkUser = true;
 // if logged in account has not register a profile then head to index.php
 if (isset($_SESSION['AccountInfo']) == false)
     $checkUser = false;
+else
+    if ($_SESSION['AccountInfo']->get_role() == 1)  //if logged in account was a org acc then header to index.php
+    header('location: index.php');
+
 // if there is not any profile was queried then head to index
 if (isset($_SESSION['CitizenProfile']) == false)
     $checkUser = false;
@@ -86,7 +90,7 @@ else {
                         </label>
                         <input type="date" id="input-date">
                     </div>
-                    <p>Trong vòng 14 ngày qua, Anh/Chị có thấy xuất hiện ít nhất 1 tong các dấu hiệu:
+                    <p>Trong vòng 14 ngày qua, Anh/Chị có thấy xuất hiện ít nhất 1 trong các dấu hiệu:
                         ho, khó thở, viêm phổi, đau họng, mệt mỏi không?
                     </p>
                     <div class="form-btn-input">

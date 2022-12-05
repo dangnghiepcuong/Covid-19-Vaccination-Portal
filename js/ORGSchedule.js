@@ -1,16 +1,16 @@
 $(document).ready(function () {
 
     // LOAD FRONT END DATA
-    menu_title = '<a href="ScheduleManagement.php">Danh sách lịch tiêm</a>'
+    menu_title = '<a href="OrgSchedule.php">Danh sách lịch tiêm</a>'
     $('#function-navigation-bar-title').html(menu_title)
 
-    homepage = '<a href="HomepageORG.php">Trang chủ</a>'
+    homepage = '<a href="index.php">Trang chủ</a>'
     $('#homepage-path').html(homepage)
 
-    subpage = '<a href="ScheduleManagement.php">Lịch tiêm</a>'
+    subpage = '<a href="OrgSchedule.php">Lịch tiêm</a>'
     $('#subpage-path').html(subpage)
 
-    selected_function = '<a href="ScheduleManagement.php">Danh sách lịch tiêm</a>'
+    selected_function = '<a href="OrgSchedule.php">Danh sách lịch tiêm</a>'
     $('#selected-function-path').html(selected_function)
     // END LOAD FRONT END DATA
 
@@ -212,7 +212,6 @@ $(document).ready(function () {
                 }
                 if (result == 'UpdateSchedule') {
                     PopupConfirm('Cập nhật lịch tiêm thành công!')
-                    alert(orgid)
                     LoadSchedule(orgid)
                 }
             },
@@ -232,12 +231,21 @@ $(document).ready(function () {
                 url: 'HandleScheduleManagement.php',
                 type: 'POST',
                 data: { method: 'CancelSchedule', SchedID: SchedID },
+                indexValue: { schedule: schedule },
                 success: function (result) {
                     if (result.substring(0, 5) == 'ERROR') {    //EXCEPTION
                         alert(result)
                         return
                     }
-                    PopupConfirm('Cập nhật lịch tiêm thành công!')
+                    if (result == 'CancelSchedule') {
+                        schedule.find('.obj-attr .attr-time .day').attr('id', 0)
+                        schedule.find('.obj-attr .attr-time .day').text(0)
+                        schedule.find('.obj-attr .attr-time .noon').attr('id', 0)
+                        schedule.find('.obj-attr .attr-time .noon').text(0)
+                        schedule.find('.obj-attr .attr-time .night').attr('id', 0)
+                        schedule.find('.obj-attr .attr-time .night').text(0)
+                        PopupConfirm('Hủy lịch tiêm thành công!')
+                    }
                 },
                 error: function (error) {
                 }
