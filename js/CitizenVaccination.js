@@ -94,16 +94,16 @@ $(document).ready(function () {
         org = $(this).parent()//.parent()
         if (org.css('margin-top') == '20px') {
             $('#list-schedule').html('')
-            org.css('margin', '3px 27px 3px 5px')
+            org.css('margin', '3px 0px 3px 5px')
             org.css('width', '90%')
             org.find('.btn-expand-org').text('>')
             return
         }
-        $('#list-org').find('.organization').css('margin', '3px 27px 3px 5px')
+        $('#list-org').find('.organization').css('margin', '3px 0px 3px 5px')
         $('#list-org').find('.organization').css('width', '90%')
         $('#list-org').find('.organization .btn-expand-org').text('>')
 
-        org.css('margin', '20px 12px 20px 12px')
+        org.css('margin', '20px 0px 20px 12px')
         org.css('width', '96%')
         org.find('.btn-expand-org').text('<')
 

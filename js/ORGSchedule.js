@@ -56,20 +56,20 @@ $(document).ready(function () {
         schedule = $(this).parent()//.parent()
         if (schedule.css('margin-top') == '20px') {
             $('#list-registration').html('')
-            schedule.css('margin', '3px 27px 3px 5px')
+            schedule.css('margin', '3px 0px 3px 5px')
             schedule.css('width', '92%')
             schedule.css('height', '70px')
             schedule.find('.btn-expand-schedule').text('>')
             schedule.find('.interactive-area').css('display', 'none')
             return
         }
-        $('#list-schedule').find('.schedule').css('margin', '3px 27px 3px 5px')
+        $('#list-schedule').find('.schedule').css('margin', '3px 0px 3px 5px')
         $('#list-schedule').find('.schedule').css('width', '92%')
         $('#list-schedule').find('.schedule').css('height', '70px')
         $('#list-schedule').find('.schedule .btn-expand-schedule').text('>')
         $('#list-schedule').find('.schedule .interactive-area').css('display', 'none')
 
-        schedule.css('margin', '20px 12px 20px 12px')
+        schedule.css('margin', '20px 0px 20px 12px')
         schedule.css('width', '95%')
         schedule.css('height', '115px')
         schedule.find('.btn-expand-schedule').text('<')
