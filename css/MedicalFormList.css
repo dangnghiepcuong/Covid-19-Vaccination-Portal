@@ -46,7 +46,7 @@
 
 
 .panel-list .holder-form-medical {
-    display: flex;
+    /* display: flex; */
     width: 90%;
     height: 100%;
     margin: 0 auto;
@@ -56,6 +56,9 @@
     overflow-y: auto;
     overflow-x: hidden;
     justify-content: center;
+    /* overflow-y: auto;
+    overflow-x: none;
+    scroll-behavior: smooth; */
 }
 
 .panel-list .holder-form-medical .form-medical {
@@ -65,7 +68,7 @@
     background: white;
     margin: 3px 27px 3px 5px;
     background-color: white;
-    box-shadow: 2px 2px 5px -2px #8C69CA;
+    box-shadow: 2px 2px 5px -2px #8C69CA; 
 }
 
 .panel-list .holder-form-medical .form-medical * {
