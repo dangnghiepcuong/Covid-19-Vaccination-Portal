@@ -88,7 +88,6 @@
     display: flex;
     justify-content: space-between;
     transition: 300ms;
-    cursor: pointer;
 }
 
 .panel-list .holder .list-org .organization 
@@ -104,6 +103,7 @@
 .panel-list .holder .list-org .organization 
 .holder-btn-expand-org:hover {
     background-color: rgba(248, 248, 248, 0.6);
+    cursor: pointer;
 }
 
 .panel-list .holder .list-org .organization 

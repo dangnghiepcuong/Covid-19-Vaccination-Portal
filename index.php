@@ -48,6 +48,11 @@ $citizen = new Citizen();
 
             switch ((int)$_SESSION['AccountInfo']->get_role()) {
                 case 0:
+                    if (isset($_SESSION['OrgProfile']) == false) {
+                        include("OrgLoadProfile.php");
+                    }
+                    include("headerMOH.php");
+                    break;
                 case 1:
                     if (isset($_SESSION['OrgProfile']) == false) {
                         include("OrgLoadProfile.php");
