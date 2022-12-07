@@ -100,16 +100,20 @@ else {
                 </button>
             </div>
 
-            <div class="panel-list">
+            <div class="panel-list" id="panel-list">
                 <div class="holder-form-medical" id="holder-form-medical">
                     <!-- <div class="form-medical">
-                        <p class="title">Đối tượng: Đặng Nghiệp Cường</p>
+                        <p class="title">Đối tượng: Đặnghiệp Cường</p>
+                        <p class="date">Ngày thực hiện khai báo</p>
+                        <p class="detail">Sức khỏe bình thường</p>
+                    </div>
+                    <div class="form-medical">
+                        <p class="title">Đối tượng: Đặng Cường</p>
                         <p class="date">Ngày thực hiện khai báo</p>
                         <p class="detail">Sức khỏe bình thường</p>
                     </div> -->
                 </div>
             </div>
-
 
         </div>
     </div>
