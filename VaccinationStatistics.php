@@ -81,9 +81,10 @@ $org = $_SESSION['OrgProfile'];
 
                 <br>
                 <!-- <p>adsfkjkds</p> -->
-                    <canvas id="myChart" style="width:20%;max-width:500px; display:inline; align-items: center;margin-left: 50px;margin-right: 50px"></canvas>
+                    <!-- <canvas id="myChart" style="width:20%;max-width:500px; display:inline; align-items: center;margin-left: 50px;margin-right: 50px"></canvas>
                     <canvas id="myChart1" style="width:100%;max-width:500px; display:inline; align-items: center;margin-left: 28px;margin-right: 50px"></canvas>
-            </div>
+           -->
+                </div>
             
             <br>
          
