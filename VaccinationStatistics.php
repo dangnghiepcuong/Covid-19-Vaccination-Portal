@@ -31,6 +31,8 @@ $org = $_SESSION['OrgProfile'];
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
         <script src="js/WebElements.js"></script>
         <script src="js/VaccinationStatistics.js"></script>
+
+        <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
         <title>Thống kê số liệu tiêm chủng</title>
 
       
@@ -78,15 +80,12 @@ $org = $_SESSION['OrgProfile'];
                 </div>
 
                 <br>
-                    <canvas id="myChart1" style="width:20%;max-width:500px; display:inline; align-items: center;margin-left: 50px;margin-right: 50px"></canvas>
-                    <canvas id="myChart" style="width:100%;max-width:500px; display:inline; align-items: center;margin-left: 28px;margin-right: 50px"></canvas>
-
+                <!-- <p>adsfkjkds</p> -->
+                    <canvas id="myChart" style="width:20%;max-width:500px; display:inline; align-items: center;margin-left: 50px;margin-right: 50px"></canvas>
+                    <canvas id="myChart1" style="width:100%;max-width:500px; display:inline; align-items: center;margin-left: 28px;margin-right: 50px"></canvas>
             </div>
             
             <br>
-
-
-
          
         </div>
         <!-- END FUNCTION PANEL -->
@@ -100,82 +99,76 @@ $org = $_SESSION['OrgProfile'];
         <!-- END FOOTER -->
 
         <script>
-                        var xValues = [100,200,300,400,500,600,700,800,900,1000];
+                        var xValues = ["Tháng 1","Tháng 2","Tháng 3","Tháng 4","Tháng 5","Tháng 6","Tháng 7","Tháng 8","Tháng 9","Tháng 10","Tháng 11","Tháng 12"];
 
                         new Chart("myChart", {
-                        type: "bar",
+                        type: "line",
                         data: {
                             labels: xValues,
                             datasets: [{ 
                             data: [860,1140,1060,1060,1070,1110,1330,2210,7830,2478],
                             borderColor: "red",
-                            fill: false
+                            // fill: false
                             }, { 
                              data: [1600,1700,1700,1900,2000,2700,4000,5000,6000,9000],
                             borderColor: "green",
-                            fill: false
+                            // fill: false
                             }, { 
                             data: [300,700,2000,5000,6000,4000,2000,1000,200,100],
                             borderColor: "blue",
-                            fill: false
+                            // fill: false
                             }]
                          },
                         options: {
                             legend: {display: false}
                             
                         }
-
-
-                        },
-                        
-                        {
-                        type: "line",
-                        data: {
-                            labels: xValues,
-                            datasets: [{ 
-                            data: [860,1140,1060,1060,1070,1110,1330,2210,7830,2478],
-                            borderColor: "red",
-                            fill: false
-                            }, { 
-                             data: [1600,1700,1700,1900,2000,2700,4000,5000,6000,9000],
-                            borderColor: "green",
-                            fill: false
-                            }, { 
-                            data: [300,700,2000,5000,6000,4000,2000,1000,200,100],
-                            borderColor: "blue",
-                            fill: false
-                            }]
-                         },
-                        options: {
-                            legend: {display: false}
-                        }
                         });
 
                         new Chart("myChart1", {
-                        type: "line",
-                        data: {
-                            labels: xValues,
-                            datasets: [{ 
-                            data: [860,1140,1060,1060,1070,1110,1330,2210,7830,2478],
-                            borderColor: "red",
-                            fill: false
-                            }, { 
-                             data: [1600,1700,1700,1900,2000,2700,4000,5000,6000,9000],
-                            borderColor: "green",
-                            fill: false
-                            }, { 
-                            data: [300,700,2000,5000,6000,4000,2000,1000,200,100],
-                            borderColor: "blue",
-                            fill: false
-                            }]
-                         },
-                        options: {
-                            legend: {display: false}
-                        }
+                            type: "bar",
+                            data: 
+                            {
+                                labels: xValues,
+                                datasets: [
+                            {
+                                type:"line",
+                                data: [860,1140,1060,1060,1070,1110,1330,2210,7830,2478],
+                                borderColor: "blue",
+                                fill: false
+                                
+                            }, 
+
+                            { 
+                                data: [1600,1700,1700,1900,2000,2700,4000,5000,6000,9000],
+                                borderColor: "green",
+                                fill: false
+                            }, 
+
+                            { 
+                                data: [300,700,2000,5000,6000,4000,2000,1000,200,100],
+                                borderColor: "blue",
+                                fill: false
+                            }
+                            ,
+
+                            {
+                                type: "line",
+                                data: [200,400,1000,1230,1234,4534,2423,2432,234,345,234,123,545,234,234],
+                                borderColor:"black",
+                                fill: false
+                            },
+                        ]
+                            },
+                            options: {
+                                legend: {display: false}
+                                // layout: {padding: {left:50}}
+                            }
+                        
                         });
                         </script>
 
     </body>
 </html>
 
-<canvas width="1367" height="245" style="height: 196px; width: 1094px; position: absolute; left: 0px; top: 0px;"></canvas>
+<!-- <canvas width="1367" height="245" style="height: 196px; width: 1094px; position: absolute; left: 0px; top: 0px;"></canvas> -->
