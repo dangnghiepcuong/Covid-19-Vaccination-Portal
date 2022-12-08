@@ -91,29 +91,29 @@ $(document).ready(function () {
         // _token = $('input[name="_token"]').val();
 
         // alert(start_date); 
-        // myChart='<p class="holder-function-panel"></p>'
-        // myChart+='<canvas id="myChart" style="width:20%;max-width:500px; display:inline; align-items: center;margin-left: 50px;margin-right: 50px"></canvas>'
-        // $('.holder-function-panel .function-panel').html(myChart);
-        // alert(end_date);
+        myChart='<p class="holder-function-panel"></p>'
+        myChart+='<canvas id="myChart" style="width:20%;max-width:500px; display:inline; align-items: center;margin-left: 50px;margin-right: 50px"></canvas>'
+        $('.holder-function-panel .function-panel').load(myChart);
+        alert(end_date);
 
         // aaa='<canvas id="myChart1"></canvas>'
-        // $('.holder-function-panel .function-panel').add(aaa);
-        alert('Bước 1')
-        $.ajax({
-            url:'VaccinationStatistics.php',
-            method:"post",
-            dataType: "JSON",
-            data:{[100]:[123123]},
+        // $('.holder-function-panel .function-panel').html(aaa);
+        // alert('Bước 1')
+        // $.ajax({
+        //     url:'VaccinationStatistics.php',
+        //     method:"post",
+        //     dataType: "JSON",
+        //     data:{[100]:[123123]},
 
-            success:function(data)
-            {
-                alert('kiểm tra biểu đồ');
-                myChart.setData(data);
-                alert('thành công');
-            }
-            // alert('Bước2') 
-        })
-        alert('Kết thúc ajax');
+        //     success:function(data)
+        //     {
+        //         alert('kiểm tra biểu đồ');
+        //         myChart.setData(data);
+        //         alert('thành công');
+        //     }
+        //     // alert('Bước2') 
+        // })
+        // alert('Kết thúc ajax');
         })
     
 })
