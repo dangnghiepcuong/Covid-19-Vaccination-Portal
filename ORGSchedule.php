@@ -62,6 +62,7 @@ $org = $_SESSION['OrgProfile'];
             <div class="holder-list">
                 <div class="list-name" id="list-name-schedule">DANH SÁCH LỊCH TIÊM</div>
                 <div class="list-name list-name-registration" id=""></div>
+                <div class="list-name-scheduleinfo"></div>
             </div>
             <div class="holder-filter-panel">
                 <div class="filter-panel l" id="filter-schedule">

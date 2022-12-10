@@ -83,16 +83,18 @@ $(document).ready(function () {
     // HANDLE QUERY SCHEDULE'S REGISTRATION
     $('#list-schedule').on('click', '.btn-registration', function () {
         schedule = $(this).parent().parent().parent()
-        LoadScheduleRegistration(schedule)
-    })
-
-    $('#filter-panel-registration').change(function(){
-        
-    })
-
-    function LoadScheduleRegistration(schedule){
         SchedID = schedule.attr('id')
         SchedInfo = schedule.find('.obj-attr').find('.attr-date-vaccine-serial').text()
+        $('.list-name-scheduleinfo').text(SchedInfo)
+        LoadScheduleRegistration(SchedID)
+    })
+
+    $('#filter-registration').change(function(){
+        SchedID = $('.list-name-registration').attr('id')
+        LoadScheduleRegistration(SchedID)
+    })
+
+    function LoadScheduleRegistration(SchedID){
         time = $('#time').find('option:selected').val()
         status = $('#status').find('option:selected').val()
 
@@ -100,7 +102,7 @@ $(document).ready(function () {
             cache: false,
             url: 'HandleScheduleManagement.php',
             type: 'POST',
-            data: { method: 'LoadScheduleRegistration', SchedID: SchedID, SchedInfo: SchedInfo, time: time, status: status },
+            data: { method: 'LoadScheduleRegistration', SchedID: SchedID, time: time, status: status },
             indexValue: { SchedID: SchedID },
             success: function (result) {
                 if (result.substring(0, 5) == 'ERROR') {    //EXCEPTION
