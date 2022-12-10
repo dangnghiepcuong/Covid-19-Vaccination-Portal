@@ -56,6 +56,10 @@ if (!defined('browsable')) {
                     <li>Chứng nhận</li>
                 </a>
 
+                <a href="CitizenVaccinationProfile.php">
+                    <li>Tra cứu</li>
+                </a>
+
                 <a href="#">
                     <li>Thêm người thân</li>
                 </a>
