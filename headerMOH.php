@@ -48,6 +48,10 @@ if (!defined('browsable')) {
                     <li>Thông tin đơn vị</li>
                 </a>
 
+                <a href="ORGProfile.php">
+                    <li>Văn bản</li>
+                </a>
+
                 <a href="" id="btn-logout">
                     <li>Đăng xuất</li>
                 </a>
