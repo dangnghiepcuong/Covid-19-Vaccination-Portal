@@ -10,7 +10,7 @@ session_start();
 if (isset($_SESSION['AccountInfo']) == false)
     header("location:javascript://history.go(-1)");
 // if not have the right role then return to index
-else if ($_SESSION['AccountInfo']->get_role() != 1)
+else if ($_SESSION['AccountInfo']->get_role() > 1)
     header("location:javascript://history.go(-1)");
 
 // if there is not any profile was queried then head to index

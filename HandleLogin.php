@@ -31,6 +31,8 @@ if ($row == false) {
 
         switch ($_SESSION['AccountInfo']->get_role()) {
             case 0:
+                $sql = "select * from ORGANIZATION where ID = :id";    //check exist profile
+                break;
             case 1:
                 $sql = "select * from ORGANIZATION where ID = :id";    //check exist profile
                 break;
