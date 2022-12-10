@@ -33,7 +33,7 @@ function LoadScheduleRegistration()
     $sql .= " and Status =:status";
 
     $sql .= " order by Time, NO";
-echo $sql;
+
     $command = oci_parse($connection, $sql);
     oci_bind_by_name($command, ':schedid', $_POST['SchedID']);
 
