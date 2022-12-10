@@ -24,10 +24,24 @@ function LoadScheduleRegistration()
         inner join
         (select LastName, FirstName, Gender, EXTRACT(year from Birthday) as BirthYear, ID, Phone from CITIZEN) CITIZEN
         on REG.CitizenID = CITIZEN.ID
-    )";
+        )
+        ";
+    if($_POST['time'] != null)
+    $sql .= "where Time =:time";
+
+    if($_POST['status'] != null)
+    $sql .= " and Status =:status";
+
+    $sql .= " order by Time, NO";
 
     $command = oci_parse($connection, $sql);
     oci_bind_by_name($command, ':schedid', $_POST['SchedID']);
+
+    if($_POST['time'] != null)
+    oci_bind_by_name($command, ':time', $_POST['time']);
+
+    if($_POST['status'] != null)
+    oci_bind_by_name($command, ':status', $_POST['status']);
 
     $r = oci_execute($command);
     if (!$r) {
@@ -200,7 +214,8 @@ function CancelSchedule()
     echo 'CancelSchedule';
 }
 
-function CreateSchedule(){
+function CreateSchedule()
+{
     include("DatabaseConnection.php");
 
     $sql = "alter session set NLS_DATE_FORMAT='YYYY-MM-DD'";

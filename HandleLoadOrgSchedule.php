@@ -121,10 +121,6 @@ function LoadSchedule($orgid = "")
         $sql .= " and OnDate <= :enddate";
     }
 
-    if ($_POST['vaccine'] != "") {
-        $sql .= " and VaccineID = :vaccine";
-    }
-
     $sql .= " order by OnDate";
 
     $command = oci_parse($connection, $sql);
@@ -134,8 +130,6 @@ function LoadSchedule($orgid = "")
         oci_bind_by_name($command, ':startdate', $_POST['startdate']);
     if ($_POST['enddate'] != "")
         oci_bind_by_name($command, ':enddate', $_POST['enddate']);
-    if ($_POST['vaccine'] != "")
-        oci_bind_by_name($command, ':vaccine', $_POST['vaccine']);
 
     $r = oci_execute($command);
     if (!$r) {
