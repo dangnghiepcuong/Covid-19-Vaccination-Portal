@@ -33,7 +33,7 @@ function LoadScheduleRegistration()
     $sql .= " and Status =:status";
 
     $sql .= " order by Time, NO";
-
+echo $sql;
     $command = oci_parse($connection, $sql);
     oci_bind_by_name($command, ':schedid', $_POST['SchedID']);
 
@@ -49,8 +49,6 @@ function LoadScheduleRegistration()
         echo '<script>ERROR: ' . $exception['code'] . ' - ' . $exception['message'] . '</script>';
         return;
     }
-
-    $SchedInfo = $_POST['SchedInfo'];
 
     $result = "";
     while (($row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS)) != false) {
@@ -82,7 +80,6 @@ function LoadScheduleRegistration()
                 <div class="hoder-obj-attr">
                     <div class="obj-attr">
                         <p class="attr-sdt">SĐT: ' . $reg->get_citizen()->get_phone() . '</p>
-                        <p class="attr-date">' . $SchedInfo . '</p>
                         <div class="attr-detail">
                             <p>Buổi: ' . $reg->get_time() . '</p>
                             <p>STT: ' . $reg->get_no() . '</p>
