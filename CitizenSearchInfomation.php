@@ -27,12 +27,13 @@ $citizen = $_SESSION['CitizenProfile'];
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/CitizenCertificate.css">
+    <link rel="stylesheet" href="css/filter-panel.css">
+    <link rel="stylesheet" href="css/CitizenSearchInfomation.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="js/CitizenCertificate.js"></script>
+    <script src="js/CitizenSearchInfomation.js"></script>
     <script src="js/WebElements.js"></script>
-    <title>Chứng nhận tiêm chủng</title>
+    <title>Tra cứu thông tin Vaccine</title>
 </head>
 
 <body>
@@ -59,27 +60,15 @@ $citizen = $_SESSION['CitizenProfile'];
 
         <div class="function-panel">
             <br>
-            <div class="panel-target-citizen">
-                <p>Đối tượng: </p>
-                <select name="" id="">
-                    <option value="<?php echo $citizen->get_id() ?>"><?php echo $citizen->get_lastname() . ' ' . $citizen->get_firstname() ?></option>
+            <div class="filter-panel">
+                <label for="vaccine-name">Vaccine</label>
+                <select name="vaccine-name" id="">
+                    <option value="">a</option>
                 </select>
-            </div>
-            <br>
-
-            <div class="panel-certificate">
-                <div class="info">
-                    <img src="image/Avata-Ceritificate.png" alt="">
-                    <p id="name"><?php echo $citizen->get_lastname() . ' ' . $citizen->get_firstname() ?></p>
-                    <p id="sex_birthday"><?php echo $citizen->get_gender() ?></p>
-                    <p id="birthday"><?php $date=date_create($citizen->get_birthday());
-                     echo date_format($date,"d-m-Y") ?></p>
-                </div>
-
-                <div class="certificate">
-                    <div class="list-injection" id="list-injection">
-                    </div>
-                </div>
+                <button class="btn-medium-bordered-icon btn-filter" id="btn-filter-infomation">
+                    <img src="image/filter-magnifier.png" alt="filter-magnifier">
+                    Tìm kiếm
+                </button>
             </div>
         </div>
     </div>

@@ -1,16 +1,16 @@
-{/* <link rel='stylesheet' href='css/function-menu.css'></link> */}
-$(document).ready(function(){
+$(document).ready(function () {
     // LOAD FRONT END DATA
-    menu_title = '<a href="CitizenVaccinationProfile.php">Tra cứu thông tin</a>'
+    menu_title = '<a href="CitizenProfile.php">Tra cứu thông tin</a>'
     $('#function-navigation-bar-title').html(menu_title)
 
     homepage = '<a href="index.php">Trang chủ</a>'
     $('#homepage-path').html(homepage)
-    
-    subpage = '<a href="#">Công dân</a>'
+
+    subpage = '<a href="CitizenProfile.php">Công dân</a>'
     $('#subpage-path').html(subpage)
 
-    $('#selected-function-path').html(menu_title)
+    selected_function = '<a href="CitizenProfile.php">Tra cứu thông tin</a>'
+    $('#selected-function-path').html(selected_function)
 
     $('#function-menu-title').text('Trang công dân')
 
@@ -21,6 +21,8 @@ $(document).ready(function(){
     menu += '<br><a href="CitizenSearchInfomation.php"><li>Tra cứu thông tin</li></a>'
     menu += '<br><a href="#"><li>Thêm người thân</li></a>'
 
-    $('#function-menu-list').find('ul').html(menu_title)
+    $('#function-menu-list').find('ul').html(menu)
     // END LOAD FRONT END DATA
+
+
 })
