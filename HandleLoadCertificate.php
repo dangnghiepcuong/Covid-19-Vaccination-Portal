@@ -54,13 +54,15 @@ function LoadInjection()
                 $doestype = "";
                 break;
         }
+        $date=date_create($row['ONDATE'] );
+        
 
         $result .=
             '<div class="injection">
         <p>Mũi ' . $row['INJNO'] . ' (' . $doestype . ')</p>
         <p>Vaccine: ' . $row['VACCINEID'] . '</p>
         <p>Đơn vị tiêm chủng: ' . $row['NAME'] . '</p>
-        <p>Lịch tiêm ngày: ' . $row['ONDATE'] . '</p>
+        <p>Lịch tiêm ngày: ' . date_format($date,"d-m-Y") . '</p>
         </div>';
     }
 

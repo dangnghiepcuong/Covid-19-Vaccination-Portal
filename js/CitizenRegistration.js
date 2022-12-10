@@ -18,7 +18,7 @@ $(document).ready(function () {
     menu += '<br><a href="CitizenProfile.php"><li>Thông tin công dân</li></a>'
     menu += '<br><a href="CitizenRegistration.php"><li>Lịch đăng ký tiêm chủng</li></a>'
     menu += '<br><a href="CitizenCertificate.php"><li>Chứng nhận tiêm chủng</li></a>'
-    menu += '<br><a href="#"><li>Tra cứu thông tin</li></a>'
+    menu += '<br><a href="CitizenSearchInfomation.php"><li>Tra cứu thông tin</li></a>'
     menu += '<br><a href="#"><li>Thêm người thân</li></a>'
     $('#function-menu-list').find('ul').html(menu)
 
