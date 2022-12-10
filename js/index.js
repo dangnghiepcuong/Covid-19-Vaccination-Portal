@@ -28,7 +28,6 @@ $(document).ready(function () {
 
     $('#btn-close-form-reg-profile').click(function () {
         $('#container-reg-profile').css('display', 'none');
-        $('#gradient-bg-faded').css('display', 'none');
         $(this).parent().find('.message').text("");
     })
 
