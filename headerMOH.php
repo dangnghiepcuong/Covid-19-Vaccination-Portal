@@ -25,6 +25,10 @@ if (!defined('browsable')) {
                     <li class="menu-section">Dữ liệu</li>
                 </a>
 
+                <a href="SearchInformation.php">
+                    <li class="menu-section">Tra cứu</li>
+                </a>
+
                 <a href="MOHManageOrg.php">
                     <li class="menu-section">Các đơn vị</li>
                 </a>
