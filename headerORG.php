@@ -30,7 +30,7 @@ if (!defined('browsable')) {
                     <li class="menu-section">Văn bản</li>
                 </a>
 
-                <a href="#">
+                <a href="VaccinationStatistics.php">
                     <li class="menu-section">Thống kê</li>
                 </a>
             </ul>

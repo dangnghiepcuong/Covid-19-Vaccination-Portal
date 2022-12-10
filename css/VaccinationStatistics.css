@@ -104,7 +104,7 @@
 }
 
 .function-panel {
-    width: 63%;
+    width: 80%;
     height: 590px;
     border-style: solid;
     border: 1px solid #8C69CA;
@@ -174,4 +174,6 @@ order: 2;
 flex-grow: 0;
 }
 /* END FUNCTIN PANEL */
+
+
 
