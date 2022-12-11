@@ -31,7 +31,7 @@ $citizen = $_SESSION['CitizenProfile'];
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/CitizenCertificate.js"></script>
-    <script src="js/animation-btn.js"></script>
+    <script src="js/WebElements.js"></script>
     <title>Chứng nhận tiêm chủng</title>
 </head>
 
@@ -72,7 +72,8 @@ $citizen = $_SESSION['CitizenProfile'];
                     <img src="image/Avata-Ceritificate.png" alt="">
                     <p id="name"><?php echo $citizen->get_lastname() . ' ' . $citizen->get_firstname() ?></p>
                     <p id="sex_birthday"><?php echo $citizen->get_gender() ?></p>
-                    <p id="birthday"><?php echo $citizen->get_birthday() ?></p>
+                    <p id="birthday"><?php $date=date_create($citizen->get_birthday());
+                     echo date_format($date,"d-m-Y") ?></p>
                 </div>
 
                 <div class="certificate">

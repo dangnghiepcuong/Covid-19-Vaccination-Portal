@@ -24,10 +24,24 @@ function LoadScheduleRegistration()
         inner join
         (select LastName, FirstName, Gender, EXTRACT(year from Birthday) as BirthYear, ID, Phone from CITIZEN) CITIZEN
         on REG.CitizenID = CITIZEN.ID
-    )";
+        )
+        ";
+    if($_POST['time'] != null)
+    $sql .= "where Time =:time";
+
+    if($_POST['status'] != null)
+    $sql .= " and Status =:status";
+
+    $sql .= " order by Time, NO";
 
     $command = oci_parse($connection, $sql);
     oci_bind_by_name($command, ':schedid', $_POST['SchedID']);
+
+    if($_POST['time'] != null)
+    oci_bind_by_name($command, ':time', $_POST['time']);
+
+    if($_POST['status'] != null)
+    oci_bind_by_name($command, ':status', $_POST['status']);
 
     $r = oci_execute($command);
     if (!$r) {
@@ -35,8 +49,6 @@ function LoadScheduleRegistration()
         echo '<script>ERROR: ' . $exception['code'] . ' - ' . $exception['message'] . '</script>';
         return;
     }
-
-    $SchedInfo = $_POST['SchedInfo'];
 
     $result = "";
     while (($row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS)) != false) {
@@ -68,7 +80,6 @@ function LoadScheduleRegistration()
                 <div class="hoder-obj-attr">
                     <div class="obj-attr">
                         <p class="attr-sdt">SĐT: ' . $reg->get_citizen()->get_phone() . '</p>
-                        <p class="attr-date">' . $SchedInfo . '</p>
                         <div class="attr-detail">
                             <p>Buổi: ' . $reg->get_time() . '</p>
                             <p>STT: ' . $reg->get_no() . '</p>
@@ -200,7 +211,8 @@ function CancelSchedule()
     echo 'CancelSchedule';
 }
 
-function CreateSchedule(){
+function CreateSchedule()
+{
     include("DatabaseConnection.php");
 
     $sql = "alter session set NLS_DATE_FORMAT='YYYY-MM-DD'";

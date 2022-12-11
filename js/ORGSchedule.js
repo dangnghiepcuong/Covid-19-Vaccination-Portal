@@ -18,26 +18,30 @@ $(document).ready(function () {
     var day = ('0' + today.getDate()).slice(-2)
     var month = ('0' + (today.getMonth() + 1)).slice(-2)
     var today = today.getFullYear() + '-' + (month) + '-' + (day)
-    // $('#start-date').val(today)
+    $('#start-date').val(today)
     // $('#end-date').val(today)
 
     // LOAD SCHEDULE DATA
     LoadSchedule($('.orgid').attr('id'))
 
-    $('#btn-filter-schedule').click(function () {
+    $('#filter-schedule').change(function () {
+        $('#list-registration').html('')
+        $('.list-name-registration').text('')
+        $('#filter-registration').css('display','none')
         LoadSchedule($('.orgid').attr('id'))
+        
     })
+
 
     function LoadSchedule(orgid) {
         startdate = $('#start-date').val()
         enddate = $('#end-date').val()
-        vaccine = $('#vaccine').find('option:selected').val()
 
         $.ajax({
             cache: false,
             url: 'HandleLoadOrgSchedule.php',
             type: 'POST',
-            data: { method: 'LoadSchedule', orgid: orgid, startdate: startdate, enddate: enddate, vaccine: vaccine },
+            data: { method: 'LoadSchedule', orgid: orgid, startdate: startdate, enddate: enddate},
             success: function (result) {
                 if (result.substring(0, 5) == 'ERROR') {    //EXCEPTION
                     alert(result)
@@ -81,11 +85,25 @@ $(document).ready(function () {
         schedule = $(this).parent().parent().parent()
         SchedID = schedule.attr('id')
         SchedInfo = schedule.find('.obj-attr').find('.attr-date-vaccine-serial').text()
+        $('.list-name-scheduleinfo').text(SchedInfo)
+        LoadScheduleRegistration(SchedID)
+    })
+
+    $('#filter-registration').change(function(){
+        SchedID = $('.list-name-registration').attr('id')
+        LoadScheduleRegistration(SchedID)
+    })
+
+    function LoadScheduleRegistration(SchedID){
+        time = $('#time').find('option:selected').val()
+        status = $('#status').find('option:selected').val()
+
         $.ajax({
             cache: false,
             url: 'HandleScheduleManagement.php',
             type: 'POST',
-            data: { method: 'LoadScheduleRegistration', SchedID: SchedID, SchedInfo: SchedInfo },
+            data: { method: 'LoadScheduleRegistration', SchedID: SchedID, time: time, status: status },
+            indexValue: { SchedID: SchedID },
             success: function (result) {
                 if (result.substring(0, 5) == 'ERROR') {    //EXCEPTION
                     alert(result)
@@ -94,12 +112,16 @@ $(document).ready(function () {
                 if (result == '') {
                     PopupConfirm('Không có lượt đăng ký nào cho lịch tiêm này.')
                 }
+                
                 $('#list-registration').html(result)
+                $('.list-name-registration').text('DANH SÁCH LƯỢT ĐĂNG KÝ')
+                $('.list-name-registration').attr('id', this.indexValue.SchedID)
+                $('#filter-registration').css('display','block')
             },
             error: function (error) {
             }
         })
-    })
+    }
 
     // HANDLE UPDATE REGISTRATION STATUS
     $('#list-registration').on('click', '.btn-update-registration', function () {
@@ -161,7 +183,7 @@ $(document).ready(function () {
 
         $('#list-registration').html(
             '<div class="panel-update-schedule" id="' + SchedID + '">'
-            + '<div class="title">CẬP NHẬT LỊCH TIÊM</div>'
+            + '<br>'
             + '<div class="schedule-id">Mã lịch tiêm: ' + SchedID + '</div>'
             + '<div class="attr-date-vaccine-serial">' + SchedInfo + '</div>'
             + '<div class="attr-time">' + SchedValue + '</div>'

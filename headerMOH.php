@@ -18,11 +18,15 @@ if (!defined('browsable')) {
         <div>
             <ul>
                 <a href="index.php">
-                    <li class="menu-section">Tổng quan</li>
+                    <li class="menu-section">Trang chủ</li>
                 </a>
 
                 <a href="#">
                     <li class="menu-section">Dữ liệu</li>
+                </a>
+
+                <a href="SearchInformation.php">
+                    <li class="menu-section">Tra cứu</li>
                 </a>
 
                 <a href="MOHManageOrg.php">
@@ -46,6 +50,10 @@ if (!defined('browsable')) {
 
                 <a href="ORGProfile.php">
                     <li>Thông tin đơn vị</li>
+                </a>
+
+                <a href="ORGProfile.php">
+                    <li>Văn bản</li>
                 </a>
 
                 <a href="" id="btn-logout">

@@ -12,7 +12,7 @@ if (isset($_SESSION['AccountInfo']) == false)
     $checkUser = false;
 else
     if ($_SESSION['AccountInfo']->get_role() != 2)  //if logged in account was a org acc then header to index.php
-    header("location:javascript://history.go(-1)");
+    header("location: index.php");
 
 // if there is not any profile was queried then head to index
 if (isset($_SESSION['CitizenProfile']) == false)
