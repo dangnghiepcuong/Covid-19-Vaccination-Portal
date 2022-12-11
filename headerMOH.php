@@ -18,7 +18,7 @@ if (!defined('browsable')) {
         <div>
             <ul>
                 <a href="index.php">
-                    <li class="menu-section">Tổng quan</li>
+                    <li class="menu-section">Trang chủ</li>
                 </a>
 
                 <a href="#">
