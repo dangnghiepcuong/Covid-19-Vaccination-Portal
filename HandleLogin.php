@@ -23,13 +23,7 @@ if ($row == false) {
     echo 'NoAccount';    // no account existed
 } else {
     if ($_POST['password'] == $row['PASSWORD']) {   // account existed, check password
-        $_SESSION['AccountInfo'] = new Account();   //password is correct, create session account
-        $_SESSION['AccountInfo']->set_username($row['USERNAME']);
-        $_SESSION['AccountInfo']->set_password($row['PASSWORD']);
-        $_SESSION['AccountInfo']->set_role($row['ROLE']);
-        $_SESSION['AccountInfo']->set_status($row['STATUS']);
-
-        switch ($_SESSION['AccountInfo']->get_role()) {
+        switch ($row['ROLE']) {
             case 0:
                 $sql = "select * from ORGANIZATION where ID = :id";    //check exist profile
                 break;
@@ -53,11 +47,15 @@ if ($row == false) {
         $row2 = oci_fetch_array($command, OCI_BOTH | OCI_RETURN_NULLS);
         if ($row2 == false) {
             echo 'NoProfile';   //no profile existed
-            setcookie('username', $_POST['username']);
             return;
         }
 
-        $_SESSION['username'] = $_POST['username'];
+        $_SESSION['AccountInfo'] = new Account();   
+        $_SESSION['AccountInfo']->set_username($row['USERNAME']);
+        $_SESSION['AccountInfo']->set_password($row['PASSWORD']);
+        $_SESSION['AccountInfo']->set_role($row['ROLE']);
+        $_SESSION['AccountInfo']->set_status($row['STATUS']);
+        // $_SESSION['username'] = $_POST['username'];
     } else {    //wrong password;
         echo 'incorrect password';
     }

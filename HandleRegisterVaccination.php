@@ -20,10 +20,10 @@ function CheckRegistration()
     $sql = "begin REG_BEFORE_INSERT_RECORD(:citizenid, :checkbooster, :dosetype); end;";
     $command = oci_parse($connection, $sql);
     oci_bind_by_name($command, ':citizenid', $citizen->get_id());
-    $_SESSION['checkbooster'] = 0;
-    oci_bind_by_name($command, ':checkbooster', $_SESSION['checkbooster']);
-    $_SESSION['dosetype'] = '';
-    oci_bind_by_name($command, ':dosetype', $_SESSION['dosetype'], 10); //last parameter is max-lenght for parameter out
+    $_COOKIE['checkbooster'] = 0;
+    oci_bind_by_name($command, ':checkbooster', $_COOKIE['checkbooster']);
+    $_COOKIE['dosetype'] = '';
+    oci_bind_by_name($command, ':dosetype', $_COOKIE['dosetype'], 10); //last parameter is max-lenght for parameter out
 
     $r = oci_execute($command);
     if (!$r) {
@@ -32,8 +32,8 @@ function CheckRegistration()
         return;
     }
 
-    echo $_SESSION['checkbooster'];
-    unset($_SESSION['checkbooster']);
+    echo $_COOKIE['checkbooster'];
+    unset($_COOKIE['checkbooster']);
 
     echo 'CheckRegistration';
 }
@@ -49,7 +49,7 @@ function RegisterVaccination()
     oci_bind_by_name($command, ':time', $_POST['time']);
 
     if ($_POST['dosetype'] == '')
-        oci_bind_by_name($command, ':dosetype', $_SESSION['dosetype']);
+        oci_bind_by_name($command, ':dosetype', $_COOKIE['dosetype']);
     else
         oci_bind_by_name($command, ':dosetype', $_POST['dosetype']);
 
@@ -60,7 +60,7 @@ function RegisterVaccination()
         return;
     }
 
-    unset($_SESSION['dosetype']);
+    unset($_COOKIE['dosetype']);
 
     echo 'RegisterVaccination';
 }
