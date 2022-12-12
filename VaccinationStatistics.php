@@ -35,6 +35,12 @@ $org = $_SESSION['OrgProfile'];
         <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
         <title>Thống kê số liệu tiêm chủng</title>
 
+
+
+        
+        <link rel="stylesheet" href="css/meanmenu.min.css">
+        
+
       
     <link rel="stylesheet" href="css/ORGSchedule.css">
     </head>
@@ -69,10 +75,12 @@ $org = $_SESSION['OrgProfile'];
                             <label for="end-date">Đến ngày</label>
                             <input type="date" name="end-date" id="end-date">
                     
-                            <button class="btn-medium-bordered-icon" id="btn-filter-schedule">
+                            <button class="btn-search" id="btn-filter-schedule">
                             <img src="image/filter-magnifier.png" alt="filter-magnifier">
                             Tìm kiếm
                             </button>  
+                            
+                            
                     
                         </div>
 
@@ -81,10 +89,64 @@ $org = $_SESSION['OrgProfile'];
 
                 <br>
                 <!-- <p>adsfkjkds</p> -->
-                    <!-- <canvas id="myChart" style="width:20%;max-width:500px; display:inline; align-items: center;margin-left: 50px;margin-right: 50px"></canvas>
-                    <canvas id="myChart1" style="width:100%;max-width:500px; display:inline; align-items: center;margin-left: 28px;margin-right: 50px"></canvas>
-           -->
+                    <!-- <div id="myChart" style="width:20%;max-width:500px; display:inline; align-items: center;margin-left: 50px;margin-right: 50px"></div> -->
+                    <!-- <canvas id="myChart1"style="width:100%;max-width:500px; display:inline; align-items: center;margin-left: 28px;margin-right: 50px"></canvas> -->
+                    <div class="analytics-sparkle-area">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                        <div class="analytics-sparkle-line reso-mg-b-30">
+                            <div class="analytics-content">
+                                <h5>Sáng</h5>
+                                <h2><span class="counter">5000</span> <span class="tuition-fees">Mũi tiêm</span></h2>
+                                <span class="text-success">20%</span>
+                                <div class="progress m-b-0">
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 20%;"> <span class="sr-only">20% Complete</span> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                        <div class="analytics-sparkle-line reso-mg-b-30">
+                            <div class="analytics-content">
+                                <h5>Trưa</h5>
+                                <h2><span class="counter">3000</span> <span class="tuition-fees">Mũi tiêm</span></h2>
+                                <span class="text-danger">30%</span>
+                                <div class="progress m-b-0">
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:30%;"> <span class="sr-only">230% Complete</span> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                        <div class="analytics-sparkle-line reso-mg-b-30 table-mg-t-pro dk-res-t-pro-30">
+                            <div class="analytics-content">
+                                <h5>Chiều</h5>
+                                <h2><span class="counter">2000</span> <span class="tuition-fees">Mũi tiêm</span></h2>
+                                <span class="text-info">60%</span>
+                                <div class="progress m-b-0">
+                                    <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:60%;"> <span class="sr-only">20% Complete</span> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                        <div class="analytics-sparkle-line table-mg-t-pro dk-res-t-pro-30">
+                            <div class="analytics-content">
+                                <h5>Tổng số</h5>
+                                <h2><span class="counter">3500</span> <span class="tuition-fees">Mũi tiêm</span></h2>
+                                <span class="text-inverse">80%</span>
+                                <div class="progress m-b-0">
+                                    <div class="progress-bar progress-bar-inverse" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:80%;"> <span class="sr-only">230% Complete</span> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </div>
+                </div>
+                
             
             <br>
          
