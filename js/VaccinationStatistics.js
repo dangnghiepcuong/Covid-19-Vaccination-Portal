@@ -93,8 +93,10 @@ $(document).ready(function () {
         // alert(start_date); 
         myChart='<p class="holder-function-panel"></p>'
         myChart+='<canvas id="myChart" style="width:20%;max-width:500px; display:inline; align-items: center;margin-left: 50px;margin-right: 50px"></canvas>'
-        $('.holder-function-panel .function-panel').load(myChart);
-        alert(end_date);
+        alert('Test');
+        $('.holder-function-panel .function-panel').require(myChart);
+        alert('táon');
+        
 
         // aaa='<canvas id="myChart1"></canvas>'
         // $('.holder-function-panel .function-panel').html(aaa);
@@ -117,6 +119,3 @@ $(document).ready(function () {
         })
     
 })
-
-
-

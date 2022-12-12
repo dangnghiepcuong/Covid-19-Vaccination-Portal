@@ -34,6 +34,7 @@ $org = $_SESSION['OrgProfile'];
     <script src="js/ORGAccountInfo.js"></script>
     <script src="js/AccountUpdate.js"></script>
     <title>Thông tin tài khoản</title>
+    
 </head>
 
 <body>
