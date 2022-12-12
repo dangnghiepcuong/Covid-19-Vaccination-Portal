@@ -32,7 +32,7 @@ $org = $_SESSION['OrgProfile'];
     <link rel="stylesheet" href="css/MOHProvideAccount.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="js/MOHProvideAccount.js"></script>
+    <script src="js/MOHProvideOrgAcc.js"></script>
     <script src="js/index.js"></script>
     <script src="js/WebElements.js"></script>
     <title>Cấp tài khoản đơn vị tiêm chủng</title>
