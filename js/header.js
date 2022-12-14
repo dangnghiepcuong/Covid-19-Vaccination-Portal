@@ -51,6 +51,23 @@ $(document).ready(function(){
         $('#drop-down-menu-schedule').css('display', 'block')
     })
 
+    // DROP DOWN MENU POST
+    $('.header').on('mouseover', '#menu-section-post', function () {
+        $('#drop-down-menu-post').css('display', 'block')
+    })
+
+    $('.header').on('mouseout', '#menu-section-post', function () {
+        $('#drop-down-menu-post').css('display', 'none')
+    })
+
+    $('.header').on('mouseout', '#drop-down-menu-post', function () {
+        $('#drop-down-menu-post').css('display', 'none')
+    })
+
+    $('.header').on('mouseover', '#drop-down-menu-post', function () {
+        $('#drop-down-menu-post').css('display', 'block')
+    })
+
     // HANDLE LOGOUT
     $('#btn-logout').click(function () {
         $.ajax({
