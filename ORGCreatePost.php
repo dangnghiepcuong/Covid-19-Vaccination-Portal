@@ -31,7 +31,7 @@ $org = $_SESSION['OrgProfile'];
     <link rel="stylesheet" href="css/filter-panel.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="js/ORGCreateSchedule.js"></script>
+    <script src="js/ORGCreatePost.js"></script>
     <script src="js/WebElements.js"></script>
     <title>Văn bản</title>
 </head>
@@ -76,10 +76,10 @@ $org = $_SESSION['OrgProfile'];
                             </div>
                             <div class="container-update-value">
                                 <label for="file-text" class="">Tải lên file nội dung (.txt)</label>
-                                <button class="btn-medium-bordered" id="btn-confirm-create-post">Chọn tệp</button>
+                                <input type="file" id="input-browse-text" name="input-browse-text">
 
                                 <label for="file-image" class="">Tải lên file hình ảnh (.jpg)</label>
-                                <button class="btn-medium-bordered" id="btn-confirm-create-post">Chọn tệp</button>
+                                <input type="file" id="input-browse-image" name="input-browse-image">
                             </div>
                         </div>
                         <button class="btn-medium-bordered" id="btn-confirm-create-post">Xác nhận</button>
