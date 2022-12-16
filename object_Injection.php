@@ -1,4 +1,4 @@
-<?php
+ <?php
 error_reporting(E_ERROR | E_PARSE);
 if (!defined('browsable')) {
     header("location:javascript://history.go(-1)");

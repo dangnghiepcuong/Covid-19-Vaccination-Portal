@@ -1,6 +1,8 @@
+
 var xValues = ["Tháng 1","Tháng 2","Tháng 3","Tháng 4","Tháng 5","Tháng 6","Tháng 7","Tháng 8","Tháng 9","Tháng 10","Tháng 11","Tháng 12"];
 
-new Chart("myChart", {
+var ctx = document.getElementById('myChart').getContext('2d');
+var myChart = new Chart(ctx, {
 type: "line",
 data: {
     labels: xValues,
@@ -24,47 +26,9 @@ options: {
 }
 });
 
-new Chart("myChart1", {
-    type: "bar",
-    data: 
-    {
-        labels: xValues,
-        datasets: [
-    {
-        type:"line",
-        data: [860,1140,1060,1060,1070,1110,1330,2210,7830,2478],
-        borderColor: "blue",
-        fill: false
-        
-    }, 
 
-    { 
-        data: [1600,1700,1700,1900,2000,2700,4000,5000,6000,9000],
-        borderColor: "green",
-        fill: false
-    }, 
 
-    { 
-        data: [300,700,2000,5000,6000,4000,2000,1000,200,100],
-        borderColor: "blue",
-        fill: false
-    }
-    ,
 
-    {
-        type: "line",
-        data: [200,400,1000,1230,1234,4534,2423,2432,234,345,234,123,545,234,234],
-        borderColor:"black",
-        fill: false
-    },
-]
-    },
-    options: {
-        legend: {display: false}
-        // layout: {padding: {left:50}}
-    }
-
-});
 
 $(document).ready(function () {
 
@@ -82,40 +46,70 @@ $(document).ready(function () {
     $('#selected-function-path').html(selected_function)
     // END LOAD FRONT END DATA
 
+    // Handle Button
     $('#btn-filter-schedule').click(function () {
 
         //Lay ngay bat dau va ket thuc
         start_date = $('#start-date').val()
         end_date = $('#end-date').val()
+        console.log(start_date);
 
         // _token = $('input[name="_token"]').val();
 
         // alert(start_date); 
-        myChart='<p class="holder-function-panel"></p>'
-        myChart+='<canvas id="myChart" style="width:20%;max-width:500px; display:inline; align-items: center;margin-left: 50px;margin-right: 50px"></canvas>'
-        alert('Test');
-        $('.holder-function-panel .function-panel').require(myChart);
-        alert('táon');
+        panel= '<br> <div class="panel-target-citizen">'
+        panel+= '<div class="filter-panel">'
+        panel+='<div class="filter-pane" id="filter-schedule">'
+        panel+=         '<label for="start-date">Từ ngày</label>'
+        panel+=         '<input type="date" name="start-date" id="start-date">'
+        panel+=         '<label for="end-date">Đến ngày</label>'
+        panel+=         '<input type="date" name="end-date" id="end-date">'
+        panel+=         '<button class="btn-search" id="btn-filter-schedule">'
+        panel+=         '<img src="image/filter-magnifier.png" alt="filter-magnifier">'
+        panel+=         'Tìm kiếm'
+        panel+=         '</button>'
+        panel+=         '</div>'
+        panel+= '</div>'   
+        panel+= '</div>'
+
+
+        
+        myChart_='<p class="holder-function-panel">Test line 1</p>';
+        // myChart_+='<canvas id="myChart"></canvas>'
+        myChart_+='<p class="holder-function-panel">Test line 2</p>'
+        console.log('Test');
+        $('.holder-function-panel .function-panel').html(panel);
+        // $('.holder-function-panel .function-panel').html(myChart_);
+        console.log('T Á O');
         
 
-        // aaa='<canvas id="myChart1"></canvas>'
         // $('.holder-function-panel .function-panel').html(aaa);
-        // alert('Bước 1')
+        // console.log('Bước 1')
         // $.ajax({
         //     url:'VaccinationStatistics.php',
         //     method:"post",
-        //     dataType: "JSON",
-        //     data:{[100]:[123123]},
+        //     Type: "JSON",
+        //     data:{xValues:'Tháng 2'},
 
-        //     success:function(data)
+        //     success:function(data1)
         //     {
-        //         alert('kiểm tra biểu đồ');
+        //         console.log('kiểm tra biểu đồ');
         //         myChart.setData(data);
-        //         alert('thành công');
+        //         console.log(data);
+        //     },
+
+        //     error:function(error){
+        //         console.log('Đm lỗi rồi ba');
+        //         console.log(error)
         //     }
-        //     // alert('Bước2') 
         // })
-        // alert('Kết thúc ajax');
+        // console.log('Kết thúc ajax');
+
+
+        
         })
     
 })
+
+
+
