@@ -1,6 +1,32 @@
-
 var xValues = ["Tháng 1","Tháng 2","Tháng 3","Tháng 4","Tháng 5","Tháng 6","Tháng 7","Tháng 8","Tháng 9","Tháng 10","Tháng 11","Tháng 12"];
 
+// Chart-1
+var ctx1 = document.getElementById('myChart-1').getContext('2d');
+var myChart1 = new Chart(ctx1, {
+type: "line",
+data: {
+    labels: xValues,
+    datasets: [{ 
+    data: [860,1140,1060,1060,1070,1110,1330,2210,7830,2478],
+    borderColor: "red",
+    // fill: false
+    }, { 
+     data: [1600,1700,1700,1900,2000,2700,4000,5000,6000,9000],
+    borderColor: "green",
+    // fill: false
+    }, { 
+    data: [300,700,2000,5000,6000,4000,2000,1000,200,100],
+    borderColor: "blue",
+    // fill: false
+    }]
+ },
+options: {
+    legend: {display: false}
+    
+}
+});
+
+//Chart-0
 var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
 type: "line",
@@ -27,9 +53,6 @@ options: {
 });
 
 
-
-
-
 $(document).ready(function () {
 
     // LOAD FRONT END DATA
@@ -46,40 +69,21 @@ $(document).ready(function () {
     $('#selected-function-path').html(selected_function)
     // END LOAD FRONT END DATA
 
+    // HANDLE LOAD DATA
+    
+
     // Handle Button
     $('#btn-filter-schedule').click(function () {
-
+    
         //Lay ngay bat dau va ket thuc
         start_date = $('#start-date').val()
         end_date = $('#end-date').val()
         console.log(start_date);
+        console.log(end_date);
 
-        // _token = $('input[name="_token"]').val();
-
-        // alert(start_date); 
-        panel= '<br> <div class="panel-target-citizen">'
-        panel+= '<div class="filter-panel">'
-        panel+='<div class="filter-pane" id="filter-schedule">'
-        panel+=         '<label for="start-date">Từ ngày</label>'
-        panel+=         '<input type="date" name="start-date" id="start-date">'
-        panel+=         '<label for="end-date">Đến ngày</label>'
-        panel+=         '<input type="date" name="end-date" id="end-date">'
-        panel+=         '<button class="btn-search" id="btn-filter-schedule">'
-        panel+=         '<img src="image/filter-magnifier.png" alt="filter-magnifier">'
-        panel+=         'Tìm kiếm'
-        panel+=         '</button>'
-        panel+=         '</div>'
-        panel+= '</div>'   
-        panel+= '</div>'
-
-
-        
-        myChart_='<p class="holder-function-panel">Test line 1</p>';
-        // myChart_+='<canvas id="myChart"></canvas>'
-        myChart_+='<p class="holder-function-panel">Test line 2</p>'
         console.log('Test');
-        $('.holder-function-panel .function-panel').html(panel);
-        // $('.holder-function-panel .function-panel').html(myChart_);
+        $('canvas#myChart').remove();
+        $('#dvChart').html('<canvas id="myChart"style="width:100%;max-width:500px; display:inline; align-items: center;margin-left: 28px;margin-right: 50px" class="chartjs-render-monitor"></canvas>');
         console.log('T Á O');
         
 
@@ -104,6 +108,35 @@ $(document).ready(function () {
         //     }
         // })
         // console.log('Kết thúc ajax');
+
+        var xValues = ["Tháng 1","Tháng 2","Tháng 3","Tháng 4","Tháng 5","Tháng 6","Tháng 7","Tháng 8","Tháng 9","Tháng 10","Tháng 11","Tháng 12","thasng 13"];
+
+        
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+        type: "line",
+        data: {
+        labels: xValues,
+        datasets: [{ 
+        data: [860,1140,1060,1060,1070,1110,1330,2210,7830,3000,1000,2000],
+        borderColor: "red",
+        // fill: false
+        }, { 
+        data: [1600,1700,1700,1900,2000,2700,4000,5000,6000,3000,1000,2000],
+        borderColor: "green",
+        // fill: false
+        }, { 
+        data: [300,700,2000,5000,6000,4000,2000,1000,200,100,1000,2000],
+        borderColor: "blue",
+        // fill: false
+    }]
+ },
+options: {
+    legend: {display: false}
+    
+}
+});
+
 
 
         
