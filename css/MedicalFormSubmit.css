@@ -33,7 +33,7 @@
     display: flex;
     align-items: center;
     margin: 0 auto;
-    background-color: rgba(250, 211, 255, 0.5);
+    background-color: rgba(224, 202, 238, 0.32);
     box-shadow: 2px 2px 5px -2px black;
 }
 
@@ -55,7 +55,7 @@
 }
 
 .panel-form-medical .form-medical .input_date input {
-    width: 25%;
+    width: 20%;
     border-radius: 10px;
     text-align: right;
     height: 32px;
