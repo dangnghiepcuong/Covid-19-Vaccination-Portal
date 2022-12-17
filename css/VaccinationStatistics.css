@@ -109,7 +109,20 @@
     border-style: solid;
     border: 1px solid #8C69CA;
     border-radius: 20px 20px 20px 20px;
+    overflow:auto;
 
+}
+
+.chart{
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar{
+    width : 0px;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #8C69CA;
 }
 
 .filter-region {
