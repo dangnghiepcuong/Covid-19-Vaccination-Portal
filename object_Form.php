@@ -7,7 +7,7 @@ if (!defined('browsable')) {
 include("object_Citizen.php");
 
 class Form {
-    private $Citizen;
+    private $CCiitizen;
     private $FilledDate;
     private $Choice;
     private $ID;

@@ -30,10 +30,18 @@ $org = $_SESSION['OrgProfile'];
         <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
         <script src="js/WebElements.js"></script>
-        <script src="js/VaccinationStatistics.js"></script>
+        <!-- <script src="js/VaccinationStatistics.js"></script> -->
 
-        <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <title>Thống kê số liệu tiêm chủng</title>
+
+
+        <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+        <script
+src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+</script>
+        <!-- <link rel="stylesheet" href="css/meanmenu.min.css"> -->
+        
 
       
     <link rel="stylesheet" href="css/ORGSchedule.css">
@@ -60,6 +68,7 @@ $org = $_SESSION['OrgProfile'];
             <div class="function-panel">
 
                 <br>
+                <!-- Filter result by date -->
                 <div class="panel-target-citizen">
                     <div class="filter-panel">
                         <div class="filter-pane" id="filter-schedule">
@@ -69,24 +78,97 @@ $org = $_SESSION['OrgProfile'];
                             <label for="end-date">Đến ngày</label>
                             <input type="date" name="end-date" id="end-date">
                     
-                            <button class="btn-medium-bordered-icon" id="btn-filter-schedule">
+                            <button class="btn-search" id="btn-filter-schedule">
                             <img src="image/filter-magnifier.png" alt="filter-magnifier">
                             Tìm kiếm
                             </button>  
-                    
                         </div>
 
                     </div>   
                 </div>
 
+                <!-- Data Overview -->
                 <br>
-                <!-- <p>adsfkjkds</p> -->
-                    <!-- <canvas id="myChart" style="width:20%;max-width:500px; display:inline; align-items: center;margin-left: 50px;margin-right: 50px"></canvas>
-                    <canvas id="myChart1" style="width:100%;max-width:500px; display:inline; align-items: center;margin-left: 28px;margin-right: 50px"></canvas>
-           -->
+                <div class="analytics-sparkle-area">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                                <div class="analytics-sparkle-line reso-mg-b-30">
+                                    <div class="analytics-content">
+                                        <h5>Sáng</h5>
+                                        <h2><span class="counter">5000</span> <span class="tuition-fees">Mũi tiêm</span></h2>
+                                        <span class="text-success">20%</span>
+                                        <div class="progress m-b-0">
+                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 20%;"> <span class="sr-only">20% Complete</span> </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                                <div class="analytics-sparkle-line reso-mg-b-30">
+                                    <div class="analytics-content">
+                                        <h5>Trưa</h5>
+                                        <h2><span class="counter">3000</span> <span class="tuition-fees">Mũi tiêm</span></h2>
+                                        <span class="text-danger">30%</span>
+                                        <div class="progress m-b-0">
+                                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:30%;"> <span class="sr-only">230% Complete</span> </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                                <div class="analytics-sparkle-line reso-mg-b-30 table-mg-t-pro dk-res-t-pro-30">
+                                    <div class="analytics-content">
+                                        <h5>Chiều</h5>
+                                        <h2><span class="counter">2000</span> <span class="tuition-fees">Mũi tiêm</span></h2>
+                                        <span class="text-info">60%</span>
+                                        <div class="progress m-b-0">
+                                            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:60%;"> <span class="sr-only">20% Complete</span> </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                                <div class="analytics-sparkle-line table-mg-t-pro dk-res-t-pro-30">
+                                    <div class="analytics-content">
+                                        <h5>Tổng số</h5>
+                                        <h2><span class="counter">3500</span> <span class="tuition-fees">Mũi tiêm</span></h2>
+                                        <span class="text-inverse">80%</span>
+                                        <div class="progress m-b-0">
+                                            <div class="progress-bar progress-bar-inverse" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:80%;"> <span class="sr-only">230% Complete</span> </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                    </div>
+
+                    <!--Statistical chart -->
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br><br>
+
+
+                        <div class='Chart'>
+                            <div id='dvChart' style=" background-size: cover">                        
+                                <canvas id="myChart"style="width:100%;max-width:500px; display:inline; align-items: center;margin-left: 28px;margin-right: 50px"></canvas>
+                            </div>
+
+                            <div id='dvChart1'>  
+                                <canvas id="myChart-1"style="width:100%;max-width:500px; display:inline; align-items: center;margin-left: 28px;margin-right: 50px"></canvas>                      
+                            </div>
+                        </div>
+
+                    </div>              
                 </div>
-            
+            </div>     
             <br>
+
+
          
         </div>
         <!-- END FUNCTION PANEL -->
@@ -99,77 +181,8 @@ $org = $_SESSION['OrgProfile'];
         ?>
         <!-- END FOOTER -->
 
-        <script>
-                        var xValues = ["Tháng 1","Tháng 2","Tháng 3","Tháng 4","Tháng 5","Tháng 6","Tháng 7","Tháng 8","Tháng 9","Tháng 10","Tháng 11","Tháng 12"];
-
-                        new Chart("myChart", {
-                        type: "line",
-                        data: {
-                            labels: xValues,
-                            datasets: [{ 
-                            data: [860,1140,1060,1060,1070,1110,1330,2210,7830,2478],
-                            borderColor: "red",
-                            // fill: false
-                            }, { 
-                             data: [1600,1700,1700,1900,2000,2700,4000,5000,6000,9000],
-                            borderColor: "green",
-                            // fill: false
-                            }, { 
-                            data: [300,700,2000,5000,6000,4000,2000,1000,200,100],
-                            borderColor: "blue",
-                            // fill: false
-                            }]
-                         },
-                        options: {
-                            legend: {display: false}
-                            
-                        }
-                        });
-
-                        new Chart("myChart1", {
-                            type: "bar",
-                            data: 
-                            {
-                                labels: xValues,
-                                datasets: [
-                            {
-                                type:"line",
-                                data: [860,1140,1060,1060,1070,1110,1330,2210,7830,2478],
-                                borderColor: "blue",
-                                fill: false
-                                
-                            }, 
-
-                            { 
-                                data: [1600,1700,1700,1900,2000,2700,4000,5000,6000,9000],
-                                borderColor: "green",
-                                fill: false
-                            }, 
-
-                            { 
-                                data: [300,700,2000,5000,6000,4000,2000,1000,200,100],
-                                borderColor: "blue",
-                                fill: false
-                            }
-                            ,
-
-                            {
-                                type: "line",
-                                data: [200,400,1000,1230,1234,4534,2423,2432,234,345,234,123,545,234,234],
-                                borderColor:"black",
-                                fill: false
-                            },
-                        ]
-                            },
-                            options: {
-                                legend: {display: false}
-                                // layout: {padding: {left:50}}
-                            }
-                        
-                        });
-                        </script>
-
     </body>
-</html>
 
-<!-- <canvas width="1367" height="245" style="height: 196px; width: 1094px; position: absolute; left: 0px; top: 0px;"></canvas> -->
+   
+    <script src="js/VaccinationStatistics.js"></script>
+</html>

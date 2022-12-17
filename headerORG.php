@@ -27,7 +27,7 @@ if (!defined('browsable')) {
                 </a>
 
                 <a href="#">
-                    <li class="menu-section">Văn bản</li>
+                    <li class="menu-section" id="menu-section-post">Văn bản</li>
                 </a>
 
                 <a href="VaccinationStatistics.php">
@@ -75,6 +75,22 @@ if (!defined('browsable')) {
         </div>
     </div>
     <!-- END DROP DOWN MENU SCHEDULE -->
+
+    <!-- DROP DOWN MENU POST -->
+    <div class="drop-down-menu" id="drop-down-menu-post">
+        <div class="holder">
+            <ul>
+                <a href="">
+                    <li>Danh sách thông báo</li>
+                </a>
+
+                <a href="ORGCreatePost.php">
+                    <li>Thiết lập thông báo</li>
+                </a>
+            </ul>
+        </div>
+    </div>
+    <!-- END DROP DOWN MENU POST -->
 </div>
 
 <div class="header-virtual"></div>

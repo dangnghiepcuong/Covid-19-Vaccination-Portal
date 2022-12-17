@@ -22,3 +22,4 @@ while (($row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS)) != false
 $_SESSION['OrgProfile'] = new Organization();
 $_SESSION['OrgProfile'] = $org;
 ?>
+
