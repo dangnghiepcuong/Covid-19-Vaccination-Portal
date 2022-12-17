@@ -145,7 +145,16 @@ src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
 
                     <!--Statistical chart -->
                         <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <div id='dvChart'>
+                        
                         <canvas id="myChart"style="width:100%;max-width:500px; display:inline; align-items: center;margin-left: 28px;margin-right: 50px"></canvas>
+
+                        </div>
                     </div>              
                 </div>
             </div>     
