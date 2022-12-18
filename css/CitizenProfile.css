@@ -47,9 +47,9 @@
     display: block;
 }
 
-.add-relative {
+/* .add-relative {
     margin-top: 72px;
-}
+} */
 
 .info-panel hr{
     background: var(--bg_gradient);
