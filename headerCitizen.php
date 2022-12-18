@@ -60,7 +60,7 @@ if (!defined('browsable')) {
                     <li>Tra cứu</li>
                 </a>
 
-                <a href="#">
+                <a href="CitizenRelative.php">
                     <li>Thêm người thân</li>
                 </a>
 
