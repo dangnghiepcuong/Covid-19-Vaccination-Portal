@@ -8,7 +8,7 @@ $org = new Organization();
 include("DatabaseConnection.php");
 $sql = "select * from Organization where ID = :username";
 $command = oci_parse($connection, $sql);
-oci_bind_by_name($command, ':username', $_SESSION['username']);
+oci_bind_by_name($command, ':username', $_SESSION['AccountInfo']->get_username());
 oci_execute($command);
 
 while (($row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS)) != false) {

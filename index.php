@@ -42,10 +42,7 @@ $citizen = new Citizen();
     <!-- HEADER -->
     <div id="return-header">
         <?php
-            // echo '<script>alert("' . $_SESSION['AccountInfo']->get_status() . '")</script>';
-
         if (isset($_SESSION['AccountInfo']) && $_SESSION['AccountInfo']->get_status() == 1) {
-
             switch ((int)$_SESSION['AccountInfo']->get_role()) {
                 case 0:
                     if (isset($_SESSION['OrgProfile']) == false) {
@@ -69,6 +66,7 @@ $citizen = new Citizen();
                     include("headerGeneral.php");
                     break;
             }
+            // echo '<script>alert("' . $_SESSION['CitizenProfile']->get_fullname() . '")</script>';
         } else
             include("headerGeneral.php");
         ?>
