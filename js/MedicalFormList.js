@@ -1,6 +1,6 @@
 $(document).ready(function () {
     // LOAD FRONT END DATA
-    menu_title = '<a href="MedicalFormSubmit.php">Tờ khai y tế</a>'
+    menu_title = '<a href="MedicalFormList.php">Danh sách tờ khai</a>'
     $('#function-navigation-bar-title').html(menu_title)
 
     homepage = '<a href="index.php">Trang chủ</a>'
@@ -9,7 +9,7 @@ $(document).ready(function () {
     subpage = '<a href="MedicalFormSubmit.php">Khai báo</a>'
     $('#subpage-path').html(subpage)
 
-    selected_function = '<a href="MedicalFormSubmit.php">Tờ khai y tế</a>'
+    selected_function = '<a href="MedicalFormList.php">Danh sách tờ khai</a>'
     $('#selected-function-path').html(selected_function)
 
     $('#function-menu-title').text('Trang khai báo y tế')

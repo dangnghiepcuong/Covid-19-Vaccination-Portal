@@ -1,6 +1,6 @@
 $(document).ready(function () {
     // LOAD FRONT END DATA
-    menu_title = '<a href="ORGProfile.php">Thông tin tài khoản</a>'
+    menu_title = '<a href="ORGAccountInfo.php">Thông tin tài khoản</a>'
     $('#function-navigation-bar-title').html(menu_title)
 
     homepage = '<a href="index.php">Trang chủ</a>'
@@ -9,7 +9,7 @@ $(document).ready(function () {
     subpage = '<a href="ORGProfile.php">Đơn vị</a>'
     $('#subpage-path').html(subpage)
 
-    selected_function = '<a href="ORGProfile.php">Thông tin tài khoản</a>'
+    selected_function = '<a href="ORGAccountInfo.php">Thông tin tài khoản</a>'
     $('#selected-function-path').html(selected_function)
 
     $('#function-menu-title').text('Trang đơn vị')

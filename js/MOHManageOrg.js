@@ -7,7 +7,7 @@ $(document).ready(function () {
     homepage = '<a href="index.php">Trang chủ</a>'
     $('#homepage-path').html(homepage)
 
-    subpage = '<a href="ORGProfile.php">Đơn vị</a>'
+    subpage = '<a href="MOHManageOrg.php">Đơn vị tiêm chủng</a>'
     $('#subpage-path').html(subpage)
 
     selected_function = '<a href="MOHManageOrg.php">Quản lý đơn vị tiêm chủng</a>'
