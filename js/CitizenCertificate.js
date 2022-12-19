@@ -1,6 +1,6 @@
 $(document).ready(function () {
     // LOAD FRONT END DATA
-    menu_title = '<a href="CitizenProfile.php">Chứng nhận tiêm chủng</a>'
+    menu_title = '<a href="CitizenCertificate.php">Chứng nhận tiêm chủng</a>'
     $('#function-navigation-bar-title').html(menu_title)
 
     homepage = '<a href="index.php">Trang chủ</a>'
@@ -9,7 +9,7 @@ $(document).ready(function () {
     subpage = '<a href="CitizenProfile.php">Công dân</a>'
     $('#subpage-path').html(subpage)
 
-    selected_function = '<a href="CitizenProfile.php">Chứng nhận tiêm chủng</a>'
+    selected_function = '<a href="CitizenCertificate.php">Chứng nhận tiêm chủng</a>'
     $('#selected-function-path').html(selected_function)
 
     $('#function-menu-title').text('Trang công dân')

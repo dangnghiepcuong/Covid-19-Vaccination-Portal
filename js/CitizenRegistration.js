@@ -1,15 +1,15 @@
 $(document).ready(function () {
     // LOAD FRONT END DATA
-    menu_title = '<a href="VaccinationRegistration.php">Lịch đăng ký tiêm chủng</a>'
+    menu_title = '<a href="CitizenRegistration.php">Lịch đăng ký tiêm chủng</a>'
     $('#function-navigation-bar-title').html(menu_title)
 
     homepage = '<a href="index.php">Trang chủ</a>'
     $('#homepage-path').html(homepage)
 
-    subpage = '<a href="#">Công dân</a>'
+    subpage = '<a href="CitizenProfile.php">Công dân</a>'
     $('#subpage-path').html(subpage)
 
-    selected_function = '<a href="VaccinationRegistration.php">Lịch đăng ký tiêm chủng</a>'
+    selected_function = '<a href="CitizenRegistration.php">Lịch đăng ký tiêm chủng</a>'
     $('#selected-function-path').html(selected_function)
 
     $('#function-menu-title').text('Trang công dân')
