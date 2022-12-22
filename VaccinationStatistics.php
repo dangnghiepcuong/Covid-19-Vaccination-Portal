@@ -153,14 +153,29 @@ $org = $_SESSION['OrgProfile'];
                         <br><br>
 
 
-                        <div class='Chart'>
-                            <div id='dvChart' >                         
+                        <div class='Chart-1'>
+                            <div id='dvChart' style="display:inline-block">                         
                                 <canvas id="myChart"style="width:100%;max-width:500px; display:inline; align-items: center;margin-left: 28px;margin-right: 50px"></canvas>
                             </div>
 
-                            <div id='dvChart1' >  
+                            <div id='dvChart1' style="display:inline-block" >  
                                 <canvas id="myChart-1"style="width:100%;max-width:500px; display:inline; align-items: center;margin-left: 28px;margin-right: 50px"></canvas>                      
+                            </div>       
+                        </div>
+
+                        <br>
+
+                        <div class='Chart-2'>
+
+                            <div id='dvChart2' style="display:inline-block" >  
+                                <canvas id="myChart-2"style="width:100%;max-width:500px; display:inline; align-items: center;margin-left: 28px;margin-right: 50px"></canvas>                      
                             </div>
+
+                            <div id='dvChart3' style="display:inline-block" >  
+                                <canvas id="myChart-3"style="width:100%;max-width:500px; display:inline; align-items: center;margin-left: 28px;margin-right: 50px"></canvas>                      
+                            </div>
+
+
                         </div>
 
                     </div>              
