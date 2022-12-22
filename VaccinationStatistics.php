@@ -38,7 +38,7 @@ $org = $_SESSION['OrgProfile'];
 
         <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
         <script
-src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+        src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
 </script>
         <!-- <link rel="stylesheet" href="css/meanmenu.min.css"> -->
         
@@ -154,11 +154,11 @@ src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
 
 
                         <div class='Chart'>
-                            <div id='dvChart' style=" background-size: cover">                        
+                            <div id='dvChart' >                         
                                 <canvas id="myChart"style="width:100%;max-width:500px; display:inline; align-items: center;margin-left: 28px;margin-right: 50px"></canvas>
                             </div>
 
-                            <div id='dvChart1'>  
+                            <div id='dvChart1' >  
                                 <canvas id="myChart-1"style="width:100%;max-width:500px; display:inline; align-items: center;margin-left: 28px;margin-right: 50px"></canvas>                      
                             </div>
                         </div>
