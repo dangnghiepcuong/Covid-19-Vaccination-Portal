@@ -105,11 +105,11 @@
 
 .function-panel {
     width: 80%;
-    height: 590px;
+    height: 1000px;
     border-style: solid;
     border: 1px solid #8C69CA;
     border-radius: 20px 20px 20px 20px;
-    overflow:auto;
+    /* overflow:auto; */
 
 }
 
@@ -123,6 +123,7 @@
 
 ::-webkit-scrollbar-thumb{
     background-color: #8C69CA;
+
 }
 
 .filter-region {
