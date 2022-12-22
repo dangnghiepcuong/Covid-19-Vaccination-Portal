@@ -1,5 +1,42 @@
 var xValues = ["Tháng 1","Tháng 2","Tháng 3","Tháng 4","Tháng 5","Tháng 6","Tháng 7","Tháng 8","Tháng 9","Tháng 10","Tháng 11","Tháng 12"];
 
+// Chart-2
+var ctx2 = document.getElementById('myChart-2').getContext('2d');
+var myChart2 = new Chart(ctx2, {
+    type: "bar",
+    data: {
+        labels: xValues,
+        datasets: [
+            {
+                data: [1000,1233,2345,234,2342,5345,3234,542,234,3423,523,132],
+                borderColor: "rgb(220,222,224)"
+            }
+        ]
+    },
+    options: {
+        legend: {display: false}
+    }   
+});
+
+//Chart-3 
+var ctx3 = document.getElementById('myChart-3').getContext('2d');
+var myChart2 = new Chart(ctx3, {
+type: "bar",
+data: {
+    labels: xValues,
+    datasets: [{ 
+    data: [860,1140,1060,1060,1070,1110,1330,2210,7830,2478],
+    borderColor: "red",
+    // fill: false
+    }]
+ },
+options: {
+    legend: {display: false}
+    
+}
+});
+
+
 // Chart-1
 var ctx1 = document.getElementById('myChart-1').getContext('2d');
 var myChart1 = new Chart(ctx1, {
@@ -26,7 +63,7 @@ options: {
 }
 });
 
-//Chart-0
+// Chart-0
 var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
 type: "line",
