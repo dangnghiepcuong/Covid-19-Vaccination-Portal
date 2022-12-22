@@ -187,8 +187,8 @@ $org = $_SESSION['OrgProfile'];
                                     <h2>Số liệu vaccine theo địa phương</h2>
                                 </div>
 
-                                <div class="col-12 bg-white overflow-auto" style="overflow: scroll;height: 300px;">
-                                    <table class="table-striped" style="min-width: 750px;width: 100%;">
+                                <div class="col-12 bg-white overflow-auto" style="overflow: scroll;height: 600px;">
+                                    <table class="table-striped" style="min-width: 1000px;width: 100%;">
                                         <thead>
                                             <tr>
                                               <th class="text-center" style="width: 42px;">STT</th>
@@ -205,7 +205,7 @@ $org = $_SESSION['OrgProfile'];
                                             </tr>
                                         </thead _ngcontent-vfw-c15>
 
-                                        <tbody _ngcontent-vfw-c15 style="height: 300px;">
+                                        <tbody style="height: 450px;">
                                             <!-- Ha Noi -->
                                                 <tr class="ng-star-inserted" id="Ha-Noi">
                                                     <td _ngcontent-twr-c15="" class="text-center" style="width: 42px;">1</td>
