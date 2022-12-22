@@ -226,8 +226,8 @@
     display: none;
     z-index: 10;
     position: fixed;
-    width: 400px;
-    height: 500px;
+    width: 500px;
+    /* height: 545px; */
     left: 50%;
     top: 50%;
     transform: translate(-200px, -225px);
@@ -241,10 +241,13 @@
     font-size: 20px;
 }
 
-.container-forgot-password .message {
-    line-height: 22px;
+.container-forgot-password .fg {
+    margin-top: 15px;
 }
 
+.container-forgot-password .new_password {
+    /* display: none; */
+}
 
 
 /* END FORGOT PASSWORD FORM */

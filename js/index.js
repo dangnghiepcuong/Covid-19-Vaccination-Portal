@@ -237,12 +237,18 @@ $(document).ready(function () {
     })
 
     //HANDLE FORGOT PASSWORD
-    $('#btn-forgot-password').click(function () {
+    $('#btn-reset-password').click(function () {
         $('#container-forgot-password').find('.message').text("");
 
         username = $('#container-forgot-password').find('input[name="username"').val();
         if (username == '') {
-            $('#container-forgot-password').find('.message').text('Nhập SĐT/Tên tài khoản!');
+            $('#container-forgot-password').find('.msg1').text('Nhập SĐT/Tên tài khoản!');
+            return;
+        }
+
+        capcha = $('#container-forgot-password').find('input[name="capcha"').val();
+        if (username == '') {
+            $('#container-forgot-password').find('.msg2').text('Nhập mã xác nhận!');
             return;
         }
 
@@ -250,7 +256,7 @@ $(document).ready(function () {
             cache: false,
             url: 'HandleForgotPassword.php',
             type: 'POST',
-            data: { username: username},
+            data: { method: 'SendEmail', username: username},
             success: function (result) {    //button click to login
                 if (result.substring(0, 5) == 'ERROR') {    //EXCEPTION
                     alert(result);
