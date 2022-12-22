@@ -189,28 +189,33 @@ if (!defined('browsable')) {
 <!-- FORGOT PASSWORD FORM -->
 <div class="form container-forgot-password" id="container-forgot-password">
     <p class="title">Quên mật khẩu</p>
-    <div>
+    <br>
+    <div class="fg">
         <label for="username">SĐT/Tên tài khoản</label>
         <input type="text" name="username" required>
         <hr>
+        <div class="message msg1"></div>
     </div>
 
-    <div class="verifind_account">
+    <div class="verifind_account fg">
         <label for="capcha">Nhập mã xác nhận</label>
         <input type="text" name="capcha" required>
         <hr>
-        <div class="message"></div>
+        <div class="message msg2"></div>
     </div>
-    <div class="new_password">
+    <div class="new_password fg">
         <label for="password">Mật khẩu mới</label>
         <input type="password" name="password" required>
         <hr>
         <br>
+        <div class="message msg3"></div>
         <label for="repeat-password">Nhập lại mật khẩu mới</label>
         <input type="password" name="repeat-password" required>
         <hr>
+        <div class="message msg4"></div>
     </div>
 
+    <br>
     <div class="btn-long" id="btn-reset-password">Xác nhận</div>
 
 </div>

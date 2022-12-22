@@ -21,7 +21,10 @@ $row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS);
 if ($row == false) {
     echo 'NoAccount';    // no account existed
 } else {
-    SendEmail();
+    // if (isset($_POST['method'])) {
+    //     $method = $_POST['method'];
+    //     $method();
+    // }
 }
 
 function SendEmail()
