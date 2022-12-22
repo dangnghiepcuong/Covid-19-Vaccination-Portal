@@ -193,8 +193,8 @@ flex-grow: 0;
 .progress {
     height: 20px;
     margin-bottom: 20px;
-    margin-left: 2px;
-    margin-right: 2px;
+    margin-left: 10px;
+    margin-right: 10px;
     overflow: hidden;
     background-color: #f5f5f5;
     border-radius: 4px;
@@ -394,5 +394,6 @@ h1, h2, h3, h4, h5, h6 {
     position: sticky;
     top: 0;
     background-color: #FFFFFF;
+    z-index: 2;
 }
 
