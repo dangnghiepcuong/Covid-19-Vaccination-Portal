@@ -151,12 +151,12 @@ function SelectScheduleValue()
     }
 
     while (($row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS)) != false) {
-        $_SESSION['LimitDay'] = $row['LIMITDAY'];
-        $_SESSION['LimitNoon'] = $row['LIMITNOON'];
-        $_SESSION['LimitNight'] = $row['LIMITNIGHT'];
+        $_COOKIE['LimitDay'] = $row['LIMITDAY'];
+        $_COOKIE['LimitNoon'] = $row['LIMITNOON'];
+        $_COOKIE['LimitNight'] = $row['LIMITNIGHT'];
     }
 
-    echo $_SESSION['LimitDay'];
+    echo $_COOKIE['LimitDay'];
 }
 
 function UpdateSchedule()
@@ -166,15 +166,15 @@ function UpdateSchedule()
     $sql = "begin SCHED_UPDATE_RECORD(:id, :day, :noon, :night); end;";
 
     if ($_POST['limitday'] == -1)
-        $_POST['limitday'] = $_SESSION['LimitDay'];
+        $_POST['limitday'] = $_COOKIE['LimitDay'];
     if ($_POST['limitnoon'] == -1)
-        $_POST['limitnoon'] = $_SESSION['LimitNoon'];
+        $_POST['limitnoon'] = $_COOKIE['LimitNoon'];
     if ($_POST['limitnight'] == -1)
-        $_POST['limitnight'] = $_SESSION['LimitNight'];
+        $_POST['limitnight'] = $_COOKIE['LimitNight'];
 
-    unset($_SESSION['LimitDay']);
-    unset($_SESSION['LimitNoon']);
-    unset($_SESSION['LimitNight']);
+    unset($_COOKIE['LimitDay']);
+    unset($_COOKIE['LimitNoon']);
+    unset($_COOKIE['LimitNight']);
 
     $command = oci_parse($connection, $sql);
     oci_bind_by_name($command, ':id', $_POST['SchedID']);

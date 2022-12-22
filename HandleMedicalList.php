@@ -25,20 +25,21 @@ while (($row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS)) != false
     $form->set_filleddate($row['FILLEDDATE']);
     $form->set_choice($row['CHOICE']);
     $form->set_id($row['ID']);
+    $date = date_create($form->get_filleddate());
 
     if ($form->get_choice() == "0000") {
         $result .=
             '<div class="form-medical">               
-                    <p class="title">Đối tượng: ' . $_SESSION['CitizenProfile']->get_fullname() . '</p>
-                    <p class="date">Ngày thực hiện khai báo: ' . $form->get_filleddate() . '</p>
-                    <p class="detail">Sức khỏe bình thường</p>                               
+                    <p class="title">Đối tượng: ' . $_SESSION['CitizenProfile']->get_fullname() . ' (ID: ' . $_SESSION['CitizenProfile']->get_id() .')</p>
+                    <p class="date">Ngày thực hiện khai báo: ' . date_format($date,"d-m-Y") . '</p>
+                    <p class="detail-good">Sức khỏe bình thường - Đạt điều kiện sức khỏe tiêm chủng</p>                               
             </div>';
     } else {
         $result .=
             '<div class="form-medical">               
-                    <p class="title">Đối tượng: ' . $_SESSION['CitizenProfile']->get_fullname() . '</p>
-                    <p class="date">Ngày thực hiện khai báo: ' . $form->get_filleddate() . '</p>
-                    <p class="detail">Sức khỏe không tốt/không đảm bảo</p>                 
+                    <p class="title">Đối tượng: ' . $_SESSION['CitizenProfile']->get_fullname() . ' (ID: ' . $_SESSION['CitizenProfile']->get_id() .')</p>
+                    <p class="date">Ngày thực hiện khai báo: ' . date_format($date,"d-m-Y") . '</p>
+                    <p class="detail-bad">Sức khỏe không tốt/không đảm bảo</p>                 
             </div>';
                 
     }

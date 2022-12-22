@@ -1,6 +1,6 @@
 $(document).ready(function () {
     // LOAD FRONT END DATA
-    menu_title = '<a href="CitizenAccountInfo.php">Thông tin tài khoản</a>'
+    menu_title = '<a href="CitizenRelative.php">Thêm người thân</a>'
     $('#function-navigation-bar-title').html(menu_title)
 
     homepage = '<a href="index.php">Trang chủ</a>'
@@ -9,7 +9,7 @@ $(document).ready(function () {
     subpage = '<a href="CitizenProfile.php">Công dân</a>'
     $('#subpage-path').html(subpage)
 
-    selected_function = '<a href="CitizenAccountInfo.php">Thông tin tài khoản</a>'
+    selected_function = '<a href="CitizenRelative.php">Thêm người thân</a>'
     $('#selected-function-path').html(selected_function)
 
     $('#function-menu-title').text('Trang công dân')
@@ -22,7 +22,5 @@ $(document).ready(function () {
     menu += '<br><a href="CitizenRelative.php"><li>Thêm người thân</li></a>'
 
     $('#function-menu-list').find('ul').html(menu)
-    // END LOAD FRONT END DATA
 
-    
 })
