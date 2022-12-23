@@ -38,9 +38,6 @@ $(document).ready(function () {
         browsetext = $('#output').val()
         browseimage = $('#input-browse-image').val()
 
-        alert(browsetext);
-        alert(browseimage);
-
         // alert (serial);
         // alert (orgid);
         // alert (title);
