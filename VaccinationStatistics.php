@@ -2131,6 +2131,562 @@ $org = $_SESSION['OrgProfile'];
                                                     </td>
                                                 </tr>
 
+                                                <!-- Tay Ninh -->
+                                                <tr class="ng-star-inserted" id="Tay-Ninh">
+                                                    <td class="text-center" style="width: 42px;">36</td>
+                                                    <td class="text-left" style="width: 100px">Tây Ninh</td>
+                                                    <td class="text-center">1,658,187</td>
+                                                    <td class="text-center">2,055,900</td>
+                                                    <td class="text-center">954,662</td>
+                                                    <td class="text-center">3,057,930</td>
+
+                                                    <!--  -->
+                                                    <td class="text-center">
+                                                        <small class="d-flex w-100 clb">86.85 %</small>
+                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(198, 83, 18); width:86.85%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+                                                    <!--  -->
+                                                    <td class="text-center">
+                                                        <small class="d-flex w-100 clb">107.68 %</small>
+                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(5, 147, 207); width:107.68%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+                                                    <!--  -->
+                                                    <td class="text-center">
+                                                        <small class="d-flex w-100 clb">231.5 %</small>
+                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(0, 136, 79); width:231.5%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+                                                    <!--  -->
+                                                    <td class="text-center">
+                                                        <small class="d-flex w-100 clb">148.74 %</small>
+                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(175, 134, 18); width:148.74%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+                                                    <!--  -->
+                                                    <td class="text-center">
+                                                        <small class="d-flex w-100 clb">1.51 %</small>
+                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(45, 33, 136); width:1.51%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <!-- Vinh Phuc -->
+                                                <tr class="ng-star-inserted" id="Vinh-Phuc">
+                                                    <td class="text-center" style="width: 42px;">37</td>
+                                                    <td class="text-left" style="width: 100px">Vĩnh Phúc</td>
+                                                    <td class="text-center">1,453,409</td>
+                                                    <td class="text-center">1,462,250</td>
+                                                    <td class="text-center">789,896</td>
+                                                    <td class="text-center">3,007,540</td>
+
+                                                    <!--  -->
+                                                    <td class="text-center">
+                                                        <small class="d-flex w-100 clb">92 %</small>
+                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(198, 83, 18); width:92%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+                                                    <!--  -->
+                                                    <td class="text-center">
+                                                        <small class="d-flex w-100 clb">92.56 %</small>
+                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(5, 147, 207); width:92.56%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+                                                    <!--  -->
+                                                    <td class="text-center">
+                                                        <small class="d-flex w-100 clb">244.05 %</small>
+                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(0, 136, 79); width: 244.05%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+                                                    <!--  -->
+                                                    <td class="text-center">
+                                                        <small class="d-flex w-100 clb">205.68 %</small>
+                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(175, 134, 18); width:205.68%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+                                                    <!--  -->
+                                                    <td class="text-center">
+                                                        <small class="d-flex w-100 clb">1.08 %</small>
+                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(45, 33, 136); width:1.08%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <!-- Ba Ria VT -->
+                                                <tr class="ng-star-inserted" id="BRVT">
+                                                    <td class="text-center" style="width: 42px;">38</td>
+                                                    <td class="text-left" style="width: 100px">Bà Rịa - Vũng Tàu</td>
+                                                    <td class="text-center">1,563,924</td>
+                                                    <td class="text-center">2,034,410</td>
+                                                    <td class="text-center">891,244</td>
+                                                    <td class="text-center">3,039,800</td>
+
+                                                    <!--  -->
+                                                    <td class="text-center">
+                                                        <small class="d-flex w-100 clb">87.74 %</small>
+                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(198, 83, 18); width:87.74%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+                                                    <!--  -->
+                                                    <td class="text-center">
+                                                        <small class="d-flex w-100 clb">114.13 %</small>
+                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(5, 147, 207); width:114.13%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+                                                    <!--  -->
+                                                    <td class="text-center">
+                                                        <small class="d-flex w-100 clb">244.9 %</small>
+                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(0, 136, 79); width: 244.9%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+                                                    <!--  -->
+                                                    <td class="text-center">
+                                                        <small class="d-flex w-100 clb">149.42 %</small>
+                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(175, 134, 18); width:149.42%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+                                                    <!--  -->
+                                                    <td class="text-center">
+                                                        <small class="d-flex w-100 clb">1.5 %</small>
+                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(45, 33, 136); width:1.5%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <!-- Da Nang -->
+                                                <tr class="ng-star-inserted" id="Da-Nang">
+                                                    <td class="text-center" style="width: 42px;">39</td>
+                                                    <td class="text-left" style="width: 100px">Đà Nẵng</td>
+                                                    <td class="text-center">1,571,173</td>
+                                                    <td class="text-center">1,720,782</td>
+                                                    <td class="text-center">885,070</td>
+                                                    <td class="text-center">2,862,101</td>
+
+                                                    <!--  -->
+                                                    <td class="text-center">
+                                                        <small class="d-flex w-100 clb">88.76 %</small>
+                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(198, 83, 18); width:88.76%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+                                                    <!--  -->
+                                                    <td class="text-center">
+                                                        <small class="d-flex w-100 clb">97.21 %</small>
+                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(5, 147, 207); width:97.21%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+                                                    <!--  -->
+                                                    <td class="text-center">
+                                                        <small class="d-flex w-100 clb">224.89 %</small>
+                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(0, 136, 79); width: 224.89%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+                                                    <!--  -->
+                                                    <td class="text-center">
+                                                        <small class="d-flex w-100 clb">166.33 %</small>
+                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(175, 134, 18); width:166.33%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+                                                    <!--  -->
+                                                    <td class="text-center">
+                                                        <small class="d-flex w-100 clb">1.27 %</small>
+                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(45, 33, 136); width:1.27%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <!-- Thua Thien Hue -->
+                                                <tr class="ng-star-inserted" id="TTH">
+                                                    <td class="text-center" style="width: 42px;">40</td>
+                                                    <td class="text-left" style="width: 100px">Thừa Thiên Huế</td>
+                                                    <td class="text-center">1,481,288</td>
+                                                    <td class="text-center">1,616,626</td>
+                                                    <td class="text-center">779,911</td>
+                                                    <td class="text-center">2,802,408</td>
+
+                                                    <!--  -->
+                                                    <td class="text-center">
+                                                        <small class="d-flex w-100 clb">94.97 %</small>
+                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(198, 83, 18); width:94.97%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+                                                    <!--  -->
+                                                    <td class="text-center">
+                                                        <small class="d-flex w-100 clb">103.64 %</small>
+                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(5, 147, 207); width:103.64%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+                                                    <!--  -->
+                                                    <td class="text-center">
+                                                        <small class="d-flex w-100 clb">241.93 %</small>
+                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(0, 136, 79); width: 241.93%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+                                                    <!--  -->
+                                                    <td class="text-center">
+                                                        <small class="d-flex w-100 clb">173.35 %</small>
+                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(175, 134, 18); width:173.35%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+                                                    <!--  -->
+                                                    <td class="text-center">
+                                                        <small class="d-flex w-100 clb">1.19 %</small>
+                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(45, 33, 136); width:1.19%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <!-- Vinh Long -->
+                                                <tr class="ng-star-inserted" id="Vinh=Long">
+                                                    <td class="text-center" style="width: 42px;">41</td>
+                                                    <td class="text-left" style="width: 100px">Vĩnh Long</td>
+                                                    <td class="text-center">1,461,149</td>
+                                                    <td class="text-center">1,733,130</td>
+                                                    <td class="text-center">769,026</td>
+                                                    <td class="text-center">3,091,815</td>
+
+                                                    <!--  -->
+                                                    <td class="text-center">
+                                                        <small class="d-flex w-100 clb">95 %</small>
+                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(198, 83, 18); width:95%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+                                                    <!--  -->
+                                                    <td class="text-center">
+                                                        <small class="d-flex w-100 clb">112.68 %</small>
+                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(5, 147, 207); width:112.68%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+                                                    <!--  -->
+                                                    <td class="text-center">
+                                                        <small class="d-flex w-100 clb">249.25 %</small>
+                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(0, 136, 79); width: 249.25%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+                                                    <!--  -->
+                                                    <td class="text-center">
+                                                        <small class="d-flex w-100 clb">178.39 %</small>
+                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(175, 134, 18); width:178.39%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+                                                    <!--  -->
+                                                    <td class="text-center">
+                                                        <small class="d-flex w-100 clb">1.28 %</small>
+                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(45, 33, 136); width:1.28%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <!-- Tra Vinh -->
+                                                <tr class="ng-star-inserted" id="Tra-Vinh">
+                                                    <td class="text-center" style="width: 42px;">42</td>
+                                                    <td class="text-left" style="width: 100px">Trà Vinh</td>
+                                                    <td class="text-center">1,396,109</td>
+                                                    <td class="text-center">1,353,410</td>
+                                                    <td class="text-center">734,794</td>
+                                                    <td class="text-center">2,664,931</td>
+
+                                                    <!--  -->
+                                                    <td class="text-center">
+                                                        <small class="d-flex w-100 clb">95 %</small>
+                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(198, 83, 18); width:95%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+                                                    <!--  -->
+                                                    <td class="text-center">
+                                                        <small class="d-flex w-100 clb">92.09 %</small>
+                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(5, 147, 207); width:92.09%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+                                                    <!--  -->
+                                                    <td class="text-center">
+                                                        <small class="d-flex w-100 clb">241.1 %</small>
+                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(0, 136, 79); width:241.1%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+                                                    <!--  -->
+                                                    <td class="text-center">
+                                                        <small class="d-flex w-100 clb">196.9 %</small>
+                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(175, 134, 18); width:196.9%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+                                                    <!--  -->
+                                                    <td class="text-center">
+                                                        <small class="d-flex w-100 clb">1 %</small>
+                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(45, 33, 136); width:1%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <!-- Binh Phuoc -->
+                                                <tr class="ng-star-inserted" id="Binh-Phuoc">
+                                                    <td class="text-center" style="width: 42px;">43</td>
+                                                    <td class="text-left" style="width: 100px">Bình Phước</td>
+                                                    <td class="text-center">1,285,789</td>
+                                                    <td class="text-center">1,528,060</td>
+                                                    <td class="text-center">741,800</td>
+                                                    <td class="text-center">2,688,723</td>
+
+                                                    <!--  -->
+                                                    <td class="text-center">
+                                                        <small class="d-flex w-100 clb">86.67 %</small>
+                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(198, 83, 18); width:86.67%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+                                                    <!--  -->
+                                                    <td class="text-center">
+                                                        <small class="d-flex w-100 clb">103 %</small>
+                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(5, 147, 207); width:103%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+                                                    <!--  -->
+                                                    <td class="text-center">
+                                                        <small class="d-flex w-100 clb">243.06 %</small>
+                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(0, 136, 79); width:243.06%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+                                                    <!--  -->
+                                                    <td class="text-center">
+                                                        <small class="d-flex w-100 clb">175.96 %</small>
+                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(175, 134, 18); width:175.96%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+                                                    <!--  -->
+                                                    <td class="text-center">
+                                                        <small class="d-flex w-100 clb">1.12 %</small>
+                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(45, 33, 136); width:1.12%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+
+                                                <!-- Ninh Binh -->
+                                                <tr class="ng-star-inserted" id="Ninh-Binh">
+                                                    <td class="text-center" style="width: 42px;">44</td>
+                                                    <td class="text-left" style="width: 100px">Ninh Bình</td>
+                                                    <td class="text-center">1,279,525</td>
+                                                    <td class="text-center">1,239,970</td>
+                                                    <td class="text-center">695,394</td>
+                                                    <td class="text-center">2,452,906</td>
+
+                                                    <!--  -->
+                                                    <td class="text-center">
+                                                        <small class="d-flex w-100 clb">92 %</small>
+                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(198, 83, 18); width:92%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+                                                    <!--  -->
+                                                    <td class="text-center">
+                                                        <small class="d-flex w-100 clb">89.16 %</small>
+                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(5, 147, 207); width:89.16%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+                                                    <!--  -->
+                                                    <td class="text-center">
+                                                        <small class="d-flex w-100 clb">234.44 %</small>
+                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(0, 136, 79); width:234.44%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+                                                    <!--  -->
+                                                    <td class="text-center">
+                                                        <small class="d-flex w-100 clb">197.82 %</small>
+                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(175, 134, 18); width:197.82%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+                                                    <!--  -->
+                                                    <td class="text-center">
+                                                        <small class="d-flex w-100 clb">0.91 %</small>
+                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(45, 33, 136); width:0.91%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <!--  Phu Yen-->
+                                                <tr class="ng-star-inserted" id="Phu-Yen">
+                                                    <td class="text-center" style="width: 42px;">45</td>
+                                                    <td class="text-left" style="width: 100px">Phú Yên</td>
+                                                    <td class="text-center">1,171,033</td>
+                                                    <td class="text-center">1,108,954</td>
+                                                    <td class="text-center">649,673</td>
+                                                    <td class="text-center">2,029,570</td>
+
+                                                    <!--  -->
+                                                    <td class="text-center">
+                                                        <small class="d-flex w-100 clb">90.12 %</small>
+                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(198, 83, 18); width:90.12%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+                                                    <!--  -->
+                                                    <td class="text-center">
+                                                        <small class="d-flex w-100 clb">85.35 %</small>
+                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(5, 147, 207); width:85.35%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+                                                    <!--  -->
+                                                    <td class="text-center">
+                                                        <small class="d-flex w-100 clb">230.5 %</small>
+                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(0, 136, 79); width:230.5%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+                                                    <!--  -->
+                                                    <td class="text-center">
+                                                        <small class="d-flex w-100 clb">183.02 %</small>
+                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(175, 134, 18); width:183.02%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+                                                    <!--  -->
+                                                    <td class="text-center">
+                                                        <small class="d-flex w-100 clb">0.82 %</small>
+                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(45, 33, 136); width:0.82%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                
+
+
+
+
 
 
 
