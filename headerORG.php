@@ -22,16 +22,16 @@ if (!defined('browsable')) {
                     <li class="menu-section">Trang chủ</li>
                 </a>
 
+                <a href="#">
+                    <li class="menu-section">Thống kê</li>
+                </a>
+
                 <a href="ORGSchedule.php">
                     <li class="menu-section" id="menu-section-schedule">Lịch tiêm</li>
                 </a>
 
                 <a href="#">
                     <li class="menu-section" id="menu-section-post">Văn bản</li>
-                </a>
-
-                <a href="VaccinationStatistics.php">
-                    <li class="menu-section">Thống kê</li>
                 </a>
             </ul>
         </div>

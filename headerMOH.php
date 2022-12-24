@@ -22,7 +22,7 @@ if (!defined('browsable')) {
                 </a>
 
                 <a href="#">
-                    <li class="menu-section">Dữ liệu</li>
+                    <li class="menu-section">Thống kê</li>
                 </a>
 
                 <a href="SearchInformation.php">
