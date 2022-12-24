@@ -21,6 +21,10 @@ if (!defined('browsable')) {
                     <li class="menu-section">Trang chủ</li>
                 </a>
 
+                <a href="#">
+                    <li class="menu-section">Thống kê</li>
+                </a>
+
                 <a href="MedicalFormSubmit.php">
                     <li class="menu-section">Khai báo</li>
                 </a>
