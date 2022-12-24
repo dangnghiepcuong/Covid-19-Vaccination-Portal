@@ -208,18 +208,18 @@ $org = $_SESSION['OrgProfile'];
                                         <tbody style="height: 450px;">
                                             <!-- Ha Noi -->
                                                 <tr class="ng-star-inserted" id="Ha-Noi">
-                                                    <td _ngcontent-twr-c15="" class="text-center" style="width: 42px;">1</td>
-                                                    <td _ngcontent-twr-c15="" class="text-left" style="width: 100px">Hà Nội </td>
-                                                    <td _ngcontent-twr-c15="" class="text-center">11,376,541</td>
-                                                    <td _ngcontent-twr-c15="" class="text-center">12,294,742</td>
-                                                    <td _ngcontent-twr-c15="" class="text-center">6,200,000</td>
-                                                    <td _ngcontent-twr-c15="" class="text-center">19,040,925</td>
+                                                    <td   class="text-center" style="width: 42px;">1</td>
+                                                    <td   class="text-left" style="width: 100px">Hà Nội </td>
+                                                    <td   class="text-center">11,376,541</td>
+                                                    <td   class="text-center">12,294,742</td>
+                                                    <td   class="text-center">6,200,000</td>
+                                                    <td   class="text-center">19,040,925</td>
 
                                                     <!--  -->
                                                     <td class="text-center">
                                                         <small class="d-flex w-100 clb">91.75 %</small>
                                                         <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
-                                                            <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="calculateRate(item?.totalVaccineAllocated, item?.popOverEighteen)" class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(198, 83, 18); width: 91.7463%;">
+                                                            <div  class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(198, 83, 18); width: 91.7463%;">
                                                             </div>
                                                         </div>
                                                     </td>
@@ -228,7 +228,7 @@ $org = $_SESSION['OrgProfile'];
                                                     <td class="text-center">
                                                         <small class="d-flex w-100 clb">99.15 %</small>
                                                         <div class="progress" class="progress-1" style="position: relative;height: 14px; border-radius: 15px;">
-                                                            <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="calculateRate(item?.totalVaccineAllocatedReality, item?.popOverEighteen)" class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(5, 147, 207); width: 99.1511%;">
+                                                            <div  class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(5, 147, 207); width: 99.1511%;">
                                                             </div>
                                                         </div>
                                                     </td>
@@ -237,7 +237,7 @@ $org = $_SESSION['OrgProfile'];
                                                     <td class="text-center">
                                                         <small class="d-flex w-100 clb">213.39 %</small>
                                                         <div class="progress" class="progress-1" style="position: relative;height: 14px; border-radius: 15px;">
-                                                            <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="calculateRate(item?.totalVaccineAllocatedReality, item?.popOverEighteen)" class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(0, 136, 79); width: 213.39%;">
+                                                            <div  class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(0, 136, 79); width: 213.39%;">
                                                             </div>
                                                         </div>
                                                     </td>
@@ -246,16 +246,16 @@ $org = $_SESSION['OrgProfile'];
                                                     <td class="text-center">
                                                         <small class="d-flex w-100 clb">154.87 %</small>
                                                         <div class="progress" class="progress-1" style="position: relative;height: 14px; border-radius: 15px;">
-                                                            <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="calculateRate(item?.totalVaccineAllocatedReality, item?.popOverEighteen)" class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(175, 134, 18); width: 154.87%;">
+                                                            <div  class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(175, 134, 18); width: 154.87%;">
                                                             </div>
                                                         </div>
                                                     </td>
 
                                                     <!--  -->
                                                     <td class="text-center">
-                                                        <small class="d-flex w-100 clb">10.8 %</small>
+                                                        <small class="d-flex w-100 clb">9.05%</small>
                                                         <div class="progress" class="progress-1" style="position: relative;height: 14px; border-radius: 15px;">
-                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(45, 33, 136); width: 10.8%;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(45, 33, 136); width: 9.05%;">
                                                             </div>
                                                         </div>
                                                     </td>
@@ -316,173 +316,173 @@ $org = $_SESSION['OrgProfile'];
                                                     </td>
                                                 </tr>
 
-                                                <!-- Ha Noi -->
-                                                <tr class="ng-star-inserted" id="Ha-Noi">
-                                                    <td _ngcontent-twr-c15="" class="text-center" style="width: 42px;">3</td>
-                                                    <td _ngcontent-twr-c15="" class="text-left" style="width: 100px">Hà Nội </td>
-                                                    <td _ngcontent-twr-c15="" class="text-center">11,376,541</td>
-                                                    <td _ngcontent-twr-c15="" class="text-center">12,294,742</td>
-                                                    <td _ngcontent-twr-c15="" class="text-center">6,200,000</td>
-                                                    <td _ngcontent-twr-c15="" class="text-center">19,040,925</td>
+                                                <!-- Thanh Hoa -->
+                                                <tr class="ng-star-inserted" id="Thanh-Hoa">
+                                                    <td class="text-center" style="width: 42px;">3</td>
+                                                    <td class="text-left" style="width: 100px">Thanh Hóa </td>
+                                                    <td class="text-center">4,794,541</td>
+                                                    <td class="text-center">3,877,590</td>
+                                                    <td class="text-center">2,393,453</td>
+                                                    <td class="text-center">9,297,198</td>
 
                                                     <!--  -->
                                                     <td class="text-center">
-                                                        <small class="d-flex w-100 clb">91.75 %</small>
+                                                        <small class="d-flex w-100 clb">100.16%</small>
                                                         <div class="progress" class="progress-1" style="position: relative;height: 14px; border-radius: 15px;">
-                                                            <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="calculateRate(item?.totalVaccineAllocated, item?.popOverEighteen)" class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(198, 83, 18); width: 91.7463%;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(198, 83, 18); width: 100.16%;">
                                                             </div>
                                                         </div>
                                                     </td>
 
                                                     <!--  -->
                                                     <td class="text-center">
-                                                        <small class="d-flex w-100 clb">99.15 %</small>
+                                                        <small class="d-flex w-100 clb">81%</small>
                                                         <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
-                                                            <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="calculateRate(item?.totalVaccineAllocatedReality, item?.popOverEighteen)" class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(5, 147, 207); width: 99.1511%;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(5, 147, 207); width:81%;">
                                                             </div>
                                                         </div>
                                                     </td>
 
                                                     <!--  -->
                                                     <td class="text-center">
-                                                        <small class="d-flex w-100 clb">213.39 %</small>
+                                                        <small class="d-flex w-100 clb">238.72%</small>
                                                         <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
-                                                            <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="calculateRate(item?.totalVaccineAllocatedReality, item?.popOverEighteen)" class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(0, 136, 79); width: 213.39%;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(0, 136, 79); width: 238.72%;">
                                                             </div>
                                                         </div>
                                                     </td>
 
                                                     <!--  -->
                                                     <td class="text-center">
-                                                        <small class="d-flex w-100 clb">154.87 %</small>
+                                                        <small class="d-flex w-100 clb">239.77%</small>
                                                         <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
-                                                            <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="calculateRate(item?.totalVaccineAllocatedReality, item?.popOverEighteen)" class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(175, 134, 18); width: 154.87%;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(175, 134, 18); width: 239.77%;">
                                                             </div>
                                                         </div>
                                                     </td>
 
                                                     <!--  -->
                                                     <td class="text-center">
-                                                        <small class="d-flex w-100 clb">9.05 %</small>
+                                                        <small class="d-flex w-100 clb">2.85 %</small>
                                                         <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
-                                                            <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="calculateRate(item?.totalVaccineAllocatedReality, item?.popOverEighteen)" class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(45, 33, 136); width: 9.05%;">
+                                                            <div  class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(45, 33, 136); width: 2.85%;">
                                                             </div>
                                                         </div>
                                                     </td>
                                                 </tr>
 
-                                                <!-- HCM -->
-                                                <tr class="ng-star-inserted" id="HCM">
+                                                <!-- Nghe An -->
+                                                <tr class="ng-star-inserted" id="Nghe-An">
                                                     <td class="text-center" style="width: 42px;">4</td>
-                                                    <td class="text-left" style="width: 100px">Hồ Chí Minh </td>
-                                                    <td class="text-center">13,794,299</td>
-                                                    <td class="text-center">14,637,020</td>
-                                                    <td class="text-center">7,208,800</td>
-                                                    <td class="text-center">23,117,024</td>
+                                                    <td class="text-left" style="width: 100px">Nghệ An</td>
+                                                    <td class="text-center">4,267,816</td>
+                                                    <td class="text-center">3,900,900</td>
+                                                    <td class="text-center">1,960,668</td>
+                                                    <td class="text-center">7,804,532</td>
 
                                                     <!--  -->
                                                     <td class="text-center">
-                                                        <small class="d-flex w-100 clb">95.68 %</small>
+                                                        <small class="d-flex w-100 clb">108.84%</small>
                                                         <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
-                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(198, 83, 18); width: 95.68%;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(198, 83, 18); width:108.84%;">
                                                             </div>
                                                         </div>
                                                     </td>
 
                                                     <!--  -->
                                                     <td class="text-center">
-                                                        <small class="d-flex w-100 clb">101.52 %</small>
+                                                        <small class="d-flex w-100 clb">99.48%</small>
                                                         <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
-                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(5, 147, 207); width: 101.52%;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(5, 147, 207); width: 99.48%;">
                                                             </div>
                                                         </div>
                                                     </td>
 
                                                     <!--  -->
                                                     <td class="text-center">
-                                                        <small class="d-flex w-100 clb">225.91 %</small>
+                                                        <small class="d-flex w-100 clb">250.61%</small>
                                                         <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
-                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(0, 136, 79); width: 225.91%;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(0, 136, 79); width: 250.61%;">
                                                             </div>
                                                         </div>
                                                     </td>
 
                                                     <!--  -->
                                                     <td class="text-center">
-                                                        <small class="d-flex w-100 clb">157.94 %</small>
+                                                        <small class="d-flex w-100 clb">200.07%</small>
                                                         <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
-                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(175, 134, 18); width: 157.94%;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(175, 134, 18); width: 200.07%;">
                                                             </div>
                                                         </div>
                                                     </td>
 
                                                     <!--  -->
                                                     <td class="text-center">
-                                                        <small class="d-flex w-100 clb">10.8 %</small>
+                                                        <small class="d-flex w-100 clb">2.87%</small>
                                                         <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
-                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(45, 33, 136); width: 10.8%;">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-
-                                                <!-- Ha Noi -->
-                                                <tr class="ng-star-inserted" id="Ha-Noi">
-                                                    <td _ngcontent-twr-c15="" class="text-center" style="width: 42px;">5</td>
-                                                    <td _ngcontent-twr-c15="" class="text-left" style="width: 100px">Hà Nội </td>
-                                                    <td _ngcontent-twr-c15="" class="text-center">11,376,541</td>
-                                                    <td _ngcontent-twr-c15="" class="text-center">12,294,742</td>
-                                                    <td _ngcontent-twr-c15="" class="text-center">6,200,000</td>
-                                                    <td _ngcontent-twr-c15="" class="text-center">19,040,925</td>
-
-                                                    <!--  -->
-                                                    <td class="text-center">
-                                                        <small class="d-flex w-100 clb">91.75 %</small>
-                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
-                                                            <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="calculateRate(item?.totalVaccineAllocated, item?.popOverEighteen)" class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(198, 83, 18); width: 91.7463%;">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-
-                                                    <!--  -->
-                                                    <td class="text-center">
-                                                        <small class="d-flex w-100 clb">99.15 %</small>
-                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
-                                                            <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="calculateRate(item?.totalVaccineAllocatedReality, item?.popOverEighteen)" class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(5, 147, 207); width: 99.1511%;">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-
-                                                    <!--  -->
-                                                    <td class="text-center">
-                                                        <small class="d-flex w-100 clb">213.39 %</small>
-                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
-                                                            <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="calculateRate(item?.totalVaccineAllocatedReality, item?.popOverEighteen)" class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(0, 136, 79); width: 213.39%;">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-
-                                                    <!--  -->
-                                                    <td class="text-center">
-                                                        <small class="d-flex w-100 clb">154.87 %</small>
-                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
-                                                            <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="calculateRate(item?.totalVaccineAllocatedReality, item?.popOverEighteen)" class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(175, 134, 18); width: 154.87%;">
-                                                            </div>
-                                                        </div>
-                                                    </td>
-
-                                                    <!--  -->
-                                                    <td class="text-center">
-                                                        <small class="d-flex w-100 clb">9.05 %</small>
-                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
-                                                            <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="calculateRate(item?.totalVaccineAllocatedReality, item?.popOverEighteen)" class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(45, 33, 136); width: 9.05%;">
+                                                            <div class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(45, 33, 136); width: 2.87%;">
                                                             </div>
                                                         </div>
                                                     </td>
                                                 </tr>
 
-                                                <!-- HCM -->
-                                                <tr class="ng-star-inserted" id="HCM">
+                                                <!-- Dong Nai -->
+                                                <tr class="ng-star-inserted" id="Dong Nai">
+                                                    <td   class="text-center" style="width: 42px;">5</td>
+                                                    <td   class="text-left" style="width: 100px">Đồng Nai </td>
+                                                    <td   class="text-center">4,256,053</td>
+                                                    <td   class="text-center">5,025,430</td>
+                                                    <td   class="text-center">2,306,671</td>
+                                                    <td   class="text-center">8,587,597</td>
+
+                                                    <!--  -->
+                                                    <td class="text-center">
+                                                        <small class="d-flex w-100 clb">92.26%</small>
+                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
+                                                            <div  class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(198, 83, 18); width: 92.26%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+                                                    <!--  -->
+                                                    <td class="text-center">
+                                                        <small class="d-flex w-100 clb">108.93%</small>
+                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
+                                                            <div  class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(5, 147, 207); width: 108.93%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+                                                    <!--  -->
+                                                    <td class="text-center">
+                                                        <small class="d-flex w-100 clb">283.17 %</small>
+                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
+                                                            <div  class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(0, 136, 79); width: 283.17%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+                                                    <!--  -->
+                                                    <td class="text-center">
+                                                        <small class="d-flex w-100 clb">170.88 %</small>
+                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
+                                                            <div  class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(175, 134, 18); width: 170.88%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+
+                                                    <!--  -->
+                                                    <td class="text-center">
+                                                        <small class="d-flex w-100 clb">3.7 %</small>
+                                                        <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
+                                                            <div  class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(45, 33, 136); width: 3.7%;">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <!-- Binh-Duong -->
+                                                <tr class="ng-star-inserted" id="Binh-Duong">
                                                     <td class="text-center" style="width: 42px;">6</td>
                                                     <td class="text-left" style="width: 100px">Hồ Chí Minh </td>
                                                     <td class="text-center">13,794,299</td>
@@ -537,18 +537,18 @@ $org = $_SESSION['OrgProfile'];
                                                 </tr>
 
                                                 <tr class="ng-star-inserted" id="Ha-Noi">
-                                                    <td _ngcontent-twr-c15="" class="text-center" style="width: 42px;">7</td>
-                                                    <td _ngcontent-twr-c15="" class="text-left" style="width: 100px">Hà Nội </td>
-                                                    <td _ngcontent-twr-c15="" class="text-center">11,376,541</td>
-                                                    <td _ngcontent-twr-c15="" class="text-center">12,294,742</td>
-                                                    <td _ngcontent-twr-c15="" class="text-center">6,200,000</td>
-                                                    <td _ngcontent-twr-c15="" class="text-center">19,040,925</td>
+                                                    <td   class="text-center" style="width: 42px;">7</td>
+                                                    <td   class="text-left" style="width: 100px">Hà Nội </td>
+                                                    <td   class="text-center">11,376,541</td>
+                                                    <td   class="text-center">12,294,742</td>
+                                                    <td   class="text-center">6,200,000</td>
+                                                    <td   class="text-center">19,040,925</td>
 
                                                     <!--  -->
                                                     <td class="text-center">
                                                         <small class="d-flex w-100 clb">91.75 %</small>
                                                         <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
-                                                            <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="calculateRate(item?.totalVaccineAllocated, item?.popOverEighteen)" class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(198, 83, 18); width: 91.7463%;">
+                                                            <div  class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(198, 83, 18); width: 91.7463%;">
                                                             </div>
                                                         </div>
                                                     </td>
@@ -557,7 +557,7 @@ $org = $_SESSION['OrgProfile'];
                                                     <td class="text-center">
                                                         <small class="d-flex w-100 clb">99.15 %</small>
                                                         <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
-                                                            <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="calculateRate(item?.totalVaccineAllocatedReality, item?.popOverEighteen)" class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(5, 147, 207); width: 99.1511%;">
+                                                            <div  class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(5, 147, 207); width: 99.1511%;">
                                                             </div>
                                                         </div>
                                                     </td>
@@ -566,7 +566,7 @@ $org = $_SESSION['OrgProfile'];
                                                     <td class="text-center">
                                                         <small class="d-flex w-100 clb">213.39 %</small>
                                                         <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
-                                                            <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="calculateRate(item?.totalVaccineAllocatedReality, item?.popOverEighteen)" class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(0, 136, 79); width: 213.39%;">
+                                                            <div  class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(0, 136, 79); width: 213.39%;">
                                                             </div>
                                                         </div>
                                                     </td>
@@ -575,7 +575,7 @@ $org = $_SESSION['OrgProfile'];
                                                     <td class="text-center">
                                                         <small class="d-flex w-100 clb">154.87 %</small>
                                                         <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
-                                                            <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="calculateRate(item?.totalVaccineAllocatedReality, item?.popOverEighteen)" class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(175, 134, 18); width: 154.87%;">
+                                                            <div  class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(175, 134, 18); width: 154.87%;">
                                                             </div>
                                                         </div>
                                                     </td>
@@ -584,7 +584,7 @@ $org = $_SESSION['OrgProfile'];
                                                     <td class="text-center">
                                                         <small class="d-flex w-100 clb">9.05 %</small>
                                                         <div class="progress" style="position: relative;height: 14px; border-radius: 15px;">
-                                                            <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="calculateRate(item?.totalVaccineAllocatedReality, item?.popOverEighteen)" class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(45, 33, 136); width: 9.05%;">
+                                                            <div  class="progress-bar" role="progressbar" style="height: 14px; border-radius: 15px; background-color: rgb(45, 33, 136); width: 9.05%;">
                                                             </div>
                                                         </div>
                                                     </td>
