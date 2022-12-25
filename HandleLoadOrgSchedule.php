@@ -1,4 +1,4 @@
-                   <?php
+<?php
 error_reporting(E_ERROR | E_PARSE);
 define('browsable', true);
 
@@ -121,6 +121,10 @@ function LoadSchedule($orgid = "")
         $sql .= " and OnDate <= :enddate";
     }
 
+    if ($_POST['vaccine'] != "") {
+        $sql .= " and VaccineID = :vaccine";
+    }
+
     $sql .= " order by OnDate";
 
     $command = oci_parse($connection, $sql);
@@ -130,6 +134,9 @@ function LoadSchedule($orgid = "")
         oci_bind_by_name($command, ':startdate', $_POST['startdate']);
     if ($_POST['enddate'] != "")
         oci_bind_by_name($command, ':enddate', $_POST['enddate']);
+    if ($_POST['vaccine'] != "")
+        oci_bind_by_name($command, ':vaccine', $_POST['vaccine']);
+
 
     $r = oci_execute($command);
     if (!$r) {
@@ -149,10 +156,10 @@ function LoadSchedule($orgid = "")
                                 <p class="attr-date-vaccine-serial">Ngày tiêm: ' . $row['ONDATE'] . ' - Vaccine:
                                 ' . $row['VACCINEID'] . ' - ' . $row['SERIAL'] . '</p>
                                 <div class="attr-time">'
-                                    .'<p>Buổi sáng: ' . $row['DAYREGISTERED'] . '/</p><p class="day" id="' . $row['LIMITDAY'] . '">' . $row['LIMITDAY'] . '</p>'
-                                    . '<p>&nbsp- Buổi trưa: ' . $row['NOONREGISTERED'] . '/</p><p class="noon" id="' . $row['LIMITNOON'] . '">' . $row['LIMITNOON'] . '</p>' 
-                                    . '<p>&nbsp- Buổi tối: ' . $row['NIGHTREGISTERED'] . '/</p><p class="night" id="' . $row['LIMITNIGHT'] . '">' . $row['LIMITNIGHT'] . '</p>'
-                                . '</div>
+                    . '<p>Buổi sáng: ' . $row['DAYREGISTERED'] . '/</p><p class="day" id="' . $row['LIMITDAY'] . '">' . $row['LIMITDAY'] . '</p>'
+                    . '<p>&nbsp- Buổi trưa: ' . $row['NOONREGISTERED'] . '/</p><p class="noon" id="' . $row['LIMITNOON'] . '">' . $row['LIMITNOON'] . '</p>'
+                    . '<p>&nbsp- Buổi tối: ' . $row['NIGHTREGISTERED'] . '/</p><p class="night" id="' . $row['LIMITNIGHT'] . '">' . $row['LIMITNIGHT'] . '</p>'
+                    . '</div>
                             </div>
                             <div class="interactive-area">
                                 <button class="btn-medium-filled btn-registration">Lượt đăng ký</button>
@@ -169,8 +176,8 @@ function LoadSchedule($orgid = "")
         case 2:
             while (($row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS)) != false) {
                 if ($row['LIMITDAY'] + $row['LIMITNOON'] + $row['LIMITNIGHT'])
-                $result .=
-                    '<div class="schedule object" id="' . $row['ID'] . '">
+                    $result .=
+                        '<div class="schedule object" id="' . $row['ID'] . '">
                         <div class="obj-attr">
                             <p class="attr-date">Lịch tiêm ngày: ' . $row['ONDATE'] . '</p>
                             <p class="attr-vaccine">Vaccine: ' . $row['VACCINEID'] . '</p>
