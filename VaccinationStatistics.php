@@ -140,7 +140,7 @@ define('browsable', true);
 
                 <div class='Chart-1'>
                     <div id='dvChart' style="display:inline-block">
-                        <canvas id="myChart" style="width:100%;max-width:500px; display:inline; align-items: center;margin-left: 28px;margin-right: 50px"></canvas>
+                        <canvas id="myChart" style="width:100%;max-width:500px; display:inline; align-items: center;margin-left: 150px;margin-right: 50px"></canvas>
                     </div>
 
                     <div id='dvChart2' style="display:inline-block">
@@ -150,7 +150,7 @@ define('browsable', true);
 
                 <br>
 
-                <div class='Chart-2'>
+                <!-- <div class='Chart-2'>
 
                     <div id='dvChart1' style="display:inline-block">
                         <canvas id="myChart-1" style="width:100%;max-width:500px; display:inline; align-items: center;margin-left: 28px;margin-right: 50px"></canvas>
@@ -159,7 +159,7 @@ define('browsable', true);
                     <div id='dvChart3' style="display:inline-block">
                         <canvas id="myChart-3" style="width:100%;max-width:500px; display:inline; align-items: center;margin-left: 28px;margin-right: 50px"></canvas>
                     </div>
-                </div>
+                </div> -->
 
 
                 <div class='col-lg-12 col-md-12 border-bound pt-3' style='margin-left:15px; margin-right:15px; margin-bottom: 20px; box-shadow: 0 4px 12px 0 rgb(34 41 47 / 12%)'>
