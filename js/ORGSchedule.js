@@ -86,7 +86,7 @@ $(document).ready(function () {
         SchedID = schedule.attr('id')
         SchedInfo = schedule.find('.obj-attr').find('.attr-date-vaccine-serial').text()
         $('.list-name-scheduleinfo').text(SchedInfo)
-        LoadScheduleRegistration(SchedID)
+        LoadScheduleRegistration(SchedID, SchedInfo.substring(11, 21))
     })
 
     $('#filter-registration').change(function(){
@@ -94,7 +94,7 @@ $(document).ready(function () {
         LoadScheduleRegistration(SchedID)
     })
 
-    function LoadScheduleRegistration(SchedID){
+    function LoadScheduleRegistration(SchedID, date){
         time = $('#time').find('option:selected').val()
         status = $('#status').find('option:selected').val()
 
@@ -102,7 +102,7 @@ $(document).ready(function () {
             cache: false,
             url: 'HandleScheduleManagement.php',
             type: 'POST',
-            data: { method: 'LoadScheduleRegistration', SchedID: SchedID, time: time, status: status },
+            data: { method: 'LoadScheduleRegistration', SchedID: SchedID, date: date, time: time, status: status },
             indexValue: { SchedID: SchedID },
             success: function (result) {
                 if (result.substring(0, 5) == 'ERROR') {    //EXCEPTION

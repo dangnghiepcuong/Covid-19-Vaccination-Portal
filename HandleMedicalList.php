@@ -7,7 +7,7 @@ session_start();
 
 include("DatabaseConnection.php");
 
-$sql = "select * from FORM where CitizenID = :citizenid and (to_date(filleddate,'DD-MM-YYYY') > (to_date(CURRENT_DATE,'DD-MM-YYYY') - :formdate))"; //SQL string
+$sql = "select * from FORM where CitizenID = :citizenid and (to_date(filleddate,'DD-MM-YYYY') > (to_date(CURRENT_DATE,'DD-MM-YYYY') - :formdate)) order by FilledDate desc, ID desc"; //SQL string
 $command = oci_parse($connection, $sql);                    //Prepare statement before execute
 oci_bind_by_name($command, ':citizenid', $_SESSION['CitizenProfile']->get_id());
 oci_bind_by_name($command, ':formdate', $_POST['formdate']);
