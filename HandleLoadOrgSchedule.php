@@ -142,6 +142,10 @@ function LoadSchedule($orgid = "")
     switch ($_SESSION['AccountInfo']->get_role()) {
         case 1:
             while (($row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS)) != false) {
+                $CancelButton = "";
+                if ($row['ONDATE'] > date("y-M-d"))
+                    $CancelButton = '<button class="btn-short-bordered btn-cancel">Hủy</button>';
+                    
                 $result .=
                     '<div class="schedule object" id="' . $row['ID'] . '">
                         <div class="holder-schedule">
@@ -157,7 +161,7 @@ function LoadSchedule($orgid = "")
                             <div class="interactive-area">
                                 <button class="btn-medium-filled btn-registration">Lượt đăng ký</button>
                                 <button class="btn-medium-bordered btn-update">Cập nhật</button>
-                                <button class="btn-short-bordered btn-cancel">Hủy</button>
+                                '.$CancelButton.'
                             </div>
                         </div>
                         <div class="holder-btn-expand-schedule">
