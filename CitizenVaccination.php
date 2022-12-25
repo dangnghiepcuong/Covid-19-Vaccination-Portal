@@ -123,7 +123,7 @@ $citizen = $_SESSION['CitizenProfile'];
 
                 <div class="filter-pane" id="filter-schedule">
                     <label for="start-date">Từ ngày</label>
-                    <input type="date" name="start-date" id="start-date">
+                    <input type="date" name="start-date" id="start-date" min="<?php echo date("Y-m-d") ?>">
 
                     <label for="end-date">Đến ngày</label>
                     <input type="date" name="end-date" id="end-date">
