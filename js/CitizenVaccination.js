@@ -93,7 +93,8 @@ $(document).ready(function () {
         $('#list-schedule').html('')
         org = $(this).parent()//.parent()
         if (org.css('margin-top') == '20px') {
-            $('#list-schedule').html('')
+            $('#list-schedule').html('Danh sách lịch tiêm')
+            $('.list-name .schedule').html('')
             org.css('margin', '3px 0px 3px 5px')
             org.css('width', '90%')
             org.find('.btn-expand-org').text('>')
@@ -109,7 +110,7 @@ $(document).ready(function () {
 
         orgid = org.attr('id')
         orgname = org.find('.obj-org-name').text()
-        $('.list-name .schedule').html('Lịch tiêm ' + orgname)
+        $('.list-name .schedule').html('DS lịch tiêm ' + orgname)
         $('.list-name .schedule').attr('id', orgid)
         LoadSchedule(orgid)
     })
