@@ -1,6 +1,25 @@
 <?php
-error_reporting(E_ERROR | E_PARSE);
-define('browsable', true);
+error_reporting(E_ERROR | E_PARSE); //Turn off warnings, errors still be alerted.
+/* define('browsable', true);  
+Define a variable named browsable = true on every php pages that can be accessed by users.
+Pages not defined this variable at first are checked the existence of its,
+this trick is used to prevent the direct access to separated elements files (such as: header, footer, etc.).
+Then the pages can be defined (or not) for the same using purpose.
+*/
+define('browsable', true);           
+
+/*
+These included .php files mean the php code inside is stand right the place it is placed
+At the very first lines of the code (before handling almost everything), 
+there is an if statement used to check the existence of the variable named 'browsable'.
+It means that only pages which defined the 'browsable' variable can access the included code.
+Browser can not read these file alone because of the prevention has been set.
+*/
+include("object_Account.php");
+include("object_Citizen.php");
+include("object_Organization.php");
+session_start();
+$citizen = new Citizen();
 ?>
 
 <!DOCTYPE html>
@@ -37,7 +56,33 @@ define('browsable', true);
 
 <body>
     <div id="return-header">
-        <?php
+    <?php
+        if (isset($_SESSION['AccountInfo']) && $_SESSION['AccountInfo']->get_status() == 1) {
+            switch ((int)$_SESSION['AccountInfo']->get_role()) {
+                case 0:
+                    if (isset($_SESSION['OrgProfile']) == false) {
+                        include("OrgLoadProfile.php");
+                    }
+                    include("headerMOH.php");
+                    break;
+                case 1:
+                    if (isset($_SESSION['OrgProfile']) == false) {
+                        include("OrgLoadProfile.php");
+                    }
+                    include("headerORG.php");
+                    break;
+                case 2:
+                    if (isset($_SESSION['CitizenProfile']) == false) {
+                        include("CitizenLoadProfile.php");
+                    }
+                    include("headerCitizen.php");
+                    break;
+                default:
+                    include("headerGeneral.php");
+                    break;
+            }
+            // echo '<script>alert("' . $_SESSION['CitizenProfile']->get_fullname() . '")</script>';
+        } else
             include("headerGeneral.php");
         ?>
     </div>
