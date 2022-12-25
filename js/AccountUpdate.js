@@ -73,7 +73,7 @@ $(document).ready(function () {
                         $('.form-message').text('Cập nhật mật khẩu thành công!')
                         break
                     case '!ChangePasswordUpdateAccount':
-                        $('.form-message').text('Cập nhật mật khẩu thành công!')
+                        $('.form-message').text('Cập nhật số điện thoại thành công!')
                         break
                     case '!ChangePassword!UpdateAccount':
                         return
