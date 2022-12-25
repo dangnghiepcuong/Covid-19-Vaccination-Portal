@@ -41,7 +41,7 @@ $(document).ready(function () {
             cache: false,
             url: 'HandleLoadOrgSchedule.php',
             type: 'POST',
-            data: { method: 'LoadSchedule', orgid: orgid, startdate: startdate, enddate: enddate},
+            data: { method: 'LoadOrgSchedule', orgid: orgid, startdate: startdate, enddate: enddate},
             success: function (result) {
                 if (result.substring(0, 5) == 'ERROR') {    //EXCEPTION
                     alert(result)

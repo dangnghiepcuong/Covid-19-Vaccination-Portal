@@ -139,42 +139,11 @@ function LoadSchedule($orgid = "")
     }
 
     $result = "";
-    switch ($_SESSION['AccountInfo']->get_role()) {
-        case 1:
-            while (($row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS)) != false) {
-                $CancelButton = "";
-                if ($row['ONDATE'] > date("y-M-d"))
-                    $CancelButton = '<button class="btn-short-bordered btn-cancel">Hủy</button>';
-                    
-                $result .=
-                    '<div class="schedule object" id="' . $row['ID'] . '">
-                        <div class="holder-schedule">
-                            <div class="obj-attr">
-                                <p class="attr-date-vaccine-serial">Ngày tiêm: ' . $row['ONDATE'] . ' - Vaccine:
-                                ' . $row['VACCINEID'] . ' - ' . $row['SERIAL'] . '</p>
-                                <div class="attr-time">'
-                                    .'<p>Buổi sáng: ' . $row['DAYREGISTERED'] . '/</p><p class="day" id="' . $row['LIMITDAY'] . '">' . $row['LIMITDAY'] . '</p>'
-                                    . '<p>&nbsp- Buổi trưa: ' . $row['NOONREGISTERED'] . '/</p><p class="noon" id="' . $row['LIMITNOON'] . '">' . $row['LIMITNOON'] . '</p>' 
-                                    . '<p>&nbsp- Buổi tối: ' . $row['NIGHTREGISTERED'] . '/</p><p class="night" id="' . $row['LIMITNIGHT'] . '">' . $row['LIMITNIGHT'] . '</p>'
-                                . '</div>
-                            </div>
-                            <div class="interactive-area">
-                                <button class="btn-medium-filled btn-registration">Lượt đăng ký</button>
-                                <button class="btn-medium-bordered btn-update">Cập nhật</button>
-                                '.$CancelButton.'
-                            </div>
-                        </div>
-                        <div class="holder-btn-expand-schedule">
-                            <div class="btn-expand-schedule"> > </div> 
-                        </div>
-                    </div>';
-            }
-            break;
-        case 2:
-            while (($row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS)) != false) {
-                if ($row['LIMITDAY'] + $row['LIMITNOON'] + $row['LIMITNIGHT'])
-                $result .=
-                    '<div class="schedule object" id="' . $row['ID'] . '">
+
+    while (($row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS)) != false) {
+        if ($row['LIMITDAY'] + $row['LIMITNOON'] + $row['LIMITNIGHT'])
+            $result .=
+                '<div class="schedule object" id="' . $row['ID'] . '">
                         <div class="obj-attr">
                             <p class="attr-date">Lịch tiêm ngày: ' . $row['ONDATE'] . '</p>
                             <p class="attr-vaccine">Vaccine: ' . $row['VACCINEID'] . '</p>
@@ -195,9 +164,84 @@ function LoadSchedule($orgid = "")
                             <button class="btn-medium-filled btn-register-schedule">Đăng ký</button>
                         </div>
                     </div>';
-            }
-            break;
-        default:
+    }
+    echo $result;
+}
+
+function LoadOrgSchedule()
+{
+    include("DatabaseConnection.php");
+    $sql = "alter session set NLS_DATE_FORMAT='YYYY-MM-DD'";
+    $command = oci_parse($connection, $sql);
+    $r = oci_execute($command, OCI_NO_AUTO_COMMIT);
+    if (!$r) {
+        $exception = oci_error($command);
+        echo 'ERROR: ' . $exception['code'] . ' - ' . $exception['message'];
+        return;
+    }
+
+    $sql = "select * from SCHEDULE where OrgID = :id";
+
+    if ($_POST['startdate'] != "") {
+        $sql .= " and OnDate >= :startdate";
+    }
+
+    if ($_POST['enddate'] != "") {
+        $sql .= " and OnDate <= :enddate";
+    }
+
+    if ($_POST['vaccine'] != "") {
+        $sql .= " and VaccineID = :vaccine";
+    }
+
+    $sql .= " order by OnDate";
+
+    $command = oci_parse($connection, $sql);
+
+    oci_bind_by_name($command, ':id', $_SESSION['OrgProfile']->get_id());
+    if ($_POST['startdate'] != "")
+        oci_bind_by_name($command, ':startdate', $_POST['startdate']);
+    if ($_POST['enddate'] != "")
+        oci_bind_by_name($command, ':enddate', $_POST['enddate']);
+    if ($_POST['vaccine'] != "")
+        oci_bind_by_name($command, ':vaccine', $_POST['vaccine']);
+
+
+    $r = oci_execute($command);
+    if (!$r) {
+        $exception = oci_error($command);
+        echo '<script>ERROR: ' . $exception['code'] . ' - ' . $exception['message'] . '</script>';
+        return;
+    }
+
+    $result = "";
+    while (($row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS)) != false) {
+        $CancelButton = "";
+        if ($row['ONDATE'] > date("Y-m-d"))
+            $CancelButton = '<button class="btn-short-bordered btn-cancel">Hủy</button>';
+
+        $result .=
+            '<div class="schedule object" id="' . $row['ID'] . '">
+                        <div class="holder-schedule">
+                            <div class="obj-attr">
+                                <p class="attr-date-vaccine-serial">Ngày tiêm: ' . $row['ONDATE'] . ' - Vaccine:
+                                ' . $row['VACCINEID'] . ' - ' . $row['SERIAL'] . '</p>
+                                <div class="attr-time">'
+            . '<p>Buổi sáng: ' . $row['DAYREGISTERED'] . '/</p><p class="day" id="' . $row['LIMITDAY'] . '">' . $row['LIMITDAY'] . '</p>'
+            . '<p>&nbsp- Buổi trưa: ' . $row['NOONREGISTERED'] . '/</p><p class="noon" id="' . $row['LIMITNOON'] . '">' . $row['LIMITNOON'] . '</p>'
+            . '<p>&nbsp- Buổi tối: ' . $row['NIGHTREGISTERED'] . '/</p><p class="night" id="' . $row['LIMITNIGHT'] . '">' . $row['LIMITNIGHT'] . '</p>'
+            . '</div>
+                            </div>
+                            <div class="interactive-area">
+                                <button class="btn-medium-filled btn-registration">Lượt đăng ký</button>
+                                <button class="btn-medium-bordered btn-update">Cập nhật</button>
+                                ' . $CancelButton . '
+                            </div>
+                        </div>
+                        <div class="holder-btn-expand-schedule">
+                            <div class="btn-expand-schedule"> > </div> 
+                        </div>
+                    </div>';
     }
 
     echo $result;
