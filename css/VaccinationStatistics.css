@@ -365,6 +365,17 @@ td{
 .text-center
 {
     text-align: center;
+    font-size: 16px;
+}
+
+.w100
+{
+    font-size: 16px;
+}
+
+.text-left
+{
+    font-size: 16px;
 }
 
 /* tbody {
@@ -386,15 +397,22 @@ td{
 h1, h2, h3, h4, h5, h6 {
     margin: 0 0 10px;
     font-weight: 700;
-    text-align: center;
+    /* text-align: center; */
 }
 
 .table-striped thead{
     position: -webkit-sticky;
     position: sticky;
     top: 0;
-    background-color: #FFFFFF;
+    background-color: #f5f2f2;
     z-index: 2;
 }
 
+tr:nth-child(even) {
+    background-color: #f0f5f5;
+  }
 
+.col-12-bg-white
+{
+    text-align: left;
+}
