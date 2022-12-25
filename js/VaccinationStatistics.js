@@ -70,15 +70,15 @@ type: "line",
 data: {
     labels: xValues,
     datasets: [{ 
-    data: [860,1140,1060,1060,1070,1110,1330,2210,7830,2478],
+    data: [1860,1409,860,960,1770,2710,3930,5210,4930,4478,4378,6723],
     borderColor: "red",
     // fill: false
     }, { 
-     data: [1600,1700,1700,1900,2000,2700,4000,5000,6000,9000],
+     data: [1600,1700,1700,1900,2000,2700,4000,5000,6000,8000,8943,9783],
     borderColor: "green",
     // fill: false
     }, { 
-    data: [300,700,2000,5000,6000,4000,2000,1000,200,100],
+    data: [300,700,2000,3750,4300,4300,3650,3010,2830,4450,6874,8253],
     borderColor: "blue",
     // fill: false
     }]
@@ -146,7 +146,7 @@ $(document).ready(function () {
         // })
         // console.log('Kết thúc ajax');
 
-        var xValues = ["Tháng 1","Tháng 2","Tháng 3","Tháng 4","Tháng 5","Tháng 6","Tháng 7","Tháng 8","Tháng 9","Tháng 10","Tháng 11","Tháng 12","thasng 13"];
+        var xValues = ["Tháng 1","Tháng 2","Tháng 3","Tháng 4","Tháng 5","Tháng 6","Tháng 7","Tháng 8","Tháng 9","Tháng 10","Tháng 11","Tháng 12"];
 
         
         var ctx = document.getElementById('myChart').getContext('2d');
