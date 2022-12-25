@@ -64,7 +64,7 @@ function LoadScheduleRegistration()
         $reg->set_status($row['STATUS']);
         $reg->set_image($row['IMAGE']);
 
-        if ($row['STATUS']  < 2) {
+        if ($row['STATUS']  < 2 && date_create($_POST['date']) < date_create(date('Y-m-d'))) {
             $interaction = '<select class="select-status" name="">';
             if ($row['STATUS'] == 0)
                 $interaction .= '<option value="1">Điểm danh</option><option value="3">Đã hủy</option>';
