@@ -39,30 +39,30 @@ function LoadInjection()
     $count = 0;
     while (($row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS)) != false) {
         $count++;
-        $doestype = "";
-        switch ($row['INJNO']) {
-            case "1":
-                $doestype = "Cơ bản";
+        $dosetype = "";
+        switch ($row['DOSETYPE']) {
+            case "basic":
+                $dosetype = "Cơ bản";
                 break;
-            case "2":
-                $doestype = "Tăng cường";
+            case "booster":
+                $dosetype = "Tăng cường";
                 break;
-            case "3":
-                $doestype = "Nhắc lại";
+            case "repeat":
+                $dosetype = "Nhắc lại";
                 break;
             default:
-                $doestype = "";
+                $dosetype = "";
                 break;
         }
-        $date=date_create($row['ONDATE'] );
-        
+        $date = date_create($row['ONDATE']);
+
 
         $result .=
             '<div class="injection">
-        <p>Mũi ' . $row['INJNO'] . ' (' . $doestype . ')</p>
+        <p>Mũi ' . $row['INJNO'] . ' (' . $dosetype . ')</p>
         <p>Vaccine: ' . $row['VACCINEID'] . '</p>
         <p>Đơn vị tiêm chủng: ' . $row['NAME'] . '</p>
-        <p>Lịch tiêm ngày: ' . date_format($date,"d-m-Y") . '</p>
+        <p>Lịch tiêm ngày: ' . date_format($date, "d-m-Y") . '</p>
         </div>';
     }
 
@@ -74,7 +74,7 @@ function LoadInjection()
             echo '<p class="status" id="1">Chưa tiêm đủ liều cơ bản vaccine Covid-19</p>';
             break;
         default:
-            echo '<p class="status" id="'.$count.'">Đã tiêm đủ liều cơ bản vaccine Covid-19</p>';
+            echo '<p class="status" id="' . $count . '">Đã tiêm đủ liều cơ bản vaccine Covid-19</p>';
             break;
     }
 

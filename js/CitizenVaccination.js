@@ -68,7 +68,7 @@ $(document).ready(function () {
         startdate = $('#start-date').val()
         enddate = $('#end-date').val()
         vaccine = $('#vaccine').find('option:selected').val()
-
+        
         $.ajax({
             cache: false,
             url: 'HandleLoadOrgSchedule.php',

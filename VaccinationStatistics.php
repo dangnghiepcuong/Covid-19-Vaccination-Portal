@@ -39,18 +39,12 @@ $citizen = new Citizen();
     <script src="js/index.js"></script>
     <script src="js/WebElements.js"></script>
     <!-- <script src="js/VaccinationStatistics.js"></script> -->
-
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Thống kê số liệu tiêm chủng</title>
-
-
     <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
     </script>
     <!-- <link rel="stylesheet" href="css/meanmenu.min.css"> -->
-
-
-
     <!-- <link rel="stylesheet" href="css/ORGSchedule.css"> -->
 </head>
 
