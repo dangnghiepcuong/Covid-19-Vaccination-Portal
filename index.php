@@ -96,7 +96,6 @@ $citizen = new Citizen();
         <div class="content-box"></div> -->
         <div class="content-alignment-side"></div>
     </div>
-
     <br>
     <!-- FOOTER -->
     <?php
