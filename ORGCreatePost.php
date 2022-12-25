@@ -77,9 +77,11 @@ $org = $_SESSION['OrgProfile'];
                             <div class="container-update-value">
                                 <label for="file-text" class="">Tải lên file nội dung (.txt)</label>
                                 <input type="file" id="input-browse-text" name="input-browse-text">
+                                <textarea id="outputtext"  rows="4" cols="50"></textarea>
 
                                 <label for="file-image" class="">Tải lên file hình ảnh (.jpg)</label>
-                                <input type="file" id="input-browse-image" name="input-browse-image">
+                                <input type="file" id="input-browse-image" name="input-browse-image" onchange="readURL(this);">
+                                <img id="outputimage" src="#" alt="your image" />
                             </div>
                         </div>
                         <button class="btn-medium-bordered" id="btn-confirm-create-post">Xác nhận</button>

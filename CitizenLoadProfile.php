@@ -4,6 +4,8 @@ if (!defined('browsable')) {
 }
 error_reporting(E_ERROR | E_PARSE);
 
+$username = $_SESSION['AccountInfo']->get_username();
+
 $citizen = new Citizen();
 include("DatabaseConnection.php");
 $sql = "select ID, LastName, FirstName, TO_CHAR( Birthday, 'YYYY-MM-DD' ) Birthday, Gender,"
@@ -11,7 +13,7 @@ $sql = "select ID, LastName, FirstName, TO_CHAR( Birthday, 'YYYY-MM-DD' ) Birthd
     . "Phone, Email, Guardian, Avatar "
     . "from CITIZEN where Phone= :username";
 $command = oci_parse($connection, $sql);
-oci_bind_by_name($command, ':username', $_SESSION['AccountInfo']->get_username());
+oci_bind_by_name($command, ':username', $username);
 oci_execute($command);
 
 while (($row = oci_fetch_array($command, OCI_ASSOC + OCI_RETURN_NULLS)) != false) {
