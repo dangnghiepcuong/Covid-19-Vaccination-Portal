@@ -89,7 +89,7 @@ $citizen = new Citizen();
     <?php
     include("SignupLoginForm.php");
     include("WebElements.php");
-    include("VaccinationStatistics.php")
+    include("DataStatistics.php")
     ?>
 
     
@@ -97,7 +97,7 @@ $citizen = new Citizen();
 
     <!-- <div class="content">
         <div class="content-alignment-side"></div>
-        <!-- <div class="content-box">
+         <div class="content-box">
         </div>
         <div class="content-box"></div>
         <div class="content-box"></div>
