@@ -68,7 +68,7 @@ $citizen = $_SESSION['CitizenProfile'];
             <br>
 
             <div class="info-panel" id="info-panel">
-                <div class="row1">
+                <div class="row row1">
                     <div>
                         <label for="lastname">Họ và tên đệm</label><br>
                         <?php echo '<input type="text" name="lastname" required value="' . $citizen->get_lastname() . '">' ?><br>
@@ -116,7 +116,7 @@ $citizen = $_SESSION['CitizenProfile'];
                     </div>
                 </div>
 
-                <div class="row2">
+                <div class="row row2">
                     <div>
                         <label for="id">Mã định danh <span>(*)</span></label><br>
                         <?php echo '<input type="text" name="id" required value="' . $citizen->get_ID() . '">' ?><br>
@@ -151,7 +151,7 @@ $citizen = $_SESSION['CitizenProfile'];
 
                 <p>Địa chỉ thường trú:</p>
 
-                <div class="row3">
+                <div class="row row3">
                     <div>
                         <label for="city">Tỉnh/Thành phố <span>(*)</span></label><br>
                         <select name="city" id="select-province">
@@ -218,14 +218,14 @@ $citizen = $_SESSION['CitizenProfile'];
                     </div>
                 </div>
 
-                <div class="row4">
+                <div class="row row4">
                     <label for="street">Số nhà, tên đường, khu phố/ấp</label><br>
                     <?php echo '<input type="text" name="street" required value="' . $citizen->get_street() . '">' ?><br>
                     <hr>
                     <div class="message msg10"></div>
                 </div>
 
-                <div class="row5">
+                <div class="row row5">
                     <label for="email">Email</label><br>
                     <?php echo ' <input type="text" name="email" required value="' . $citizen->get_email() . '">' ?><br>
                     <hr>
