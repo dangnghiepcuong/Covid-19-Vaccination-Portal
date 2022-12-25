@@ -36,7 +36,13 @@ $citizen = new Citizen();
     <script src="js/index.js"></script>
     <script src="js/WebElements.js"></script>
     <script src="VaccinationStatistics.php"></script>
-    </script>
+    <script src="VaccinationStatistics.js"></script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
 </head>
 
 <body>
@@ -83,11 +89,13 @@ $citizen = new Citizen();
     <?php
     include("SignupLoginForm.php");
     include("WebElements.php");
-    include("DataStatistics.php")
+    include("VaccinationStatistics.php")
     ?>
+
+    
 <br>
 
-    <div class="content">
+    <!-- <div class="content">
         <div class="content-alignment-side"></div>
         <!-- <div class="content-box">
         </div>
@@ -108,5 +116,6 @@ $citizen = new Citizen();
     // echo '<script>alert("' . $citizen->get_ID() . '")</script>';
     ?>
 </body>
+<script src="VaccinationStatistics.js"></script>
 
 </html>

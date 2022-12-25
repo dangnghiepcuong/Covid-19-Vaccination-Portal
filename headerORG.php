@@ -21,7 +21,7 @@ if (!defined('browsable')) {
                 <a href="index.php">
                     <li class="menu-section">Trang chủ</li>
                 </a>
-
+                
                 <a href="ORGSchedule.php">
                     <li class="menu-section" id="menu-section-schedule">Lịch tiêm</li>
                 </a>

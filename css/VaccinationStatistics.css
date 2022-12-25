@@ -529,3 +529,9 @@ tr:nth-child(even) {
 .col-12-bg-white {
     text-align: left;
 }
+
+.panel-1
+{
+    margin-left: 45px;
+    margin-right: 45px;
+}
