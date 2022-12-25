@@ -31,7 +31,16 @@
     display: flex;
     margin: 0 auto;
     justify-content: space-around;
-    margin: 10px 0;
+    margin: 5px 0;
+}
+
+.function-panel .holder-list .holder-right {
+    display: block;
+}
+
+.function-panel .holder-list .holder-right .list-name-scheduleinfo {
+    font-size: 18px;
+    padding-top: 3px;
 }
 
 .function-panel .holder-filter-panel {
@@ -43,10 +52,9 @@
 }
 
 .function-panel .holder-filter-panel .filter-panel {
-    padding: 10px 0px;
+    padding: 7px 0px;
     margin: 0;
     text-align: center;
-    
 }
 
 .function-panel .holder-filter-panel .l {

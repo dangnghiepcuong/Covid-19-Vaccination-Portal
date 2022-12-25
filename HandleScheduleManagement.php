@@ -25,9 +25,9 @@ function LoadScheduleRegistration()
         (select LastName, FirstName, Gender, EXTRACT(year from Birthday) as BirthYear, ID, Phone from CITIZEN) CITIZEN
         on REG.CitizenID = CITIZEN.ID
         )
-        ";
+        where 1=1";
     if($_POST['time'] != null)
-    $sql .= "where Time =:time";
+    $sql .= " and Time =:time";
 
     if($_POST['status'] != null)
     $sql .= " and Status =:status";
@@ -231,7 +231,7 @@ function CreateSchedule()
     oci_bind_by_name($command, ':date', $_POST['date']);
     oci_bind_by_name($command, ':vaccine', $_POST['vaccine']);
     oci_bind_by_name($command, ':serial', $_POST['serial']);
-    oci_bind_by_name($command, ':day', $_POST['limitnoon']);
+    oci_bind_by_name($command, ':day', $_POST['limitday']);
     oci_bind_by_name($command, ':noon', $_POST['limitnoon']);
     oci_bind_by_name($command, ':night', $_POST['limitnight']);
 

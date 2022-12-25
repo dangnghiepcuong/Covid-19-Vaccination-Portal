@@ -106,7 +106,7 @@
     color: #77DAE8;
 }
 
-.form hr {
+.form .form-hr {
     background: var(--bg_gradient);
     height: 1px;
     border: none;

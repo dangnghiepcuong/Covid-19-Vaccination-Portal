@@ -97,19 +97,13 @@ $citizen = new Citizen();
 
     <!-- <div class="content">
         <div class="content-alignment-side"></div>
-        <div class="content-box">
-        
+        <!-- <div class="content-box">
         </div>
         <div class="content-box"></div>
         <div class="content-box"></div>
-        <div class="content-box"></div>
-
-        
-
-       
+        <div class="content-box"></div> -->
         <div class="content-alignment-side"></div>
-    </div> -->
-
+    </div>
     <br>
     <!-- FOOTER -->
     <?php
