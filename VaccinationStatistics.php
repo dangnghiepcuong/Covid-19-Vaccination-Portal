@@ -1,20 +1,4 @@
-<?php
-error_reporting(E_ERROR | E_PARSE);
-define('browsable', true);
 
-include("object_Account.php");
-include("object_Schedule.php");
-session_start();
-
-// if logged in account has not register a profile then head to index.php
-if (isset($_SESSION['AccountInfo']) == false)
-    header("location:javascript://history.go(-1)");
-// if there is not any profile was queried then head to index
-if (isset($_SESSION['OrgProfile']) == false)
-    header("location:javascript://history.go(-1)");
-
-$org = $_SESSION['OrgProfile'];
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,28 +33,18 @@ $org = $_SESSION['OrgProfile'];
 
     <body>
    
-        <!-- HEADER -->
-        <?php 
-            include("headerORG.php");
-        ?>
-        <!-- END HEADER -->
 
-        <!-- NAV -->
-        <?php
-            include("function-navigation-bar.php");
-        ?>
-        <!-- END NAV -->
 
         <br>
 
         <!-- FUNCTION PANEL -->
         <div class="holder-function-panel">
-            <div class="function-panel">
+            <div class="panel-1">
 
                 <br>
                 <!-- Filter result by date -->
                 <div class="panel-target-citizen">
-                    <div class="filter-panel">
+                    <!-- <div class="filter-panel">
                         <div class="filter-pane" id="filter-schedule">
                             <label for="start-date">Từ ngày</label>
                             <input type="date" name="start-date" id="start-date">
@@ -84,7 +58,7 @@ $org = $_SESSION['OrgProfile'];
                             </button>  
                         </div>
 
-                    </div>   
+                    </div>    -->
                 </div>
 
                 <!-- Data Overview -->
@@ -3694,9 +3668,7 @@ $org = $_SESSION['OrgProfile'];
         <br>
         
         <!-- FOOTER -->
-        <?php
-            include("footer.php");
-        ?>
+       
         <!-- END FOOTER -->
 
     </body>

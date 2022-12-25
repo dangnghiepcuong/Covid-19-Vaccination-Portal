@@ -416,3 +416,9 @@ tr:nth-child(even) {
 {
     text-align: left;
 }
+
+.panel-1
+{
+    margin-left: 45px;
+    margin-right: 45px;
+}
