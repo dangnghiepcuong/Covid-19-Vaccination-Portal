@@ -111,7 +111,7 @@ function LoadSchedule($orgid = "")
         return;
     }
 
-    $sql = "select * from SCHEDULE where OrgID = :id";
+    $sql = "select * from SCHEDULE where OrgID = :id and OnDate >= SYSDATE";
 
     if ($_POST['startdate'] != "") {
         $sql .= " and OnDate >= :startdate";
