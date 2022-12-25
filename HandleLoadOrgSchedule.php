@@ -1,4 +1,4 @@
-                   <?php
+<?php
 error_reporting(E_ERROR | E_PARSE);
 define('browsable', true);
 
@@ -111,7 +111,7 @@ function LoadSchedule($orgid = "")
         return;
     }
 
-    $sql = "select * from SCHEDULE where OrgID = :id";
+    $sql = "select * from SCHEDULE where OrgID = :id and OnDate >= SYSDATE";
 
     if ($_POST['startdate'] != "") {
         $sql .= " and OnDate >= :startdate";
@@ -119,6 +119,10 @@ function LoadSchedule($orgid = "")
 
     if ($_POST['enddate'] != "") {
         $sql .= " and OnDate <= :enddate";
+    }
+
+    if ($_POST['vaccine'] != "") {
+        $sql .= " and VaccineID = :vaccine";
     }
 
     $sql .= " order by OnDate";
@@ -130,6 +134,9 @@ function LoadSchedule($orgid = "")
         oci_bind_by_name($command, ':startdate', $_POST['startdate']);
     if ($_POST['enddate'] != "")
         oci_bind_by_name($command, ':enddate', $_POST['enddate']);
+    if ($_POST['vaccine'] != "")
+        oci_bind_by_name($command, ':vaccine', $_POST['vaccine']);
+
 
     $r = oci_execute($command);
     if (!$r) {
