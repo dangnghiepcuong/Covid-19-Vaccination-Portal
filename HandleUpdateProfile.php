@@ -54,7 +54,21 @@ function UpdateCitizenProfile()
 
     echo 'UpdateCitizenProfile';
 
-    include("CitizenLoadProfile.php");
+    $citizen = new Citizen();
+    $citizen->set_id($_POST['id']);
+    $citizen->set_lastname($_POST['lastname']);
+    $citizen->set_firstname($_POST['firstname']);
+    $citizen->set_birthday($_POST['birthday']);
+    $citizen->set_gender($_POST['gender']);
+    $citizen->set_hometown($_POST['hometown']);
+    $citizen->set_provincename($_POST['province']);
+    $citizen->set_districtname($_POST['district']);
+    $citizen->set_townname($_POST['town']);
+    $citizen->set_street($_POST['street']);
+    $citizen->set_phone($_SESSION['CitizenProfile']->get_phone());
+    $citizen->set_email($_POST['email']);
+
+    $_SESSION['CitizenProfile'] = $citizen;
 }
 
 function UpdateOrgProfile()
@@ -79,5 +93,8 @@ function UpdateOrgProfile()
 
     echo 'UpdateOrgProfile';
 
-    include("OrgLoadProfile.php");
+    $_SESSION['OrgProfile']->set_name($_POST['name']);
+    $_SESSION['OrgProfile']->set_districtname($_POST['district']);
+    $_SESSION['OrgProfile']->set_townname($_POST['town']);
+    $_SESSION['OrgProfile']->set_street($_POST['street']);
 }
