@@ -33,7 +33,7 @@
 
     <body>
    
-
+    
 
         <br>
 
@@ -3668,7 +3668,10 @@
         <br>
         
         <!-- FOOTER -->
-       
+        <?php
+            include("footer.php");
+            include("WebElements.php");
+        ?>
         <!-- END FOOTER -->
 
     </body>
