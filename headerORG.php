@@ -22,7 +22,7 @@ if (!defined('browsable')) {
                     <li class="menu-section">Trang chủ</li>
                 </a>
 
-                <a href="VaccinationStatistics.php">
+                <a href="VaccinationStatistics.php" target="panel-1">
                     <li class="menu-section">Thống kê</li>
                 </a>
 
