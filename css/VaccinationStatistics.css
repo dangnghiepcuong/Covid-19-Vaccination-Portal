@@ -7,7 +7,7 @@
     box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
 }
 
-.panel-target-citizen *{
+.panel-target-citizen * {
     font-family: 'Roboto';
     font-size: 20px;
     font-weight: 400;
@@ -27,7 +27,7 @@
     border: none;
 }
 
-.panel-search-citizen *{
+.panel-search-citizen * {
     font-family: 'Roboto';
     font-size: 20px;
     font-weight: 400;
@@ -69,7 +69,7 @@
     font-size: 20px;
     line-height: 40px;
     text-align: center;
-} 
+}
 
 .nav-panel .title-bg {
     width: 100%;
@@ -79,7 +79,7 @@
     background: linear-gradient(90.97deg, rgba(157, 143, 193, 0.68) 22.76%, #F5A8FF 49.22%, #AAD5EE 79.48%);
     filter: blur(25px);
     border-radius: 20px;
-} 
+}
 
 .nav-panel ul {
     list-style: none;
@@ -112,15 +112,15 @@
     /* overflow:auto; */
 }
 
-.chart{
+.chart {
     box-sizing: border-box;
 }
 
-::-webkit-scrollbar{
-    width : 0px;
+::-webkit-scrollbar {
+    width: 0px;
 }
 
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb {
     background-color: #8C69CA;
 
 }
@@ -156,9 +156,9 @@
     font-weight: 300px;
     border-style: solid;
     border: 0px solid #000000;
-    font-size: 18px; 
+    font-size: 18px;
     box-shadow: 0px 1px;
-    
+
 }
 
 .filter-panel select {
@@ -167,7 +167,7 @@
     border: none;
 }
 
-.filter-panel hr {  
+.filter-panel hr {
     background: var(--bg_gradient);
     height: 2px;
     display: inline-block;
@@ -175,18 +175,15 @@
     position: absolute;
 }
 
-hr {
+/* hr {
     width: 310px;
-height: 0px;
+    height: 0px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+} */
 
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
-/* Inside auto layout */
-
-flex: none;
-order: 2;
-flex-grow: 0;
-}
 /* END FUNCTIN PANEL */
 
 
@@ -202,29 +199,75 @@ flex-grow: 0;
     box-shadow: inset 0 1px 2px rgb(0 0 0 / 10%);
 }
 
-    .product-sales-chart, .analytics-info-cs, .tranffic-als-inner, .analytics-rounded, .single-new-trend, .personal-info-wrap, .author-widgets-single, .calender-inner, .product-status-wrap, .review-tab-pro-inner, .income-dashone-total, .analytics-edu-wrap, .analytics-sparkle-line, .analysis-progrebar, .sparkline8-list, .sparkline9-list, .sparkline7-list, .sparkline10-list, .sparkline12-list, .sparkline13-list, .sparkline14-list, .sparkline13-list, .sparkline11-list, .x-editable-list, .code-editor-single, .blog-details-inner, .charts-single-pro, .about-sparkline, .sparkline-list, .button-ad-wrap, .tab-content-details, .sparkline16-list, .sparkline15-list, .tinymce-single, .single-product-item, .courses-inner, .single-latest-item, .product-payment-inner-st, .profile-info-inner, .contact-panel, .widget-int-shape, .social-media-edu{
-        padding:20px;
-        background:whitesmoke;
-    }
-
-.analytics-sparkle-line .analytics-content h2, .analytics-rounded .analytics-rounded-content h2, .analysis-progrebar .analysis-progrebar-content h2, .analytics-edu .skill .progress .lead-content h3{
-	font-size:20px;
-	color:#303030;
+.product-sales-chart,
+.analytics-info-cs,
+.tranffic-als-inner,
+.analytics-rounded,
+.single-new-trend,
+.personal-info-wrap,
+.author-widgets-single,
+.calender-inner,
+.product-status-wrap,
+.review-tab-pro-inner,
+.income-dashone-total,
+.analytics-edu-wrap,
+.analytics-sparkle-line,
+.analysis-progrebar,
+.sparkline8-list,
+.sparkline9-list,
+.sparkline7-list,
+.sparkline10-list,
+.sparkline12-list,
+.sparkline13-list,
+.sparkline14-list,
+.sparkline13-list,
+.sparkline11-list,
+.x-editable-list,
+.code-editor-single,
+.blog-details-inner,
+.charts-single-pro,
+.about-sparkline,
+.sparkline-list,
+.button-ad-wrap,
+.tab-content-details,
+.sparkline16-list,
+.sparkline15-list,
+.tinymce-single,
+.single-product-item,
+.courses-inner,
+.single-latest-item,
+.product-payment-inner-st,
+.profile-info-inner,
+.contact-panel,
+.widget-int-shape,
+.social-media-edu {
+    padding: 20px;
+    background: whitesmoke;
 }
 
-.analytics-content .progress{
-	height:5px;
-	margin-bottom:0;
+.analytics-sparkle-line .analytics-content h2,
+.analytics-rounded .analytics-rounded-content h2,
+.analysis-progrebar .analysis-progrebar-content h2,
+.analytics-edu .skill .progress .lead-content h3 {
+    font-size: 20px;
+    color: #303030;
 }
 
-.progress-bar.progress-bar-danger{
-	background:#933EC5;
+.analytics-content .progress {
+    height: 5px;
+    margin-bottom: 0;
 }
-.progress-bar.progress-bar-info{
-	background:#65b12d;
+
+.progress-bar.progress-bar-danger {
+    background: #933EC5;
 }
-.progress-bar.progress-bar-inverse{
-	background:#D80027;
+
+.progress-bar.progress-bar-info {
+    background: #65b12d;
+}
+
+.progress-bar.progress-bar-inverse {
+    background: #D80027;
 }
 
 .progress-bar.progress-bar-success {
@@ -240,6 +283,7 @@ flex-grow: 0;
 
 
 @media print {
+
     a,
     a:visited {
         text-decoration: underline;
@@ -253,7 +297,7 @@ flex-grow: 0;
         content: " (" attr(title) ")";
     }
 
-   
+
     thead {
         display: table-header-group;
     }
@@ -284,7 +328,18 @@ flex-grow: 0;
     width: 25%;
 }
 
-.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9 {
+.col-lg-1,
+.col-lg-10,
+.col-lg-11,
+.col-lg-12,
+.col-lg-2,
+.col-lg-3,
+.col-lg-4,
+.col-lg-5,
+.col-lg-6,
+.col-lg-7,
+.col-lg-8,
+.col-lg-9 {
     float: left;
 }
 
@@ -304,23 +359,80 @@ flex-grow: 0;
     color: #D80027;
 }
 
-.analytics-sparkle-line .analytics-content h2, .analytics-rounded .analytics-rounded-content h2, .analysis-progrebar .analysis-progrebar-content h2, .analytics-edu .skill .progress .lead-content h3 {
+.analytics-sparkle-line .analytics-content h2,
+.analytics-rounded .analytics-rounded-content h2,
+.analysis-progrebar .analysis-progrebar-content h2,
+.analytics-edu .skill .progress .lead-content h3 {
     font-size: 20px;
     color: #303030;
 }
 
-.analytics-sparkle-line .analytics-content h5, .analytics-rounded .analytics-rounded-content h5, .analysis-progrebar .analysis-progrebar-content h5 {
+.analytics-sparkle-line .analytics-content h5,
+.analytics-rounded .analytics-rounded-content h5,
+.analysis-progrebar .analysis-progrebar-content h5 {
     font-size: 16px;
     color: #303030;
 }
 
-.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+.col-lg-1,
+.col-lg-10,
+.col-lg-11,
+.col-lg-12,
+.col-lg-2,
+.col-lg-3,
+.col-lg-4,
+.col-lg-5,
+.col-lg-6,
+.col-lg-7,
+.col-lg-8,
+.col-lg-9,
+.col-md-1,
+.col-md-10,
+.col-md-11,
+.col-md-12,
+.col-md-2,
+.col-md-3,
+.col-md-4,
+.col-md-5,
+.col-md-6,
+.col-md-7,
+.col-md-8,
+.col-md-9,
+.col-sm-1,
+.col-sm-10,
+.col-sm-11,
+.col-sm-12,
+.col-sm-2,
+.col-sm-3,
+.col-sm-4,
+.col-sm-5,
+.col-sm-6,
+.col-sm-7,
+.col-sm-8,
+.col-sm-9,
+.col-xs-1,
+.col-xs-10,
+.col-xs-11,
+.col-xs-12,
+.col-xs-2,
+.col-xs-3,
+.col-xs-4,
+.col-xs-5,
+.col-xs-6,
+.col-xs-7,
+.col-xs-8,
+.col-xs-9 {
     min-height: 1px;
     padding-right: 15px;
     padding-left: 15px;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     margin: 0 0 10px;
     font-weight: 700;
 }
@@ -349,32 +461,29 @@ h1, h2, h3, h4, h5, h6 {
     border-color: darkblue;
 } */
 
-table{
+table {
     border-spacing: 0px;
 }
 
-th{
-    border-bottom: 3px solid rgb(222,226,230);
+th {
+    border-bottom: 3px solid rgb(222, 226, 230);
 }
 
-td{
-    border-bottom: 2px solid rgb(222,226,230) ;
+td {
+    border-bottom: 2px solid rgb(222, 226, 230);
     vertical-align: middle;
 }
 
-.text-center
-{
+.text-center {
     text-align: center;
     font-size: 16px;
 }
 
-.w100
-{
+.w100 {
     font-size: 16px;
 }
 
-.text-left
-{
+.text-left {
     font-size: 16px;
 }
 
@@ -394,13 +503,18 @@ td{
     overflow-x: hidden;
 } */
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     margin: 0 0 10px;
     font-weight: 700;
     /* text-align: center; */
 }
 
-.table-striped thead{
+.table-striped thead {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
@@ -410,9 +524,8 @@ h1, h2, h3, h4, h5, h6 {
 
 tr:nth-child(even) {
     background-color: #f0f5f5;
-  }
+}
 
-.col-12-bg-white
-{
+.col-12-bg-white {
     text-align: left;
 }
