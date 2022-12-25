@@ -110,10 +110,10 @@
                                 <div class="analytics-sparkle-line table-mg-t-pro dk-res-t-pro-30">
                                     <div class="analytics-content">
                                         <h5>Tổng số</h5>
-                                        <h2><span class="counter">3500</span> <span class="tuition-fees">Mũi tiêm</span></h2>
-                                        <span class="text-inverse">80%</span>
+                                        <h2><span class="counter">10000</span> <span class="tuition-fees">Mũi tiêm</span></h2>
+                                        <span class="text-inverse">31%</span>
                                         <div class="progress m-b-0">
-                                            <div class="progress-bar progress-bar-inverse" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:80%;"> <span class="sr-only">230% Complete</span> </div>
+                                            <div class="progress-bar progress-bar-inverse" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:31%;"> <span class="sr-only">230% Complete</span> </div>
                                             </div>
                                         </div>
                                     </div>
@@ -131,7 +131,7 @@
                         <br><br>
 
 
-                        <div class='Chart-1'>
+                        <!-- <div class='Chart-1'>
                             <div id='dvChart' style="display:inline-block">                         
                                 <canvas id="myChart"style="width:100%;max-width:500px; display:inline; align-items: center;margin-left: 28px;margin-right: 50px"></canvas>
                             </div>
@@ -139,7 +139,7 @@
                             <div id='dvChart2' style="display:inline-block" >  
                                 <canvas id="myChart-2"style="width:100%;max-width:500px; display:inline; align-items: center;margin-left: 28px;margin-right: 50px"></canvas>                      
                             </div>       
-                        </div>
+                        </div> -->
 
                         <br>
 

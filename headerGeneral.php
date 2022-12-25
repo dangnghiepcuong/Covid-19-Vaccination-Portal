@@ -21,12 +21,12 @@ if (!defined('browsable')) {
                 <a href="index.php">
                     <li class="menu-section">Trang chủ</li>
                 </a>
-                <a href="#">
+                <!-- <a href="#">
                     <li class="menu-section">Thống kê</li>
-                </a>
-                <a href="MedicalFormSubmit.php">
+                </a> -->
+                <!-- <a href="MedicalFormSubmit.php">
                     <li class="menu-section">Khai báo</li>
-                </a>
+                </a> -->
             </ul>
         </div>
         <button class="btn-login" id="btn-login">Đăng nhập</btn>
