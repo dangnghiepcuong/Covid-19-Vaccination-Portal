@@ -35,6 +35,7 @@ $citizen = new Citizen();
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="js/index.js"></script>
     <script src="js/WebElements.js"></script>
+    <script src="VaccinationStatistics.php"></script>
     </script>
 </head>
 
@@ -82,21 +83,26 @@ $citizen = new Citizen();
     <?php
     include("SignupLoginForm.php");
     include("WebElements.php");
+    include("DataStatistics.php")
     ?>
+<br>
 
     <div class="content">
         <div class="content-alignment-side"></div>
-        <div class="content-box">
-            <?php
-            echo "Hello Chrysan"
-            ?>
+        <!-- <div class="content-box">
+        
         </div>
         <div class="content-box"></div>
         <div class="content-box"></div>
-        <div class="content-box"></div>
+        <div class="content-box"></div> -->
+
+        
+
+       
         <div class="content-alignment-side"></div>
     </div>
 
+    <br>
     <!-- FOOTER -->
     <?php
     include("footer.php")
