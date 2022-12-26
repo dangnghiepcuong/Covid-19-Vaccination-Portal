@@ -233,6 +233,7 @@ $(document).ready(function () {
                     return
                 }
                 if (result == 'UpdateSchedule') {
+                    $('.panel-update-schedule').html('')
                     PopupConfirm('Cập nhật lịch tiêm thành công!')
                     LoadSchedule(orgid)
                 }
