@@ -41,7 +41,8 @@ $(document).ready(function () {
             cache: false,
             url: 'HandleScheduleManagement.php',
             type: 'POST',
-            data: { method: 'CreateSchedule', orgid: orgid, date: date, vaccine: vaccine, limitday: limitday, limitnoon: limitnoon, limitnight: limitnight },
+            data: { method: 'CreateSchedule', orgid: orgid, date: date, vaccine: vaccine, serial: serial, 
+            limitday: limitday, limitnoon: limitnoon, limitnight: limitnight },
             success: function (result) {
                 if (result.substring(0, 5) == 'ERROR') {    //EXCEPTION
                     alert(result)
