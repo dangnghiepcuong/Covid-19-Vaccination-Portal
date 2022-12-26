@@ -6,7 +6,7 @@ Pages not defined this variable at first are checked the existence of its,
 this trick is used to prevent the direct access to separated elements files (such as: header, footer, etc.).
 Then the pages can be defined (or not) for the same using purpose.
 */
-define('browsable', true);           
+define('browsable', true);
 
 /*
 These included .php files mean the php code inside is stand right the place it is placed
@@ -50,7 +50,7 @@ $citizen = new Citizen();
 
 <body>
     <div id="return-header">
-    <?php
+        <?php
         if (isset($_SESSION['AccountInfo']) && $_SESSION['AccountInfo']->get_status() == 1) {
             switch ((int)$_SESSION['AccountInfo']->get_role()) {
                 case 0:
@@ -116,11 +116,11 @@ $citizen = new Citizen();
                         <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                             <div class="analytics-sparkle-line reso-mg-b-30">
                                 <div class="analytics-content">
-                                    <h5>Sáng</h5>
-                                    <h2><span class="counter">5000</span> <span class="tuition-fees">Mũi tiêm</span></h2>
-                                    <span class="text-success">20%</span>
+                                    <h5>Số liều cơ bản hoàn thành</h5>
+                                    <h2><span class="counter">184,960,007</span> <span class="tuition-fees">Mũi tiêm</span></h2>
+                                    <span class="text-success">73.49%</span>
                                     <div class="progress m-b-0">
-                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 20%;"> <span class="sr-only">20% Complete</span> </div>
+                                        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 73.49%;"> <span class="sr-only">20% Complete</span> </div>
                                     </div>
                                 </div>
                             </div>
@@ -129,11 +129,11 @@ $citizen = new Citizen();
                         <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                             <div class="analytics-sparkle-line reso-mg-b-30">
                                 <div class="analytics-content">
-                                    <h5>Trưa</h5>
-                                    <h2><span class="counter">3000</span> <span class="tuition-fees">Mũi tiêm</span></h2>
-                                    <span class="text-danger">30%</span>
+                                    <h5>Số liều bổ sung/nhắc lại hoàn thành</h5>
+                                    <h2><span class="counter">52,697,124</span> <span class="tuition-fees">Mũi tiêm</span></h2>
+                                    <span class="text-danger">20.93%</span>
                                     <div class="progress m-b-0">
-                                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:30%;"> <span class="sr-only">230% Complete</span> </div>
+                                        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:20.93%;"> <span class="sr-only">230% Complete</span> </div>
                                     </div>
                                 </div>
                             </div>
@@ -142,11 +142,12 @@ $citizen = new Citizen();
                         <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
                             <div class="analytics-sparkle-line reso-mg-b-30 table-mg-t-pro dk-res-t-pro-30">
                                 <div class="analytics-content">
-                                    <h5>Chiều</h5>
-                                    <h2><span class="counter">2000</span> <span class="tuition-fees">Mũi tiêm</span></h2>
-                                    <span class="text-info">60%</span>
+                                    <h5>Số mũi tiêm hôm qua</h5>
+                                    <h2><span class="counter">223,705</span> <span class="tuition-fees">Mũi tiêm</span></h2>
+                                    <span class="text-info">88.88
+                                        %</span>
                                     <div class="progress m-b-0">
-                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:60%;"> <span class="sr-only">20% Complete</span> </div>
+                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 88.88%;"> <span class="sr-only">20% Complete</span> </div>
                                     </div>
                                 </div>
                             </div>
@@ -156,7 +157,7 @@ $citizen = new Citizen();
                             <div class="analytics-sparkle-line table-mg-t-pro dk-res-t-pro-30">
                                 <div class="analytics-content">
                                     <h5>Tổng số</h5>
-                                    <h2><span class="counter">10000</span> <span class="tuition-fees">Mũi tiêm</span></h2>
+                                    <h2><span class="counter">251,680,004</span> <span class="tuition-fees">Mũi tiêm</span></h2>
                                     <span class="text-inverse">31%</span>
                                     <div class="progress m-b-0">
                                         <div class="progress-bar progress-bar-inverse" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:31%;"> <span class="sr-only">230% Complete</span> </div>
@@ -174,9 +175,12 @@ $citizen = new Citizen();
                 <br>
                 <br>
                 <br>
-                <br><br>
+                <br><br><br>
 
-
+                <div style="display: flex">
+                    <h2 style="margin-left: 150px">Số liệu tiêm chủng năm 2022</h2>
+                    <h2 style="margin-left: 270px">Số liệu mẫu</h2>
+                </div>
                 <div class='Chart-1'>
                     <div id='dvChart' style="display:inline-block">
                         <canvas id="myChart" style="width:100%;max-width:500px; display:inline; align-items: center;margin-left: 150px;margin-right: 50px"></canvas>
