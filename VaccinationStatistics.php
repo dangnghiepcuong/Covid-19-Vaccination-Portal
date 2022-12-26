@@ -144,10 +144,9 @@ $citizen = new Citizen();
                                 <div class="analytics-content">
                                     <h5>Số mũi tiêm hôm qua</h5>
                                     <h2><span class="counter">223,705</span> <span class="tuition-fees">Mũi tiêm</span></h2>
-                                    <span class="text-info">88.88
-                                        %</span>
+                                    <span class="text-info">8.88%</span>
                                     <div class="progress m-b-0">
-                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 88.88%;"> <span class="sr-only">20% Complete</span> </div>
+                                        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 8.88%;"> <span class="sr-only">20% Complete</span> </div>
                                     </div>
                                 </div>
                             </div>
@@ -158,9 +157,9 @@ $citizen = new Citizen();
                                 <div class="analytics-content">
                                     <h5>Tổng số</h5>
                                     <h2><span class="counter">251,680,004</span> <span class="tuition-fees">Mũi tiêm</span></h2>
-                                    <span class="text-inverse">31%</span>
+                                    <span class="text-inverse">97%</span>
                                     <div class="progress m-b-0">
-                                        <div class="progress-bar progress-bar-inverse" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:31%;"> <span class="sr-only">230% Complete</span> </div>
+                                        <div class="progress-bar progress-bar-inverse" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:97%;"> <span class="sr-only">230% Complete</span> </div>
                                     </div>
                                 </div>
                             </div>
@@ -178,8 +177,8 @@ $citizen = new Citizen();
                 <br><br><br>
 
                 <div style="display: flex">
-                    <h2 style="margin-left: 150px">Số liệu tiêm chủng năm 2022</h2>
-                    <h2 style="margin-left: 270px">Số liệu mẫu</h2>
+                    <h2 style="margin-left: 150px">Biểu đồ số ca bệnh năm 2022</h2>
+                    <h2 style="margin-left: 270px">Biểu đồ số liệu tiêm chủng 2021</h2>
                 </div>
                 <div class='Chart-1'>
                     <div id='dvChart' style="display:inline-block">
@@ -190,7 +189,13 @@ $citizen = new Citizen();
                         <canvas id="myChart-2" style="width:100%;max-width:500px; display:inline; align-items: center;margin-left: 28px;margin-right: 50px"></canvas>
                     </div>
                 </div>
-
+                <div style="margin-left: 150px; width: 5%">
+                    <div>
+                        <hr style="background-color: green;">
+                        <hr style="background-color: blue;">
+                        <hr style="background-color: red;">
+                    </div>
+                </div>
                 <br>
 
                 <!-- <div class='Chart-2'>

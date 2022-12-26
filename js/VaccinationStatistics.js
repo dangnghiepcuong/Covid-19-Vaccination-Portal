@@ -70,14 +70,17 @@ type: "line",
 data: {
     labels: xValues,
     datasets: [{ 
+    label: 'Số ca bình phục',
     data: [67230,43780,44780,49300,52100,39300,27100,17700,9600,8600,14090,18600],
     borderColor: "green",
     // fill: false
     }, { 
+    label: 'Số ca nhiễm',
      data: [97830,89430,80000,65210,57320,49710,27220,20120,19840,17210,17220,16640],
     borderColor: "blue",
     // fill: false
     }, { 
+    label: 'Số ca tử vong',
     data: [8253,6874,7090,3000,2000,3750,4300,4300,3650,3010,2830,4450],
     borderColor: "red",
     // fill: false
